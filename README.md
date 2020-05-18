@@ -12,9 +12,9 @@ Material Design 简称为 **MD**。
 &nbsp;&nbsp;
 
 ### Ⅰ. 共识 - 什么是 Material Design ?
-在全局上，“Material Design 是个集成设计系统，交结了理论、资源与工具，意在缔造渊穆的虚拟体验。”
+广义上，“Material Design 是个集成设计系统，交结了理论、资源与工具，意在缔造渊穆的虚拟体验。”
 
-从局部说，”Material Design 是种新的设计语言，既遵循经典设计定则，又汲取先进科学技术，尊理而静，因时而变。“
+狭义上，“Material Design 是种新的设计语言，既遵循经典设计定则，又汲取先进科学技术，尊理而静，因时而变。”
 
 [Making Material Design](https://www.youtube.com/watch?v=rrT6v5sOwJg)
 
@@ -33,3 +33,8 @@ Material Design 简称为 **MD**。
 * 以 CMD 的目标与原则为基础。
 * 开放、谦卑、包容、实用
 * 拒绝时尚
+
+&nbsp;&nbsp;
+
+### Ⅲ. 其它说明
+本文档目前仍在预览阶段，仅保证兼容最新版 Chrome Canary。
