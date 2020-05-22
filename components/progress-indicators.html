@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="theme-color" content="#212121">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>质感设计 - 进程指示器</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Roboto+Mono:wght@500&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="shortcut icon" href="../global/logo.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../components/styles/progress-indicators.css">
+    <link rel="stylesheet" href="../global/styles/global.css">
+    <script src="../global/scripts/jquery-3.5.0.js"></script>
+    <script defer src="../global/scripts/global.js"></script>
+    <script defer src="../global/scripts/components.js"></script>
+</head>
+
+<body>
+    <div class="CMD-drawer-wrapper">
+        <aside class="CMD-drawer">
+            <figure>
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <circle fill="#212121" cx="12" cy="12" r="12" />
+                    <path fill="#BDBDBD" d="M3.6,3.6h16.8v16.8H3.6V3.6z" />
+                    <path fill="#ffffff" d="M20.4,3.6L12,20.4L3.6,3.6H20.4z" />
+                </svg>
+                <figcaption class="subheading">MATERIAL DESIGN</figcaption>
+            </figure>
+            <hr class="divider horizontal">
+            <nav>
+                <span class="body2" tabindex="0">基本原理</span>
+                <a class="body1" href="../index.html">概述</a>
+                <a class="body1" href="../material-design/environment.html">环境</a>
+                <a class="body1" href="../material-design/material-properties.html">Material 属性</a>
+                <a class="body1" href="./material-design/elevation-shadows.html">层级与阴影</a>
+            </nav>
+            <nav>
+                <span class="body2" tabindex="0">组件</span>
+                <a class="body1 activated">进程指示器</a>
+            </nav>
+        </aside>
+        <div class="divider vertical"></div>
+    </div>
+    <main class="content">
+        <div class="content-body">
+            <header>
+                <h4>进程指示器</h4>
+                <p class="title">进程指示器用以表示加载进度或反映不确定的等待时间。</p>
+            </header>
+            <nav class="chapter-catalogue">
+                <span class="body1">索引</span>
+                <ul>
+                    <li><a class="title" href="#usage">用法</a></li>
+                    <li><a class="title" href="#linear-progress-indicators">线形指示器</a></li>
+                    <li><a class="title" href="#circular-progress-indicators">圆形指示器</a></li>
+                </ul>
+            </nav>
+            <article id="usage" class="horizontal">
+                <h5>用法</h5>
+                <section>
+                    <article class="body1 intro">
+                        <p>进程指示器向用户显示当前进程的状态，例如应用程序的加载，表单的提交或更改的保存。 它们传达应用程序的状态并指示可用的操作，例如用户此时是否可以切换至其它界面。
+                        </p>
+                        <p>每类操作的进度只能由一种进程指示器来呈现。例如当某一界面中刷新操作使用了圆形指示器，那么其它界面的刷新操作也应使用圆形指示器。
+                        </p>
+                        <p>进程指示器还可被分为精确型和模糊型两种：</p>
+                        <ul>
+                            <li>使用<strong>精确</strong>指示器需要其反映的进程进度可被估计，从而传达完成进程所需的等待时间。</li>
+                            <li>使用<strong>模糊</strong>指示器需要其反映的进程进度不可被估计，或没有反映进度时长的必要，从而传达不确定的等待时间。</li>
+                        </ul>
+                        <p>当进程进度可被估计时，模糊指示器可以转换为精确指示器。</p>
+                        <p>在需要显示一系列进程的进度时，仅使用一个进程指示器代表总进度，而不为每个进程单独设置进程指示器。</p>
+                    </article>
+                </section>
+            </article>
+            <hr class="divider horizontal">
+            <article id="linear-progress-indicators" class="horizontal">
+                <h5>线形指示器</h5>
+                <section>
+                    <article class="body1">
+                        <p>线形指示器的进度应始终从 0% 到 100%，不能倒退。</p>
+                    </article>
+                    <div id="linear-sheet" class="diagram-wrapper">
+                        <div class="diagram">
+                            <div class="determinate-indicator">
+                                <span class="body2">精确</span>
+                                
+                            </div>
+                            <div class="indeterminate-indicator">
+                                <span class="body2">模糊</span>
+                                <div class="progress-indicator linear indeterminate">
+                                    <div class="track"></div>
+                                    <div class="indicators">
+                                        <div class="secondary"></div>
+                                        <div class="primary"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="body1">线形指示器</p>
+                    </div>
+                </section>
+                <section>
+                    <article class="body1">
+                        <p>指示器应当放置在顶栏或承载层的边缘。</p>
+                    </article>
+                </section>
+            </article>
+        </div>
+
+
+        <footer>
+            <a class="left" href="./material-design/environment.html">
+                <span class="material-icons">arrow_back</span>
+                <span class="subheading">上一节
+                    <span class="title">选择器</span>
+                </span>
+            </a>
+            <a class="right" href="./material-design/environment.html">
+                <span class="subheading">下一节
+                    <span class="title">选择控件</span>
+                </span>
+                <span class="material-icons">arrow_forward</span>
+            </a>
+        </footer>
+
+        <div class="app-bar">
+            <div class="start">
+                <button id="drawer-trigger" class="button icon-button">
+                    <span class="material-icons">menu</span>
+                </button>
+            </div>
+            <span class="title">组件 - 进程指示器</span>
+            <div class="end">
+                <button id="search-trigger" class="button icon-button disabled">
+                    <span class="material-icons">search</span>
+                </button>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>

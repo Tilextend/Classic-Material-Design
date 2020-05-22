@@ -1,0 +1,133 @@
+.diagram {
+    --accent-color: #2196f3;
+    height: 360px;
+}
+
+.diagram .dialog-wrapper {
+    background-color: transparent;
+}
+
+/*------------------------------------*\
+  模拟器
+\*------------------------------------*/
+
+#disable-action .text-field-wrapper {
+    padding-top: 0px;
+}
+
+#disable-action .application .list[two]>span:first-of-type {
+    margin: 0 var(--keyline);
+}
+
+#disable-action .list[one] {
+    grid-template-columns: auto calc(var(--increment) + 16px);
+}
+
+#disable-action .dialog .list[one] {
+    grid-template-columns: auto 48px;
+}
+
+#disable-action .content {
+    padding-bottom: 8px;
+}
+
+#disable-action .content .list {
+    padding: 0 24px;
+}
+
+#disable-action .application>.list[one] {
+    --hover-alpha: 0.08;
+    --focus-alpha: 0.24;
+    --ripple-foreground-alpha: 0.32;
+    --dragged-alpha: 0.16;
+    background-color: #455A64;
+}
+
+#disable-action .divider {
+    margin-bottom: 8px;
+}
+
+#disable-action .application>.list[one] .primary-text, #disable-action ul .list[one] .primary-text {
+    margin-left: calc(var(--increment) + 16px);
+}
+
+#disable-action ul .meta, #disable-action .application>.list[one] .meta {
+    color: var(--accent-color);
+    margin-right: calc(var(--keyline) - 12px);
+}
+
+#disable-action .list[two] {
+    grid-template-columns: calc(var(--increment) + 16px) auto;
+    color: var(--accent-color);
+}
+
+#third-action .dialog button:last-of-type {
+    margin: 0 auto 0 16px;
+}
+
+#clear-alert-actions .content, #unclear-alert-actions .content {
+    margin-top: 24px;
+}
+
+#clear-alert-actions .content p, #unclear-alert-actions .content p {
+    color: var(--primary-text-color);
+}
+
+#affirmative-single-action .list {
+    padding-left: 24px;
+    padding-right: 12px;
+    grid-template-columns: auto 60px;
+}
+
+#dismissive-single-action .list {
+    padding: 0 24px;
+    grid-template-columns: 56px auto;
+}
+
+#dismissive-single-action .list:last-child span:first-of-type {
+    margin: 0 8px;
+}
+
+#provide-full-actions .list[two], #provide-single-action .list[two] {
+    padding: 0 var(--keyline);
+}
+
+#provide-full-actions .application>ul .list[one], #provide-single-action .application>ul .list[one] {
+    padding-left: var(--keyline);
+    padding-right: calc(var(--keyline) - 12px);
+    grid-template-columns: auto 68px;
+}
+
+#provide-full-actions .content .list, #provide-single-action .content .list {
+    padding-left: 24px;
+    padding-right: 12px;
+    grid-template-columns: auto 60px;
+}
+
+
+/*------------------------------------*\
+  主题
+\*------------------------------------*/
+
+:root {
+    --primary-color: #3949AB;
+}
+
+@media (prefers-color-scheme: dark) {
+    .CMD-drawer, .content-body {
+        --primary-color: #9FA8DA;
+    }
+    .diagram {
+        --accent-color: #90CAF9;
+    }
+}
+
+main>.app-bar {
+    color: var(--primary-text-color);
+}
+
+.CMD-content>.app-bar>button, footer {
+    --hover-alpha: 0.08;
+    --focus-alpha: 0.24;
+    --ripple-foreground-alpha: 0.32;
+}

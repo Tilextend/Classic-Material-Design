@@ -1,0 +1,95 @@
+/*------------------------------------*\
+  应用栏
+\*------------------------------------*/
+
+.app-bar {
+    top: 0px;
+    position: sticky;
+    order: -1;
+    display: flex;
+    width: 100%;
+    padding-left: calc(var(--keyline) - 12px);
+    padding-right: calc(var(--keyline) - 12px);
+    align-items: start;
+    background-color: var(--primary-color);
+    color: var(--secondary-text-color);
+    box-shadow: var(--shadow-z2);
+}
+
+.app-bar[class~=dark] {
+    color: var(--primary-text-color);
+}
+
+.app-bar .start, .app-bar .end {
+    height: var(--increment);
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+}
+
+.app-bar .start>.title {
+    margin-left: 12px;
+}
+
+.app-bar .start button+.title {
+    margin-left: 20px;
+}
+
+.app-bar .end {
+    direction: rtl;
+}
+
+/*------------------------------------*\
+  工具栏
+\*------------------------------------*/
+
+.search-bar {
+    position: absolute;
+    order: -1;
+    display: flex;
+    width: calc(100% - var(--keyline));
+    height: 48px;
+    margin: 8px calc(var(--keyline) - 8px);
+    padding: 0 4px;
+    color: var(--secondary-text-color);
+    border-radius: 2px;
+    background-color: var(--surface-color);
+    align-items: center;
+    box-shadow: var(--shadow-z2);
+}
+
+.search-bar::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 2px);
+    border-radius: inherit;
+}
+
+.search-bar input {
+    margin-left: 12px;
+    height: 100%;
+}
+
+.search-bar input::placeholder {
+    color: var(--secondary-text-color);
+    padding-top: 2px;
+}
+
+/*------------------------------------*\
+  主题
+\*------------------------------------*/
+
+@media (prefers-color-scheme: light) {
+    .search-bar::after {
+        border-top: 1px solid rgba(255, 255, 255, 0.4);
+        border-bottom: 1px solid rgba(33, 33, 33, 0.1);
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .search-bar::after {
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    }
+}

@@ -1,0 +1,134 @@
+/*------------------------------------*\
+  对话框
+\*------------------------------------*/
+
+.dialog-wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 24px 40px;
+}
+
+.dialog {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 2px;
+    overflow: hidden;
+    background-color: var(--dialog-background-color);
+    box-shadow: var(--shadow-z24);
+}
+
+.dialog .title {
+    order: -1;
+    position: relative;
+    display: flex;
+    padding: 20px 24px 14px 24px;
+    color: var(--primary-text-color);
+}
+
+.dialog[scrolled=full] .title::after, .dialog[scrolled=end] .title::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: -0.5px;
+    border-bottom: 1px solid var(--divider-color);
+}
+
+.dialog .content {
+    display: flex;
+    flex-direction: column;
+}
+
+.dialog .content {
+    display: flex;
+    flex-direction: column;
+}
+
+.dialog[scrolled] .content {
+    overflow-y: scroll;
+}
+
+.dialog .content::-webkit-scrollbar {
+    display: none;
+}
+
+.dialog .content>*:not(ul) {
+    padding: 0 24px;
+}
+
+.dialog .content .list {
+    padding: 0 calc(var(--keyline) - 12px);
+}
+
+.dialog .content p {
+    margin-bottom: 16px;
+    color: var(--secondary-text-color);
+}
+
+.dialog .actions {
+    position: relative;
+    height: 36px;
+    padding: 8px 0;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    box-sizing: content-box;
+}
+
+.dialog .actions .text-button {
+    --states-base-color: var(--accent-color);
+}
+
+.dialog[scrolled] .actions::after, .dialog[scrolled=start] .actions::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: -0.5px;
+    border-top: 1px solid var(--divider-color);
+}
+
+.dialog .actions button {
+    margin-left: 0px;
+}
+
+/*------------------------------------*\
+  特别修改
+\*------------------------------------*/
+
+.simulator .dialog-wrapper {
+    grid-row-end: 3;
+    padding-top: 48px;
+}
+
+/*------------------------------------*\
+  主题
+\*------------------------------------*/
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --dialog-background-color: #ffffff;
+    }
+    .dialog::after {
+        border-top-color: rgba(255, 255, 255, 0.4);
+        border-bottom-color: rgba(33, 33, 33, 0.1);
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --dialog-background-color: #424242;
+    }
+    .dialog::after {
+        border-top-color: rgba(255, 255, 255, 0.2);
+        border-bottom-color: rgba(0, 0, 0, 0.2);
+    }
+}

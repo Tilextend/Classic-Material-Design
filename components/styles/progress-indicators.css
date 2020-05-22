@@ -1,0 +1,30 @@
+:root {
+    --primary-color: #3949ab;
+}
+
+main>.app-bar, footer {
+    --secondary-text-color: #ffffff;
+    --hint-text-color: rgba(255, 255, 255, 0.5);
+    --states-base-color: #ffffff;
+}
+
+#linear-sheet {
+    grid-column-end: span min(var(--max-block), 2);
+    flex-direction: column;
+}
+
+#linear-sheet .diagram {
+    --primary-color: #448AFF;
+    height: 360px;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+    padding: var(--increment);
+    background-color: #eeeeee;
+}
+
+#linear-sheet span {
+    display: block;
+    color: var(--secondary-text-color);
+    margin-bottom: 24px;
+}

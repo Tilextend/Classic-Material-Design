@@ -1,0 +1,163 @@
+:root {
+    --states-overlay-level: unset;
+    --hover-alpha: 0.04;
+    --focus-alpha: 0.12;
+    --activate-alpha: 0.12;
+    --ripple-foreground-alpha: 0.16;
+    --dragged-alpha: 0.08;
+    --hover-parameter: 0;
+    --focus-parameter: 0;
+    --activate-parameter: 0;
+    --ripple-background-parameter: 0;
+    --dragged-parameter: 0;
+}
+
+/*------------------------------------*\
+  状态
+\*------------------------------------*/
+
+*[states]::before, button::before {
+    content: "";
+    z-index: var(--states-overlay-level);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    pointer-events: none;
+    background-color: var(--states-base-color);
+    opacity: calc(var(--hover-alpha) * var(--hover-parameter) + var(--focus-alpha) * var(--focus-parameter) + var(--activate-alpha) * var(--activate-parameter) + var(--hover-alpha) * var(--ripple-background-parameter) + var(--dragged-alpha) * var(--dragged-parameter));
+    transition-property: opacity;
+    transition-duration: 195ms;
+    transition-timing-function: linear;
+}
+
+.unbounded::before {
+    top: unset;
+    left: unset;
+    border-radius: 50%;
+}
+
+*:hover::before, *:focus-visible::before, .hovered, .focused {
+    transition-duration: 225ms;
+}
+
+@media (hover: hover) {
+    *[states]:hover, button:hover {
+        --hover-parameter: 1;
+    }
+}
+
+*:focus-visible, .focused {
+    --focus-parameter: 1;
+}
+
+.activated {
+    --activate-parameter: 1;
+}
+
+.pressed {
+    --ripple-background-parameter: 1;
+}
+
+.dragged {
+    --hover-parameter: 0;
+    --focus-parameter: 0;
+    --ripple-background-parameter: 0;
+    --dragged-parameter: 1;
+}
+
+*[disabled] {
+    color: var(--hint-text-color);
+    pointer-events: none;
+    cursor: default;
+}
+
+/*------------------------------------*\
+  涟漪
+\*------------------------------------*/
+
+.ripples {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: inherit;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.unbounded>.ripples {
+    overflow: visible;
+}
+
+.ripples .foreground {
+    position: absolute;
+    width: min(var(--diameter), 700px);
+    height: min(var(--diameter), 700px);
+    background-color: var(--states-base-color);
+    border-radius: 50%;
+}
+
+.unbounded .foreground {
+    width: 100%;
+    height: 100%;
+}
+
+.ripples .foreground {
+    animation-name: rippleForegroundFadeOut;
+    animation-duration: 400ms;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+}
+
+@keyframes rippleForegroundFadeOut {
+    0% {
+        opacity: var(--ripple-foreground-alpha);
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/*------------------------------------*\
+  特别修改
+\*------------------------------------*/
+
+.text-button .ripples .foreground {
+    width: min(calc(var(--diameter) * 2), 700px);
+    height: min(calc(var(--diameter) * 2), 700px);
+}
+
+/*------------------------------------*\
+  主题
+\*------------------------------------*/
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --theme-base-color: #ffffff;
+        --states-base-color: #000000;
+    }
+}
+
+.light {
+    --theme-base-color: #ffffff;
+    --states-base-color: #000000;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --theme-base-color: #000000;
+        --states-base-color: #ffffff;
+    }
+}
+
+.dark {
+    --theme-base-color: #000000;
+    --states-base-color: #ffffff;
+}

@@ -1,0 +1,309 @@
+/*------------------------------------*\
+  开关
+\*------------------------------------*/
+
+input {
+    appearance: none;
+    background: none;
+    border: none;
+}
+
+.switch {
+    position: relative;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.switch input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.switch .track {
+    width: 34px;
+    height: 14px;
+    margin: 5px 3px;
+    border-radius: 7px;
+    background-color: var(--switch-off-track-color);
+    transition-property: all;
+    transition-duration: 250ms;
+    transition-timing-function: var(--standard-curve);
+}
+
+.switch[class~=on] .track {
+    background-color: var(--accent-color);
+    opacity: 0.5;
+}
+
+.switch .thumb {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    border-radius: 50%;
+    transform: translateX(-10px);
+    transition-property: all;
+    transition-duration: 250ms;
+    transition-timing-function: var(--standard-curve);
+}
+
+.switch[class~=on] .thumb {
+    transform: translateX(10px);
+}
+
+.switch .thumb::after {
+    content: "";
+    width: 20px;
+    height: 18px;
+    border-width: 1px 0;
+    border-style: solid;
+    border-top-color: rgba(255, 255, 255, 0.4);
+    border-bottom-color: rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    background-color: var(--switch-off-thumb-color);
+    box-shadow: var(--shadow-z1);
+    pointer-events: none;
+    transition-property: all;
+    transition-duration: 250ms;
+    transition-timing-function: var(--standard-curve);
+}
+
+.switch[class~=on] .thumb::after {
+    border-top-color: rgba(255, 255, 255, 0.2);
+    background-color: var(--accent-color);
+}
+
+.switch[class~=on] .thumb::after {
+    background-color: var(--accent-color);
+}
+
+.switch[class~=dragged] .thumb {
+    transition-property: none;
+    transform: translateX(clamp(-10px, var(--offset), 10px));
+}
+
+/*------------------------------------*\
+  单选按钮
+\*------------------------------------*/
+
+input[type=radio] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.radio-button {
+    width: 48px;
+    height: 48px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.radio-button svg {
+    width: 100%;
+    height: 100%;
+    padding: 12px;
+    animation-timing-function: var(--standard-curve);
+}
+
+.radio-button[class~=to-checked] svg {
+    animation-name: radioButtonStretch, radioButtonShrink;
+    animation-duration: calc(500ms / 3), calc(500ms * 2/ 3);
+    animation-fill-mode: backwards, forwards;
+    animation-delay: 0ms, calc(500ms / 3);
+}
+
+.radio-button[class~=to-unchecked] svg {
+    animation-name: radioButtonTransfromCombine;
+    animation-fill-mode: forwards;
+    animation-duration: 500ms;
+}
+
+@keyframes radioButtonStretch {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0.9);
+    }
+}
+
+@keyframes radioButtonShrink {
+    0% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes radioButtonTransfromCombine {
+    0% {
+        transform: scale(1);
+    }
+    40% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.radio-button circle {
+    transform-origin: center;
+    transition-property: fill, stroke;
+    transition-timing-function: var(--standard-curve);
+}
+
+.radio-button .dot {
+    cx: 12;
+    cy: 12;
+    r: 5;
+    fill: var(--secondary-text-color);
+}
+
+.radio-button .stroke {
+    cx: 12;
+    cy: 12;
+    r: 9;
+    stroke: var(--secondary-text-color);
+    stroke-width: 2;
+    fill: transparent;
+}
+
+.radio-button[class~=checked] .stroke {
+    stroke: var(--accent-color);
+    stroke-width: 2;
+    fill: transparent;
+}
+
+.radio-button[class~=to-checked] .stroke {
+    transition-duration: calc(500ms / 3);
+    animation-name: radioButtonStrokeToChecked;
+    animation-duration: calc(500ms / 3);
+    animation-fill-mode: none;
+    animation-timing-function: var(--standard-curve);
+}
+
+@keyframes radioButtonStrokeToChecked {
+    0% {
+        r: 9;
+        stroke-width: 2;
+    }
+    100% {
+        r: 5;
+        stroke-width: 10;
+    }
+}
+
+.radio-button[class~=to-unchecked] .stroke {
+    stroke: var(--secondary-text-color);
+    transition-duration: 200ms;
+    animation-name: radioButtonStrokeToUnchecked;
+    animation-duration: 300ms;
+    animation-fill-mode: none;
+    animation-timing-function: var(--standard-curve);
+    animation-delay: 200ms;
+}
+
+@keyframes radioButtonStrokeToUnchecked {
+    0% {
+        r: 5;
+        stroke-width: 10;
+    }
+    100% {
+        r: 9;
+        stroke-width: 2;
+    }
+}
+
+.radio-button .dot {
+    cx: 12;
+    cy: 12;
+    r: 5;
+    fill: var(--secondary-text-color);
+    visibility: hidden;
+}
+
+.radio-button[class~=checked] .dot {
+    fill: var(--accent-color);
+    visibility: visible;
+}
+
+.radio-button[class~=to-checked] .dot {
+    fill: var(--accent-color);
+    visibility: hidden;
+    animation-name: radioButtonDotToChecked;
+    animation-duration: calc(500ms * 2 / 3);
+    animation-fill-mode: forwards;
+    animation-timing-function: var(--standard-curve);
+    animation-delay: calc(500ms / 3);
+}
+
+@keyframes radioButtonDotToChecked {
+    0% {
+        r: 8;
+        visibility: visible;
+    }
+    100% {
+        r: 5;
+        visibility: visible;
+    }
+}
+
+.radio-button[class~=to-unchecked] .dot {
+    fill: var(--secondary-text-color);
+    transition-duration: 200ms;
+    animation-name: radioButtonDotToUnchecked;
+    animation-duration: 200ms;
+    animation-fill-mode: none;
+    animation-timing-function: var(--standard-curve);
+}
+
+@keyframes radioButtonDotToUnchecked {
+    0% {
+        r: 5;
+        visibility: visible;
+    }
+    100% {
+        r: 8;
+        visibility: visible;
+    }
+}
+
+/*------------------------------------*\
+  主题
+\*------------------------------------*/
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --switch-off-track-color: rgba(0, 0, 0, 0.38);
+        --switch-off-thumb-color: #fafafa;
+    }
+}
+
+.light {
+    --switch-off-track-color: rgba(0, 0, 0, 0.38);
+    --switch-off-thumb-color: #fafafa;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --switch-off-track-color: rgba(255, 255, 255, 0.3);
+        --switch-off-thumb-color: #bdbdbd;
+    }
+}
+
+.dark {
+    --switch-off-track-color: rgba(255, 255, 255, 0.3);
+    --switch-off-thumb-color: #bdbdbd;
+}

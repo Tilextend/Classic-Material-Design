@@ -1,0 +1,121 @@
+/*------------------------------------*\
+  地图
+\*------------------------------------*/
+
+.simulator[map="1"] {
+    --accent-color: #4285F4;
+}
+
+.simulator[map="1"] .status-bar-background {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.simulator[map="1"] .map-wrapper {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.simulator[map="1"] .map-wrapper img {
+    position: absolute;
+    width: auto;
+    height: auto;
+    transform: translate(204px, -82px) scale(0.5);
+}
+
+.simulator[map="1"] .search-bar {
+    margin-top: calc(var(--keyline) + 16px);
+}
+
+.simulator[map="1"] .fab {
+    align-self: flex-end;
+    right: var(--keyline);
+}
+
+.simulator[map="1"] #directions {
+    --hover-alpha: 0.08;
+    --focus-alpha: 0.24;
+    --ripple-foreground-alpha: 0.32;
+    color: #ffffff;
+    background-color: var(--accent-color);
+    bottom: calc(48px + var(--keyline));
+}
+
+.simulator[map="1"] #directions::after {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(56, 66, 173, 0.2);
+}
+
+.simulator[map="1"] #my-location {
+    bottom: calc(104px + 2 * var(--keyline));
+}
+
+@media screen and (min-width:921px) {
+    .diagram-wrapper[screen~=tablet] .simulator[map="1"] .search-bar {
+        max-width: calc(6 * var(--increment));
+    }
+    .diagram-wrapper[screen~=tablet] .simulator[map="1"] .dialog {
+        width: calc(8 * var(--increment));
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .simulator[map="1"] {
+        --accent-color: #96caff;
+    }
+    .simulator[map="1"] #directions {
+        color: rgba(0, 0, 0, 0.54);
+    }
+}
+
+/*------------------------------------*\
+  特别修改
+\*------------------------------------*/
+
+.application .app-bar {
+    padding-top: 24px;
+}
+
+/*------------------------------------*\
+  设置
+\*------------------------------------*/
+
+.simulator[settings] {
+    --primary-color: #263238;
+    --accent-color: #009688;
+}
+
+.simulator[settings] .dark {
+    --accent-color: #80cbc4;
+}
+
+.simulator[settings] .status-bar-background {
+    background-color: #1b2327;
+}
+
+.simulator[settings] .switch[class~=on] .thumb::after {
+    border-bottom-color: rgba(0, 77, 64, 0.2);
+}
+
+.simulator[settings] .dialog-wrapper[picker] .dialog::after {
+    border-top-color: rgba(255, 255, 255, 0.2);
+}
+
+.simulator[settings] .dialog-wrapper[picker] .title-wrapper {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.simulator[settings] .dialog-wrapper[picker] .activated {
+    color: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+    .simulator[settings] {
+        --accent-color: #80cbc4;
+    }
+    .simulator[settings] .dialog-wrapper[picker] .calendar-view .activated {
+        color: rgba(0, 0, 0, 0.87);
+    }
+}

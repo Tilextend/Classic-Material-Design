@@ -1,0 +1,86 @@
+/*------------------------------------*\
+  按钮
+\*------------------------------------*/
+
+button {
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    font-family: inherit;
+    text-decoration: none;
+    color: inherit;
+    white-space: nowrap;
+    text-transform: uppercase;
+    display: inline-flex;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+/*------------------------------------*\
+  按钮
+\*------------------------------------*/
+
+.text-button {
+    min-width: 64px;
+    height: 36px;
+    padding: 0 8px;
+    margin: 0 8px;
+    border-radius: 2px;
+    color: var(--accent-color);
+}
+
+.icon-button {
+    padding: 12px;
+    margin: 0;
+}
+
+.icon {
+    display: flex;
+    width: 24px;
+    height: 24px;
+}
+
+.icon path {
+    fill: currentColor;
+}
+
+.icon-button[class~=narrow] span {
+    width: 12px;
+}
+
+.fab {
+    position: absolute;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    color: var(--secondary-text-color);
+    background-color: var(--surface-color);
+    box-shadow: var(--shadow-z6);
+    transition-property: box-shadow;
+    transition-duration: 195ms;
+    transition-timing-function: var(--standard-curve);
+}
+
+.fab:focus-visible {
+    transition-duration: 225ms;
+    box-shadow: var(--shadow-z12);
+}
+
+/*------------------------------------*\
+  主题
+\*------------------------------------*/
+
+@media (prefers-color-scheme: light) {
+    .fab::after {
+        border-top-color: rgba(255, 255, 255, 0.4);
+        border-bottom-color: rgba(33, 33, 33, 0.1);
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .fab::after {
+        border-top-color: rgba(255, 255, 255, 0.2);
+        border-bottom-color: rgba(0, 0, 0, 0.2);
+    }
+}

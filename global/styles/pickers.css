@@ -1,0 +1,83 @@
+/*------------------------------------*\
+  日期选择器
+\*------------------------------------*/
+
+.dialog-wrapper[picker] {
+    padding: 24px var(--keyline);
+}
+
+.dialog-wrapper[picker] .title-wrapper {
+    height: 96px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--accent-color);
+    padding: 0 24px;
+}
+
+.dialog-wrapper[picker] .title-wrapper .year {
+    margin-bottom: -2px;
+}
+
+.dialog-wrapper[picker] .keyboard-input {
+    margin: 0 auto 0 12px;
+    color: var(--secondary-text-color);
+}
+
+.dialog-wrapper[picker] .title-wrapper .selected-date {
+    font-weight: 500;
+}
+
+.dialog-wrapper[picker] .calendar-view {
+    display: grid;
+    padding: 8px 10px;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(8, 40px);
+    color: var(--primary-text-color);
+}
+
+.dialog-wrapper[picker] .calendar-view>span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dialog-wrapper[picker] .calendar-view button {
+    padding: 0;
+    color: var(--secondary-text-color);
+}
+
+.dialog-wrapper[picker] .month {
+    grid-column-end: span 5;
+    line-height: 23px;
+}
+
+.dialog-wrapper[picker] .day-of-the-week {
+    color: var(--hint-text-color);
+}
+
+.dialog-wrapper[picker] .day[first="6"] {
+    grid-column-start: 6;
+}
+
+.dialog-wrapper[picker] .day[class~=now]:not(.day[class~=activated]) {
+    color: var(--accent-color);
+}
+
+.dialog-wrapper[picker] .day[class~=activated] {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    justify-self: center;
+}
+
+/*------------------------------------*\
+  主题
+\*------------------------------------*/
+
+@media (prefers-color-scheme: dark) {
+    .dialog-wrapper[picker] .title-wrapper {
+        background-color: #555555;
+    }
+}

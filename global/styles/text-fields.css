@@ -1,0 +1,181 @@
+/*------------------------------------*\
+  输入框
+\*------------------------------------*/
+
+input[type=text] {
+    width: 100%;
+    color: var(--primary-text-color);
+    font-family: inherit;
+}
+
+.text-field input::placeholder {
+    color: var(--text-field-placeholder-color);
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: 150ms;
+    transition-timing-function: var(--standard-curve);
+}
+
+.text-field input:focus::placeholder {
+    opacity: 1;
+    transition-duration: 225ms;
+    transition-delay: 50ms;
+}
+
+.text-field-wrapper {
+    padding: 4px 0;
+    margin-bottom: 16px;
+}
+
+.text-field {
+    --origin-x: 50%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    pointer-events: auto;
+    color: var(--secondary-text-color);
+}
+
+.text-field[class~=single] {
+    margin-bottom: 4px;
+}
+
+.text-field[class~=focused] {
+    color: var(--accent-color);
+}
+
+.text-field::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: var(--text-field-bottom-line-color);
+    transition-property: all;
+    transition-duration: 195ms;
+    transition-timing-function: var(--standard-curve);
+}
+
+.text-field[class~=hovered]::before, .text-field[class~=focused]::before {
+    border-bottom-width: 2px;
+    border-bottom-color: var(--primary-text-color);
+    transition-duration: 225ms;
+}
+
+.text-field::after {
+    content: "";
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: var(--accent-color);
+    opacity: 0;
+    transition-property: opacity, border-bottom-width, border-bottom-color;
+    transition-duration: 195ms;
+    transition-timing-function: var(--standard-curve);
+}
+
+.text-field[class~=focused]::after {
+    border-bottom-width: 2px;
+    opacity: 1;
+    transition-property: border-bottom-width, border-bottom-color;
+    transition-duration: 225ms;
+    animation-name: textFieldLineRipple;
+    animation-duration: 225ms;
+    animation-timing-function: var(--standard-curve);
+    animation-fill-mode: both;
+}
+
+.text-field[class~=hovered]::after {
+    border-bottom-width: 2px;
+    transition-property: border-bottom-width;
+    transition-duration: 225ms;
+}
+
+@keyframes textFieldLineRipple {
+    0% {
+        left: var(--origin-x);
+        right: calc(100% - var(--origin-x));
+    }
+    100% {
+        left: 0px;
+        right: 0px;
+    }
+}
+
+.text-field[class~=single] input {
+    padding: 4px 0;
+    margin-top: 10px;
+}
+
+.text-field[class~=single] input:focus {
+    caret-color: var(--accent-color);
+}
+
+.text-field[class~=single] .label {
+    position: absolute;
+    transform: translateY(14px);
+    pointer-events: none;
+    transition-property: all;
+    transition-duration: 195ms;
+    transition-delay: 25ms;
+    transition-timing-function: var(--standard-curve);
+}
+
+.text-field[class~=focused] .label, .text-field[class~=typed] .label {
+    transform: translateY(-4px);
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+    line-height: 1.25rem;
+    transition-delay: 0ms;
+}
+
+.text-field[class~=focused] .label {
+    transition-duration: 225ms;
+}
+
+.text-field-wrapper .helper-text {
+    color: var(--secondary-text-color);
+}
+
+.text-field[class~=selectable] input:focus {
+    caret-color: transparent;
+}
+
+.text-field[class~=selectable] .icon {
+    position: absolute;
+    align-self: flex-end;
+    bottom: 4px;
+    pointer-events: none;
+}
+
+/*------------------------------------*\
+  主题
+\*------------------------------------*/
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --text-field-bottom-line-color: rgba(0, 0, 0, 0.42);
+        --text-field-placeholder-color: rgba(0, 0, 0, 0.42);
+    }
+}
+
+.light {
+    --text-field-bottom-line-color: rgba(0, 0, 0, 0.42);
+    --text-field-placeholder-color: rgba(0, 0, 0, 0.42);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text-field-bottom-line-color: rgba(255, 255, 255, 0.7);
+        --text-field-placeholder-color: rgba(255, 255, 255, 0.5);
+    }
+}
+
+.dark {
+    --text-field-bottom-line-color: rgba(255, 255, 255, 0.7);
+    --text-field-placeholder-color: rgba(255, 255, 255, 0.5);
+}

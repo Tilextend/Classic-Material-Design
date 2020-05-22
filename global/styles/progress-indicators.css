@@ -1,0 +1,143 @@
+.progress-indicator {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+}
+
+.progress-indicator[class~=linear] {
+    width: 100%;
+    height: 4px;
+}
+
+.progress-indicator .track {
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-color);
+    opacity: 0.4;
+}
+
+.progress-indicator .indicators {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.progress-indicator .indicators {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.progress-indicator .indicators div {
+    position: absolute;
+    width: 80%;
+    height: 100%;
+}
+
+.progress-indicator .indicators div::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-color);
+}
+
+.progress-indicator .indicators .primary {
+    animation-name: determinateLinearIndicatorPrimaryIndicatorTranslate, determinateLinearIndicatorPrimaryIndicatorTransformEnd;
+    animation-timing-function: cubic-bezier(0.4, 0.45, 0.6, calc(2 / 3)), cubic-bezier(0.2, 0.14, 0.3, 1);
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes determinateLinearIndicatorPrimaryIndicatorTranslate {
+    0% {
+        transform: translateX(-10%);
+    }
+    100% {
+        transform: translateX(115%);
+    }
+}
+
+@keyframes determinateLinearIndicatorPrimaryIndicatorTransformEnd {
+    0% {
+        clip-path: inset(0% 90% 0% 0%);
+    }
+    65% {
+        clip-path: inset(0% 0% 0% 0%);
+    }
+    100% {
+        clip-path: inset(0% 0% 0% 0%);
+    }
+}
+
+.progress-indicator .indicators .primary::before {
+    animation-name: determinateLinearIndicatorPrimaryIndicatorTransformStart;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 0.4);
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes determinateLinearIndicatorPrimaryIndicatorTransformStart {
+    0% {
+        transform: translateX(0%);
+    }
+    35% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(90%);
+    }
+}
+
+.progress-indicator .indicators .secondary {
+    animation-name: determinateLinearIndicatorSecondaryIndicatorTranslate, determinateLinearIndicatorSecondaryIndicatorTransformEnd;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.6, 1), cubic-bezier(calc(1 / 3), 0.2, 0.4, 1);
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes determinateLinearIndicatorSecondaryIndicatorTranslate {
+    0% {
+        transform: translateX(-125%);
+    }
+    20% {
+        transform: translateX(-125%);
+    }
+    100% {
+        transform: translateX(35%);
+    }
+}
+
+@keyframes determinateLinearIndicatorSecondaryIndicatorTransformEnd {
+    0% {
+        clip-path: inset(0% 90% 0% 0%);
+    }
+    35% {
+        clip-path: inset(0% 90% 0% 0%);
+    }
+    90% {
+        clip-path: inset(0% 0% 0% 0%);
+    }
+    100% {
+        clip-path: inset(0% 0% 0% 0%);
+    }
+}
+
+.progress-indicator .indicators .secondary::before {
+    animation-name: determinateLinearIndicatorSecondaryIndicatorTransformStart;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 0.7);
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes determinateLinearIndicatorSecondaryIndicatorTransformStart {
+    0% {
+        transform: translateX(0%);
+    }
+    65% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(90%);
+    }
+}

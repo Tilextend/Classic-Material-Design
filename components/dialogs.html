@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="theme-color" content="#212121">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>质感设计 - 对话框</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Roboto+Mono:wght@500&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="shortcut icon" href="../global/logo.svg">
+    <link rel="stylesheet" href="../components/styles/dialogs.css">
+    <link rel="stylesheet" href="../global/styles/global.css">
+    <script defer src="../global/scripts/global.js"></script>
+    <script defer src="../global/scripts/components.js"></script>
+</head>
+
+<body>
+    <div class="CMD-drawer-wrapper">
+        <aside class="CMD-drawer">
+            <figure>
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="12" />
+                    <path fill="#BDBDBD" d="M3.6,3.6h16.8v16.8H3.6V3.6z" />
+                    <path fill="#ffffff" d="M20.4,3.6L12,20.4L3.6,3.6H20.4z" />
+                </svg>
+                <figcaption class="subheading">MATERIAL DESIGN</figcaption>
+            </figure>
+            <hr class="divider horizontal">
+            <nav class="body1">
+                <span states class="body2" tabindex="0">基本原理</span>
+                <a states href="../index.html">概述</a>
+            </nav>
+            <nav class="body1">
+                <span states class="body2" tabindex="0">组件</span>
+                <a states class="activated" href="../components/dialogs.html">对话框</a>
+            </nav>
+        </aside>
+        <div class="divider vertical"></div>
+    </div>
+    <main class="CMD-content">
+        <div class="content-body">
+            <header>
+                <h4>对话框</h4>
+                <p class="title">对话框能通知用户有关特定任务的信息或引出更多任务，其中可能含有关键信息或需要决定的选项。</p>
+            </header>
+            <nav class="chapter-catalogue">
+                <span class="body1">索引</span>
+                <ul class="title">
+                    <li><a href="#usage">用法</a></li>
+                    <li><a href="#actions">基本操作</a></li>
+                    <li><a href="#alert-dialogs">警示对话框</a></li>
+                    <li><a href="#simple-dialogs">简易对话框</a></li>
+                    <li><a href="#confirmation-dialogs">确定对话框</a></li>
+                    <li><a href="#full-screen-dialogs">全屏对话框</a></li>
+                    <li><a href="#specs">样式</a></li>
+                </ul>
+            </nav>
+            <article id="usage" class="horizontal">
+                <h5>用法</h5>
+                <section>
+                    <article class="body1 intro">
+                        <p>对话框是一种模态窗口，它显示在整个应用的最前端。在用户完成确认、关闭或其它对话框要求执行的操作之前，对话框始终是界面的焦点并阻止用户操作应用的其余功能。通常对话框后端会有一层深色遮罩，用以凸显对话框并表示其后的界面暂时不可用，满足对话框被关注的需要。
+                        </p>
+                        <p>对话框的设计应贴合情境，能够集中用户注意力，并直白地传达需要告知用户的信息或展示需要用户进行的操作。</p>
+                        <p>对话框有目的地打断用户的操作流程，需谨慎使用。</p>
+                    </article>
+                </section>
+            </article>
+            <hr class="divider horizontal">
+            <article id="actions" class="horizontal">
+                <h5>基本操作</h5>
+                <section>
+                    <article class="body1 intro">
+                        <p>对话框的基本操作作用于对话框本身的导航，它们以按钮的形式呈现，并允许用户确认或忽略对话框。</p>
+                    </article>
+                </section>
+                <section>
+                    <article class="body1">
+                        <h6>类型</h6>
+                        <p>对话框的基本操作有如下三类：</p>
+                        <ul>
+                            <li><strong>确定类操作</strong>解决触发对话框的任务，恢复中断的操作流程。此类操作可以是破坏性的，如“删除”或“清除”。它们通常被放置在对话框的右侧。</li>
+                            <li><strong>忽略类操作</strong>回退至中断前的操作流程与界面。它们的位置通常紧靠确认类操作的左侧。</li>
+                            <li><strong>获知类操作</strong>用以确认对话框的关键信息已被传达给用户。它们通常被放置在对话框的右侧。</li>
+                        </ul>
+                    </article>
+                    <div id="disable-action" class="diagram-wrapper" screen="mobile">
+                        <div class="simulator" settings="wifi">
+                            <div class="application">
+                                <div class="list dark" one>
+                                    <span class="primary-text subheading">使用 WLAN</span>
+                                    <div class="switch meta on">
+                                        <div class="track"></div>
+                                        <div class="thumb unbounded">
+                                            <input type="checkbox" role="switch" aria-checked="true" checked
+                                                tabindex="-1">
+                                        </div>
+                                    </div>
+                                </div>
+                                <ul>
+                                    <li class="list" two>
+                                        <span class="material-icons">signal_wifi_4_bar_lock</span>
+                                        <span class="primary-text subheading">AndroidWiFi<span
+                                                class="secondary-text body1">已连接</span></span>
+                                    </li>
+                                    <li class="divider horizontal"></li>
+                                    <li class="list" one="small">
+                                        <span class="primary-text subheading">添加网络</span>
+                                        <button class="icon-button unbounded meta" tabindex="-1">
+                                            <span class="extra-material-icons">scan_add</span>
+                                        </button>
+                                    </li>
+                                </ul>
+                                <div class="app-bar dark">
+                                    <div class="start">
+                                        <button class="icon-button unbounded" tabindex="-1">
+                                            <span class="material-icons">arrow_back</span>
+                                        </button>
+                                        <span class="title">WLAN</span>
+                                    </div>
+                                    <div class="end">
+                                        <button class="icon-button unbounded" tabindex="-1">
+                                            <span class="material-icons">search</span>
+                                        </button>
+                                        <button class="icon-button narrow unbounded" tabindex="-1">
+                                            <span class="material-icons">more_vert</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="system-layer">
+                                    <div class="status-bar-background"></div>
+                                    <div class="dialog-wrapper">
+                                        <div class="dialog">
+                                            <span class="title">添加网络</span>
+                                            <div class="content">
+                                                <div class="text-field-wrapper">
+                                                    <div class="text-field single">
+                                                        <input class="subheading" type="text" spellcheck="false"
+                                                            placeholder="输入 SSID" tabindex="-1">
+                                                        <span class="label subheading">网络名称</span>
+                                                    </div>
+                                                </div>
+                                                <div class="text-field-wrapper">
+                                                    <div class="text-field single selectable">
+                                                        <input class="subheading" type="text" spellcheck="false"
+                                                            tabindex="-1">
+                                                        <span class="label subheading">加密方式</span>
+                                                        <span class="material-icons icon">arrow_drop_down</span>
+                                                    </div>
+                                                </div>
+                                                <div class="list" one="small">
+                                                    <span class="primary-text body1">高级选项</span>
+                                                    <span class="material-icons meta">expand_more</span>
+                                                </div>
+                                            </div>
+                                            <div class="actions">
+                                                <button class="text-button body2" disabled="true">保存</button>
+                                                <button class="text-button body2" tabindex="-1">取消</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="navigation-bar-background"></div>
+                                </div>
+                            </div>
+                            <div class="system-bars">
+                                <div class="status-bar">
+                                    <div class="system">
+                                        <span id="wifi" class="material-icons">signal_wifi_4_bar</span>
+                                        <span id="signal" class="material-icons">signal_cellular_4_bar</span>
+                                        <span id="battery" class="extra-material-icons">system_battery</span>
+                                        <span id="time" class="body2">12:30</span>
+                                    </div>
+                                </div>
+                                <div class="navigation-bar">
+                                    <span id="back" class="extra-material-icons">system_back</span>
+                                    <span id="home" class="extra-material-icons">system_home</span>
+                                    <span id="recent" class="extra-material-icons">system_recent</span>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="recommends do body2">正确</span>
+                        <p class="body1">在对话框提供的关键任务未完成前禁用确定类操作。但忽略类操作应始终可用。</p>
+                    </div>
+                    <div id="swapped-actions" class="diagram-wrapper" screen="mobile">
+                        <div class="simulator" map="1">
+                            <div class="application">
+                                <div class="map-wrapper">
+                                    <img src="../resources/map.jpg">
+                                </div>
+                                <div class="search-bar">
+                                    <button class="icon-button unbounded" tabindex="-1">
+                                        <span class="material-icons">menu</span>
+                                    </button>
+                                    <input class="subheading" type="text" placeholder="搜索" tabindex="-1">
+                                    <button class="icon-button unbounded" tabindex="-1">
+                                        <span class="material-icons">mic</span>
+                                    </button>
+                                </div>
+                                <button id="directions" class="fab" tabindex="-1">
+                                    <span class="material-icons">directions</span>
+                                </button>
+                                <button id="my-location" class="fab" tabindex="-1">
+                                    <span class="material-icons">my_location</span>
+                                </button>
+                                <div class="system-layer">
+                                    <div class="status-bar-background"></div>
+                                    <div class="dialog-wrapper">
+                                        <div class="dialog">
+                                            <span class="title">要使用位置信息服务吗？</span>
+                                            <div class="content">
+                                                <p class="subheading">使用位置信息服务能帮助应用更快更准确地找到你的位置。即使你的设备上未运行任何应用，该服务也可能会收集此类数据。
+                                                </p>
+                                            </div>
+                                            <div class="actions">
+                                                <button class="text-button body2" tabindex="-1">拒绝</button>
+                                                <button class="text-button body2" tabindex="-1">同意</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="navigation-bar-background"></div>
+                                </div>
+                            </div>
+                            <div class="system-bars">
+                                <div class="status-bar">
+                                    <div class="system">
+                                        <span id="wifi" class="material-icons">signal_wifi_4_bar</span>
+                                        <span id="signal" class="material-icons">signal_cellular_4_bar</span>
+                                        <span id="battery" class="extra-material-icons">system_battery</span>
+                                        <span id="time" class="body2">12:30</span>
+                                    </div>
+                                </div>
+                                <div class="navigation-bar">
+                                    <span id="back" class="extra-material-icons">system_back</span>
+                                    <span id="home" class="extra-material-icons">system_home</span>
+                                    <span id="recent" class="extra-material-icons">system_recent</span>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="recommends dont body2">错误</span>
+                        <p class="body1">忽略类操作的位置应紧靠确认类操作的左侧。</p>
+                    </div>
+                    <article class="body1">
+                        <p>对话框的基本操作应与标题和内容明确关联。</p>
+                    </article>
+                    <div id="unclear-actions" class="diagram-wrapper" screen="tablet mobile">
+                        <div class="simulator" map="1">
+                            <div class="application">
+                                <div class="map-wrapper">
+                                    <img src="../resources/map.jpg">
+                                </div>
+                                <div class="search-bar">
+                                    <button class="icon-button unbounded" tabindex="-1">
+                                        <span class="material-icons">menu</span>
+                                    </button>
+                                    <input class="subheading" type="text" placeholder="搜索" tabindex="-1">
+                                    <button class="icon-button unbounded" tabindex="-1">
+                                        <span class="material-icons">mic</span>
+                                    </button>
+                                </div>
+                                <button id="directions" class="fab" tabindex="-1">
+                                    <span class="material-icons">directions</span>
+                                </button>
+                                <button id="my-location" class="fab" tabindex="-1">
+                                    <span class="material-icons">my_location</span>
+                                </button>
+                                <div class="system-layer">
+                                    <div class="status-bar-background"></div>
+                                    <div class="dialog-wrapper">
+                                        <div class="dialog">
+                                            <span class="title">位置服务已更新</span>
+                                            <div class="content">
+                                                <p class="subheading">现可阅读或撰写餐馆点评。</p>
+                                            </div>
+                                            <div class="actions">
+                                                <button class="text-button body2" tabindex="-1">了解</button>
+                                                <button class="text-button body2" tabindex="-1">取消</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="navigation-bar-background"></div>
+                                </div>
+                            </div>
+                            <div class="system-bars">
+                                <div class="status-bar">
+                                    <div class="system">
+                                        <span id="wifi" class="material-icons">signal_wifi_4_bar</span>
+                                        <span id="signal" class="material-icons">signal_cellular_4_bar</span>
+                                        <span id="battery" class="extra-material-icons">system_battery</span>
+                                        <span id="time" class="body2">12:30</span>
+                                    </div>
+                                </div>
+                                <div class="navigation-bar">
+                                    <span id="back" class="extra-material-icons">system_back</span>
+                                    <span id="home" class="extra-material-icons">system_home</span>
+                                    <span id="recent" class="extra-material-icons">system_recent</span>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="recommends dont body2">错误</span>
+                        <p class="body1">避免为用户提供意思模糊的选项。此处的“取消”按钮的作用对象不明确，且与标题和内容不相关。</p>
+                    </div>
+                    <article class="body1">
+                        <h6>数量</h6>
+                        <p>对话框最多仅能有两个基本操作选项。如存在“了解更多”等将用户导航至对话框之外的第三基本操作，将使得对话框提供的必要任务可能不能按预期完成。</p>
+                        <p>若有提供更多信息的需要，可以将信息直接提供在对话框的内容区域，或是在对话框弹出前或关闭后提供。</p>
+                    </article>
+                    <div id="acknowledgement-single-action" class="diagram-wrapper" screen="mobile">
+                        <div class="simulator">
+                            <div class="application">
+                                <div class="system-layer">
+                                    <div class="status-bar-background"></div>
+                                    <div class="dialog-wrapper">
+                                        <div class="dialog">
+                                            <div class="content">
+                                            </div>
+                                            <span class="title">标题</span>
+                                            <div class="actions">
+                                                <button class="text-button body2" tabindex="-1">了解</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="navigation-bar-background"></div>
+                                </div>
+                            </div>
+                            <div class="system-bars">
+                                <div class="status-bar">
+                                    <div class="system">
+                                        <span id="wifi" class="material-icons">signal_wifi_4_bar</span>
+                                        <span id="signal" class="material-icons">signal_cellular_4_bar</span>
+                                        <span id="battery" class="extra-material-icons">system_battery</span>
+                                        <span id="time" class="body2">12:30</span>
+                                    </div>
+                                </div>
+                                <div class="navigation-bar">
+                                    <span id="back" class="extra-material-icons">system_back</span>
+                                    <span id="home" class="extra-material-icons">system_home</span>
+                                    <span id="recent" class="extra-material-icons">system_recent</span>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="recommends do body2">正确</span>
+                        <p class="body1">当对话框仅包含获知类操作时才能只提供一个按钮。</p>
+                    </div>
+                    <div id="third-action" class="diagram-wrapper" screen="mobile">
+                        <div class="simulator" map="1">
+                            <div class="application">
+                                <div class="map-wrapper">
+                                    <img src="../resources/map.jpg">
+                                </div>
+                                <div class="search-bar">
+                                    <button class="icon-button unbounded" tabindex="-1">
+                                        <span class="material-icons">menu</span>
+                                    </button>
+                                    <input class="subheading" type="text" placeholder="搜索" tabindex="-1">
+                                    <button class="icon-button unbounded" tabindex="-1">
+                                        <span class="material-icons">mic</span>
+                                    </button>
+                                </div>
+                                <button id="directions" class="fab" tabindex="-1">
+                                    <span class="material-icons">directions</span>
+                                </button>
+                                <button id="my-location" class="fab" tabindex="-1">
+                                    <span class="material-icons">my_location</span>
+                                </button>
+                                <div class="system-layer">
+                                    <div class="status-bar-background"></div>
+                                    <div class="dialog-wrapper">
+                                        <div class="dialog">
+                                            <span class="title">要使用位置信息服务吗？</span>
+                                            <div class="content">
+                                                <p class="subheading">使用位置信息服务能帮助应用更快更准确地找到你的位置。即使你的设备上未运行任何应用，该服务也可能会收集此类数据。
+                                                </p>
+                                            </div>
+                                            <div class="actions">
+                                                <button class="text-button body2" tabindex="-1">同意</button>
+                                                <button class="text-button body2" tabindex="-1">拒绝</button>
+                                                <button class="text-button body2" tabindex="-1">了解更多</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="navigation-bar-background"></div>
+                                </div>
+                            </div>
+                            <div class="system-bars">
+                                <div class="status-bar">
+                                    <div class="system">
+                                        <span id="wifi" class="material-icons">signal_wifi_4_bar</span>
+                                        <span id="signal" class="material-icons">signal_cellular_4_bar</span>
+                                        <span id="battery" class="extra-material-icons">system_battery</span>
+                                        <span id="time" class="body2">12:30</span>
+                                    </div>
+                                </div>
+                                <div class="navigation-bar">
+                                    <span id="back" class="extra-material-icons">system_back</span>
+                                    <span id="home" class="extra-material-icons">system_home</span>
+                                    <span id="recent" class="extra-material-icons">system_recent</span>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="recommends dont body2">错误</span>
+                        <p class="body1">“了解更多”按钮将用户导航至对话框外，阻滞了对话框任务的完成。</p>
+                    </div>
+                </section>
+            </article>
+            <hr class="divider horizontal">
+            <article id="alert-dialogs" class="horizontal">
+                <h5>警示对话框</h5>
+                <section>
+                    <article class="body1">
+                        <p>警示对话框为报告紧急信息与当前情境而打断用户的操作流程。</p>
+                    </article>
+                    <div id="clear-alert-actions" class="diagram-wrapper">
+                        <div class="diagram" size="regular">
+                            <div class="dialog-wrapper">
+                                <div class="dialog">
+                                    <div class="content">
+                                        <p class="subheading">删除草稿？</p>
+                                    </div>
+                                    <div class="actions">
+                                        <button class="text-button body2" tabindex="-1">删除</button>
+                                        <button class="text-button body2" tabindex="-1">取消</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="recommends do body2">正确</span>
+                        <p class="body1">“删除”按钮明确了此操作的结果。</p>
+                    </div>
+                    <div id="unclear-alert-actions" class="diagram-wrapper">
+                        <div class="diagram" size="regular">
+                            <div class="dialog-wrapper">
+                                <div class="dialog">
+                                    <div class="content">
+                                        <p class="subheading">删除草稿？</p>
+                                    </div>
+                                    <div class="actions">
+                                        <button class="text-button body2" tabindex="-1">是</button>
+                                        <button class="text-button body2" tabindex="-1">否</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="recommends dont body2">错误</span>
+                        <p class="body1">避免使用不能指示操作结果的选项文本。“否”按钮虽然回答了问题，但未指示此操作的结果。</p>
+                    </div>
+                </section>
+            </article>
+            <hr class="divider horizontal">
+            <article id="simple-dialogs" class="horizontal">
+                <h5>简易对话框</h5>
+                <section>
+                    <article class="body1">
+                        <p>简易对话框提供了一系列无需通过基本操作进行确定或取消的选项。</p>
+                    </article>
+                    <div id="affirmative-single-action" class="diagram-wrapper">
+                        <div class="diagram" size="regular">
+                            <div class="dialog-wrapper">
+                                <div class="dialog">
+                                    <span class="title">导入联系人</span>
+                                    <div class="content">
+                                        <ul>
+                                            <li class="list" one="small">
+                                                <span class="primary-text subheading">.vcf 文件</span>
+                                                <div class="radio-button unbounded meta">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                        <circle class="dot" />
+                                                        <circle class="stroke" />
+                                                    </svg>
+                                                    <input type="radio" name="contact-source" tabindex="-1">
+                                                </div>
+                                            </li>
+                                            <li class="list" one="small">
+                                                <span class="primary-text subheading">SIM 卡</span>
+                                                <div class="radio-button unbounded meta">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                        <circle class="dot" />
+                                                        <circle class="stroke" />
+                                                    </svg>
+                                                    <input type="radio" name="contact-source" tabindex="-1">
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="actions">
+                                        <button class="text-button body2" disabled="true">确定</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="recommends dont body2">错误</span>
+                        <p class="body1">单击列表项即可直接完成对话框的任务，无需“确定”按钮。</p>
+                    </div>
+                    <div id="dismissive-single-action" class="diagram-wrapper">
+                        <div class="diagram" size="regular">
+                            <div class="dialog-wrapper">
+                                <div class="dialog">
+                                    <span class="title">选择备份账号</span>
+                                    <div class="content">
+                                        <ul>
+                                            <li class="list" one>
+                                                <img class="avatar" src="../resources/faces/avatar_square_blue.png">
+                                                <span class="primary-text subheading">user01@gmail.com</span>
+                                            </li>
+                                            <li class="list" one="small">
+                                                <span class="material-icons">person_add</span>
+                                                <span class="primary-text subheading">添加账号</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="actions">
+                                        <button class="text-button body2" tabindex="-1">取消</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="recommends dont body2">错误</span>
+                        <p class="body1">用户可以通过单击深色遮罩层等方式关闭对话框，无需忽略类的“取消”按钮。</p>
+                    </div>
+                </section>
+            </article>
+            <hr class="divider horizontal">
+            <article id="confirmation-dialogs" class="horizontal">
+                <h5>确定对话框</h5>
+                <section>
+                    <article class="body1">
+                        <p>确定对话框提供显明的“确定“与”取消“操作，在将用户做出的选择提交给应用处理前允许用户更改选择。</p>
+                        <p>若用户确认了选择，则利用这些选择处理任务，否则用户可以关闭该对话框。比如在选取铃声时，用户可以点击不同的列表项试听不同的铃声，但要单击“确定”按钮才会提交最终的选择。</p>
+                    </article>
+                    <div id="provide-full-actions" class="diagram-wrapper" screen="mobile">
+                        <div class="simulator" settings="sound">
+                            <div class="application">
+                                <ul>
+                                    <li class="list" two>
+                                        <span class="primary-text subheading">勿扰模式<span
+                                                class="secondary-text body1">关闭</span></span>
+                                    </li>
+                                    <li class="divider horizontal"></li>
+                                    <li class="list" two>
+                                        <span class="primary-text subheading">阻止铃响的快捷方式<span
+                                                class="secondary-text body1">开启（震动）</span></span>
+                                    </li>
+                                    <li class="divider horizontal"></li>
+                                    <li class="list" two>
+                                        <span class="primary-text subheading">来电铃声<span
+                                                class="secondary-text body1">Titania</span></span>
+                                    </li>
+                                    <li class="divider horizontal"></li>
+                                    <li class="list" two>
+                                        <span class="primary-text subheading">默认通知提示音<span
+                                                class="secondary-text body1">Tethys</span></span>
+                                    </li>
+                                    <li class="divider horizontal"></li>
+                                    <li class="list" two>
+                                        <span class="primary-text subheading">默认闹钟铃声<span
+                                                class="secondary-text body1">Oxygen</span></span>
+                                    </li>
+                                    <li class="divider horizontal"></li>
+                                    <li class="subheader">
+                                        <span class="body2">其它提示音和震动</span>
+                                    </li>
+                                    <li class="list" one>
+                                        <span class="primary-text subheading">拨号键盘提示音</span>
+                                        <div class="switch meta on">
+                                            <div class="track"></div>
+                                            <div class="thumb unbounded">
+                                                <input type="checkbox" role="switch" aria-checked="true" checked
+                                                    tabindex="-1">
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="divider horizontal"></li>
+                                    <li class="list" one>
+                                        <span class="primary-text subheading">屏幕锁定提示音</span>
+                                        <div class="switch meta on">
+                                            <div class="track"></div>
+                                            <div class="thumb unbounded">
+                                                <input type="checkbox" role="switch" aria-checked="true" checked
+                                                    tabindex="-1">
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="app-bar dark">
+                                    <div class="start">
+                                        <button class="icon-button unbounded" tabindex="-1">
+                                            <span class="material-icons">arrow_back</span>
+                                        </button>
+                                        <span class="title">声音</span>
+                                    </div>
+                                    <div class="end">
+                                        <button class="icon-button unbounded" tabindex="-1">
+                                            <span class="material-icons">search</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="system-layer">
+                                    <div class="status-bar-background"></div>
+                                    <div class="dialog-wrapper">
+                                        <div class="dialog" scrolled="full">
+                                            <div class="content">
+                                                <ul>
+                                                    <li class="list" one="small">
+                                                        <span class="primary-text subheading">Hydra</span>
+                                                        <div class="radio-button unbounded meta">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                                <circle class="dot"></circle>
+                                                                <circle class="stroke"></circle>
+                                                            </svg>
+                                                            <input type="radio" name="ringtone" tabindex="-1">
+                                                        </div>
+                                                    </li>
+                                                    <li class="list" one="small">
+                                                        <span class="primary-text subheading">Insert Coin</span>
+                                                        <div class="radio-button unbounded meta">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                                <circle class="dot"></circle>
+                                                                <circle class="stroke"></circle>
+                                                            </svg>
+                                                            <input type="radio" name="ringtone" tabindex="-1">
+                                                        </div>
+                                                    </li>
+                                                    <li class="list" one="small">
+                                                        <span class="primary-text subheading">Kuma</span>
+                                                        <div class="radio-button unbounded meta">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                                <circle class="dot"></circle>
+                                                                <circle class="stroke"></circle>
+                                                            </svg>
+                                                            <input type="radio" name="ringtone" tabindex="-1">
+                                                        </div>
+                                                    </li>
+                                                    <li class="list" one="small">
+                                                        <span class="primary-text subheading">Loopy Lounge</span>
+                                                        <div class="radio-button unbounded meta">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                                <circle class="dot"></circle>
+                                                                <circle class="stroke"></circle>
+                                                            </svg>
+                                                            <input type="radio" name="ringtone" tabindex="-1">
+                                                        </div>
+                                                    </li>
+                                                    <li class="list" one="small">
+                                                        <span class="primary-text subheading">Love Flute</span>
+                                                        <div class="radio-button unbounded meta">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                                <circle class="dot"></circle>
+                                                                <circle class="stroke"></circle>
+                                                            </svg>
+                                                            <input type="radio" name="ringtone" tabindex="-1">
+                                                        </div>
+                                                    </li>
+                                                    <li class="list" one="small">
+                                                        <span class="primary-text subheading">Luna</span>
+                                                        <div class="radio-button unbounded meta checked">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                                <circle class="dot"></circle>
+                                                                <circle class="stroke"></circle>
+                                                            </svg>
+                                                            <input type="radio" name="ringtone" tabindex="-1">
+                                                        </div>
+                                                    </li>
+                                                    <li class="list" one="small">
+                                                        <span class="primary-text subheading">Lyon</span>
+                                                        <div class="radio-button unbounded meta">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                                <circle class="dot"></circle>
+                                                                <circle class="stroke"></circle>
+                                                            </svg>
+                                                            <input type="radio" name="ringtone" tabindex="-1">
+                                                        </div>
+                                                    </li>
+                                                    <li class="list" one="small">
+                                                        <span class="primary-text subheading">Lyra</span>
+                                                        <div class="radio-button unbounded meta">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                                <circle class="dot"></circle>
+                                                                <circle class="stroke"></circle>
+                                                            </svg>
+                                                            <input type="radio" name="ringtone" tabindex="-1">
+                                                        </div>
+                                                    </li>
+                                                    <li class="list" one="small">
+                                                        <span class="primary-text subheading">Machina</span>
+                                                        <div class="radio-button unbounded meta">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                                <circle class="dot"></circle>
+                                                                <circle class="stroke"></circle>
+                                                            </svg>
+                                                            <input type="radio" name="ringtone" tabindex="-1">
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <span class="title">选择来电铃声</span>
+                                            <div class="actions">
+                                                <button class="text-button body2" tabindex="-1">确定</button>
+                                                <button class="text-button body2" tabindex="-1">取消</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="navigation-bar-background"></div>
+                                </div>
+                            </div>
+                            <div class="system-bars">
+                                <div class="status-bar">
+                                    <div class="system">
+                                        <span id="wifi" class="material-icons">signal_wifi_4_bar</span>
+                                        <span id="signal" class="material-icons">signal_cellular_4_bar</span>
+                                        <span id="battery" class="extra-material-icons">system_battery</span>
+                                        <span id="time" class="body2">12:30</span>
+                                    </div>
+                                </div>
+                                <div class="navigation-bar">
+                                    <span id="back" class="extra-material-icons">system_back</span>
+                                    <span id="home" class="extra-material-icons">system_home</span>
+                                    <span id="recent" class="extra-material-icons">system_recent</span>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="recommends do body2">正确</span>
+                        <p class="body1">提供确定类与忽略类操作。</p>
+                    </div>
+                    <div id="provide-single-action" class="diagram-wrapper" screen="mobile">
+                        <div class="simulator" settings="date">
+                            <div class="application">
+                                <ul>
+                                    <li class="list" one>
+                                        <span class="primary-text subheading">使用网络提供的时间</span>
+                                        <div class="switch meta">
+                                            <div class="track"></div>
+                                            <div class="thumb unbounded">
+                                                <input type="checkbox" role="switch" aria-checked="true" checked
+                                                    tabindex="-1">
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="divider horizontal"></li>
+                                    <li class="list" one>
+                                        <span class="primary-text subheading">使用网络提供的时区</span>
+                                        <div class="switch meta on">
+                                            <div class="track"></div>
+                                            <div class="thumb unbounded">
+                                                <input type="checkbox" role="switch" aria-checked="true" checked
+                                                    tabindex="-1">
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="divider horizontal"></li>
+                                    <li class="list" one>
+                                        <span class="primary-text subheading">使用 24 小时制</span>
+                                        <div class="switch meta on">
+                                            <div class="track"></div>
+                                            <div class="thumb unbounded">
+                                                <input type="checkbox" role="switch" aria-checked="true" checked
+                                                    tabindex="-1">
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="divider horizontal"></li>
+                                    <li class="list" two>
+                                        <span class="primary-text subheading">日期<span
+                                                class="secondary-text body1">2014年3月13日</span></span>
+                                    </li>
+                                    <li class="divider horizontal"></li>
+                                    <li class="list" two>
+                                        <span class="primary-text subheading">时间<span
+                                                class="secondary-text body1">12:30</span></span>
+                                    </li>
+                                    <li class="divider horizontal"></li>
+                                    <li class="list" two>
+                                        <span class="primary-text subheading">时区<span
+                                                class="secondary-text body1">GMT+08:00 中国标准时间</span></span>
+                                    </li>
+                                    <li class="divider horizontal"></li>
+                                </ul>
+                                <div class="app-bar dark">
+                                    <div class="start">
+                                        <button class="icon-button unbounded" tabindex="-1">
+                                            <span class="material-icons">arrow_back</span>
+                                        </button>
+                                        <span class="title">日期和时间</span>
+                                    </div>
+                                    <div class="end">
+                                        <button class="icon-button unbounded" tabindex="-1">
+                                            <span class="material-icons">search</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="system-layer">
+                                    <div class="status-bar-background"></div>
+                                    <div class="dialog-wrapper" picker>
+                                        <div class="dialog">
+                                            <div class="title-wrapper">
+                                                <span class="year body2">2014年</span>
+                                                <span class="selected-date display1 activated">3月13日，周四</span>
+                                            </div>
+                                            <div class="calendar-view caption">
+                                                <button class="icon-button unbounded narrow backword" tabindex="-1">
+                                                    <span class="material-icons">keyboard_arrow_left</span>
+                                                </button>
+                                                <span class="month body2">三月</span>
+                                                <button class="icon-button unbounded narrow forward" tabindex="-1">
+                                                    <span class="material-icons">keyboard_arrow_right</span>
+                                                </button>
+                                                <span class="day-of-the-week">一</span>
+                                                <span class="day-of-the-week">二</span>
+                                                <span class="day-of-the-week">三</span>
+                                                <span class="day-of-the-week">四</span>
+                                                <span class="day-of-the-week">五</span>
+                                                <span class="day-of-the-week">六</span>
+                                                <span class="day-of-the-week">七</span>
+                                                <span class="day" first="6">1</span>
+                                                <span class="day">2</span>
+                                                <span class="day">3</span>
+                                                <span class="day">4</span>
+                                                <span class="day">5</span>
+                                                <span class="day">6</span>
+                                                <span class="day">7</span>
+                                                <span class="day">8</span>
+                                                <span class="day">9</span>
+                                                <span class="day">10</span>
+                                                <span class="day">11</span>
+                                                <span class="day">12</span>
+                                                <span class="day now activated">13</span>
+                                                <span class="day">14</span>
+                                                <span class="day">15</span>
+                                                <span class="day">16</span>
+                                                <span class="day">17</span>
+                                                <span class="day">18</span>
+                                                <span class="day">19</span>
+                                                <span class="day">20</span>
+                                                <span class="day">21</span>
+                                                <span class="day">22</span>
+                                                <span class="day">23</span>
+                                                <span class="day">24</span>
+                                                <span class="day">25</span>
+                                                <span class="day">26</span>
+                                                <span class="day">27</span>
+                                                <span class="day">28</span>
+                                                <span class="day">29</span>
+                                                <span class="day">30</span>
+                                                <span class="day">31</span>
+                                            </div>
+                                            <div class="actions">
+                                                <button class="text-button body2" tabindex="-1">完成</button>
+                                                <button class="icon-button unbounded keyboard-input" tabindex="-1">
+                                                    <span class="material-icons">keyboard</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="navigation-bar-background"></div>
+                                </div>
+                            </div>
+                            <div class="system-bars">
+                                <div class="status-bar">
+                                    <div class="system">
+                                        <span id="wifi" class="material-icons">signal_wifi_4_bar</span>
+                                        <span id="signal" class="material-icons">signal_cellular_4_bar</span>
+                                        <span id="battery" class="extra-material-icons">system_battery</span>
+                                        <span id="time" class="body2">12:30</span>
+                                    </div>
+                                </div>
+                                <div class="navigation-bar">
+                                    <span id="back" class="extra-material-icons">system_back</span>
+                                    <span id="home" class="extra-material-icons">system_home</span>
+                                    <span id="recent" class="extra-material-icons">system_recent</span>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="recommends dont body2">错误</span>
+                        <p class="body1">缺失忽略类操作令用户不易得知该对话框可忽略。</p>
+                    </div>
+                </section>
+            </article>
+            <hr class="divider horizontal">
+            <article id="full-screen-dialogs" class="horizontal">
+                <h5>全屏对话框</h5>
+                <section>
+                    <article class="body1">
+                        <p>全屏对话框包含了一系列需要用户完成的任务。在单击“保存”按钮前，用户的选择不会被保存与提交。单击“关闭”按钮将关闭对话框并清除用户此前在对话框所作的选择。</p>
+                    </article>
+                </section>
+            </article>
+            <hr class="divider horizontal">
+            <article id="specs" class="horizontal">
+                <h5>样式</h5>
+            </article>
+        </div>
+
+
+        <footer class="dark">
+            <a states class="left" href="../components/data-tables.html">
+                <span class="material-icons">arrow_back</span>
+                <span class="subheading">上一节
+                    <span class="title">数据表格</span>
+                </span>
+            </a>
+            <a states class="right" href="../components/dividers.html">
+                <span class="subheading">下一节
+                    <span class="title">分隔线</span>
+                </span>
+                <span class="material-icons">arrow_forward</span>
+            </a>
+        </footer>
+
+        <div class="app-bar dark">
+            <div class="start">
+                <button id="drawer-trigger" class="icon-button unbounded" tabindex="1">
+                    <span class="material-icons">menu</span>
+                </button>
+            </div>
+            <span class="title">组件 - 对话框</span>
+            <div class="end">
+                <button id="search-trigger" class="icon-button unbounded" disabled="true">
+                    <span class="material-icons">search</span>
+                </button>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>

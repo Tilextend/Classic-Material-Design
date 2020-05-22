@@ -1,0 +1,110 @@
+/*------------------------------------*\
+  字体排印
+\*------------------------------------*/
+
+h1, .display4 {
+    font-size: 7rem;
+    font-weight: 300;
+    letter-spacing: -0.02em;
+}
+
+h2, .display3 {
+    font-size: 3.5rem;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+}
+
+h3, .display2 {
+    font-size: 2.8125rem;
+    font-weight: 400;
+    letter-spacing: 0em;
+    line-height: 3.9375rem;
+}
+
+h4, .display1 {
+    font-size: 2.125rem;
+    font-weight: 400;
+    letter-spacing: 0em;
+    line-height: 3rem;
+}
+
+h5, .headline {
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 0em;
+    line-height: 2.125rem;
+}
+
+h6, .title {
+    font-size: 1.25rem;
+    letter-spacing: 0.01em;
+    line-height: 1.875rem;
+}
+
+h6 {
+    font-weight: 400;
+}
+
+.title {
+    font-weight: 500;
+}
+
+.subheading {
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    line-height: 1.625rem;
+}
+
+.body2 {
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    line-height: 1.4375rem;
+}
+
+.body1 {
+    font-size: 0.875rem;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    line-height: 1.4375rem;
+}
+
+.caption {
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    line-height: 1.25rem;
+}
+
+/*------------------------------------*\
+  主题
+\*------------------------------------*/
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --primary-text-color: rgba(0, 0, 0, 0.87);
+        --secondary-text-color: rgba(0, 0, 0, 0.54);
+        --hint-text-color: rgba(0, 0, 0, 0.38);
+    }
+}
+
+.light {
+    --primary-text-color: rgba(0, 0, 0, 0.87);
+    --secondary-text-color: rgba(0, 0, 0, 0.54);
+    --hint-text-color: rgba(0, 0, 0, 0.38);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary-text-color: rgba(255, 255, 255, 1);
+        --secondary-text-color: rgba(255, 255, 255, 0.7);
+        --hint-text-color: rgba(255, 255, 255, 0.5);
+    }
+}
+
+.dark {
+    --primary-text-color: rgba(255, 255, 255, 1);
+    --secondary-text-color: rgba(255, 255, 255, 0.7);
+    --hint-text-color: rgba(255, 255, 255, 0.5);
+}

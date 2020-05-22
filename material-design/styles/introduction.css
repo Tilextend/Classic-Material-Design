@@ -1,0 +1,105 @@
+:root {
+    --primary-color: #00bcd4;
+}
+
+button, footer {
+    --hover-alpha: 0.08;
+    --focus-alpha: 0.24;
+    --ripple-foreground-alpha: 0.32;
+}
+
+footer .right {
+    padding-left: 50%;
+}
+
+/*------------------------------------*\
+  正文
+\*------------------------------------*/
+
+.chapter-diagram {
+    background-color: #ffeb3b;
+}
+
+#goal-language {
+    grid-column-end: span min(var(--max-block), 2);
+    height: 360px;
+    background-color: #1f4388;
+}
+
+#goal-system {
+    grid-column-end: span min(var(--max-block), 2);
+    background-color: #4dd0e1;
+    height: 360px;
+    align-items: stretch;
+    justify-content: center;
+    padding: 60px 0;
+}
+
+#goal-system .surface {
+    background-color: #FAFAFA;
+    border-radius: 2px;
+    margin: 0 8px;
+    box-shadow: var(--shadow-z2);
+}
+
+#goal-system .surface:nth-child(1) {
+    width: 24px;
+}
+
+#goal-system .surface:nth-child(2) {
+    width: 48px;
+}
+
+#goal-system .surface:nth-child(3) {
+    width: 80px;
+}
+
+#goal-system .surface:nth-child(4) {
+    width: 136px;
+}
+
+#goal-system .surface:nth-child(5) {
+    width: 288px;
+}
+
+#principles-metaphor {
+    background-color: #b4e0e1;
+}
+
+#principles-bold-graphic-intentional {
+    background-color: #ea1b75;
+}
+
+#principles-motion {
+    background-color: #8F4099;
+}
+
+@media screen and (max-width:920px) {
+    #goal-language {
+        height: 480px;
+    }
+    #goal-system {
+        height: 480px;
+        flex-direction: column;
+        padding: 0 36px;
+    }
+    #goal-system .surface {
+        width: auto!important;
+        margin: 8px 0;
+    }
+    #goal-system .surface:nth-child(1) {
+        height: 12px;
+    }
+    #goal-system .surface:nth-child(2) {
+        height: 24px;
+    }
+    #goal-system .surface:nth-child(3) {
+        height: 40px;
+    }
+    #goal-system .surface:nth-child(4) {
+        height: 80px;
+    }
+    #goal-system .surface:nth-child(5) {
+        height: 168px;
+    }
+}
