@@ -1,0 +1,95 @@
+.tab-bar {
+    width: 100%;
+    height: 48px;
+    display: flex;
+    color: var(--secondary-text-color);
+}
+
+.tab-bar button {
+    flex-grow: 1;
+    min-width: 72px;
+    max-width: 264px;
+    padding: 0 var(--keyline);
+    transition-property: color;
+    transition-duration: 195ms;
+    transition-timing-function: var(--standard-curve);
+}
+
+.tab-bar button::after {
+    content: "";
+    visibility: hidden;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    align-self: flex-end;
+    background-color: var(--primary-text-color);
+    pointer-events: none;
+    animation-duration: 200ms;
+    animation-fill-mode: none;
+    animation-timing-function: var(--standard-curve);
+}
+
+.tab-bar button[class~=activated] {
+    color: var(--primary-text-color);
+    transition-duration: 225ms;
+}
+
+.tab-bar button[class~=activated]::after {
+    visibility: visible;
+}
+
+.tab-bar button[class~=previous-activated]::after {
+    visibility: visible;
+}
+
+.tab-bar[class~=left] button[class~=activated]::after {
+    animation-name: tabIndicatorLeftToTheCenter;
+}
+
+@keyframes tabIndicatorLeftToTheCenter {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+.tab-bar[class~=right] button[class~=activated]::after {
+    animation-name: tabIndicatorRightToTheCenter;
+}
+
+@keyframes tabIndicatorRightToTheCenter {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+.tab-bar[class~=left] button[class~=previous-activated]::after {
+    animation-name: tabIndicatorCenterToTheLeft;
+}
+
+@keyframes tabIndicatorCenterToTheLeft {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.tab-bar[class~=right] button[class~=previous-activated]::after {
+    animation-name: tabIndicatorCenterToTheRight;
+}
+
+@keyframes tabIndicatorCenterToTheRight {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}

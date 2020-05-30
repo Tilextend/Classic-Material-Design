@@ -8,6 +8,10 @@ input[type=text] {
     font-family: inherit;
 }
 
+input[type=text]::placeholder {
+    color: var(--hint-text-color);
+}
+
 .text-field input::placeholder {
     color: var(--text-field-placeholder-color);
     opacity: 0;

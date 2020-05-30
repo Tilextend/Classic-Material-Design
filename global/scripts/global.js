@@ -66,3 +66,29 @@ let Observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('h5').forEach(
     (element) => { element.Observer.observe(element)}
 );*/
+
+let simulatorAnimationLoop;
+
+document.querySelectorAll('.simulator[class~=animated]').forEach((element) => {
+    element.addEventListener('click', (event) => {
+        if (event.target.classList.contains('on')) {
+            event.target.classList.remove('on', 'playing');
+            clearTimeout(simulatorAnimationLoop);
+        } else {
+            event.target.classList.remove('on', 'playing');
+            event.target.classList.add('on', 'playing');
+        }
+    });
+    element.addEventListener('animationend', simulatorAnimationEnd);
+});
+
+function simulatorAnimationEnd() {
+    if (event.target !== event.currentTarget) {
+        return
+    }
+    let element = event.target;
+    element.classList.remove('playing');
+    simulatorAnimationLoop = setTimeout(() => {
+        element.classList.add('playing');
+    }, 1000)
+}

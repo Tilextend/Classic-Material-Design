@@ -11,9 +11,9 @@
     padding-left: calc(var(--keyline) - 12px);
     padding-right: calc(var(--keyline) - 12px);
     align-items: start;
-    background-color: var(--primary-color);
+    background-color: var(--primary-color, --surface-color);
     color: var(--secondary-text-color);
-    box-shadow: var(--shadow-z2);
+    box-shadow: var(--shadow-z4);
 }
 
 .app-bar[class~=dark] {
@@ -36,7 +36,7 @@
 }
 
 .app-bar .end {
-    direction: rtl;
+    flex-direction: row-reverse;
 }
 
 /*------------------------------------*\
@@ -72,7 +72,6 @@
 }
 
 .search-bar input::placeholder {
-    color: var(--secondary-text-color);
     padding-top: 2px;
 }
 

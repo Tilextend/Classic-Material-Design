@@ -1,4 +1,12 @@
 /*------------------------------------*\
+  特别修改
+\*------------------------------------*/
+
+.application .app-bar {
+    padding-top: 24px;
+}
+
+/*------------------------------------*\
   地图
 \*------------------------------------*/
 
@@ -34,18 +42,16 @@
     right: var(--keyline);
 }
 
-.simulator[map="1"] #directions {
-    --hover-alpha: 0.08;
-    --focus-alpha: 0.24;
-    --ripple-foreground-alpha: 0.32;
-    color: #ffffff;
-    background-color: var(--accent-color);
-    bottom: calc(48px + var(--keyline));
+.simulator[map="1"] #my-location {
+    background-color: var(--surface-color);
 }
 
-.simulator[map="1"] #directions::after {
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-    border-bottom: 1px solid rgba(56, 66, 173, 0.2);
+.simulator[map="1"] #directions {
+    --surface-shade-color: rgba(255, 255, 255, 0.2);
+    --surface-shade-color: rgba(56, 66, 173, 0.2);
+    --states-parameter: 2;
+    color: #ffffff;
+    bottom: calc(48px + var(--keyline));
 }
 
 .simulator[map="1"] #my-location {
@@ -71,14 +77,6 @@
 }
 
 /*------------------------------------*\
-  特别修改
-\*------------------------------------*/
-
-.application .app-bar {
-    padding-top: 24px;
-}
-
-/*------------------------------------*\
   设置
 \*------------------------------------*/
 
@@ -95,12 +93,12 @@
     background-color: #1b2327;
 }
 
-.simulator[settings] .switch[class~=on] .thumb::after {
-    border-bottom-color: rgba(0, 77, 64, 0.2);
+.simulator[settings] .app-bar {
+    box-shadow: var(--shadow-z2);
 }
 
-.simulator[settings] .dialog-wrapper[picker] .dialog::after {
-    border-top-color: rgba(255, 255, 255, 0.2);
+.simulator[settings] .switch[class~=on] .thumb::after {
+    --surface-shade-color: rgba(0, 77, 64, 0.2);
 }
 
 .simulator[settings] .dialog-wrapper[picker] .title-wrapper {
@@ -117,5 +115,274 @@
     }
     .simulator[settings] .dialog-wrapper[picker] .calendar-view .activated {
         color: rgba(0, 0, 0, 0.87);
+    }
+}
+
+/*------------------------------------*\
+  时钟
+\*------------------------------------*/
+
+.simulator[clock] {
+    --primary-color: #303F9F;
+    --accent-color: #E53935;
+}
+
+.simulator[clock] .status-bar-background {
+    background-color: #1A237E;
+}
+
+.simulator[clock] .application {
+    align-items: center;
+    background-color: var(--primary-color);
+}
+
+.simulator[clock] .app-bar {
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 0;
+    color: #ffffff;
+    box-shadow: none;
+}
+
+.simulator[clock] .tab-bar {
+    height: var(--increment);
+}
+
+.simulator[clock] .fab {
+    --surface-hint-color: rgba(255, 255, 255, 0.2);
+    --surface-shade-color: rgba(191, 54, 12, 0.2);
+    bottom: calc(48px + var(--keyline));
+    color: #ffffff;
+}
+
+.simulator[clock=alarm] .application>ul {
+    align-self: stretch;
+    padding-bottom: calc(48px + 56px + 2 * var(--keyline));
+    overflow-y: scroll;
+}
+
+.simulator[clock=alarm] .snackbar {
+    --accent-color: #FF8A80;
+}
+
+.alarm {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.alarm .primary {
+    height: 72px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: var(--keyline);
+    padding-right: calc(var(--keyline) - 12px);
+    margin-top: var(--keyline);
+    flex-shrink: 0;
+}
+
+.alarm .primary span {
+    color: var(--secondary-text-color);
+    font-weight: 300;
+}
+
+.alarm .panel {
+    color: var(--primary-text-color);
+}
+
+.alarm .panel li:first-child {
+    padding-left: calc(var(--keyline) - 12px);
+    grid-template-columns: 68px auto;
+}
+
+.alarm .panel li:first-child {
+    --primary-color: #ffffff;
+}
+
+.repeat-view {
+    padding: 0 var(--keyline);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.repeat-view span {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-text-color);
+    border-radius: 50%;
+    line-height: 23px;
+}
+
+.repeat-view .selected {
+    background-color: var(--primary-text-color);
+    color: var(--primary-color);
+}
+
+.alarm .ringtone, .alarm .label {
+    padding: 0 var(--keyline);
+    grid-template-columns: 56px auto;
+}
+
+.alarm .label .primary-text {
+    color: var(--secondary-text-color);
+}
+
+.alarm .secondary {
+    padding-left: var(--keyline);
+    padding-right: calc(var(--keyline) - 12px);
+    margin-bottom: 8px;
+    grid-template-columns: auto 48px;
+    color: var(--primary-text-color);
+}
+
+.alarm .panel .divider {
+    margin: 8px 0;
+    padding: 0 var(--keyline);
+}
+
+.alarm[class~=expanded] .secondary {
+    padding: 0 calc(var(--keyline) - 12px);
+}
+
+.alarm[class~=expanded] {
+    background-color: #3F51B5;
+    box-shadow: var(--shadow-z2);
+}
+
+.alarm[class~=expanded]+.divider {
+    opacity: 0;
+}
+
+.simulator[clock=alarm] .application>*:not(.snackbar) {
+    --states-parameter: 2;
+}
+
+/*------------------------------------*\
+  Inbox
+\*------------------------------------*/
+
+.simulator[inbox] {
+    --primary-color: #00bcd4;
+    --accent-color: #eeff41;
+}
+
+.simulator[inbox] .status-bar-background {
+    background-color: #0097A7;
+}
+
+.simulator[inbox] .application {
+    background-color: #eeeeee;
+}
+
+.simulator[inbox] .app-bar {
+    box-shadow: var(--shadow-z0);
+}
+
+.simulator[inbox] .app-bar .title {
+    color: #ffffff;
+}
+
+.simulator[inbox] .fab {
+    --surface-shade-color: rgba(255, 255, 255, 0.2);
+    --surface-shade-color: rgba(38, 50, 56, 0.2);
+    right: var(--keyline);
+    bottom: calc(48px + var(--keyline));
+    box-shadow: var(--shadow-z4);
+}
+
+.simulator[inbox] .application .subheader {
+    color: var(--secondary-text-color);
+}
+
+.simulator[inbox] .list[two] {
+    padding: 0 var(--keyline);
+    grid-template-columns: 56px auto;
+}
+
+.simulator[inbox] .list[two] .primary-text {
+    font-weight: 500;
+    line-height: 1.5rem;
+}
+
+.simulator[inbox] .list[two] p {
+    color: var(--primary-text-color);
+    line-height: 1.25rem;
+    margin-top: -0.0625rem;
+}
+
+.simulator[inbox] .list[two] p span {
+    color: var(--secondary-text-color);
+}
+
+.simulator[inbox] .group {
+    position: relative;
+    margin-bottom: var(--keyline);
+}
+
+.simulator[inbox] .application>ul>.divider {
+    padding-left: calc(16px + var(--increment));
+}
+
+.simulator[inbox] .application>ul>li:not(.divider) {
+    overflow: hidden;
+}
+
+.simulator[inbox] .surfaces {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.2)) drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.14)) drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.12));
+}
+
+.simulator[inbox] .surfaces div {
+    background-color: #fafafa;
+}
+
+.simulator[inbox] .unit {
+    position: relative;
+}
+
+.simulator[inbox] .actions {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.simulator[inbox] .actions>div {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 var(--keyline);
+}
+
+.simulator[inbox] .actions div[class~=right] {
+    background-color: #0f9d58;
+    color: #ffffff;
+}
+
+.simulator[inbox] .actions div[class~=right] span:last-child {
+    display: none;
+}
+
+.simulator[inbox] .snackbar {
+    box-shadow: var(--shadow-z4);
+}
+
+@media (prefers-color-scheme: dark) {
+    .simulator[inbox] .application {
+        background-color: #212121;
+    }
+    .simulator[inbox] .surfaces div {
+        background-color: #303030;
     }
 }

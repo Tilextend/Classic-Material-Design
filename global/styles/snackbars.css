@@ -1,0 +1,41 @@
+
+.snackbar {
+    position: absolute;
+    width: 100%;
+    max-width: 568px;
+    min-height: 48px;
+    background-color: #323232;
+    color: #ffffff;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    box-shadow: var(--shadow-z6);
+    column-gap: 8px;
+    transition-property: transform;
+    transition-duration: 250ms;
+    transition-timing-function: var(--standard-curve);
+}
+
+.snackbar p {
+    flex-grow: 1;
+    overflow-wrap: anywhere;
+    padding: 13px 8px 12px 8px;
+}
+
+.snackbar::after {
+    border-top-color: rgba(255, 255, 255, 0.2);
+    border-bottom-color: rgba(0, 0, 0, 0.2);
+}
+
+.snackbar[class~=show] {
+    transform: translateY(-100%);
+}
+
+/*------------------------------------*\
+  特别修改
+\*------------------------------------*/
+
+.simulator .snackbar {
+    visibility: hidden;
+    bottom: 0;
+}

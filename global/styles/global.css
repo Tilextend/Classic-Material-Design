@@ -1,25 +1,8 @@
-@import url("./app-bars.css");
-@import url("./applications.css");
 @import url("./base.css");
-@import url("./buttons.css");
-@import url("./dialogs.css");
-@import url("./lists.css");
-@import url("./pickers.css");
-@import url("./progress-indicators.css");
-@import url("./selection-controls.css");
-@import url("./states.css");
-@import url("./text-fields.css");
-@import url("./typography.css");
+@import url("./applications.css");
 /*------------------------------------*\
   全局设定
 \*------------------------------------*/
-
-:root {
-    --standard-curve: cubic-bezier(0.4, 0.0, 0.2, 1);
-    --deceleration-curve: cubic-bezier(0.0, 0.0, 0.2, 1);
-    --acceleration-curve: cubic-bezier(0.4, 0.0, 1, 1);
-    --sharp-curve: cubic-bezier(0.4, 0.0, 0.6, 1);
-}
 
 :root {
     --increment: 64px;
@@ -35,7 +18,7 @@
     box-sizing: border-box;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: contain;
+    background-size: cover;
 }
 
 html, body {
@@ -103,7 +86,7 @@ ul, li {
     font-family: 'Extra Material Icons';
     font-style: normal;
     font-weight: 400;
-    src: url(../../resources/fonts/Extra-Material-Icons.woff2) format('woff2');
+    src: url(../../resources/fonts/Extra-Material-Icons.woff) format('woff');
 }
 
 .material-icons, .extra-material-icons {
@@ -245,10 +228,6 @@ ul, li {
     align-items: center;
     width: calc(100% - 256px);
     color: var(--primary-text-color);
-}
-
-main>.app-bar {
-    box-shadow: var(--shadow-z4);
 }
 
 main>.app-bar[class~=prominent] {
@@ -452,24 +431,23 @@ article>ul li {
     --keyline: 16px;
 }
 
-.simulator {
-    background-color: var(--surface-background-color);
-}
-
 .diagram::after, .simulator::after {
     content: "";
+    top: 0;
+    left: 0;
     position: absolute;
+    display: flex;
     width: calc(100% - 2px);
     height: calc(100% - 2px);
+    font-family: 'Material Icons';
+    font-size: 72px;
+    color: #ffffff;
     border: 1px solid rgba(0, 0, 0, 0.08);
-}
-
-.diagram-wrapper[screen~="mobile"] .simulator {
-    --increment: 56px;
-    --keyline: 16px;
-    --navigation-bar-key-width: 80px;
-    --navigation-bar-key-margin: 10px;
-    height: 640px;
+    align-items: center;
+    justify-content: center;
+    transition-property: background-color, color;
+    transition-duration: 225ms;
+    transition-timing-function: var(--standard-curve);
 }
 
 .article p:last-of-type, .diagram-wrapper>p:last-child {
@@ -496,9 +474,54 @@ article>ul li {
     color: #d32f2f;
 }
 
+.recommends[class~=caution] {
+    border-color: #f9a825;
+    color: #f57f17;
+}
+
 /*------------------------------------*\
   模拟器
 \*------------------------------------*/
+
+.simulator {
+    background-color: var(--surface-background-color);
+}
+
+.diagram-wrapper[screen~="mobile"] .simulator {
+    --increment: 56px;
+    --keyline: 16px;
+    --navigation-bar-key-width: 80px;
+    --navigation-bar-key-margin: 10px;
+    height: 640px;
+}
+
+.simulator[class~=playing] {
+    animation-name: timetrick;
+    animation-fill-mode: both;
+    animation-timing-function: linear;
+}
+
+@keyframes timetrick {
+    0% {}
+    100% {}
+}
+
+.simulator ::-webkit-scrollbar {
+    display: none;
+}
+
+.simulator[class~=animated]::after {
+    content: 'play_circle_filled';
+    background-color: rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+}
+
+.simulator[class~=on]::after {
+    color: transparent;
+    background-color: transparent;
+    cursor: pointer;
+    transition-duration: 195ms;
+}
 
 .system-bars {
     position: absolute;
@@ -575,6 +598,7 @@ article>ul li {
     position: absolute;
     display: grid;
     grid-template-rows: 24px auto 48px;
+    pointer-events: none;
 }
 
 .navigation-bar-background {
@@ -628,7 +652,8 @@ footer .material-icons {
 }
 
 .left .material-icons, .right .subheading {
-    direction: rtl;
+    justify-self: end;
+    align-items: flex-end;
 }
 
 footer .subheading {

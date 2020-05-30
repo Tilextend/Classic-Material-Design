@@ -64,8 +64,8 @@ input {
     height: 18px;
     border-width: 1px 0;
     border-style: solid;
-    border-top-color: rgba(255, 255, 255, 0.4);
-    border-bottom-color: rgba(0, 0, 0, 0.1);
+    border-top-color: var(--surface-hint-color, rgba(255, 255, 255, 0.4));
+    border-bottom-color: var(--surface-shade-color, rgba(33, 33, 33, 0.1));
     border-radius: 50%;
     background-color: var(--switch-off-thumb-color);
     box-shadow: var(--shadow-z1);
@@ -75,8 +75,21 @@ input {
     transition-timing-function: var(--standard-curve);
 }
 
+.switch[class~=dark] {
+    --surface-hint-color: rgba(255, 255, 255, 0.2);
+    --surface-shade-color: rgba(33, 33, 33, 0.2);
+}
+
+@media (prefers-color-scheme: dark) {
+    .switch {
+        --surface-hint-color: rgba(255, 255, 255, 0.2);
+        --surface-shade-color: rgba(33, 33, 33, 0.2);
+    }
+}
+
 .switch[class~=on] .thumb::after {
-    border-top-color: rgba(255, 255, 255, 0.2);
+    border-top-color: var(--surface-hint-color, rgba(255, 255, 255, 0.2));
+    border-bottom-color: var(--surface-shade-color, rgba(33, 33, 33, 0.2));
     background-color: var(--accent-color);
 }
 
@@ -90,16 +103,16 @@ input {
 }
 
 /*------------------------------------*\
-  单选按钮
+  复选框
 \*------------------------------------*/
 
-input[type=radio] {
+input[type=checkbox], input[type=radio] {
     position: absolute;
     width: 100%;
     height: 100%;
 }
 
-.radio-button {
+.checkbox, .radio-button {
     width: 48px;
     height: 48px;
     position: relative;
@@ -108,27 +121,91 @@ input[type=radio] {
     justify-content: center;
 }
 
-.radio-button svg {
+.checkbox svg, .radio-button svg {
     width: 100%;
     height: 100%;
     padding: 12px;
     animation-timing-function: var(--standard-curve);
 }
 
-.radio-button[class~=to-checked] svg {
-    animation-name: radioButtonStretch, radioButtonShrink;
+.checkbox path {
+    transition-property: fill;
+    transition-timing-function: var(--standard-curve);
+}
+
+.checkbox[class~=checked] path {
+    fill: var(--primary-color);
+    d: path("M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.11 0 2-.9 2-2V5c0-1.1-.89-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z");
+}
+
+.checkbox[class~=to-unchecked] path {
+    fill: var(--secondary-text-color);
+    transition-duration: 200ms;
+    animation-name: checkboxToUncheckedA, checkboxToUncheckedB;
+    animation-duration: 200ms, 300ms;
+    animation-delay: 0ms, 200ms;
+    animation-fill-mode: forwards;
+}
+
+@keyframes checkboxToUncheckedA {
+    0% {
+        d: path("M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.11 0 2-.9 2-2V5c0-1.1-.89-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z");
+    }
+    100% {
+        d: path("M18.3,3.9H5.7c-1,0-1.8,0.8-1.8,1.8v12.6c0,1,0.8,1.8,1.8,1.8h12.6c1,0,1.8-0.8,1.8-1.8V5.7C20.1,4.7,19.3,3.9,18.3,3.9zM12,13.4L10.6,12l1.4-1.4l0,0l0,0l1.4,1.4L12,13.4z");
+    }
+}
+
+@keyframes checkboxToUncheckedB {
+    0% {
+        d: path("M13,11v2h-2v-2H13 M18.3,3.9H5.7c-1,0-1.8,0.8-1.8,1.8v12.6c0,1,0.8,1.8,1.8,1.8h12.6c1,0,1.8-0.8,1.8-1.8V5.7C20.1,4.7,19.3,3.9,18.3,3.9z");
+    }
+    100% {
+        d: path("M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z");
+    }
+}
+
+.checkbox[class~=to-checked] path {
+    fill: var(--primary-color);
+    transition-duration: calc(500ms / 3);
+    animation-name: checkboxToCheckedA, checkboxToCheckedB;
+    animation-duration: calc(500ms / 3), calc(500ms * 2/ 3);
+    animation-delay: 0ms, calc(500ms / 3);
+    animation-fill-mode: forwards;
+}
+
+@keyframes checkboxToCheckedA {
+    0% {
+        d: path("M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z");
+    }
+    100% {
+        d: path("M13,11v2h-2v-2H13 M18.3,3.9H5.7c-1,0-1.8,0.8-1.8,1.8v12.6c0,1,0.8,1.8,1.8,1.8h12.6c1,0,1.8-0.8,1.8-1.8V5.7C20.1,4.7,19.3,3.9,18.3,3.9z");
+    }
+}
+
+@keyframes checkboxToCheckedB {
+    0% {
+        d: path("M18.3,3.9H5.7c-1,0-1.8,0.8-1.8,1.8v12.6c0,1,0.8,1.8,1.8,1.8h12.6c1,0,1.8-0.8,1.8-1.8V5.7C20.1,4.7,19.3,3.9,18.3,3.9zM12,13.4L10.6,12l1.4-1.4l0,0l0,0l1.4,1.4L12,13.4z");
+    }
+    100% {
+        d: path("M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.11 0 2-.9 2-2V5c0-1.1-.89-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z");
+    }
+}
+
+.checkbox[class~=to-checked] svg, .radio-button[class~=to-checked] svg {
+    animation-name: selectionControlStretch, selectionControlShrink;
     animation-duration: calc(500ms / 3), calc(500ms * 2/ 3);
     animation-fill-mode: backwards, forwards;
     animation-delay: 0ms, calc(500ms / 3);
 }
 
-.radio-button[class~=to-unchecked] svg {
-    animation-name: radioButtonTransfromCombine;
+.checkbox[class~=to-checked] svg, .radio-button[class~=to-unchecked] svg {
+    animation-name: selectionControlTransfromCombine;
     animation-fill-mode: forwards;
     animation-duration: 500ms;
 }
 
-@keyframes radioButtonStretch {
+@keyframes selectionControlStretch {
     0% {
         transform: scale(1);
     }
@@ -137,7 +214,7 @@ input[type=radio] {
     }
 }
 
-@keyframes radioButtonShrink {
+@keyframes selectionControlShrink {
     0% {
         transform: scale(0.9);
     }
@@ -146,7 +223,7 @@ input[type=radio] {
     }
 }
 
-@keyframes radioButtonTransfromCombine {
+@keyframes selectionControlTransfromCombine {
     0% {
         transform: scale(1);
     }
@@ -157,6 +234,10 @@ input[type=radio] {
         transform: scale(1);
     }
 }
+
+/*------------------------------------*\
+  单选按钮
+\*------------------------------------*/
 
 .radio-button circle {
     transform-origin: center;

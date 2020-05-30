@@ -15,6 +15,8 @@ button {
     border: none;
     background-color: transparent;
     cursor: pointer;
+    flex-shrink: 0;
+    overflow: hidden;
 }
 
 /*------------------------------------*\
@@ -22,17 +24,22 @@ button {
 \*------------------------------------*/
 
 .text-button {
+    --states-base-color: currentColor;
     min-width: 64px;
     height: 36px;
     padding: 0 8px;
-    margin: 0 8px;
     border-radius: 2px;
     color: var(--accent-color);
 }
 
+.text-button[class~=contained] {
+    background-color: var(--accent-color);
+    color: inherit;
+    box-shadow: var(--shadow-z2);
+}
+
 .icon-button {
     padding: 12px;
-    margin: 0;
 }
 
 .icon {
@@ -55,14 +62,14 @@ button {
     height: 56px;
     border-radius: 50%;
     color: var(--secondary-text-color);
-    background-color: var(--surface-color);
+    background-color: var(--accent-color, --surface-color);
     box-shadow: var(--shadow-z6);
     transition-property: box-shadow;
     transition-duration: 195ms;
     transition-timing-function: var(--standard-curve);
 }
 
-.fab:focus-visible {
+.fab[class~=pressed] {
     transition-duration: 225ms;
     box-shadow: var(--shadow-z12);
 }
@@ -71,16 +78,14 @@ button {
   主题
 \*------------------------------------*/
 
-@media (prefers-color-scheme: light) {
-    .fab::after {
-        border-top-color: rgba(255, 255, 255, 0.4);
-        border-bottom-color: rgba(33, 33, 33, 0.1);
-    }
+.fab::after, .text-button[class~=contained]::after {
+    border-top-color: var(--surface-hint-color, rgba(255, 255, 255, 0.4));
+    border-bottom-color: var(--surface-shade-color, rgba(33, 33, 33, 0.1));
 }
 
 @media (prefers-color-scheme: dark) {
-    .fab::after {
-        border-top-color: rgba(255, 255, 255, 0.2);
-        border-bottom-color: rgba(0, 0, 0, 0.2);
+    .fab, .text-button[class~=contained] {
+        --surface-hint-color: rgba(255, 255, 255, 0.2);
+        --surface-shade-color: rgba(0, 0, 0, 0.2);
     }
 }

@@ -12,6 +12,7 @@
     justify-content: center;
     background-color: rgba(0, 0, 0, 0.4);
     padding: 24px 40px;
+    pointer-events: auto;
 }
 
 .dialog {
@@ -23,6 +24,11 @@
     overflow: hidden;
     background-color: var(--dialog-background-color);
     box-shadow: var(--shadow-z24);
+}
+
+.dialog::after {
+    border-top-color: var(--surface-hint-color, rgba(255, 255, 255, 0.4));
+    border-bottom-color: var(--surface-shade-color, rgba(33, 33, 33, 0.1));
 }
 
 .dialog .title {
@@ -76,15 +82,12 @@
 .dialog .actions {
     position: relative;
     height: 36px;
-    padding: 8px 0;
+    padding: 8px;
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
+    column-gap: 8px;
     box-sizing: content-box;
-}
-
-.dialog .actions .text-button {
-    --states-base-color: var(--accent-color);
 }
 
 .dialog[scrolled] .actions::after, .dialog[scrolled=start] .actions::after {
@@ -117,18 +120,14 @@
     :root {
         --dialog-background-color: #ffffff;
     }
-    .dialog::after {
-        border-top-color: rgba(255, 255, 255, 0.4);
-        border-bottom-color: rgba(33, 33, 33, 0.1);
-    }
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
         --dialog-background-color: #424242;
     }
-    .dialog::after {
-        border-top-color: rgba(255, 255, 255, 0.2);
-        border-bottom-color: rgba(0, 0, 0, 0.2);
+    .dialog {
+        --surface-hint-color: rgba(255, 255, 255, 0.2);
+        --surface-shade-color: rgba(0, 0, 0, 0.2);
     }
 }

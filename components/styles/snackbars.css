@@ -1,0 +1,380 @@
+/*------------------------------------*\
+  模拟器
+\*------------------------------------*/
+
+.diagram {
+    --accent-color: #4caf50;
+    height: 240px;
+    justify-content: center;
+    padding: 24px;
+}
+
+.diagram .snackbar {
+    position: relative;
+    border-radius: 2px;
+}
+
+#contains-icon .snackbar span:first-of-type {
+    padding: 8px;
+}
+
+#contains-icon .snackbar p {
+    padding-left: 16px;
+}
+
+#snackbar-dismissive-action .diagram {
+    --accent-color: #f9a825;
+}
+
+#multiple-actions {
+    grid-column-start: max(1, calc(var(--max-block) - 1));
+}
+
+#multiple-actions .diagram, #filled-button .diagram {
+    --accent-color: #FF8A80;
+}
+
+#filled-button .diagram button {
+    --surface-hint-color: rgba(255, 255, 255, 0.2);
+    --surface-shade-color: rgba(191, 54, 12, 0.2);
+    color: rgba(0, 0, 0, 0.87);
+}
+
+#move-fab>.playing {
+    animation-duration: 4s;
+}
+
+#move-fab>.playing .expanded .secondary button:first-of-type::before {
+    --states-parameter: 2;
+    animation-name: moveFAB111, moveFAB112;
+    animation-duration: 225ms, 195ms;
+    animation-delay: 0.75s, 0.975s;
+    animation-timing-function: linear;
+    animation-fill-mode: none;
+}
+
+#move-fab>.playing .snackbar button::before {
+    animation-name: moveFAB111, moveFAB112;
+    animation-duration: 225ms, 195ms;
+    animation-delay: 2.75s, 2.975s;
+    animation-timing-function: linear;
+    animation-fill-mode: none;
+}
+
+#move-fab>.playing .alarm:first-child {
+    animation-name: moveFAB21, moveFAB33;
+    animation-duration: 350ms, 375ms;
+    animation-delay: 1s, 3s;
+    animation-timing-function: var(--standard-curve);
+    animation-fill-mode: both, forwards;
+}
+
+#move-fab>.playing .snackbar {
+    animation-name: moveFAB22, moveFAB31;
+    animation-duration: 250ms;
+    animation-delay: 1s, 3s;
+    animation-timing-function: var(--standard-curve);
+    animation-fill-mode: forwards;
+}
+
+#move-fab>.playing .fab {
+    animation-name: moveFAB23, moveFAB32;
+    animation-duration: 250ms;
+    animation-delay: 1s, 3s;
+    animation-timing-function: var(--standard-curve);
+    animation-fill-mode: forwards;
+}
+
+@keyframes moveFAB111 {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: calc(0.04 * var(--states-parameter, 1));
+    }
+}
+
+@keyframes moveFAB112 {
+    0% {
+        opacity: calc(0.04 * var(--states-parameter, 1));
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes moveFAB21 {
+    0% {
+        height: 352px;
+        opacity: 1;
+    }
+    75% {
+        opacity: 0;
+    }
+    100% {
+        height: 0px;
+        opacity: 0;
+    }
+}
+
+@keyframes moveFAB22 {
+    0% {
+        transform: translateY(0px);
+        visibility: hidden;
+    }
+    100% {
+        transform: translateY(-48px);
+        visibility: visible;
+    }
+}
+
+@keyframes moveFAB23 {
+    0% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(-48px);
+    }
+}
+
+@keyframes moveFAB31 {
+    0% {
+        transform: translateY(-48px);
+        visibility: visible;
+    }
+    100% {
+        transform: translateY(0px);
+        visibility: hidden;
+    }
+}
+
+@keyframes moveFAB32 {
+    0% {
+        transform: translateY(-48px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes moveFAB33 {
+    0% {
+        height: 0px;
+        opacity: 0;
+    }
+    15% {
+        opacity: 0;
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        height: 352px;
+        opacity: 1;
+    }
+}
+
+#block-fab .surfaces .start {
+    height: 120px;
+}
+
+#block-fab .surfaces .center {
+    height: 72px;
+}
+
+#block-fab .surfaces .end {
+    flex-grow: 1;
+}
+
+#block-fab .actions>div {
+    height: 72px;
+    top: 120px;
+}
+
+#block-fab>.playing {
+    animation-duration: 5s;
+}
+
+#block-fab>.playing .group li:nth-of-type(5) {
+    animation-name: blockFAB21, blockFAB43;
+    animation-duration: 350ms, 400ms;
+    animation-delay: 0.75s, 3s;
+    animation-timing-function: var(--acceleration-curve), var(--standard-curve);
+    animation-fill-mode: forwards;
+}
+
+#block-fab>.playing .group li:nth-of-type(4) {
+    animation-name: blockFAB21, blockFAB31, blockFAB41;
+    animation-duration: 350ms, 300ms, 400ms;
+    animation-delay: 0.75s, 1.1s, 3s;
+    animation-timing-function: var(--acceleration-curve), var(--standard-curve), var(--standard-curve);
+    animation-fill-mode: forwards;
+}
+
+#block-fab>.playing .group li:nth-of-type(4)::before {
+    animation-name: blockFAB111, blockFAB112;
+    animation-duration: 225ms, 195ms;
+    animation-delay: 0.5s, 0.85s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+#block-fab>.playing .surfaces .center {
+    animation-name: blockFAB21, blockFAB31, blockFAB42;
+    animation-duration: 350ms, 300ms, 400ms;
+    animation-delay: 0.75s, 1.1s, 3s;
+    animation-timing-function: var(--acceleration-curve), var(--standard-curve), var(--standard-curve);
+    animation-fill-mode: forwards;
+}
+
+#block-fab>.playing .actions div[class~=right] {
+    animation-name: blockFAB45;
+    animation-duration: 1s;
+    animation-delay: 3s;
+    animation-fill-mode: forwards;
+}
+
+#block-fab>.playing .snackbar {
+    animation-name: blockFAB32, blockFAB44;
+    animation-duration: 250ms;
+    animation-delay: 1.1s, 3s;
+    animation-timing-function: var(--standard-curve);
+    animation-fill-mode: forwards;
+}
+
+#block-fab>.playing .snackbar button::before {
+    animation-name: blockFAB111, blockFAB112;
+    animation-duration: 225ms, 195ms;
+    animation-delay: 2.75s, 2.975s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes blockFAB111 {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: calc(0.04 * var(--states-parameter, 1));
+    }
+}
+
+@keyframes blockFAB112 {
+    0% {
+        opacity: calc(0.04 * var(--states-parameter, 1));
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes blockFAB21 {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes blockFAB31 {
+    0% {
+        height: 72px;
+    }
+    100% {
+        height: 0px;
+    }
+}
+
+@keyframes blockFAB32 {
+    0% {
+        transform: translateY(0px);
+        visibility: hidden;
+    }
+    100% {
+        transform: translateY(-48px);
+        visibility: visible;
+    }
+}
+
+@keyframes blockFAB41 {
+    0% {
+        height: 0px;
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    40% {
+        opacity: 0;
+    }
+    100% {
+        height: 72px;
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+@keyframes blockFAB42 {
+    0% {
+        height: 0px;
+        transform: translateX(100%);
+    }
+    100% {
+        height: 72px;
+        transform: translateX(0%);
+    }
+}
+
+@keyframes blockFAB43 {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    40% {
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+
+@keyframes blockFAB44 {
+    0% {
+        transform: translateY(-48px);
+        visibility: visible;
+    }
+    100% {
+        transform: translateY(0px);
+        visibility: hidden;
+    }
+}
+
+@keyframes blockFAB45 {
+    0% {
+        visibility: hidden;
+    }
+    100% {
+        visibility: hidden;
+    }
+}
+
+/*------------------------------------*\
+  主题
+\*------------------------------------*/
+
+:root {
+    --primary-color: #3949AB;
+}
+
+@media (prefers-color-scheme: dark) {
+    .CMD-drawer, .content-body {
+        --primary-color: #9FA8DA;
+    }
+    .diagram {
+        --accent-color: #90CAF9;
+    }
+}
+
+.CMD-content>.app-bar>button, footer {
+    --states-parameter: 2;
+}

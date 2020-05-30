@@ -1,24 +1,10 @@
-:root {
-    --states-overlay-level: unset;
-    --hover-alpha: 0.04;
-    --focus-alpha: 0.12;
-    --activate-alpha: 0.12;
-    --ripple-foreground-alpha: 0.16;
-    --dragged-alpha: 0.08;
-    --hover-parameter: 0;
-    --focus-parameter: 0;
-    --activate-parameter: 0;
-    --ripple-background-parameter: 0;
-    --dragged-parameter: 0;
-}
-
 /*------------------------------------*\
   状态
 \*------------------------------------*/
 
 *[states]::before, button::before {
     content: "";
-    z-index: var(--states-overlay-level);
+    z-index: var(--states-overlay-level, unset);
     position: absolute;
     top: 0;
     left: 0;
@@ -27,16 +13,22 @@
     border-radius: inherit;
     pointer-events: none;
     background-color: var(--states-base-color);
-    opacity: calc(var(--hover-alpha) * var(--hover-parameter) + var(--focus-alpha) * var(--focus-parameter) + var(--activate-alpha) * var(--activate-parameter) + var(--hover-alpha) * var(--ripple-background-parameter) + var(--dragged-alpha) * var(--dragged-parameter));
+    opacity: calc((0.04 * var(--hover-parameter, 0) + 0.12 * var(--focus-parameter, 0) + 0.12 * var(--activate-parameter, 0) + 0.04 * var(--ripple-background-parameter, 0) + 0.08 * var(--dragged-parameter, 0)) * var(--states-parameter, 1));
     transition-property: opacity;
     transition-duration: 195ms;
     transition-timing-function: linear;
+}
+
+.unbounded {
+    overflow: visible;
 }
 
 .unbounded::before {
     top: unset;
     left: unset;
     border-radius: 50%;
+    min-width: 48px;
+    min-height: 48px;
 }
 
 *:hover::before, *:focus-visible::before, .hovered, .focused {
@@ -53,7 +45,7 @@
     --focus-parameter: 1;
 }
 
-.activated {
+.activated:not(.tab-bar button) {
     --activate-parameter: 1;
 }
 
@@ -93,7 +85,11 @@
 }
 
 .unbounded>.ripples {
+    top: unset;
+    left: unset;
     overflow: visible;
+    min-width: 48px;
+    min-height: 48px;
 }
 
 .ripples .foreground {
@@ -118,7 +114,7 @@
 
 @keyframes rippleForegroundFadeOut {
     0% {
-        opacity: var(--ripple-foreground-alpha);
+        opacity: var(--ripple-foreground-alpha, 0.16);
     }
     100% {
         opacity: 0;
@@ -129,9 +125,9 @@
   特别修改
 \*------------------------------------*/
 
-.text-button .ripples .foreground {
-    width: min(calc(var(--diameter) * 2), 700px);
-    height: min(calc(var(--diameter) * 2), 700px);
+button:not(.unbounded) .ripples .foreground {
+    width: min(calc(var(--diameter) * min(var(--ripple-expand-parameter), 1.5)), 700px);
+    height: min(calc(var(--diameter) * min(var(--ripple-expand-parameter), 1.5)), 700px);
 }
 
 /*------------------------------------*\

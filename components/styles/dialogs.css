@@ -36,10 +36,7 @@
 }
 
 #disable-action .application>.list[one] {
-    --hover-alpha: 0.08;
-    --focus-alpha: 0.24;
-    --ripple-foreground-alpha: 0.32;
-    --dragged-alpha: 0.16;
+    --states-parameter: 2;
     background-color: #455A64;
 }
 
@@ -62,7 +59,7 @@
 }
 
 #third-action .dialog button:last-of-type {
-    margin: 0 auto 0 16px;
+    margin: 0 auto 0 8px;
 }
 
 #clear-alert-actions .content, #unclear-alert-actions .content {
@@ -122,12 +119,6 @@
     }
 }
 
-main>.app-bar {
-    color: var(--primary-text-color);
-}
-
 .CMD-content>.app-bar>button, footer {
-    --hover-alpha: 0.08;
-    --focus-alpha: 0.24;
-    --ripple-foreground-alpha: 0.32;
+    --states-parameter: 2;
 }

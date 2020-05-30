@@ -51,6 +51,7 @@ let containerHeight;
 let containerRadius;
 let rippleRadius;
 let rippleExpandDuration;
+let rippleExpandParameter
 let rippleMoveParameter;
 
 function rippleForeground(element, event) {
@@ -69,7 +70,7 @@ function rippleForeground(element, event) {
     let div = document.createElement('div');
     div.className = 'foreground';
     let nodes = element.querySelectorAll('.ripples');
-    nodes[nodes.length - 1].appendChild(div);//回滚问题
+    nodes[nodes.length - 1].appendChild(div);
     let lastRippleForeground = nodes[nodes.length - 1].querySelector('div:last-child');
 
     if (event.type == "touchstart") {
@@ -83,6 +84,8 @@ function rippleForeground(element, event) {
 
     if (element.classList.contains('unbounded') !== true) {
         rippleRadius = containerRadius * 0.9 + containerRadius * Math.random() * 0.1;
+        rippleExpandParameter = Math.hypot(rippleOffsetX, rippleOffsetY) / containerRadius + 1;
+        lastRippleForeground.style.setProperty('--ripple-expand-parameter', rippleExpandParameter);
         lastRippleForeground.style.setProperty('--diameter', rippleRadius * 2 + 'px');
     }
 
@@ -108,6 +111,59 @@ function rippleForeground(element, event) {
     lastRippleForeground.addEventListener('animationend', (event) => {
         event.target.remove();
     });
+}
+
+/*浮动操作按钮*/
+
+document.querySelectorAll('.fab').forEach((element) => {
+    element.addEventListener('mousedown', (event) => {
+        if (event.button !== 0) {
+            return;
+        }
+        element.classList.add('pressed');
+    });
+    element.addEventListener('mouseup', (event) => {
+        element.classList.remove('pressed');
+    });
+});
+
+/*复选框*/
+
+document.querySelectorAll('.checkbox input').forEach((element) => {
+    element.addEventListener('mouseenter', () => {
+        element.parentNode.classList.add('hovered');
+    });
+    element.addEventListener('mouseleave', () => {
+        element.parentNode.classList.remove('hovered');
+    });
+    element.addEventListener('focus', () => {
+        element.parentNode.classList.add('focused');
+    });
+    element.addEventListener('blur', () => {
+        element.parentNode.classList.remove('focused');
+    });
+    element.addEventListener('keyup', (event) => {
+        if (event.key !== " " && event.key !== "Enter") {
+            return;
+        }
+        checkboxSwitch(element);
+    });
+    element.addEventListener('click', (event) => {
+        if (event.button !== 0) {
+            return;
+        }
+        checkboxSwitch(element);
+    });
+});
+
+function checkboxSwitch(element) {
+    if (element.parentNode.classList.contains('checked')) {
+        element.parentNode.classList.add('unchecked', 'to-unchecked');
+        element.parentNode.classList.remove('checked', 'to-checked');
+    } else {
+        element.parentNode.classList.add('checked', 'to-checked');
+        element.parentNode.classList.remove('unchecked', 'to-unchecked');
+    }
 }
 
 /*单选按钮*/
@@ -197,6 +253,15 @@ document.querySelectorAll('.switch input').forEach((element) => {
     });
     element.addEventListener('mouseup', () => {
         switchElement.removeEventListener('mousemove', switchDrag);
+        if (switchElement.classList.contains('dragged') == false) {
+            if (switchElement.classList.contains('on')) {
+                switchElement.classList.remove('on');
+                swichThumbElement.setAttribute("aria-checked", "false");
+            } else {
+                switchElement.classList.add('on');
+                swichThumbElement.setAttribute("aria-checked", "true");
+            }
+        }
         switchElement.classList.remove('dragged');
     });
 });
@@ -238,5 +303,36 @@ document.querySelectorAll('.text-field input[type=text]').forEach((element) => {
     });
     element.addEventListener('click', (event) => {
         element.parentNode.style.setProperty('--origin-x', event.offsetX + 'px');
+    });
+});
+
+/*标签栏*/
+
+document.querySelectorAll('.tab-bar button').forEach((element) => {
+    element.addEventListener('click', () => {
+        if (element.classList.contains('activated')) {
+            return;
+        }
+
+        if (element.parentNode.querySelector('.previous-activated') !== null) {
+            element.parentNode.querySelector('.previous-activated').classList.remove('previous-activated');
+        }
+
+        element.parentNode.classList.remove('left', 'right');
+        previousActivatedElement = element.parentNode.querySelector('.activated');
+
+
+        if (previousActivatedElement.compareDocumentPosition(element) == 2) {
+            element.parentNode.classList.add('left');
+        } else {
+            element.parentNode.classList.add('right');
+        }
+        previousActivatedElement.classList.add('previous-activated');
+        previousActivatedElement.classList.remove('activated');
+        element.classList.add('activated');
+
+        previousActivatedElement.addEventListener('animationend', (event) => {
+            event.target.classList.remove('previous-activated');
+        });
     });
 });

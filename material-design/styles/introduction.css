@@ -3,9 +3,7 @@
 }
 
 button, footer {
-    --hover-alpha: 0.08;
-    --focus-alpha: 0.24;
-    --ripple-foreground-alpha: 0.32;
+    --states-parameter: 2;
 }
 
 footer .right {
@@ -33,33 +31,33 @@ footer .right {
     align-items: stretch;
     justify-content: center;
     padding: 60px 0;
+    gap: 16px;
 }
 
 #goal-system .surface {
     background-color: #FAFAFA;
     border-radius: 2px;
-    margin: 0 8px;
     box-shadow: var(--shadow-z2);
 }
 
 #goal-system .surface:nth-child(1) {
-    width: 24px;
+    inline-size: 24px;
 }
 
 #goal-system .surface:nth-child(2) {
-    width: 48px;
+    inline-size: 48px;
 }
 
 #goal-system .surface:nth-child(3) {
-    width: 80px;
+    inline-size: 80px;
 }
 
 #goal-system .surface:nth-child(4) {
-    width: 136px;
+    inline-size: 136px;
 }
 
 #goal-system .surface:nth-child(5) {
-    width: 288px;
+    inline-size: 288px;
 }
 
 #principles-metaphor {
@@ -80,12 +78,8 @@ footer .right {
     }
     #goal-system {
         height: 480px;
-        flex-direction: column;
+        writing-mode: vertical-rl;
         padding: 0 36px;
-    }
-    #goal-system .surface {
-        width: auto!important;
-        margin: 8px 0;
     }
     #goal-system .surface:nth-child(1) {
         height: 12px;

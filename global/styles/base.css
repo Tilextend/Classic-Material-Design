@@ -1,3 +1,15 @@
+@import url("./app-bars.css");
+@import url("./buttons.css");
+@import url("./dialogs.css");
+@import url("./lists.css");
+@import url("./pickers.css");
+@import url("./progress-indicators.css");
+@import url("./selection-controls.css");
+@import url("./snackbars.css");
+@import url("./states.css");
+@import url("./tabs.css");
+@import url("./text-fields.css");
+@import url("./typography.css");
 :root {
     --shadow-z0: 0px 0px 0px 0px rgba(0, 0, 0, 0.2), 0px 0px 0px 0px rgba(0, 0, 0, 0.14), 0px 0px 0px 0px rgba(0, 0, 0, 0.12);
     --shadow-z1: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
@@ -24,10 +36,16 @@
     --shadow-z22: 0px 10px 14px -6px rgba(0, 0, 0, 0.2), 0px 22px 35px 3px rgba(0, 0, 0, 0.14), 0px 8px 42px 7px rgba(0, 0, 0, 0.12);
     --shadow-z23: 0px 11px 14px -7px rgba(0, 0, 0, 0.2), 0px 23px 36px 3px rgba(0, 0, 0, 0.14), 0px 9px 44px 8px rgba(0, 0, 0, 0.12);
     --shadow-z24: 0px 11px 15px -7px rgba(0, 0, 0, 0.2), 0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0, 0, 0, 0.12);
+    --standard-curve: cubic-bezier(0.4, 0.0, 0.2, 1);
+    --deceleration-curve: cubic-bezier(0.0, 0.0, 0.2, 1);
+    --acceleration-curve: cubic-bezier(0.4, 0.0, 1, 1);
+    --sharp-curve: cubic-bezier(0.4, 0.0, 0.6, 1);
 }
 
-.dialog::after, .fab::after {
+.dialog::after, .fab::after, .text-button[class~=contained]::after, .snackbar::after {
     content: "";
+    top: 0;
+    left: 0;
     position: absolute;
     width: 100%;
     height: calc(100% - 2px);

@@ -9,6 +9,7 @@
     align-items: center;
     grid-template-columns: auto;
     color: var(--secondary-text-color);
+    white-space: nowrap;
 }
 
 .list[one] {
@@ -24,41 +25,26 @@
 }
 
 .list .primary-text {
-    color: var(--primary-text-color);
-}
-
-.list[two] .primary-text {
+    justify-self: stretch;
     overflow: hidden;
-    white-space: nowrap;
     text-overflow: ellipsis;
     color: var(--primary-text-color);
 }
 
-.list[two] .secondary-text {
+.list[one] .primary-text {
+    line-height: 1.4375rem;
+}
+
+.list .secondary-text {
     display: block;
     overflow: hidden;
-    text-overflow: ellipsis;
+    text-overflow: inherit;
     margin-top: 0.0625rem;
     color: var(--secondary-text-color);
 }
 
 .list .meta {
     justify-self: flex-end;
-}
-
-.avatar {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-}
-
-.avatar::after {
-    content: "";
-    width: calc(100% - 1px);
-    height: calc(100% - 1px);
-    border: 1px solid var(--theme-base-color);
-    opacity: 0.12;
-    pointer-events: none;
 }
 
 /*------------------------------------*\
@@ -111,4 +97,30 @@
     align-items: center;
     padding: 0 var(--keyline);
     color: var(--accent-color);
+}
+
+/*------------------------------------*\
+  特别修改
+\*------------------------------------*/
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+}
+
+.avatar::after {
+    content: "";
+    width: calc(100% - 1px);
+    height: calc(100% - 1px);
+    border: 1px solid var(--states-base-color);
+    border-radius: inherit;
+    opacity: 0.12;
+    pointer-events: none;
+}
+
+.avatar[character=ali-connors] {
+    background-size: 60px auto;
+    background-position: -15px -13px;
 }
