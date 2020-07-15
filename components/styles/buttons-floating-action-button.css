@@ -1,0 +1,534 @@
+/*------------------------------------*\
+  模拟器
+\*------------------------------------*/
+
+.diagram .fab {
+    position: relative;
+}
+
+#right-fab-actions, #wrong-fab-actions {
+    grid-column-end: span clamp(1, var(--max-block), 2);
+}
+
+#right-fab-actions .diagram, #wrong-fab-actions .diagram {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    justify-items: center;
+    padding: var(--keyline);
+}
+
+#right-fab-actions .diagram {
+    height: 240px;
+}
+
+#wrong-fab-actions .diagram {
+    height: 360px;
+}
+
+#wrong-fab-actions button:nth-last-of-type(2) {
+    overflow: visible;
+}
+
+#wrong-fab-actions .badge {
+    z-index: 2;
+    right: -4px;
+    top: -4px;
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    background-color: #F44336;
+    border-radius: 50%;
+    color: #ffffff;
+    pointer-events: none;
+}
+
+#multiple-fabs {
+    grid-column-start: max(1, calc(var(--max-block) - 1));
+}
+
+#multiple-fabs .contact-card li {
+    padding-right: calc(var(--keyline) - 12px);
+}
+
+#multiple-fabs .fabs-wrapper {
+    top: 252px;
+    right: 0;
+    position: absolute;
+    width: calc(6 * 64px);
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+}
+
+#multiple-fabs .application .fabs-wrapper .fab {
+    position: relative;
+    color: var(--primary-text-color);
+    box-shadow: var(--shadow-z4);
+}
+
+#fabs-in-transitions>.playing {
+    animation-duration: 12s;
+}
+
+#fabs-in-transitions>.playing .dialpad .input>span {
+    animation-name: fabsInTransitions52;
+    animation-duration: s;
+    animation-delay: 10s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+#fabs-in-transitions>.playing .dialpad .input>span::after {
+    animation-name: fabsInTransitions121, fabsInTransitions122, fabsInTransitions123, fabsInTransitions21;
+    animation-duration: 1s, 0.5s, 0.4s, 0.25s;
+    animation-delay: 1s, 2s, 2.5s, 2.9s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+#fabs-in-transitions>.playing .dialpad .input button:first-of-type {
+    animation-name: fabsInTransitions14, fabsInTransitions52;
+    animation-duration: 225ms, 1s;
+    animation-delay: 1s, 10s;
+    animation-timing-function: var(--standard-curve);
+    animation-fill-mode: forwards;
+}
+
+#fabs-in-transitions>.playing .dialpad li:nth-of-type(5)::before {
+    animation-name: fabsInTransitions111, fabsInTransitions112, fabsInTransitions111, fabsInTransitions112, fabsInTransitions111, fabsInTransitions112;
+    animation-duration: 225ms, 195ms, 225ms, 195ms, 225ms, 195ms;
+    animation-delay: 1s, 1.225s, 2s, 2.225s, 2.5s, 2.725s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+#fabs-in-transitions>.playing .dialpad li:nth-of-type(6)::before {
+    animation-name: fabsInTransitions111, fabsInTransitions112;
+    animation-duration: 225ms, 195ms;
+    animation-delay: 2.9s, 3.125s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+#fabs-in-transitions>.playing .dial-list {
+    animation-name: fabsInTransitions13, fabsInTransitions53;
+    animation-duration: 225ms, 1s;
+    animation-delay: 1s, 10s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+#fabs-in-transitions>.playing .dial-list>ul .status-bar-background {
+    animation-name: fabsInTransitions14, fabsInTransitions52;
+    animation-duration: 225ms, 1s;
+    animation-delay: 1s, 10s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+#fabs-in-transitions>.playing .dial-list>ul {
+    animation-name: fabsInTransitions52;
+    animation-duration: s;
+    animation-delay: 10s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+#fabs-in-transitions>.playing .dial-list>ul li {
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+#fabs-in-transitions>.playing .dial-list>ul li strong:nth-of-type(1), #fabs-in-transitions>.playing .dial-list>ul li strong:nth-of-type(2), #fabs-in-transitions>.playing .dial-list>ul li strong:nth-of-type(3), #fabs-in-transitions>.playing .dial-list>ul li strong:nth-of-type(4) {
+    animation-name: fabsInTransitions15;
+    animation-duration: 0s;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+}
+
+#fabs-in-transitions>.playing .dial-list>ul li strong:nth-of-type(1) {
+    animation-delay: 1s;
+}
+
+#fabs-in-transitions>.playing .dial-list>ul li strong:nth-of-type(2) {
+    animation-delay: 2s;
+}
+
+#fabs-in-transitions>.playing .dial-list>ul li strong:nth-of-type(3) {
+    animation-delay: 2.5s;
+}
+
+#fabs-in-transitions>.playing .dial-list>ul li strong:nth-of-type(4) {
+    animation-delay: 2.9s;
+}
+
+#fabs-in-transitions>.playing .dial-list>ul li:nth-of-type(1) {
+    animation-name: fabsInTransitions14, fabsInTransitions22;
+    animation-duration: 225ms, 2s;
+    animation-delay: 1.15s, 2.9s;
+}
+
+#fabs-in-transitions>.playing .dial-list>ul li:nth-of-type(2) {
+    animation-name: fabsInTransitions14, fabsInTransitions22;
+    animation-duration: 225ms, 2s;
+    animation-delay: 1.17s, 2.9s;
+}
+
+#fabs-in-transitions>.playing .dial-list>ul li:nth-of-type(3) {
+    animation-name: fabsInTransitions14, fabsInTransitions14;
+    animation-duration: 225ms;
+    animation-delay: 1.19s, 2.9s;
+}
+
+#fabs-in-transitions>.playing .dial-list>ul li:nth-of-type(4) {
+    animation-name: fabsInTransitions14, fabsInTransitions22, fabsInTransitions14;
+    animation-duration: 225ms, 20ms, 225ms;
+    animation-delay: 1.21s, 2.9s, 2.92s;
+    animation-fill-mode: forwards, none, forwards;
+}
+
+#fabs-in-transitions>.playing .dial-list>ul li:nth-of-type(5) {
+    animation-name: fabsInTransitions14, fabsInTransitions22, fabsInTransitions14;
+    animation-duration: 225ms, 40ms, 225ms;
+    animation-delay: 1.23s, 2.9s, 2.94s;
+    animation-fill-mode: forwards, none, forwards;
+}
+
+#fabs-in-transitions>.playing .dial-list>ul li:nth-of-type(3)::before {
+    animation-name: fabsInTransitions111, fabsInTransitions112;
+    animation-duration: 225ms, 195ms;
+    animation-delay: 3.65s, 3.845s;
+}
+
+#fabs-in-transitions>.playing .oncall {
+    animation-name: fabsInTransitions31, fabsInTransitions51;
+    animation-duration: 400ms, 350ms;
+    animation-delay: 3.8s, 10s;
+    animation-timing-function: var(--standard-curve), var(--acceleration-curve);
+    animation-fill-mode: forwards;
+}
+
+#fabs-in-transitions>.playing .oncall .fab, #fabs-in-transitions>.playing .oncall .fab span {
+    animation-duration: 225ms, 195ms;
+    animation-delay: 4.2s, 10s;
+    animation-timing-function: var(--standard-curve);
+    animation-fill-mode: forwards;
+}
+
+#fabs-in-transitions>.playing .oncall .fab {
+    animation-name: fabsInTransitions341, fabsInTransitions541;
+}
+
+#fabs-in-transitions>.playing .oncall .fab span {
+    animation-name: fabsInTransitions342, fabsInTransitions542;
+}
+
+#fabs-in-transitions>.playing .oncall .callee {
+    animation-name: fabsInTransitions52;
+    animation-duration: 0s;
+    animation-delay: 4.1s;
+    animation-timing-function: linear;
+    animation-fill-mode: backwards;
+}
+
+#fabs-in-transitions>.playing .oncall .app-bar {
+    animation-name: fabsInTransitions321, fabsInTransitions322;
+    animation-duration: 400ms;
+    animation-delay: 3.8s, 4.1s;
+    animation-timing-function: var(--standard-curve);
+    animation-fill-mode: forwards, both;
+}
+
+#fabs-in-transitions>.playing .oncall .app-bar .info {
+    animation-name: fabsInTransitions33, fabsInTransitions42;
+    animation-duration: 225ms, 350ms;
+    animation-delay: 4.275s, 7.5s;
+    animation-timing-function: var(--standard-curve);
+    animation-fill-mode: both, forwards;
+}
+
+#fabs-in-transitions>.playing .oncall .app-bar .info span:first-of-type {
+    animation-name: fabsInTransitions411, fabsInTransitions412;
+    animation-duration: 1.5s, 350ms;
+    animation-delay: 4.5s, 7.5s;
+    animation-timing-function: linear, var(--standard-curve);
+    animation-fill-mode: forwards;
+    animation-iteration-count: 2, 1;
+}
+
+#fabs-in-transitions>.playing .oncall .app-bar .toolbar {
+    animation-name: fabsInTransitions14;
+    animation-duration: 225ms;
+    animation-delay: 4.275s;
+    animation-timing-function: var(--standard-curve);
+    animation-fill-mode: both;
+}
+
+@keyframes fabsInTransitions111 {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: calc(0.04 * var(--states-parameter, 1));
+    }
+}
+
+@keyframes fabsInTransitions112 {
+    0% {
+        opacity: calc(0.04 * var(--states-parameter, 1));
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fabsInTransitions121 {
+    0% {
+        content: '5';
+    }
+    100% {
+        content: '5';
+    }
+}
+
+@keyframes fabsInTransitions122 {
+    0% {
+        content: '55';
+    }
+    100% {
+        content: '55';
+    }
+}
+
+@keyframes fabsInTransitions123 {
+    0% {
+        content: '555';
+    }
+    100% {
+        content: '555';
+    }
+}
+
+@keyframes fabsInTransitions13 {
+    0% {
+        background-color: transparent;
+    }
+    100% {
+        background-color: var(--surface-color);
+    }
+}
+
+@keyframes fabsInTransitions14 {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fabsInTransitions15 {
+    0% {
+        font-weight: 400;
+    }
+    100% {
+        font-weight: 700;
+    }
+}
+
+@keyframes fabsInTransitions21 {
+    0% {
+        content: '5556';
+    }
+    100% {
+        content: '5556';
+    }
+}
+
+@keyframes fabsInTransitions22 {
+    0% {
+        position: absolute;
+        visibility: hidden;
+    }
+    100% {
+        position: absolute;
+        visibility: hidden;
+    }
+}
+
+@keyframes fabsInTransitions31 {
+    0% {
+        visibility: visible;
+        filter: drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.2)) drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.14)) drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.12));
+    }
+    100% {
+        visibility: visible;
+        filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.2)) drop-shadow(0px 18px 12px rgba(0, 0, 0, 0.14)) drop-shadow(0px 11px 15px rgba(0, 0, 0, 0.12));
+    }
+}
+
+@keyframes fabsInTransitions321 {
+    0% {
+        clip-path: circle(0px at 120px 60px);
+    }
+    100% {
+        clip-path: circle(819px at 120px 60px);
+    }
+}
+
+@keyframes fabsInTransitions322 {
+    0% {
+        width: 100%;
+    }
+    100% {
+        width: calc(100% - 6 * var(--increment));
+    }
+}
+
+@keyframes fabsInTransitions33 {
+    0% {
+        transform: translateX(10%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+
+@keyframes fabsInTransitions341 {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes fabsInTransitions342 {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes fabsInTransitions411 {
+    0% {
+        color: var(--primary-text-color);
+    }
+    40% {
+        color: var(--hint-text-color);
+    }
+    100% {
+        color: var(--primary-text-color);
+    }
+}
+
+@keyframes fabsInTransitions412 {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fabsInTransitions42 {
+    0% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(-38px);
+    }
+}
+
+@keyframes fabsInTransitions51 {
+    0% {
+        transform: translateY(0%);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+@keyframes fabsInTransitions52 {
+    0% {
+        visibility: hidden;
+    }
+    100% {
+        visibility: hidden;
+    }
+}
+
+@keyframes fabsInTransitions53 {
+    0% {
+        background-color: transparent;
+    }
+    100% {
+        background-color: transparent;
+    }
+}
+
+@keyframes fabsInTransitions541 {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+
+@keyframes fabsInTransitions542 {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+@media screen and (max-width:920px) {
+    #right-fab-actions .diagram {
+        height: 420px;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    #wrong-fab-actions .diagram {
+        height: 600px;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    #multiple-fabs .contacts-list {
+        display: none;
+    }
+    #multiple-fabs .fabs-wrapper {
+        top: 236px;
+    }
+}
+
+/*------------------------------------*\
+  主题
+\*------------------------------------*/
+
+:root {
+    --primary-color: #3949AB;
+}
+
+@media (prefers-color-scheme: dark) {
+    .CMD-drawer, .content-body {
+        --primary-color: #9FA8DA;
+    }
+    .diagram {
+        --accent-color: #90CAF9;
+    }
+}
+
+.CMD-content>.app-bar>button, footer {
+    --states-parameter: 2;
+}

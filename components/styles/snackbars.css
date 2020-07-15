@@ -5,7 +5,6 @@
 .diagram {
     --accent-color: #4caf50;
     height: 240px;
-    justify-content: center;
     padding: 24px;
 }
 
@@ -175,10 +174,12 @@
 }
 
 #block-fab .surfaces .start {
+    flex-grow: 0;
     height: 120px;
 }
 
 #block-fab .surfaces .center {
+    flex-grow: 0;
     height: 72px;
 }
 

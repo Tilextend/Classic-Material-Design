@@ -6,7 +6,8 @@
 }
 
 .tab-bar button {
-    flex-grow: 1;
+    flex-basis: 100%;
+    flex-shrink: initial;
     min-width: 72px;
     max-width: 264px;
     padding: 0 var(--keyline);

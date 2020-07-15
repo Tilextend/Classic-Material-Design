@@ -1,0 +1,1382 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="theme-color" content="#212121">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>质感设计 - 浮动操作按钮</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Roboto+Mono:wght@500&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="shortcut icon" href="../global/logo.svg">
+    <link rel="stylesheet" href="./styles/buttons-floating-action-button.css">
+    <link rel="stylesheet" href="../global/styles/global.css">
+    <script defer src="../global/scripts/global.js"></script>
+    <script defer src="../global/scripts/components.js"></script>
+</head>
+
+<body>
+    <div class="CMD-drawer-wrapper">
+        <aside class="CMD-drawer">
+            <figure>
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="12" />
+                    <path fill="#BDBDBD" d="M3.6,3.6h16.8v16.8H3.6V3.6z" />
+                    <path fill="#ffffff" d="M20.4,3.6L12,20.4L3.6,3.6H20.4z" />
+                </svg>
+                <figcaption class="subheading">MATERIAL DESIGN</figcaption>
+            </figure>
+            <hr class="divider horizontal">
+            <nav class="body1">
+                <span states class="body2" tabindex="0">基本原理</span>
+                <a states href="../index.html">概述</a>
+            </nav>
+            <nav class="body1">
+                <span states class="body2" tabindex="0">组件</span>
+                <a states class="activated">按钮：浮动操作按钮</a>
+                <a states href="../components/dialogs.html">对话框</a>
+                <a states href="../components/snackbars.html">条形通知</a>
+            </nav>
+        </aside>
+        <div class="divider vertical"></div>
+    </div>
+    <main class="CMD-content">
+        <div class="content-body">
+            <header>
+                <h4>按钮：浮动操作按钮</h4>
+                <p class="title">浮动操作按钮展现应用程序的主要操作。</p>
+            </header>
+            <nav class="chapter-catalogue">
+                <span class="body1">索引</span>
+                <ul class="title">
+                    <li><a href="#usage">用法</a></li>
+                    <li><a href="#behavior">行为</a></li>
+                    <li><a href="#transitions">转场</a></li>
+                    <li><a href="#specs">样式</a></li>
+                </ul>
+            </nav>
+            <article id="usage" class="horizontal">
+                <h5>用法</h5>
+                <section>
+                    <article class="body1 intro">
+                        <p>浮动操作按钮用于凸显当前界面最主要或最常用的操作，其呈现为一个悬浮的圆形按钮，内部包含一个图标。它们能进行形式多样的运动或作为其它元素运动的参照点。</p>
+                    </article>
+                </section>
+                <section>
+                    <article class="body1">
+                        <h6>类型</h6>
+                        <p>浮动操作按钮有如下两种类型：</p>
+                        <ul>
+                            <li><strong>普通浮动操作按钮</strong>适用于绝大多数情境。</li>
+                            <li><strong>迷你浮动操作按钮</strong>仅用于保持界面的视觉平衡或与其它界面元素建立视觉关联。</li>
+                        </ul>
+                    </article>
+                    <div id="default-fab" class="diagram-wrapper" screen="mobile">
+                        <div class="simulator" inbox="main">
+                            <div class="application">
+                                <div class="app-bar light">
+                                    <div class="start">
+                                        <button class="icon-button unbounded" tabindex="-1">
+                                            <span class="material-icons">menu</span>
+                                        </button>
+                                        <span class="title">Inbox</span>
+                                    </div>
+                                    <div class="end">
+                                        <button class="icon-button unbounded" tabindex="-1">
+                                            <span class="material-icons">search</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <ul class="group">
+                                    <div class="surfaces">
+                                        <div class="start"></div>
+                                        <div class="center"></div>
+                                        <div class="end"></div>
+                                    </div>
+                                    <li class="subheader">
+                                        <span class="body2">今天</span>
+                                    </li>
+                                    <li class="list" two>
+                                        <span class="avatar" character="ali-connors"
+                                            style="background-image: url(../resources/faces/ali_connors.png);"></span>
+                                        <span class="primary-text subheading">Brunch this weekend?
+                                            <p class="secondary-text body1">Ali Connors
+                                                <span> — I’ll be in your neighborhood doing errands this weekend if you
+                                                    want to meet up for brunch. Let me know.</span>
+                                            </p>
+                                        </span>
+                                    </li>
+                                    <li class="divider horizontal"></li>
+                                    <li class="list" two>
+                                        <span class="avatar"
+                                            style="background-image: url(../resources/faces/jonathan_lee.jpg);"></span>
+                                        <span class="primary-text subheading">Summer BBQ
+                                            <p class="secondary-text body1">至 Alex, Scott, Jennifer
+                                                <span> — Wish I could come, but I’m out of town this weekend.</span>
+                                            </p>
+                                        </span>
+                                    </li>
+                                    <li class="divider horizontal"></li>
+                                    <li class="list" two>
+                                        <span class="avatar"
+                                            style="background-image: url(../resources/faces/sandra_adams.jpg);"></span>
+                                        <span class="primary-text subheading">Oui oui
+                                            <p class="secondary-text body1">Sandra Adams
+                                                <span> — Do you have Paris recommendations? Have you ever been? (I’m
+                                                    sure I’ve asked you this…</span>
+                                            </p>
+                                        </span>
+                                    </li>
+                                    <li class="divider horizontal"></li>
+                                    <li class="list" two>
+                                        <span class="avatar"
+                                            style="background-image: url(../resources/faces/trevor_hansen.jpg);"></span>
+                                        <span class="primary-text subheading">Birthday gift
+                                            <p class="secondary-text body1">Trevor Hansen
+                                                <span> — Have any ideas about what to get Heidi for her birthday?</span>
+                                            </p>
+                                        </span>
+                                    </li>
+                                    <li class="divider horizontal"></li>
+                                    <li class="list" two>
+                                        <span class="avatar"
+                                            style="background-image: url(../resources/faces/britta_holt.jpg);"></span>
+                                        <span class="primary-text subheading">Recipe to try
+                                            <p class="secondary-text body1">Britta Holt
+                                                <span> — We should eat this: Grated Squash, Corn and Tomatillo
+                                                    tacos.</span>
+                                            </p>
+                                        </span>
+                                    </li>
+                                    <li class="divider horizontal"></li>
+                                    <li class="list" two>
+                                        <span class="avatar"
+                                            style="background-image: url(../resources/faces/david_park.jpg);"></span>
+                                        <span class="primary-text subheading">Giants game
+                                            <p class="secondary-text body1">David Park
+                                                <span> — Any interest in seeing the Giants play next month?</span>
+                                            </p>
+                                        </span>
+                                    </li>
+                                    <li class="divider horizontal"></li>
+                                    <li class="list" two>
+                                        <span class="avatar"
+                                            style="background-image: url(../resources/faces/scott_masterson.png);"></span>
+                                        <span class="primary-text subheading">Montauk weekend
+                                            <p class="secondary-text body1">Scott Masterson
+                                                <span> — Here are the shots I mentioned from this weekend’s trip.</span>
+                                            </p>
+                                        </span>
+                                    </li>
+                                </ul>
+                                <button class="fab light" tabindex="-1">
+                                    <span class="material-icons">add</span>
+                                </button>
+                                <div class="system-layer">
+                                    <div class="status-bar-background"></div>
+                                    <div class="navigation-bar-background"></div>
+                                </div>
+                            </div>
+                            <div class="system-bars">
+                                <div class="status-bar">
+                                    <div class="system">
+                                        <span id="wifi" class="material-icons">signal_wifi_4_bar</span>
+                                        <span id="signal" class="material-icons">signal_cellular_4_bar</span>
+                                        <span id="battery" class="extra-material-icons">system_battery</span>
+                                        <span id="time" class="body2">12:30</span>
+                                    </div>
+                                </div>
+                                <div class="navigation-bar">
+                                    <span id="back" class="extra-material-icons">system_back</span>
+                                    <span id="home" class="extra-material-icons">system_home</span>
+                                    <span id="recent" class="extra-material-icons">system_recent</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="body1">普通浮动操作按钮。</p>
+                    </div>
+                    <div id="mini-fab" class="diagram-wrapper" screen="mobile">
+                        <div class="simulator" files="main">
+                            <div class="application">
+                                <ul>
+                                    <li class="subheader">
+                                        <span class="body2">文件夹</span>
+                                    </li>
+                                    <li class="list" two>
+                                        <div class="thumbnail">
+                                            <span class="material-icons">folder</span>
+                                        </div>
+                                        <span class="primary-text subheading">照片
+                                            <span class="secondary-text body1">2014年1月9日</span>
+                                        </span>
+                                        <button class="icon-button unbounded meta" tabindex="-1">
+                                            <span class="material-icons">info</span>
+                                            <div class="ripples"></div>
+                                        </button>
+                                    </li>
+                                    <li class="list" two>
+                                        <div class="thumbnail">
+                                            <span class="material-icons">folder</span>
+                                        </div>
+                                        <span class="primary-text subheading">食谱
+                                            <span class="secondary-text body1">2014年1月17日</span>
+                                        </span>
+                                        <button class="icon-button unbounded meta" tabindex="-1">
+                                            <span class="material-icons">info</span>
+                                            <div class="ripples"></div>
+                                        </button>
+                                    </li>
+                                    <li class="list" two>
+                                        <div class="thumbnail">
+                                            <span class="material-icons">folder</span>
+                                        </div>
+                                        <span class="primary-text subheading">工作
+                                            <span class="secondary-text body1">2014年1月28日</span>
+                                        </span>
+                                        <button class="icon-button unbounded meta" tabindex="-1">
+                                            <span class="material-icons">info</span>
+                                            <div class="ripples"></div>
+                                        </button>
+                                    </li>
+                                </ul>
+                                <div class="divider horizontal"></div>
+                                <ul>
+                                    <li class="subheader">
+                                        <span class="body2">文件</span>
+                                    </li>
+                                    <li class="list" two>
+                                        <div class="thumbnail">
+                                            <span class="material-icons">article</span>
+                                        </div>
+                                        <span class="primary-text subheading">假期游记
+                                            <span class="secondary-text body1">2014年1月20日</span>
+                                        </span>
+                                        <button class="icon-button unbounded meta" tabindex="-1">
+                                            <span class="material-icons">info</span>
+                                            <div class="ripples"></div>
+                                        </button>
+                                    </li>
+                                    <li class="list" two>
+                                        <div class="thumbnail">
+                                            <span class="extra-material-icons">drive_presentation</span>
+                                        </div>
+                                        <span class="primary-text subheading">厨房改建
+                                            <span class="secondary-text body1">2014年1月10日</span>
+                                        </span>
+                                        <button class="icon-button unbounded meta" tabindex="-1">
+                                            <span class="material-icons">info</span>
+                                            <div class="ripples"></div>
+                                        </button>
+                                    </li>
+                                </ul>
+                                <div class="app-bar prominent light">
+                                    <div class="start">
+                                        <button class="icon-button unbounded" tabindex="-1">
+                                            <span class="material-icons">menu</span>
+                                        </button>
+                                    </div>
+                                    <div class="end">
+                                        <button class="icon-button unbounded" tabindex="-1">
+                                            <span class="material-icons">view_module</span>
+                                        </button>
+                                        <button class="icon-button unbounded" tabindex="-1">
+                                            <span class="material-icons">search</span>
+                                        </button>
+                                    </div>
+                                    <div class="extra">
+                                        <span class="headline">我的文件</span>
+                                    </div>
+                                </div>
+                                <button class="fab mini light" tabindex="-1">
+                                    <span class="material-icons">add</span>
+                                </button>
+                                <div class="system-layer">
+                                    <div class="status-bar-background"></div>
+                                    <div class="navigation-bar-background"></div>
+                                </div>
+                            </div>
+                            <div class="system-bars">
+                                <div class="status-bar">
+                                    <div class="system">
+                                        <span id="wifi" class="material-icons">signal_wifi_4_bar</span>
+                                        <span id="signal" class="material-icons">signal_cellular_4_bar</span>
+                                        <span id="battery" class="extra-material-icons">system_battery</span>
+                                        <span id="time" class="body2">12:30</span>
+                                    </div>
+                                </div>
+                                <div class="navigation-bar">
+                                    <span id="back" class="extra-material-icons">system_back</span>
+                                    <span id="home" class="extra-material-icons">system_home</span>
+                                    <span id="recent" class="extra-material-icons">system_recent</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="body1">迷你浮动操作按钮。</p>
+                    </div>
+                </section>
+                <section>
+                    <article class="body1">
+                        <h6>数量</h6>
+                        <p>并不是每个界面都需要添加浮动操作按钮，使用浮动操作按钮与否取决于该界面最主要或最常用的操作。</p>
+                        <p>一般情况下，一个界面中最多使用一个浮动操作按钮，以保持合理的视觉与信息层级。</p>
+                    </article>
+                    <div id="no-fab" class="diagram-wrapper" screen="mobile">
+                        <div class="simulator" photos="fun-times">
+                            <div class="application">
+                                <ul>
+                                    <li class="subheader">
+                                        <span class="body2">123 张照片</span>
+                                    </li>
+                                    <li>
+                                        <img height="175" src="../resources/family_outing/424.jpg">
+                                    </li>
+                                    <li>
+                                        <img height="166" src="../resources/family_outing/423.jpg">
+                                    </li>
+                                    <li>
+                                        <img height="185" src="../resources/family_outing/366.jpg">
+                                    </li>
+                                    <li>
+                                        <img height="173" src="../resources/family_outing/255.jpg">
+                                    </li>
+                                    <li>
+                                        <img height="208" src="../resources/family_outing/239.jpg">
+                                    </li>
+                                    <li>
+                                        <img height="246" src="../resources/family_outing/404.jpg">
+                                    </li>
+                                </ul>
+                                <div class="app-bar">
+                                    <div class="start">
+                                        <button class="icon-button unbounded" tabindex="-1">
+                                            <span class="material-icons">arrow_back</span>
+                                        </button>
+                                        <span class="title">欢乐时光</span>
+                                    </div>
+                                    <div class="end">
+                                        <button class="icon-button unbounded" tabindex="-1">
+                                            <span class="material-icons">view_module</span>
+                                        </button>
+                                        <button class="icon-button unbounded" tabindex="-1">
+                                            <span class="material-icons">search</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="system-layer">
+                                    <div class="status-bar-background"></div>
+                                    <div class="navigation-bar-background"></div>
+                                </div>
+                            </div>
+                            <div class="system-bars">
+                                <div class="status-bar light">
+                                    <div class="system">
+                                        <span id="wifi" class="material-icons">signal_wifi_4_bar</span>
+                                        <span id="signal" class="material-icons">signal_cellular_4_bar</span>
+                                        <span id="battery" class="extra-material-icons">system_battery</span>
+                                        <span id="time" class="body2">12:30</span>
+                                    </div>
+                                </div>
+                                <div class="navigation-bar">
+                                    <span id="back" class="extra-material-icons">system_back</span>
+                                    <span id="home" class="extra-material-icons">system_home</span>
+                                    <span id="recent" class="extra-material-icons">system_recent</span>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="recommends do body2">正确</span>
+                        <p class="body1">在此界面中点击各张图片是最主要的操作，因此不需要浮动操作按钮。</p>
+                    </div>
+                    <div id="two-fabs" class="diagram-wrapper" screen="mobile">
+                        <div class="simulator" map="main">
+                            <div class="application">
+                                <div class="map-wrapper">
+                                    <img src="../resources/map.jpg">
+                                    <div class="current-location">
+                                        <div class="background"></div>
+                                        <div class="foreground"></div>
+                                    </div>
+                                </div>
+                                <div class="search-bar">
+                                    <button class="icon-button unbounded" tabindex="-1">
+                                        <span class="material-icons">menu</span>
+                                    </button>
+                                    <input class="subheading" type="text" placeholder="搜索" tabindex="-1">
+                                    <button class="icon-button unbounded" tabindex="-1">
+                                        <span class="material-icons">mic</span>
+                                    </button>
+                                </div>
+                                <button id="directions" class="fab" tabindex="-1">
+                                    <span class="material-icons">directions</span>
+                                </button>
+                                <button id="my-location" class="fab" tabindex="-1">
+                                    <span class="material-icons">my_location</span>
+                                </button>
+                                <div class="system-layer">
+                                    <div class="status-bar-background"></div>
+                                    <div class="navigation-bar-background"></div>
+                                </div>
+                            </div>
+                            <div class="system-bars">
+                                <div class="status-bar">
+                                    <div class="system">
+                                        <span id="wifi" class="material-icons">signal_wifi_4_bar</span>
+                                        <span id="signal" class="material-icons">signal_cellular_4_bar</span>
+                                        <span id="battery" class="extra-material-icons">system_battery</span>
+                                        <span id="time" class="body2">12:30</span>
+                                    </div>
+                                </div>
+                                <div class="navigation-bar">
+                                    <span id="back" class="extra-material-icons">system_back</span>
+                                    <span id="home" class="extra-material-icons">system_home</span>
+                                    <span id="recent" class="extra-material-icons">system_recent</span>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="recommends caution body2">慎用</span>
+                        <p class="body1">在此界面中有两个权重相同的最主要操作，且功能相异，因此才可以使用两个浮动操作按钮。</p>
+                    </div>
+                    <div id="multiple-fabs" class="diagram-wrapper" screen="tablet mobile">
+                        <div class="simulator" contacts>
+                            <div class="application">
+                                <div class="contacts-list">
+                                    <ul>
+                                        <li class="list" one>
+                                            <span class="material-icons">star</span>
+                                            <span class="avatar" character="janet-perkins"
+                                                style="background-image: url(../resources/faces/janet_perkins.jpg);"></span>
+                                            <span class="primary-text subheading">Janet Perkins</span>
+                                        </li>
+                                        <li class="list" one>
+                                            <span class="avatar" character="mary-johnson"
+                                                style="background-image: url(../resources/faces/mary_johnson.jpg);"></span>
+                                            <span class="primary-text subheading">Mary Johnson</span>
+                                        </li>
+                                        <li class="list" one>
+                                            <span class="avatar" character="peter-carlsson"
+                                                style="background-image: url(../resources/faces/peter_carlsson.jpg);"></span>
+                                            <span class="primary-text subheading">Peter Carlsson</span>
+                                        </li>
+                                        <li class="list" one>
+                                            <span class="avatar"
+                                                style="background-image: url(../resources/faces/trevor_hansen.jpg);"></span>
+                                            <span class="primary-text subheading">Trevor Hansen</span>
+                                        </li>
+                                    </ul>
+                                    <div class="divider horizontal"></div>
+                                    <ul>
+                                        <li class="list" one>
+                                            <span>A</span>
+                                            <span class="avatar"
+                                                style="background-image: url(../resources/faces/aaron_bennett.jpg);"></span>
+                                            <span class="primary-text subheading">Aaron Bennett</span>
+                                        </li>
+                                        <li class="list" one>
+                                            <span class="avatar"
+                                                style="background-image: url(../resources/faces/abbey_christensen.jpg);"></span>
+                                            <span class="primary-text subheading">Abbey Christensen</span>
+                                        </li>
+                                        <li class="list" one>
+                                            <span class="avatar" character="ali-connors"
+                                                style="background-image: url(../resources/faces/ali_connors.png);"></span>
+                                            <span class="primary-text subheading">Ali Connors</span>
+                                        </li>
+                                    </ul>
+                                    <div class="app-bar dark">
+                                        <div class="start">
+                                            <button class="icon-button unbounded" tabindex="-1">
+                                                <span class="material-icons">menu</span>
+                                            </button>
+                                            <span class="title">全部<span
+                                                    class="material-icons">arrow_drop_down</span></span>
+                                        </div>
+                                        <div class="end">
+                                            <button class="icon-button narrow unbounded" tabindex="-1">
+                                                <span class="material-icons">more_vert</span>
+                                            </button>
+                                            <button class="icon-button unbounded" tabindex="-1">
+                                                <span class="material-icons">search</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="status-bar-background"></div>
+                                </div>
+                                <div class="contact-card">
+                                    <div class="portrait-wrapper">
+                                        <img character="ali-connors" src="../resources/faces/ali_connors.png">
+                                        <div class="content-block">
+                                            <div class="scrim" gradient></div>
+                                            <span class="display1">Ali Connors</span>
+                                        </div>
+                                    </div>
+                                    <ul>
+                                        <li class="list" two>
+                                            <span class="material-icons">call</span>
+                                            <span class="primary-text subheading">(650) 555–1234<span
+                                                    class="secondary-text body1">手机</span></span>
+                                            <button class="icon-button unbounded meta" tabindex="-1">
+                                                <span class="material-icons">message</span>
+                                            </button>
+                                        </li>
+                                        <li class="list" two>
+                                            <span class="primary-text subheading">(323) 555–6789<span
+                                                    class="secondary-text body1">单位</span></span>
+                                            <button class="icon-button unbounded meta" tabindex="-1">
+                                                <span class="material-icons">message</span>
+                                            </button>
+                                        </li>
+                                    </ul>
+                                    <div class="divider horizontal"></div>
+                                    <ul>
+                                        <li class="list" two>
+                                            <span class="material-icons">mail</span>
+                                            <span class="primary-text subheading">aliconnors@example.com<span
+                                                    class="secondary-text body1">个人</span></span>
+                                        </li>
+                                        <li class="list" two>
+                                            <span class="primary-text subheading">ali_connors@example.com<span
+                                                    class="secondary-text body1">工作</span></span>
+                                        </li>
+                                    </ul>
+                                    <div class="app-bar dark">
+                                        <div class="start">
+                                            <button class="icon-button unbounded" tabindex="-1">
+                                                <span class="material-icons">arrow_back</span>
+                                            </button>
+                                        </div>
+                                        <div class="end">
+                                            <button class="icon-button narrow unbounded" tabindex="-1">
+                                                <span class="material-icons">more_vert</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="status-bar-background"></div>
+                                </div>
+                                <div class="fabs-wrapper">
+                                    <button class="fab dark" tabindex="-1">
+                                        <span class="material-icons">star</span>
+                                    </button>
+                                    <button class="fab dark" tabindex="-1">
+                                        <span class="material-icons">videocam</span>
+                                    </button>
+                                    <button class="fab dark" tabindex="-1">
+                                        <span class="material-icons">edit</span>
+                                    </button>
+                                </div>
+                                <div class="system-layer">
+                                    <div class="status-bar-background"></div>
+                                    <div class="navigation-bar-background"></div>
+                                </div>
+                            </div>
+                            <div class="system-bars">
+                                <div class="status-bar">
+                                    <div class="system">
+                                        <span id="wifi" class="material-icons">signal_wifi_4_bar</span>
+                                        <span id="signal" class="material-icons">signal_cellular_4_bar</span>
+                                        <span id="battery" class="extra-material-icons">system_battery</span>
+                                        <span id="time" class="body2">12:30</span>
+                                    </div>
+                                </div>
+                                <div class="navigation-bar">
+                                    <span id="back" class="extra-material-icons">system_back</span>
+                                    <span id="home" class="extra-material-icons">system_home</span>
+                                    <span id="recent" class="extra-material-icons">system_recent</span>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="recommends dont body2">错误</span>
+                        <p class="body1">避免用浮动操作按钮凸显非最主要的操作。</p>
+                    </div>
+                </section>
+                <section>
+                    <article class="body1">
+                        <h6>操作</h6>
+                        <p>浮动操作按钮仅能触发作用于当前界面或展现新界面的操作，且需是重要、建设性的操作，如：</p>
+                        <ul>
+                            <li>创建</li>
+                            <li>收藏</li>
+                            <li>分享</li>
+                            <li>启动进程</li>
+                        </ul>
+                    </article>
+                    <div id="right-fab-actions" class="diagram-wrapper">
+                        <div class="diagram" size="regular">
+                            <button class="fab" tabindex="-1">
+                                <span class="material-icons">add</span>
+                            </button>
+                            <button class="fab" tabindex="-1">
+                                <span class="material-icons">edit</span>
+                            </button>
+                            <button class="fab" tabindex="-1">
+                                <span class="material-icons">star</span>
+                            </button>
+                            <button class="fab" tabindex="-1">
+                                <span class="material-icons">favorite</span>
+                            </button>
+                            <button class="fab" tabindex="-1">
+                                <span class="material-icons">reply</span>
+                            </button>
+                            <button class="fab" tabindex="-1">
+                                <span class="material-icons">group</span>
+                            </button>
+                            <button class="fab" tabindex="-1">
+                                <span class="material-icons">my_location</span>
+                            </button>
+                            <button class="fab" tabindex="-1">
+                                <span class="material-icons">directions</span>
+                            </button>
+                            <button class="fab" tabindex="-1">
+                                <span class="material-icons">explore</span>
+                            </button>
+                            <button class="fab" tabindex="-1">
+                                <span class="material-icons">person_pin</span>
+                            </button>
+                            <button class="fab" tabindex="-1">
+                                <span class="material-icons">mic</span>
+                            </button>
+                            <button class="fab" tabindex="-1">
+                                <span class="material-icons">playlist_add</span>
+                            </button>
+                        </div>
+                        <span class="recommends do body2">正确</span>
+                        <p class="body1">用浮动操作按钮触发主要、积极的操作。</p>
+                    </div>
+                    <article class="body1">
+                        <p>浮动操作按钮不包含应用栏上的操作或状态栏通知，勿将角标或其它元素层叠其上。</p>
+                        <p>避免将浮动操作按钮用于不重要、破坏性的操作，如：</p>
+                        <ul>
+                            <li>归档或删除</li>
+                            <li>提醒或错误警告</li>
+                            <li>文本剪切等不可持续任务</li>
+                            <li>调整音量或更改颜色等更合适放在应用栏的控件</li>
+                        </ul>
+                    </article>
+                    <div id="wrong-fab-actions" class="diagram-wrapper">
+                        <div class="diagram" size="regular">
+                            <button class="fab" tabindex="-1">
+                                <span class="material-icons">archive</span>
+                            </button>
+                            <button class="fab" tabindex="-1">
+                                <span class="material-icons">delete</span>
+                            </button>
+                            <button class="fab" tabindex="-1">
+                                <span class="material-icons">folder</span>
+                            </button>
+                            <button class="fab" tabindex="-1">
+                                <span class="material-icons">radio_button_checked</span>
+                            </button>
+                            <button class="fab" tabindex="-1">
+                                <span class="material-icons">flag</span>
+                            </button>
+                            <button class="fab" tabindex="-1">
+                                <span class="material-icons">block</span>
+                            </button>
+                            <button class="fab" tabindex="-1">
+                                <span class="material-icons">content_cut</span>
+                            </button>
+                            <button class="fab" tabindex="-1">
+                                <span class="material-icons">format_color_text</span>
+                            </button>
+                            <button class="fab" tabindex="-1">
+                                <span class="material-icons">volume_down</span>
+                            </button>
+                            <button class="fab" tabindex="-1"></button>
+                            <button class="fab" tabindex="-1">
+                                <span class="material-icons">fullscreen</span>
+                            </button>
+                            <button class="fab" tabindex="-1">
+                                <span class="material-icons">settings</span>
+                            </button>
+                            <button class="fab" tabindex="-1">
+                                <span class="material-icons">arrow_back</span>
+                            </button>
+                            <button class="fab" tabindex="-1">
+                                <span class="material-icons">menu</span>
+                            </button>
+                            <button class="fab" tabindex="-1">
+                                <span class="material-icons">more_vert</span>
+                            </button>
+                            <button class="fab" tabindex="-1">
+                                <span class="material-icons">expand_more</span>
+                            </button>
+                            <button class="fab" tabindex="-1">
+                                <span class="material-icons">chat</span>
+                                <span class="badge caption">1</span>
+                            </button>
+                            <button class="fab" tabindex="-1">
+                                <span class="title">5</span>
+                            </button>
+                        </div>
+                        <span class="recommends dont body2">错误</span>
+                        <p class="body1">避免将浮动操作按钮用于触发次要、意义不明、破坏性的操作，且浮动操作按钮之上不应层叠任何元素。</p>
+                    </div>
+                </section>
+            </article>
+            <hr class="divider horizontal">
+            <article id="behavior" class="horizontal">
+                <h5>行为</h5>
+                <section>
+                    <article class="body1 intro">
+                        <p>浮动操作按钮同样是一个由 Material 组成的承载层，它本身和其中的图标都可以进行运动。</p>
+                        <p>由于浮动操作按钮相对其它界面元素更加重要，因此它的移动方式异于其它元素。虽然浮动操作按钮与当前界面内容直接相关，但它并不跟随内容页面移动。</p>
+                    </article>
+                </section>
+                <section>
+                    <article class="body1">
+                        <p>在进行界面转场时，若前后界面中的浮动操作按钮功能相同，那么其不需重新进退场，否则需在界面转场时使先前界面的浮动操作按钮退场后才能令之后界面的浮动操作按钮进场。</p>
+                    </article>
+                    <div id="fabs-in-transitions" class="diagram-wrapper" screen="tablet mobile">
+                        <div class="simulator animated" dialer>
+                            <div class="application">
+                                <div class="main">
+                                    <ul id="favorites" class="dark">
+                                        <li character="ali-connors"
+                                            style="background-image: url(../resources/faces/ali_connors.png);">
+                                            <div class="scrim" gradient="reverse"></div>
+                                            <div class="list" two="dense">
+                                                <span class="primary-text body1">Ali Connors<span
+                                                        class="secondary-text body1">手机</span></span>
+                                            </div>
+                                            <button class="icon-button unbounded narrow" tabindex="-1">
+                                                <span class="material-icons">more_vert</span>
+                                            </button>
+                                        </li>
+                                        <li character="abbey-christensen"
+                                            style="background-image: url(../resources/faces/abbey_christensen.jpg);">
+                                            <div class="scrim" gradient="reverse"></div>
+                                            <div class="list" two="dense">
+                                                <span class="primary-text body1">Abbey Christensen<span
+                                                        class="secondary-text body1">手机</span></span>
+                                            </div>
+                                            <button class="icon-button unbounded narrow" tabindex="-1">
+                                                <span class="material-icons">more_vert</span>
+                                            </button>
+                                        </li>
+                                        <li character="janet-perkins"
+                                            style="background-image: url(../resources/faces/janet_perkins.jpg);">
+                                            <div class="scrim" gradient="reverse"></div>
+                                            <div class="list" two="dense">
+                                                <span class="primary-text body1">Janet Perkins<span
+                                                        class="material-icons">star</span><span
+                                                        class="secondary-text body1">手机</span></span>
+                                            </div>
+                                            <button class="icon-button unbounded narrow" tabindex="-1">
+                                                <span class="material-icons">more_vert</span>
+                                            </button>
+                                        </li>
+                                        <li character="britta-holt"
+                                            style="background-image: url(../resources/faces/britta_holt.jpg);">
+                                            <div class="scrim" gradient="reverse"></div>
+                                            <div class="list" two="dense">
+                                                <span class="primary-text body1">Britta Holt<span
+                                                        class="secondary-text body1">手机</span></span>
+                                            </div>
+                                            <button class="icon-button unbounded narrow" tabindex="-1">
+                                                <span class="material-icons">more_vert</span>
+                                            </button>
+                                        </li>
+                                        <li character="mary-johnson"
+                                            style="background-image: url(../resources/faces/mary_johnson.jpg);">
+                                            <div class="scrim" gradient="reverse"></div>
+                                            <div class="list" two="dense">
+                                                <span class="primary-text body1">Mary Johnson<span
+                                                        class="material-icons">star</span><span
+                                                        class="secondary-text body1">手机</span></span>
+                                            </div>
+                                            <button class="icon-button unbounded narrow" tabindex="-1">
+                                                <span class="material-icons">more_vert</span>
+                                            </button>
+                                        </li>
+                                        <li character="jonathan-lee"
+                                            style="background-image: url(../resources/faces/jonathan_lee.jpg);">
+                                            <div class="scrim" gradient="reverse"></div>
+                                            <div class="list" two="dense">
+                                                <span class="primary-text body1">Jonathan Lee<span
+                                                        class="secondary-text body1">手机</span></span>
+                                            </div>
+                                            <button class="icon-button unbounded narrow" tabindex="-1">
+                                                <span class="material-icons">more_vert</span>
+                                            </button>
+                                        </li>
+                                    </ul>
+                                    <div class="app-bar">
+                                        <div class="search-bar">
+                                            <button class="icon-button unbounded" tabindex="-1">
+                                                <span class="material-icons">search</span>
+                                            </button>
+                                            <input class="subheading" type="text" placeholder="搜索联系人和地点" tabindex="-1">
+                                            <button class="icon-button unbounded" tabindex="-1">
+                                                <span class="material-icons">mic</span>
+                                            </button>
+                                            <button class="icon-button unbounded narrow" tabindex="-1">
+                                                <span class="material-icons">more_vert</span>
+                                            </button>
+                                        </div>
+                                        <div class="list edged" two>
+                                            <span class="avatar" character="ali-connors"
+                                                style="background-image: url(../resources/faces/ali_connors.png);"></span>
+                                            <span class="primary-text subheading">Ali Connors<span
+                                                    class="secondary-text body1"><span
+                                                        class="material-icons called">call_made</span>手机，5分钟前</span></span>
+                                        </div>
+                                        <nav class="tab-bar dark">
+                                            <button class="activated">
+                                                <span class="body2">常用联系人</span>
+                                            </button>
+                                            <button>
+                                                <span class="body2">近期通话</span>
+                                            </button>
+                                            <button>
+                                                <span class="body2">联系人</span>
+                                            </button>
+                                        </nav>
+                                    </div>
+                                    <button class="fab dark" tabindex="-1">
+                                        <span class="material-icons">dialpad</span>
+                                    </button>
+                                    <div class="status-bar-background"></div>
+                                </div>
+                                <div class="dial-list">
+                                    <ul>
+                                        <li class="list" two>
+                                            <span class="avatar"
+                                                style="background-image: url(../resources/faces/aaron_bennett.jpg);"></span>
+                                            <span class="primary-text subheading">Aaron Bennett
+                                                <span
+                                                    class="secondary-text body1">(650)<strong>5</strong><strong>5</strong><strong>5</strong>-1787</span></span>
+                                        </li>
+                                        <li class="list" two>
+                                            <span class="avatar"
+                                                style="background-image: url(../resources/faces/abbey_christensen.jpg);"></span>
+                                            <span class="primary-text subheading">Abbey Christensen
+                                                <span
+                                                    class="secondary-text body1">(323)<strong>5</strong><strong>5</strong><strong>5</strong>-9810</span></span>
+                                        </li>
+                                        <li states class="list" two>
+                                            <span class="avatar"
+                                                style="background-image: url(../resources/faces/britta_holt.jpg);"></span>
+                                            <span class="primary-text subheading">Britta Holt
+                                                <span
+                                                    class="secondary-text body1">(206)<strong>5</strong><strong>5</strong><strong>5</strong>-<strong>6</strong>670</span></span>
+                                        </li>
+                                        <li class="list" one>
+                                            <span class="material-icons">person_add</span>
+                                            <span class="primary-text subheading">添加到联系人</span>
+                                        </li>
+                                        <li class="list" one>
+                                            <span class="material-icons">message</span>
+                                            <span class="primary-text subheading">发送短信</span>
+                                        </li>
+                                        <div class="status-bar-background"></div>
+                                    </ul>
+                                    <div class="dialpad">
+                                        <div class="input">
+                                            <button class="icon-button unbounded narrow" tabindex="-1">
+                                                <span class="material-icons">more_vert</span>
+                                            </button>
+                                            <span class="display1"></span>
+                                            <button class="icon-button unbounded" tabindex="-1">
+                                                <span class="material-icons">backspace</span>
+                                            </button>
+                                        </div>
+                                        <div class="divider horizontal"></div>
+                                        <ul>
+                                            <li>
+                                                <span class="display1">1</span>
+                                                <span class="material-icons">voicemail</span>
+                                            </li>
+                                            <li>
+                                                <span class="display1">2</span>
+                                                <span class="body1">ABC</span>
+                                            </li>
+                                            <li>
+                                                <span class="display1">3</span>
+                                                <span class="body1">DEF</span>
+                                            </li>
+                                            <li>
+                                                <span class="display1">4</span>
+                                                <span class="body1">GHI</span>
+                                            </li>
+                                            <li class="unbounded" states>
+                                                <span class="display1">5</span>
+                                                <span class="body1">JKL</span>
+                                            </li>
+                                            <li class="unbounded" states>
+                                                <span class="display1">6</span>
+                                                <span class="body1">MNO</span>
+                                            </li>
+                                            <li>
+                                                <span class="display1">7</span>
+                                                <span class="body1">PQRS</span>
+                                            </li>
+                                            <li>
+                                                <span class="display1">8</span>
+                                                <span class="body1">TUV</span>
+                                            </li>
+                                            <li>
+                                                <span class="display1">9</span>
+                                                <span class="body1">WXYZ</span>
+                                            </li>
+                                            <li>
+                                                <span class="display1">*</span>
+                                            </li>
+                                            <li>
+                                                <span class="display1">0</span>
+                                                <span class="body1">+</span>
+                                            </li>
+                                            <li>
+                                                <span class="display1">#</span>
+                                            </li>
+                                        </ul>
+                                        <button class="fab dark" tabindex="-1">
+                                            <span class="material-icons">call</span>
+                                        </button>
+                                        <div class="status-bar-background"></div>
+                                    </div>
+                                </div>
+                                <div class="oncall">
+                                    <div class="callee">
+                                        <img src="../resources/faces/britta_holt.jpg">
+                                        <button class="fab dark" tabindex="-1">
+                                            <span class="material-icons">call_end</span>
+                                        </button>
+                                        <div class="status-bar-background"></div>
+                                    </div>
+                                    <div class="app-bar dark">
+                                        <div class="info">
+                                            <span class="title">正在呼叫</span>
+                                            <span class="display2">Britta Holt</span>
+                                            <span class="subheading">手机 (206) 555-6670</span>
+                                        </div>
+                                        <div class="toolbar">
+                                            <button class="icon-button unbounded" tabindex="-1">
+                                                <span class="material-icons">volume_up</span>
+                                            </button>
+                                            <button class="icon-button unbounded" tabindex="-1">
+                                                <span class="material-icons">mic_off</span>
+                                            </button>
+                                            <button class="icon-button unbounded" tabindex="-1">
+                                                <span class="material-icons">dialpad</span>
+                                            </button>
+                                            <button class="icon-button unbounded" disabled tabindex="-1">
+                                                <span class="material-icons">pause</span>
+                                            </button>
+                                            <button class="icon-button unbounded" disabled tabindex="-1">
+                                                <span class="material-icons">add_ic_call</span>
+                                            </button>
+                                        </div>
+                                        <div class="status-bar-background"></div>
+                                    </div>
+                                </div>
+
+                                <div class="system-layer">
+                                    <div class="status-bar-background"></div>
+                                    <div class="navigation-bar-background"></div>
+                                </div>
+                            </div>
+                            <div class="system-bars">
+                                <div class="status-bar">
+                                    <div class="system">
+                                        <span id="wifi" class="material-icons">signal_wifi_4_bar</span>
+                                        <span id="signal" class="material-icons">signal_cellular_4_bar</span>
+                                        <span id="battery" class="extra-material-icons">system_battery</span>
+                                        <span id="time" class="body2">12:30</span>
+                                    </div>
+                                </div>
+                                <div class="navigation-bar">
+                                    <span id="back" class="extra-material-icons">system_back</span>
+                                    <span id="home" class="extra-material-icons">system_home</span>
+                                    <span id="recent" class="extra-material-icons">system_recent</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="body1">界面转场时浮动操作按钮交替显示。</p>
+                    </div>
+                </section>
+                <section>
+                    <article class="body1">
+                        <p>在切换标签页时，浮动操作按钮不应跟随其对应页面移动。以此传达浮动操作按钮并不黏附在任意标签页上。</p>
+                    </article>
+                    <div id="relative-fabs" class="diagram-wrapper" screen="mobile">
+                        <div class="simulator animated" dialer>
+                            <div class="application">
+                                <div class="main">
+                                    <div class="scroll-view">
+                                        <ul id="favorites" class="dark">
+                                            <li character="ali-connors"
+                                                style="background-image: url(../resources/faces/ali_connors.png);">
+                                                <div class="scrim" gradient="reverse"></div>
+                                                <div class="list" two="dense">
+                                                    <span class="primary-text body1">Ali Connors<span
+                                                            class="secondary-text body1">手机</span></span>
+                                                </div>
+                                                <button class="icon-button unbounded narrow" tabindex="-1">
+                                                    <span class="material-icons">more_vert</span>
+                                                </button>
+                                            </li>
+                                            <li character="abbey-christensen"
+                                                style="background-image: url(../resources/faces/abbey_christensen.jpg);">
+                                                <div class="scrim" gradient="reverse"></div>
+                                                <div class="list" two="dense">
+                                                    <span class="primary-text body1">Abbey Christensen<span
+                                                            class="secondary-text body1">手机</span></span>
+                                                </div>
+                                                <button class="icon-button unbounded narrow" tabindex="-1">
+                                                    <span class="material-icons">more_vert</span>
+                                                </button>
+                                            </li>
+                                            <li character="janet-perkins"
+                                                style="background-image: url(../resources/faces/janet_perkins.jpg);">
+                                                <div class="scrim" gradient="reverse"></div>
+                                                <div class="list" two="dense">
+                                                    <span class="primary-text body1">Janet Perkins<span
+                                                            class="material-icons">star</span><span
+                                                            class="secondary-text body1">手机</span></span>
+                                                </div>
+                                                <button class="icon-button unbounded narrow" tabindex="-1">
+                                                    <span class="material-icons">more_vert</span>
+                                                </button>
+                                            </li>
+                                            <li character="britta-holt"
+                                                style="background-image: url(../resources/faces/britta_holt.jpg);">
+                                                <div class="scrim" gradient="reverse"></div>
+                                                <div class="list" two="dense">
+                                                    <span class="primary-text body1">Britta Holt<span
+                                                            class="secondary-text body1">手机</span></span>
+                                                </div>
+                                                <button class="icon-button unbounded narrow" tabindex="-1">
+                                                    <span class="material-icons">more_vert</span>
+                                                </button>
+                                            </li>
+                                            <li character="mary-johnson"
+                                                style="background-image: url(../resources/faces/mary_johnson.jpg);">
+                                                <div class="scrim" gradient="reverse"></div>
+                                                <div class="list" two="dense">
+                                                    <span class="primary-text body1">Mary Johnson<span
+                                                            class="material-icons">star</span><span
+                                                            class="secondary-text body1">手机</span></span>
+                                                </div>
+                                                <button class="icon-button unbounded narrow" tabindex="-1">
+                                                    <span class="material-icons">more_vert</span>
+                                                </button>
+                                            </li>
+                                            <li character="jonathan-lee"
+                                                style="background-image: url(../resources/faces/jonathan_lee.jpg);">
+                                                <div class="scrim" gradient="reverse"></div>
+                                                <div class="list" two="dense">
+                                                    <span class="primary-text body1">Jonathan Lee<span
+                                                            class="secondary-text body1">手机</span></span>
+                                                </div>
+                                                <button class="icon-button unbounded narrow" tabindex="-1">
+                                                    <span class="material-icons">more_vert</span>
+                                                </button>
+                                            </li>
+                                            <li character="aaron-bennett"
+                                                style="background-image: url(../resources/faces/aaron_bennett.jpg);">
+                                                <div class="scrim" gradient="reverse"></div>
+                                                <div class="list" two="dense">
+                                                    <span class="primary-text body1">Aaron Bennett<span
+                                                            class="secondary-text body1">手机</span></span>
+                                                </div>
+                                                <button class="icon-button unbounded narrow" tabindex="-1">
+                                                    <span class="material-icons">more_vert</span>
+                                                </button>
+                                            </li>
+                                            <li character="anthony-stevens"
+                                                style="background-image: url(../resources/faces/anthony_stevens.jpg);">
+                                                <div class="scrim" gradient="reverse"></div>
+                                                <div class="list" two="dense">
+                                                    <span class="primary-text body1">Anthony Stevens<span
+                                                            class="secondary-text body1">手机</span></span>
+                                                </div>
+                                                <button class="icon-button unbounded narrow" tabindex="-1">
+                                                    <span class="material-icons">more_vert</span>
+                                                </button>
+                                            </li>
+                                        </ul>
+                                        <ul id="recents">
+                                            <li class="subheader">
+                                                <span class="body2">今天</span>
+                                            </li>
+                                            <li class="list" two>
+                                                <span class="avatar" character="ali-connors"
+                                                    style="background-image: url(../resources/faces/ali_connors.png);"></span>
+                                                <span class="primary-text subheading">Ali Connors
+                                                    <span class="secondary-text body1">
+                                                        <span class="material-icons failure">call_received</span>
+                                                        <span
+                                                            class="material-icons success">call_made</span>手机，5分钟前</span>
+                                                </span>
+                                            </li>
+                                            <li class="list" three>
+                                                <span class="avatar"
+                                                    style="background-image: url(../resources/faces/jonathan_lee.jpg);"></span>
+                                                <span class="primary-text subheading">Jonathan Lee
+                                                    <p class="secondary-text body1"><span class="message">Hey, just
+                                                            calling to make sure you got the documents.</span><br><span
+                                                            class="material-icons voicemail">voicemail</span>手机，15分钟前
+                                                    </p>
+                                                </span>
+                                            </li>
+                                            <li class="list" two>
+                                                <span class="avatar" character="sandra-adams"
+                                                    style="background-image: url(../resources/faces/sandra_adams.jpg);"></span>
+                                                <span class="primary-text subheading">Sandra Adams
+                                                    <span class="secondary-text body1">
+                                                        <span
+                                                            class="material-icons success">call_received</span>单位，30分钟前，0:35</span>
+                                                </span>
+                                            </li>
+                                            <li class="list" two>
+                                                <span class="avatar"
+                                                    style="background-image: url(../resources/faces/trevor_hansen.jpg);"></span>
+                                                <span class="primary-text subheading">Trevor Hansen
+                                                    <span class="secondary-text body1">
+                                                        <span
+                                                            class="material-icons failure">call_made</span>手机，53分钟前</span>
+                                                </span>
+                                            </li>
+                                            <li class="subheader">
+                                                <span class="body2">昨天</span>
+                                            </li>
+                                            <li class="list" two>
+                                                <span class="avatar"
+                                                    style="background-image: url(../resources/faces/britta_holt.jpg);"></span>
+                                                <span class="primary-text subheading">Britta Holt
+                                                    <span class="secondary-text body1">
+                                                        <span
+                                                            class="material-icons failure">call_made</span>住宅，2天前</span>
+                                                </span>
+                                            </li>
+                                            <li class="list" two>
+                                                <span class="avatar"
+                                                    style="background-image: url(../resources/faces/david_park.jpg);"></span>
+                                                <span class="primary-text subheading">David Park
+                                                    <span class="secondary-text body1">
+                                                        <span
+                                                            class="material-icons failure">call_made</span>手机，2天前</span>
+                                                </span>
+                                            </li>
+                                        </ul>
+                                        <ul id="contacts">
+                                            <li class="list" one>
+                                                <span>A</span>
+                                                <span class="avatar"
+                                                    style="background-image: url(../resources/faces/aaron_bennett.jpg);"></span>
+                                                <span class="primary-text subheading">Aaron Bennett</span>
+                                            </li>
+                                            <li class="list" one>
+                                                <span class="avatar"
+                                                    style="background-image: url(../resources/faces/abbey_christensen.jpg);"></span>
+                                                <span class="primary-text subheading">Abbey Christensen</span>
+                                            </li>
+                                            <li class="list" one>
+                                                <span class="avatar" character="ali-connors"
+                                                    style="background-image: url(../resources/faces/ali_connors.png);"></span>
+                                                <span class="primary-text subheading">Ali Connors</span>
+                                            </li>
+                                            <li class="list" one>
+                                                <span class="avatar"
+                                                    style="background-image: url(../resources/faces/alex_nelson.jpg);"></span>
+                                                <span class="primary-text subheading">Alex Nelson</span>
+                                            </li>
+                                            <li class="list" one>
+                                                <span class="avatar" character="anthony-stevens"
+                                                    style="background-image: url(../resources/faces/anthony_stevens.jpg);"></span>
+                                                <span class="primary-text subheading">Anthony Stevens</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="app-bar">
+                                        <nav class="tab-bar dark">
+                                            <button class="activated">
+                                                <span class="body2">常用联系人</span>
+                                            </button>
+                                            <button>
+                                                <span class="body2">近期通话</span>
+                                            </button>
+                                            <button>
+                                                <span class="body2">联系人</span>
+                                            </button>
+                                        </nav>
+                                    </div>
+                                    <button class="fab dark" tabindex="-1">
+                                        <span class="material-icons">dialpad</span>
+                                    </button>
+                                </div>
+                                <div class="system-layer">
+                                    <div class="status-bar-background"></div>
+                                    <div class="navigation-bar-background"></div>
+                                </div>
+                            </div>
+                            <div class="system-bars">
+                                <div class="status-bar">
+                                    <div class="system">
+                                        <span id="wifi" class="material-icons">signal_wifi_4_bar</span>
+                                        <span id="signal" class="material-icons">signal_cellular_4_bar</span>
+                                        <span id="battery" class="extra-material-icons">system_battery</span>
+                                        <span id="time" class="body2">12:30</span>
+                                    </div>
+                                </div>
+                                <div class="navigation-bar">
+                                    <span id="back" class="extra-material-icons">system_back</span>
+                                    <span id="home" class="extra-material-icons">system_home</span>
+                                    <span id="recent" class="extra-material-icons">system_recent</span>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="recommends do body2">正确</span>
+                        <p class="body1">在切换标签页时，不同功能的浮动操作按钮交替显示。</p>
+                    </div>
+                    <div id="independent-fabs" class="diagram-wrapper" screen="mobile">
+                        <div class="simulator animated" clock>
+                            <div class="application">
+                                <div class="app-bar dark">
+                                    <nav class="tab-bar">
+                                        <button class="activated">
+                                            <span class="material-icons">alarm</span>
+                                        </button>
+                                        <button>
+                                            <span class="material-icons">access_time</span>
+                                        </button>
+                                        <button>
+                                            <span class="extra-material-icons">hourglass</span>
+                                        </button>
+                                        <button>
+                                            <span class="material-icons">timer</span>
+                                        </button>
+                                    </nav>
+                                    <button class="icon-button narrow unbounded" tabindex="-1">
+                                        <span class="material-icons">more_vert</span>
+                                    </button>
+                                </div>
+                                <div class="scroll-view">
+                                    <ul class="dark" page="alarm">
+                                        <li class="alarm">
+                                            <div class="primary">
+                                                <span class="display3">08:30</span>
+                                                <div class="switch meta">
+                                                    <div class="track"></div>
+                                                    <div class="thumb unbounded">
+                                                        <input type="checkbox" role="switch" aria-checked="true"
+                                                            tabindex="-1">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="secondary list" one="small">
+                                                <span class="primary-text body2">周一、周二、周三、周四、周五</span>
+                                                <button class="icon-button unbounded" tabindex="-1">
+                                                    <span class="material-icons">expand_more</span>
+                                                </button>
+                                            </div>
+                                        </li>
+                                        <li class="divider horizontal"></li>
+                                        <li class="alarm">
+                                            <div class="primary">
+                                                <span class="display3">09:00</span>
+                                                <div class="switch meta">
+                                                    <div class="track"></div>
+                                                    <div class="thumb unbounded">
+                                                        <input type="checkbox" role="switch" aria-checked="true"
+                                                            tabindex="-1">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="secondary list" one="small">
+                                                <span class="primary-text body2">周六、周日</span>
+                                                <button class="icon-button unbounded" tabindex="-1">
+                                                    <span class="material-icons">expand_more</span>
+                                                </button>
+                                            </div>
+                                        </li>
+                                        <li class="divider horizontal"></li>
+                                    </ul>
+                                    <ul class="dark" page="clock">
+
+                                    </ul>
+                                    <ul class="dark" page="timer">
+
+                                    </ul>
+                                    <ul class="dark" page="stopwatch">
+
+                                    </ul>
+                                </div>
+                                
+                                <button id="add-alarm" class="fab" tabindex="-1">
+                                    <span class="material-icons">add</span>
+                                </button>
+                                <div class="snackbar">
+                                    <p class="body1">闹钟已删除。</p>
+                                    <button class="text-button body2" tabindex="-1">撤销</button>
+                                </div>
+                                <div class="system-layer">
+                                    <div class="status-bar-background"></div>
+                                    <div class="navigation-bar-background"></div>
+                                </div>
+                            </div>
+                            <div class="system-bars">
+                                <div class="status-bar">
+                                    <div class="system">
+                                        <span id="wifi" class="material-icons">signal_wifi_4_bar</span>
+                                        <span id="signal" class="material-icons">signal_cellular_4_bar</span>
+                                        <span id="battery" class="extra-material-icons">system_battery</span>
+                                        <span id="time" class="body2">12:30</span>
+                                    </div>
+                                </div>
+                                <div class="navigation-bar">
+                                    <span id="back" class="extra-material-icons">system_back</span>
+                                    <span id="home" class="extra-material-icons">system_home</span>
+                                    <span id="recent" class="extra-material-icons">system_recent</span>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="recommends dont body2">错误</span>
+                        <p class="body1">在切换标签页时，浮动操作按钮不应同页面同步移动。</p>
+                    </div>
+                </section>
+            </article>
+            <hr class="divider horizontal">
+            <article id="transitions" class="horizontal">
+                <h5>转场</h5>
+            </article>
+            <hr class="divider horizontal">
+            <article id="specs" class="horizontal">
+                <h5>样式</h5>
+            </article>
+        </div>
+
+
+        <footer class="dark">
+            <a states class="left" href="../components/buttons.html">
+                <span class="material-icons">arrow_back</span>
+                <span class="subheading">上一节
+                    <span class="title">按钮</span>
+                </span>
+            </a>
+            <a states class="right" href="../components/cards.html">
+                <span class="subheading">下一节
+                    <span class="title">卡片</span>
+                </span>
+                <span class="material-icons">arrow_forward</span>
+            </a>
+        </footer>
+
+        <div id="progress" class="app-bar dark">
+            <div class="start">
+                <button id="drawer-trigger" class="icon-button unbounded" tabindex="1">
+                    <span class="material-icons">menu</span>
+                </button>
+            </div>
+            <span class="title">组件 - 浮动操作按钮</span>
+            <div class="end">
+                <button id="search-trigger" class="icon-button unbounded" disabled="true">
+                    <span class="material-icons">search</span>
+                </button>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>

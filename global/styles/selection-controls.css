@@ -31,7 +31,7 @@ input {
     margin: 5px 3px;
     border-radius: 7px;
     background-color: var(--switch-off-track-color);
-    transition-property: all;
+    transition-property: background-color, opacity;
     transition-duration: 250ms;
     transition-timing-function: var(--standard-curve);
 }
@@ -70,7 +70,7 @@ input {
     background-color: var(--switch-off-thumb-color);
     box-shadow: var(--shadow-z1);
     pointer-events: none;
-    transition-property: all;
+    transition-property: background-color, border-color;
     transition-duration: 250ms;
     transition-timing-function: var(--standard-curve);
 }

@@ -1,0 +1,28 @@
+/*------------------------------------*\
+  模拟器
+\*------------------------------------*/
+
+#fab-example {
+    grid-column-start: max(1, calc(var(--max-block) - 1));
+}
+
+/*------------------------------------*\
+  主题
+\*------------------------------------*/
+
+:root {
+    --primary-color: #3949AB;
+}
+
+@media (prefers-color-scheme: dark) {
+    .CMD-drawer, .content-body {
+        --primary-color: #9FA8DA;
+    }
+    .diagram {
+        --accent-color: #90CAF9;
+    }
+}
+
+.CMD-content>.app-bar>button, footer {
+    --states-parameter: 2;
+}

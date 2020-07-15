@@ -68,8 +68,7 @@ h6 {
 }
 
 img {
-    width: 100%;
-    height: 100%;
+    flex-grow: 1;
     object-fit: cover;
     -webkit-user-drag: none;
 }
@@ -79,6 +78,7 @@ strong {
 }
 
 ul, li {
+    position: relative;
     list-style: none;
 }
 
@@ -230,6 +230,10 @@ ul, li {
     color: var(--primary-text-color);
 }
 
+main>.app-bar {
+    z-index: 4;
+}
+
 main>.app-bar[class~=prominent] {
     height: var(--increment);
     background-color: transparent;
@@ -306,7 +310,7 @@ main>.app-bar[class~=prominent]>span {
 }
 
 .chapter-diagram {
-    height: calc((100vw - 256px) * 9 /16);
+    aspect-ratio: 16/9;
 }
 
 .content-body {
@@ -400,6 +404,10 @@ article>ul li {
     list-style-type: disc;
 }
 
+.article p:last-of-type {
+    margin-bottom: 0px;
+}
+
 .content-body>.divider {
     margin: var(--increment) 0;
 }
@@ -416,14 +424,15 @@ article>ul li {
 
 .diagram-wrapper>p {
     margin-top: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 8px;
 }
 
-.diagram, .simulator {
+.diagram {
     position: relative;
     display: flex;
-    flex-direction: column;
     overflow: hidden;
+    justify-content: center;
+    align-items: center;
 }
 
 .diagram[size=regular] {
@@ -450,10 +459,6 @@ article>ul li {
     transition-timing-function: var(--standard-curve);
 }
 
-.article p:last-of-type, .diagram-wrapper>p:last-child {
-    margin-bottom: 0px;
-}
-
 .recommends {
     margin-top: 16px;
     border-top: 16px solid;
@@ -462,6 +467,7 @@ article>ul li {
 
 .recommends+p {
     margin-top: 7px;
+    color: var(--primary-text-color);
 }
 
 .recommends[class~=do] {
@@ -484,6 +490,10 @@ article>ul li {
 \*------------------------------------*/
 
 .simulator {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
     background-color: var(--surface-background-color);
 }
 
@@ -597,11 +607,17 @@ article>ul li {
     height: 100%;
     position: absolute;
     display: grid;
-    grid-template-rows: 24px auto 48px;
+    grid-template-rows: auto 1fr auto;
     pointer-events: none;
 }
 
+.status-bar-background {
+    height: 24px;
+    display: flex;
+}
+
 .navigation-bar-background {
+    height: 48px;
     grid-row-start: 3;
     background-color: #000000;
 }
@@ -716,9 +732,6 @@ footer .title {
     .CMD-content {
         width: 100%;
     }
-    .chapter-diagram {
-        height: calc(100vw * 9 /16);
-    }
     section>article {
         grid-column-start: 1;
         grid-column-end: -1;
@@ -793,6 +806,9 @@ footer .title {
     .diagram {
         background-color: #eeeeee;
     }
+    .diagram+p, .simulator+p {
+        color: rgba(0, 0, 0, 0.7);
+    }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -804,6 +820,9 @@ footer .title {
     }
     .diagram::after, .simulator::after {
         border-color: #424242;
+    }
+    .diagram+p, .simulator+p {
+        color: rgba(255, 255, 255, 0.7);
     }
     .recommends[class~=do] {
         color: #66BB6A;

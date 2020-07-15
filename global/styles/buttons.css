@@ -15,7 +15,6 @@ button {
     border: none;
     background-color: transparent;
     cursor: pointer;
-    flex-shrink: 0;
     overflow: hidden;
 }
 
@@ -62,11 +61,16 @@ button {
     height: 56px;
     border-radius: 50%;
     color: var(--secondary-text-color);
-    background-color: var(--accent-color, --surface-color);
+    background-color: var(--accent-color, var(--surface-background-color));
     box-shadow: var(--shadow-z6);
     transition-property: box-shadow;
     transition-duration: 195ms;
     transition-timing-function: var(--standard-curve);
+}
+
+.fab[class~=mini] {
+    width: 40px;
+    height: 40px;
 }
 
 .fab[class~=pressed] {

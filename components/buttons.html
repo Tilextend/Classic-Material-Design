@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta name="theme-color" content="#212121">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>质感设计 - 条形通知</title>
+    <title>质感设计 - 按钮</title>
     <link
         href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Roboto+Mono:wght@500&family=Roboto:wght@300;400;500;700&display=swap"
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="shortcut icon" href="../global/logo.svg">
-    <link rel="stylesheet" href="./styles/snackbars.css">
+    <link rel="stylesheet" href="./styles/buttons.css">
     <link rel="stylesheet" href="../global/styles/global.css">
     <script defer src="../global/scripts/global.js"></script>
     <script defer src="../global/scripts/components.js"></script>
@@ -35,9 +35,10 @@
             </nav>
             <nav class="body1">
                 <span states class="body2" tabindex="0">组件</span>
+                <a states class="activated">按钮</a>
                 <a states href="../components/buttons-floating-action-button.html">按钮：浮动操作按钮</a>
                 <a states href="../components/dialogs.html">对话框</a>
-                <a states class="activated">条形通知</a>
+                <a states href="../components/snackbars.html">条形通知</a>
             </nav>
         </aside>
         <div class="divider vertical"></div>
@@ -45,206 +46,139 @@
     <main class="CMD-content">
         <div class="content-body">
             <header>
-                <h4>条形通知</h4>
-                <p class="title">条形通知显示在屏幕底部，提供有关操作的简短反馈。</p>
+                <h4>按钮</h4>
+                <p class="title">按钮是用户触发应用进程的一种媒介。</p>
             </header>
             <nav class="chapter-catalogue">
                 <span class="body1">索引</span>
                 <ul class="title">
                     <li><a href="#usage">用法</a></li>
-                    <li><a href="#behavior">行为</a></li>
+                    <li><a href="#flat-buttons">扁平按钮</a></li>
+                    <li><a href="#raised-buttons">悬浮按钮</a></li>
+                    <li><a href="#toggle-buttons">切换按钮</a></li>
                     <li><a href="#specs">样式</a></li>
                 </ul>
             </nav>
             <article id="usage" class="horizontal">
                 <h5>用法</h5>
                 <section>
-                    <article class="body1 intro">
-                        <p>条形通知暂时出现在屏幕底部，通知用户应用已执行或将要执行的进程。此类通知不应打断用户操作流程，也不需要用户手动清除。</p>
-                    </article>
-                </section>
-                <section>
                     <article class="body1">
-                        <p>条形通知应包含与当前进程直接相关的文本，且尽可能简短，不能包含图标。</p>
+                        <h6>类型与权重</h6>
+                        <p>在质感设计中，按钮主要有如下四种类型：</p>
+                        <ul>
+                            <li><strong>扁平按钮</strong>仅包含字符，通常用于无强调按钮必要的情境。</li>
+                            <li><strong>悬浮按钮</strong>自带承载层，用于需要强调按钮的情境。</li>
+                            <li><strong>浮动操作按钮</strong>进一步强调自身，代表一个界面中最主要的操作。</li>
+                            <li><strong>切换按钮</strong>通常运用于按钮组中，同时还表示功能的状态。</li>
+                        </ul>
                     </article>
-                    <div id="only-contains-plain-text" class="diagram-wrapper">
-                        <div class="diagram" size="regular">
-                            <div class="snackbar">
-                                <p class="body1">消息已发送。</p>
-                            </div>
-                        </div>
-                        <span class="recommends do body2">正确</span>
-                        <p class="body1">使用纯文本通知用户。</p>
-                    </div>
-                    <div id="contains-icon" class="diagram-wrapper">
-                        <div class="diagram" size="regular">
-                            <div class="snackbar">
-                                <span class="material-icons">check</span>
-                                <p class="body1">消息已发送。</p>
-                            </div>
-                        </div>
-                        <span class="recommends dont body2">错误</span>
-                        <p class="body1">避免在条形通知内使用图标。</p>
-                    </div>
-                </section>
-                <section>
-                    <article class="body1">
-                        <p>条形通知仅可以包含一个与通知文本对应的操作按钮。另外，条形通知不应成为应用程序关键功能的入口。</p>
-                    </article>
-                    <div id="snackbar-actions" class="diagram-wrapper">
-                        <div class="diagram" size="regular">
-                            <div class="snackbar">
-                                <p class="body1">文件已删除。</p>
-                                <button class="text-button body2" tabindex="-1">撤销</button>
-                            </div>
-                        </div>
-                        <span class="recommends do body2">正确</span>
-                        <p class="body1">显示“撤消”操作允许用户更改选择。</p>
-                    </div>
-                    <div id="snackbar-dismissive-action" class="diagram-wrapper">
-                        <div class="diagram" size="regular">
-                            <div class="snackbar">
-                                <p class="body1">所选照片已添加至影集。</p>
-                                <button class="text-button body2" tabindex="-1">忽略</button>
-                            </div>
-                        </div>
-                        <span class="recommends caution body2">慎用</span>
-                        <p class="body1">默认情况下条形通知超时后会自行退场，无需额外的忽略类操作。</p>
-                    </div>
-                    <div id="multiple-actions" class="diagram-wrapper">
-                        <div class="diagram" size="regular">
-                            <div class="snackbar">
-                                <p class="body1">已标记为已读。</p>
-                                <button class="text-button body2" tabindex="-1">撤销</button>
-                                <button class="text-button body2" tabindex="-1">忽略</button>
-                            </div>
-                        </div>
-                        <span class="recommends dont body2">错误</span>
-                        <p class="body1">条形通知中最多仅能有一个操作按钮。</p>
-                    </div>
-                    <div id="filled-button" class="diagram-wrapper">
-                        <div class="diagram" size="regular">
-                            <div class="snackbar">
-                                <p class="body1">消息发送失败。</p>
-                                <button class="text-button contained body2" tabindex="-1">重试</button>
-                            </div>
-                        </div>
-                        <span class="recommends dont body2">错误</span>
-                        <p class="body1">避免使用悬浮按钮，防止承载层的过度堆叠吸引了不必要的注意力。</p>
-                    </div>
-                </section>
-            </article>
-            <hr class="divider horizontal">
-            <article id="placement" class="horizontal">
-                <h5>行为</h5>
-                <section>
-                    <article class="body1 intro">
-                        <p>条形通知从屏幕底部向上滑入进场，向下滑出退场。其退场既可由通知显示超时触发，也可由新界面进场或用户进入新的操作流程触发。</p>
-                    </article>
-                </section>
-                <section>
-                    <article class="body1">
-                        <p>由于条形通知与浮动操作按钮层级相同，若两者显示位置有重叠部分，则条形通知进退场时需同时移动浮动操作按钮。</p>
-                    </article>
-                    <div id="move-fab" class="diagram-wrapper" screen="mobile">
-                        <div class="simulator animated" clock="alarm">
+                    <div id="flat-button-example" class="diagram-wrapper" screen="mobile">
+                        <div class="simulator" map="main">
                             <div class="application">
-                                <div class="app-bar dark">
-                                    <nav class="tab-bar">
-                                        <button class="activated">
-                                            <span class="material-icons">alarm</span>
-                                        </button>
-                                        <button>
-                                            <span class="material-icons">access_time</span>
-                                        </button>
-                                        <button>
-                                            <span class="extra-material-icons">hourglass</span>
-                                        </button>
-                                        <button>
-                                            <span class="material-icons">timer</span>
-                                        </button>
-                                    </nav>
-                                    <button class="icon-button narrow unbounded" tabindex="-1">
-                                        <span class="material-icons">more_vert</span>
+                                <div class="map-wrapper">
+                                    <img src="../resources/map.jpg">
+                                </div>
+                                <div class="search-bar">
+                                    <button class="icon-button unbounded" tabindex="-1">
+                                        <span class="material-icons">menu</span>
+                                    </button>
+                                    <input class="subheading" type="text" placeholder="搜索" tabindex="-1">
+                                    <button class="icon-button unbounded" tabindex="-1">
+                                        <span class="material-icons">mic</span>
                                     </button>
                                 </div>
-                                <ul class="dark">
-                                    <li class="alarm expanded">
-                                        <div class="primary">
-                                            <span class="display3">08:30</span>
-                                            <div class="switch meta">
-                                                <div class="track"></div>
-                                                <div class="thumb unbounded">
-                                                    <input type="checkbox" role="switch" aria-checked="true"
-                                                        tabindex="-1">
-                                                </div>
+                                <button id="directions" class="fab" tabindex="-1">
+                                    <span class="material-icons">directions</span>
+                                </button>
+                                <button id="my-location" class="fab" tabindex="-1">
+                                    <span class="material-icons">my_location</span>
+                                </button>
+                                <div class="system-layer">
+                                    <div class="status-bar-background"></div>
+                                    <div class="dialog-wrapper">
+                                        <div class="dialog">
+                                            <span class="title">要使用位置信息服务吗？</span>
+                                            <div class="content">
+                                                <p class="subheading">
+                                                    使用位置信息服务能帮助应用更快更准确地找到你的位置。即使你的设备上未运行任何应用，该服务也可能会收集此类数据。
+                                                </p>
+                                            </div>
+                                            <div class="actions">
+                                                <button class="text-button body2" tabindex="-1">同意</button>
+                                                <button class="text-button body2" tabindex="-1">拒绝</button>
                                             </div>
                                         </div>
-                                        <ul class="panel">
-                                            <li class="list" one="small">
-                                                <div class="checkbox checked">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                                        <path></path>
-                                                    </svg>
-                                                    <input type="checkbox" checked>
-                                                </div>
-                                                <span class="primary-text subheading">重复</span>
-                                            </li>
-                                            <li class="list repeat-view subheading" one="small">
-                                                <span class="selected">一</span>
-                                                <span class="selected">二</span>
-                                                <span class="selected">三</span>
-                                                <span class="selected">四</span>
-                                                <span class="selected">五</span>
-                                                <span>六</span>
-                                                <span>七</span>
-                                            </li>
-                                            <li class="list ringtone" one="small">
-                                                <span class="material-icons">notifications_active</span>
-                                                <span class="primary-text subheading">默认铃声（Oxygen）</span>
-                                            </li>
-                                            <li class="list label" one="small">
-                                                <span class="material-icons">label_outline</span>
-                                                <input class="subheading" type="text" placeholder="标签" tabindex="-1">
-                                            </li>
-                                            <li class="divider horizontal"></li>
-                                        </ul>
-                                        <div class="secondary list" one="small">
-                                            <button class="icon-button unbounded" tabindex="-1">
-                                                <span class="material-icons">delete</span>
-                                            </button>
-                                            <button class="icon-button unbounded" tabindex="-1">
-                                                <span class="material-icons">expand_less</span>
-                                            </button>
-                                        </div>
+                                    </div>
+                                    <div class="navigation-bar-background"></div>
+                                </div>
+                            </div>
+                            <div class="system-bars">
+                                <div class="status-bar">
+                                    <div class="system">
+                                        <span id="wifi" class="material-icons">signal_wifi_4_bar</span>
+                                        <span id="signal" class="material-icons">signal_cellular_4_bar</span>
+                                        <span id="battery" class="extra-material-icons">system_battery</span>
+                                        <span id="time" class="body2">12:30</span>
+                                    </div>
+                                </div>
+                                <div class="navigation-bar">
+                                    <span id="back" class="extra-material-icons">system_back</span>
+                                    <span id="home" class="extra-material-icons">system_home</span>
+                                    <span id="recent" class="extra-material-icons">system_recent</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="body1">扁平按钮在对话框中的运用。</p>
+                    </div>
+                    <div id="rised-button-example" class="diagram-wrapper" screen="mobile">
+                        <div class="simulator" settings="app-info">
+                            <div class="application">
+                                <ul>
+                                    <li class="list" three>
+                                        <span class="thumbnail"
+                                            style="background-image: url(../resources/product_icons/phone.png);"></span>
+                                        <span class="primary-text subheading">电话
+                                            <p class="secondary-text body1">版本 3.0.0<br>com.android.dialer</p>
+                                        </span>
+                                    </li>
+                                    <div class="buttons-wrapper">
+                                        <button class="text-button contained body2" tabindex="-1">强制停止</button>
+                                        <button class="text-button contained body2" tabindex="-1">卸载</button>
+                                    </div>
+                                    <li class="divider horizontal"></li>
+                                    <li class="list" two>
+                                        <span class="primary-text subheading">通知<span
+                                                class="secondary-text body1">每周大约 2 条通知</span></span>
                                     </li>
                                     <li class="divider horizontal"></li>
-                                    <li class="alarm">
-                                        <div class="primary">
-                                            <span class="display3">09:00</span>
-                                            <div class="switch meta">
-                                                <div class="track"></div>
-                                                <div class="thumb unbounded">
-                                                    <input type="checkbox" role="switch" aria-checked="true"
-                                                        tabindex="-1">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="secondary list" one="small">
-                                            <span class="primary-text body2">周六、周日</span>
-                                            <button class="icon-button unbounded" tabindex="-1">
-                                                <span class="material-icons">expand_more</span>
-                                            </button>
-                                        </div>
+                                    <li class="list" two>
+                                        <span class="primary-text subheading">权限<span
+                                                class="secondary-text body1">电话、短信、麦克风、通话记录、通讯录、位置信息</span></span>
+                                    </li>
+                                    <li class="divider horizontal"></li>
+                                    <li class="list" two>
+                                        <span class="primary-text subheading">存储和缓存<span
+                                                class="secondary-text body1">内部存储空间已使用 50.57 MB</span></span>
+                                    </li>
+                                    <li class="divider horizontal"></li>
+                                    <li class="list" two>
+                                        <span class="primary-text subheading">移动数据和 WLAN<span
+                                                class="secondary-text body1">自3月13日以来已使用 37.27 KB</span></span>
+                                    </li>
+                                    <li class="divider horizontal"></li>
+                                    <li class="list" two>
+                                        <span class="primary-text subheading">设备使用时间<span
+                                                class="secondary-text body1">今天使用了 51 分钟</span></span>
                                     </li>
                                     <li class="divider horizontal"></li>
                                 </ul>
-                                <button id="add-alarm" class="fab" tabindex="-1">
-                                    <span class="material-icons">add</span>
-                                </button>
-                                <div class="snackbar">
-                                    <p class="body1">闹钟已删除。</p>
-                                    <button class="text-button body2" tabindex="-1">撤销</button>
+                                <div class="app-bar dark">
+                                    <div class="start">
+                                        <button class="icon-button unbounded" tabindex="-1">
+                                            <span class="material-icons">arrow_back</span>
+                                        </button>
+                                        <span class="title">应用信息</span>
+                                    </div>
                                 </div>
                                 <div class="system-layer">
                                     <div class="status-bar-background"></div>
@@ -267,11 +201,10 @@
                                 </div>
                             </div>
                         </div>
-                        <span class="recommends do body2">正确</span>
-                        <p class="body1">浮动操作按钮响应条形通知进退场。</p>
+                        <p class="body1">悬浮按钮明显区别于其它文本。</p>
                     </div>
-                    <div id="block-fab" class="diagram-wrapper" screen="mobile">
-                        <div class="simulator animated" inbox="main">
+                    <div id="fab-example" class="diagram-wrapper" screen="mobile">
+                        <div class="simulator" inbox="main">
                             <div class="application">
                                 <div class="app-bar light">
                                     <div class="start">
@@ -287,12 +220,6 @@
                                     </div>
                                 </div>
                                 <ul class="group">
-                                    <div class="actions">
-                                        <div class="right">
-                                            <span class="material-icons">check</span>
-                                            <span class="material-icons">access_time</span>
-                                        </div>
-                                    </div>
                                     <div class="surfaces">
                                         <div class="start"></div>
                                         <div class="center"></div>
@@ -312,7 +239,7 @@
                                         </span>
                                     </li>
                                     <li class="divider horizontal"></li>
-                                    <li states class="list" two>
+                                    <li class="list" two>
                                         <span class="avatar"
                                             style="background-image: url(../resources/faces/jonathan_lee.jpg);"></span>
                                         <span class="primary-text subheading">Summer BBQ
@@ -377,9 +304,47 @@
                                 <button class="fab light" tabindex="-1">
                                     <span class="material-icons">add</span>
                                 </button>
-                                <div class="snackbar">
-                                    <p class="body1">已标为处理完毕。</p>
-                                    <button class="text-button body2" tabindex="-1">撤销</button>
+                                <div class="system-layer">
+                                    <div class="status-bar-background"></div>
+                                    <div class="navigation-bar-background"></div>
+                                </div>
+                            </div>
+                            <div class="system-bars">
+                                <div class="status-bar">
+                                    <div class="system">
+                                        <span id="wifi" class="material-icons">signal_wifi_4_bar</span>
+                                        <span id="signal" class="material-icons">signal_cellular_4_bar</span>
+                                        <span id="battery" class="extra-material-icons">system_battery</span>
+                                        <span id="time" class="body2">12:30</span>
+                                    </div>
+                                </div>
+                                <div class="navigation-bar">
+                                    <span id="back" class="extra-material-icons">system_back</span>
+                                    <span id="home" class="extra-material-icons">system_home</span>
+                                    <span id="recent" class="extra-material-icons">system_recent</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="body1">浮动操作按钮代表了撰写新邮件的操作。</p>
+                    </div>
+                    <div id="toggle-button-example" class="diagram-wrapper" screen="mobile">
+                        <div class="simulator" music="albums">
+                            <div class="application dark">
+                                <div class="app-bar">
+                                    <div class="start">
+                                        <button class="icon-button unbounded" tabindex="-1">
+                                            <span class="material-icons">menu</span>
+                                        </button>
+                                        <span class="title">我的库</span>
+                                    </div>
+                                    <div class="end">
+                                        <button class="icon-button narrow unbounded" tabindex="-1">
+                                            <span class="material-icons">more_vert</span>
+                                        </button>
+                                        <button class="icon-button unbounded" tabindex="-1">
+                                            <span class="material-icons">search</span>
+                                        </button>
+                                    </div>
                                 </div>
                                 <div class="system-layer">
                                     <div class="status-bar-background"></div>
@@ -402,13 +367,21 @@
                                 </div>
                             </div>
                         </div>
-                        <span class="recommends dont body2">错误</span>
-                        <p class="body1">浮动操作按钮与条形通知处在相同层级但却被阻挡。</p>
+                        <p class="body1">切换按钮作为专辑收藏的开关。</p>
                     </div>
-                    <article class="body1">
-                        <p>若当前情境必需显示多个条形通知，则需其交替显示，屏幕中最多仅能显示一个条形通知。</p>
-                    </article>
                 </section>
+            </article>
+            <hr class="divider horizontal">
+            <article id="flat-buttons" class="horizontal">
+                <h5>扁平按钮</h5>
+            </article>
+            <hr class="divider horizontal">
+            <article id="raised-buttons" class="horizontal">
+                <h5>悬浮按钮</h5>
+            </article>
+            <hr class="divider horizontal">
+            <article id="toggle-buttons" class="horizontal">
+                <h5>切换按钮</h5>
             </article>
             <hr class="divider horizontal">
             <article id="specs" class="horizontal">
@@ -418,15 +391,15 @@
 
 
         <footer class="dark">
-            <a states class="left" href="../components/sliders.html">
+            <a states class="left" href="../components/bottom-navigation.html">
                 <span class="material-icons">arrow_back</span>
                 <span class="subheading">上一节
-                    <span class="title">滑块</span>
+                    <span class="title">底部导航</span>
                 </span>
             </a>
-            <a states class="right" href="../components/tabs.html">
+            <a states class="right" href="../components/buttons-floating-action-button.html">
                 <span class="subheading">下一节
-                    <span class="title">标签栏</span>
+                    <span class="title">按钮：浮动操作按钮</span>
                 </span>
                 <span class="material-icons">arrow_forward</span>
             </a>
@@ -438,7 +411,7 @@
                     <span class="material-icons">menu</span>
                 </button>
             </div>
-            <span class="title">组件 - 条形通知</span>
+            <span class="title">组件 - 按钮</span>
             <div class="end">
                 <button id="search-trigger" class="icon-button unbounded" disabled="true">
                     <span class="material-icons">search</span>

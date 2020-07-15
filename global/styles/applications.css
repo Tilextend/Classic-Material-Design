@@ -10,15 +10,20 @@
   地图
 \*------------------------------------*/
 
-.simulator[map="1"] {
-    --accent-color: #4285F4;
+.simulator[map=main] {
+    --primary-color: #4285F4;
+    --accent-color: #0F9D58;
 }
 
-.simulator[map="1"] .status-bar-background {
+.simulator[map=main] .status-bar-background {
     background-color: rgba(0, 0, 0, 0.3);
 }
 
-.simulator[map="1"] .map-wrapper {
+.simulator[map=main] .dialog {
+    --accent-color: var(--primary-color);
+}
+
+.simulator[map=main] .map-wrapper {
     display: flex;
     width: 100%;
     height: 100%;
@@ -26,27 +31,27 @@
     justify-content: center;
 }
 
-.simulator[map="1"] .map-wrapper img {
+.simulator[map=main] .map-wrapper img {
     position: absolute;
     width: auto;
     height: auto;
     transform: translate(204px, -82px) scale(0.5);
 }
 
-.simulator[map="1"] .search-bar {
+.simulator[map=main] .search-bar {
     margin-top: calc(var(--keyline) + 16px);
 }
 
-.simulator[map="1"] .fab {
+.simulator[map=main] .fab {
     align-self: flex-end;
     right: var(--keyline);
 }
 
-.simulator[map="1"] #my-location {
+.simulator[map=main] #my-location {
     background-color: var(--surface-color);
 }
 
-.simulator[map="1"] #directions {
+.simulator[map=main] #directions {
     --surface-shade-color: rgba(255, 255, 255, 0.2);
     --surface-shade-color: rgba(56, 66, 173, 0.2);
     --states-parameter: 2;
@@ -54,25 +59,40 @@
     bottom: calc(48px + var(--keyline));
 }
 
-.simulator[map="1"] #my-location {
+.simulator[map=main] #my-location {
     bottom: calc(104px + 2 * var(--keyline));
 }
 
-@media screen and (min-width:921px) {
-    .diagram-wrapper[screen~=tablet] .simulator[map="1"] .search-bar {
-        max-width: calc(6 * var(--increment));
-    }
-    .diagram-wrapper[screen~=tablet] .simulator[map="1"] .dialog {
-        width: calc(8 * var(--increment));
-    }
+.simulator[map=main] .current-location {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-@media (prefers-color-scheme: dark) {
-    .simulator[map="1"] {
-        --accent-color: #96caff;
+.simulator[map=main] .current-location .background {
+    width: calc(2 * var(--increment));
+    height: calc(2 * var(--increment));
+    background-color: rgba(66, 133, 244, 0.2);
+    border: 1px solid #4285F4;
+    border-radius: 50%;
+}
+
+.simulator[map=main] .current-location .foreground {
+    position: absolute;
+    width: var(--keyline);
+    height: var(--keyline);
+    background-color: #4285F4;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+}
+
+@media screen and (min-width:921px) {
+    .diagram-wrapper[screen~=tablet] .simulator[map=main] .search-bar {
+        max-width: calc(6 * var(--increment));
     }
-    .simulator[map="1"] #directions {
-        color: rgba(0, 0, 0, 0.54);
+    .diagram-wrapper[screen~=tablet] .simulator[map=main] .dialog {
+        width: calc(8 * var(--increment));
     }
 }
 
@@ -93,10 +113,6 @@
     background-color: #1b2327;
 }
 
-.simulator[settings] .app-bar {
-    box-shadow: var(--shadow-z2);
-}
-
 .simulator[settings] .switch[class~=on] .thumb::after {
     --surface-shade-color: rgba(0, 77, 64, 0.2);
 }
@@ -107,6 +123,36 @@
 
 .simulator[settings] .dialog-wrapper[picker] .activated {
     color: #ffffff;
+}
+
+.simulator[settings="app-info"] ul {
+    padding: 8px 0;
+}
+
+.simulator[settings="app-info"] ul>li:first-of-type {
+    grid-template-columns: 56px auto;
+}
+
+.simulator[settings="app-info"] ul>li:first-of-type .secondary-text {
+    margin-top: 0.0625rem;
+    line-height: 1.25rem;
+}
+
+.simulator[settings="app-info"] ul>.list {
+    padding: 0 var(--keyline);
+}
+
+.simulator[settings="app-info"] .buttons-wrapper {
+    display: flex;
+    gap: 16px;
+    padding-left: calc(var(--increment) + var(--keyline));
+    padding-right: var(--keyline);
+    margin-bottom: 24px;
+}
+
+.simulator[settings="app-info"] ul button {
+    flex-basis: 100%;
+    background-color: #E0E0E0;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -155,10 +201,20 @@
     color: #ffffff;
 }
 
+.simulator[clock] .scroll-view {
+    width: 400%;
+    display: flex;
+    align-self: flex-start;
+}
+
 .simulator[clock=alarm] .application>ul {
     align-self: stretch;
     padding-bottom: calc(48px + 56px + 2 * var(--keyline));
     overflow-y: scroll;
+}
+
+.simulator[clock]  .scroll-view>ul {
+    flex-basis: 100%;
 }
 
 .simulator[clock=alarm] .snackbar {
@@ -338,10 +394,11 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.2)) drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.14)) drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.12));
+    filter: drop-shadow(0px 0px 0.5px rgba(0, 0, 0, 0.2)) drop-shadow(0px 0.5px 1px rgba(0, 0, 0, 0.14)) drop-shadow(0px 0.5px 1px rgba(0, 0, 0, 0.12));
 }
 
 .simulator[inbox] .surfaces div {
+    flex-grow: 1;
     background-color: #fafafa;
 }
 
@@ -380,9 +437,765 @@
 
 @media (prefers-color-scheme: dark) {
     .simulator[inbox] .application {
-        background-color: #212121;
-    }
-    .simulator[inbox] .surfaces div {
         background-color: #303030;
     }
+    .simulator[inbox] .surfaces div {
+        background-color: #212121;
+    }
+}
+
+/*------------------------------------*\
+  文件
+\*------------------------------------*/
+
+.simulator[files] {
+    --primary-color: #03a9f4;
+    --accent-color: #18ffff;
+}
+
+.simulator[files=main] .status-bar-background {
+    background-color: #0288D1;
+}
+
+.simulator[files] .app-bar .extra span {
+    color: #ffffff;
+}
+
+.simulator[files=main] .fab {
+    top: calc(2 * var(--increment) + var(--keyline) + 4px);
+    left: var(--keyline);
+}
+
+.simulator[files=main] ul {
+    margin-bottom: 8px;
+}
+
+.simulator[files=main] .divider {
+    padding-left: calc(16px + var(--increment));
+}
+
+.simulator[files] .list[two] {
+    padding-left: var(--keyline);
+    padding-right: calc(var(--keyline) - 12px);
+    grid-template-columns: 56px auto 68px;
+}
+
+.simulator[files] .list .meta {
+    color: var(--hint-text-color);
+}
+
+.simulator[files] .subheader {
+    color: var(--secondary-text-color);
+}
+
+.simulator[files=main] .subheader {
+    padding-left: calc(16px + var(--increment));
+}
+
+.simulator[files=main] .thumbnail {
+    border-radius: 50%;
+    background-color: #B2B2B2;
+    color: #ffffff;
+}
+
+.simulator[files=main] ul:last-of-type li:nth-of-type(2) .thumbnail {
+    background-color: #2196F3;
+}
+
+.simulator[files=main] ul:last-of-type li:nth-of-type(3) .thumbnail {
+    background-color: #F9CE1D;
+}
+
+/*------------------------------------*\
+  照片
+\*------------------------------------*/
+
+.simulator[photos] .status-bar-background {
+    background-color: #E0E0E0;
+}
+
+.simulator[photos] .app-bar {
+    background-color: #fafafa;
+    box-shadow: var(--shadow-z0);
+}
+
+.simulator[photos] ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto 164px 164px 204px;
+    gap: 4px;
+    padding: 0 4px;
+}
+
+.simulator[photos] ul li:not(.subheader) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.simulator[photos] .subheader {
+    grid-column-start: 1;
+    grid-column-end: -1;
+    padding: 0 calc(var(--keyline) - 4px);
+}
+
+.simulator[photos=fun-times] ul li:nth-of-type(2) img {
+    transform: translateX(41px);
+}
+
+.simulator[photos=fun-times] ul li:nth-of-type(3) img {
+    transform: translateX(11px);
+}
+
+.simulator[photos=fun-times] ul li:nth-of-type(4) img {
+    align-self: flex-end;
+    transform: translateX(37px);
+}
+
+.simulator[photos=fun-times] ul li:nth-of-type(5) {
+    grid-column-end: span 2;
+}
+
+.simulator[photos=fun-times] ul li:nth-of-type(5) img {
+    align-self: flex-start;
+    transform: translateX(6px);
+}
+
+.simulator[photos=fun-times] ul li:nth-of-type(6) img {
+    transform: translate(5px, 16px);
+}
+
+.simulator[photos=fun-times] ul li:nth-of-type(7) {
+    grid-column-start: 1;
+    grid-column-end: -1;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+/*------------------------------------*\
+  联系人
+\*------------------------------------*/
+
+.simulator[contacts] {
+    --primary-color: #3f51b5;
+    --accent-color: #ff4081;
+}
+
+.simulator[contacts] .status-bar-background {
+    top: 0;
+    position: absolute;
+    width: 100%;
+}
+
+.simulator[contacts] .contacts-list .status-bar-background {
+    background-color: #303f9f;
+}
+
+.simulator[contacts] .contact-card .status-bar-background {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.simulator[contacts] .application {
+    flex-direction: row;
+}
+
+.simulator[contacts] .app-bar {
+    box-shadow: var(--shadow-z0);
+}
+
+.simulator[contacts] .divider {
+    padding-left: calc(16px + var(--increment));
+}
+
+.contacts-list {
+    position: relative;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.contacts-list ul {
+    padding: 8px 0;
+}
+
+.contacts-list ul li[one] {
+    height: var(--increment);
+    padding-left: calc(16px + var(--increment));
+    padding-right: var(--keyline);
+    grid-template-columns: 56px auto;
+}
+
+.contacts-list ul li:first-of-type {
+    padding-left: var(--keyline);
+    grid-template-columns: 56px 56px auto;
+}
+
+.contacts-list ul li:first-of-type span:first-of-type {
+    width: 24px;
+    font-size: 24px;
+    text-align: center;
+    color: var(--accent-color);
+}
+
+.contact-card {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #fafafa;
+    box-shadow: var(--shadow-z2);
+}
+
+.contact-card .app-bar {
+    position: absolute;
+    background-color: transparent;
+}
+
+.portrait-wrapper {
+    position: relative;
+    display: flex;
+    flex-shrink: 0;
+    padding-top: 24px;
+    overflow: hidden;
+}
+
+.content-block {
+    width: 100%;
+    aspect-ratio: 3/2;
+    display: flex;
+}
+
+.portrait-wrapper .scrim {
+    height: 88px;
+    opacity: 0.38;
+}
+
+.portrait-wrapper img {
+    position: absolute;
+    width: 100%;
+    align-self: center;
+}
+
+.portrait-wrapper img[character=ali-connors] {
+    transform: translateY(-20px);
+}
+
+.portrait-wrapper span {
+    position: absolute;
+    display: inline-flex;
+    align-self: flex-end;
+    color: #ffffff;
+    margin-left: calc(16px + var(--increment));
+    padding-bottom: 27px;
+}
+
+.contact-card ul {
+    padding: 8px 0;
+}
+
+.contact-card ul:first-of-type {
+    margin-top: 28px;
+}
+
+.contact-card li {
+    padding-left: calc(16px + var(--increment));
+    padding-right: var(--keyline);
+    grid-template-columns: auto 56px;
+}
+
+.contact-card li:first-of-type {
+    padding-left: var(--keyline);
+    padding-right: var(--keyline);
+    grid-template-columns: 56px auto 56px;
+}
+
+.simulator[contacts] #edit {
+    top: 252px;
+    right: var(--keyline);
+    color: var(--primary-text-color);
+    box-shadow: var(--shadow-z4);
+}
+
+@media screen and (min-width:921px) {
+    .diagram-wrapper[screen~=tablet] .simulator[contacts] .application {
+        background-color: #eeeeee;
+    }
+    .diagram-wrapper[screen~=tablet] .simulator[contacts] .contact-card {
+        width: calc(6 * var(--increment));
+    }
+    .diagram-wrapper[screen~=tablet] .simulator[contacts] .contact-card .app-bar .start {
+        visibility: hidden;
+    }
+}
+
+/*------------------------------------*\
+  电话
+\*------------------------------------*/
+
+.simulator[dialer] {
+    --primary-color: #0288d1;
+}
+
+.simulator[dialer] .application {
+    flex-direction: row;
+}
+
+.simulator[dialer] .system-layer .status-bar-background {
+    background-color: #0277bd;
+}
+
+.diagram-wrapper[screen~=tablet] .simulator[dialer] .system-layer .status-bar-background {
+    background-color: transparent;
+}
+
+.simulator[dialer] .main {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.diagram-wrapper[screen~=tablet] .simulator[dialer] .main {
+    width: calc(100% - 6 * var(--increment));
+}
+
+.simulator[dialer] .main .scroll-view {
+    width: 300%;
+    display: flex;
+}
+
+.simulator[dialer] .main .scroll-view>ul {
+    flex-basis: 100%;
+}
+
+.simulator[dialer] #favorites {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    padding-top: 1px;
+}
+
+.simulator[dialer] #favorites li {
+    position: relative;
+    aspect-ratio: 4/3;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+}
+
+.simulator[dialer] #favorites .scrim {
+    height: 88px;
+    opacity: 0.5;
+}
+
+.simulator[dialer] #favorites .list {
+    padding: 0 16px;
+}
+
+.simulator[dialer] #favorites li button {
+    align-self: flex-end;
+    color: #ffffff;
+    filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.2)) drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.14)) drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.12));
+}
+
+.simulator[dialer] #favorites .secondary-text {
+    font-size: 13px;
+    margin-top: -0.1875rem;
+}
+
+.simulator[dialer] li[character=ali-connors], .simulator[dialer] li[character=abbey-christensen], .simulator[dialer] li[character=janet-perkins], .simulator[dialer] li[character=britta-holt] {
+    background-position: bottom;
+}
+
+.simulator[dialer] li[character=mary-johnson] {
+    background-position: left;
+}
+
+.simulator[dialer] li[character=aaron-bennett], .simulator[dialer] li[character=anthony-stevens] {
+    background-position: top;
+}
+
+.simulator[dialer] #favorites .list .primary-text .material-icons {
+    font-size: 14px;
+    margin-left: 4px;
+    margin-bottom: 1px;
+    vertical-align: middle;
+}
+
+.simulator[dialer] #favorites .secondary-text {
+    font-size: 13px;
+    margin-top: -0.1875rem;
+}
+
+.simulator[dialer] #recents .list {
+    padding: 0 var(--keyline);
+    grid-template-columns: 56px auto;
+}
+
+.simulator[dialer] #recents .list .secondary-text .message {
+    color: var(--secondary-text-color-alt);
+}
+
+.simulator[dialer] #recents .secondary-text span:not(.message), .simulator[dialer] .app-bar .secondary-text span:not(.message) {
+    font-size: 18px;
+    vertical-align: top;
+    margin-top: 1px;
+}
+
+.simulator[dialer] #recents .secondary-text span:last-of-type, .simulator[dialer] .app-bar .secondary-text span:last-of-type {
+    margin-right: 4px;
+}
+
+.simulator[dialer] .list .success {
+    color: #00c853;
+}
+
+.simulator[dialer] .list .failure {
+    color: #FF1744;
+}
+
+.simulator[dialer] #contacts {
+    padding: 8px 0;
+}
+
+.simulator[dialer] #contacts li[one] {
+    padding-left: calc(16px + var(--increment));
+    padding-right: var(--keyline);
+    grid-template-columns: 56px auto;
+}
+
+.simulator[dialer] #contacts li:first-of-type, .simulator[dialer] #contacts .divider+li {
+    padding-left: var(--keyline);
+    grid-template-columns: 56px 56px auto;
+}
+
+.simulator[dialer] #contacts li:first-of-type span:first-of-type, .simulator[dialer] #contacts .divider+li span:first-of-type {
+    width: 24px;
+    font-size: 24px;
+    text-align: center;
+    color: var(--accent-color);
+}
+
+.simulator[dialer] #contacts .divider {
+    padding-left: calc(16px + var(--increment));
+    margin: 8px 0;
+}
+
+.simulator[dialer] .main .fab {
+    bottom: calc(48px + var(--keyline));
+    align-self: center;
+    color: #ffffff;
+    background-color: var(--primary-color);
+}
+
+.diagram-wrapper[screen~=tablet] .simulator[dialer] .main .fab {
+    visibility: hidden;
+}
+
+.simulator[dialer] .app-bar {
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.diagram-wrapper[screen~=tablet] .simulator[dialer] .main .app-bar {
+    box-shadow: var(--shadow-z0);
+}
+
+.simulator[dialer] .search-bar {
+    position: relative;
+    width: auto;
+    margin: 8px 8px 4px 8px;
+}
+
+.simulator[dialer] .search-bar button:first-of-type {
+    color: var(--hint-text-color);
+}
+
+.simulator[dialer] .app-bar .list {
+    margin: 4px 8px;
+    padding: 0 8px;
+    grid-template-columns: 56px auto;
+    background-color: var(--surface-color);
+    border-radius: 2px;
+    box-shadow: var(--shadow-z2);
+}
+
+.simulator[dialer] .app-bar div+.tab-bar {
+    margin-top: 4px;
+}
+
+.simulator[dialer] .status-bar-background {
+    top: 0;
+    position: absolute;
+    width: 100%;
+}
+
+.simulator[dialer] .main .status-bar-background, .simulator[dialer] .oncall .app-bar .status-bar-background {
+    background-color: #0277bd;
+}
+
+.simulator[dialer] .dial-list {
+    position: absolute;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.simulator[dialer] .dial-list>ul {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding-top: calc(var(--increment) / 2);
+}
+
+.simulator[dialer] .dial-list>ul>* {
+    opacity: 0;
+}
+
+.simulator[dialer] .dial-list>ul>li {
+    padding: 0 var(--keyline);
+    grid-template-columns: 56px auto;
+}
+
+.simulator[dialer] .dial-list>ul>li .primary-text {
+    line-height: 1.5rem;
+}
+
+.simulator[dialer] .dial-list>ul>li .secondary-text {
+    line-height: 1.25rem;
+    margin-top: -0.0625rem;
+}
+
+.simulator[dialer] .dial-list>ul>li[one] span:first-of-type {
+    margin: 8px;
+    color: var(--primary-color);
+}
+
+.simulator[dialer] .dialpad {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: calc(6 * var(--increment));
+    height: 100%;
+    background-color: var(--surface-background-color);
+    box-shadow: var(--shadow-z4);
+    padding-top: 24px;
+}
+
+.simulator[dialer] .dialpad ul {
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 1fr;
+    padding: 16px 8px;
+    margin-bottom: calc(48px + 56px + var(--keyline));
+}
+
+.simulator[dialer] .dialpad ul li {
+    --states-base-color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.simulator[dialer] .dialpad ul li:first-of-type span:nth-of-type(2) {
+    font-size: 18px;
+}
+
+.simulator[dialer] .dialpad ul li:last-of-type span {
+    margin-bottom: 16px;
+}
+
+.simulator[dialer] .dialpad ul li span:first-of-type {
+    font-weight: 300;
+    color: var(--primary-color);
+}
+
+.simulator[dialer] .dialpad ul li span:nth-of-type(2) {
+    margin-top: -9px;
+    color: var(--secondary-text-color);
+}
+
+.simulator[dialer] .dial-list .status-bar-background, .simulator[dialer] .callee .status-bar-background {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.simulator[dialer] .dialpad .input {
+    height: var(--increment);
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    padding: 0 calc(var(--keyline) - 12px);
+}
+
+.simulator[dialer] .dialpad .input>span {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.simulator[dialer] .dialpad .input>span::after {
+    content: "";
+}
+
+.simulator[dialer] .dialpad .input button {
+    color: var(--secondary-text-color);
+}
+
+.simulator[dialer] .dialpad .input button:first-of-type {
+    opacity: 0;
+}
+
+.simulator[dialer] .dialpad .fab {
+    align-self: center;
+    bottom: calc(48px + var(--keyline));
+    color: #ffffff;
+    background-color: #00c853;
+    box-shadow: var(--shadow-z4);
+}
+
+.simulator[dialer] .oncall {
+    visibility: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    padding-bottom: 48px;
+}
+
+.simulator[dialer] .oncall .app-bar {
+    position: absolute;
+    left: 0;
+    width: calc(100% - 6 * var(--increment));
+    height: 100%;
+    padding-bottom: 48px;
+    box-shadow: var(--shadow-z16);
+    justify-content: space-between;
+}
+
+.simulator[dialer] .oncall .callee {
+    position: relative;
+    width: calc(6 * var(--increment));
+    display: flex;
+    flex-direction: column;
+}
+
+.simulator[dialer] .oncall .fab {
+    bottom: var(--keyline);
+    align-self: center;
+    color: #ffffff;
+    background-color: #ff1744;
+}
+
+.simulator[dialer] .oncall .toolbar {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(2, calc(56px + 2 * var(--keyline)));
+    padding: 0 var(--keyline);
+    color: var(--secondary-text-color);
+}
+
+.simulator[dialer] .oncall .toolbar button[disabled] {
+    color: var(--hint-text-color-alt);
+}
+
+.simulator[dialer] .oncall .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+    padding: 0 40px;
+}
+
+.simulator[dialer] .oncall .info>span:nth-of-type(2) {
+    font-weight: 300;
+    margin-top: 8px;
+}
+
+@media screen and (max-width:920px) {
+    .diagram-wrapper[screen~=mobile] .simulator[dialer] .application {
+        flex-direction: column;
+    }
+    .diagram-wrapper[screen~=mobile] .simulator[dialer] .main .app-bar {
+        box-shadow: var(--shadow-z4);
+    }
+    .diagram-wrapper[screen~=mobile] .simulator[dialer] .dial-list {
+        visibility: hidden;
+        width: 100%;
+    }
+    .diagram-wrapper[screen~=mobile] .simulator[dialer] .dial-list>ul {
+        padding-top: 4px;
+    }
+    .diagram-wrapper[screen~=mobile] .simulator[dialer] .dial-list>ul>li[two] {
+        height: 60px;
+    }
+    .diagram-wrapper[screen~=mobile] .simulator[dialer] .dialpad {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        padding: 0;
+        box-shadow: var(--shadow-z16);
+    }
+    .diagram-wrapper[screen~=mobile] .simulator[dialer] .dialpad .fab {
+        box-shadow: var(--shadow-z2);
+    }
+    .diagram-wrapper[screen~=mobile] .simulator[dialer] .oncall {
+        flex-direction: column-reverse;
+    }
+    .diagram-wrapper[screen~=mobile] .simulator[dialer] .oncall .app-bar {
+        width: 100%;
+        height: calc(100% - 360px - 48px);
+        padding-bottom: 0;
+        box-shadow: var(--shadow-z4);
+    }
+    .diagram-wrapper[screen~=mobile] .simulator[dialer] .oncall .callee {
+        width: auto;
+        aspect-ratio: 1/1;
+    }
+    .diagram-wrapper[screen~=mobile] .simulator[dialer] .oncall .toolbar {
+        display: flex;
+        margin: 8px 0;
+        justify-content: space-between;
+    }
+    .diagram-wrapper[screen~=mobile] .simulator[dialer] .oncall .info {
+        padding: 0 24px;
+    }
+    .diagram-wrapper[screen~=mobile] .simulator[dialer] .oncall .info>span:nth-of-type(2) {
+        margin-top: -7px;
+    }
+    .diagram-wrapper[screen~=mobile] .simulator[dialer] .oncall .info>span:nth-of-type(3) {
+        margin-top: -4px;
+    }
+    .diagram-wrapper[screen~=mobile] .simulator[dialer] .oncall .callee img {
+        height: 100%;
+    }
+    .diagram-wrapper[screen~=mobile] .simulator[dialer] .oncall .callee .status-bar-background {
+        display: none;
+    }
+    .diagram-wrapper[screen~=mobile] .simulator[dialer] .main .fab {
+        visibility: visible;
+    }
+}
+
+/*------------------------------------*\
+  音乐
+\*------------------------------------*/
+
+.simulator[music] .application {
+    background-color: #121212;
+}
+
+.simulator[music] .system-layer .status-bar-background {
+    background-color: #000000;
+}
+
+.simulator[music] .app-bar {
+    color: var(--primary-text-color);
+    background-color: #121212;
+    box-shadow: var(--shadow-z0);
 }

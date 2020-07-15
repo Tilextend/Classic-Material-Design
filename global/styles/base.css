@@ -42,7 +42,7 @@
     --sharp-curve: cubic-bezier(0.4, 0.0, 0.6, 1);
 }
 
-.dialog::after, .fab::after, .text-button[class~=contained]::after, .snackbar::after {
+.edged::after, .dialog::after, .search-bar::after, .fab::after, .text-button[class~=contained]::after, .snackbar::after {
     content: "";
     top: 0;
     left: 0;
@@ -51,6 +51,8 @@
     height: calc(100% - 2px);
     border-width: 1px 0;
     border-style: solid;
+    border-top-color: var(--surface-hint-color, rgba(255, 255, 255, 0.4));
+    border-bottom-color: var(--surface-shade-color, rgba(33, 33, 33, 0.1));
     border-radius: inherit;
     pointer-events: none;
 }

@@ -8,8 +8,6 @@
     order: -1;
     display: flex;
     width: 100%;
-    padding-left: calc(var(--keyline) - 12px);
-    padding-right: calc(var(--keyline) - 12px);
     align-items: start;
     background-color: var(--primary-color, --surface-color);
     color: var(--secondary-text-color);
@@ -20,23 +18,50 @@
     color: var(--primary-text-color);
 }
 
+.app-bar[class~=prominent] {
+    flex-wrap: wrap;
+}
+
 .app-bar .start, .app-bar .end {
+    position: relative;
     height: var(--increment);
     display: flex;
     flex-grow: 1;
     align-items: center;
 }
 
-.app-bar .start>.title {
-    margin-left: 12px;
+.app-bar .start button+span {
+    margin-left: 20px;
 }
 
-.app-bar .start button+.title {
-    margin-left: 20px;
+.app-bar .start {
+    padding-left: calc(var(--keyline) - 12px);
 }
 
 .app-bar .end {
     flex-direction: row-reverse;
+    padding-right: calc(var(--keyline) - 12px);
+}
+
+.app-bar .extra {
+    position: relative;
+    width: 100%;
+    height: calc(16px + var(--increment));
+    display: flex;
+    align-items: center;
+}
+
+.app-bar .start>span {
+    margin-left: 12px;
+    color: var(--primary-text-color);
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.app-bar .extra>span {
+    margin-left: calc(16px + var(--increment));
+    color: var(--primary-text-color);
 }
 
 /*------------------------------------*\
@@ -58,14 +83,6 @@
     box-shadow: var(--shadow-z2);
 }
 
-.search-bar::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: calc(100% - 2px);
-    border-radius: inherit;
-}
-
 .search-bar input {
     margin-left: 12px;
     height: 100%;
@@ -81,14 +98,14 @@
 
 @media (prefers-color-scheme: light) {
     .search-bar::after {
-        border-top: 1px solid rgba(255, 255, 255, 0.4);
-        border-bottom: 1px solid rgba(33, 33, 33, 0.1);
+        border-top-color: var(--surface-hint-color, rgba(255, 255, 255, 0.4));
+        border-bottom-color: var(--surface-shade-color, rgba(33, 33, 33, 0.1));
     }
 }
 
 @media (prefers-color-scheme: dark) {
     .search-bar::after {
-        border-top: 1px solid rgba(255, 255, 255, 0.2);
-        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+        border-top-color: var(--surface-hint-color, rgba(255, 255, 255, 0.2));
+        border-bottom-color: var(--surface-shade-color, rgba(0, 0, 0, 0.2));
     }
 }

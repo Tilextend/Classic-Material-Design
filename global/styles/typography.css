@@ -84,27 +84,35 @@ h6 {
 @media (prefers-color-scheme: light) {
     :root {
         --primary-text-color: rgba(0, 0, 0, 0.87);
+        --secondary-text-color-alt: rgba(0, 0, 0, 0.7);
         --secondary-text-color: rgba(0, 0, 0, 0.54);
         --hint-text-color: rgba(0, 0, 0, 0.38);
+        --hint-text-color-alt: rgba(0, 0, 0, 0.2);
     }
 }
 
 .light {
     --primary-text-color: rgba(0, 0, 0, 0.87);
+    --secondary-text-color-alt: rgba(0, 0, 0, 0.7);
     --secondary-text-color: rgba(0, 0, 0, 0.54);
     --hint-text-color: rgba(0, 0, 0, 0.38);
+    --hint-text-color-alt: rgba(0, 0, 0, 0.2);
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
         --primary-text-color: rgba(255, 255, 255, 1);
+        --secondary-text-color-alt: rgba(255, 255, 255, 0.87);
         --secondary-text-color: rgba(255, 255, 255, 0.7);
         --hint-text-color: rgba(255, 255, 255, 0.5);
+        --hint-text-color-alt: rgba(255, 255, 255, 0.38);
     }
 }
 
 .dark {
     --primary-text-color: rgba(255, 255, 255, 1);
+    --secondary-text-color-alt: rgba(255, 255, 255, 0.87);
     --secondary-text-color: rgba(255, 255, 255, 0.7);
     --hint-text-color: rgba(255, 255, 255, 0.5);
+    --hint-text-color-alt: rgba(255, 255, 255, 0.38);
 }
