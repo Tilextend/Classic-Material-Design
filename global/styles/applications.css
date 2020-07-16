@@ -213,7 +213,7 @@
     overflow-y: scroll;
 }
 
-.simulator[clock]  .scroll-view>ul {
+.simulator[clock] .scroll-view>ul {
     flex-basis: 100%;
 }
 
@@ -1198,4 +1198,70 @@
     color: var(--primary-text-color);
     background-color: #121212;
     box-shadow: var(--shadow-z0);
+}
+
+.simulator[music] ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px;
+    padding: 4px 0;
+}
+
+.simulator[music] li {
+    display: grid;
+}
+
+.simulator[music] li[class~=large] {
+    grid-template-columns: 1fr 1fr;
+    grid-column-end: span 2;
+    aspect-ratio: 2/1;
+}
+
+.simulator[music] li img {
+    width: 100%;
+    flex-grow: unset;
+    aspect-ratio: 1/1;
+}
+
+.simulator[music] li[class~=large] img {
+    grid-row-end: span 2;
+}
+
+.simulator[music] li .list {
+    grid-template-columns: auto auto;
+    gap: 4px;
+    padding-left: 16px;
+}
+
+.simulator[music] li[class~=large] .list {
+    padding-left: 18px;
+}
+
+.simulator[music] li .primary-text {
+    font-weight: 500;
+}
+
+.simulator[music] li .secondary-text {
+    color: var(--primary-text-color);
+}
+
+.simulator[music] li[class~=large]>span {
+    height: 48px;
+    display: flex;
+    align-items: center;
+    align-self: end;
+    padding-left: 14px;
+    padding-right: 16px;
+}
+
+#girl {
+    background-color: #f6bf26;
+}
+
+#in-a-perfect-world {
+    background-color: #2c556c;
+}
+
+#halcyon-days {
+    background-color: #89196b;
 }

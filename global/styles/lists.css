@@ -24,6 +24,10 @@
     height: 72px;
 }
 
+.list[two=grid] {
+    height: 68px;
+}
+
 .list[two=dense] {
     height: 60px;
 }
@@ -32,7 +36,7 @@
     height: 88px;
 }
 
-.list[three] span:first-child:not(.primary-text){
+.list[three] span:first-child:not(.primary-text) {
     align-self: start;
     margin-top: 16px;
 }
