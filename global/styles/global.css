@@ -82,6 +82,16 @@ ul, li {
     list-style: none;
 }
 
+thead {
+    color: var(--secondary-text-color);
+}
+
+th, td {
+    border-width: 1px;
+    border-style: solid;
+    padding: calc(var(--keyline) / 2 + 4px) var(--keyline);
+}
+
 @font-face {
     font-family: 'Extra Material Icons';
     font-style: normal;
@@ -131,6 +141,7 @@ ul, li {
     flex-direction: column;
     width: 256px;
     height: 100vh;
+    padding-bottom: 8px;
     background-color: var(--dialog-background-color);
     overflow-y: auto;
     transition-property: none;
@@ -216,6 +227,20 @@ ul, li {
     color: var(--primary-color);
 }
 
+.CMD-drawer nav:last-of-type {
+    margin-bottom: 96px;
+}
+
+.CMD-drawer>a {
+    line-height: 48px;
+    display: flex;
+    align-items: center;
+    align-self: flex-start;
+    margin: auto 0 0 0;
+    padding: 0 var(--keyline);
+    color: var(--primary-text-color);
+}
+
 /*------------------------------------*\
   内容
 \*------------------------------------*/
@@ -236,6 +261,7 @@ main>.app-bar {
 
 main>.app-bar[class~=prominent] {
     height: var(--increment);
+    flex-wrap: nowrap;
     background-color: transparent;
     box-shadow: none;
     margin-bottom: calc(3 * var(--increment));
@@ -440,18 +466,21 @@ article>ul li {
     --keyline: 16px;
 }
 
-.diagram::after, .simulator::after {
+.illustration::after, .diagram::after, .simulator::after {
     content: "";
     top: 0;
     left: 0;
     position: absolute;
-    display: flex;
     width: calc(100% - 2px);
     height: calc(100% - 2px);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.diagram::after, .simulator::after {
+    display: flex;
     font-family: 'Material Icons';
     font-size: 72px;
     color: #ffffff;
-    border: 1px solid rgba(0, 0, 0, 0.08);
     align-items: center;
     justify-content: center;
     transition-property: background-color, color;
@@ -485,6 +514,54 @@ article>ul li {
     color: #f57f17;
 }
 
+table {
+    margin-bottom: var(--keyline);
+}
+
+tbody th, tbody td {
+    background-color: var(--dialog-background-color);
+}
+
+table span {
+    display: block;
+}
+
+/*------------------------------------*\
+  输入事件
+\*------------------------------------*/
+
+.touch-input {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.touch-input div {
+    position: absolute;
+    border-radius: 50%;
+    box-sizing: initial;
+}
+
+.touch-input .core {
+    width: 36px;
+    height: 36px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 4px solid rgba(255, 64, 129, 1);
+}
+
+.touch-input .foreground {
+    width: 44px;
+    height: 44px;
+    border: 8px solid rgba(255, 64, 129, 0.38);
+}
+
+.touch-input .background {
+    width: 60px;
+    height: 60px;
+    border: 48px solid rgba(255, 64, 129, 0.2);
+}
+
 /*------------------------------------*\
   模拟器
 \*------------------------------------*/
@@ -505,7 +582,7 @@ article>ul li {
     height: 640px;
 }
 
-.simulator[class~=playing] {
+.diagram[class~=playing], .simulator[class~=playing] {
     animation-name: timetrick;
     animation-fill-mode: both;
     animation-timing-function: linear;
@@ -520,13 +597,13 @@ article>ul li {
     display: none;
 }
 
-.simulator[class~=animated]::after {
+.diagram[class~=animated]::after, .simulator[class~=animated]::after {
     content: 'play_circle_filled';
     background-color: rgba(0, 0, 0, 0.4);
     cursor: pointer;
 }
 
-.simulator[class~=on]::after {
+.diagram[class~=on]::after, .simulator[class~=on]::after {
     color: transparent;
     background-color: transparent;
     cursor: pointer;
@@ -640,34 +717,41 @@ footer {
     display: flex;
     width: 100%;
     height: 96px;
-    background-color: var(--primary-color);
     margin-top: var(--increment);
 }
 
 footer a {
     position: relative;
-    flex-grow: 1;
+    flex-basis: 100%;
     display: grid;
+    padding: 0 var(--keyline);
     align-items: center;
     justify-items: self-start;
+    background-color: var(--primary-color);
 }
 
 footer .material-icons {
     padding-top: 24px;
-    margin-inline-start: 32px;
-    margin-inline-end: var(--keyline);
     color: #ffffff;
 }
 
-.left {
-    grid-template-columns: auto calc(var(--content-body-width) / 2);
+footer .left {
+    grid-template-columns: auto calc(var(--content-body-width) / 2 - var(--keyline));
 }
 
-.right {
-    grid-template-columns: calc(var(--content-body-width) / 2) auto;
+footer .left .material-icons {
+    margin-right: 32px;
 }
 
-.left .material-icons, .right .subheading {
+footer .right {
+    grid-template-columns: calc(var(--content-body-width) / 2 - var(--keyline)) auto;
+}
+
+footer .right .material-icons {
+    margin-left: 32px;
+}
+
+footer .left .material-icons, .right .subheading {
     justify-self: end;
     align-items: flex-end;
 }
@@ -746,10 +830,10 @@ footer .title {
     section {
         grid-template-columns: 1fr;
     }
-    .left {
+    footer .left {
         grid-template-columns: min-content auto;
     }
-    .right {
+    footer .right {
         grid-template-columns: auto min-content;
     }
 }
@@ -789,8 +873,9 @@ footer .title {
     :root {
         --content-body-width: 100%;
     }
-    h4, h5, h6, header p, section>* {
-        padding: 0 var(--keyline);
+    h4, h5, header p, section>*, table {
+        margin-right: var(--keyline);
+        margin-left: var(--keyline);
     }
     .chapter-catalogue {
         margin-left: var(--keyline);
@@ -809,6 +894,9 @@ footer .title {
     .diagram+p, .simulator+p {
         color: rgba(0, 0, 0, 0.7);
     }
+    th, td {
+        border-color: #eeeeee;
+    }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -826,5 +914,8 @@ footer .title {
     }
     .recommends[class~=do] {
         color: #66BB6A;
+    }
+    th, td {
+        border-color: #616161;
     }
 }

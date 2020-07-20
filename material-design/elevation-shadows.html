@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="theme-color" content="#212121">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>质感设计 - 层级与阴影</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Roboto+Mono:wght@500&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="shortcut icon" href="../global/logo.svg">
+    <link rel="stylesheet" href="./styles/elevation-shadows.css">
+    <link rel="stylesheet" href="../global/styles/global.css">
+    <script defer src="../global/scripts/global.js"></script>
+    <script defer src="../global/scripts/components.js"></script>
+</head>
+
+<body>
+    <div class="CMD-drawer-wrapper">
+        <aside class="CMD-drawer body1">
+            <figure>
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="12" />
+                    <path fill="#BDBDBD" d="M3.6,3.6h16.8v16.8H3.6V3.6z" />
+                    <path fill="#ffffff" d="M20.4,3.6L12,20.4L3.6,3.6H20.4z" />
+                </svg>
+                <figcaption class="subheading">MATERIAL DESIGN</figcaption>
+            </figure>
+            <hr class="divider horizontal">
+            <nav>
+                <span states class="body2" tabindex="0">基本原理</span>
+                <a states href="../index.html">概述</a>
+                <a states href="../material-design/environment.html">环境</a>
+                <a states href="../material-design/material-properties.html">Material 属性</a>
+                <a states class="activated">层级与阴影</a>
+            </nav>
+            <nav>
+                <span states class="body2" tabindex="0">布局</span>
+                <a states href="../layout/principles.html">架构方法</a>
+                <a states href="../layout/units-measurements.html">单位与度量方法</a>
+                <a states href="../layout/spacing-methods.html">元素排布</a>
+                <a states href="../layout/structure.html">界面结构</a>
+                <a states href="../layout/responsive-ui.html">响应式界面</a>
+                <a states href="../layout/density.html">内容密度</a>
+            </nav>
+            <nav>
+                <span states class="body2" tabindex="0">风格样式</span>
+                <a states href="../style/colors.html">颜色</a>
+                <a states href="../style/icons.html">图标</a>
+                <a states href="../style/imagery.html">图像</a>
+                <a states href="../style/typography.html">字体排印</a>
+                <a states href="../style/writing.html">书面用语</a>
+                <a states href="../style/sound.html">音效</a>
+            </nav>
+            <nav>
+                <span states class="body2" tabindex="0">动画效果</span>
+                <a states href="../motion/material-motion.html">质感动画</a>
+                <a states href="../motion/movement.html">移动</a>
+                <a states href="../motion/transforming-material.html">转换</a>
+                <a states href="../motion/choreography.html">编排</a>
+                <a states href="../motion/responsive-interaction.html">作用反馈</a>
+                <a states href="../motion/creative-customization.html">创意定制</a>
+            </nav>
+            <nav>
+                <span states class="body2" tabindex="0">组件</span>
+                <a states href="../components/bottom-navigation.html">底部导航</a>
+                <a states href="../components/buttons.html">按钮</a>
+                <a states href="../components/buttons-floating-action-button.html">按钮：浮动操作按钮</a>
+                <a states href="../components/cards.html">卡片</a>
+                <a states href="../components/chips.html">多用标签</a>
+                <a states href="../components/data-tables.html">数据表格</a>
+                <a states href="../components/dividers.html">分隔线</a>
+                <a states href="../components/dialogs.html">对话框</a>
+                <a states href="../components/dialogs-pickers.html">对话框：选择器</a>
+                <a states href="../components/lists.html">列表</a>
+                <a states href="../components/menus.html">菜单</a>
+                <a states href="../components/progress-indicators.html">进程指示器</a>
+                <a states href="../components/selection-controls.html">选择控件</a>
+                <a states href="../components/sheets-bottom.html">底部单页</a>
+                <a states href="../components/sheets-side.html">侧边单页</a>
+                <a states href="../components/sheets-navigation-drawer.html">单页：导航抽屉</a>
+                <a states href="../components/sliders.html">滑块</a>
+                <a states href="../components/snackbars.html">条形通知</a>
+                <a states href="../components/tabs.html">标签栏</a>
+                <a states href="../components/text-fields.html">文本框</a>
+                <a states href="../components/toolbars.html">工具栏</a>
+                <a states href="../components/widgets.html">桌面小部件</a>
+            </nav>
+            <nav>
+                <span states class="body2" tabindex="0">交互模式</span>
+                <a states href="../patterns/confirmation-acknowledgement.html">确认与获知</a>
+                <a states href="../patterns/data-display.html">数据展示</a>
+                <a states href="../patterns/empty-states.html">空状态</a>
+                <a states href="../patterns/errors.html">错误提示</a>
+                <a states href="../patterns/fingerprint.html">指纹识别</a>
+                <a states href="../patterns/gestures.html">手势</a>
+                <a states href="../patterns/help-feedback.html">帮助与反馈</a>
+                <a states href="../patterns/launch-screens.html">启动画面</a>
+                <a states href="../patterns/navigation.html">导航</a>
+                <a states href="../patterns/notifications.html">通知</a>
+                <a states href="../patterns/offline-states.html">离线状态</a>
+                <a states href="../patterns/permissions.html">权限</a>
+                <a states href="../patterns/search.html">搜索</a>
+                <a states href="../patterns/selection.html">选择</a>
+                <a states href="../patterns/settings.html">设置</a>
+                <a states href="../patterns/states.html">交互状态</a>
+                <a states href="../patterns/swipe-to-refresh.html">下滑刷新</a>
+            </nav>
+            <nav>
+                <span states class="body2" tabindex="0">可用性</span>
+                <a states href="../usability/accessibility.html">无障碍</a>
+                <a states href="../usability/bidirectionality.html">阅读方向</a>
+            </nav>
+            <nav>
+                <span states class="body2" tabindex="0">发展与用户教育</span>
+            </nav>
+            <nav>
+                <span states class="body2" tabindex="0">资源</span>
+            </nav>
+            <a href="../about.html">关于</a>
+        </aside>
+        <div class="divider vertical"></div>
+    </div>
+    <main class="CMD-content">
+        <div class="content-body">
+            <header>
+                <h4>层级与阴影</h4>
+                <p class="title">质感设计着重将现实世界的层次关系重新映射至虚拟世界中。</p>
+            </header>
+            <nav class="chapter-catalogue">
+                <span class="body1">索引</span>
+                <ul class="title">
+                    <li><a href="#elevation">海拔高度</a></li>
+                    <li><a href="#depicting-elevation">表达</a></li>
+                    <li><a href="#object-relationships">部分与整体</a></li>
+                </ul>
+            </nav>
+            <article id="elevation" class="horizontal">
+                <h5>海拔高度</h5>
+                <section>
+                    <article class="body1 intro">
+                        <p>海拔高度是指层面之间在 Z 轴上的相对距离。每个应用程序都有一个承载层作为 0dp 的基准面来放置组件与内容。</p>
+                    </article>
+                </section>
+                <section>
+                    <article class="body1">
+                        <h6>度量</h6>
+                        <p>由于 Material 层面具有厚度，因此它们之间的海拔差是上表面之间的海拔差。海拔高度的单位与长、宽单位一致，均为 dp（密度无关像素）。</p>
+                    </article>
+                    <div id="absolute-elevation" class="diagram-wrapper">
+                        <div class="diagram">
+                            <div class="wrapper">
+                                <div class="surface edged"></div>
+                                <div class="surface edged"></div>
+                            </div>
+                            <img src="../resources/material-design/absolute-elevation.svg">
+                        </div>
+                    </div>
+                    <article class="body1">
+                        <p>子元素海拔高度受父元素海拔高度的影响。</p>
+                    </article>
+                    <div id="relative-elevation" class="diagram-wrapper">
+                        <div class="diagram">
+                            <div class="wrapper">
+                                <div class="surface edged">
+                                    <div class="surface edged"></div>
+                                </div>
+                            </div>
+                            <img src="../resources/material-design/relative-elevation.svg">
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <article class="body1">
+                        <h6>静息海拔</h6>
+                        <p>所有质感设计的组件都有各自的常态、默认海拔高度，也就是静息海拔。为了与界面布局和主体内容相适应，部分组件的静息海拔有多种选择。</p>
+                        <p>在不同种类的设备上组件的静息海拔可能会有所不同，比如电视的屏幕更厚因此能展示更广的景深，其中组件的静息海拔就会更高。为了适应电脑端的多窗口和鼠标输入环境，部分组件的静息海拔会有所降低。
+                        </p>
+                    </article>
+                    <table class="body1">
+                        <thead class="body2">
+                            <tr>
+                                <th scope="col">海拔（dp）</th>
+                                <th scope="col">组件</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>24</th>
+                                <td><span>对话框</span></td>
+                            </tr>
+                            <tr>
+                                <th>16</th>
+                                <td><span>单页（导航抽屉、底部单页、侧边单页等）</span></td>
+                            </tr>
+                            <tr>
+                                <th>9</th>
+                                <td><span>子菜单（每叠加一层子菜单其海拔增加 1dp）</span></td>
+                            </tr>
+                            <tr>
+                                <th>8</th>
+                                <td><span>底部导航</span><span>菜单</span></td>
+                            </tr>
+                            <tr>
+                                <th>6</th>
+                                <td><span>浮动操作按钮</span><span>条形通知</span></td>
+                            </tr>
+                            <tr>
+                                <th>4</th>
+                                <td><span>应用栏</span></td>
+                            </tr>
+                            <tr>
+                                <th>3</th>
+                                <td><span>刷新指示器</span></td>
+                            </tr>
+                            <tr>
+                                <th>2</th>
+                                <td><span>卡片</span><span>悬浮按钮</span><span>搜索栏</span></td>
+                            </tr>
+                            <tr>
+                                <th>1</th>
+                                <td><span>开关</span></td>
+                            </tr>
+                            <tr>
+                                <th>0</th>
+                                <td><span>扁平按钮</span><span>工具栏（应用栏、搜索栏）</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section>
+                    <article class="body1">
+                        <h6>响应海拔与动态海拔差</h6>
+                        <p>部分组件会响应用户输入或系统事件而改变自身的海拔。其海拔的变化量即为固定的动态海拔差，以此确保同种组件在响应某种输入或事件时的海拔变化保持一致。</p>
+                        <p>一旦输入或事件中止、完成，组件应尽快回到静息海拔。</p>
+                    </article>
+                    <table class="body1">
+                        <thead class="body2">
+                            <tr>
+                                <th scope="col">海拔变化量（dp）</th>
+                                <th scope="col">组件及状态</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>+6</th>
+                                <td><span>浮动操作按钮（点按时）</span><span>卡片（点按时）</span><span>悬浮按钮（点按时）</span></td>
+                            </tr>
+                            <tr>
+                                <th>+4</th>
+                                <td><span>工具栏（滚动时解决层面冲突）</span></td>
+                            </tr>
+                            <tr>
+                                <th>+1</th>
+                                <td><span>搜索栏（滚动时解决层面冲突）</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <article class="body1">
+                        <p>具备响应海拔的组件在改变海拔时，有可能会被其他组件遮挡。要避免这些冲突，可以尝试改变组件的有无、位置或整个应用的布局。</p>
+                    </article>
+                </section>
+            </article>
+            <hr class="divider horizontal">
+            <article id="depicting-elevation" class="horizontal">
+                <h5>表达</h5>
+                <section>
+                    <article class="body1 intro">
+                        <h6>空间中的层次关系</h6>
+                        <p>虚拟光源发射的光线受到固体 Material 层面的阻挡投下阴影，为界面层次结构和元素运动方向提供了重要的视觉线索，即使对于不具有覆盖关系的层面也能表达出它们的层级关系。Material
+                            层面海拔高度的差异导致阴影的差异。</p>
+                    </article>
+                </section>
+                <section>
+                    <div id="without-shadow" class="diagram-wrapper">
+                        <div class="diagram">
+                            <div class="surface"></div>
+                            <button class="fab" disabled></button>
+                        </div>
+                        <span class="recommends dont body2">错误</span>
+                        <p class="body1">缺少阴影的指示，无法看出“浮动操作按钮”是否与背景相分离。</p>
+                    </div>
+                    <div id="similar-shadow" class="diagram-wrapper">
+                        <div class="diagram">
+                            <div class="surface"></div>
+                            <button class="fab" disabled></button>
+                        </div>
+                        <span class="recommends dont body2">错误</span>
+                        <p class="body1">相同的阴影使得两个层面看起来是一个层面。</p>
+                    </div>
+                    <div id="distinguishable-shadow" class="diagram-wrapper">
+                        <div class="diagram">
+                            <div class="surface"></div>
+                            <button class="fab" disabled></button>
+                        </div>
+                        <span class="recommends do body2">正确</span>
+                        <p class="body1">根据具体层面层级，运用符合对应层级的阴影。</p>
+                    </div>
+                </section>
+                <section>
+                    <article class="body1 intro">
+                        <p>在运动中，阴影也为理解元素尺寸及海拔变化提供了正确指导。</p>
+                    </article>
+                </section>
+                <section>
+                    <div id="motion-without-shadow" class="diagram-wrapper">
+                        <div class="diagram animated">
+                            <div class="surface"></div>
+                        </div>
+                        <span class="recommends dont body2">错误</span>
+                        <p class="body1">缺少阴影的指示，无法看出层面是在改变层级还只是在改变面积。</p>
+                    </div>
+                    <div id="motion-different-shadow" class="diagram-wrapper">
+                        <div class="diagram animated">
+                            <div class="surface edged"></div>
+                        </div>
+                        <span class="recommends do body2">正确</span>
+                        <p class="body1">阴影的变化指示了层级的变化。</p>
+                    </div>
+                    <div id="motion-same-shadow" class="diagram-wrapper">
+                        <div class="diagram animated">
+                            <div class="surface edged"></div>
+                        </div>
+                        <span class="recommends do body2">正确</span>
+                        <p class="body1">相同的阴影指示了面积的变化。</p>
+                    </div>
+                </section>
+                <section>
+                    <article class="body1">
+                        <h6>平面中的层次关系</h6>
+                    </article>
+                </section>
+                <section>
+                    <article class="body1">
+                        <h6>运动中的层次关系</h6>
+                    </article>
+                </section>
+            </article>
+            <hr class="divider horizontal">
+            <article id="object-relationships" class="horizontal">
+                <h5>部分与整体</h5>
+            </article>
+        </div>
+
+
+
+        <footer>
+            <a states class="left light" href="../material-design/material-properties.html">
+                <span class="material-icons">arrow_back</span>
+                <span class="subheading">上一节
+                    <span class="title">Material 属性</span>
+                </span>
+            </a>
+            <a states class="right dark" href="../layout/principles.html">
+                <span class="subheading">下一节
+                    <span class="title">架构方法</span>
+                </span>
+                <span class="material-icons">arrow_forward</span>
+            </a>
+        </footer>
+
+        <div id="progress" class="app-bar light">
+            <div class="start">
+                <button id="drawer-trigger" class="icon-button unbounded" tabindex="1">
+                    <span class="material-icons">menu</span>
+                </button>
+            </div>
+            <span class="title">基本原理 - 层级与阴影</span>
+            <div class="end">
+                <button id="search-trigger" class="icon-button unbounded" disabled="true">
+                    <span class="material-icons">search</span>
+                </button>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>

@@ -1,5 +1,6 @@
 @import url("./app-bars.css");
 @import url("./buttons.css");
+@import url("./data-tables.css");
 @import url("./dialogs.css");
 @import url("./lists.css");
 @import url("./pickers.css");
@@ -36,6 +37,8 @@
     --shadow-z22: 0px 10px 14px -6px rgba(0, 0, 0, 0.2), 0px 22px 35px 3px rgba(0, 0, 0, 0.14), 0px 8px 42px 7px rgba(0, 0, 0, 0.12);
     --shadow-z23: 0px 11px 14px -7px rgba(0, 0, 0, 0.2), 0px 23px 36px 3px rgba(0, 0, 0, 0.14), 0px 9px 44px 8px rgba(0, 0, 0, 0.12);
     --shadow-z24: 0px 11px 15px -7px rgba(0, 0, 0, 0.2), 0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0, 0, 0, 0.12);
+    --drop-shadow-z2: drop-shadow(0px 1px 0.5px rgba(0, 0, 0, 0.2)) drop-shadow(0px 2px 1px rgba(0, 0, 0, 0.14)) drop-shadow(0px 1px 2.5px rgba(0, 0, 0, 0.12));
+    --drop-shadow-z8: drop-shadow(0px 2px 2.5px rgba(0, 0, 0, 0.2)) drop-shadow(0px 9px 5px rgba(0, 0, 0, 0.14)) drop-shadow(0px 5px 7px rgba(0, 0, 0, 0.12));
     --standard-curve: cubic-bezier(0.4, 0.0, 0.2, 1);
     --deceleration-curve: cubic-bezier(0.0, 0.0, 0.2, 1);
     --acceleration-curve: cubic-bezier(0.4, 0.0, 1, 1);
@@ -51,8 +54,8 @@
     height: calc(100% - 2px);
     border-width: 1px 0;
     border-style: solid;
-    border-top-color: var(--surface-hint-color, rgba(255, 255, 255, 0.4));
-    border-bottom-color: var(--surface-shade-color, rgba(33, 33, 33, 0.1));
+    border-top-color: var(--surface-hint-color);
+    border-bottom-color: var(--surface-shade-color);
     border-radius: inherit;
     pointer-events: none;
 }
@@ -66,6 +69,8 @@
         --surface-background-color: #fafafa;
         --surface-color: #f5f5f5;
         --divider-color: rgba(0, 0, 0, 0.12);
+        --surface-hint-color: rgba(255, 255, 255, 0.4);
+        --surface-shade-color: rgba(0, 0, 0, 0.1);
     }
 }
 
@@ -73,6 +78,8 @@
     --surface-background-color: #fafafa;
     --surface-color: #f5f5f5;
     --divider-color: rgba(0, 0, 0, 0.12);
+    --surface-hint-color: rgba(255, 255, 255, 0.4);
+    --surface-shade-color: rgba(0, 0, 0, 0.1);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -80,6 +87,8 @@
         --surface-background-color: #303030;
         --surface-color: #212121;
         --divider-color: rgba(255, 255, 255, 0.12);
+        --surface-hint-color: rgba(255, 255, 255, 0.2);
+        --surface-shade-color: rgba(0, 0, 0, 0.2);
     }
 }
 
@@ -87,4 +96,6 @@
     --surface-background-color: #303030;
     --surface-color: #212121;
     --divider-color: rgba(255, 255, 255, 0.12);
+    --surface-hint-color: rgba(255, 255, 255, 0.2);
+    --surface-shade-color: rgba(0, 0, 0, 0.2);
 }

@@ -1,0 +1,383 @@
+/*------------------------------------*\
+  正文
+\*------------------------------------*/
+
+#physical-presence .diagram, #virtual-presence .diagram {
+  aspect-ratio: 1/1;
+}
+
+#physical-presence .surface, #virtual-presence .surface {
+  position: absolute;
+  width: 200px;
+  aspect-ratio: 1/1;
+  border-radius: 2px;
+  background-color: var(--dialog-background-color);
+}
+
+#physical-presence .surface:first-child {
+  transform: translate(24px, 24px);
+  box-shadow: var(--shadow-z2);
+}
+
+#physical-presence .surface:last-child {
+  transform: translate(-24px, -24px);
+  box-shadow: var(--shadow-z8);
+}
+
+#virtual-presence .wrapper, #ideal-material .wrapper, #free-movement .wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: var(--drop-shadow-z2);
+}
+
+#virtual-presence .surface:first-child {
+  transform: translate(24px, 24px);
+}
+
+#virtual-presence .surface:last-child {
+  transform: translate(-24px, -24px);
+  border-right: 1px solid var(--divider-color);
+  border-bottom: 1px solid var(--divider-color);
+}
+
+#consistent-surfaces-thickness .diagram, #inconsistent-surfaces-thickness .diagram, #obstructed-input .diagram, #input-pass-through .diagram {
+  aspect-ratio: 1/1;
+}
+
+#consistent-surfaces-thickness .diagram img, #inconsistent-surfaces-thickness .diagram img {
+  width: 100%;
+}
+
+#obstructed-input .diagram, #input-pass-through .diagram {
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-color: var(--surface-background-color);
+}
+
+#obstructed-input .surface, #input-pass-through .surface {
+  border-radius: 2px;
+}
+
+#obstructed-input #app-bar, #input-pass-through #app-bar {
+  position: relative;
+  width: 100%;
+  height: 56px;
+  background-color: var(--surface-color);
+  box-shadow: var(--shadow-z2);
+}
+
+#obstructed-input #menu, #input-pass-through #menu {
+  top: 8px;
+  right: 8px;
+  position: absolute;
+  width: 168px;
+  height: 256px;
+  background-color: var(--dialog-background-color);
+  box-shadow: var(--shadow-z8);
+}
+
+#obstructed-input .hint, #input-pass-through .hint {
+  position: relative;
+  width: 100%;
+  background-color: var(--states-base-color);
+  opacity: 0.12;
+}
+
+#obstructed-input .surface .hint, #input-pass-through .surface .hint {
+  top: 152px;
+  height: 48px;
+}
+
+#input-pass-through .diagram>.hint {
+  top: 120px;
+  height: 56px;
+}
+
+#obstructed-input .touch-input, #input-pass-through .touch-input {
+  top: 184px;
+  right: 168px;
+}
+
+#motion-virtual-presence, #magical-material, #ideal-material, #free-movement, #material-display, #independent-content {
+  grid-column-end: span min(var(--max-block), 2);
+}
+
+#magical-material .diagram, #ideal-material .diagram, #free-movement .diagram {
+  height: 480px;
+}
+
+#magical-material .surface {
+  position: relative;
+  border-radius: 50%;
+  background-color: var(--dialog-background-color);
+  box-shadow: var(--shadow-z2);
+}
+
+#magical-material>.playing {
+  animation-duration: 6s;
+}
+
+#magical-material>.playing .surface {
+  animation-name: magicalMaterial1, magicalMaterial2, magicalMaterial3, magicalMaterial4, magicalMaterial5;
+  animation-duration: 400ms, 500ms, 500ms, 500ms, 400ms;
+  animation-delay: 0.5s, 1.5s, 2.5s, 3.5s, 4.5s;
+  animation-timing-function: var(--standard-curve);
+  animation-fill-mode: forwards;
+}
+
+@keyframes magicalMaterial1 {
+  0% {
+    width: 0px;
+    height: 0px;
+  }
+  100% {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@keyframes magicalMaterial2 {
+  0% {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+  100% {
+    width: 200px;
+    height: 200px;
+    border-radius: 2px;
+  }
+}
+
+@keyframes magicalMaterial3 {
+  0% {
+    width: 200px;
+  }
+  100% {
+    width: 300px;
+  }
+}
+
+@keyframes magicalMaterial4 {
+  0% {
+    height: 200px;
+  }
+  100% {
+    height: 300px;
+  }
+}
+
+@keyframes magicalMaterial5 {
+  0% {
+    width: 300px;
+    height: 300px;
+  }
+  100% {
+    width: 0px;
+    height: 0px;
+  }
+}
+
+#ideal-material .wrapper {
+  flex-direction: column;
+}
+
+#ideal-material .surface {
+  position: relative;
+  width: 250px;
+  height: 125px;
+  border-radius: 2px;
+  background-color: var(--dialog-background-color);
+}
+
+#ideal-material .surface:first-child {
+  top: -50px;
+}
+
+#ideal-material .surface:last-child {
+  bottom: -50px;
+}
+
+#ideal-material>.playing {
+  animation-duration: 6s;
+}
+
+#ideal-material>.playing .surface:first-child {
+  animation-name: idealMaterial11, idealMaterial2, idealMaterial31;
+  animation-duration: 1s;
+  animation-delay: 0.5s, 2s, 4s;
+  animation-timing-function: var(--standard-curve);
+  animation-fill-mode: forwards;
+}
+
+#ideal-material>.playing .surface:last-child {
+  animation-name: idealMaterial12, idealMaterial2, idealMaterial32;
+  animation-duration: 1s;
+  animation-delay: 0.5s, 2s, 4s;
+  animation-timing-function: var(--standard-curve);
+  animation-fill-mode: forwards;
+}
+
+@keyframes idealMaterial11 {
+  0% {
+    top: -50px;
+    height: 125px;
+  }
+  100% {
+    top: 2px;
+    height: 127px;
+  }
+}
+
+@keyframes idealMaterial12 {
+  0% {
+    bottom: -50px;
+    height: 125px;
+  }
+  100% {
+    bottom: 2px;
+    height: 127px;
+  }
+}
+
+@keyframes idealMaterial2 {
+  0% {
+    height: 127px;
+  }
+  100% {
+    height: 152px;
+  }
+}
+
+@keyframes idealMaterial31 {
+  0% {
+    top: 2px;
+    height: 152px;
+  }
+  100% {
+    top: -50px;
+    height: 125px;
+  }
+}
+
+@keyframes idealMaterial32 {
+  0% {
+    bottom: 2px;
+    height: 152px;
+  }
+  100% {
+    bottom: -50px;
+    height: 125px;
+  }
+}
+
+#free-movement .surface {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 2px;
+  background-color: var(--dialog-background-color);
+  transform: translate(-225px, 100px);
+}
+
+#free-movement>.playing {
+  animation-duration: 4s;
+}
+
+#free-movement>.playing .wrapper {
+  animation-name: freeMovement12, freeMovement22;
+  animation-duration: 1s;
+  animation-delay: 0.5s, 2.5s;
+  animation-timing-function: var(--standard-curve);
+  animation-fill-mode: forwards;
+}
+
+@keyframes freeMovement12 {
+  0% {
+    filter: var(--drop-shadow-z2);
+  }
+  100% {
+    filter: var(--drop-shadow-z8);
+  }
+}
+
+@keyframes freeMovement22 {
+  0% {
+    filter: var(--drop-shadow-z8);
+  }
+  100% {
+    filter: var(--drop-shadow-z2);
+  }
+}
+
+#free-movement>.playing .surface {
+  animation-name: freeMovement11, freeMovement21;
+  animation-duration: 1s;
+  animation-delay: 0.5s, 2.5s;
+  animation-timing-function: var(--standard-curve);
+  animation-fill-mode: forwards;
+}
+
+@keyframes freeMovement11 {
+  0% {
+    transform: translate(-225px, 100px) rotate(0deg);
+  }
+  100% {
+    transform: translate(225px, -100px) rotate(-90deg);
+  }
+}
+
+@keyframes freeMovement21 {
+  0% {
+    transform: translate(225px, -100px) rotate(90deg);
+  }
+  100% {
+    transform: translate(-225px, 100px) rotate(0deg);
+  }
+}
+
+@media screen and (max-width:920px) {
+  #free-movement .surface {
+    transform: translate(-75px, 135px);
+  }
+  @keyframes freeMovement11 {
+    0% {
+      transform: translate(-75px, 135px) rotate(0deg);
+    }
+    100% {
+      transform: translate(75px, -135px) rotate(-90deg);
+    }
+  }
+  @keyframes freeMovement21 {
+    0% {
+      transform: translate(75px, -135px) rotate(90deg);
+    }
+    100% {
+      transform: translate(-75px, 135px) rotate(0deg);
+    }
+  }
+}
+
+#motion-virtual-presence {
+  grid-column-start: max(1, calc(var(--max-block) - 1));
+}
+
+#motion-virtual-presence video, #material-display video, #independent-content video {
+  width: 100%;
+}
+
+/*------------------------------------*\
+  主题
+\*------------------------------------*/
+
+:root {
+  --primary-color: #00bcd4;
+}
+
+.CMD-content>.app-bar>button, footer {
+  --states-parameter: 2;
+}

@@ -69,8 +69,19 @@ document.querySelectorAll('h5').forEach(
 
 let simulatorAnimationLoop;
 
-document.querySelectorAll('.simulator[class~=animated]').forEach((element) => {
+document.querySelectorAll('.simulator[class~=animated], .diagram[class~=animated]').forEach((element) => {
     element.addEventListener('click', (event) => {
+
+        if (element.querySelector('video')) {
+            if (element.querySelector('video').paused) {
+                element.querySelector('video').play(); 
+                element.classList.add('on', 'playing');
+              } else {
+                element.querySelector('video').pause(); 
+                element.classList.remove('on', 'playing');
+              }
+            return;
+        }
         if (event.target.classList.contains('on')) {
             event.target.classList.remove('on', 'playing');
             clearTimeout(simulatorAnimationLoop);
@@ -83,7 +94,7 @@ document.querySelectorAll('.simulator[class~=animated]').forEach((element) => {
 });
 
 function simulatorAnimationEnd() {
-    if (event.target !== event.currentTarget) {
+    if (event.target !== event.currentTarget || event.target.querySelector('video')) {
         return
     }
     let element = event.target;
