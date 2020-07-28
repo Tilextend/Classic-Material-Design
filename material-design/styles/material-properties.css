@@ -102,11 +102,11 @@
   right: 168px;
 }
 
-#motion-virtual-presence, #magical-material, #ideal-material, #free-movement, #material-display, #independent-content {
+#motion-virtual-presence, #magical-material, #ideal-material, #free-movement, #screen-piercing, #material-display, #independent-content {
   grid-column-end: span min(var(--max-block), 2);
 }
 
-#magical-material .diagram, #ideal-material .diagram, #free-movement .diagram {
+#magical-material .diagram, #ideal-material .diagram, #free-movement .diagram, #screen-piercing .diagram {
   height: 480px;
 }
 
@@ -118,7 +118,7 @@
 }
 
 #magical-material>.playing {
-  animation-duration: 6s;
+  animation-duration: 5s;
 }
 
 #magical-material>.playing .surface {
@@ -203,12 +203,12 @@
 }
 
 #ideal-material>.playing {
-  animation-duration: 6s;
+  animation-duration: 5s;
 }
 
 #ideal-material>.playing .surface:first-child {
   animation-name: idealMaterial11, idealMaterial2, idealMaterial31;
-  animation-duration: 1s;
+  animation-duration: 1s, 1s, 0.75s;
   animation-delay: 0.5s, 2s, 4s;
   animation-timing-function: var(--standard-curve);
   animation-fill-mode: forwards;
@@ -216,7 +216,7 @@
 
 #ideal-material>.playing .surface:last-child {
   animation-name: idealMaterial12, idealMaterial2, idealMaterial32;
-  animation-duration: 1s;
+  animation-duration: 1s, 1s, 0.75s;
   animation-delay: 0.5s, 2s, 4s;
   animation-timing-function: var(--standard-curve);
   animation-fill-mode: forwards;
@@ -362,11 +362,11 @@
   }
 }
 
-#motion-virtual-presence {
+#motion-virtual-presence, #screen-piercing {
   grid-column-start: max(1, calc(var(--max-block) - 1));
 }
 
-#motion-virtual-presence video, #material-display video, #independent-content video {
+#motion-virtual-presence video, #material-display video, #independent-content video, #screen-piercing video {
   width: 100%;
 }
 

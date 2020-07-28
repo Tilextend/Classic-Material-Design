@@ -1,7 +1,3 @@
-footer .right {
-  background-color: #ad1457;
-}
-
 /*------------------------------------*\
   正文
 \*------------------------------------*/
@@ -49,6 +45,7 @@ footer .right {
   position: relative;
   width: 250px;
   height: 324px;
+  border-radius: 2px;
   display: flex;
   flex-direction: column-reverse;
   align-items: flex-end;
@@ -106,16 +103,15 @@ footer .right {
 }
 
 #motion-without-shadow .diagram, #motion-different-shadow .diagram, #motion-same-shadow .diagram {
-  height: 480px;
+  aspect-ratio: 1/1;
 }
 
 #motion-without-shadow .surface, #motion-different-shadow .surface, #motion-same-shadow .surface {
   position: relative;
-  width: 100px;
-  height: 100px;
+  width: 125px;
+  aspect-ratio: 1/1;
   border-radius: 2px;
   background-color: var(--dialog-background-color);
-  transform: translateY(-125px);
 }
 
 #motion-different-shadow .surface, #motion-same-shadow .surface {
@@ -143,41 +139,29 @@ footer .right {
 
 @keyframes motionWithoutShadow1 {
   0% {
-    width: 100px;
-    height: 100px;
-    transform: translateY(-125px);
+    width: 125px;
   }
   100% {
     width: 150px;
-    height: 150px;
-    transform: translateY(100px);
   }
 }
 
 @keyframes motionWithoutShadow2 {
   0% {
     width: 150px;
-    height: 150px;
-    transform: translateY(100px);
   }
   100% {
-    width: 100px;
-    height: 100px;
-    transform: translateY(-125px);
+    width: 125px;
   }
 }
 
 @keyframes motionDifferentShadow1 {
   0% {
-    width: 100px;
-    height: 100px;
-    transform: translateY(-125px);
+    width: 125px;
     box-shadow: var(--shadow-z2);
   }
   100% {
     width: 150px;
-    height: 150px;
-    transform: translateY(100px);
     box-shadow: var(--shadow-z12);
   }
 }
@@ -185,14 +169,10 @@ footer .right {
 @keyframes motionDifferentShadow2 {
   0% {
     width: 150px;
-    height: 150px;
-    transform: translateY(100px);
     box-shadow: var(--shadow-z12);
   }
   100% {
-    width: 100px;
-    height: 100px;
-    transform: translateY(-125px);
+    width: 125px;
     box-shadow: var(--shadow-z2);
   }
 }
@@ -207,4 +187,8 @@ footer .right {
 
 .CMD-content>.app-bar>button, footer {
   --states-parameter: 2;
+}
+
+footer .right {
+  background-color: #ad1457;
 }

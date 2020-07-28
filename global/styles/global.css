@@ -252,6 +252,7 @@ th, td {
     flex-direction: column;
     align-items: center;
     width: calc(100% - 256px);
+    min-height: 100vh;
     color: var(--primary-text-color);
 }
 
@@ -343,6 +344,7 @@ main>.app-bar[class~=prominent]>span {
     width: var(--content-body-width);
     display: flex;
     flex-direction: column;
+    margin-bottom: var(--increment);
 }
 
 .content-body>header {
@@ -515,6 +517,7 @@ article>ul li {
 }
 
 table {
+    user-select: text;
     margin-bottom: var(--keyline);
 }
 
@@ -717,7 +720,7 @@ footer {
     display: flex;
     width: 100%;
     height: 96px;
-    margin-top: var(--increment);
+    margin: auto 0 0 0;
 }
 
 footer a {
@@ -889,6 +892,7 @@ footer .title {
 
 @media (prefers-color-scheme: light) {
     .diagram {
+        background: radial-gradient(circle at top left, rgba(0, 0, 0, 0) calc(1 / 3 * 100%), rgba(0, 0, 0, 0.01) calc(7 / 9 * 100%), rgba(0, 0, 0, 0.02) 100%);
         background-color: #eeeeee;
     }
     .diagram+p, .simulator+p {
@@ -904,6 +908,7 @@ footer .title {
         fill: #747474;
     }
     .diagram {
+        background: radial-gradient(circle at top left, rgba(0, 0, 0, 0) calc(1 / 3 * 100%), rgba(0, 0, 0, 0.04) calc(7 / 9 * 100%), rgba(0, 0, 0, 0.08) 100%);
         background-color: #212121;
     }
     .diagram::after, .simulator::after {
