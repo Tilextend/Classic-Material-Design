@@ -66,8 +66,10 @@
 
 @media (prefers-color-scheme: light) {
     :root {
-        --surface-background-color: #fafafa;
-        --surface-color: #f5f5f5;
+        --high-emphasis-surface-color: #ffffff;
+        --medium-emphasis-surface-color: #fafafa;
+        --low-emphasis-surface-color: #f5f5f5;
+        --status-bar-background-color: #e0e0e0;
         --divider-color: rgba(0, 0, 0, 0.12);
         --surface-hint-color: rgba(255, 255, 255, 0.4);
         --surface-shade-color: rgba(0, 0, 0, 0.1);
@@ -75,8 +77,10 @@
 }
 
 .light {
-    --surface-background-color: #fafafa;
-    --surface-color: #f5f5f5;
+    --high-emphasis-surface-color: #ffffff;
+    --medium-emphasis-surface-color: #fafafa;
+    --low-emphasis-surface-color: #f5f5f5;
+    --status-bar-background-color: #e0e0e0;
     --divider-color: rgba(0, 0, 0, 0.12);
     --surface-hint-color: rgba(255, 255, 255, 0.4);
     --surface-shade-color: rgba(0, 0, 0, 0.1);
@@ -84,8 +88,10 @@
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --surface-background-color: #303030;
-        --surface-color: #212121;
+        --high-emphasis-surface-color: #424242;
+        --medium-emphasis-surface-color: #303030;
+        --low-emphasis-surface-color: #212121;
+        --status-bar-background-color: #000000;
         --divider-color: rgba(255, 255, 255, 0.12);
         --surface-hint-color: rgba(255, 255, 255, 0.2);
         --surface-shade-color: rgba(0, 0, 0, 0.2);
@@ -93,8 +99,10 @@
 }
 
 .dark {
-    --surface-background-color: #303030;
-    --surface-color: #212121;
+    --high-emphasis-surface-color: #424242;
+    --medium-emphasis-surface-color: #303030;
+    --low-emphasis-surface-color: #212121;
+    --status-bar-background-color: #000000;
     --divider-color: rgba(255, 255, 255, 0.12);
     --surface-hint-color: rgba(255, 255, 255, 0.2);
     --surface-shade-color: rgba(0, 0, 0, 0.2);

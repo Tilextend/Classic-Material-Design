@@ -45,7 +45,7 @@ input[type=text]::placeholder {
 }
 
 .text-field[class~=focused] {
-    color: var(--accent-color);
+    color: var(--secondary-color);
 }
 
 .text-field::before {
@@ -75,7 +75,7 @@ input[type=text]::placeholder {
     bottom: 0px;
     border-bottom-width: 1px;
     border-bottom-style: solid;
-    border-bottom-color: var(--accent-color);
+    border-bottom-color: var(--secondary-color);
     opacity: 0;
     transition-property: opacity, border-bottom-width, border-bottom-color;
     transition-duration: 195ms;
@@ -116,7 +116,7 @@ input[type=text]::placeholder {
 }
 
 .text-field[class~=single] input:focus {
-    caret-color: var(--accent-color);
+    caret-color: var(--secondary-color);
 }
 
 .text-field[class~=single] .label {

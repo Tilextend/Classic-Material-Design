@@ -11,7 +11,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: var(--accent-color);
+    background-color: var(--secondary-color);
     padding: 0 24px;
 }
 
@@ -61,14 +61,14 @@
 }
 
 .dialog-wrapper[picker] .day[class~=now]:not(.day[class~=activated]) {
-    color: var(--accent-color);
+    color: var(--secondary-color);
 }
 
 .dialog-wrapper[picker] .day[class~=activated] {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: var(--accent-color);
+    background-color: var(--secondary-color);
     justify-self: center;
 }
 
@@ -78,6 +78,6 @@
 
 @media (prefers-color-scheme: dark) {
     .dialog-wrapper[picker] .title-wrapper {
-        background-color: #555555;
+        background-color: #455A64;
     }
 }

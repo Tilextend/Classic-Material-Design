@@ -10,9 +10,9 @@
   地图
 \*------------------------------------*/
 
-.simulator[map=main] {
+.simulator[map] {
     --primary-color: #4285F4;
-    --accent-color: #0F9D58;
+    --secondary-color: #0F9D58;
 }
 
 .simulator[map=main] .status-bar-background {
@@ -20,7 +20,7 @@
 }
 
 .simulator[map=main] .dialog {
-    --accent-color: var(--primary-color);
+    --secondary-color: var(--primary-color);
 }
 
 .simulator[map=main] .map-wrapper {
@@ -48,7 +48,7 @@
 }
 
 .simulator[map=main] #my-location {
-    background-color: var(--surface-color);
+    background-color: var(--low-emphasis-surface-color);
 }
 
 .simulator[map=main] #directions {
@@ -87,6 +87,65 @@
     border-radius: 50%;
 }
 
+.simulator[map=navigation] .status-bar-background {
+    background-color: #0b8043;
+}
+
+.simulator[map=navigation] .app-bar {
+    background-color: var(--secondary-color);
+    color: var(--primary-text-color);
+}
+
+.simulator[map=navigation] .app-bar .start {
+    width: calc(var(--keyline) + var(--increment));
+    margin-top: 16px;
+    flex-grow: 0;
+}
+
+.simulator[map=navigation] .app-bar .start span {
+    font-size: 36px;
+}
+
+.simulator[map=navigation] .app-bar .end {
+    height: auto;
+    flex-direction: column;
+    align-items: initial;
+    padding-right: var(--keyline);
+}
+
+.simulator[map=navigation] .app-bar .end span:first-of-type {
+    margin-top: 21px;
+    margin-bottom: 1px;
+}
+
+.simulator[map=navigation] .app-bar .end span:last-of-type {
+    margin-bottom: 24px;
+}
+
+.simulator[map=navigation] .sheet {
+    position: absolute;
+    width: 100%;
+    height: 56px;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--medium-emphasis-surface-color);
+    box-shadow: var(--shadow-z2);
+    padding-bottom: 48px;
+    box-sizing: content-box;
+}
+
+.simulator[map=navigation] .sheet>span {
+    margin-left: calc(var(--keyline) + var(--increment));
+    color: var(--primary-color);
+}
+
+.simulator[map=navigation] .sheet button {
+    margin-right: calc(var(--keyline) - 12px);
+    color: var(--secondary-text-color);
+}
+
 @media screen and (min-width:921px) {
     .diagram-wrapper[screen~=tablet] .simulator[map=main] .search-bar {
         max-width: calc(6 * var(--increment));
@@ -100,13 +159,13 @@
   设置
 \*------------------------------------*/
 
-.simulator[settings] {
+.simulator[settings], .simulator[settings] .light {
     --primary-color: #263238;
-    --accent-color: #009688;
+    --secondary-color: #009688;
 }
 
-.simulator[settings] .dark {
-    --accent-color: #80cbc4;
+.simulator[settings] .application {
+    background-color: var(--medium-emphasis-surface-color);
 }
 
 .simulator[settings] .status-bar-background {
@@ -123,6 +182,30 @@
 
 .simulator[settings] .dialog-wrapper[picker] .activated {
     color: #ffffff;
+}
+
+.simulator[settings=main] .app-bar {
+    box-shadow: var(--shadow-z2);
+}
+
+.simulator[settings=main] ul {
+    background-color: var(--high-emphasis-surface-color);
+    box-shadow: var(--shadow-z2);
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+}
+
+.simulator[settings=main] ul li {
+    grid-template-columns: calc(var(--increment) + 16px) auto;
+    color: var(--secondary-color);
+}
+
+.simulator[settings=main] ul .list>span:first-of-type {
+    margin: 0 var(--keyline);
+}
+
+.simulator[settings=main] .divider {
+    padding-left: calc(var(--keyline) + var(--increment));
 }
 
 .simulator[settings="app-info"] ul {
@@ -157,11 +240,19 @@
 
 @media (prefers-color-scheme: dark) {
     .simulator[settings] {
-        --accent-color: #80cbc4;
+        --secondary-color: #80cbc4;
+        --high-emphasis-surface-color: #37474F;
+        --medium-emphasis-surface-color: #242F35;
     }
     .simulator[settings] .dialog-wrapper[picker] .calendar-view .activated {
         color: rgba(0, 0, 0, 0.87);
     }
+}
+
+.simulator[settings] .dark {
+    --secondary-color: #80cbc4;
+    --high-emphasis-surface-color: #37474F;
+    --medium-emphasis-surface-color: #242F35;
 }
 
 /*------------------------------------*\
@@ -170,7 +261,7 @@
 
 .simulator[clock] {
     --primary-color: #303F9F;
-    --accent-color: #E53935;
+    --secondary-color: #E53935;
 }
 
 .simulator[clock] .status-bar-background {
@@ -186,7 +277,7 @@
     justify-content: space-between;
     align-items: center;
     padding-left: 0;
-    color: #ffffff;
+    color: var(--primary-text-color);
     box-shadow: none;
 }
 
@@ -198,7 +289,50 @@
     --surface-hint-color: rgba(255, 255, 255, 0.2);
     --surface-shade-color: rgba(191, 54, 12, 0.2);
     bottom: calc(48px + var(--keyline));
-    color: #ffffff;
+    color: var(--primary-text-color);
+}
+
+.simulator[clock=main] ul {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    color: var(--primary-text-color);
+}
+
+.simulator[clock=main] ul li:first-of-type {
+    display: grid;
+    grid-template-columns: 1fr min-content 1fr;
+    font-weight: 100;
+    margin-top: 25px;
+}
+
+.simulator[clock=main] ul li:first-of-type span:first-of-type {
+    justify-self: end;
+}
+
+.simulator[clock=main] ul li:first-of-type+li {
+    font-weight: 500;
+    align-self: center;
+    margin-top: 5px;
+    margin-bottom: 16px;
+}
+
+.simulator[clock=main] ul .list {
+    height: 56px;
+    grid-template-columns: auto min-content;
+    align-items: baseline;
+    padding: 0 var(--keyline);
+    color: var(--primary-text-color);
+    margin: 8px 0;
+}
+
+.simulator[clock=main] ul .list>span:last-of-type {
+    font-weight: 100;
+    line-height: 5rem;
+}
+
+.simulator[clock=main] ul .list>span:first-of-type>span {
+    color: var(--secondary-text-color);
 }
 
 .simulator[clock] .scroll-view {
@@ -218,7 +352,7 @@
 }
 
 .simulator[clock=alarm] .snackbar {
-    --accent-color: #FF8A80;
+    --secondary-color: #FF8A80;
 }
 
 .alarm {
@@ -324,7 +458,7 @@
 
 .simulator[inbox] {
     --primary-color: #00bcd4;
-    --accent-color: #eeff41;
+    --secondary-color: #eeff41;
 }
 
 .simulator[inbox] .status-bar-background {
@@ -399,7 +533,7 @@
 
 .simulator[inbox] .surfaces div {
     flex-grow: 1;
-    background-color: #fafafa;
+    background-color: var(--medium-emphasis-surface-color);
 }
 
 .simulator[inbox] .unit {
@@ -441,9 +575,6 @@
 
 @media (prefers-color-scheme: dark) {
     .simulator[inbox] .application {
-        background-color: #303030;
-    }
-    .simulator[inbox] .surfaces div {
         background-color: #212121;
     }
 }
@@ -454,37 +585,45 @@
 
 .simulator[files] {
     --primary-color: #03a9f4;
-    --accent-color: #18ffff;
+    --secondary-color: #18ffff;
 }
 
-.simulator[files=main] .status-bar-background {
+.simulator[files] .selected {
+    --selected-parameter: 2;
+}
+
+.simulator[files] .status-bar-background {
     background-color: #0288D1;
 }
 
-.simulator[files] .app-bar .extra span {
-    color: #ffffff;
+.simulator[files] .extra[class~=dark] {
+    color: var(--primary-text-color);
 }
 
-.simulator[files=main] .fab {
+.simulator[files] .app-bar .extra .material-icons {
+    padding: 12px;
+}
+
+.simulator[files] .fab {
     top: calc(2 * var(--increment) + var(--keyline) + 4px);
     left: var(--keyline);
 }
 
-.simulator[files=main] ul {
+.simulator[files] ul {
     margin-bottom: 8px;
 }
 
-.simulator[files=main] .divider {
+.simulator[files] ul .divider {
     padding-left: calc(16px + var(--increment));
 }
 
-.simulator[files] .list[two] {
+.simulator[files] li[two] {
     padding-left: var(--keyline);
     padding-right: calc(var(--keyline) - 12px);
     grid-template-columns: 56px auto 68px;
 }
 
-.simulator[files] .list .meta {
+.diagram-wrapper[screen=mobile] .simulator[files] .list .meta {
     color: var(--hint-text-color);
 }
 
@@ -492,11 +631,11 @@
     color: var(--secondary-text-color);
 }
 
-.simulator[files=main] .subheader {
+.simulator[files] .subheader {
     padding-left: calc(16px + var(--increment));
 }
 
-.simulator[files=main] .thumbnail {
+.simulator[files] ul .thumbnail {
     border-radius: 50%;
     background-color: #B2B2B2;
     color: #ffffff;
@@ -510,16 +649,147 @@
     background-color: #F9CE1D;
 }
 
+.simulator[files=beach] ul li:nth-of-type(2) .thumbnail {
+    background-size: 72px;
+    background-position: left;
+}
+
+.simulator[files=beach] ul li:nth-of-type(3) .thumbnail {
+    background-size: 80px;
+    background-position: -22px -4px;
+}
+
+.simulator[files=beach] ul li:nth-of-type(4) .thumbnail {
+    background-size: 80px;
+    background-position: -27px -11px;
+}
+
+.simulator[files=beach] ul li:nth-of-type(5) .thumbnail {
+    background-size: 120px;
+    background-position: -35px -24px;
+}
+
+.simulator[files=beach] ul li:nth-of-type(6) .thumbnail {
+    background-size: 88px;
+    background-position: -28px -15px;
+}
+
+.diagram-wrapper[screen~=tablet] .simulator[files] .status-bar-background {
+    top: 0;
+    position: absolute;
+    width: 100%;
+}
+
+.simulator[files] .sheet {
+    position: absolute;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--medium-emphasis-surface-color);
+    box-shadow: var(--shadow-z16);
+}
+
+.simulator[files] .sheet .app-bar {
+    box-shadow: var(--shadow-z0);
+}
+
+.simulator[files] .sheet .app-bar .list {
+    padding: 0 var(--keyline);
+}
+
+.simulator[files] .sheet .app-bar .secondary-text {
+    color: var(--secondary-text-color);
+}
+
+.simulator[files] .sheet>.thumbnail {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1;
+    background-size: 760px;
+    background-position: -300px -100px;
+}
+
+.simulator[files] .sheet .list[one] {
+    padding-left: var(--keyline);
+    margin: 8px 0;
+    grid-template-columns: auto calc(var(--increment) + 16px);
+}
+
+.simulator[files] .switch {
+    margin-right: calc(var(--keyline) - 12px);
+}
+
+@media screen and (min-width:921px) {
+    .diagram-wrapper[screen~=tablet] .simulator[files] .app-bar {
+        box-shadow: var(--shadow-z0);
+    }
+    .diagram-wrapper[screen~=tablet] .simulator[files] .app-bar .extra>span:first-of-type {
+        margin-left: calc(2 * var(--keyline) + 56px);
+    }
+    .diagram-wrapper[screen~=tablet] .simulator[files] .subheader, .diagram-wrapper[screen~=tablet] .simulator[files] .divider {
+        padding-left: calc(2 * var(--keyline) + 56px);
+    }
+    .diagram-wrapper[screen~=tablet] .simulator[files] .fab {
+        top: calc(2 * var(--increment) + var(--keyline) - 12px);
+    }
+    .diagram-wrapper[screen~=tablet] .simulator[files] ul .list[one] {
+        height: var(--increment);
+        padding-left: var(--keyline);
+        padding-right: calc(var(--keyline) - 12px);
+        grid-template-columns: 68px auto 200px 120px min-content;
+    }
+    .diagram-wrapper[screen~=tablet] .simulator[files] .subheader {
+        display: grid;
+        margin: 8px 0;
+        padding-right: calc(2 * var(--keyline) + 12px);
+        grid-template-columns: auto 176px 96px;
+        column-gap: var(--keyline);
+    }
+    .diagram-wrapper[screen~=tablet] .simulator[files] .subheader span:last-of-type {
+        justify-self: end;
+    }
+    .diagram-wrapper[screen~=tablet] .simulator[files] ul .thumbnail {
+        margin: 8px;
+    }
+    .diagram-wrapper[screen~=tablet] .simulator[files] ul .list[one]>span {
+        padding: 0 12px;
+    }
+    .diagram-wrapper[screen~=tablet] .simulator[files] ul .list[one]>span:last-of-type {
+        justify-self: end;
+    }
+    .diagram-wrapper[screen~=tablet] .simulator[files] .sheet .app-bar .start {
+        display: none;
+    }
+    .diagram-wrapper[screen~=tablet] .simulator[files] .sheet .app-bar .list {
+        padding: 0 32px;
+    }
+    .diagram-wrapper[screen~=tablet] .simulator[files] .sheet .list[one] {
+        padding-left: 32px;
+    }
+    .diagram-wrapper[screen~=tablet] .simulator[files] .sheet {
+        width: calc(5 * var(--increment));
+        background-color: var(--high-emphasis-surface-color);
+    }
+    .diagram-wrapper[screen~=tablet] .simulator[files] .sheet .app-bar {
+        background-color: #29B6F6;
+    }
+    .diagram-wrapper[screen~=tablet] .simulator[files] .sheet .status-bar-background {
+        background-color: #039BE5;
+    }
+}
+
 /*------------------------------------*\
   照片
 \*------------------------------------*/
 
 .simulator[photos] .status-bar-background {
-    background-color: #E0E0E0;
+    background-color: var(--status-bar-background-color);
 }
 
 .simulator[photos] .app-bar {
-    background-color: #fafafa;
+    background-color: var(--medium-emphasis-surface-color);
     box-shadow: var(--shadow-z0);
 }
 
@@ -583,7 +853,7 @@
 
 .simulator[contacts] {
     --primary-color: #3f51b5;
-    --accent-color: #ff4081;
+    --secondary-color: #ff4081;
 }
 
 .simulator[contacts] .status-bar-background {
@@ -602,6 +872,7 @@
 
 .simulator[contacts] .application {
     flex-direction: row;
+    background-color: var(--low-emphasis-surface-color);
 }
 
 .simulator[contacts] .app-bar {
@@ -639,7 +910,7 @@
     width: 24px;
     font-size: 24px;
     text-align: center;
-    color: var(--accent-color);
+    color: var(--secondary-color);
 }
 
 .contact-card {
@@ -647,7 +918,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    background-color: #fafafa;
+    background-color: var(--medium-emphasis-surface-color);
     box-shadow: var(--shadow-z2);
 }
 
@@ -722,9 +993,6 @@
 }
 
 @media screen and (min-width:921px) {
-    .diagram-wrapper[screen~=tablet] .simulator[contacts] .application {
-        background-color: #eeeeee;
-    }
     .diagram-wrapper[screen~=tablet] .simulator[contacts] .contact-card {
         width: calc(6 * var(--increment));
     }
@@ -879,7 +1147,7 @@
     width: 24px;
     font-size: 24px;
     text-align: center;
-    color: var(--accent-color);
+    color: var(--secondary-color);
 }
 
 .simulator[dialer] #contacts .divider {
@@ -921,7 +1189,7 @@
     margin: 4px 8px;
     padding: 0 8px;
     grid-template-columns: 56px auto;
-    background-color: var(--surface-color);
+    background-color: var(--low-emphasis-surface-color);
     border-radius: 2px;
     box-shadow: var(--shadow-z2);
 }
@@ -985,7 +1253,7 @@
     align-items: stretch;
     width: calc(6 * var(--increment));
     height: 100%;
-    background-color: var(--surface-background-color);
+    background-color: var(--medium-emphasis-surface-color);
     box-shadow: var(--shadow-z4);
     padding-top: 24px;
 }
@@ -1268,4 +1536,235 @@
 
 #halcyon-days {
     background-color: #89196b;
+}
+
+/*------------------------------------*\
+  天气
+\*------------------------------------*/
+
+.simulator[weather=sunny] {
+    --primary-color: #1180b2;
+}
+
+.simulator[weather=sunny] .status-bar-background {
+    background-color: #0f73a0;
+}
+
+.simulator[weather] .app-bar {
+    flex-direction: column;
+    align-items: stretch;
+    box-shadow: var(--shadow-z0);
+}
+
+.simulator[weather] .search-bar {
+    position: relative;
+    width: auto;
+    margin: 8px 8px 0px 8px;
+}
+
+.simulator[weather] .search-bar input {
+    padding-bottom: 2px;
+}
+
+.simulator[weather] .brief-report {
+    display: flex;
+    align-items: flex-end;
+    flex-grow: 1;
+    background: linear-gradient(#16a1df 0%, #069de0 100%);
+    padding-bottom: 48px;
+}
+
+.simulator[weather] .brief-report>img {
+    position: absolute;
+    width: 100%;
+}
+
+.simulator[weather] .brief-report .info-body {
+    position: absolute;
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto min-content;
+    align-self: flex-start;
+    padding-left: var(--keyline);
+    padding-right: calc(var(--keyline) - 8px);
+    margin: var(--keyline) 0;
+    color: #ffffff;
+}
+
+.simulator[weather] .brief-report .info-body span:nth-of-type(1) {
+    grid-column-start: 1;
+    grid-column-end: -1;
+    color: rgba(0, 0, 0, 0.87);
+}
+
+.simulator[weather] .brief-report .info-body span:nth-of-type(2) {
+    grid-column-start: 1;
+    grid-column-end: -1;
+}
+
+.simulator[weather] .brief-report .info-body span:nth-of-type(3) {
+    line-height: 6rem;
+    padding-bottom: 5px;
+    transform: translateX(-8px);
+}
+
+.simulator[weather] .brief-report .info-body img {
+    width: 112px;
+    justify-self: end;
+    align-self: end;
+    margin-bottom: 2px;
+}
+
+.simulator[weather] .brief-report .info-body span:last-of-type {
+    justify-self: center;
+}
+
+/*------------------------------------*\
+  计算器
+\*------------------------------------*/
+
+.simulator[calculator] {
+    --primary-color: #00BCD4;
+    --secondary-color: #1DE9B6;
+    font-family: 'Roboto';
+}
+
+.simulator[calculator] .status-bar-background {
+    background-color: var(--status-bar-background-color);
+}
+
+.simulator[calculator] .display {
+    top: 0px;
+    position: sticky;
+    order: -1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-bottom: 35px;
+    background-color: var(--medium-emphasis-surface-color);
+    box-shadow: var(--shadow-z4);
+}
+
+.simulator[calculator] .toolbar {
+    order: -1;
+    margin-top: 24px;
+}
+
+.simulator[calculator] .toolbar button {
+    color: var(--secondary-text-color);
+}
+
+.simulator[calculator] .expression {
+    padding-right: calc(var(--keyline) - 12px);
+    font-weight: 300;
+    margin-top: 9px;
+    letter-spacing: 0.2em;
+}
+
+.simulator[calculator] .result {
+    padding-right: calc(var(--keyline) - 4px);
+    color: var(--hint-text-color);
+    font-weight: 300;
+    margin-top: 20px;
+    letter-spacing: 0.1em;
+}
+
+.simulator[calculator] .panel {
+    position: relative;
+    display: flex;
+    flex-grow: 1;
+    padding-bottom: 48px;
+}
+
+.simulator[calculator] .panel button {
+    text-transform: initial;
+    color: var(--primary-text-color);
+}
+
+.simulator[calculator] .panel button span {
+    font-weight: 300;
+}
+
+.simulator[calculator] .numeric {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    background-color: #424242;
+    flex-grow: 1;
+    padding: 4px 8px;
+    box-sizing: content-box;
+}
+
+.simulator[calculator] .operator {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 1fr);
+    background-color: #616161;
+    padding: 4px 12px;
+    box-sizing: content-box;
+}
+
+.simulator[calculator] .operator button:nth-of-type(4), .simulator[calculator] .operator button:nth-of-type(5) {
+    grid-column-start: 1;
+}
+
+.simulator[calculator] .advanced {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(5, 1fr);
+    background-color: var(--secondary-color);
+    flex-grow: 1;
+    padding: 4px 8px;
+    box-sizing: content-box;
+}
+
+@media screen and (max-width:920px) {
+    .simulator[calculator] .expression {
+        margin-top: 17px;
+    }
+    .simulator[calculator] .panel {
+        padding-right: 16px;
+    }
+    .simulator[calculator] .operator button:nth-of-type(2) {
+        grid-row-start: 1;
+    }
+    .simulator[calculator] .operator button:last-of-type {
+        display: none;
+    }
+    .simulator[calculator] .advanced {
+        width: calc(100% - var(--increment));
+        height: 100%;
+        position: absolute;
+        box-sizing: border-box;
+        padding-bottom: 52px;
+        transform: translateX(calc(100% + var(--increment) - 16px));
+    }
+}
+
+@media screen and (min-width:921px) {
+    .diagram-wrapper[screen~=tablet] .simulator[calculator] .numeric button:last-of-type {
+        display: none;
+    }
+    .diagram-wrapper[screen~=tablet] .simulator[calculator] .operator {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(4, 1fr);
+    }
+    .diagram-wrapper[screen~=tablet] .simulator[calculator] .scrim {
+        display: none;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .simulator[calculator] .numeric {
+        background-color: #212121;
+    }
+    .simulator[calculator] .operator {
+        background-color: #424242;
+    }
 }

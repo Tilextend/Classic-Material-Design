@@ -26,7 +26,7 @@
   width: 200px;
   height: 150px;
   border-radius: 2px;
-  background-color: var(--dialog-background-color);
+  background-color: var(--high-emphasis-surface-color);
 }
 
 #absolute-elevation .surface:first-child {
@@ -49,7 +49,7 @@
   display: flex;
   flex-direction: column-reverse;
   align-items: flex-end;
-  background-color: var(--surface-background-color);
+  background-color: var(--medium-emphasis-surface-color);
   box-shadow: var(--shadow-z16);
 }
 
@@ -111,7 +111,7 @@
   width: 125px;
   aspect-ratio: 1/1;
   border-radius: 2px;
-  background-color: var(--dialog-background-color);
+  background-color: var(--high-emphasis-surface-color);
 }
 
 #motion-different-shadow .surface, #motion-same-shadow .surface {
@@ -190,5 +190,5 @@
 }
 
 footer .right {
-  background-color: #ad1457;
+  --primary-color: #ad1457;
 }

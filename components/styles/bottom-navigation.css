@@ -1,7 +1,3 @@
-footer .left {
-    background-color: #8e24aa;
-}
-
 /*------------------------------------*\
   模拟器
 \*------------------------------------*/
@@ -14,15 +10,19 @@ footer .left {
     --primary-color: #3949AB;
 }
 
+footer .left {
+    --primary-color: #8e24aa;
+}
+
+.CMD-content>.app-bar>button, footer {
+    --states-parameter: 2;
+}
+
 @media (prefers-color-scheme: dark) {
     .CMD-drawer, .content-body {
         --primary-color: #9FA8DA;
     }
     .diagram {
-        --accent-color: #90CAF9;
+        --secondary-color: #90CAF9;
     }
-}
-
-.CMD-content>.app-bar>button, footer {
-    --states-parameter: 2;
 }

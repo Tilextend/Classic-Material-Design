@@ -37,7 +37,7 @@ input {
 }
 
 .switch[class~=on] .track {
-    background-color: var(--accent-color);
+    background-color: var(--secondary-color);
     opacity: 0.5;
 }
 
@@ -90,11 +90,11 @@ input {
 .switch[class~=on] .thumb::after {
     border-top-color: var(--surface-hint-color, rgba(255, 255, 255, 0.2));
     border-bottom-color: var(--surface-shade-color, rgba(33, 33, 33, 0.2));
-    background-color: var(--accent-color);
+    background-color: var(--secondary-color);
 }
 
 .switch[class~=on] .thumb::after {
-    background-color: var(--accent-color);
+    background-color: var(--secondary-color);
 }
 
 .switch[class~=dragged] .thumb {
@@ -262,7 +262,7 @@ input[type=checkbox], input[type=radio] {
 }
 
 .radio-button[class~=checked] .stroke {
-    stroke: var(--accent-color);
+    stroke: var(--secondary-color);
     stroke-width: 2;
     fill: transparent;
 }
@@ -316,12 +316,12 @@ input[type=checkbox], input[type=radio] {
 }
 
 .radio-button[class~=checked] .dot {
-    fill: var(--accent-color);
+    fill: var(--secondary-color);
     visibility: visible;
 }
 
 .radio-button[class~=to-checked] .dot {
-    fill: var(--accent-color);
+    fill: var(--secondary-color);
     visibility: hidden;
     animation-name: radioButtonDotToChecked;
     animation-duration: calc(500ms * 2 / 3);
@@ -368,13 +368,13 @@ input[type=checkbox], input[type=radio] {
 @media (prefers-color-scheme: light) {
     :root {
         --switch-off-track-color: rgba(0, 0, 0, 0.38);
-        --switch-off-thumb-color: #fafafa;
+        --switch-off-thumb-color: #ffffff;
     }
 }
 
 .light {
     --switch-off-track-color: rgba(0, 0, 0, 0.38);
-    --switch-off-thumb-color: #fafafa;
+    --switch-off-thumb-color: #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {

@@ -28,11 +28,11 @@ button {
     height: 36px;
     padding: 0 8px;
     border-radius: 2px;
-    color: var(--accent-color);
+    color: var(--secondary-color);
 }
 
 .text-button[class~=contained] {
-    background-color: var(--accent-color);
+    background-color: var(--secondary-color);
     color: inherit;
     box-shadow: var(--shadow-z2);
 }
@@ -61,7 +61,7 @@ button {
     height: 56px;
     border-radius: 50%;
     color: var(--secondary-text-color);
-    background-color: var(--accent-color, var(--surface-background-color));
+    background-color: var(--secondary-color, var(--high-emphasis-surface-color));
     box-shadow: var(--shadow-z6);
     transition-property: box-shadow;
     transition-duration: 195ms;

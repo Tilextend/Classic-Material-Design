@@ -22,13 +22,13 @@
     flex-direction: column;
     border-radius: 2px;
     overflow: hidden;
-    background-color: var(--dialog-background-color);
+    background-color: var(--high-emphasis-surface-color);
     box-shadow: var(--shadow-z24);
 }
 
 .dialog::after {
-    border-top-color: var(--surface-hint-color, rgba(255, 255, 255, 0.4));
-    border-bottom-color: var(--surface-shade-color, rgba(33, 33, 33, 0.1));
+    border-top-color: var(--surface-hint-color);
+    border-bottom-color: var(--surface-shade-color);
 }
 
 .dialog .title {
@@ -117,15 +117,13 @@
 \*------------------------------------*/
 
 @media (prefers-color-scheme: light) {
-    :root {
-        --dialog-background-color: #ffffff;
+    .dialog {
+        --surface-hint-color: rgba(255, 255, 255, 0.4);
+        --surface-shade-color: rgba(33, 33, 33, 0.1);
     }
 }
 
 @media (prefers-color-scheme: dark) {
-    :root {
-        --dialog-background-color: #424242;
-    }
     .dialog {
         --surface-hint-color: rgba(255, 255, 255, 0.2);
         --surface-shade-color: rgba(0, 0, 0, 0.2);

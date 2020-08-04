@@ -2,15 +2,18 @@
   应用栏
 \*------------------------------------*/
 
-.app-bar {
+.app-bar, .toolbar {
     top: 0px;
     position: sticky;
     order: -1;
     display: flex;
     width: 100%;
     align-items: start;
-    background-color: var(--primary-color, --surface-color);
     color: var(--secondary-text-color);
+}
+
+.app-bar {
+    background-color: var(--primary-color, --low-emphasis-surface-color);
     box-shadow: var(--shadow-z4);
 }
 
@@ -22,7 +25,7 @@
     flex-wrap: wrap;
 }
 
-.app-bar .start, .app-bar .end {
+.app-bar .start, .app-bar .end, .toolbar .start, .toolbar .end {
     position: relative;
     height: var(--increment);
     display: flex;
@@ -34,11 +37,11 @@
     margin-left: 20px;
 }
 
-.app-bar .start {
+.app-bar .start, .toolbar .start {
     padding-left: calc(var(--keyline) - 12px);
 }
 
-.app-bar .end {
+.app-bar .end, .toolbar .end {
     flex-direction: row-reverse;
     padding-right: calc(var(--keyline) - 12px);
 }
@@ -59,7 +62,7 @@
     gap: 4px;
 }
 
-.app-bar .extra>span {
+.app-bar .extra>span:first-of-type {
     margin-left: calc(16px + var(--increment));
     color: var(--primary-text-color);
 }
@@ -78,7 +81,7 @@
     padding: 0 4px;
     color: var(--secondary-text-color);
     border-radius: 2px;
-    background-color: var(--surface-color);
+    background-color: var(--high-emphasis-surface-color);
     align-items: center;
     box-shadow: var(--shadow-z2);
 }

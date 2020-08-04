@@ -1,22 +1,15 @@
 /*------------------------------------*\
-  模拟器
+  正文
 \*------------------------------------*/
+
+
 
 /*------------------------------------*\
   主题
 \*------------------------------------*/
 
 :root {
-    --primary-color: #3949AB;
-}
-
-@media (prefers-color-scheme: dark) {
-    .CMD-drawer, .content-body {
-        --primary-color: #9FA8DA;
-    }
-    .diagram {
-        --secondary-color: #90CAF9;
-    }
+    --primary-color: #AD1457;
 }
 
 .CMD-content>.app-bar>button, footer {

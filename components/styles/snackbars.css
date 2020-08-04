@@ -3,7 +3,7 @@
 \*------------------------------------*/
 
 .diagram {
-    --accent-color: #4caf50;
+    --secondary-color: #4caf50;
     height: 240px;
     padding: 24px;
 }
@@ -22,7 +22,7 @@
 }
 
 #snackbar-dismissive-action .diagram {
-    --accent-color: #f9a825;
+    --secondary-color: #f9a825;
 }
 
 #multiple-actions {
@@ -30,7 +30,7 @@
 }
 
 #multiple-actions .diagram, #filled-button .diagram {
-    --accent-color: #FF8A80;
+    --secondary-color: #FF8A80;
 }
 
 #filled-button .diagram button {
@@ -372,7 +372,7 @@
         --primary-color: #9FA8DA;
     }
     .diagram {
-        --accent-color: #90CAF9;
+        --secondary-color: #90CAF9;
     }
 }
 

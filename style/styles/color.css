@@ -1,0 +1,78 @@
+/*------------------------------------*\
+  正文
+\*------------------------------------*/
+
+.palette {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  user-select: text;
+}
+
+.palette>span {
+  display: flex;
+  line-height: 40px;
+  padding: 0 16px;
+  justify-content: space-between;
+}
+
+.palette:not(.black-white)>span:nth-of-type(1) {
+  height: 120px;
+  flex-direction: column;
+}
+
+.palette:not(.black-white)>span:nth-of-type(1)>span {
+  line-height: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/*------------------------------------*\
+  模拟器
+\*------------------------------------*/
+
+#color-usability-maps img {
+  position: absolute;
+  width: 100%;
+}
+
+
+
+#switches-color-status .list[two] {
+  padding: 0 var(--keyline);
+}
+
+#switches-color-status .list[one] {
+  padding-left: var(--keyline);
+  padding-right: calc(var(--keyline) - 12px);
+  grid-template-columns: auto 68px;
+}
+
+@media screen and (max-width:920px) {
+  #secondary-color-showcase .advanced {
+    transform: translateX(var(--increment));
+    box-shadow: var(--shadow-z2);
+  }
+}
+
+/*------------------------------------*\
+  主题
+\*------------------------------------*/
+
+:root {
+  --primary-color: #00897b;
+}
+
+.CMD-content>.app-bar>button, footer {
+  --states-parameter: 2;
+}
+
+footer .left {
+  --primary-color: #AD1457;
+}
+
+@media (prefers-color-scheme: dark) {
+  .CMD-drawer, .content-body {
+      --primary-color: #26A69A;
+  }
+}

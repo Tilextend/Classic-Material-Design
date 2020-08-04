@@ -1,5 +1,5 @@
 .diagram {
-    --accent-color: #2196f3;
+    --secondary-color: #2196f3;
     height: 360px;
 }
 
@@ -49,13 +49,13 @@
 }
 
 #disable-action ul .meta, #disable-action .application>.list[one] .meta {
-    color: var(--accent-color);
+    color: var(--secondary-color);
     margin-right: calc(var(--keyline) - 12px);
 }
 
 #disable-action .list[two] {
     grid-template-columns: calc(var(--increment) + 16px) auto;
-    color: var(--accent-color);
+    color: var(--secondary-color);
 }
 
 #third-action .dialog button:last-of-type {
@@ -115,7 +115,7 @@
         --primary-color: #9FA8DA;
     }
     .diagram {
-        --accent-color: #90CAF9;
+        --secondary-color: #90CAF9;
     }
 }
 

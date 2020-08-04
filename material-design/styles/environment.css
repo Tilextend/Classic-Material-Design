@@ -18,7 +18,7 @@
     position: relative;
     width: 168px;
     aspect-ratio: 1/1;
-    background-color: var(--dialog-background-color);
+    background-color: var(--high-emphasis-surface-color);
     border-radius: 2px;
 }
 

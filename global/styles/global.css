@@ -25,7 +25,7 @@ html, body {
     width: 100%;
     vertical-align: baseline;
     word-wrap: break-word;
-    background-color: var(--surface-background-color);
+    background-color: var(--medium-emphasis-surface-color);
     font-family: 'Roboto', 'Noto Sans SC', sans-serif;
     text-rendering: optimizeLegibility;
     image-rendering: -webkit-optimize-contrast;
@@ -142,7 +142,7 @@ th, td {
     width: 256px;
     height: 100vh;
     padding-bottom: 8px;
-    background-color: var(--dialog-background-color);
+    background-color: var(--high-emphasis-surface-color);
     overflow-y: auto;
     transition-property: none;
     transition-timing-function: var(--sharp-curve);
@@ -516,13 +516,26 @@ article>ul li {
     color: #f57f17;
 }
 
+.diagram+p, .simulator+p {
+    color: var(--secondary-text-color-alt);
+}
+
 table {
     user-select: text;
     margin-bottom: var(--keyline);
 }
 
-tbody th, tbody td {
-    background-color: var(--dialog-background-color);
+thead {
+    background-color: var(--medium-emphasis-surface-color);
+}
+
+tbody {
+    background-color: var(--high-emphasis-surface-color);
+    color: var(--primary-text-color);
+}
+
+th, td {
+    border-color: var(--sheet-border-color);
 }
 
 table span {
@@ -570,11 +583,12 @@ table span {
 \*------------------------------------*/
 
 .simulator {
+    z-index: 1;
     position: relative;
     display: flex;
     overflow: hidden;
     flex-direction: column;
-    background-color: var(--surface-background-color);
+    background-color: var(--medium-emphasis-surface-color);
 }
 
 .diagram-wrapper[screen~="mobile"] .simulator {
@@ -630,12 +644,8 @@ table span {
     height: 24px;
     align-items: center;
     padding: 0 4px;
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--status-bar-color, rgba(255, 255, 255, 0.9));
     pointer-events: auto;
-}
-
-.status-bar[class~=light] {
-    color: rgba(0, 0, 0, 0.6);
 }
 
 .status-bar .system {
@@ -724,6 +734,7 @@ footer {
 }
 
 footer a {
+    z-index: 1;
     position: relative;
     flex-basis: 100%;
     display: grid;
@@ -891,19 +902,27 @@ footer .title {
 \*------------------------------------*/
 
 @media (prefers-color-scheme: light) {
+    :root {
+        --sheet-border-color: #eeeeee;
+    }
     .diagram {
         background: radial-gradient(circle at top left, rgba(0, 0, 0, 0) calc(1 / 3 * 100%), rgba(0, 0, 0, 0.01) calc(7 / 9 * 100%), rgba(0, 0, 0, 0.02) 100%);
         background-color: #eeeeee;
     }
-    .diagram+p, .simulator+p {
-        color: rgba(0, 0, 0, 0.7);
-    }
-    th, td {
-        border-color: #eeeeee;
-    }
+}
+
+.light {
+    --sheet-border-color: #eeeeee;
+    --status-bar-color: rgba(0, 0, 0, 0.6);
 }
 
 @media (prefers-color-scheme: dark) {
+    :root {
+        --sheet-border-color: #616161;
+    }
+    .light {
+        --status-bar-color: revert;
+    }
     .CMD-drawer figure circle {
         fill: #747474;
     }
@@ -914,13 +933,11 @@ footer .title {
     .diagram::after, .simulator::after {
         border-color: #424242;
     }
-    .diagram+p, .simulator+p {
-        color: rgba(255, 255, 255, 0.7);
-    }
     .recommends[class~=do] {
         color: #66BB6A;
     }
-    th, td {
-        border-color: #616161;
-    }
+}
+
+.dark {
+    --sheet-border-color: #616161;
 }

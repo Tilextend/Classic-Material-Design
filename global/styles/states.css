@@ -4,7 +4,7 @@
 
 *[states]::before, button::before {
     content: "";
-    z-index: var(--states-overlay-level, unset);
+    z-index: var(--states-overlay-level, -1);
     position: absolute;
     top: 0;
     left: 0;
@@ -13,7 +13,7 @@
     border-radius: inherit;
     pointer-events: none;
     background-color: var(--states-base-color);
-    opacity: calc((0.04 * var(--hover-parameter, 0) + 0.12 * var(--focus-parameter, 0) + 0.12 * var(--activate-parameter, 0) + 0.04 * var(--ripple-background-parameter, 0) + 0.08 * var(--dragged-parameter, 0)) * var(--states-parameter, 1));
+    opacity: calc((0.04 * var(--hover-parameter, 0) + 0.12 * var(--focus-parameter, 0) + 0.08 * var(--selected-parameter, 0) + 0.12 * var(--activate-parameter, 0) + 0.04 * var(--ripple-background-parameter, 0) + 0.08 * var(--dragged-parameter, 0)) * var(--states-parameter, 1));
     transition-property: opacity;
     transition-duration: 195ms;
     transition-timing-function: linear;
@@ -43,6 +43,14 @@
 
 *:focus-visible, .focused {
     --focus-parameter: 1;
+}
+
+.selected {
+    --selected-parameter: 1;
+}
+
+.selected::before {
+    background-color: var(--primary-color, --states-base-color);
 }
 
 .activated:not(.tab-bar button) {

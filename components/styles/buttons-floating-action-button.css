@@ -25,6 +25,10 @@
     height: 360px;
 }
 
+#right-fab-actions .diagram .fab, #wrong-fab-actions .diagram .fab {
+    background-color: var(--high-emphasis-surface-color);
+}
+
 #wrong-fab-actions button:nth-last-of-type(2) {
     overflow: visible;
 }
@@ -316,7 +320,7 @@
         background-color: transparent;
     }
     100% {
-        background-color: var(--surface-color);
+        background-color: var(--low-emphasis-surface-color);
     }
 }
 
@@ -525,7 +529,7 @@
         --primary-color: #9FA8DA;
     }
     .diagram {
-        --accent-color: #90CAF9;
+        --secondary-color: #90CAF9;
     }
 }
 

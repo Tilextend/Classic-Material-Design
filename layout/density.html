@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta name="theme-color" content="#212121">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>质感设计 - 架构方法</title>
+    <title>质感设计 - 内容密度</title>
     <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500&family=Roboto+Mono:wght@500&family=Roboto:wght@400;500&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Roboto+Mono:wght@500&family=Roboto:wght@300;400;500;700&display=swap"
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="shortcut icon" href="../global/logo.svg">
-    <link rel="stylesheet" href="./styles/principles.css">
+    <link rel="stylesheet" href="./styles/density.css">
     <link rel="stylesheet" href="../global/styles/global.css">
     <script defer src="../global/scripts/global.js"></script>
     <script defer src="../global/scripts/components.js"></script>
@@ -38,12 +38,12 @@
             </nav>
             <nav>
                 <span states class="body2" tabindex="0">布局</span>
-                <a states class="activated">架构方法</a>
+                <a states href="../layout/principles.html">架构方法</a>
                 <a states href="../layout/units-measurements.html">单位与度量方法</a>
                 <a states href="../layout/spacing-methods.html">元素排布</a>
                 <a states href="../layout/structure.html">界面结构</a>
                 <a states href="../layout/responsive-ui.html">响应式界面</a>
-                <a states href="../layout/density.html">内容密度</a>
+                <a states class="activated">内容密度</a>
             </nav>
             <nav>
                 <span states class="body2" tabindex="0">风格样式</span>
@@ -125,83 +125,41 @@
     </div>
     <main class="CMD-content">
         <div class="content-body">
-            <header class="chapter-intro">
-                <h4>架构方法</h4>
-                <p class="title">
-                    质感设计以印刷设计为指导，活用基线网格与结构模型等排印工具，有序地划分层级、传达意义，为用户打造焦点明确的沉浸体验。同时鼓励以复用视觉要素、结构组织、间距的方式保持应用在不同设备、平台上的一致性，并简化设计适配的流程。
-                </p>
+            <header>
+                <h4>内容密度</h4>
+                <p class="title"></p>
             </header>
             <nav class="chapter-catalogue">
                 <span class="body1">索引</span>
                 <ul class="title">
-                    <li><a href="#paper">层面铺排</a></li>
-                    <li><a href="#ink">内容填充</a></li>
+                    <li><a href="#"></a></li>
                 </ul>
             </nav>
-            <article id="paper" class="horizontal">
-                <h5>层面铺排</h5>
-                <section>
-                    <article class="body1 intro">
-                        <p>Material 层面模仿纸张作为内容载体，自然的将整个界面的内容进行了分组。承载层之间的层叠、分合影响内容之间的轻重、聚散。</p>
-                    </article>
-                </section>
-                <section>
-                    <article class="body1">
-                        <h6>接续</h6>
-                        <p>共用同一边缘的 Material 层面是<strong>接续</strong>的，它们成一个整体进行移动。</p>
-                    </article>
-                    <div id="seams" class="diagram-wrapper">
-                        <div class="diagram">
-                            <div class="divider vertical"></div>
-                            <div class="divider horizontal"></div>
-                        </div>
-                        <p class="body1">接续的 Material 层面具有缝隙。</p>
-                    </div>
-                </section>
-                <section>
-                    <article class="body1">
-                        <h6>分离</h6>
-                        <p>处于不同海拔高度的 Material 层面是<strong>分离</strong>的，它们的移动相互独立。</p>
-                    </article>
-                    <div id="steps" class="diagram-wrapper">
-                        <div class="diagram">
-                            <div class="surface"></div>
-                            <div class="surface"></div>
-                        </div>
-                        <p class="body1">分离的 Material 层面具有阴影。</p>
-                    </div>
-                </section>
-            </article>
-            <hr class="divider horizontal">
-            <article id="ink" class="horizontal">
-                <h5>内容填充</h5>
-            </article>
         </div>
 
 
         <footer class="dark">
-            <a states class="left light" href="../material-design/elevation-shadows.html">
+            <a states class="left" href="./responsive-ui.html">
                 <span class="material-icons">arrow_back</span>
                 <span class="subheading">上一节
-                    <span class="title">层级与阴影</span>
+                    <span class="title">响应式界面</span>
                 </span>
             </a>
-            <a states class="right" href="./units-measurements.html">
+            <a states class="right" href="./color.html">
                 <span class="subheading">下一节
-                    <span class="title">单位与度量方法</span>
+                    <span class="title">颜色</span>
                 </span>
                 <span class="material-icons">arrow_forward</span>
             </a>
         </footer>
 
-        <div class="app-bar prominent dark">
-            <div class="surface"></div>
+        <div id="progress" class="app-bar dark">
             <div class="start">
                 <button id="drawer-trigger" class="icon-button unbounded" tabindex="1">
                     <span class="material-icons">menu</span>
                 </button>
             </div>
-            <span class="title">布局</span>
+            <span class="title">布局 - 内容密度</span>
             <div class="end">
                 <button id="search-trigger" class="icon-button unbounded" disabled="true">
                     <span class="material-icons">search</span>
