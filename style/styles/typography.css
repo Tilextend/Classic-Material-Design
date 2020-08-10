@@ -1,0 +1,76 @@
+/*------------------------------------*\
+  正文
+\*------------------------------------*/
+
+section>ul {
+  grid-column-end: span min(var(--max-block), 2);
+}
+
+section>ul>li {
+  display: grid;
+  grid-template-columns: 25% auto;
+}
+
+section>ul>li span:first-of-type {
+  color: var(--secondary-text-color);
+}
+
+section>ul>li:nth-of-type(1) span:last-of-type{
+  margin-top: -20px;
+}
+
+section>ul>li:nth-of-type(2) {
+  margin-top: -2px;
+}
+
+section>ul>li:nth-of-type(2) span:last-of-type{
+  margin-top: -8px;
+}
+
+section>ul>li:nth-of-type(3) {
+  margin-top: 11px;
+}
+
+section>ul>li:nth-of-type(3) span:last-of-type{
+  margin-top: -5px;
+}
+
+section>ul>li:nth-of-type(4) {
+  margin-top: 15px;
+}
+
+section>ul>li:nth-of-type(4) span:last-of-type{
+  margin-top: -2px;
+}
+
+section>ul>li:nth-of-type(5) {
+  margin-top: 18px;
+}
+
+section>ul>li:nth-of-type(6) {
+  margin-top: 17px;
+}
+
+section>ul>li:nth-of-type(7) {
+  margin-top: 14px;
+}
+
+section>ul>li:nth-of-type(8) {
+  margin-top: 16px;
+}
+
+section>ul>li:nth-of-type(9) {
+  margin-top: 17px;
+}
+
+section>ul>li:nth-of-type(10) {
+  margin-top: 19px;
+}
+
+/*------------------------------------*\
+  主题
+\*------------------------------------*/
+
+:root {
+    --primary-color: #00897b;
+}

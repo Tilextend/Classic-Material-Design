@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="theme-color" content="#212121">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>质感设计 - 响应式界面</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Roboto+Mono:wght@500&family=Roboto:ital,wght@0,400;0,500;1,500&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="shortcut icon" href="../global/logo.svg">
+    <link rel="stylesheet" href="./styles/imagery.css">
+    <link rel="stylesheet" href="../global/styles/global.css">
+    <script defer src="../global/scripts/global.js"></script>
+    <script defer src="../global/scripts/components.js"></script>
+</head>
+
+<body>
+    <div class="CMD-drawer-wrapper">
+        <aside class="CMD-drawer body1">
+            <figure>
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="12" />
+                    <path fill="#BDBDBD" d="M3.6,3.6h16.8v16.8H3.6V3.6z" />
+                    <path fill="#ffffff" d="M20.4,3.6L12,20.4L3.6,3.6H20.4z" />
+                </svg>
+                <figcaption class="subheading">MATERIAL DESIGN</figcaption>
+            </figure>
+            <hr class="divider horizontal">
+            <nav>
+                <span states class="body2" tabindex="0">基本原理</span>
+                <a states href="../index.html">概述</a>
+                <a states href="../material-design/environment.html">环境</a>
+                <a states href="../material-design/material-properties.html">Material 属性</a>
+                <a states href="../material-design/elevation-shadows.html">层级与阴影</a>
+            </nav>
+            <nav>
+                <span states class="body2" tabindex="0">布局</span>
+                <a states href="../layout/principles.html">架构方法</a>
+                <a states href="../layout/units-measurements.html">单位与度量方法</a>
+                <a states href="../layout/spacing-methods.html">元素排布</a>
+                <a states href="../layout/structure.html">界面结构</a>
+                <a states href="../layout/responsive-ui.html">响应式界面</a>
+                <a states href="../layout/density.html">内容密度</a>
+            </nav>
+            <nav>
+                <span states class="body2" tabindex="0">风格样式</span>
+                <a states href="../style/color.html">颜色</a>
+                <a states href="../style/icons.html">图标</a>
+                <a states class="activated">图像</a>
+                <a states href="../style/typography.html">字体排印</a>
+                <a states href="../style/writing.html">书面用语</a>
+                <a states href="../style/sound.html">音效</a>
+            </nav>
+            <nav>
+                <span states class="body2" tabindex="0">动画效果</span>
+                <a states href="../motion/material-motion.html">质感动画</a>
+                <a states href="../motion/movement.html">移动</a>
+                <a states href="../motion/transforming-material.html">转换</a>
+                <a states href="../motion/choreography.html">编排</a>
+                <a states href="../motion/responsive-interaction.html">作用反馈</a>
+                <a states href="../motion/creative-customization.html">创意定制</a>
+            </nav>
+            <nav>
+                <span states class="body2" tabindex="0">组件</span>
+                <a states href="../components/bottom-navigation.html">底部导航</a>
+                <a states href="../components/buttons.html">按钮</a>
+                <a states href="../components/buttons-floating-action-button.html">按钮：浮动操作按钮</a>
+                <a states href="../components/cards.html">卡片</a>
+                <a states href="../components/chips.html">多用标签</a>
+                <a states href="../components/data-tables.html">数据表格</a>
+                <a states href="../components/dividers.html">分隔线</a>
+                <a states href="../components/dialogs.html">对话框</a>
+                <a states href="../components/dialogs-pickers.html">对话框：选择器</a>
+                <a states href="../components/lists.html">列表</a>
+                <a states href="../components/menus.html">菜单</a>
+                <a states href="../components/progress-indicators.html">进程指示器</a>
+                <a states href="../components/selection-controls.html">选择控件</a>
+                <a states href="../components/sheets-bottom.html">底部单页</a>
+                <a states href="../components/sheets-side.html">侧边单页</a>
+                <a states href="../components/sheets-navigation-drawer.html">侧边单页：导航抽屉</a>
+                <a states href="../components/sliders.html">滑块</a>
+                <a states href="../components/snackbars.html">条形通知</a>
+                <a states href="../components/tabs.html">标签栏</a>
+                <a states href="../components/text-fields.html">文本框</a>
+                <a states href="../components/toolbars.html">工具栏</a>
+                <a states href="../components/widgets.html">桌面小部件</a>
+            </nav>
+            <nav>
+                <span states class="body2" tabindex="0">交互模式</span>
+                <a states href="../patterns/confirmation-acknowledgement.html">确认与获知</a>
+                <a states href="../patterns/data-display.html">数据展示</a>
+                <a states href="../patterns/empty-states.html">空状态</a>
+                <a states href="../patterns/errors.html">错误提示</a>
+                <a states href="../patterns/fingerprint.html">指纹识别</a>
+                <a states href="../patterns/gestures.html">手势</a>
+                <a states href="../patterns/help-feedback.html">帮助与反馈</a>
+                <a states href="../patterns/launch-screens.html">启动画面</a>
+                <a states href="../patterns/navigation.html">导航</a>
+                <a states href="../patterns/notifications.html">通知</a>
+                <a states href="../patterns/offline-states.html">离线状态</a>
+                <a states href="../patterns/permissions.html">权限</a>
+                <a states href="../patterns/search.html">搜索</a>
+                <a states href="../patterns/selection.html">选择</a>
+                <a states href="../patterns/settings.html">设置</a>
+                <a states href="../patterns/states.html">交互状态</a>
+                <a states href="../patterns/swipe-to-refresh.html">下滑刷新</a>
+            </nav>
+            <nav>
+                <span states class="body2" tabindex="0">可用性</span>
+                <a states href="../usability/accessibility.html">无障碍</a>
+                <a states href="../usability/bidirectionality.html">阅读方向</a>
+            </nav>
+            <nav>
+                <span states class="body2" tabindex="0">发展与用户教育</span>
+            </nav>
+            <nav>
+                <span states class="body2" tabindex="0">资源</span>
+            </nav>
+            <a href="../about.html">关于</a>
+        </aside>
+        <div class="divider vertical"></div>
+    </div>
+    <main class="CMD-content">
+        <div class="content-body">
+            <header>
+                <h4>图像</h4>
+                <p class="title">
+                    大胆、生动、富有意味的图像令人赏心悦目，但图像不仅仅是一种装饰，它更是传达品牌形象和气质差异的强力工具。无论品牌形象是沉默克制的，还是热情奔放的，善用图像都能让界面更具生命力。</p>
+            </header>
+            <nav class="chapter-catalogue">
+                <span class="body1">索引</span>
+                <ul class="title">
+                    <li><a href="#principles">原则</a></li>
+                    <li><a href="#best-practices">图像选择</a></li>
+                    <li><a href="#ui-integration">实际运用</a></li>
+                </ul>
+            </nav>
+            <article id="principles" class="vertical">
+                <h5>原则</h5>
+                <section class="body1">
+                    <div id="personal-relevance" class="diagram-wrapper" screen="mobile">
+                        <div class="simulator" contacts="detailed">
+                            <div class="application">
+                                <div class="portrait-wrapper">
+                                    <img character="ali-connors" src="../resources/faces/ali_connors.png">
+                                    <div class="content-block">
+                                        <div class="scrim" gradient></div>
+                                        <span class="display1">Ali Connors</span>
+                                    </div>
+                                </div>
+                                <ul>
+                                    <li class="list" two>
+                                        <span class="material-icons">call</span>
+                                        <span class="primary-text subheading">(650) 555–1234<span
+                                                class="secondary-text body1">手机</span></span>
+                                        <button class="icon-button unbounded meta" tabindex="-1">
+                                            <span class="material-icons">message</span>
+                                        </button>
+                                    </li>
+                                    <li class="list" two>
+                                        <span class="primary-text subheading">(323) 555–6789<span
+                                                class="secondary-text body1">单位</span></span>
+                                        <button class="icon-button unbounded meta" tabindex="-1">
+                                            <span class="material-icons">message</span>
+                                        </button>
+                                    </li>
+                                </ul>
+                                <div class="divider horizontal"></div>
+                                <ul>
+                                    <li class="list" two>
+                                        <span class="material-icons">mail</span>
+                                        <span class="primary-text subheading">aliconnors@example.com<span
+                                                class="secondary-text body1">个人</span></span>
+                                    </li>
+                                    <li class="list" two>
+                                        <span class="primary-text subheading">ali_connors@example.com<span
+                                                class="secondary-text body1">工作</span></span>
+                                    </li>
+                                </ul>
+                                <div class="app-bar dark">
+                                    <div class="start">
+                                        <button class="icon-button unbounded" tabindex="-1">
+                                            <span class="material-icons">arrow_back</span>
+                                        </button>
+                                    </div>
+                                    <div class="end">
+                                        <button class="icon-button narrow unbounded" tabindex="-1">
+                                            <span class="material-icons">more_vert</span>
+                                        </button>
+                                        <button class="icon-button unbounded" tabindex="-1">
+                                            <span class="material-icons">star_border</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <button id="edit" class="fab dark" tabindex="-1">
+                                    <span class="material-icons">edit</span>
+                                </button>
+                                <div class="system-layer">
+                                    <div class="status-bar-background"></div>
+                                    <div class="navigation-bar-background"></div>
+                                </div>
+                            </div>
+                            <div class="system-bars">
+                                <div class="status-bar">
+                                    <div class="system">
+                                        <span id="wifi" class="material-icons">signal_wifi_4_bar</span>
+                                        <span id="signal" class="material-icons">signal_cellular_4_bar</span>
+                                        <span id="battery" class="extra-material-icons">system_battery</span>
+                                        <span id="time" class="body2">12:30</span>
+                                    </div>
+                                </div>
+                                <div class="navigation-bar">
+                                    <span id="back" class="extra-material-icons">system_back</span>
+                                    <span id="home" class="extra-material-icons">system_home</span>
+                                    <span id="recent" class="extra-material-icons">system_recent</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h6>关联当前情境</h6>
+                    <p>图像应与当前内容紧密关联，并反映当前的情景与场合。</p>
+                </section>
+                <section class="body1">
+                    <div id="information" class="diagram-wrapper" screen="mobile">
+                        <div class="simulator" inbox="flight">
+                            <div class="application">
+                                <div class="hero-image">
+                                    <img character="ali-connors" src="../resources/style/san-francisco.jpg">
+                                    <div class="content-block">
+                                        <div class="scrim" gradient></div>
+                                        <div class="scrim" gradient="reverse"></div>
+                                        <div class="route dark">
+                                            <span class="display2">JFK</span>
+                                            <span class="material-icons">flight</span>
+                                            <span class="display2">SFO</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="overlay dark">
+                                    <span class="headline">电子机票确认信息<br>#LDLPMF</span>
+                                </div>
+                                <button class="text-button" tabindex="-1">
+                                    <span class="body2">检票登机</span>
+                                </button>
+                                <div class="divider horizontal"></div>
+                                <ul>
+                                    <li class="list" two>
+                                        <span class="primary-text body2">维珍美国航空 22<span
+                                                class="secondary-text body1">周四，四月4号，票号 #45358886</span></span>
+                                    </li>
+                                    <ul>
+                                        <li class="list" two>
+                                            <span class="primary-text body1">纽约，肯尼迪机场<span
+                                                    class="secondary-text body2">6:05</span></span>
+                                        </li>
+                                        <li class="list" two>
+                                            <span class="primary-text body1">航空站<span
+                                                    class="secondary-text body2">—</span></span>
+                                        </li>
+                                        <li class="list" two>
+                                            <span class="primary-text body1">登机口<span
+                                                    class="secondary-text body2">48</span></span>
+                                        </li>
+                                    </ul>
+                                </ul>
+                                <div class="app-bar dark">
+                                    <div class="start">
+                                        <button class="icon-button unbounded" tabindex="-1">
+                                            <span class="material-icons">arrow_back</span>
+                                        </button>
+                                    </div>
+                                    <div class="end">
+                                        <button class="icon-button narrow unbounded" tabindex="-1">
+                                            <span class="material-icons">more_vert</span>
+                                        </button>
+                                        <button class="icon-button unbounded" tabindex="-1">
+                                            <span class="material-icons">delete</span>
+                                        </button>
+                                        <button class="icon-button unbounded" tabindex="-1">
+                                            <span class="material-icons">archive</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <button class="fab" tabindex="-1">
+                                    <span class="material-icons">reply</span>
+                                </button>
+                                <div class="system-layer">
+                                    <div class="status-bar-background"></div>
+                                    <div class="navigation-bar-background"></div>
+                                </div>
+                            </div>
+                            <div class="system-bars">
+                                <div class="status-bar">
+                                    <div class="system">
+                                        <span id="wifi" class="material-icons">signal_wifi_4_bar</span>
+                                        <span id="signal" class="material-icons">signal_cellular_4_bar</span>
+                                        <span id="battery" class="extra-material-icons">system_battery</span>
+                                        <span id="time" class="body2">12:30</span>
+                                    </div>
+                                </div>
+                                <div class="navigation-bar">
+                                    <span id="back" class="extra-material-icons">system_back</span>
+                                    <span id="home" class="extra-material-icons">system_home</span>
+                                    <span id="recent" class="extra-material-icons">system_recent</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h6>传递有效信息</h6>
+                    <p>图像应迅速地传达出特定信息以辅助用户对内容的理解。</p>
+                </section>
+                <section class="body1">
+                    <div id="delight" class="diagram-wrapper" screen="mobile">
+                        <div class="simulator" calendar="goals">
+                            <div class="application light">
+                                <img src="../resources/calendar/Organize-my-Life.jpg">
+                                <ul>
+                                    <li class="list" one="small">
+                                        <span class="primary-text headline">哪项活动?</span>
+                                    </li>
+                                    <li class="list" one="small">
+                                        <span class="primary-text subheading">规划当天的行程</span>
+                                    </li>
+                                    <li class="list" one="small">
+                                        <span class="primary-text subheading">打扫</span>
+                                    </li>
+                                    <li class="list" one="small">
+                                        <span class="primary-text subheading">做家务</span>
+                                    </li>
+                                    <li class="list" one="small">
+                                        <span class="primary-text subheading">自定义</span>
+                                    </li>
+                                </ul>
+                                <div class="app-bar">
+                                    <div class="start">
+                                        <button class="icon-button unbounded" tabindex="-1">
+                                            <span class="material-icons">arrow_back</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="system-layer">
+                                    <div class="status-bar-background"></div>
+                                    <div class="navigation-bar-background"></div>
+                                </div>
+                            </div>
+                            <div class="system-bars">
+                                <div class="status-bar light">
+                                    <div class="system">
+                                        <span id="wifi" class="material-icons">signal_wifi_4_bar</span>
+                                        <span id="signal" class="material-icons">signal_cellular_4_bar</span>
+                                        <span id="battery" class="extra-material-icons">system_battery</span>
+                                        <span id="time" class="body2">12:30</span>
+                                    </div>
+                                </div>
+                                <div class="navigation-bar">
+                                    <span id="back" class="extra-material-icons">system_back</span>
+                                    <span id="home" class="extra-material-icons">system_home</span>
+                                    <span id="recent" class="extra-material-icons">system_recent</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h6>表现艺术美感</h6>
+                    <p>图像应美观大方，并能增强产品独特性与用户愉悦度。</p>
+                </section>
+            </article>
+            <hr class="divider horizontal">
+            <article id="best-practices" class="horizontal">
+                <h5>图像选择</h5>
+                <section>
+                    <article class="body1">
+                        <p>应用程序既可以运用照片又可以运用插画组建界面。照片在一定程度上寓意着指定的内容，应当用于展示具体的实体或事件。而抽象的插画能直接、高效地传达概念或隐喻。</p>
+                    </article>
+                    <div id="photography" class="diagram-wrapper" screen="mobile">
+                        <div class="simulator" inbox="order">
+                            <div class="application">
+                                <div class="hero-image">
+                                    <img character="ali-connors" src="../resources/artists/yuna.jpg">
+                                    <div class="content-block">
+                                        <div class="scrim" gradient></div>
+                                    </div>
+                                </div>
+                                <div class="overlay dark">
+                                    <span class="headline">Yuna<br>的订单确认信息</span>
+                                </div>
+                                <div class="list" one>
+                                    <span class="primary-text body2">3月7日，周五，8:00 | 两人</span>
+                                </div>
+                                <div class="divider horizontal"></div>
+                                <button class="text-button" tabindex="-1">
+                                    <span class="body2">修改</span>
+                                </button>
+                                <div class="divider horizontal"></div>
+                                <button class="text-button" tabindex="-1">
+                                    <span class="body2">在地图上查看</span>
+                                </button>
+                                <div class="divider horizontal"></div>
+                                <li class="list" two>
+                                    <span class="avatar headline">tm</span>
+                                    <span class="primary-text subheading">Yuna的订单确认信息<span
+                                            class="secondary-text body1">发送给我</span></span>
+                                </li>
+                                <div class="app-bar dark">
+                                    <div class="start">
+                                        <button class="icon-button unbounded" tabindex="-1">
+                                            <span class="material-icons">arrow_back</span>
+                                        </button>
+                                    </div>
+                                    <div class="end">
+                                        <button class="icon-button narrow unbounded" tabindex="-1">
+                                            <span class="material-icons">more_vert</span>
+                                        </button>
+                                        <button class="icon-button unbounded" tabindex="-1">
+                                            <span class="material-icons">delete</span>
+                                        </button>
+                                        <button class="icon-button unbounded" tabindex="-1">
+                                            <span class="material-icons">archive</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <button class="fab" tabindex="-1">
+                                    <span class="material-icons">reply</span>
+                                </button>
+                                <div class="system-layer">
+                                    <div class="status-bar-background"></div>
+                                    <div class="navigation-bar-background"></div>
+                                </div>
+                            </div>
+                            <div class="system-bars">
+                                <div class="status-bar">
+                                    <div class="system">
+                                        <span id="wifi" class="material-icons">signal_wifi_4_bar</span>
+                                        <span id="signal" class="material-icons">signal_cellular_4_bar</span>
+                                        <span id="battery" class="extra-material-icons">system_battery</span>
+                                        <span id="time" class="body2">12:30</span>
+                                    </div>
+                                </div>
+                                <div class="navigation-bar">
+                                    <span id="back" class="extra-material-icons">system_back</span>
+                                    <span id="home" class="extra-material-icons">system_home</span>
+                                    <span id="recent" class="extra-material-icons">system_recent</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="body1">用户可以一目了然的识别照片中的特定实体。</p>
+                    </div>
+                    <div id="illustration" class="diagram-wrapper" screen="mobile">
+                        <div class="simulator" trips>
+                            <div class="application">
+                                <div class="system-layer">
+                                    <div class="status-bar-background"></div>
+                                    <div class="navigation-bar-background"></div>
+                                </div>
+                            </div>
+                            <div class="system-bars">
+                                <div class="status-bar">
+                                    <div class="system">
+                                        <span id="wifi" class="material-icons">signal_wifi_4_bar</span>
+                                        <span id="signal" class="material-icons">signal_cellular_4_bar</span>
+                                        <span id="battery" class="extra-material-icons">system_battery</span>
+                                        <span id="time" class="body2">12:30</span>
+                                    </div>
+                                </div>
+                                <div class="navigation-bar">
+                                    <span id="back" class="extra-material-icons">system_back</span>
+                                    <span id="home" class="extra-material-icons">system_home</span>
+                                    <span id="recent" class="extra-material-icons">system_recent</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="body1">插画有助于描述抽象、一般的概念。</p>
+                    </div>
+                </section>
+                <section>
+                    <article class="body1">
+                        <h6>拒绝死板</h6>
+                        <p>富有创意地挑选、使用图像有助于展露更加独特的产品或品牌气韵。</p>
+                        <p>对于特定的实体和品牌内容，使用具体的图像。对于更加抽象的内容，需要图像能够有效解释。死板的照片和剪贴画既不具体贴合内容又不能有效解释内容。</p>
+                    </article>
+                    <div id="genuine-stories" class="diagram-wrapper">
+                        <div class="diagram">
+                            <img src="../resources/family_outing/style-imagery-bestpractices-stock1.png">
+                        </div>
+                        <span class="recommends do body2">正确</span>
+                        <p class="body1">照片需能反映出真实的故事。</p>
+                    </div>
+                    <div id="stock-images" class="diagram-wrapper">
+                        <div class="diagram">
+                            <img src="../resources/style/style-imagery-bestpractices-stock2.png">
+                        </div>
+                        <span class="recommends dont body2">错误</span>
+                        <p class="body1">内容生硬的照片让人觉得不真实。</p>
+                    </div>
+                    <div id="specific-imagery" class="diagram-wrapper">
+                        <div class="diagram">
+                            <img src="../resources/style/style-imagery-bestpractices-stock3.png">
+                        </div>
+                        <span class="recommends do body2">正确</span>
+                        <p class="body1">展示特定内容选用具体图像。</p>
+                    </div>
+                    <div id="literal-imagery" class="diagram-wrapper">
+                        <div class="diagram">
+                            <img src="../resources/style/style-imagery-bestpractices-stock4.png">
+                        </div>
+                        <span class="recommends dont body2">错误</span>
+                        <p class="body1">与内容关联度低的图像无法发挥解释功用。</p>
+                    </div>
+                </section>
+                <section>
+                    <article class="body1">
+                        <h6>明确焦点</h6>
+                        <p>图像应当有一个标志性的关注点。将用户的注意力从整体引向某个单一的主体。确保能够将概念以一种不容忽视的方式传达给用户。</p>
+                    </article>
+                    <div id="clear-focus" class="diagram-wrapper">
+                        <div class="diagram">
+                            <img src="../resources/style/style-imagery-bestpractices-focus1.png">
+                        </div>
+                        <span class="recommends do body2">正确</span>
+                        <p class="body1">使用色彩和结构为图片划定一个清晰的焦点。</p>
+                    </div>
+                    <div id="hunt-meaning" class="diagram-wrapper">
+                        <div class="diagram">
+                            <img src="../resources/style/style-imagery-bestpractices-focus2.png">
+                        </div>
+                        <span class="recommends dont body2">错误</span>
+                        <p class="body1">避免让用户费心寻找图片的含义。</p>
+                    </div>
+                    <div id="minimal-distractions" class="diagram-wrapper">
+                        <div class="diagram">
+                            <img src="../resources/style/san-francisco.jpg">
+                        </div>
+                        <span class="recommends do body2">正确</span>
+                        <p class="body1">不要让用户分心，最能突显主体的图片往往只有少数几个有意义的元素。</p>
+                    </div>
+                    <div id="obscured-focus" class="diagram-wrapper">
+                        <div class="diagram">
+                            <img src="../resources/style/style-imagery-bestpractices-focus4.png">
+                        </div>
+                        <span class="recommends dont body2">错误</span>
+                        <p class="body1">若视觉焦点变得复杂就无法突出图片中的主体内容。</p>
+                    </div>
+                    <div id="communicates-concept" class="diagram-wrapper">
+                        <div class="diagram">
+                            <img src="../resources/style/Android_Wear_Flight_Night.jpg">
+                        </div>
+                        <span class="recommends do body2">正确</span>
+                        <p class="body1">清晰的视觉焦点让图片所传达的概念一目了然。</p>
+                    </div>
+                    <div id="meaningless-imagery" class="diagram-wrapper">
+                        <div class="diagram">
+                            <img src="../resources/style/off-land-day.jpg">
+                        </div>
+                        <span class="recommends dont body2">错误</span>
+                        <p class="body1">缺乏视觉焦点的图片显得毫无意义。</p>
+                    </div>
+                </section>
+                <section>
+                    <article class="body1">
+                        <h6>娓娓道来</h6>
+                        <p>透过图像都有助于构建贴近人的沉浸体验，以视觉形式叙述品牌或产品所想传递的情绪，无论这种情绪是活泼的还是肃穆的。</p>
+                    </article>
+                    <div id="informative" class="diagram-wrapper">
+                        <div class="diagram">
+                            <img src="../resources/style/style-imagery-bestpractices-narrative1.png">
+                        </div>
+                        <span class="recommends do body2">正确</span>
+                        <p class="body1">能讲故事的图像充满了乐趣和内涵。</p>
+                    </div>
+                    <div id="uninformative" class="diagram-wrapper">
+                        <div class="diagram">
+                            <img src="../resources/style/style-imagery-bestpractices-narrative2.png">
+                        </div>
+                        <span class="recommends dont body2">错误</span>
+                        <p class="body1">选用缺乏故事的图片将错失向用户传递情感、品牌和场景的机会。</p>
+                    </div>
+                    <div id="contextualized" class="diagram-wrapper">
+                        <div class="diagram">
+                            <img src="../resources/style/style-imagery-bestpractices-narrative3.png">
+                        </div>
+                        <span class="recommends do body2">正确</span>
+                        <p class="body1">将信息和品牌融入图像情景中可以更有效将其地传递给用户。</p>
+                    </div>
+                    <div id="dissociated" class="diagram-wrapper">
+                        <div class="diagram">
+                            <img src="../resources/style/style-imagery-bestpractices-narrative4.png">
+                        </div>
+                        <span class="recommends dont body2">错误</span>
+                        <p class="body1">与用户情境无关的图像会显得乏味。</p>
+                    </div>
+                </section>
+            </article>
+            <hr class="divider horizontal">
+            <article id="ui-integration" class="horizontal">
+                <h5>实际运用</h5>
+            </article>
+        </div>
+
+
+        <footer class="dark">
+            <a states class="left" href="./icons.html">
+                <span class="material-icons">arrow_back</span>
+                <span class="subheading">上一节
+                    <span class="title">图标</span>
+                </span>
+            </a>
+            <a states class="right" href="./typography.html">
+                <span class="subheading">下一节
+                    <span class="title">字体排印</span>
+                </span>
+                <span class="material-icons">arrow_forward</span>
+            </a>
+        </footer>
+
+        <div id="progress" class="app-bar dark">
+            <div class="start">
+                <button id="drawer-trigger" class="icon-button unbounded" tabindex="1">
+                    <span class="material-icons">menu</span>
+                </button>
+            </div>
+            <span class="title">风格样式 - 图像</span>
+            <div class="end">
+                <button id="search-trigger" class="icon-button unbounded" disabled="true">
+                    <span class="material-icons">search</span>
+                </button>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>

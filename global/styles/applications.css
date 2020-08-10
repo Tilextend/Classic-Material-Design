@@ -461,11 +461,19 @@
     --secondary-color: #eeff41;
 }
 
-.simulator[inbox] .status-bar-background {
+.simulator[inbox=main] .status-bar-background {
     background-color: #0097A7;
 }
 
+.simulator[inbox=flight] .status-bar-background, .simulator[inbox=order] .status-bar-background {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
 .simulator[inbox] .application {
+    background-color: var(--medium-emphasis-surface-color);
+}
+
+.simulator[inbox=main] .application {
     background-color: #eeeeee;
 }
 
@@ -473,28 +481,40 @@
     box-shadow: var(--shadow-z0);
 }
 
+.simulator[inbox=flight] .app-bar, .simulator[inbox=order] .app-bar {
+    position: absolute;
+    background-color: transparent;
+}
+
 .simulator[inbox] .app-bar .title {
     color: #ffffff;
 }
 
 .simulator[inbox] .fab {
-    --surface-hint-color: rgba(255, 255, 255, 0.2);
-    --surface-shade-color: rgba(38, 50, 56, 0.2);
     right: var(--keyline);
     bottom: calc(48px + var(--keyline));
+}
+
+.simulator[inbox=main] .fab {
+    --surface-hint-color: rgba(255, 255, 255, 0.2);
+    --surface-shade-color: rgba(38, 50, 56, 0.2);
     box-shadow: var(--shadow-z4);
+}
+
+.simulator[inbox=flight] .fab, .simulator[inbox=order] .fab {
+    background-color: var(--high-emphasis-surface-color);
 }
 
 .simulator[inbox] .application .subheader {
     color: var(--secondary-text-color);
 }
 
-.simulator[inbox] .list[two] {
+.simulator[inbox=main] .list[two] {
     padding: 0 var(--keyline);
     grid-template-columns: 56px auto;
 }
 
-.simulator[inbox] .list[two] .primary-text {
+.simulator[inbox=main] .list[two] .primary-text {
     font-weight: 500;
     line-height: 1.5rem;
 }
@@ -518,7 +538,7 @@
     padding-left: calc(16px + var(--increment));
 }
 
-.simulator[inbox] .application>ul>li:not(.divider) {
+.simulator[inbox=main] .application>ul>li:not(.divider) {
     overflow: hidden;
 }
 
@@ -573,8 +593,125 @@
     box-shadow: var(--shadow-z4);
 }
 
+.simulator[inbox] .hero-image {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-shrink: 0;
+    padding-top: 24px;
+    overflow: hidden;
+}
+
+.simulator[inbox] .hero-image img {
+    position: absolute;
+    width: 100%;
+    align-self: center;
+}
+
+.simulator[inbox=flight] .hero-image img {
+    width: 524px;
+    transform: translate(54px, -26px);
+}
+
+.simulator[inbox] .content-block {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3/2;
+    display: flex;
+}
+
+.simulator[inbox] .content-block .scrim {
+    height: 88px;
+    opacity: 0.2;
+}
+
+.simulator[inbox] .route {
+    transform: rotate(0deg);
+    display: flex;
+    flex-grow: 1;
+    align-self: flex-end;
+    justify-content: space-between;
+    padding: 0 var(--keyline);
+    margin-bottom: 16px;
+    color: var(--primary-text-color);
+}
+
+.simulator[inbox] .route span {
+    font-weight: 500;
+}
+
+.simulator[inbox] .route span:nth-of-type(2) {
+    font-size: 36px;
+    transform: rotate(90deg);
+}
+
+.simulator[inbox] .overlay {
+    height: 120px;
+    display: flex;
+    background-color: #716bbe;
+    padding: 0 var(--keyline);
+    color: var(--primary-text-color);
+}
+
+.simulator[inbox=flight] .overlay {
+    background-color: #716bbe;
+}
+
+.simulator[inbox=order] .overlay {
+    background-color: #646464;
+}
+
+.simulator[inbox] .overlay span {
+    margin-top: 15px;
+}
+
+.simulator[inbox] .application>.text-button {
+    justify-content: flex-start;
+    align-self: flex-start;
+    margin: 10px calc(var(--keyline) - 8px);
+    color: var(--primary-color);
+}
+
+.simulator[inbox=flight] .application>ul {
+    padding: 8px 0;
+}
+
+.simulator[inbox=flight] .application>ul>ul {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    padding: 0 var(--keyline);
+}
+
+.simulator[inbox=flight] .application>ul>li, .simulator[inbox=order] .application>.list {
+    padding: 0 var(--keyline);
+}
+
+.simulator[inbox=order] .list[two] {
+    grid-template-columns: 56px auto;
+}
+
+.simulator[inbox=order] .list[two] .avatar {
+    text-align: center;
+    background-color: #000000;
+    color: #ffffff;
+    font-style: italic;
+    font-weight: 500;
+}
+
+.simulator[inbox=order] .list[two] .primary-text{
+    font-weight: 500;
+}
+
+.simulator[inbox=flight] ul>ul>li .primary-text {
+    color: var(--secondary-text-color)
+}
+
+.simulator[inbox=flight] ul>ul>li .secondary-text {
+    color: var(--primary-text-color)
+}
+
 @media (prefers-color-scheme: dark) {
-    .simulator[inbox] .application {
+    .simulator[inbox=main] .application {
         background-color: #212121;
     }
 }
@@ -866,11 +1003,11 @@
     background-color: #303f9f;
 }
 
-.simulator[contacts] .contact-card .status-bar-background {
+.simulator[contacts=detailed] .status-bar-background, .contact-card .status-bar-background {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-.simulator[contacts] .application {
+.simulator[contacts=main] .application {
     flex-direction: row;
     background-color: var(--low-emphasis-surface-color);
 }
@@ -922,7 +1059,7 @@
     box-shadow: var(--shadow-z2);
 }
 
-.contact-card .app-bar {
+.simulator[contacts=detailed] .app-bar, .contact-card .app-bar {
     position: absolute;
     background-color: transparent;
 }
@@ -930,6 +1067,7 @@
 .portrait-wrapper {
     position: relative;
     display: flex;
+    justify-content: center;
     flex-shrink: 0;
     padding-top: 24px;
     overflow: hidden;
@@ -953,7 +1091,8 @@
 }
 
 .portrait-wrapper img[character=ali-connors] {
-    transform: translateY(-20px);
+    transform: translate(4px, -40px);
+    width: 390px;
 }
 
 .portrait-wrapper span {
@@ -965,31 +1104,38 @@
     padding-bottom: 27px;
 }
 
-.contact-card ul {
+.simulator[contacts=detailed] ul, .contact-card ul {
     padding: 8px 0;
 }
 
-.contact-card ul:first-of-type {
+.simulator[contacts=detailed] ul:first-of-type, .contact-card ul:first-of-type {
     margin-top: 28px;
 }
 
-.contact-card li {
+.simulator[contacts=detailed] li, .contact-card li {
     padding-left: calc(16px + var(--increment));
     padding-right: var(--keyline);
     grid-template-columns: auto 56px;
 }
 
-.contact-card li:first-of-type {
+.simulator[contacts=detailed] li:first-of-type, .contact-card li:first-of-type {
     padding-left: var(--keyline);
     padding-right: var(--keyline);
     grid-template-columns: 56px auto 56px;
 }
 
+.simulator[contacts=detailed] li:first-of-type>span:first-of-type, .contact-card li:first-of-type>span:first-of-type {
+    color: var(--primary-color);
+}
+
+.simulator[contacts=detailed] .meta {
+    justify-self: center;
+}
+
 .simulator[contacts] #edit {
-    top: 252px;
+    top: 236px;
     right: var(--keyline);
     color: var(--primary-text-color);
-    box-shadow: var(--shadow-z4);
 }
 
 @media screen and (min-width:921px) {
@@ -998,6 +1144,22 @@
     }
     .diagram-wrapper[screen~=tablet] .simulator[contacts] .contact-card .app-bar .start {
         visibility: hidden;
+    }
+    .diagram-wrapper[screen~=tablet] .simulator[contacts] #edit {
+        top: 252px;
+        box-shadow: var(--shadow-z4);
+    }
+    .diagram-wrapper[screen~=tablet] .portrait-wrapper img[character=ali-connors] {
+        transform: translateY(-40px);
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .simulator[contacts] {
+        --primary-color: #5C6BC0;
+    }
+    .simulator[contacts] .contacts-list .status-bar-background {
+        background-color: #3F51B5;
     }
 }
 
@@ -1767,4 +1929,41 @@
     .simulator[calculator] .operator {
         background-color: #424242;
     }
+}
+
+/*------------------------------------*\
+  日历
+\*------------------------------------*/
+
+.simulator[calendar] {
+    --secondary-color: #FF5252;
+}
+
+.simulator[calendar=goals] .status-bar-background {
+    background-color: #F4D380;
+}
+
+.simulator[calendar=goals] .application {
+    background-color: #FFDD86;
+}
+
+.simulator[calendar=goals] .app-bar {
+    background-color: transparent;
+    box-shadow: var(--shadow-z0);
+}
+
+.simulator[calendar=goals] .application>img {
+    position: absolute;
+    bottom: 0;
+    height: 200px;
+    margin-bottom: 48px;
+    align-self: center;
+}
+
+.simulator[calendar=goals] ul li {
+    padding: 0 calc(var(--keyline) + var(--increment));
+}
+
+.simulator[calendar=goals] ul li:first-of-type {
+    margin-bottom: 8px;
 }

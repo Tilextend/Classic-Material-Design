@@ -32,6 +32,7 @@ html, body {
     -webkit-font-smoothing: antialiased;
     -webkit-tap-highlight-color: transparent;
     font-size: 16px;
+    font-feature-settings: "pnum";
     line-height: 1;
     user-select: none;
 }
@@ -257,6 +258,7 @@ th, td {
 }
 
 main>.app-bar {
+    --states-parameter: 2;
     z-index: 4;
 }
 
@@ -726,6 +728,7 @@ table span {
 \*------------------------------------*/
 
 footer {
+    --states-parameter: 2;
     position: relative;
     display: flex;
     width: 100%;

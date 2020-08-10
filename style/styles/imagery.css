@@ -1,0 +1,40 @@
+/*------------------------------------*\
+  正文
+\*------------------------------------*/
+
+.diagram img {
+  width: 100%;
+}
+
+#specific-imagery, #minimal-distractions, #communicates-concept, #contextualized {
+  grid-column-start: max(1, calc(var(--max-block) - 1));
+}
+
+#minimal-distractions .diagram {
+  height: 272px;
+  align-items: flex-end;
+}
+
+#minimal-distractions .diagram img {
+  position: absolute;
+  width: auto;
+  height: 304px;
+  transform: translateX(31px);
+}
+
+#communicates-concept .diagram, #meaningless-imagery .diagram {
+  height: 272px;
+}
+
+#communicates-concept .diagram img, #meaningless-imagery .diagram img {
+  height: 100%;
+  object-position: left;
+}
+
+/*------------------------------------*\
+  主题
+\*------------------------------------*/
+
+:root {
+  --primary-color: #00897b;
+}
