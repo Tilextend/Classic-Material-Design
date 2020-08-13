@@ -426,11 +426,11 @@ section p:not(:last-of-type), article p:not(:last-of-type) {
 
 article>ul {
     margin-bottom: 20px;
-    padding-left: 20px;
+    padding-left: 2em;
 }
 
 article>ul li {
-    margin: 7px;
+    margin: 7px 0;
     list-style-type: disc;
 }
 

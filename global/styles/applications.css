@@ -1351,7 +1351,7 @@
     margin: 4px 8px;
     padding: 0 8px;
     grid-template-columns: 56px auto;
-    background-color: var(--low-emphasis-surface-color);
+    background-color: var(--high-emphasis-surface-color);
     border-radius: 2px;
     box-shadow: var(--shadow-z2);
 }
@@ -1527,6 +1527,7 @@
 }
 
 .simulator[dialer] .oncall .toolbar {
+    order: initial;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: repeat(2, calc(56px + 2 * var(--keyline)));

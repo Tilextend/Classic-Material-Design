@@ -2,12 +2,20 @@
   正文
 \*------------------------------------*/
 
-
-
 /*------------------------------------*\
   主题
 \*------------------------------------*/
 
 :root {
-    --primary-color: #00897b;
+  --primary-color: #00897b;
+}
+
+footer .right {
+  --primary-color: #8e24aa;
+}
+
+@media (prefers-color-scheme: dark) {
+  .CMD-drawer, .content-body {
+    --primary-color: #26A69A;
+  }
 }

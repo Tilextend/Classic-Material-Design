@@ -38,3 +38,9 @@
 :root {
   --primary-color: #00897b;
 }
+
+@media (prefers-color-scheme: dark) {
+  .CMD-drawer, .content-body {
+    --primary-color: #26A69A;
+  }
+}

@@ -52,7 +52,7 @@
                 <a states href="../style/imagery.html">图像</a>
                 <a states class="activated">字体排印</a>
                 <a states href="../style/writing.html">书面用语</a>
-                <a states href="../style/sound.html">音效</a>
+                <a states href="../style/sound.html">声音</a>
             </nav>
             <nav>
                 <span states class="body2" tabindex="0">动画效果</span>
@@ -134,13 +134,26 @@
                 <ul class="title">
                     <li><a href="#type-properties">文字与文段属性</a></li>
                     <li><a href="#type-classification">字体类型</a></li>
-                    <li><a href="#type-scale">预设样式表</a></li>
+                    <li><a href="#type-scale">字体尺度</a></li>
                     <li><a href="#typographic-guidelines">排版细则</a></li>
                     <li><a href="#language-considerations">多语言考量</a></li>
                 </ul>
             </nav>
             <article id="type-properties" class="horizontal">
                 <h5>文字与文段属性</h5>
+                <section>
+                    <article class="body1">
+                        <h6>文字类型</h6>
+                        <p>不同于文字学对文字的分类，质感设计根据文字的书写与外形特点将文字分为：</p>
+                        <ul>
+                            <li><strong>定线疏松型</strong>文字主要包括形如拉丁字母、希腊字母、西里尔字母等全音素文字，此类文字的构造通常较简单，在书写此类文字的文段时对齐基线。</li>
+                            <li><strong>定框紧密型</strong>文字主要包括形如汉字、日文等全语素文字与音节文字，但还包括了韩字等特征文字，此类文字的构造通常较复杂，在书写此类文字的文段时通常对齐字身框的中心线。
+                            </li>
+                            <li><strong>定线紧密型</strong>文字主要包括形如阿拉伯字母、天城文、泰文等元音附标文字和辅音音素文字，此类文字的构造通常较复杂，在书写此类文字的文段时对齐基线。
+                            </li>
+                        </ul>
+                    </article>
+                </section>
             </article>
             <hr class="divider horizontal">
             <article id="type-classification" class="horizontal">
@@ -148,12 +161,16 @@
             </article>
             <hr class="divider horizontal">
             <article id="type-scale" class="horizontal">
-                <h5>预设样式表</h5>
+                <h5>字体尺度</h5>
                 <section>
                     <article class="body1">
-                        <p>在特定的情境、内容中使用品牌色，能使品牌形象与这些信息或操作相关联。</p>
+                        <p>字号与字重的差异极大影响阅读的顺序，并代表着信息等级的高低强弱，为不同权重的文段设定有差异的字号，为需要强调的文段配置特定的字重，由此构成一套层序分明的字体尺度表，有意地引导用户快速获取界面信息，并维持设计的一致性，营造文段结构之美。
+                        </p>
+                        <p>质感设计模仿音阶为在文档结构中作用不同的文段设定了不同的字号或字重，以形成差异明显却一丝不紊的多重字阶作为预设字体尺度表，同时意在贴合网格系统。</p>
+                        <p>对于桌面显示环境，可以根据需要将较低字阶的字号缩小1sp以满足高密度数据显示需求。</p>
+                        <p>由于定框紧密型与定线紧密型文字的结构较为复杂，可以根据需要将较低字阶的字号增大1sp以保证清晰度。</p>
                     </article>
-                    <ul>
+                    <ul class="size">
                         <li>
                             <span class="body2">特大标题</span>
                             <span class="display4">细体 112sp</span>
@@ -196,10 +213,93 @@
                         </li>
                     </ul>
                 </section>
+                <section>
+                    <article class="body1">
+                        <p>正确施用差异较大的字阶能使界面更加有趣，并有助于更快速的区分内容区块。而根据不同屏幕尺寸、界面大小下文本框的尺寸区间选用适当的大字号能使得界面更加灵动，而不是简单地一昧使用小字号保证文段内容完整或粗暴地截断文本。</p>
+                    </article>
+                </section>
             </article>
             <hr class="divider horizontal">
             <article id="typographic-guidelines" class="horizontal">
                 <h5>排版细则</h5>
+                <section>
+                    <article class="body1">
+                        <h6>字符间距</h6>
+                        <p>对于较大字号的文段，应适当减小字符间距以增强字符间的紧密程度以降低阅读时的扫视频率与时间。而对于较小字号或较粗字重的文段，可以适当增加字符间距以提高字符在文段中的辨识度，增强文段的易读性。</p>
+                    </article>
+                </section>
+                <section>
+                    <article class="body1">
+                        <h6>行距</h6>
+                        <p>根据文段的字号与字重配置合适的行距有助于保证易读性与舒适的阅读节奏。为了更流畅的阅读体验，通常字号较大的文段不进行换行。</p>
+                        <p>质感设计根据预设字体尺度表配置了一套预设行距表以供参考。</p>
+                    </article>
+                    <ul class="leading">
+                        <li>
+                            <span class="body2">Display2</span>
+                            <span class="display2">Leading 48dp</span>
+                        </li>
+                        <li>
+                            <span class="body2">Display1</span>
+                            <span class="display1">Leading 40dp</span>
+                        </li>
+                        <li>
+                            <span class="body2">Headline</span>
+                            <span class="headline">Leading 32dp</span>
+                        </li>
+                        <li>
+                            <span class="body2">Title</span>
+                            <span class="title">Leading 28dp</span>
+                        </li>
+                        <li>
+                            <span class="body2">Subheading</span>
+                            <span class="subheading">Leading 28dp / 24dp</span>
+                        </li>
+                        <li>
+                            <span class="body2">Body, Caption</span>
+                            <span class="body1">Leading 24dp / 20dp</span>
+                        </li>
+                    </ul>
+                    <article class="body1">
+                        <p>由于定框紧密型文字字面较大，而定线紧密型文字字面较高，因此这两种类型的文段都需要更大的行距以避免文字重叠或被剪切，并保持舒适的阅读体验。</p>
+                    </article>
+                    <ul class="leading">
+                        <li>
+                            <span class="body2">超大标题</span>
+                            <span class="display2">行高 63dp</span>
+                        </li>
+                        <li>
+                            <span class="body2">加大标题</span>
+                            <span class="display1">行高 48dp</span>
+                        </li>
+                        <li>
+                            <span class="body2">大标题</span>
+                            <span class="headline">行高 34dp</span>
+                        </li>
+                        <li>
+                            <span class="body2">标题</span>
+                            <span class="title">行高 30dp</span>
+                        </li>
+                        <li>
+                            <span class="body2">副标题</span>
+                            <span class="subheading">行高 30dp / 26dp</span>
+                        </li>
+                        <li>
+                            <span class="body2">正文及附加说明</span>
+                            <span class="body1">行高 26dp / 23dp</span>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <article class="body1">
+                        <h6>行长</h6>
+                    </article>
+                </section>
+                <section>
+                    <article class="body1">
+                        <h6>断行</h6>
+                    </article>
+                </section>
             </article>
             <hr class="divider horizontal">
             <article id="language-considerations" class="horizontal">

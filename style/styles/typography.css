@@ -4,67 +4,69 @@
 
 section>ul {
   grid-column-end: span min(var(--max-block), 2);
+  margin-bottom: var(--keyline);
 }
 
 section>ul>li {
   display: grid;
-  grid-template-columns: 25% auto;
 }
 
 section>ul>li span:first-of-type {
   color: var(--secondary-text-color);
 }
 
-section>ul>li:nth-of-type(1) span:last-of-type{
-  margin-top: -20px;
+.size li:nth-of-type(2) {
+  margin-top: 12px;
 }
 
-section>ul>li:nth-of-type(2) {
-  margin-top: -2px;
-}
-
-section>ul>li:nth-of-type(2) span:last-of-type{
-  margin-top: -8px;
-}
-
-section>ul>li:nth-of-type(3) {
+.size li:nth-of-type(3) {
   margin-top: 11px;
 }
 
-section>ul>li:nth-of-type(3) span:last-of-type{
-  margin-top: -5px;
-}
-
-section>ul>li:nth-of-type(4) {
+.size li:nth-of-type(4), .leading li:nth-of-type(2) {
   margin-top: 15px;
 }
 
-section>ul>li:nth-of-type(4) span:last-of-type{
-  margin-top: -2px;
-}
-
-section>ul>li:nth-of-type(5) {
+.size li:nth-of-type(5), .leading li:nth-of-type(3) {
   margin-top: 18px;
 }
 
-section>ul>li:nth-of-type(6) {
+.size li:nth-of-type(6), .leading li:nth-of-type(4) {
   margin-top: 17px;
 }
 
-section>ul>li:nth-of-type(7) {
+.size li:nth-of-type(7), .leading li:nth-of-type(5) {
   margin-top: 14px;
 }
 
-section>ul>li:nth-of-type(8) {
+.size li:nth-of-type(8), .leading li:nth-of-type(6) {
   margin-top: 16px;
 }
 
-section>ul>li:nth-of-type(9) {
+.size li:nth-of-type(9) {
   margin-top: 17px;
 }
 
-section>ul>li:nth-of-type(10) {
+.size li:nth-of-type(10) {
   margin-top: 19px;
+}
+
+@media screen and (min-width:921px) {
+  section>ul>li {
+    grid-template-columns: 25% auto;
+  }
+  .size li:nth-of-type(1) span:last-of-type {
+    margin-top: -8px;
+  }
+  .size li:nth-of-type(2) span:last-of-type {
+    margin-top: -8px;
+  }
+  .size li:nth-of-type(3) span:last-of-type, .leading li:nth-of-type(1) span:last-of-type {
+    margin-top: -7px;
+  }
+  .size li:nth-of-type(4) span:last-of-type, .leading li:nth-of-type(2) span:last-of-type {
+    margin-top: -4px;
+  }
 }
 
 /*------------------------------------*\
@@ -72,5 +74,11 @@ section>ul>li:nth-of-type(10) {
 \*------------------------------------*/
 
 :root {
-    --primary-color: #00897b;
+  --primary-color: #00897b;
+}
+
+@media (prefers-color-scheme: dark) {
+  .CMD-drawer, .content-body {
+    --primary-color: #26A69A;
+  }
 }
