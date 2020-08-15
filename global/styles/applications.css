@@ -514,14 +514,8 @@
     grid-template-columns: 56px auto;
 }
 
-.simulator[inbox=main] .list[two] .primary-text {
-    font-weight: 500;
-    line-height: 1.5rem;
-}
-
 .simulator[inbox] .list[two] p {
     color: var(--primary-text-color);
-    line-height: 1.25rem;
     margin-top: -0.0625rem;
 }
 
@@ -698,7 +692,7 @@
     font-weight: 500;
 }
 
-.simulator[inbox=order] .list[two] .primary-text{
+.simulator[inbox=order] .list[two] .primary-text {
     font-weight: 500;
 }
 
@@ -1621,18 +1615,22 @@
   音乐
 \*------------------------------------*/
 
-.simulator[music] .application {
+.simulator[music] .app-bar {
+    background-color: transparent;
+    box-shadow: var(--shadow-z0);
+}
+
+.simulator[music=my-library] .application {
     background-color: #121212;
 }
 
-.simulator[music] .system-layer .status-bar-background {
+.simulator[music=my-library] .system-layer .status-bar-background {
     background-color: #000000;
 }
 
-.simulator[music] .app-bar {
+.simulator[music=my-library] .app-bar {
     color: var(--primary-text-color);
     background-color: #121212;
-    box-shadow: var(--shadow-z0);
 }
 
 .simulator[music] ul {
@@ -1662,7 +1660,7 @@
     grid-row-end: span 2;
 }
 
-.simulator[music] li .list {
+.simulator[music=my-library] li .list {
     grid-template-columns: auto auto;
     gap: 4px;
     padding-left: 16px;
@@ -1676,8 +1674,9 @@
     font-weight: 500;
 }
 
-.simulator[music] li .secondary-text {
+.simulator[music=my-library] li .secondary-text {
     color: var(--primary-text-color);
+    margin-top: -0.0625rem;
 }
 
 .simulator[music] li[class~=large]>span {
@@ -1685,6 +1684,7 @@
     display: flex;
     align-items: center;
     align-self: end;
+    margin-bottom: 0.0625rem;
     padding-left: 14px;
     padding-right: 16px;
 }
@@ -1699,6 +1699,85 @@
 
 #halcyon-days {
     background-color: #89196b;
+}
+
+.simulator[music=album] .system-layer .status-bar-background {
+    background-color: var(--primary-color-alt);
+}
+
+.simulator[music=album] .app-bar {
+    position: absolute;
+}
+
+.simulator[music=album] .container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 24px;
+    overflow: scroll;
+}
+
+.simulator[music=album] .container img {
+    top: 0;
+    position: sticky;
+    width: 100%;
+    aspect-ratio: 1/1;
+}
+
+.simulator[music=album] .container .scrim {
+    opacity: 0.2;
+}
+
+.simulator[music=album] .container .fab {
+    top: 356px;
+    right: var(--keyline);
+    box-shadow: var(--shadow-z4);
+}
+
+.simulator[music=album] .container .info {
+    top: calc(360px + 24px);
+    position: sticky;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--high-emphasis-surface-color);
+    box-shadow: var(--shadow-z2);
+}
+
+.simulator[music=album] .container .info>.list {
+    height: calc(640px - 24px - 360px - 56px - 48px);
+    padding: 0 calc(var(--keyline) + var(--increment));
+    padding-bottom: 4px;
+    background-color: var(--primary-color);
+}
+
+.simulator[music=album] .container .info>.list .secondary-text {
+    margin-top: 0.125rem;
+}
+
+.simulator[music=album] .container ul {
+    display: flex;
+    flex-direction: column;
+}
+
+.simulator[music=album] .container ul>li {
+    grid-template-columns: 32px auto auto;
+    gap: var(--keyline);
+    padding: 0 calc(var(--keyline) + 8px);
+}
+
+.simulator[music=album] .container ul>li span:last-child {
+    justify-self: end;
+}
+
+.simulator[album=live-from-space] {
+    --primary-color: #ff3d29;
+    --primary-color-alt:#f03329;
+    --secondary-color: #2ab8f6;
+}
+
+.simulator[album=girl] {
+    --primary-color:#f6bf26;
+    --primary-color-alt:#f7cb4e;
+    --secondary-color: #e7e6e4;
 }
 
 /*------------------------------------*\
@@ -1803,7 +1882,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    padding-bottom: 35px;
+    padding-bottom: 39px;
     background-color: var(--medium-emphasis-surface-color);
     box-shadow: var(--shadow-z4);
 }
@@ -1820,7 +1899,7 @@
 .simulator[calculator] .expression {
     padding-right: calc(var(--keyline) - 12px);
     font-weight: 300;
-    margin-top: 9px;
+    margin-top: 4px;
     letter-spacing: 0.2em;
 }
 
@@ -1828,7 +1907,7 @@
     padding-right: calc(var(--keyline) - 4px);
     color: var(--hint-text-color);
     font-weight: 300;
-    margin-top: 20px;
+    margin-top: 21px;
     letter-spacing: 0.1em;
 }
 
@@ -1889,7 +1968,7 @@
 
 @media screen and (max-width:920px) {
     .simulator[calculator] .expression {
-        margin-top: 17px;
+        margin-top: 20px;
     }
     .simulator[calculator] .panel {
         padding-right: 16px;

@@ -132,7 +132,7 @@ input[type=text]::placeholder {
 .text-field[class~=focused] .label, .text-field[class~=typed] .label {
     transform: translateY(-4px);
     font-size: 0.75rem;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.02em;
     line-height: 1.25rem;
     transition-delay: 0ms;
 }

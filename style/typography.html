@@ -217,6 +217,80 @@
                     <article class="body1">
                         <p>正确施用差异较大的字阶能使界面更加有趣，并有助于更快速的区分内容区块。而根据不同屏幕尺寸、界面大小下文本框的尺寸区间选用适当的大字号能使得界面更加灵动，而不是简单地一昧使用小字号保证文段内容完整或粗暴地截断文本。</p>
                     </article>
+                    <div id="dynamic-type" class="diagram-wrapper">
+                        <div class="diagram">
+                            <ul lang="en-US">
+                                <li class="headline">In a Perfect World</li>
+                                <li class="display1">Mechanical Bull</li>
+                                <li class="display2">Nocturnal</li>
+                                <li class="display3">G I R L</li>
+                            </ul>
+                            <div class="divider vertical"></div>
+                            <div class="divider vertical"></div>
+                        </div>
+                        <p class="body1">根据具体文本长度动态选用不同的字号。</p>
+                    </div>
+                    <div id="large-type" class="diagram-wrapper" screen="mobile">
+                        <div class="simulator" music="album" album="girl">
+                            <div class="application" lang="en-US">
+                                <div class="container">
+                                    <img src="../resources/albums/girl.jpg">
+                                    <div class="scrim dark" gradient></div>
+                                    <div class="info">
+                                        <div class="list light" two>
+                                            <span class="primary-text display3">G I R L<span
+                                                    class="secondary-text subheading">Pharrell Williams</span></span>
+                                        </div>
+                                        <ul>
+                                            <li class="list" one="small">
+                                                <span class="secondary-text body1">1</span>
+                                                <span class="primary-text body1">Marilyn Monroe</span>
+                                                <span class="secondary-text body1">5:51</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <button class="fab light" tabindex="-1">
+                                        <span class="material-icons">play_arrow</span>
+                                    </button>
+                                </div>
+                                <div class="app-bar dark">
+                                    <div class="start">
+                                        <button class="icon-button unbounded" tabindex="-1">
+                                            <span class="material-icons">arrow_back</span>
+                                        </button>
+                                    </div>
+                                    <div class="end">
+                                        <button class="icon-button narrow unbounded" tabindex="-1">
+                                            <span class="material-icons">more_vert</span>
+                                        </button>
+                                        <button class="icon-button unbounded" tabindex="-1">
+                                            <span class="material-icons">star_border</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="system-layer">
+                                    <div class="status-bar-background"></div>
+                                    <div class="navigation-bar-background"></div>
+                                </div>
+                            </div>
+                            <div class="system-bars">
+                                <div class="status-bar light">
+                                    <div class="system">
+                                        <span id="wifi" class="material-icons">signal_wifi_4_bar</span>
+                                        <span id="signal" class="material-icons">signal_cellular_4_bar</span>
+                                        <span id="battery" class="extra-material-icons">system_battery</span>
+                                        <span id="time" class="body2">12:30</span>
+                                    </div>
+                                </div>
+                                <div class="navigation-bar">
+                                    <span id="back" class="extra-material-icons">system_back</span>
+                                    <span id="home" class="extra-material-icons">system_home</span>
+                                    <span id="recent" class="extra-material-icons">system_recent</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="body1">根据布局与文本长度的具体情况施用合适的大字号。</p>
+                    </div>
                 </section>
             </article>
             <hr class="divider horizontal">
@@ -226,7 +300,50 @@
                     <article class="body1">
                         <h6>字符间距</h6>
                         <p>对于较大字号的文段，应适当减小字符间距以增强字符间的紧密程度以降低阅读时的扫视频率与时间。而对于较小字号或较粗字重的文段，可以适当增加字符间距以提高字符在文段中的辨识度，增强文段的易读性。</p>
+                        <p>质感设计根据预设字体尺度表配置了一套预设字符间距表以供参考。</p>
                     </article>
+                    <ul class="size">
+                        <li>
+                            <span class="body2">特大标题</span>
+                            <span class="display4">-0.01 em</span>
+                        </li>
+                        <li>
+                            <span class="body2">巨大标题</span>
+                            <span class="display3">-0.005 em</span>
+                        </li>
+                        <li>
+                            <span class="body2">超大标题</span>
+                            <span class="display2">0 em</span>
+                        </li>
+                        <li>
+                            <span class="body2">加大标题</span>
+                            <span class="display1">0 em</span>
+                        </li>
+                        <li>
+                            <span class="body2">大标题</span>
+                            <span class="headline">0 em</span>
+                        </li>
+                        <li>
+                            <span class="body2">标题</span>
+                            <span class="title">0.005 em</span>
+                        </li>
+                        <li>
+                            <span class="body2">副标题</span>
+                            <span class="subheading">0.01 em</span>
+                        </li>
+                        <li>
+                            <span class="body2">加粗正文</span>
+                            <span class="body2">0.01 em</span>
+                        </li>
+                        <li>
+                            <span class="body2">正文</span>
+                            <span class="body1">0.01 em</span>
+                        </li>
+                        <li>
+                            <span class="body2">附加说明</span>
+                            <span class="caption">0.02 em</span>
+                        </li>
+                    </ul>
                 </section>
                 <section>
                     <article class="body1">
@@ -234,7 +351,7 @@
                         <p>根据文段的字号与字重配置合适的行距有助于保证易读性与舒适的阅读节奏。为了更流畅的阅读体验，通常字号较大的文段不进行换行。</p>
                         <p>质感设计根据预设字体尺度表配置了一套预设行距表以供参考。</p>
                     </article>
-                    <ul class="leading">
+                    <ul class="leading" lang="en-US">
                         <li>
                             <span class="body2">Display2</span>
                             <span class="display2">Leading 48dp</span>

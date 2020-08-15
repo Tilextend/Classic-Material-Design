@@ -56,8 +56,11 @@
     display: block;
     overflow: hidden;
     text-overflow: inherit;
-    margin-top: -0.125rem;
     color: var(--secondary-text-color);
+}
+
+.list .primary-text .secondary-text {
+    margin-top: -0.125rem;
 }
 
 .list .meta {
