@@ -2,6 +2,13 @@
   正文
 \*------------------------------------*/
 
+@font-face {
+  font-family: 'Noto Sans Arabic';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../../resources/fonts/NotoSansArabic-Regular.ttf) format('truetype');
+}
+
 section>ul {
   grid-column-end: span min(var(--max-block), 2);
   margin-bottom: var(--keyline);
@@ -74,6 +81,23 @@ section>ul>li span:first-of-type {
 
 #dynamic-type .diagram .divider:last-of-type {
   right: 64px;
+}
+
+table {
+  white-space: nowrap;
+  grid-column-end: span min(var(--max-block), 3);
+}
+
+th, td {
+  padding: calc(var(--keyline) / 2) var(--keyline);
+}
+
+#sans-serif {
+  grid-column-end: span min(var(--max-block), 2);
+}
+
+#sans-serif .diagram {
+  height: 480px;
 }
 
 @media screen and (min-width:921px) {

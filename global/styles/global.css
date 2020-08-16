@@ -87,12 +87,6 @@ thead {
     color: var(--secondary-text-color);
 }
 
-th, td {
-    border-width: 1px;
-    border-style: solid;
-    padding: calc(var(--keyline) / 2 + 4px) var(--keyline);
-}
-
 @font-face {
     font-family: 'Extra Material Icons';
     font-style: normal;
@@ -537,7 +531,14 @@ tbody {
 }
 
 th, td {
+    border-width: 1px;
+    border-style: solid;
     border-color: var(--sheet-border-color);
+    padding: calc(var(--keyline) / 2 + 4px) var(--keyline);
+}
+
+table[density=dense] tbody th, table[density=dense] tbody td {
+    padding: calc(var(--keyline) / 2) var(--keyline);
 }
 
 table span {
@@ -940,7 +941,7 @@ footer .title {
         color: #66BB6A;
     }
     *[theme=dark-light] {
-        --status-bar-color:rgba(255, 255, 255, 0.9);
+        --status-bar-color: rgba(255, 255, 255, 0.9);
     }
 }
 

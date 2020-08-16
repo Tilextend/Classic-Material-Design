@@ -7,8 +7,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>质感设计 - 字体排印</title>
     <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Roboto+Mono:wght@500&family=Roboto:wght@300;400;500;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Sans+JP&family=Noto+Sans+KR&family=Roboto+Mono:wght@500&family=Roboto:wght@300;400;500;700&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosansethiopic.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosansbengali.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosansgujarati.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosansdevanagari.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosansarmenian.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosanshebrew.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notoserifgeorgian.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosanskhmer.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosanskannada.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosanslao.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosansmalayalam.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosansmyanmar.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosansgurmukhi.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosanssinhala.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosanstamil.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosanstelugu.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosansthai.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="shortcut icon" href="../global/logo.svg">
     <link rel="stylesheet" href="./styles/typography.css">
@@ -142,22 +159,71 @@
             <article id="type-properties" class="horizontal">
                 <h5>文字与文段属性</h5>
                 <section>
-                    <article class="body1">
-                        <h6>文字类型</h6>
+                    <article class="body1 intro">
                         <p>不同于文字学对文字的分类，质感设计根据文字的书写与外形特点将文字分为：</p>
                         <ul>
                             <li><strong>定线疏松型</strong>文字主要包括形如拉丁字母、希腊字母、西里尔字母等全音素文字，此类文字的构造通常较简单，在书写此类文字的文段时对齐基线。</li>
-                            <li><strong>定框紧密型</strong>文字主要包括形如汉字、日文等全语素文字与音节文字，但还包括了韩字等特征文字，此类文字的构造通常较复杂，在书写此类文字的文段时通常对齐字身框的中心线。
+                            <li><strong>定框紧密型</strong>文字主要包括形如汉字、日文等全语素文字与音节文字，但还包括了韩字等特征文字，此类文字的构造通常较复杂，在书写此类文字的文段时通常对齐字身框的中心轴线。
                             </li>
                             <li><strong>定线紧密型</strong>文字主要包括形如阿拉伯字母、天城文、泰文等元音附标文字和辅音音素文字，此类文字的构造通常较复杂，在书写此类文字的文段时对齐基线。
                             </li>
                         </ul>
+                        <p>不同类型的文字都有自身的度量标准与排版规则，从而对界面设计有着根本性的影响。</p>
+                    </article>
+                </section>
+                <section>
+                    <article class="body1 intro">
+                        <h6>定线型文字</h6>
+                    </article>
+                </section>
+                <section>
+                    <article class="body1 intro">
+                        <h6>定框型文字</h6>
+                    </article>
+                </section>
+                <section>
+                    <article class="body1 intro">
+                        <h6>字重</h6>
                     </article>
                 </section>
             </article>
             <hr class="divider horizontal">
             <article id="type-classification" class="horizontal">
                 <h5>字体类型</h5>
+                <section>
+                    <article class="body1">
+                        <h6>衬线体</h6>
+                    </article>
+                </section>
+                <section>
+                    <article class="body1">
+                        <h6>无衬线体</h6>
+                        <p>顾名思义，无衬线体即没有衬线的字体，此类字体可被大致分为：</p>
+                        <ul>
+                            <li><strong>哥特体</strong>的笔画粗细对比不明显，具有竖直方向的或不具有可见的应力。</li>
+                            <li><strong>古典体</strong>的笔画粗细对比较为明显，应力方向具有有一定倾斜。</li>
+                            <li><strong>几何体</strong>的笔画粗细对比不明显，具有竖直方向的应力，字形倾向贴合基本几何形状。</li>
+                        </ul>
+                    </article>
+                    <div id="sans-serif" class="diagram-wrapper">
+                        <div class="diagram">
+                        </div>
+                        <p class="body1">无衬线体示例。</p>
+                    </div>
+                    <article class="body1">
+                        <p>无衬线体造型简洁，更具现代感，为当代界面主流字体类型。质感设计采用 Roboto 及 Noto 两款无衬线体作为默认字体，以跨越更多语言、平台、显示介质。</p>
+                    </article>
+                </section>
+                <section>
+                    <article class="body1">
+                        <h6>等宽体</h6>
+                    </article>
+                </section>
+                <section>
+                    <article class="body1">
+                        <h6>手写体</h6>
+                    </article>
+                </section>
             </article>
             <hr class="divider horizontal">
             <article id="type-scale" class="horizontal">
@@ -215,7 +281,8 @@
                 </section>
                 <section>
                     <article class="body1">
-                        <p>正确施用差异较大的字阶能使界面更加有趣，并有助于更快速的区分内容区块。而根据不同屏幕尺寸、界面大小下文本框的尺寸区间选用适当的大字号能使得界面更加灵动，而不是简单地一昧使用小字号保证文段内容完整或粗暴地截断文本。</p>
+                        <p>正确施用差异较大的字阶能使界面更加有趣，并有助于更快速的区分内容区块。根据不同屏幕尺寸、界面大小下文本框的尺寸区间选用适当的大字号能使得界面更加灵动，而不是简单地一昧使用小字号保证文段内容完整或粗暴地截断文本。
+                        </p>
                     </article>
                     <div id="dynamic-type" class="diagram-wrapper">
                         <div class="diagram">
@@ -298,58 +365,59 @@
                 <h5>排版细则</h5>
                 <section>
                     <article class="body1">
-                        <h6>字符间距</h6>
-                        <p>对于较大字号的文段，应适当减小字符间距以增强字符间的紧密程度以降低阅读时的扫视频率与时间。而对于较小字号或较粗字重的文段，可以适当增加字符间距以提高字符在文段中的辨识度，增强文段的易读性。</p>
-                        <p>质感设计根据预设字体尺度表配置了一套预设字符间距表以供参考。</p>
+                        <h6>字距</h6>
+                        <p>对于较大字号的文段，应适当减小字符间距以增强字符间的紧密程度以降低阅读时的扫视频率与时间。而对于较小字号或较粗字重的文段，可以适当增加字符间距以提高字符在文段中的辨识度，增强文段的易读性。
+                        </p>
+                        <p>质感设计根据预设字体尺度表配置了一套预设字距表以供参考。</p>
                     </article>
                     <ul class="size">
                         <li>
                             <span class="body2">特大标题</span>
-                            <span class="display4">-0.01 em</span>
+                            <span class="display4">-0.01<wbr>em</span>
                         </li>
                         <li>
                             <span class="body2">巨大标题</span>
-                            <span class="display3">-0.005 em</span>
+                            <span class="display3">-0.005em</span>
                         </li>
                         <li>
                             <span class="body2">超大标题</span>
-                            <span class="display2">0 em</span>
+                            <span class="display2">0em</span>
                         </li>
                         <li>
                             <span class="body2">加大标题</span>
-                            <span class="display1">0 em</span>
+                            <span class="display1">0em</span>
                         </li>
                         <li>
                             <span class="body2">大标题</span>
-                            <span class="headline">0 em</span>
+                            <span class="headline">0em</span>
                         </li>
                         <li>
                             <span class="body2">标题</span>
-                            <span class="title">0.005 em</span>
+                            <span class="title">0.005em</span>
                         </li>
                         <li>
                             <span class="body2">副标题</span>
-                            <span class="subheading">0.01 em</span>
+                            <span class="subheading">0.01em</span>
                         </li>
                         <li>
                             <span class="body2">加粗正文</span>
-                            <span class="body2">0.01 em</span>
+                            <span class="body2">0.01em</span>
                         </li>
                         <li>
                             <span class="body2">正文</span>
-                            <span class="body1">0.01 em</span>
+                            <span class="body1">0.01em</span>
                         </li>
                         <li>
                             <span class="body2">附加说明</span>
-                            <span class="caption">0.02 em</span>
+                            <span class="caption">0.02em</span>
                         </li>
                     </ul>
                 </section>
                 <section>
                     <article class="body1">
-                        <h6>行距</h6>
+                        <h6>行高</h6>
                         <p>根据文段的字号与字重配置合适的行距有助于保证易读性与舒适的阅读节奏。为了更流畅的阅读体验，通常字号较大的文段不进行换行。</p>
-                        <p>质感设计根据预设字体尺度表配置了一套预设行距表以供参考。</p>
+                        <p>质感设计根据预设字体尺度表配置了一套预设行高表以供参考。</p>
                     </article>
                     <ul class="leading" lang="en-US">
                         <li>
@@ -408,19 +476,415 @@
                     </ul>
                 </section>
                 <section>
-                    <article class="body1">
+                    <article class="body1 intro">
                         <h6>行长</h6>
+                        <p>文段的行长极大影响着阅读节奏。若行长过短，则会使阅读节奏更加急促，令读者在未阅读完当前行段时就过早倾向阅读下一行，容易造成漏读。若行长过长，则会使阅读节奏更加缓慢，令读者的视觉焦点过久停留在同一行而模糊了对行首或行尾的记忆，容易造成错行、跳行。</p>
+                        <p>但一行的宽度或一行的字数并没有统一的理想值。人眼距离显示介质的远近，单个文字在阅读方向所占的长度，不同语言中意群的长度，文本内容所需要的阅读节奏，种种因素的不同结合都会产生不同的合适行长。</p>
                     </article>
                 </section>
                 <section>
                     <article class="body1">
                         <h6>断行</h6>
+                        <p>行之间的断开位置影响着阅读的舒适度，若断行不当，既破坏了排版的美观，又增加了读者的阅读成本。对于长文排版，通常在断行时需要避免：</p>
+                        <ul>
+                            <li>定线疏松型、定线紧密型文字<strong>孤词成行</strong>，定框紧密型文字<strong>孤字成行</strong>，占用了非必要的排版空间。</li>
+                            <li><strong>行空缺过大</strong>，使得文段参差不齐而不美观。</li>
+                            <li><strong>特定字符未正确避头尾</strong>，使得正常的阅读节奏在该行首或行尾被打乱。</li>
+                        </ul>
+                        <p>且应谨慎对待行尾<strong>意群割裂</strong>，或定线疏松型、定线紧密型文段<strong>单词断开</strong>可能造成的歧义或不通顺情形。</p>
                     </article>
                 </section>
             </article>
             <hr class="divider horizontal">
             <article id="language-considerations" class="horizontal">
                 <h5>多语言考量</h5>
+                <section>
+                    <article class="body1">
+                        <h6>书写方向</h6>
+                    </article>
+                </section>
+                <section>
+                    <article class="body1">
+                        <h6>文段尺寸</h6>
+                    </article>
+                </section>
+                <section>
+                    <article class="body1">
+                        <h6>多语言混排</h6>
+                    </article>
+                </section>
+                <section>
+                    <article class="body1 intro">
+                        <h6>文字类型参考表</h6>
+                        <p>下表仅列出部分主流语言的分类，若你使用的语言未在此表列出，请根据文字的书写与外形特点进行类比归类。</p>
+                    </article>
+                    <table class="body1" density="dense">
+                        <thead class="body2">
+                            <tr>
+                                <th scope="col">代号</th>
+                                <th scope="col">语言</th>
+                                <th scope="col">类型</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>af</th>
+                                <td>Afrikaans</td>
+                                <td>定线疏松型</td>
+                            </tr>
+                            <tr>
+                                <th>am</th>
+                                <td style="font-family: 'Noto Sans Ethiopic', sans-serif;">አማርኛ</td>
+                                <td>定线疏松型</td>
+                            </tr>
+                            <tr>
+                                <th>ar</th>
+                                <td style="font-family: 'Noto Sans Arabic', sans-serif;">اللغة العربية</td>
+                                <td>定线紧密型</td>
+                            </tr>
+                            <tr>
+                                <th>az</th>
+                                <td>Azərbaycan dili</td>
+                                <td>定线疏松型</td>
+                            </tr>
+                            <tr>
+                                <th>bg</th>
+                                <td>Български език</td>
+                                <td>定线疏松型</td>
+                            </tr>
+                            <tr>
+                                <th>bn</th>
+                                <td style="font-family: 'Noto Sans Bengali', sans-serif;">বাংলা ভাষা</td>
+                                <td>定线紧密型</td>
+                            </tr>
+                            <tr>
+                                <th>ca</th>
+                                <td>Català</td>
+                                <td>定线疏松型</td>
+                            </tr>
+                            <tr>
+                                <th>cs</th>
+                                <td>Čeština</td>
+                                <td>定线疏松型</td>
+                            </tr>
+                            <tr>
+                                <th>cy</th>
+                                <td>Cymraeg</td>
+                                <td>定线疏松型</td>
+                            </tr>
+                            <tr>
+                                <th>da</th>
+                                <td>Dansk</td>
+                                <td>定线疏松型</td>
+                            </tr>
+                            <tr>
+                                <th>de</th>
+                                <td>Deutsch</td>
+                                <td>定线疏松型</td>
+                            </tr>
+                            <tr>
+                                <th>el</th>
+                                <td>Ελληνικά</td>
+                                <td>定线疏松型</td>
+                            </tr>
+                            <tr>
+                                <th>en<br>en-GB</th>
+                                <td>English</td>
+                                <td>定线疏松型</td>
+                            </tr>
+                            <tr>
+                                <th>es<br>es-419</th>
+                                <td>Español</td>
+                                <td>定线疏松型</td>
+                            </tr>
+                            <tr>
+                                <th>et</th>
+                                <td>Eesti</td>
+                                <td>定线疏松型</td>
+                            </tr>
+                            <tr>
+                                <th>eu</th>
+                                <td>Euskara</td>
+                                <td>定线疏松型</td>
+                            </tr>
+                            <tr>
+                                <th>fa</th>
+                                <td style="font-family: 'Noto Sans Arabic', sans-serif;">زبان فارسی</td>
+                                <td>定线紧密型</td>
+                            </tr>
+                            <tr>
+                                <th>fi</th>
+                                <td>Suomen kieli</td>
+                                <td>定线疏松型</td>
+                            </tr>
+                            <tr>
+                                <th>fil</th>
+                                <td>Wikang Filipino</td>
+                                <td>定线疏松型</td>
+                            </tr>
+                            <tr>
+                                <th>fr<br>fr-CA</th>
+                                <td>Français</td>
+                                <td>定线疏松型</td>
+                            </tr>
+                            <tr>
+                                <th>gl</th>
+                                <td>Galego</td>
+                                <td>定线疏松型</td>
+                            </tr>
+                            <tr>
+                                <th>gu</th>
+                                <td style="font-family: 'Noto Sans Gujarati', sans-serif;">ગુજરાતી</td>
+                                <td>定线紧密型</td>
+                            </tr>
+                            <tr>
+                                <th>hi</th>
+                                <td style="font-family: 'Noto Sans Devanagari', sans-serif;">हिन्दी</td>
+                                <td>定线紧密型</td>
+                            </tr>
+                            <tr>
+                                <th>hr</th>
+                                <td>Hrvatski</td>
+                                <td>定线疏松型</td>
+                            </tr>
+                            <tr>
+                                <th>hu</th>
+                                <td>Magyar</td>
+                                <td>定线疏松型</td>
+                            </tr>
+                            <tr>
+                                <th>hy</th>
+                                <td style="font-family: 'Noto Sans Armenian', sans-serif;">Հայերեն</td>
+                                <td>定线疏松型</td>
+                            </tr>
+                            <tr>
+                                <th>id</th>
+                                <td>Bahasa Indonesia</td>
+                                <td>定线疏松型</td>
+                            </tr>
+                            <tr>
+                                <th>is</th>
+                                <td>Íslenska</td>
+                                <td>定线疏松型</td>
+                            </tr>
+                            <tr>
+                                <th>it</th>
+                                <td>Italiano</td>
+                                <td>定线疏松型</td>
+                            </tr>
+                            <tr>
+                                <th>iw</th>
+                                <td style="font-family: 'Noto Sans Hebrew', sans-serif;">עִבְרִית</td>
+                                <td>定线疏松型</td>
+                            </tr>
+                            <tr>
+                                <th>ja</th>
+                                <td style="font-family: 'Noto Sans JP', sans-serif;">日本語</td>
+                                <td>定框紧密型</td>
+                            </tr>
+                            <tr>
+                                <th>ka</th>
+                                <td style="font-family: 'Noto Serif Georgian', serif;">ქართული</td>
+                                <td>定线疏松型</td>
+                            </tr>
+                            <tr>
+                                <th>kk</th>
+                                <td>Қазақша</td>
+                                <td>定线疏松型</td>
+                            </tr>
+                            <tr>
+                                <th>km</th>
+                                <td style="font-family: 'Noto Sans Khmer', sans-serif;">ភាសាខ្មែរ</td>
+                                <td>定线紧密型</td>
+                            </tr>
+                            <tr>
+                                <th>kn</th>
+                                <td style="font-family: 'Noto Sans Kannada', sans-serif;">ಕನ್ನಡ</td>
+                                <td>定线紧密型</td>
+                            </tr>
+                            <tr>
+                                <th>ko</th>
+                                <td style="font-family: 'Noto Sans KR', sans-serif;">한국어</td>
+                                <td>定框紧密型</td>
+                            </tr>
+                            <tr>
+                                <th>ky</th>
+                                <td>Кыргызча</td>
+                                <td>定线疏松型</td>
+                            </tr>
+                            <tr>
+                                <th>lo</th>
+                                <td style="font-family: 'Noto Sans Lao', sans-serif;">ລາວ</td>
+                                <td>定线紧密型</td>
+                            </tr>
+                            <tr>
+                                <th>lt</th>
+                                <td>Lietuvių</td>
+                                <td>定线疏松型</td>
+                            </tr>
+                            <tr>
+                                <th>lv</th>
+                                <td>Latviešu</td>
+                                <td>定线疏松型</td>
+                            </tr>
+                            <tr>
+                                <th>mk</th>
+                                <td>Македонски</td>
+                                <td>定线疏松型</td>
+                            </tr>
+                            <tr>
+                                <th>ml</th>
+                                <td style="font-family: 'Noto Sans Malayalam', sans-serif;">മലയാളം</td>
+                                <td>定线紧密型</td>
+                            </tr>
+                            <tr>
+                                <th>mn</th>
+                                <td>Монгол</td>
+                                <td>定线疏松型</td>
+                            </tr>
+                            <tr>
+                                <th>mr</th>
+                                <td style="font-family: 'Noto Sans Devanagari', sans-serif;">मराठी</td>
+                                <td>定线紧密型</td>
+                            </tr>
+                            <tr>
+                                <th>ms</th>
+                                <td>Bahasa Melayu</td>
+                                <td>定线疏松型</td>
+                            </tr>
+                            <tr>
+                                <th>my</th>
+                                <td style="font-family: 'Noto Sans Myanmar', sans-serif;">မြန်မာဘာသာ</td>
+                                <td>定线紧密型</td>
+                            </tr>
+                            <tr>
+                                <th>ne</th>
+                                <td style="font-family: 'Noto Sans Devanagari', sans-serif;">नेपाली</td>
+                                <td>定线紧密型</td>
+                            </tr>
+                            <tr>
+                                <th>nl</th>
+                                <td>Nederlands</td>
+                                <td>定线疏松型</td>
+                            </tr>
+                            <tr>
+                                <th>no</th>
+                                <td>Norsk bokmål</td>
+                                <td>定线疏松型</td>
+                            </tr>
+                            <tr>
+                                <th>pa</th>
+                                <td style="font-family: 'Noto Sans Gurmukhi', sans-serif;">ਪੰਜਾਬੀ</td>
+                                <td>定线紧密型</td>
+                            </tr>
+                            <tr>
+                                <th>pl</th>
+                                <td>Polski</td>
+                                <td>定线疏松型</td>
+                            </tr>
+                            <tr>
+                                <th>pt<br>pt-PT</th>
+                                <td>Português</td>
+                                <td>定线疏松型</td>
+                            </tr>
+                            <tr>
+                                <th>ro</th>
+                                <td>Română</td>
+                                <td>定线疏松型</td>
+                            </tr>
+                            <tr>
+                                <th>ru</th>
+                                <td>Русский</td>
+                                <td>定线疏松型</td>
+                            </tr>
+                            <tr>
+                                <th>si</th>
+                                <td style="font-family: 'Noto Sans Sinhala', sans-serif;">සිංහල</td>
+                                <td>定线紧密型</td>
+                            </tr>
+                            <tr>
+                                <th>sk</th>
+                                <td>Slovenčina</td>
+                                <td>定线疏松型</td>
+                            </tr>
+                            <tr>
+                                <th>sl</th>
+                                <td>Slovenščina</td>
+                                <td>定线疏松型</td>
+                            </tr>
+                            <tr>
+                                <th>sq</th>
+                                <td>Shqip</td>
+                                <td>定线疏松型</td>
+                            </tr>
+                            <tr>
+                                <th>sr<br>sr-Latn</th>
+                                <td>Српски<br>Srpski</td>
+                                <td>定线疏松型</td>
+                            </tr>
+                            <tr>
+                                <th>sv</th>
+                                <td>Svenska</td>
+                                <td>定线疏松型</td>
+                            </tr>
+                            <tr>
+                                <th>sw</th>
+                                <td>Kiswahili</td>
+                                <td>定线疏松型</td>
+                            </tr>
+                            <tr>
+                                <th>ta</th>
+                                <td style="font-family: 'Noto Sans Tamil', sans-serif;">தமிழ்</td>
+                                <td>定线紧密型</td>
+                            </tr>
+                            <tr>
+                                <th>te</th>
+                                <td style="font-family: 'Noto Sans Telugu', sans-serif;">తెలుగు</td>
+                                <td>定线紧密型</td>
+                            </tr>
+                            <tr>
+                                <th>th</th>
+                                <td style="font-family: 'Noto Sans Thai', sans-serif;">ไทย</td>
+                                <td>定线紧密型</td>
+                            </tr>
+                            <tr>
+                                <th>tr</th>
+                                <td>Türkçe</td>
+                                <td>定线疏松型</td>
+                            </tr>
+                            <tr>
+                                <th>uk</th>
+                                <td>Українська</td>
+                                <td>定线疏松型</td>
+                            </tr>
+                            <tr>
+                                <th>ur</th>
+                                <td style="font-family: 'Noto Sans Arabic', sans-serif;">اردو</td>
+                                <td>定线紧密型</td>
+                            </tr>
+                            <tr>
+                                <th>uz</th>
+                                <td>Oʻzbekcha</td>
+                                <td>定线疏松型</td>
+                            </tr>
+                            <tr>
+                                <th>vi</th>
+                                <td>Tiếng Việt</td>
+                                <td>定线紧密型</td>
+                            </tr>
+                            <tr>
+                                <th>zh-Hans<br>zh-Hant</th>
+                                <td>简体中文<br>繁体中文</td>
+                                <td>定框紧密型</td>
+                            </tr>
+                            <tr>
+                                <th>zu</th>
+                                <td>IsiZulu</td>
+                                <td>定线疏松型</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
             </article>
         </div>
 
