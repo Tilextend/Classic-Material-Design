@@ -461,7 +461,13 @@
     --secondary-color: #eeff41;
 }
 
-.simulator[inbox=main] .status-bar-background {
+.simulator[inbox=main] .system-layer .status-bar-background {
+    background-color: #0097A7;
+}
+
+.simulator[inbox=main] .application>.status-bar-background {
+    position: absolute;
+    width: 100%;
     background-color: #0097A7;
 }
 
@@ -697,11 +703,39 @@
 }
 
 .simulator[inbox=flight] ul>ul>li .primary-text {
-    color: var(--secondary-text-color)
+    color: var(--secondary-text-color);
 }
 
 .simulator[inbox=flight] ul>ul>li .secondary-text {
-    color: var(--primary-text-color)
+    color: var(--primary-text-color);
+}
+
+.simulator[inbox] .drawer .header>img {
+    object-position: 0px -14px;
+}
+
+.simulator[inbox] .drawer .scrim {
+    height: var(--increment);
+    opacity: 0.2;
+}
+
+.simulator[inbox] .drawer nav:first-of-type a:nth-of-type(1) {
+    --primary-text-color: var(--primary-color);
+    --secondary-text-color: var(--primary-color);
+}
+
+.simulator[inbox] .drawer nav:first-of-type a:nth-of-type(2) {
+    --primary-text-color: #ef6c00;
+    --secondary-text-color: #ef6c00;
+}
+
+.simulator[inbox] .drawer nav:first-of-type a:nth-of-type(3) {
+    --primary-text-color: #0f9d58;
+    --secondary-text-color: #0f9d58;
+}
+
+.simulator[inbox] nav .activated {
+    --states-base-color: var(--primary-color);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -1768,16 +1802,26 @@
     justify-self: end;
 }
 
-.simulator[album=live-from-space] {
-    --primary-color: #ff3d29;
-    --primary-color-alt:#f03329;
-    --secondary-color: #2ab8f6;
+.simulator[album=girl] {
+    --primary-color: #f6bf26;
+    --primary-color-alt: #f7cb4e;
+    --secondary-color: #e7e6e4;
 }
 
-.simulator[album=girl] {
-    --primary-color:#f6bf26;
-    --primary-color-alt:#f7cb4e;
-    --secondary-color: #e7e6e4;
+.simulator[album=jamie-lidell] {
+    --primary-color: #e1e1e1;
+    --primary-color-alt: #efefef;
+    --secondary-color: #ff4081;
+}
+
+.simulator[album=jamie-lidell] .fab {
+    color: var(--primary-text-color);
+}
+
+.simulator[album=live-from-space] {
+    --primary-color: #ff3d29;
+    --primary-color-alt: #f03329;
+    --secondary-color: #2ab8f6;
 }
 
 /*------------------------------------*\
@@ -2046,4 +2090,58 @@
 
 .simulator[calendar=goals] ul li:first-of-type {
     margin-bottom: 8px;
+}
+
+/*------------------------------------*\
+  相机
+\*------------------------------------*/
+
+.simulator[camera=main] .status-bar {
+    transform: translateY(-100%);
+}
+
+.simulator[camera=main] .application {
+    padding-bottom: 48px;
+    background-color: #000000;
+    color: var(--primary-text-color);
+}
+
+.simulator[camera=main] .view {
+    position: relative;
+    aspect-ratio: 3/4;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.simulator[camera=main] .view img {
+    position: absolute;
+    height: 100%;
+}
+
+.simulator[camera=main] .tools {
+    position: relative;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 16px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.simulator[camera=main] .actions {
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-items: center;
+    background-color: #212121;
+}
+
+.simulator[camera=main] .actions>span:last-of-type {
+    font-size: 48px;
+}
+
+.simulator[camera=main] .thumbnail {
+    border-radius: 50%;
+    background-color: #616161;
 }

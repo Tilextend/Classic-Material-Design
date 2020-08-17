@@ -53,8 +53,12 @@
     background-color: var(--primary-color, --states-base-color);
 }
 
-.activated:not(.tab-bar button) {
+.activated {
     --activate-parameter: 1;
+}
+
+.tab-bar .activated {
+    --activate-parameter: 0;
 }
 
 .pressed {

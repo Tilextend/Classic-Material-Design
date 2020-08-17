@@ -49,7 +49,7 @@
 }
 
 .list[one] .primary-text {
-    line-height: 1.4375rem;
+    line-height: var(--body-leading);
 }
 
 .list .secondary-text {
