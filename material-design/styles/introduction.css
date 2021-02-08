@@ -27,7 +27,8 @@ footer .right {
 }
 
 #goal-system .surface {
-    background-color: #FAFAFA;
+    position: relative;
+    background-color: var(--medium-emphasis-surface-color);
     border-radius: 2px;
     box-shadow: var(--shadow-z2);
 }

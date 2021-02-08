@@ -2,6 +2,10 @@
   正文
 \*------------------------------------*/
 
+table {
+  grid-column-end: span min(var(--max-block), 2);
+}
+
 /*------------------------------------*\
   模拟器
 \*------------------------------------*/
@@ -19,7 +23,7 @@ footer .left {
 }
 
 @media (prefers-color-scheme: dark) {
-  .CMD-drawer, .content-body {
+  body>aside>nav, .content-body {
     --primary-color: #BA68C8;
   }
 }

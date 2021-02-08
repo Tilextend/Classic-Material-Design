@@ -31,7 +31,7 @@
     border-radius: 50%;
 }
 
-*:hover::before, *:focus-visible::before, .hovered, .focused {
+:hover::before, :focus-visible::before, .hovered, .focused {
     transition-duration: 225ms;
 }
 
@@ -41,7 +41,7 @@
     }
 }
 
-*:focus-visible, .focused {
+:focus-visible, .focused {
     --focus-parameter: 1;
 }
 
@@ -104,7 +104,6 @@
 
 .ripples .foreground {
     position: absolute;
-    width: min(var(--diameter), 700px);
     height: auto;
     aspect-ratio: 1/1;
     background-color: var(--states-base-color);

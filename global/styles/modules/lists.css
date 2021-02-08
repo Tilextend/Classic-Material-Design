@@ -12,6 +12,10 @@
     white-space: nowrap;
 }
 
+table .list {
+    display: table-cell;
+}
+
 .list[one] {
     height: 56px;
 }
@@ -41,6 +45,20 @@
     margin-top: 16px;
 }
 
+.list[line=multiple] {
+    align-items: flex-start;
+    white-space: normal;
+}
+
+.list[line=multiple] .avatar {
+    margin-top: var(--keyline);
+}
+
+.list[line=multiple] .primary-text {
+    margin-top: 0.6875rem;
+    margin-bottom: 0.8125rem;
+}
+
 .list .primary-text {
     justify-self: stretch;
     overflow: hidden;
@@ -59,8 +77,8 @@
     color: var(--secondary-text-color);
 }
 
-.list .primary-text .secondary-text {
-    margin-top: -0.125rem;
+.list[two] .primary-text .secondary-text {
+    margin-top: -0.0625rem;
 }
 
 .list .meta {
@@ -168,6 +186,11 @@
     background-position: -2px -2px;
 }
 
+.avatar[character=jonathan-lee] {
+    background-size: auto 120px;
+    background-position: -50px -10px;
+}
+
 .thumbnail {
     width: 40px;
     height: 40px;
@@ -183,7 +206,7 @@
 }
 
 .scrim[fill] {
-    background-color: var(--theme-base-color);
+    background-color: #000000;
     opacity: 0.4;
 }
 

@@ -1,17 +1,3 @@
-@import url("./app-bars.css");
-@import url("./buttons.css");
-@import url("./data-tables.css");
-@import url("./dialogs.css");
-@import url("./lists.css");
-@import url("./pickers.css");
-@import url("./progress-indicators.css");
-@import url("./selection-controls.css");
-@import url("./sheets.css");
-@import url("./snackbars.css");
-@import url("./states.css");
-@import url("./tabs.css");
-@import url("./text-fields.css");
-@import url("./typography.css");
 :root {
     --shadow-z0: 0px 0px 0px 0px rgba(0, 0, 0, 0.2), 0px 0px 0px 0px rgba(0, 0, 0, 0.14), 0px 0px 0px 0px rgba(0, 0, 0, 0.12);
     --shadow-z1: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
@@ -52,12 +38,13 @@
     left: 0;
     position: absolute;
     width: 100%;
-    height: calc(100% - 2px);
+    height: 100%;
     border-width: 1px 0;
     border-style: solid;
     border-top-color: var(--surface-hint-color);
     border-bottom-color: var(--surface-shade-color);
     border-radius: inherit;
+    box-sizing: border-box;
     pointer-events: none;
 }
 

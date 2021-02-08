@@ -19,7 +19,7 @@ footer .left {
 }
 
 @media (prefers-color-scheme: dark) {
-    .CMD-drawer, .content-body {
+    body>aside>nav, .content-body {
         --primary-color: #9FA8DA;
     }
     .diagram {

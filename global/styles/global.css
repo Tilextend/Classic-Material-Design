@@ -1,5 +1,19 @@
-@import url("./base.css");
-@import url("./applications.css");
+@import url("./modules/app-bars.css");
+@import url("./modules/applications.css");
+@import url("./modules/base.css");
+@import url("./modules/buttons.css");
+@import url("./modules/data-tables.css");
+@import url("./modules/dialogs.css");
+@import url("./modules/lists.css");
+@import url("./modules/pickers.css");
+@import url("./modules/progress-indicators.css");
+@import url("./modules/selection-controls.css");
+@import url("./modules/sheets.css");
+@import url("./modules/snackbars.css");
+@import url("./modules/states.css");
+@import url("./modules/tabs.css");
+@import url("./modules/text-fields.css");
+@import url("./modules/typography.css");
 /*------------------------------------*\
   全局设定
 \*------------------------------------*/
@@ -21,8 +35,11 @@
     background-size: cover;
 }
 
-html, body {
+body {
+    position: relative;
     width: 100%;
+    display: flex;
+    flex-direction: row;
     vertical-align: baseline;
     word-wrap: break-word;
     background-color: var(--medium-emphasis-surface-color);
@@ -35,11 +52,6 @@ html, body {
     font-feature-settings: "pnum";
     line-height: 1;
     user-select: none;
-}
-
-body {
-    display: flex;
-    flex-direction: row;
 }
 
 a {
@@ -87,6 +99,22 @@ thead {
     color: var(--secondary-text-color);
 }
 
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--medium-emphasis-surface-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--hint-text-color-alt);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--hint-text-color);
+}
+
 @font-face {
     font-family: 'Extra Material Icons';
     font-style: normal;
@@ -118,37 +146,31 @@ thead {
   导航抽屉
 \*------------------------------------*/
 
-.CMD-drawer-wrapper {
+body>.drawer-container {
+    order: -1;
     z-index: 16;
-    position: relative;
-    display: flex;
+    top: 0;
+    position: sticky;
+    width: auto;
+    height: 100vh;
 }
 
-.CMD-drawer-wrapper>.divider {
+body>.drawer-container>.divider {
     position: absolute;
     right: 0;
 }
 
-.CMD-drawer {
-    top: 0;
-    position: sticky;
-    display: flex;
-    flex-direction: column;
+body>.drawer-container .drawer {
     width: 256px;
-    height: 100vh;
     padding-bottom: 8px;
-    background-color: var(--high-emphasis-surface-color);
-    overflow-y: auto;
     transition-property: none;
-    transition-timing-function: var(--sharp-curve);
-    transition-duration: 195ms;
 }
 
-.CMD-drawer::-webkit-scrollbar {
+body>.drawer-container .drawer::-webkit-scrollbar {
     display: none;
 }
 
-.CMD-drawer figure {
+body>.drawer-container .drawer figure {
     display: flex;
     height: var(--increment);
     padding: 0 var(--keyline);
@@ -156,45 +178,40 @@ thead {
     flex-shrink: 0;
 }
 
-.CMD-drawer figure circle {
+body>.drawer-container .drawer figure circle {
     fill: #212121;
 }
 
-.CMD-drawer figure svg {
+body>.drawer-container .drawer figure svg {
     width: 24px;
 }
 
-.CMD-drawer figcaption {
+body>.drawer-container .drawer figcaption {
     margin-left: 24px;
     font-weight: 500;
     font-family: 'Roboto Mono', monospace;
     color: var(--primary-text-color);
 }
 
-.CMD-drawer nav {
+body>.drawer-container .drawer li {
     position: relative;
-    height: 48px;
     flex-shrink: 0;
     margin: 0;
     padding: 0;
     border: 0;
     color: var(--primary-text-color);
     overflow: hidden;
-    transition-property: height;
-    transition-duration: 250ms;
-    transition-timing-function: var(--standard-curve);
 }
 
-.CMD-drawer nav:first-of-type {
+body>.drawer-container .drawer li:not(.unfolded) {
+    height: 48px;
+}
+
+body>.drawer-container .drawer li:first-of-type {
     margin-top: 8px;
 }
 
-.CMD-drawer nav[class~=unfolded] {
-    transition-duration: 300ms;
-    height: calc(var(--navigation-drawer-rows) * 36px + 48px);
-}
-
-.CMD-drawer span {
+body>.drawer-container .drawer span {
     position: relative;
     height: 48px;
     padding-left: var(--keyline);
@@ -203,30 +220,30 @@ thead {
     cursor: pointer;
 }
 
-.CMD-drawer nav a {
+body>.drawer-container .drawer li a {
     position: relative;
     height: 36px;
     display: flex;
     align-items: center;
     font-size: 0.8125rem;
     padding-left: calc(2 * var(--keyline));
+}
+
+body>.drawer-container .drawer li:not(.on) a {
     visibility: hidden;
 }
 
-.CMD-drawer nav[class~=on] a {
-    visibility: visible;
-}
-
-.CMD-drawer nav .activated {
+body>.drawer-container .drawer li .activated {
     --states-base-color: var(--primary-color);
+    font-weight: 500;
     color: var(--primary-color);
 }
 
-.CMD-drawer nav:last-of-type {
+body>.drawer-container .drawer li:last-of-type {
     margin-bottom: 96px;
 }
 
-.CMD-drawer>a {
+body>.drawer-container .drawer>a {
     line-height: 48px;
     display: flex;
     align-items: center;
@@ -246,7 +263,7 @@ thead {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: calc(100% - 256px);
+    flex-grow: 1;
     min-height: 100vh;
     color: var(--primary-text-color);
 }
@@ -257,11 +274,15 @@ main>.app-bar {
 }
 
 main>.app-bar[class~=prominent] {
-    height: var(--increment);
+    height: calc(4 * var(--increment));
     flex-wrap: nowrap;
     background-color: transparent;
     box-shadow: none;
-    margin-bottom: calc(3 * var(--increment));
+    pointer-events: none;
+}
+
+main>.app-bar[class~=prominent]>div {
+    pointer-events: auto;
 }
 
 main .app-bar .surface {
@@ -271,7 +292,6 @@ main .app-bar .surface {
     width: 100%;
     height: calc(4 * var(--increment));
     background-color: var(--primary-color);
-    pointer-events: none;
 }
 
 main>.app-bar>span {
@@ -283,15 +303,14 @@ main>.app-bar>span {
 }
 
 main .app-bar .surface {
-    animation-name: appBaShrink;
+    animation-name: appBarShrink;
     animation-timing-function: linear;
-    animation-duration: 192ms;
-    animation-delay: calc(var(--scroll-Y) / 192 * -192ms);
+    animation-duration: 200ms;
     animation-fill-mode: both;
     animation-play-state: paused;
 }
 
-@keyframes appBaShrink {
+@keyframes appBarShrink {
     0% {
         transform: translateY(0px);
         box-shadow: var(--shadow-z0);
@@ -305,22 +324,21 @@ main .app-bar .surface {
 main>.app-bar[class~=prominent]>span {
     animation-name: appBarTextScale;
     animation-timing-function: linear;
-    animation-duration: 192ms;
-    animation-delay: calc(var(--scroll-Y) / 192 * -192ms);
+    animation-duration: 200ms;
     animation-fill-mode: both;
     animation-play-state: paused;
 }
 
 @keyframes appBarTextScale {
     0% {
-        margin-top: var(--increment);
+        transform: translateY(var(--increment));
         height: calc(3 * var(--increment));
         font-size: 3.5rem;
         font-weight: 400;
         letter-spacing: -0.005em;
     }
     100% {
-        margin-top: 0px;
+        transform: translateY(0px);
         height: var(--increment);
         font-size: 1.25rem;
         font-weight: 500;
@@ -469,9 +487,10 @@ article>ul li {
     top: 0;
     left: 0;
     position: absolute;
-    width: calc(100% - 2px);
-    height: calc(100% - 2px);
+    width: 100%;
+    height: 100%;
     border: 1px solid rgba(0, 0, 0, 0.08);
+    box-sizing: border-box;
 }
 
 .diagram::after, .simulator::after {
@@ -516,32 +535,33 @@ article>ul li {
     color: var(--secondary-text-color-alt);
 }
 
-table {
+section>table {
     user-select: text;
     margin-bottom: var(--keyline);
+    border-collapse: collapse;
 }
 
-thead {
+section>table thead {
     background-color: var(--medium-emphasis-surface-color);
 }
 
-tbody {
+section>table tbody {
     background-color: var(--high-emphasis-surface-color);
     color: var(--primary-text-color);
 }
 
-th, td {
+section>table th, section>table td {
     border-width: 1px;
     border-style: solid;
     border-color: var(--sheet-border-color);
     padding: calc(var(--keyline) / 2 + 4px) var(--keyline);
 }
 
-table[density=dense] tbody th, table[density=dense] tbody td {
+section>table[density=dense] tbody th, section>table[density=dense] tbody td {
     padding: calc(var(--keyline) / 2) var(--keyline);
 }
 
-table span {
+section>table span {
     display: block;
 }
 
@@ -579,6 +599,184 @@ table span {
     width: 60px;
     height: 60px;
     border: 48px solid rgba(255, 64, 129, 0.2);
+}
+
+/*------------------------------------*\
+  基准线
+\*------------------------------------*/
+
+.keylines-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.keyline {
+    display: flex;
+    border-width: 1px;
+    border-color: #FF4081;
+    align-items: center;
+}
+
+.keyline[class~=left] {
+    justify-content: flex-end;
+}
+
+.keyline[class~=center] {
+    justify-content: center;
+}
+
+.keyline[class~=right] {
+    justify-content: flex-start;
+}
+
+.keyline::before {
+    content: "";
+    width: 1px;
+    align-self: stretch;
+    background-color: #FF4081;
+}
+
+.keyline::after {
+    position: absolute;
+    content: "";
+    width: 8px;
+    height: 8px;
+    clip-path: polygon(0% 0%, 0% 100%, 100% 100%);
+    background-color: #FF4081;
+}
+
+.keyline[class~=left]::after {
+    transform: rotate(225deg) translate(-2.5px, 2.5px);
+}
+
+.keyline[class~=center]::after {
+    transform: rotate(315deg) translate(1.5px, -1.5px);
+}
+
+.keyline[class~=right]::after {
+    transform: rotate(45deg) translate(-2.5px, 2.5px);
+}
+
+/*------------------------------------*\
+  增量
+\*------------------------------------*/
+
+.increments-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.increments {
+    position: relative;
+    display: flex;
+}
+
+.increments::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #ff4081;
+    box-sizing: border-box;
+}
+
+.increments .unit {
+    position: relative;
+    width: var(--increment);
+    height: var(--increment);
+}
+
+.increments .unit[class~=half] {
+    width: calc(var(--increment) / 2);
+}
+
+.increments .unit::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 0.5px solid #ff4081;
+    box-sizing: border-box;
+}
+
+.increments .unit:last-child {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    background-color: #ff4081;
+}
+
+/*------------------------------------*\
+  比例
+\*------------------------------------*/
+
+.aspect-ratios-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.ratio {
+    position: relative;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.ratio::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #3f51b5;
+    border-top: none;
+    box-sizing: border-box;
+}
+
+.ratio:first-child:before {
+    border-top: 1px solid #3f51b5;
+}
+
+.ratio span {
+    width: 48px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-end;
+    transform: translateY(50%);
+    padding-left: 6px;
+    color: #ffffff;
+    background-color: #3f51b5;
+    clip-path: polygon(8px 0%, 100% 0%, 100% 100%, 8px 100%, 0% 50%);
+}
+
+/*------------------------------------*\
+  触控区域
+\*------------------------------------*/
+
+.touch-areas {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.touch-areas>div{
+    display: flex;
+}
+
+.touch-areas .unit {
+    background-color: #ff4081;
+    opacity: 0.3;
 }
 
 /*------------------------------------*\
@@ -705,11 +903,13 @@ table span {
 }
 
 .status-bar-background {
+    position: relative;
     height: 24px;
     display: flex;
 }
 
 .navigation-bar-background {
+    position: relative;
     height: 48px;
     grid-row-start: 3;
     background-color: #000000;
@@ -793,46 +993,20 @@ footer .title {
         --content-body-width: 760px;
         --max-block: 2;
     }
-    body {
-        flex-direction: column;
-    }
-    .CMD-drawer-wrapper {
+    body>.drawer-container {
         position: fixed;
         width: 100%;
         pointer-events: none;
-        transition-property: background-color;
-        transition-timing-function: linear;
-        transition-duration: 195ms;
     }
-    .CMD-drawer-wrapper[class~=on] {
-        pointer-events: auto;
-    }
-    .CMD-drawer-wrapper[class~=enter] {
-        background-color: rgba(0, 0, 0, 0.4);
-        transition-duration: 225ms;
-    }
-    .CMD-drawer-wrapper[class~=on] .CMD-drawer {
-        visibility: visible;
-        box-shadow: var(--shadow-z16);
-        transition-property: transform;
-    }
-    .CMD-drawer-wrapper[class~=enter] .CMD-drawer {
-        transform: translateX(0%);
-        transition-timing-function: var(--deceleration-curve);
-        transition-duration: 225ms;
-    }
-    .CMD-drawer {
+    body>.drawer-container .drawer {
         visibility: hidden;
         transform: translateX(-100%);
     }
-    .CMD-drawer-wrapper>.divider {
+    body>.drawer-container>.divider {
         visibility: hidden;
     }
     #drawer-trigger {
         visibility: visible;
-    }
-    .CMD-content {
-        width: 100%;
     }
     section>article {
         grid-column-start: 1;
@@ -913,7 +1087,7 @@ footer .title {
         background: radial-gradient(circle at top left, rgba(0, 0, 0, 0) calc(1 / 3 * 100%), rgba(0, 0, 0, 0.01) calc(7 / 9 * 100%), rgba(0, 0, 0, 0.02) 100%);
         background-color: #eeeeee;
     }
-    *[theme=dark-light] {
+    [theme=dark-light] {
         --status-bar-color: rgba(0, 0, 0, 0.6);
     }
 }
@@ -927,7 +1101,7 @@ footer .title {
     :root {
         --sheet-border-color: #616161;
     }
-    .CMD-drawer figure circle {
+    .drawer figure circle {
         fill: #747474;
     }
     .diagram {
@@ -940,7 +1114,7 @@ footer .title {
     .recommends[class~=do] {
         color: #66BB6A;
     }
-    *[theme=dark-light] {
+    [theme=dark-light] {
         --status-bar-color: rgba(255, 255, 255, 0.9);
     }
 }

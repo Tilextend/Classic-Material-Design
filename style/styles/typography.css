@@ -136,7 +136,7 @@ th, td {
 }
 
 @media (prefers-color-scheme: dark) {
-  .CMD-drawer, .content-body {
+  body>aside>nav, .content-body {
     --primary-color: #26A69A;
   }
 }

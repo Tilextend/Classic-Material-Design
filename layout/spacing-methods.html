@@ -6,20 +6,791 @@
     <meta name="theme-color" content="#212121">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>质感设计 - 元素排布</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Roboto+Mono:wght@500&family=Roboto:wght@300;400;500;700&display=swap"
         rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
     <link rel="shortcut icon" href="../global/logo.svg">
     <link rel="stylesheet" href="./styles/spacing-methods.css">
     <link rel="stylesheet" href="../global/styles/global.css">
-    <script defer src="../global/scripts/global.js"></script>
-    <script defer src="../global/scripts/components.js"></script>
+    <script defer type="module" src="../global/scripts/global.js"></script>
 </head>
 
 <body>
-    <div class="CMD-drawer-wrapper">
-        <aside class="CMD-drawer body1">
+    <main class="CMD-content">
+        <div class="content-body">
+            <header>
+                <h4>元素排布</h4>
+                <p class="title">借鉴印刷设计利用数学方法及工具来系统地控制界面元素和信息的有无、多少分布，有助于维持视觉美感与内在逻辑的紧密统一，并能显著增强界面的张力与流动性，为用户创造一致、友好的体验。
+                </p>
+            </header>
+            <nav class="chapter-catalogue">
+                <span class="body1">索引</span>
+                <ul class="title">
+                    <li><a href="#baseline-grid">基线网格</a></li>
+                    <li><a href="#containers">容器模型</a></li>
+                    <li><a href="#alignment">对齐方式</a></li>
+                    <li><a href="#increments">增量</a></li>
+                    <li><a href="#ratios">比例</a></li>
+                    <li><a href="#touch-targets">触控面积</a></li>
+                </ul>
+            </nav>
+            <article id="baseline-grid" class="horizontal">
+                <h5>基线网格</h5>
+                <section>
+                    <article class="body1">
+                        <p>在质感设计中，所有元素均分布在以 8dp 为最大单元的网状方格上，其中，图标与文字则可通过更细密的 4dp 单元网格来控制排布。</p>
+                        <p>将网格作为空间秩序的控制系统是为了构建设计的内在韵律，并不代表元素的尺寸或位置必须贴合网格。</p>
+                    </article>
+                    <div id="normal-baseline-grid" class="diagram-wrapper">
+                        <div class="diagram">
+                            <div class="background"></div>
+                            <div class="surface edged"></div>
+                            <div class="surface edged"></div>
+                            <div class="surface edged"></div>
+                            <div class="grid"></div>
+                        </div>
+                        <p class="body1">层面铺排在 8dp 网格上。</p>
+                    </div>
+                    <div id="type-baseline-grid" class="diagram-wrapper" screen="mobile">
+                        <div class="simulator" inbox="opened" lang="en-US">
+                            <span class="headline">Summer BBQ</span>
+                            <ul>
+                                <li class="list" two>
+                                    <span class="avatar"></span>
+                                    <span class="primary-text subheading">Jennifer Smith
+                                        <p class="secondary-text body1">Welcome friends. Come have a drink at my house
+                                            Sat @ 9pm.</p>
+                                    </span>
+                                    <div class="tertiary-text">
+                                        <span class="caption">1天前</span>
+                                        <button class="icon-button narrow unbounded" tabindex="-1">
+                                            <span class="material-icons">more_vert</span>
+                                        </button>
+                                    </div>
+                                </li>
+                                <li class="list" one>
+                                    <div class="thumbnail avatar"><span class="body1">2</span></div>
+                                    <hr class="divider horizontal">
+                                </li>
+                                <li class="list" two>
+                                    <span class="avatar"></span>
+                                    <span class="primary-text subheading">Jonathan Lee
+                                        <p class="secondary-text body1">至 Alex, Scott, Jennifer</p>
+                                    </span>
+                                    <div class="tertiary-text">
+                                        <span class="caption">1分钟前</span>
+                                        <button class="icon-button narrow unbounded" tabindex="-1">
+                                            <span class="material-icons">more_vert</span>
+                                        </button>
+                                    </div>
+                                </li>
+                                <p class="body1">Wish I could come, but I’m out of town this weekend.</p>
+                            </ul>
+                            <hr class="divider horizontal">
+                            <div class="list" one lang="zh-Hans">
+                                <span class="material-icons">reply_all</span>
+                                <span class="body1">快速回复</span>
+                            </div>
+                            <div class="app-bar">
+                                <div class="start">
+                                    <button class="icon-button unbounded" tabindex="-1">
+                                        <span class="material-icons">arrow_back</span>
+                                    </button>
+                                </div>
+                                <div class="end">
+                                    <button class="icon-button narrow unbounded" tabindex="-1">
+                                        <span class="material-icons">more_vert</span>
+                                    </button>
+                                    <button class="icon-button unbounded" tabindex="-1">
+                                        <span class="material-icons">check</span>
+                                    </button>
+                                    <button class="icon-button unbounded" tabindex="-1">
+                                        <span class="material-icons">access_time</span>
+                                    </button>
+                                    <button class="icon-button unbounded" tabindex="-1">
+                                        <span class="material-icons">push_pin</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="grid"></div>
+                        </div>
+                        <p class="body1">图标与文字排布在 4dp 网格上。</p>
+                    </div>
+                </section>
+            </article>
+            <hr class="divider horizontal">
+            <article id="containers" class="horizontal">
+                <h5>容器模型</h5>
+            </article>
+            <hr class="divider horizontal">
+            <article id="alignment" class="horizontal">
+                <h5>对齐方式</h5>
+                <section>
+                    <article class="body1">
+                        <p>依据有形或无形的线条有序排列元素能够创造视觉和认知上的连续性，并对信息结构进行进一步的加工处理。</p>
+                        <p>对齐的方式通常为单轴对齐或双轴对齐。</p>
+                    </article>
+                    <div id="alignment-variants" class="diagram-wrapper" screen="mobile tablet">
+                        <div class="simulator" files="main">
+                            <ul>
+                                <li class="subheader">
+                                    <span class="body2">标题</span>
+                                    <span class="body2">所有者</span>
+                                    <span class="body2">最后编辑时间</span>
+                                </li>
+                                <li class="divider horizontal"></li>
+                                <li class="list" one>
+                                    <div class="thumbnail"></div>
+                                    <span class="primary-text body2">Photos</span>
+                                    <span class="secondary-text body1">Sandra Adams</span>
+                                    <span class="secondary-text body1">2014年1月9日</span>
+                                    <button class="icon-button narrow unbounded meta" tabindex="-1">
+                                        <span class="material-icons">more_vert</span>
+                                    </button>
+                                </li>
+                                <li class="list" one>
+                                    <div class="thumbnail"></div>
+                                    <span class="primary-text body2">Recipes</span>
+                                    <span class="secondary-text body1">Sandra Adams</span>
+                                    <span class="secondary-text body1">2014年1月17日</span>
+                                    <button class="icon-button narrow unbounded meta" tabindex="-1">
+                                        <span class="material-icons">more_vert</span>
+                                    </button>
+                                </li>
+                                <li class="list" one>
+                                    <div class="thumbnail"></div>
+                                    <span class="primary-text body2">Work</span>
+                                    <span class="secondary-text body1">Sandra Adams</span>
+                                    <span class="secondary-text body1">2014年1月28日</span>
+                                    <button class="icon-button narrow unbounded meta" tabindex="-1">
+                                        <span class="material-icons">more_vert</span>
+                                    </button>
+                                </li>
+                                <li class="list" one>
+                                    <div class="thumbnail"></div>
+                                    <span class="primary-text body2">Vacation itinerary</span>
+                                    <span class="secondary-text body1">Sandra Adams</span>
+                                    <span class="secondary-text body1">2014年1月20日</span>
+                                    <button class="icon-button narrow unbounded meta" tabindex="-1">
+                                        <span class="material-icons">more_vert</span>
+                                    </button>
+                                </li>
+                                <li class="list" one>
+                                    <div class="thumbnail"></div>
+                                    <span class="primary-text body2">Kitchen remodel</span>
+                                    <span class="secondary-text body1">Sandra Adams</span>
+                                    <span class="secondary-text body1">2014年1月10日</span>
+                                    <button class="icon-button narrow unbounded meta" tabindex="-1">
+                                        <span class="material-icons">more_vert</span>
+                                    </button>
+                                </li>
+                                <li class="list" one>
+                                    <div class="thumbnail"></div>
+                                    <span class="primary-text body2">Project schedule</span>
+                                    <span class="secondary-text body1">Sandra Adams</span>
+                                    <span class="secondary-text body1">2014年1月22日</span>
+                                    <button class="icon-button narrow unbounded meta" tabindex="-1">
+                                        <span class="material-icons">more_vert</span>
+                                    </button>
+                                </li>
+                            </ul>
+                            <div class="app-bar prominent">
+                                <div class="start">
+                                    <button class="icon-button unbounded" tabindex="-1">
+                                        <span class="material-icons">menu</span>
+                                    </button>
+                                </div>
+                                <div class="end">
+                                    <button class="icon-button unbounded" tabindex="-1">
+                                        <span class="material-icons">view_module</span>
+                                    </button>
+                                    <button class="icon-button unbounded" tabindex="-1">
+                                        <span class="material-icons">search</span>
+                                    </button>
+                                </div>
+                                <div class="extra">
+                                    <span class="display1">我的文件</span>
+                                </div>
+                            </div>
+                            <button class="fab" tabindex="-1">
+                                <span class="material-icons">add</span>
+                            </button>
+                            <div class="keylines-container">
+                                <div class="keyline left"></div>
+                                <div class="keyline center"></div>
+                                <div class="keyline left"></div>
+                                <div class="keyline left"></div>
+                                <div class="keyline right"></div>
+                                <div class="keyline right"></div>
+                            </div>
+                        </div>
+                        <p class="body1">运用多种对齐方式整理元素。</p>
+                    </div>
+                </section>
+            </article>
+            <hr class="divider horizontal">
+            <article id="increments" class="horizontal">
+                <h5>增量</h5>
+                <section>
+                    <article class="body1">
+                        <p>增量是用来确定元素尺寸或间隔的工具之一，在基线网格的基础上构建额外的数字与观感韵律。增量的数值通常取应用栏高度的数值，但也可以自定数值。</p>
+                        <p>增量一般在较大的屏幕——如桌面或平板电脑上运用。另外，增量的数值需适应不同的窗口大小。</p>
+                    </article>
+                    <div id="increment-usage" class="diagram-wrapper" screen="tablet">
+                        <div class="simulator" music="details">
+                            <div class="app-bar">
+                                <div class="start">
+                                    <button class="icon-button unbounded" tabindex="-1">
+                                        <span class="material-icons">arrow_back</span>
+                                    </button>
+                                </div>
+                                <div class="end">
+                                    <button class="icon-button narrow unbounded" tabindex="-1">
+                                        <span class="material-icons">more_vert</span>
+                                    </button>
+                                    <button class="icon-button unbounded" tabindex="-1">
+                                        <span class="material-icons">search</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="sheet">
+                                <div class="header">
+                                    <div class="foreground-image"></div>
+                                    <div class="information">
+                                        <div class="list dark" two>
+                                            <span class="primary-text display1">Summer playlist
+                                                <span class="secondary-text subheading">由 Trevor Hansen 创建</span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="controls">
+                                        <button class="icon-button unbounded" tabindex="-1">
+                                            <span class="material-icons">fast_rewind</span>
+                                        </button>
+                                        <button class="icon-button unbounded" tabindex="-1">
+                                            <span class="material-icons">pause</span>
+                                        </button>
+                                        <button class="icon-button unbounded" tabindex="-1">
+                                            <span class="material-icons">fast_forward</span>
+                                        </button>
+                                    </div>
+                                    <button class="fab" tabindex="-1">
+                                        <span class="material-icons">shuffle</span>
+                                    </button>
+                                </div>
+                                <ul>
+                                    <li class="subheader body2">
+                                        <span>标题</span>
+                                        <span>艺术家</span>
+                                        <span>时长</span>
+                                    </li>
+                                    <li class="divider horizontal"></li>
+                                    <li class="list subheading" one>
+                                        <span class="secondary-text">1</span>
+                                        <span class="primary-text">The Game of Love</span>
+                                        <span class="primary-text">Daft Punk</span>
+                                        <span class="secondary-text">3:25</span>
+                                    </li>
+                                    <li class="list subheading" one>
+                                        <span class="secondary-text">2</span>
+                                        <span class="primary-text">Tennis Courts</span>
+                                        <span class="primary-text">Lorde</span>
+                                        <span class="secondary-text">3:41</span>
+                                    </li>
+                                    <li class="list subheading" one>
+                                        <span class="secondary-text">3</span>
+                                        <span class="primary-text">Given the Chance I would</span>
+                                        <span class="primary-text">The Kite String Tangle</span>
+                                        <span class="secondary-text">2:15</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="increments-container">
+                                <div class="increments">
+                                    <div class="unit">
+                                        <span class="body1">1×</span>
+                                    </div>
+                                </div>
+                                <div class="increments">
+                                    <div class="unit half"></div>
+                                    <div class="unit"></div>
+                                    <div class="unit"></div>
+                                    <div class="unit"></div>
+                                    <div class="unit">
+                                        <span class="body1">4.5×</span>
+                                    </div>
+                                </div>
+                                <div class="increments">
+                                    <div class="unit">
+                                        <span class="body1">1×</span>
+                                    </div>
+                                </div>
+                                <div class="increments">
+                                    <div class="unit"></div>
+                                    <div class="unit"></div>
+                                    <div class="unit"></div>
+                                    <div class="unit"></div>
+                                    <div class="unit"></div>
+                                    <div class="unit"></div>
+                                    <div class="unit"></div>
+                                    <div class="unit"></div>
+                                    <div class="unit"></div>
+                                    <div class="unit">
+                                        <span class="body1">10×</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="body1">利用增量安排界面要件的尺寸与间距。</p>
+                    </div>
+                </section>
+            </article>
+            <hr class="divider horizontal">
+            <article id="ratios" class="horizontal">
+                <h5>比例</h5>
+                <section>
+                    <article class="body1">
+                        <p>元素或界面区域的长宽都可以成一定比例，丰富空间秩序的联系。</p>
+                        <p>以下长宽比值较为常用（左右数值可互换），并与网格系统有相当的契合度：</p>
+                        <ul>
+                            <li>16:9</li>
+                            <li>3:2</li>
+                            <li>4:3</li>
+                            <li>1:1</li>
+                        </ul>
+                    </article>
+                    <div id="device-aspect-ratios" class="diagram-wrapper" screen="mobile">
+                        <div class="simulator" inbox="flight">
+                            <div class="hero-image">
+                                <div class="content-block">
+                                    <div class="route">
+                                        <span class="display2">JFK</span>
+                                        <span class="material-icons">flight</span>
+                                        <span class="display2">SFO</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="overlay">
+                                <span class="headline">电子机票确认信息<br>#LDLPMF</span>
+                            </div>
+                            <button class="text-button" tabindex="-1">
+                                <span class="body2">检票登机</span>
+                            </button>
+                            <div class="divider horizontal"></div>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td colspan="3" class="list" two>
+                                            <span class="primary-text body2">维珍美国航空 22<span
+                                                    class="secondary-text body1">周四，四月4号，票号 #45358886</span></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="list" two>
+                                            <span class="primary-text body1">纽约，肯尼迪机场<span
+                                                    class="secondary-text body2">6:05</span></span>
+                                        </td>
+                                        <td class="list" two>
+                                            <span class="primary-text body1">航空站<span
+                                                    class="secondary-text body2">—</span></span>
+                                        </td>
+                                        <td class="list" two>
+                                            <span class="primary-text body1">登机口<span
+                                                    class="secondary-text body2">48</span></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="list" two>
+                                            <span class="primary-text body1">旧金山国际机场<span
+                                                    class="secondary-text body2">14:20</span></span>
+                                        </td>
+                                        <td class="list" two>
+                                            <span class="primary-text body1">航空站<span
+                                                    class="secondary-text body2">—</span></span>
+                                        </td>
+                                        <td class="list" two>
+                                            <span class="primary-text body1">登机口<span
+                                                    class="secondary-text body2">—</span></span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="app-bar">
+                                <div class="start">
+                                    <button class="icon-button unbounded" tabindex="-1">
+                                        <span class="material-icons">arrow_back</span>
+                                    </button>
+                                </div>
+                                <div class="end">
+                                    <button class="icon-button narrow unbounded" tabindex="-1">
+                                        <span class="material-icons">more_vert</span>
+                                    </button>
+                                    <button class="icon-button unbounded" tabindex="-1">
+                                        <span class="material-icons">delete</span>
+                                    </button>
+                                    <button class="icon-button unbounded" tabindex="-1">
+                                        <span class="material-icons">archive</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <button class="fab" tabindex="-1">
+                                <span class="material-icons">reply</span>
+                            </button>
+                            <div class="aspect-ratios-container">
+                                <div class="ratio">
+                                    <span class="body1">3:2</span>
+                                </div>
+                                <div class="ratio">
+                                    <span class="body1">1:1</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="body1">从视窗容器角度设置比例。</p>
+                    </div>
+                    <div id="container-aspect-ratios" class="diagram-wrapper" screen="mobile">
+                        <div class="simulator" inbox="main" lang="en-US">
+                            <div class="app-bar">
+                                <div class="start">
+                                    <button class="icon-button unbounded" tabindex="-1">
+                                        <span class="material-icons">menu</span>
+                                    </button>
+                                    <span class="title">Inbox</span>
+                                </div>
+                                <div class="end">
+                                    <button class="icon-button unbounded" tabindex="-1">
+                                        <span class="material-icons">search</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <ul class="group">
+                                <div class="surfaces">
+                                    <div class="start"></div>
+                                    <div class="center"></div>
+                                    <div class="end"></div>
+                                </div>
+                                <li class="subheader">
+                                    <span class="body2">今天</span>
+                                </li>
+                                <li class="list" two>
+                                    <span class="avatar"></span>
+                                    <span class="primary-text subheading">Brunch this weekend?
+                                        <p class="secondary-text body1">Ali Connors
+                                            <span> — I’ll be in your neighborhood doing errands this weekend if you
+                                                want to meet up for brunch. Let me know.</span>
+                                        </p>
+                                    </span>
+                                </li>
+                                <li class="divider horizontal"></li>
+                                <li class="list" two>
+                                    <span class="avatar"></span>
+                                    <span class="primary-text subheading">Summer BBQ
+                                        <p class="secondary-text body1">至 Alex, Scott, Jennifer
+                                            <span> — Wish I could come, but I’m out of town this weekend.</span>
+                                        </p>
+                                    </span>
+                                </li>
+                                <li class="divider horizontal"></li>
+                                <li class="list" two>
+                                    <span class="avatar"></span>
+                                    <span class="primary-text subheading">Oui oui
+                                        <p class="secondary-text body1">Sandra Adams
+                                            <span> — Do you have Paris recommendations? Have you ever been? (I’m
+                                                sure I’ve asked you this…</span>
+                                        </p>
+                                    </span>
+                                </li>
+                                <li class="divider horizontal"></li>
+                                <li class="list" two>
+                                    <span class="avatar"></span>
+                                    <span class="primary-text subheading">Birthday gift
+                                        <p class="secondary-text body1">Trevor Hansen
+                                            <span> — Have any ideas about what to get Heidi for her birthday?</span>
+                                        </p>
+                                    </span>
+                                </li>
+                                <li class="divider horizontal"></li>
+                                <li class="list" two>
+                                    <span class="avatar"></span>
+                                    <span class="primary-text subheading">Recipe to try
+                                        <p class="secondary-text body1">Britta Holt
+                                            <span> — We should eat this: Grated Squash, Corn and Tomatillo
+                                                tacos.</span>
+                                        </p>
+                                    </span>
+                                </li>
+                                <li class="divider horizontal"></li>
+                                <li class="list" two>
+                                    <span class="avatar"></span>
+                                    <span class="primary-text subheading">Giants game
+                                        <p class="secondary-text body1">David Park
+                                            <span> — Any interest in seeing the Giants play next month?</span>
+                                        </p>
+                                    </span>
+                                </li>
+                                <li class="divider horizontal"></li>
+                                <li>
+                                    <div class="list" two>
+                                        <span class="avatar"></span>
+                                        <span class="primary-text subheading">Montauk weekend
+                                            <p class="secondary-text body1">Scott Masterson
+                                                <span> — Here are the shots I mentioned from this weekend’s trip.</span>
+                                            </p>
+                                        </span>
+                                    </div>
+                                    <div class="attachments">
+                                        <div class="image"></div>
+                                        <div class="image"></div>
+                                        <div class="image"></div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <button class="fab" tabindex="-1">
+                                <span class="material-icons">add</span>
+                            </button>
+                            <aside class="drawer-container on entered" lang="zh-Hans">
+                                <div class="scrim" fill></div>
+                                <nav class="drawer">
+                                    <div class="header">
+                                        <div class="list" two>
+                                            <span class="primary-text body2">Jonathan Lee
+                                                <span class="secondary-text body1">heyfromjonathan@example.com</span>
+                                            </span>
+                                            <button class="icon-button unbounded meta" tabindex="-1">
+                                                <span class="material-icons">arrow_drop_down</span>
+                                            </button>
+                                        </div>
+                                        <span class="avatar"></span>
+                                    </div>
+                                    <li class="primary">
+                                        <a class="list" one="small" states>
+                                            <span class="material-icons">inbox</span>
+                                            <span class="primary-text body2">收件箱</span>
+                                        </a>
+                                        <a class="list" one="small">
+                                            <span class="material-icons">schedule</span>
+                                            <span class="primary-text body2">已延后</span>
+                                        </a>
+                                        <a class="list" one="small">
+                                            <span class="material-icons">check</span>
+                                            <span class="primary-text body2">处理完毕</span>
+                                        </a>
+                                    </li>
+                                    <div class="divider horizontal"></div>
+                                    <li class="primary">
+                                        <a class="list" one="small">
+                                            <span class="material-icons">drafts</span>
+                                            <span class="primary-text body2">草稿</span>
+                                        </a>
+                                        <a class="list" one="small">
+                                            <span class="material-icons">send</span>
+                                            <span class="primary-text body2">已发邮件</span>
+                                        </a>
+                                        <a class="list" one="small">
+                                            <span class="extra-material-icons">reminder</span>
+                                            <span class="primary-text body2">提醒</span>
+                                        </a>
+                                        <a class="list" one="small">
+                                            <span class="material-icons">delete</span>
+                                            <span class="primary-text body2">回收站</span>
+                                        </a>
+                                        <a class="list" one="small">
+                                            <span class="material-icons">report</span>
+                                            <span class="primary-text body2">垃圾邮件</span>
+                                        </a>
+                                    </li>
+                                    <div class="divider horizontal"></div>
+                                    <li class="secondary">
+                                        <a class="list" one="small">
+                                            <span class="primary-text body2">设置</span>
+                                        </a>
+                                        <a class="list" one="small">
+                                            <span class="primary-text body2">帮助与反馈</span>
+                                        </a>
+                                    </li>
+                                    <div class="divider horizontal"></div>
+                                </nav>
+                            </aside>
+                            <div class="aspect-ratios-container">
+                                <div class="ratio">
+                                    <span class="body1">16:9</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="body1">从界面内容器角度设置比例。</p>
+                    </div>
+                </section>
+            </article>
+            <hr class="divider horizontal">
+            <article id="touch-targets" class="horizontal">
+                <h5>触控面积</h5>
+                <section>
+                    <article class="body1">
+                        <p>为了在指点精度较低的触屏设备上保证界面的易用性，可交互元素的尺寸设计应做出相应适配。横纵保留 7-10mm 的触控尺度会较为舒适。</p>
+                        <p>通常，元素触控响应区域的长或宽都不得少于 48dp（约 9mm）。理想情况下，承载层中的元素触控响应区域要比元素区域在任一方向至少大 8dp。</p>
+                    </article>
+                    <div id="icon-button-touch-targets" class="diagram-wrapper" screen="mobile">
+                        <div class="simulator" contacts="detailed">
+                            <div class="portrait-wrapper">
+                                <div class="content-block">
+                                    <span class="display1">Ali Connors</span>
+                                </div>
+                            </div>
+                            <ul>
+                                <li class="list" two>
+                                    <span class="material-icons">call</span>
+                                    <span class="primary-text subheading">(650) 555–1234<span
+                                            class="secondary-text body1">手机</span></span>
+                                    <button class="icon-button unbounded meta" tabindex="-1">
+                                        <span class="material-icons">message</span>
+                                    </button>
+                                </li>
+                                <li class="list" two>
+                                    <span class="primary-text subheading">(323) 555–6789<span
+                                            class="secondary-text body1">单位</span></span>
+                                    <button class="icon-button unbounded meta" tabindex="-1">
+                                        <span class="material-icons">message</span>
+                                    </button>
+                                </li>
+                            </ul>
+                            <div class="divider horizontal"></div>
+                            <ul>
+                                <li class="list" two>
+                                    <span class="material-icons">mail</span>
+                                    <span class="primary-text subheading">aliconnors@example.com<span
+                                            class="secondary-text body1">个人</span></span>
+                                </li>
+                                <li class="list" two>
+                                    <span class="primary-text subheading">ali_connors@example.com<span
+                                            class="secondary-text body1">工作</span></span>
+                                </li>
+                            </ul>
+                            <div class="divider horizontal"></div>
+                            <ul>
+                                <li class="list" three>
+                                    <span class="material-icons">place</span>
+                                    <span class="primary-text subheading" lang="en-US">2000 Main Street<br>San
+                                        Francisco, CA 94112<span class="secondary-text body1"
+                                            lang="zh-Hans">住宅</span></span>
+                                </li>
+                            </ul>
+                            <div class="app-bar">
+                                <div class="start">
+                                    <button class="icon-button unbounded" tabindex="-1">
+                                        <span class="material-icons">arrow_back</span>
+                                    </button>
+                                </div>
+                                <div class="end">
+                                    <button class="icon-button narrow unbounded" tabindex="-1">
+                                        <span class="material-icons">more_vert</span>
+                                    </button>
+                                    <button class="icon-button unbounded" tabindex="-1">
+                                        <span class="material-icons">star_border</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <button id="edit" class="fab" tabindex="-1">
+                                <span class="material-icons">edit</span>
+                            </button>
+                            <div class="touch-areas">
+                                <div class="column">
+                                    <div class="unit"></div>
+                                    <div class="unit"></div>
+                                    <div class="unit"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="unit"></div>
+                                    <div class="unit"></div>
+                                    <div class="unit"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="body1">为按钮设置合适的内边距以增大触控面积。</p>
+                    </div>
+                    <div id="text-button-touch-targets" class="diagram-wrapper" screen="mobile">
+                        <div class="simulator" map="main">
+                            <div class="application">
+                                <div class="map-wrapper"></div>
+                                <div class="search-bar">
+                                    <button class="icon-button unbounded" tabindex="-1">
+                                        <span class="material-icons">menu</span>
+                                    </button>
+                                    <input class="subheading" type="text" placeholder="搜索" tabindex="-1">
+                                    <button class="icon-button unbounded" tabindex="-1">
+                                        <span class="material-icons">mic</span>
+                                    </button>
+                                </div>
+                                <button id="directions" class="fab" tabindex="-1">
+                                    <span class="material-icons">directions</span>
+                                </button>
+                                <button id="my-location" class="fab" tabindex="-1">
+                                    <span class="material-icons">my_location</span>
+                                </button>
+                                <div class="system-layer">
+                                    <div class="dialog-wrapper">
+                                        <div class="dialog">
+                                            <span class="title">要使用位置信息服务吗？</span>
+                                            <div class="content">
+                                                <p class="subheading">
+                                                    使用位置信息服务能帮助应用更快更准确地找到你的位置。即使你的设备上未运行任何应用，该服务也可能会收集此类数据。
+                                                </p>
+                                            </div>
+                                            <div class="actions">
+                                                <button class="text-button body2" tabindex="-1">同意</button>
+                                                <button class="text-button body2" tabindex="-1">拒绝</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="touch-areas">
+                                <div class="column">
+                                    <div class="unit"></div>
+                                    <div class="unit"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="body1">限定按钮的最小尺寸以保证足够的触控面积。</p>
+                    </div>
+                </section>
+            </article>
+        </div>
+
+
+        <footer class="dark">
+            <a states class="left" href="./units-measurements.html">
+                <span class="material-icons">arrow_back</span>
+                <span class="subheading">上一节
+                    <span class="title">单位与度量方法</span>
+                </span>
+            </a>
+            <a states class="right" href="./structure.html">
+                <span class="subheading">下一节
+                    <span class="title">界面结构</span>
+                </span>
+                <span class="material-icons">arrow_forward</span>
+            </a>
+        </footer>
+
+        <div class="app-bar dark">
+            <div class="start">
+                <button id="drawer-trigger" class="icon-button unbounded" tabindex="1">
+                    <span class="material-icons">menu</span>
+                </button>
+            </div>
+            <span class="title">布局 - 元素排布</span>
+            <div class="end">
+                <button id="search-trigger" class="icon-button unbounded" disabled="true">
+                    <span class="material-icons">search</span>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <aside class="drawer-container">
+        <div class="scrim" fill></div>
+        <nav class="drawer body1">
             <figure>
                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <circle cx="12" cy="12" r="12" />
@@ -29,23 +800,23 @@
                 <figcaption class="subheading">MATERIAL DESIGN</figcaption>
             </figure>
             <hr class="divider horizontal">
-            <nav>
+            <li>
                 <span states class="body2" tabindex="0">基本原理</span>
                 <a states href="../index.html">概述</a>
                 <a states href="../material-design/environment.html">环境</a>
                 <a states href="../material-design/material-properties.html">Material 属性</a>
                 <a states href="../material-design/elevation-shadows.html">层级与阴影</a>
-            </nav>
-            <nav>
+            </li>
+            <li class="on unfolded">
                 <span states class="body2" tabindex="0">布局</span>
                 <a states href="../layout/principles.html">架构方法</a>
                 <a states href="../layout/units-measurements.html">单位与度量方法</a>
                 <a states class="activated">元素排布</a>
                 <a states href="../layout/structure.html">界面结构</a>
                 <a states href="../layout/responsive-ui.html">响应式界面</a>
-                <a states href="../layout/density.html">内容密度</a>
-            </nav>
-            <nav>
+                <a states href="../layout/density.html">元素密度</a>
+            </li>
+            <li>
                 <span states class="body2" tabindex="0">风格样式</span>
                 <a states href="../style/color.html">颜色</a>
                 <a states href="../style/icons.html">图标</a>
@@ -53,8 +824,8 @@
                 <a states href="../style/typography.html">字体排印</a>
                 <a states href="../style/writing.html">书面用语</a>
                 <a states href="../style/sound.html">声音</a>
-            </nav>
-            <nav>
+            </li>
+            <li>
                 <span states class="body2" tabindex="0">动画效果</span>
                 <a states href="../motion/material-motion.html">运动机理</a>
                 <a states href="../motion/movement.html">移动</a>
@@ -62,8 +833,8 @@
                 <a states href="../motion/choreography.html">编排</a>
                 <a states href="../motion/responsive-interaction.html">作用反馈</a>
                 <a states href="../motion/creative-customization.html">创意定制</a>
-            </nav>
-            <nav>
+            </li>
+            <li>
                 <span states class="body2" tabindex="0">组件</span>
                 <a states href="../components/bottom-navigation.html">底部导航</a>
                 <a states href="../components/buttons.html">按钮</a>
@@ -87,8 +858,8 @@
                 <a states href="../components/text-fields.html">文本框</a>
                 <a states href="../components/toolbars.html">工具栏</a>
                 <a states href="../components/widgets.html">桌面小部件</a>
-            </nav>
-            <nav>
+            </li>
+            <li>
                 <span states class="body2" tabindex="0">交互模式</span>
                 <a states href="../patterns/confirmation-acknowledgement.html">确认与获知</a>
                 <a states href="../patterns/data-display.html">数据展示</a>
@@ -107,72 +878,22 @@
                 <a states href="../patterns/settings.html">设置</a>
                 <a states href="../patterns/states.html">交互状态</a>
                 <a states href="../patterns/swipe-to-refresh.html">下滑刷新</a>
-            </nav>
-            <nav>
+            </li>
+            <li>
                 <span states class="body2" tabindex="0">可用性</span>
                 <a states href="../usability/accessibility.html">无障碍</a>
                 <a states href="../usability/bidirectionality.html">阅读方向</a>
-            </nav>
-            <nav>
+            </li>
+            <li>
                 <span states class="body2" tabindex="0">发展与用户教育</span>
-            </nav>
-            <nav>
+            </li>
+            <li>
                 <span states class="body2" tabindex="0">资源</span>
-            </nav>
+            </li>
             <a href="../about.html">关于</a>
-        </aside>
+        </nav>
         <div class="divider vertical"></div>
-    </div>
-    <main class="CMD-content">
-        <div class="content-body">
-            <header>
-                <h4>元素排布</h4>
-                <p class="title">借鉴印刷设计利用数学方法及工具来系统地控制界面元素和信息的有无、多少分布，有助于维持视觉美感与内在逻辑的紧密统一，并能显著增强界面的张力与流动性，为用户创造一致、易用的体验。</p>
-            </header>
-            <nav class="chapter-catalogue">
-                <span class="body1">索引</span>
-                <ul class="title">
-                    <li><a href="#baseline-grid">基线网格</a></li>
-                    <li><a href="#spacing">尺寸与位置</a></li>
-                    <li><a href="#increments">增量</a></li>
-                    <li><a href="#ratios">比例</a></li>
-                    <li><a href="#containers">容器裁剪</a></li>
-                    <li><a href="#touch-targets">触控面积</a></li>
-                </ul>
-            </nav>
-        </div>
-
-
-        <footer class="dark">
-            <a states class="left" href="./units-measurements.html">
-                <span class="material-icons">arrow_back</span>
-                <span class="subheading">上一节
-                    <span class="title">单位与度量方法</span>
-                </span>
-            </a>
-            <a states class="right" href="./structure.html">
-                <span class="subheading">下一节
-                    <span class="title">界面结构</span>
-                </span>
-                <span class="material-icons">arrow_forward</span>
-            </a>
-        </footer>
-
-        <div id="progress" class="app-bar dark">
-            <div class="start">
-                <button id="drawer-trigger" class="icon-button unbounded" tabindex="1">
-                    <span class="material-icons">menu</span>
-                </button>
-            </div>
-            <span class="title">布局 - 元素排布</span>
-            <div class="end">
-                <button id="search-trigger" class="icon-button unbounded" disabled="true">
-                    <span class="material-icons">search</span>
-                </button>
-            </div>
-        </div>
-    </main>
-
+    </aside>
 </body>
 
 </html>

@@ -1,4 +1,31 @@
-document.querySelectorAll('.CMD-drawer nav span').forEach((element) => {
+import * as base from "./modules/base.mjs";
+import * as buttons from "./modules/buttons.mjs";
+import * as selectionControls from "./modules/selection-controls.mjs";
+import * as states from "./modules/states.mjs";
+import * as tabs from "./modules/tabs.mjs";
+import * as textFields from "./modules/text-fields.mjs";
+
+
+
+/*导航抽屉*/
+
+const CMDnavigationDrawerContainer = document.querySelector('body>.drawer-container');
+const formerUnfoldedElements = [];
+const formerFoldedElements = [];
+
+CMDnavigationDrawerContainer.querySelectorAll('.drawer li').forEach((element) => {
+    if (element.classList.contains('on')) {
+        formerUnfoldedElements.push(element);
+    } else {
+        formerFoldedElements.push(element);
+    }
+});
+
+document.querySelector('#drawer-trigger').addEventListener('click', () => {
+    CMDnavigationDrawerContainer.classList.add('on', 'entered');
+});
+
+CMDnavigationDrawerContainer.querySelectorAll('.drawer li span').forEach((element) => {
     element.addEventListener('click', () => {
         navigationDrawerItemAction(element);
     });
@@ -11,61 +38,105 @@ document.querySelectorAll('.CMD-drawer nav span').forEach((element) => {
 });
 
 function navigationDrawerItemAction(element) {
-    parentItem = element.parentNode;
-    parentItem.classList.toggle('unfolded');
-    parentItem.removeEventListener('transitionend', navigationDrawerItemHidden);
+    let parentElement = element.parentNode;
+    let stateOn = parentElement.classList.contains('on') ? true : false;
+    let stateUnfolded = parentElement.classList.contains('unfolded') ? true : false;
+    let isFormerUnfoldedElements = formerUnfoldedElements.includes(parentElement);
+    let isFormerFoldedElements = formerFoldedElements.includes(parentElement);
 
-    if (parentItem.classList.contains('on') == false) {
-        parentItem.style.setProperty('--navigation-drawer-rows', parentItem.querySelectorAll('a').length);
-        parentItem.classList.add('on');
-    } else if (parentItem.classList.contains('unfolded') == false) {
-        parentItem.addEventListener('transitionend', navigationDrawerItemHidden);
-    }
-}
-
-function navigationDrawerItemHidden() {
-    if (event.target !== event.currentTarget) {
-        return;
-    }
-    event.target.classList.remove('on');
-}
-
-
-
-document.querySelector('#drawer-trigger').addEventListener('click', () => {
-    document.querySelector('.CMD-drawer-wrapper').classList.add('on', 'enter');
-});
-
-document.querySelector('.CMD-drawer-wrapper').addEventListener('click', (event) => {
-    if (event.currentTarget == event.target) {
-        event.target.classList.remove('enter');
-    }
-});
-
-document.querySelector('.CMD-drawer').addEventListener('transitionend', (event) => {
-    if (event.currentTarget == event.target && event.target.parentNode.classList.contains('enter') == false) {
-        event.target.parentNode.classList.remove('on');
-    }
-});
-
-if (document.querySelector('main>.app-bar').classList.contains('prominent')) {
-    document.querySelector('main>.app-bar').style.setProperty('--scroll-Y', window.scrollY);
-    window.addEventListener('scroll', () => {
-        document.querySelector('main>.app-bar').style.setProperty('--scroll-Y', window.scrollY);
+    parentElement.getAnimations().forEach((animation) => {
+        animation.onfinish = null;
     });
+
+    let primaryLevelHeight = element.getBoundingClientRect().height;
+    let secondaryLevelHeight = parentElement.querySelector('a').getBoundingClientRect().height;
+    let unfoldHeight = primaryLevelHeight + parentElement.querySelectorAll('a').length * secondaryLevelHeight;
+
+    let animationEffect;
+    if (isFormerUnfoldedElements || isFormerFoldedElements) {
+        animationEffect = [
+            { height: isFormerUnfoldedElements ? CSS.px(unfoldHeight) : isFormerFoldedElements ? CSS.px(primaryLevelHeight) : null },
+            { height: stateUnfolded ? CSS.px(primaryLevelHeight) : CSS.px(unfoldHeight) }
+        ];
+    } else {
+        animationEffect = { height: stateUnfolded ? CSS.px(primaryLevelHeight) : CSS.px(unfoldHeight) };
+    }
+
+    parentElement.animate(animationEffect, {
+        duration: stateUnfolded ? 250 : 300,
+        easing: base.STANDARD_CURVE,
+        fill: 'both'
+    }).onfinish = () => {
+        stateUnfolded ? null : parentElement.classList.remove('on');
+    };
+
+    stateOn ? null : parentElement.classList.add('on');
+    stateUnfolded ? parentElement.classList.remove('unfolded') : parentElement.classList.add('unfolded');
+    stateOn = !stateOn;
+    stateUnfolded = !stateUnfolded;
+
+    let formerUnfoldedElementIndex = formerUnfoldedElements.indexOf(parentElement);
+    let formerFoldedElementIndex = formerFoldedElements.indexOf(parentElement);
+    if (formerUnfoldedElementIndex !== -1) {
+        formerUnfoldedElements.splice(formerUnfoldedElementIndex, 1);
+    } else if (formerFoldedElementIndex !== -1) {
+        formerFoldedElements.splice(formerFoldedElementIndex, 1);
+    }
 }
 
-/*
-let Observer = new IntersectionObserver((entries) => {
-    if (entries[0].intersectionRatio > 0) {
-        console.log('a');
-    }
-    console.log('a');
+CMDnavigationDrawerContainer.querySelector('.drawer-container .scrim').addEventListener('click', () => {
+    CMDnavigationDrawerContainer.classList.remove('entered');
 });
 
-document.querySelectorAll('h5').forEach(
-    (element) => { element.Observer.observe(element)}
-);*/
+CMDnavigationDrawerContainer.querySelector('.drawer').addEventListener('transitionend', (event) => {
+    if (event.currentTarget !== event.target || CMDnavigationDrawerContainer.classList.contains('entered')) {
+        return
+    }
+    CMDnavigationDrawerContainer.classList.remove('on');
+});
+
+
+
+window.onresize = () => {
+    if (window.innerWidth > 1576) {
+        CMDnavigationDrawerContainer.classList.remove('on', 'entered');
+    }
+};
+
+
+
+/*章节地址自动填充*/
+/*
+const intersectionObservercallback = (entries) => {
+    if (entries[0].isIntersecting == false) return;
+    window.location.hash = entries[0].target.id;
+}
+
+let intersectionObserverCenter = new IntersectionObserver(intersectionObservercallback, {
+    rootMargin: "-60% 0% -40% 0%"
+});
+
+let intersectionObserverTop = new IntersectionObserver(intersectionObservercallback, {
+    rootMargin: "0% 0% -40% 0%",
+    threshold: 1
+});
+
+let intersectionObserverBottom = new IntersectionObserver(intersectionObservercallback, {
+    rootMargin: "-60% 0% 0% 0%",
+    threshold: 1
+});
+
+document.querySelectorAll('.content-body>article').forEach(
+    (element) => {
+        intersectionObserverCenter.observe(element);
+        intersectionObserverBottom.observe(element);
+    });
+
+intersectionObserverTop.observe(document.querySelector('.chapter-catalogue'));
+*/
+
+
+/*模拟器*/
 
 let simulatorAnimationLoop;
 
@@ -74,12 +145,12 @@ document.querySelectorAll('.simulator[class~=animated], .diagram[class~=animated
 
         if (element.querySelector('video')) {
             if (element.querySelector('video').paused) {
-                element.querySelector('video').play(); 
+                element.querySelector('video').play();
                 element.classList.add('on', 'playing');
-              } else {
-                element.querySelector('video').pause(); 
+            } else {
+                element.querySelector('video').pause();
                 element.classList.remove('on', 'playing');
-              }
+            }
             return;
         }
         if (event.target.classList.contains('on')) {
@@ -101,5 +172,5 @@ function simulatorAnimationEnd() {
     element.classList.remove('playing');
     simulatorAnimationLoop = setTimeout(() => {
         element.classList.add('playing');
-    }, 1000)
+    }, 1000);
 }

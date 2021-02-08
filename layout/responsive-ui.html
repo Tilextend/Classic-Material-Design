@@ -6,20 +6,153 @@
     <meta name="theme-color" content="#212121">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>质感设计 - 响应式界面</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Roboto+Mono:wght@500&family=Roboto:wght@300;400;500;700&display=swap"
         rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
     <link rel="shortcut icon" href="../global/logo.svg">
     <link rel="stylesheet" href="./styles/responsive-ui.css">
     <link rel="stylesheet" href="../global/styles/global.css">
-    <script defer src="../global/scripts/global.js"></script>
-    <script defer src="../global/scripts/components.js"></script>
+    <script defer type="module" src="../global/scripts/global.js"></script>
 </head>
 
 <body>
-    <div class="CMD-drawer-wrapper">
-        <aside class="CMD-drawer body1">
+    <main class="CMD-content">
+        <div class="content-body">
+            <header>
+                <h4>响应式界面</h4>
+                <p class="title">质感设计追求在不同尺寸的设备上都能保证应用的正常功效，并尽善尽美地利用屏幕空间。预先设想界面的行为、流程，再利用网格工具进行布局设计，将使得界面具有高度的流动性与可塑性。
+                </p>
+            </header>
+            <nav class="chapter-catalogue">
+                <span class="body1">索引</span>
+                <ul class="title">
+                    <li><a href="#grid">栅栏</a></li>
+                    <li><a href="#breakpoints">断点</a></li>
+                    <li><a href="#surface-behavior">架构行为</a></li>
+                    <li><a href="#component-behavior">组件行为</a></li>
+                </ul>
+            </nav>
+            <article id="grid" class="horizontal">
+                <h5>栅栏</h5>
+            </article>
+            <hr class="divider horizontal">
+            <article id="breakpoints" class="horizontal">
+                <h5>断点</h5>
+                <section>
+                    <article class="body1">
+                        <p>为了更好地适应与利用不同横纵尺寸的视窗空间，必须针对视窗宽高的特性进行设计。断点则是为宽高各异的视窗划分类别的标准，在特定的横向尺寸或纵向尺寸范围的视窗中施用合适的布局分栏方案。</p>
+                        <p>需要特别注意的是，断点系统并不只适用于视窗的横向尺寸。如在一个纵向尺寸较小的视窗中，即使视窗的横向尺寸较大，界面在纵向的布局安排仍根据断点中的范围特别选用较紧凑的布局分栏设计。</p>
+                    </article>
+                    <table class="body1" lang="en-US">
+                        <thead class="body2" lang="zh-Hans">
+                            <tr>
+                                <th scope="col">断点（dp）</th>
+                                <th scope="col">栏目数</th>
+                                <th scope="col">栏间距（dp）</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>0</th>
+                                <td rowspan="4">4</td>
+                                <td rowspan="4">16</td>
+                            </tr>
+                            <tr>
+                                <th>360</th>
+                            </tr>
+                            <tr>
+                                <th>400</th>
+                            </tr>
+                            <tr>
+                                <th>480</th>
+                            </tr>
+                            <tr>
+                                <th>600</th>
+                                <td rowspan="2">8</td>
+                                <td rowspan="9">24</td>
+                            </tr>
+                            <tr>
+                                <th>720</th>
+                            </tr>
+                            <tr>
+                                <th>840</th>
+                                <td rowspan="7">12</td>
+                            </tr>
+                            <tr>
+                                <th>960</th>
+                            </tr>
+                            <tr>
+                                <th>1024</th>
+                            </tr>
+                            <tr>
+                                <th>1280</th>
+                            </tr>
+                            <tr>
+                                <th>1440</th>
+                            </tr>
+                            <tr>
+                                <th>1600</th>
+                            </tr>
+                            <tr>
+                                <th>1920</th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+            </article>
+            <hr class="divider horizontal">
+            <article id="surface-behavior" class="horizontal">
+                <h5>架构行为</h5>
+                <section>
+                    <article class="body1">
+                        <p>界面的层次或结构同样需要在不同视窗尺寸条件下做出合适的调整。</p>
+                        <p>在横纵任一方向尺寸小于 600dp 的视窗中，概览或详情视图通常会分别显示在单独的界面层级中，并充满整个视窗。相反，在视窗横纵尺寸均大于 600dp
+                            的条件下，概览与详情视图可以并列显示，或仅保留详情视图。</p>
+                        <p>在阅读方向尺寸大于 1600dp 的视窗中，需注意主要视图在阅读方向上的尺寸是否过大，适当固定尺寸、利用居中对齐、留白或引入新的内容填充空间以避免视觉注意力过度分散。</p>
+                    </article>
+                </section>
+            </article>
+            <hr class="divider horizontal">
+            <article id="component-behavior" class="horizontal">
+                <h5>组件行为</h5>
+            </article>
+        </div>
+
+        <footer class="dark">
+            <a states class="left" href="./structure.html">
+                <span class="material-icons">arrow_back</span>
+                <span class="subheading">上一节
+                    <span class="title">界面结构</span>
+                </span>
+            </a>
+            <a states class="right" href="./density.html">
+                <span class="subheading">下一节
+                    <span class="title">元素密度</span>
+                </span>
+                <span class="material-icons">arrow_forward</span>
+            </a>
+        </footer>
+
+        <div class="app-bar dark">
+            <div class="start">
+                <button id="drawer-trigger" class="icon-button unbounded" tabindex="1">
+                    <span class="material-icons">menu</span>
+                </button>
+            </div>
+            <span class="title">布局 - 响应式界面</span>
+            <div class="end">
+                <button id="search-trigger" class="icon-button unbounded" disabled="true">
+                    <span class="material-icons">search</span>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <aside class="drawer-container">
+        <div class="scrim" fill></div>
+        <nav class="drawer body1">
             <figure>
                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <circle cx="12" cy="12" r="12" />
@@ -29,23 +162,23 @@
                 <figcaption class="subheading">MATERIAL DESIGN</figcaption>
             </figure>
             <hr class="divider horizontal">
-            <nav>
+            <li>
                 <span states class="body2" tabindex="0">基本原理</span>
                 <a states href="../index.html">概述</a>
                 <a states href="../material-design/environment.html">环境</a>
                 <a states href="../material-design/material-properties.html">Material 属性</a>
                 <a states href="../material-design/elevation-shadows.html">层级与阴影</a>
-            </nav>
-            <nav>
+            </li>
+            <li class="on unfolded">
                 <span states class="body2" tabindex="0">布局</span>
                 <a states href="../layout/principles.html">架构方法</a>
                 <a states href="../layout/units-measurements.html">单位与度量方法</a>
                 <a states href="../layout/spacing-methods.html">元素排布</a>
                 <a states href="../layout/structure.html">界面结构</a>
                 <a states class="activated">响应式界面</a>
-                <a states href="../layout/density.html">内容密度</a>
-            </nav>
-            <nav>
+                <a states href="../layout/density.html">元素密度</a>
+            </li>
+            <li>
                 <span states class="body2" tabindex="0">风格样式</span>
                 <a states href="../style/color.html">颜色</a>
                 <a states href="../style/icons.html">图标</a>
@@ -53,8 +186,8 @@
                 <a states href="../style/typography.html">字体排印</a>
                 <a states href="../style/writing.html">书面用语</a>
                 <a states href="../style/sound.html">声音</a>
-            </nav>
-            <nav>
+            </li>
+            <li>
                 <span states class="body2" tabindex="0">动画效果</span>
                 <a states href="../motion/material-motion.html">运动机理</a>
                 <a states href="../motion/movement.html">移动</a>
@@ -62,8 +195,8 @@
                 <a states href="../motion/choreography.html">编排</a>
                 <a states href="../motion/responsive-interaction.html">作用反馈</a>
                 <a states href="../motion/creative-customization.html">创意定制</a>
-            </nav>
-            <nav>
+            </li>
+            <li>
                 <span states class="body2" tabindex="0">组件</span>
                 <a states href="../components/bottom-navigation.html">底部导航</a>
                 <a states href="../components/buttons.html">按钮</a>
@@ -87,8 +220,8 @@
                 <a states href="../components/text-fields.html">文本框</a>
                 <a states href="../components/toolbars.html">工具栏</a>
                 <a states href="../components/widgets.html">桌面小部件</a>
-            </nav>
-            <nav>
+            </li>
+            <li>
                 <span states class="body2" tabindex="0">交互模式</span>
                 <a states href="../patterns/confirmation-acknowledgement.html">确认与获知</a>
                 <a states href="../patterns/data-display.html">数据展示</a>
@@ -107,70 +240,22 @@
                 <a states href="../patterns/settings.html">设置</a>
                 <a states href="../patterns/states.html">交互状态</a>
                 <a states href="../patterns/swipe-to-refresh.html">下滑刷新</a>
-            </nav>
-            <nav>
+            </li>
+            <li>
                 <span states class="body2" tabindex="0">可用性</span>
                 <a states href="../usability/accessibility.html">无障碍</a>
                 <a states href="../usability/bidirectionality.html">阅读方向</a>
-            </nav>
-            <nav>
+            </li>
+            <li>
                 <span states class="body2" tabindex="0">发展与用户教育</span>
-            </nav>
-            <nav>
+            </li>
+            <li>
                 <span states class="body2" tabindex="0">资源</span>
-            </nav>
+            </li>
             <a href="../about.html">关于</a>
-        </aside>
+        </nav>
         <div class="divider vertical"></div>
-    </div>
-    <main class="CMD-content">
-        <div class="content-body">
-            <header>
-                <h4>响应式界面</h4>
-                <p class="title">质感设计追求在不同尺寸的设备上都能保证应用的正常功效，并尽善尽美地利用屏幕空间。预先设想界面的行为、流程，凭其利用网格工具进行布局设计，将使得界面具有高度的流动性与可塑性。</p>
-            </header>
-            <nav class="chapter-catalogue">
-                <span class="body1">索引</span>
-                <ul class="title">
-                    <li><a href="#breakpoints">断点</a></li>
-                    <li><a href="#grid">栅栏</a></li>
-                    <li><a href="#surface-behavior">架构行为</a></li>
-                    <li><a href="#component-behavior">组件行为</a></li>
-                </ul>
-            </nav>
-        </div>
-
-
-        <footer class="dark">
-            <a states class="left" href="./structure.html">
-                <span class="material-icons">arrow_back</span>
-                <span class="subheading">上一节
-                    <span class="title">界面结构</span>
-                </span>
-            </a>
-            <a states class="right" href="./density.html">
-                <span class="subheading">下一节
-                    <span class="title">内容密度</span>
-                </span>
-                <span class="material-icons">arrow_forward</span>
-            </a>
-        </footer>
-
-        <div id="progress" class="app-bar dark">
-            <div class="start">
-                <button id="drawer-trigger" class="icon-button unbounded" tabindex="1">
-                    <span class="material-icons">menu</span>
-                </button>
-            </div>
-            <span class="title">布局 - 响应式界面</span>
-            <div class="end">
-                <button id="search-trigger" class="icon-button unbounded" disabled="true">
-                    <span class="material-icons">search</span>
-                </button>
-            </div>
-        </div>
-    </main>
-
+    </aside>
 </body>
 
 </html>

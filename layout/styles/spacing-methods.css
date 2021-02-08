@@ -2,16 +2,336 @@
   正文
 \*------------------------------------*/
 
+:is(#normal-baseline-grid, #type-baseline-grid) .diagram {
+  height: 640px;
+  flex-direction: column;
+  justify-content: unset;
+  background-color: unset;
+  background-image: unset;
+}
 
+#normal-baseline-grid .background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(157, 194, 232, 0.25);
+}
+
+#normal-baseline-grid .surface:nth-child(2) {
+  position: relative;
+  width: calc(100% - 16px);
+  height: 48px;
+  border-radius: 2px;
+  margin: 8px 0;
+  background-color: var(--medium-emphasis-surface-color);
+  box-shadow: var(--shadow-z2);
+}
+
+#normal-baseline-grid .surface:nth-child(3) {
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  height: calc(100% - 64px - 6 * 56px);
+  background-color: var(--medium-emphasis-surface-color);
+  box-shadow: var(--shadow-z2);
+}
+
+#normal-baseline-grid .surface:nth-child(4) {
+  right: 16px;
+  bottom: calc(100% - 64px - 6 * 56px - 28px);
+  position: absolute;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: var(--high-emphasis-surface-color);
+  box-shadow: var(--shadow-z4);
+}
+
+#normal-baseline-grid .grid {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: calc(100% - 1px) 100%;
+  background-image: repeating-linear-gradient(0deg, transparent, transparent 7.5px, #FF4081 7.5px, #FF4081 8px), repeating-linear-gradient(-90deg, transparent, transparent 7.5px, #FF4081 7.5px, #FF4081 8px);
+  opacity: 0.3;
+}
+
+:is(#type-baseline-grid, #container-aspect-ratios) .app-bar {
+  background-color: transparent;
+}
+
+#type-baseline-grid .list[two] .avatar {
+  background-color: rgba(157, 194, 232, 0.15);
+}
+
+#type-baseline-grid .grid {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: 100% 100%;
+  background-image: repeating-linear-gradient(0deg, transparent, transparent 3.5px, #FF4081 3.5px, #FF4081 4px);
+  opacity: 0.2;
+}
+
+#alignment-variants .app-bar {
+  background-color: #eeeeee;
+}
+
+#alignment-variants .fab {
+  top: calc(2 * var(--increment) - 4px);
+  background-color: var(--high-emphasis-surface-color);
+}
+
+#alignment-variants .thumbnail {
+  background-color: rgba(157, 194, 232, 0.25);
+}
+
+#alignment-variants .keyline:nth-child(1), #alignment-variants .keyline:nth-child(3), #alignment-variants .keyline:nth-child(6) {
+  width: var(--keyline);
+}
+
+#alignment-variants .keyline:nth-child(2) {
+  width: calc(2 * var(--keyline) + 8px);
+}
+
+#alignment-variants .keyline:nth-child(4) {
+  display: none;
+  width: calc(100% - 5 * var(--keyline) - 340px);
+}
+
+#alignment-variants .keyline:nth-child(5) {
+  display: none;
+  width: calc(var(--keyline) + 12px);
+  margin-left: auto;
+}
+
+#alignment-variants .keyline:nth-child(6) {
+  margin-left: auto;
+}
+
+:is(#increment-usage, #container-aspect-ratios) .simulator {
+  background: radial-gradient(circle at top left, rgba(0, 0, 0, 0) calc(1 / 3 * 100%), rgba(0, 0, 0, 0.01) calc(7 / 9 * 100%), rgba(0, 0, 0, 0.02) 100%);
+  background-color: #eeeeee;
+}
+
+#increment-usage .foreground-image {
+  background-color: rgba(157, 194, 232, 0.25);
+}
+
+#increment-usage .information {
+  background-color: #cccccc;
+}
+
+#increment-usage .controls {
+  background-color: var(--high-emphasis-surface-color);
+}
+
+#increment-usage .increments:nth-child(1), #increment-usage .increments:nth-child(4) {
+  align-self: center;
+}
+
+#increment-usage .increments:nth-child(2) {
+  align-self: center;
+  margin-right: calc(5.5 * var(--increment));
+}
+
+#increment-usage .increments:nth-child(3) {
+  align-self: center;
+  margin-top: calc(2.5 * var(--increment));
+  margin-left: calc(3.5 * var(--increment));
+}
+
+#device-aspect-ratios .hero-image {
+  background-color: rgba(157, 194, 232, 0.25);
+}
+
+#device-aspect-ratios .hero-image {
+  padding-top: initial;
+}
+
+#device-aspect-ratios .route {
+  color: var(--secondary-text-color);
+}
+
+#device-aspect-ratios .overlay {
+  background-color: rgba(77, 77, 77, 0.1);
+}
+
+#device-aspect-ratios .text-button {
+  color: var(--primary-text-color);
+}
+
+#device-aspect-ratios .fab {
+  bottom: var(--keyline);
+}
+
+#device-aspect-ratios .ratio:nth-child(1) {
+  aspect-ratio: 3/2;
+}
+
+#device-aspect-ratios .ratio:nth-child(2) {
+  height: 120px;
+}
+
+#container-aspect-ratios .header {
+  background-color: rgba(157, 194, 232, 0.25);
+}
+
+#container-aspect-ratios .avatar {
+  background-color: #757575;
+}
+
+#container-aspect-ratios .fab {
+  bottom: var(--keyline);
+  background-color: var(--high-emphasis-surface-color);
+}
+
+#container-aspect-ratios .title {
+  color: var(--primary-text-color);
+}
+
+#container-aspect-ratios .subheader {
+  color: var(--primary-text-color);
+}
+
+#container-aspect-ratios .drawer li:first-of-type a {
+  --primary-text-color: inherit;
+  --secondary-text-color: inherit;
+}
+
+#container-aspect-ratios li .image {
+  width: 72px;
+  background-color: rgba(157, 194, 232, 0.15);
+}
+
+#container-aspect-ratios .ratio {
+  width: calc(100% - var(--increment));
+  height: auto;
+  aspect-ratio: 16/9;
+}
+
+#icon-button-touch-targets .portrait-wrapper {
+  background-color: rgba(157, 194, 232, 0.25);
+}
+
+#icon-button-touch-targets .content-block span, #icon-button-touch-targets li:first-of-type>span:first-of-type {
+  color: var(--secondary-text-color);
+}
+
+#icon-button-touch-targets #edit {
+  color: var(--secondary-text-color);
+  background-color: var(--high-emphasis-surface-color);
+}
+
+#icon-button-touch-targets .column {
+  height: var(--increment);
+  align-items: center;
+  padding: 0  calc(var(--keyline) - 12px);
+}
+
+#icon-button-touch-targets .unit {
+  width: 48px;
+  height: 48px;
+}
+
+#icon-button-touch-targets .column .unit:nth-child(2) {
+  margin-left: auto;
+}
+
+#icon-button-touch-targets .column .unit:nth-child(3) {
+  width: 36px;
+}
+
+#icon-button-touch-targets .row {
+  flex-direction: column;
+  align-items: center;
+  align-self: flex-end;
+  margin-top: 180px;
+  margin-right: var(--keyline);
+}
+
+#icon-button-touch-targets .row .unit {
+  margin-bottom: 24px;
+}
+
+#icon-button-touch-targets .row .unit:nth-child(1) {
+  width: 56px;
+  height: 56px;
+  margin-bottom: 20px;
+}
+
+#text-button-touch-targets .search-bar {
+  margin-top: 8px;
+}
+
+#text-button-touch-targets #directions {
+  color: var(--secondary-text-color);
+  background-color: var(--high-emphasis-surface-color);
+  bottom: var(--keyline);
+}
+
+#text-button-touch-targets #my-location {
+  bottom: calc(56px + 2 * var(--keyline));
+}
+
+#text-button-touch-targets .dialog-wrapper {
+  padding-top: 24px;
+}
+
+#text-button-touch-targets .touch-areas {
+  flex-direction: initial;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+#text-button-touch-targets .column {
+  height: 236px;
+  margin: 0 40px;
+  padding: 2px 8px;
+  align-items: flex-end;
+}
+
+#text-button-touch-targets .unit {
+  width: 68px;
+  height: 48px;
+}
+
+@media screen and (min-width: 921px) {
+  #alignment-variants .fab {
+    top: calc(2 * var(--increment) - var(--keyline) + 12px);
+  }
+  #alignment-variants .keyline:nth-child(4), #alignment-variants .keyline:nth-child(5) {
+    display: flex;
+  }
+  #alignment-variants .keyline:nth-child(6) {
+    margin-left: unset;
+  }
+}
 
 /*------------------------------------*\
   主题
 \*------------------------------------*/
 
 :root {
-    --primary-color: #AD1457;
+  --primary-color: #AD1457;
 }
 
 .CMD-content>.app-bar>button, footer {
-    --states-parameter: 2;
+  --states-parameter: 2;
+}
+
+@media (prefers-color-scheme: dark) {
+  body>aside>nav, .content-body {
+    --primary-color: #E91E63;
+  }
+  #alignment-variants .app-bar {
+    background-color: var(--low-emphasis-surface-color);
+  }
+  :is(#increment-usage, #container-aspect-ratios) .simulator {
+    background: radial-gradient(circle at top left, rgba(0, 0, 0, 0) calc(1 / 3 * 100%), rgba(0, 0, 0, 0.04) calc(7 / 9 * 100%), rgba(0, 0, 0, 0.08) 100%);
+    background-color: #212121;
+  }
+  #increment-usage .information {
+    background-color: #121212;
+  }
 }

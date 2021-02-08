@@ -1,0 +1,131 @@
+/*------------------------------------*\
+  导航抽屉
+\*------------------------------------*/
+
+.drawer-container {
+    --states-overlay-level: 0;
+    position: fixed;
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.drawer-container[class~=entered] {
+    pointer-events: auto;
+}
+
+.drawer-container:not(.entered) .scrim {
+    opacity: 0;
+}
+
+.drawer-container[class~=on] .scrim {
+    transition-property: opacity;
+    transition-timing-function: linear;
+    transition-duration: 195ms;
+}
+
+.drawer-container[class~=entered] .scrim {
+    transition-duration: 225ms;
+}
+
+.drawer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - var(--increment));
+    max-width: 320px;
+    background-color: var(--high-emphasis-surface-color);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    transition-timing-function: var(--sharp-curve);
+    transition-duration: 195ms;
+}
+
+.drawer-container[class~=on] .drawer {
+    visibility: visible;
+    box-shadow: var(--shadow-z16);
+    transition-property: transform;
+}
+
+.drawer-container[class~=entered] .drawer {
+    transform: translateX(0%);
+    transition-timing-function: var(--deceleration-curve);
+    transition-duration: 225ms;
+}
+
+.drawer .header {
+    position: relative;
+    aspect-ratio: 16/9;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.drawer .header img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.drawer .header .list {
+    grid-template-columns: auto 48px;
+    padding-left: var(--keyline);
+    padding-right: calc(var(--keyline) / 2 - 4px);
+    margin-top: auto;
+}
+
+.drawer .header .list[two] .meta {
+    align-self: end;
+    margin-bottom: 2px;
+}
+
+.drawer .header .avatar {
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: var(--keyline);
+}
+
+.drawer .scrim {
+    height: var(--increment);
+    opacity: 0.2;
+}
+
+.drawer li {
+    padding: 8px 0;
+}
+
+.drawer li a {
+    position: relative;
+    padding: 0 var(--keyline);
+}
+
+.drawer .primary a {
+    grid-template-columns: 56px auto;
+}
+
+/*------------------------------------*\
+  特别修改
+\*------------------------------------*/
+
+.simulator .drawer-container {
+    position: absolute;
+}
+
+.simulator .drawer-container .drawer, .simulator .drawer-container .scrim {
+    transition: none;
+}
+
+.drawer .status-bar-background {
+    position: absolute;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.application .drawer .header .avatar {
+    margin-top: calc(24px + var(--keyline));
+}
+
+.drawer .header img {
+    image-rendering: auto;
+}

@@ -58,7 +58,7 @@ button {
 .fab {
     position: absolute;
     width: 56px;
-    height: 56px;
+    aspect-ratio: 1/1;
     border-radius: 50%;
     color: var(--secondary-text-color);
     background-color: var(--secondary-color, var(--high-emphasis-surface-color));
@@ -70,7 +70,6 @@ button {
 
 .fab[class~=mini] {
     width: 40px;
-    height: 40px;
 }
 
 .fab[class~=pressed] {

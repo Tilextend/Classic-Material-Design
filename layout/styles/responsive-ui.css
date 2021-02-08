@@ -2,7 +2,9 @@
   正文
 \*------------------------------------*/
 
-
+#breakpoints table {
+  grid-column-end: span min(var(--max-block), 2);
+}
 
 /*------------------------------------*\
   主题
@@ -14,4 +16,10 @@
 
 .CMD-content>.app-bar>button, footer {
     --states-parameter: 2;
+}
+
+@media (prefers-color-scheme: dark) {
+  body>aside>nav, .content-body {
+    --primary-color: #E91E63;
+  }
 }

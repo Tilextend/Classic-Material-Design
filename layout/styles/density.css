@@ -17,3 +17,9 @@
 footer .right {
   --primary-color: #00897b;
 }
+
+@media (prefers-color-scheme: dark) {
+  body>aside>nav, .content-body {
+    --primary-color: #E91E63;
+  }
+}

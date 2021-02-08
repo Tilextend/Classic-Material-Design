@@ -6,20 +6,107 @@
     <meta name="theme-color" content="#212121">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>质感设计 - 编排</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Roboto+Mono:wght@500&family=Roboto:wght@300;400;500;700&display=swap"
         rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
     <link rel="shortcut icon" href="../global/logo.svg">
     <link rel="stylesheet" href="./styles/choreography.css">
     <link rel="stylesheet" href="../global/styles/global.css">
-    <script defer src="../global/scripts/global.js"></script>
-    <script defer src="../global/scripts/components.js"></script>
+    <script defer type="module" src="../global/scripts/global.js"></script>
 </head>
 
 <body>
-    <div class="CMD-drawer-wrapper">
-        <aside class="CMD-drawer body1">
+    <main class="CMD-content">
+        <div class="content-body">
+            <header>
+                <h4>编排</h4>
+                <p class="title">精心编排的动画体现秩序之美，既能有效引导用户的注意力，凸显特定的流程或结果，又能避免因布局重排而使用户不知所措。</p>
+            </header>
+            <nav class="chapter-catalogue">
+                <span class="body1">索引</span>
+                <ul class="title">
+                    <li><a href="#continuity">连贯性</a></li>
+                    <li><a href="#sequencing">规律性</a></li>
+                    <li><a href="#consistent">一致性</a></li>
+                </ul>
+            </nav>
+            <article id="continuity" class="horizontal">
+                <h5>连贯性</h5>
+                <section>
+                    <article class="body1">
+                        <p>视觉形态的转换应该清晰，平滑且易于理解。经过精心设计的转场能告知用户需要将注意力集中在哪里。</p>
+                        <p>过渡动画中的元素种类：</p>
+                        <ul>
+                            <li><strong>进场元素：</strong>新生成、转化、进入的元素。</li>
+                            <li><strong>退场元素：</strong>不再与新界面情境相关联的元素。</li>
+                            <li><strong>共享元素：</strong>在新旧界面都持续存在的元素。</li>
+                        </ul>
+                    </article>
+                </section>
+                <section>
+                    <article class="body1">
+                        <h6>共享元素</h6>
+                        <p>转场需要一个清晰的视觉焦点，谨慎选择转场需要的共享元素的数量和类型。当有多个共享元素时，根据情况可以令部分共享元素先消失，而后跟随新元素出现，以维持视觉焦点的连贯。</p>
+                    </article>
+                </section>
+                <section>
+                    <article class="body1">
+                        <h6>布局预设</h6>
+                        <p>如果转场完成时，部分元素仍未完成加载，应当为其保留应有的空间。这样当元素最终出现时，可以避免其它内容的位置跳动，也就避免了用户点击时因内容跳动造成的误操作。</p>
+                    </article>
+                </section>
+            </article>
+            <hr class="divider horizontal">
+            <article id="sequencing" class="horizontal">
+                <h5>规律性</h5>
+                <section>
+                    <article class="body1">
+                        <p>在构建转场动画时需考虑元素移动的顺序和时间。 确保动画体现信息层次结构，通过引导视觉焦点来传达核心内容。</p>
+                        <p>重要的元素先变动，不重要的元素后变动。并且确保元素变换衔接流畅，从而避免脱节感。</p>
+                    </article>
+                </section>
+            </article>
+            <hr class="divider horizontal">
+            <article id="consistent" class="horizontal">
+                <h5>一致性</h5>
+            </article>
+        </div>
+
+        <footer class="dark">
+            <a states class="left" href="./transforming-material.html">
+                <span class="material-icons">arrow_back</span>
+                <span class="subheading">上一节
+                    <span class="title">转换</span>
+                </span>
+            </a>
+            <a states class="right" href="./responsive-interaction.html">
+                <span class="subheading">下一节
+                    <span class="title">作用反馈</span>
+                </span>
+                <span class="material-icons">arrow_forward</span>
+            </a>
+        </footer>
+
+        <div class="app-bar dark">
+            <div class="start">
+                <button id="drawer-trigger" class="icon-button unbounded" tabindex="1">
+                    <span class="material-icons">menu</span>
+                </button>
+            </div>
+            <span class="title">动画效果 - 编排</span>
+            <div class="end">
+                <button id="search-trigger" class="icon-button unbounded" disabled="true">
+                    <span class="material-icons">search</span>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <aside class="drawer-container">
+        <div class="scrim" fill></div>
+        <nav class="drawer body1">
             <figure>
                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <circle cx="12" cy="12" r="12" />
@@ -29,23 +116,23 @@
                 <figcaption class="subheading">MATERIAL DESIGN</figcaption>
             </figure>
             <hr class="divider horizontal">
-            <nav>
+            <li>
                 <span states class="body2" tabindex="0">基本原理</span>
                 <a states href="../index.html">概述</a>
                 <a states href="../material-design/environment.html">环境</a>
                 <a states href="../material-design/material-properties.html">Material 属性</a>
                 <a states href="../material-design/elevation-shadows.html">层级与阴影</a>
-            </nav>
-            <nav>
+            </li>
+            <li>
                 <span states class="body2" tabindex="0">布局</span>
                 <a states href="../layout/principles.html">架构方法</a>
                 <a states href="../layout/units-measurements.html">单位与度量方法</a>
                 <a states href="../layout/spacing-methods.html">元素排布</a>
                 <a states href="../layout/structure.html">界面结构</a>
                 <a states href="../layout/responsive-ui.html">响应式界面</a>
-                <a states href="../layout/density.html">内容密度</a>
-            </nav>
-            <nav>
+                <a states href="../layout/density.html">元素密度</a>
+            </li>
+            <li>
                 <span states class="body2" tabindex="0">风格样式</span>
                 <a states href="../style/color.html">颜色</a>
                 <a states href="../style/icons.html">图标</a>
@@ -53,8 +140,8 @@
                 <a states href="../style/typography.html">字体排印</a>
                 <a states href="../style/writing.html">书面用语</a>
                 <a states href="../style/sound.html">声音</a>
-            </nav>
-            <nav>
+            </li>
+            <li class="on unfolded">
                 <span states class="body2" tabindex="0">动画效果</span>
                 <a states href="../motion/material-motion.html">运动机理</a>
                 <a states href="../motion/movement.html">移动</a>
@@ -62,8 +149,8 @@
                 <a states class="activated">编排</a>
                 <a states href="../motion/responsive-interaction.html">作用反馈</a>
                 <a states href="../motion/creative-customization.html">创意定制</a>
-            </nav>
-            <nav>
+            </li>
+            <li>
                 <span states class="body2" tabindex="0">组件</span>
                 <a states href="../components/bottom-navigation.html">底部导航</a>
                 <a states href="../components/buttons.html">按钮</a>
@@ -87,8 +174,8 @@
                 <a states href="../components/text-fields.html">文本框</a>
                 <a states href="../components/toolbars.html">工具栏</a>
                 <a states href="../components/widgets.html">桌面小部件</a>
-            </nav>
-            <nav>
+            </li>
+            <li>
                 <span states class="body2" tabindex="0">交互模式</span>
                 <a states href="../patterns/confirmation-acknowledgement.html">确认与获知</a>
                 <a states href="../patterns/data-display.html">数据展示</a>
@@ -107,69 +194,22 @@
                 <a states href="../patterns/settings.html">设置</a>
                 <a states href="../patterns/states.html">交互状态</a>
                 <a states href="../patterns/swipe-to-refresh.html">下滑刷新</a>
-            </nav>
-            <nav>
+            </li>
+            <li>
                 <span states class="body2" tabindex="0">可用性</span>
                 <a states href="../usability/accessibility.html">无障碍</a>
                 <a states href="../usability/bidirectionality.html">阅读方向</a>
-            </nav>
-            <nav>
+            </li>
+            <li>
                 <span states class="body2" tabindex="0">发展与用户教育</span>
-            </nav>
-            <nav>
+            </li>
+            <li>
                 <span states class="body2" tabindex="0">资源</span>
-            </nav>
+            </li>
             <a href="../about.html">关于</a>
-        </aside>
+        </nav>
         <div class="divider vertical"></div>
-    </div>
-    <main class="CMD-content">
-        <div class="content-body">
-            <header>
-                <h4>编排</h4>
-                <p class="title">精心编排的动画体现秩序之美，既能有效引导用户的注意力，凸显特定的流程或结果，又能避免因重新布局而使用户不知所措。</p>
-            </header>
-            <nav class="chapter-catalogue">
-                <span class="body1">索引</span>
-                <ul class="title">
-                    <li><a href="#continuity">连贯性</a></li>
-                    <li><a href="#sequencing">规律性</a></li>
-                    <li><a href="#consistent">一致性</a></li>
-                </ul>
-            </nav>
-        </div>
-
-
-        <footer class="dark">
-            <a states class="left" href="./transforming-material.html">
-                <span class="material-icons">arrow_back</span>
-                <span class="subheading">上一节
-                    <span class="title">转换</span>
-                </span>
-            </a>
-            <a states class="right" href="./responsive-interaction.html">
-                <span class="subheading">下一节
-                    <span class="title">作用反馈</span>
-                </span>
-                <span class="material-icons">arrow_forward</span>
-            </a>
-        </footer>
-
-        <div id="progress" class="app-bar dark">
-            <div class="start">
-                <button id="drawer-trigger" class="icon-button unbounded" tabindex="1">
-                    <span class="material-icons">menu</span>
-                </button>
-            </div>
-            <span class="title">动画效果 - 编排</span>
-            <div class="end">
-                <button id="search-trigger" class="icon-button unbounded" disabled="true">
-                    <span class="material-icons">search</span>
-                </button>
-            </div>
-        </div>
-    </main>
-
+    </aside>
 </body>
 
 </html>

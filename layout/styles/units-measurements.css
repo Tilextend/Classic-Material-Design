@@ -2,16 +2,32 @@
   正文
 \*------------------------------------*/
 
+#high-density, #low-density {
+  grid-column-end: span min(var(--max-block), 2);
+}
 
+#high-density img, #low-density img {
+  width: 100%;
+}
+
+#low-density {
+  grid-column-start: max(1, calc(var(--max-block) - 1));
+}
 
 /*------------------------------------*\
   主题
 \*------------------------------------*/
 
 :root {
-    --primary-color: #AD1457;
+  --primary-color: #AD1457;
 }
 
 .CMD-content>.app-bar>button, footer {
-    --states-parameter: 2;
+  --states-parameter: 2;
+}
+
+@media (prefers-color-scheme: dark) {
+  body>aside>nav, .content-body {
+      --primary-color: #E91E63;
+  }
 }

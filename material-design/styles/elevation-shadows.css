@@ -6,13 +6,13 @@
   grid-column-end: span min(var(--max-block), 2);
 }
 
-#absolute-elevation .diagram, #relative-elevation .diagram {
+:is(#absolute-elevation, #relative-elevation) .diagram {
   height: 480px;
-  flex-direction: row;
   padding: 0 20px;
+  align-items: unset;
 }
 
-#absolute-elevation .wrapper, #relative-elevation .wrapper {
+:is(#absolute-elevation, #relative-elevation) .wrapper {
   flex-basis: 100%;
   display: flex;
   flex-direction: column;
@@ -41,7 +41,7 @@
   flex-basis: 100%;
 }
 
-#relative-elevation .wrapper>.surface {
+#relative-elevation .surface {
   position: relative;
   width: 250px;
   height: 324px;
@@ -53,7 +53,7 @@
   box-shadow: var(--shadow-z16);
 }
 
-#relative-elevation .wrapper>.surface>.surface {
+#relative-elevation .surface>.surface {
   position: relative;
   width: 80px;
   height: 36px;
@@ -63,50 +63,43 @@
   box-shadow: var(--shadow-z2);
 }
 
-#without-shadow .diagram, #similar-shadow .diagram, #distinguishable-shadow .diagram {
+:is(#without-shadow, #similar-shadow, #distinguishable-shadow) .diagram {
   height: 240px;
   align-items: flex-start;
-  background-color: #f5f5f5;
+  background-color: #e0e0e0;
 }
 
-#without-shadow .surface, #similar-shadow .surface, #distinguishable-shadow .surface {
+:is(#without-shadow, #similar-shadow, #distinguishable-shadow) .surface:nth-child(1) {
+  position: relative;
   width: 100%;
   height: 168px;
-  background-color: #2196F3;
+  background-color: var(--low-emphasis-surface-color);
 }
 
-#without-shadow .fab, #similar-shadow .fab, #distinguishable-shadow .fab {
+:is(#without-shadow, #similar-shadow, #distinguishable-shadow) .surface:nth-child(2) {
   top: 140px;
   right: 16px;
-  background-color: #FFC400;
+  position: absolute;
+  width: 56px;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background-color: var(--high-emphasis-surface-color);
 }
 
-#without-shadow .fab {
-  box-shadow: none;
-}
-
-#without-shadow .fab::after {
-  content: none;
-}
-
-#similar-shadow .surface, #distinguishable-shadow .surface {
+#similar-shadow .surface, #distinguishable-shadow .surface:nth-child(1) {
   box-shadow: var(--shadow-z2);
 }
 
-#similar-shadow .fab {
-  box-shadow: var(--shadow-z2);
+#distinguishable-shadow .surface:nth-child(2) {
+  box-shadow: var(--shadow-z6);
 }
 
-#similar-shadow .fab, #distinguishable-shadow .fab {
-  --surface-hint-color: rgba(255, 255, 255, 0.2);
-  --surface-shade-color: rgba(38, 50, 56, 0.2);
-}
-
-#motion-without-shadow .diagram, #motion-different-shadow .diagram, #motion-same-shadow .diagram {
+:is(#motion-without-shadow, #motion-different-shadow, #motion-same-shadow) .diagram {
   aspect-ratio: 1/1;
 }
 
-#motion-without-shadow .surface, #motion-different-shadow .surface, #motion-same-shadow .surface {
+:is(#motion-without-shadow, #motion-different-shadow, #motion-same-shadow) .surface {
   position: relative;
   width: 125px;
   aspect-ratio: 1/1;
@@ -114,26 +107,26 @@
   background-color: var(--high-emphasis-surface-color);
 }
 
-#motion-different-shadow .surface, #motion-same-shadow .surface {
+:is(#motion-different-shadow, #motion-same-shadow) .surface {
   box-shadow: var(--shadow-z2);
 }
 
-#motion-without-shadow>.playing, #motion-different-shadow>.playing, #motion-same-shadow>.playing {
+:is(#motion-without-shadow, #motion-different-shadow, #motion-same-shadow) .playing {
   animation-duration: 4s;
 }
 
-#motion-without-shadow>.playing .surface, #motion-different-shadow>.playing .surface, #motion-same-shadow>.playing .surface {
+:is(#motion-without-shadow, #motion-different-shadow, #motion-same-shadow) .surface {
   animation-duration: 750ms;
   animation-delay: 0.5s, 2.5s;
   animation-timing-function: var(--standard-curve);
   animation-fill-mode: forwards;
 }
 
-#motion-without-shadow>.playing .surface, #motion-same-shadow>.playing .surface {
+:is(#motion-without-shadow, #motion-same-shadow) .playing .surface {
   animation-name: motionWithoutShadow1, motionWithoutShadow2;
 }
 
-#motion-different-shadow>.playing .surface {
+#motion-different-shadow .playing .surface {
   animation-name: motionDifferentShadow1, motionDifferentShadow2;
 }
 
@@ -177,6 +170,87 @@
   }
 }
 
+#color-overlap .clear-ripple {
+  width: 848.528px;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  background-color: #00bcd4;
+  position: absolute;
+  border-radius: 50%;
+  align-self: center;
+  transform: translate(120px, -124.264px) scale(0.5);
+}
+
+:is(#assembled, #separated) .diagram {
+  height: 480px;
+  flex-direction: column;
+  align-items: unset;
+  justify-content: unset;
+}
+
+:is(#assembled, #separated) .surface {
+  position: relative;
+}
+
+:is(#assembled, #separated)>.playing {
+  animation-duration: 5s;
+}
+
+#separated .surface:nth-child(1) {
+  top: 56px;
+  position: absolute;
+  width: 100%;
+  background-color: var(--medium-emphasis-surface-color);
+}
+
+#separated>.playing .surface:nth-child(1) {
+  animation-name: separated1, separated2;
+  animation-duration: 2s;
+  animation-delay: 0.5s, 3s;
+  animation-timing-function: var(--standard-curve);
+  animation-fill-mode: forwards;
+}
+
+@keyframes separated1 {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes separated2 {
+  0% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+#separated .surface:nth-child(2) {
+  order: -1;
+  height: 56px;
+  background-color: var(--low-emphasis-surface-color);
+  box-shadow: var(--shadow-z2);
+}
+
+#separated hr {
+  margin-top: 72px;
+}
+
+#separated .surface:nth-child(3) {
+  right: 16px;
+  bottom: 16px;
+  position: absolute;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: #2196F3;
+  box-shadow: var(--shadow-z4);
+}
+
 /*------------------------------------*\
   主题
 \*------------------------------------*/
@@ -191,4 +265,10 @@
 
 footer .right {
   --primary-color: #ad1457;
+}
+
+@media (prefers-color-scheme: dark) {
+  :is(#without-shadow, #similar-shadow, #distinguishable-shadow) .diagram {
+    background-color: #121212;
+  }
 }
