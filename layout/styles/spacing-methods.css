@@ -114,6 +114,10 @@
   background-color: #eeeeee;
 }
 
+#increment-usage .header {
+  background-color: var(--medium-emphasis-surface-color);
+}
+
 #increment-usage .foreground-image {
   background-color: rgba(157, 194, 232, 0.25);
 }
@@ -123,6 +127,7 @@
 }
 
 #increment-usage .controls {
+  color: var(--secondary-text-color);
   background-color: var(--high-emphasis-surface-color);
 }
 

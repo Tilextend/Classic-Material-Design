@@ -428,11 +428,11 @@ article[class~=intro] {
     grid-column-end: span min(2, var(--max-block));
 }
 
-section>p, section article, .diagram-wrapper>p {
+:is(section, .diagram-wrapper)>p, :is(section, .diagram-wrapper)>ol, section article {
     user-select: text;
 }
 
-section p:not(:last-of-type), article p:not(:last-of-type) {
+:is(section, article) p:not(:last-of-type), .diagram-wrapper ol:not(:last-of-type) {
     margin-bottom: 23px;
 }
 
@@ -464,7 +464,7 @@ article>ul li {
     flex-direction: column;
 }
 
-.diagram-wrapper>p {
+.diagram-wrapper>p, .diagram-wrapper>ol {
     margin-top: 10px;
     margin-bottom: 8px;
 }
@@ -531,8 +531,16 @@ article>ul li {
     color: #f57f17;
 }
 
-.diagram+p, .simulator+p {
+:is(.diagram, .simulator)+p, :is(.diagram, .simulator)+ol {
     color: var(--secondary-text-color-alt);
+}
+
+.diagram-wrapper>ol {
+    list-style-position: inside;
+}
+
+.diagram-wrapper>ol li {
+    list-style: unset;
 }
 
 section>table {
@@ -770,7 +778,7 @@ section>table span {
     flex-direction: column;
 }
 
-.touch-areas>div{
+.touch-areas>div {
     display: flex;
 }
 
@@ -797,6 +805,7 @@ section>table span {
     --keyline: 16px;
     --navigation-bar-key-width: 80px;
     --navigation-bar-key-margin: 10px;
+    --top-system-bar-height: 24px;
     height: 640px;
 }
 
@@ -854,22 +863,22 @@ section>table span {
     align-items: center;
 }
 
-#wifi {
+.status-bar #wifi {
     width: 18px;
     font-size: calc(14 / 37 * 48px);
 }
 
-#signal {
+.status-bar #signal {
     font-size: 16px;
     margin: 0 1px;
 }
 
-#battery {
+.status-bar #battery {
     font-size: 16px;
     margin: 0 4px 0 3.5px;
 }
 
-#time {
+.status-bar #time {
     margin-right: 4px;
     margin-top: 1px;
 }
@@ -893,6 +902,70 @@ section>table span {
     filter: drop-shadow(0 1.5px 0.5px rgba(0, 0, 0, 0.2)) drop-shadow(0 1px 1px rgba(0, 0, 0, 0.14)) drop-shadow(0 1px 2.5px rgba(0, 0, 0, 0.12));
 }
 
+.window-bar {
+    height: 32px;
+    padding: 0 8px;
+    display: none;
+    align-items: center;
+    flex-direction: row-reverse;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.window-bar span {
+    margin: 0 4px;
+}
+
+.shelf {
+    height: 56px;
+    padding: 0 2px;
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    color: #ffffff;
+    background-color: rgba(38, 38, 38, 0.95);
+    pointer-events: auto;
+}
+
+.shelf .dock {
+    display: flex;
+    align-items: center;
+}
+
+.shelf .dock span {
+    display: flex;
+    width: 24px;
+    height: 24px;
+    margin: 16px;
+}
+
+.dock #all_apps {
+    color: rgba(255, 255, 255, 0.54);
+}
+
+.shelf .system {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    padding-right: 8px;
+}
+
+.shelf .avatar {
+    width: 24px;
+    height: 24px;
+    margin: 8px;
+}
+
+.shelf .system span:not(#time) {
+    width: 24px;
+    font-size: 18px;
+    padding: 8px;
+    box-sizing: content-box;
+}
+
+.shelf #time {
+    margin-right: 12px;
+}
+
 .system-layer {
     width: 100%;
     height: 100%;
@@ -902,13 +975,13 @@ section>table span {
     pointer-events: none;
 }
 
-.status-bar-background {
+.top-bar {
     position: relative;
-    height: 24px;
+    height: var(--top-system-bar-height);
     display: flex;
 }
 
-.navigation-bar-background {
+.bottom-bar {
     position: relative;
     height: 48px;
     grid-row-start: 3;
@@ -1030,19 +1103,6 @@ footer .title {
     }
 }
 
-@media screen and (min-width:921px) {
-    .diagram-wrapper[screen~=tablet] {
-        grid-column-end: span 2;
-    }
-    .diagram-wrapper[screen~=tablet] .simulator {
-        --increment: 64px;
-        --keyline: 24px;
-        --navigation-bar-key-width: 162px;
-        --navigation-bar-key-margin: 0px;
-        height: 570px;
-    }
-}
-
 @media screen and (max-width:520px) {
     main>.app-bar .title {
         width: 100%;
@@ -1072,6 +1132,38 @@ footer .title {
     .chapter-catalogue {
         margin-left: var(--keyline);
         margin-right: var(--keyline);
+    }
+}
+
+@media screen and (min-width:921px) {
+    .diagram-wrapper[screen~=tablet] {
+        grid-column-end: span 2;
+    }
+    .diagram-wrapper[screen~=tablet] .simulator {
+        --increment: 64px;
+        --keyline: 24px;
+        --navigation-bar-key-width: 162px;
+        --navigation-bar-key-margin: 0px;
+        --top-system-bar-height: 24px;
+        height: 570px;
+    }
+}
+
+@media screen and (min-width:1577px) {
+    .diagram-wrapper[screen~=desktop] {
+        grid-column-end: span 3;
+    }
+    .diagram-wrapper[screen~=desktop] .simulator {
+        --increment: 64px;
+        --keyline: 24px;
+        --top-system-bar-height: 32px;
+        height: 768px;
+    }
+    .diagram-wrapper[screen~=desktop] .window-bar, .diagram-wrapper[screen~=desktop] .shelf {
+        display: flex;
+    }
+    .diagram-wrapper[screen~=desktop] .status-bar, .diagram-wrapper[screen~=desktop] .navigation-bar, .diagram-wrapper[screen~=desktop] .bottom-bar {
+        display: none;
     }
 }
 

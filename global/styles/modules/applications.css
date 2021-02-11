@@ -3,7 +3,7 @@
 \*------------------------------------*/
 
 .application .app-bar {
-    padding-top: 24px;
+    padding-top: var(--top-system-bar-height);
 }
 
 /*------------------------------------*\
@@ -15,7 +15,7 @@
     --secondary-color: #0F9D58;
 }
 
-.simulator[map=main] .status-bar-background {
+.simulator[map=main] .top-bar {
     background-color: rgba(0, 0, 0, 0.3);
 }
 
@@ -87,7 +87,7 @@
     border-radius: 50%;
 }
 
-.simulator[map=navigation] .status-bar-background {
+.simulator[map=navigation] .top-bar {
     background-color: #0b8043;
 }
 
@@ -168,7 +168,7 @@
     background-color: var(--medium-emphasis-surface-color);
 }
 
-.simulator[settings] .status-bar-background {
+.simulator[settings] .top-bar {
     background-color: #1b2327;
 }
 
@@ -235,7 +235,12 @@
 
 .simulator[settings="app-info"] ul button {
     flex-basis: 100%;
-    background-color: #E0E0E0;
+}
+
+@media (prefers-color-scheme: light) {
+    .simulator[settings="app-info"] ul button {
+        background-color: #e0e0e0;
+    }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -246,6 +251,9 @@
     }
     .simulator[settings] .dialog-wrapper[picker] .calendar-view .activated {
         color: rgba(0, 0, 0, 0.87);
+    }
+    .simulator[settings="app-info"] ul button {
+        background-color: #455A64;
     }
 }
 
@@ -264,7 +272,7 @@
     --secondary-color: #E53935;
 }
 
-.simulator[clock] .status-bar-background {
+.simulator[clock] .top-bar {
     background-color: #1A237E;
 }
 
@@ -461,17 +469,17 @@
     --secondary-color: #eeff41;
 }
 
-.simulator[inbox=main] .system-layer .status-bar-background {
+.simulator[inbox=main] .system-layer .top-bar {
     background-color: #0097A7;
 }
 
-.simulator[inbox=main] .application>.status-bar-background {
+.simulator[inbox=main] .application>.top-bar {
     position: absolute;
     width: 100%;
     background-color: #0097A7;
 }
 
-.simulator[inbox=flight] .status-bar-background, .simulator[inbox=order] .status-bar-background {
+.simulator[inbox=flight] .top-bar, .simulator[inbox=order] .top-bar {
     background-color: rgba(0, 0, 0, 0.3);
 }
 
@@ -800,6 +808,14 @@
     margin-top: auto;
 }
 
+.simulator[inbox=opened] ul>.divider {
+    padding-left: calc(var(--keyline) + var(--increment));
+}
+
+.simulator[inbox=opened] ul>li:not(:last-of-type) .secondary-text {
+    color: var(--primary-text-color);
+}
+
 @media (prefers-color-scheme: dark) {
     .simulator[inbox=main] .application {
         background-color: #212121;
@@ -825,11 +841,11 @@
     --selected-parameter: 2;
 }
 
-.simulator[files] .system-layer .status-bar-background, .simulator[files] .application>.status-bar-background, .simulator[files] .sheet .status-bar-background {
+.simulator[files] .system-layer .top-bar, .simulator[files] .application>.top-bar, .simulator[files] .sheet .top-bar {
     background-color: #0288D1;
 }
 
-.simulator[files] .application>.status-bar-background, .simulator[files] .sheet .status-bar-background {
+.simulator[files] .application>.top-bar, .simulator[files] .sheet .top-bar {
     position: absolute;
     width: 100%;
 }
@@ -1017,7 +1033,7 @@
     .diagram-wrapper[screen~=tablet] .simulator[files] .sheet .app-bar {
         background-color: #29B6F6;
     }
-    .diagram-wrapper[screen~=tablet] .simulator[files] .sheet .status-bar-background {
+    .diagram-wrapper[screen~=tablet] .simulator[files] .sheet .top-bar {
         top: 0;
         position: absolute;
         width: 100%;
@@ -1032,8 +1048,8 @@
   照片
 \*------------------------------------*/
 
-.simulator[photos] .status-bar-background {
-    background-color: var(--status-bar-background-color);
+.simulator[photos] .top-bar {
+    background-color: var(--top-bar-color);
 }
 
 .simulator[photos] .app-bar {
@@ -1104,17 +1120,17 @@
     --secondary-color: #ff4081;
 }
 
-.simulator[contacts] .status-bar-background {
+.simulator[contacts] .top-bar {
     top: 0;
     position: absolute;
     width: 100%;
 }
 
-.simulator[contacts] .contacts-list .status-bar-background {
+.simulator[contacts] .contacts-list .top-bar {
     background-color: #303f9f;
 }
 
-.simulator[contacts=detailed] .status-bar-background, .contact-card .status-bar-background {
+.simulator[contacts=detailed] .top-bar, .contact-card .top-bar {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
@@ -1269,7 +1285,7 @@
     .simulator[contacts] {
         --primary-color: #5C6BC0;
     }
-    .simulator[contacts] .contacts-list .status-bar-background {
+    .simulator[contacts] .contacts-list .top-bar {
         background-color: #3F51B5;
     }
 }
@@ -1286,11 +1302,11 @@
     flex-direction: row;
 }
 
-.simulator[dialer] .system-layer .status-bar-background {
+.simulator[dialer] .system-layer .top-bar {
     background-color: #0277bd;
 }
 
-.diagram-wrapper[screen~=tablet] .simulator[dialer] .system-layer .status-bar-background {
+.diagram-wrapper[screen~=tablet] .simulator[dialer] .system-layer .top-bar {
     background-color: transparent;
 }
 
@@ -1471,13 +1487,13 @@
     margin-top: 4px;
 }
 
-.simulator[dialer] .status-bar-background {
+.simulator[dialer] .top-bar {
     top: 0;
     position: absolute;
     width: 100%;
 }
 
-.simulator[dialer] .main .status-bar-background, .simulator[dialer] .oncall .app-bar .status-bar-background {
+.simulator[dialer] .main .top-bar, .simulator[dialer] .oncall .app-bar .top-bar {
     background-color: #0277bd;
 }
 
@@ -1566,7 +1582,7 @@
     color: var(--secondary-text-color);
 }
 
-.simulator[dialer] .dial-list .status-bar-background, .simulator[dialer] .callee .status-bar-background {
+.simulator[dialer] .dial-list .top-bar, .simulator[dialer] .callee .top-bar {
     background-color: rgba(0, 0, 0, 0.3);
 }
 
@@ -1720,7 +1736,7 @@
     .diagram-wrapper[screen~=mobile] .simulator[dialer] .oncall .callee img {
         height: 100%;
     }
-    .diagram-wrapper[screen~=mobile] .simulator[dialer] .oncall .callee .status-bar-background {
+    .diagram-wrapper[screen~=mobile] .simulator[dialer] .oncall .callee .top-bar {
         display: none;
     }
     .diagram-wrapper[screen~=mobile] .simulator[dialer] .main .fab {
@@ -1741,7 +1757,7 @@
     background-color: #121212;
 }
 
-.simulator[music=my-library] .system-layer .status-bar-background {
+.simulator[music=my-library] .system-layer .top-bar {
     background-color: #000000;
 }
 
@@ -1804,6 +1820,7 @@
     margin-bottom: 0.0625rem;
     padding-left: 14px;
     padding-right: 16px;
+    color: var(--primary-text-color);
 }
 
 #girl {
@@ -1818,7 +1835,7 @@
     background-color: #89196b;
 }
 
-.simulator[music=album] .system-layer .status-bar-background {
+.simulator[music=album] .system-layer .top-bar {
     background-color: var(--primary-color-alt);
 }
 
@@ -1907,26 +1924,38 @@
     --secondary-color: #2ab8f6;
 }
 
-.simulator[music=details] .application {
+.simulator[album=nocturnal] {
+    --primary-color: #ab1456;
+    --primary-color-alt: #e91e63;
+    --secondary-color: #ffea00;
+}
+
+.simulator[music=now-playing] .top-bar {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+:is(.simulator[music=playlist], .simulator[music=now-playing]) .application {
     align-items: center;
 }
 
-.simulator[music=details] .sheet {
+:is(.simulator[music=playlist], .simulator[music=now-playing]) .sheet {
     width: calc(10 * var(--increment));
     align-self: center;
     box-shadow: var(--shadow-z2);
     border-radius: 2px 2px 0 0;
+    overflow: hidden;
 }
 
-.simulator[music=details] .header {
+:is(.simulator[music=playlist], .simulator[music=now-playing]) .header {
     position: relative;
     height: calc(4.5 * var(--increment));
     display: grid;
     grid-template-columns: min-content auto;
     grid-template-rows: auto var(--increment);
+    background-color: var(--primary-color);
 }
 
-.simulator[music=details] .foreground-image {
+:is(.simulator[music=playlist], .simulator[music=now-playing]) .foreground-image {
     width: calc(4.5 * var(--increment));
     height: auto;
     aspect-ratio: 1/1;
@@ -1934,51 +1963,59 @@
     grid-row-end: -1;
 }
 
-.simulator[music=details] .information {
+:is(.simulator[music=playlist], .simulator[music=now-playing]) .information {
     position: relative;
     display: flex;
 }
 
-.simulator[music=details] .information .toolbar {
+:is(.simulator[music=playlist], .simulator[music=now-playing]) .information .toolbar {
     position: absolute;
 }
 
-.simulator[music=details] .information .list {
+:is(.simulator[music=playlist], .simulator[music=now-playing]) .information .list {
     padding: 0 32px;
     align-self: center;
 }
 
-.simulator[music=details] .information .list span {
+:is(.simulator[music=playlist], .simulator[music=now-playing]) .information .list span {
     color: var(--primary-text-color);
 }
 
-.simulator[music=details] .controls {
+:is(.simulator[music=playlist], .simulator[music=now-playing]) .information .primary-text {
+    font-size: 2.125rem;
+    font-weight: 400;
+    letter-spacing: 0em;
+    line-height: var(--display-1-leading);
+}
+
+:is(.simulator[music=playlist], .simulator[music=now-playing]) .controls {
     display: flex;
     align-items: center;
     padding-left: 32px;
     padding-right: 104px;
     justify-content: space-between;
+    color: var(--primary-text-color);
+    background-color: var(--primary-color-alt);
 }
 
-.simulator[music=details] .controls button {
+:is(.simulator[music=playlist], .simulator[music=now-playing]) .controls button {
     margin: 0 8px;
-    color: var(--secondary-text-color)
 }
 
-.simulator[music=details] .fab {
+:is(.simulator[music=playlist], .simulator[music=now-playing]) .fab {
     right: var(--keyline);
     bottom: calc(var(--increment) - 28px);
     box-shadow: var(--shadow-z4);
 }
 
-.simulator[music=details] .sheet>ul {
+:is(.simulator[music=playlist], .simulator[music=now-playing]) .sheet>ul {
     display: flex;
     flex-direction: column;
     background-color: var(--medium-emphasis-surface-color);
     padding: 8px 0;
 }
 
-.simulator[music=details] .sheet>ul::after {
+:is(.simulator[music=playlist], .simulator[music=now-playing]) .sheet>ul::after {
     content: "";
     top: -0.5px;
     position: absolute;
@@ -1987,7 +2024,7 @@
     background-color: var(--divider-color);
 }
 
-.simulator[music=details] .sheet .subheader {
+.simulator[music=playlist] .sheet .subheader {
     display: grid;
     padding-left: 80px;
     padding-right: 40px;
@@ -1995,22 +2032,45 @@
     column-gap: var(--keyline);
 }
 
-.simulator[music=details] .sheet .subheader span:last-of-type, .simulator[music=details] .sheet>ul .list[one] span:last-of-type {
+.simulator[music=now-playing] .sheet .subheader {
+    padding-left: 32px;
+    color: var(--secondary-text-color);
+}
+
+.simulator[music=playlist] .sheet .subheader span:last-of-type, :is(.simulator[music=playlist], .simulator[music=now-playing]) .sheet>ul .list[one] span:last-of-type {
     justify-self: end;
 }
 
-.simulator[music=details] .sheet>ul .divider {
+:is(.simulator[music=playlist], .simulator[music=now-playing]) .sheet>ul .divider {
     padding: 8px 0 8px 80px;
 }
 
-.simulator[music=details] .sheet>ul .list[one] {
+:is(.simulator[music=playlist], .simulator[music=now-playing]) .sheet>ul .list[one] {
     padding: 0 40px 0 32px;
     grid-template-columns: 24px calc(3.5 * var(--increment) - 8px) auto auto;
     column-gap: var(--keyline);
 }
 
-.simulator[music=details] .sheet>ul .list[one] span {
+:is(.simulator[music=playlist], .simulator[music=now-playing]) .sheet>ul .list[one] span {
     font-weight: initial;
+}
+
+@media screen and (min-width:1577px) {
+    .diagram-wrapper[screen~=desktop] .simulator[music=now-playing] .sheet {
+        width: calc(12 * var(--increment));
+    }
+    .diagram-wrapper[screen~=desktop] .simulator[music=now-playing] .information .primary-text {
+        font-size: 2.8125rem;
+        font-weight: 400;
+        letter-spacing: 0em;
+        line-height: var(--display-2-leading);
+    }
+    .diagram-wrapper[screen~=desktop] .simulator[music=now-playing] .controls {
+        padding-right: 128px;
+    }
+    .diagram-wrapper[screen~=desktop] .simulator[music=now-playing] .controls button {
+        margin: 0 16px;
+    }
 }
 
 /*------------------------------------*\
@@ -2021,7 +2081,7 @@
     --primary-color: #1180b2;
 }
 
-.simulator[weather=sunny] .status-bar-background {
+.simulator[weather=sunny] .top-bar {
     background-color: #0f73a0;
 }
 
@@ -2104,8 +2164,8 @@
     font-family: 'Roboto';
 }
 
-.simulator[calculator] .system-layer .status-bar-background {
-    background-color: var(--status-bar-background-color);
+.simulator[calculator] .system-layer .top-bar {
+    background-color: var(--top-bar-color);
 }
 
 .simulator[calculator] .display {
@@ -2169,7 +2229,7 @@
 .simulator[calculator] .numeric {
     display: grid;
     align-items: center;
-    justify-items: center;
+    justify-items: stretch;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
     background-color: #424242;
@@ -2181,7 +2241,7 @@
 .simulator[calculator] .operator {
     display: grid;
     align-items: center;
-    justify-items: center;
+    justify-items: stretch;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(5, 1fr);
     background-color: #616161;
@@ -2208,7 +2268,7 @@
     display: grid;
     flex-grow: 1;
     align-items: center;
-    justify-items: center;
+    justify-items: stretch;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: repeat(5, 1fr);
     box-sizing: border-box;
@@ -2235,7 +2295,7 @@
         grid-row-start: unset;
     }
     .diagram-wrapper[screen~=tablet] .simulator[calculator] .operator button:last-of-type {
-        display: unset;
+        display: flex;
     }
     .diagram-wrapper[screen~=tablet] .simulator[calculator] .scrim {
         display: none;
@@ -2260,7 +2320,7 @@
     .simulator[calculator] .display {
         background-color: #424242;
     }
-    .simulator[calculator] .display .status-bar-background {
+    .simulator[calculator] .display .top-bar {
         background-color: #212121;
     }
 }
@@ -2273,7 +2333,7 @@
     --secondary-color: #FF5252;
 }
 
-.simulator[calendar=goals] .status-bar-background {
+.simulator[calendar=goals] .top-bar {
     background-color: #F4D380;
 }
 
@@ -2364,7 +2424,7 @@
     --primary-color: #0288d1;
 }
 
-.simulator[messenger] .status-bar-background {
+.simulator[messenger] .top-bar {
     background-color: #0277bd;
 }
 
@@ -2399,7 +2459,7 @@
     margin-top: -0.0625rem;
 }
 
-.simulator[messenger="main"] .application>ul>.list .secondary-text[lang=zh-Hans]:last-child:not([lang=zh-Hans]){
+.simulator[messenger="main"] .application>ul>.list .secondary-text[lang=zh-Hans]:last-child:not([lang=zh-Hans]) {
     margin-top: 0.0625rem;
 }
 
@@ -2414,4 +2474,213 @@
 .simulator[messenger="main"] .unread .secondary-text:first-child {
     color: var(--primary-text-color);
     font-weight: 500;
+}
+
+/*------------------------------------*\
+  应用商店
+\*------------------------------------*/
+
+.simulator[store] {
+    --primary-color: #0f9d58;
+}
+
+.simulator[store=application] .app-bar {
+    position: absolute;
+    background-color: transparent;
+    box-shadow: var(--shadow-z0);
+}
+
+.simulator[store=application] .banner {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding-top: var(--top-system-bar-height);
+}
+
+.simulator[store=application] .banner img {
+    top: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.simulator[store=application] .banner .content-block {
+    position: relative;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.simulator[store=application] .banner .scrim {
+    top: 0;
+    opacity: 0.4;
+}
+
+.simulator[store=application] .banner span {
+    font-size: 36px;
+    padding: 10px;
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.54);
+    border-radius: 50%;
+}
+
+.simulator[store=application] .header {
+    display: grid;
+    grid-template-columns: 96px auto;
+    grid-template-rows: auto auto;
+    column-gap: 24px;
+    row-gap: var(--keyline);
+    padding: 12px calc(var(--keyline) - 12px) 12px var(--keyline);
+    margin-bottom: var(--keyline);
+}
+
+.simulator[store=application] .header img {
+    width: 100%;
+    grid-row-start: 1;
+    grid-row-end: -1;
+}
+
+.simulator[store=application] .header .list {
+    grid-template-columns: auto auto;
+}
+
+.simulator[store=application] .header>button {
+    justify-self: end;
+    min-width: calc(2 * var(--increment));
+    margin-right: 12px;
+}
+
+.simulator[store=application] .divider {
+    padding: 0 var(--keyline);
+}
+
+.simulator[store=application] .badges-container {
+    display: flex;
+    padding: 0 var(--keyline);
+    margin: var(--keyline) 0;
+    justify-content: center;
+    column-gap: 24px;
+}
+
+.simulator[store=application] .badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.simulator[store=application] .badge>span {
+    margin-top: 6px;
+    color: var(--secondary-text-color);
+}
+
+.simulator[store=application] #downloads {
+    --primary-color: #ff5722;
+    position: relative;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
+.simulator[store=application] #downloads::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid var(--primary-color);
+    box-sizing: border-box;
+}
+
+.simulator[store=application] #downloads span:first-child {
+    width: 44px;
+    height: 20px;
+    border-radius: 10px;
+    color: var(--primary-text-color);
+    background-color: var(--primary-color);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.simulator[store=application] #downloads span:last-child {
+    font-weight: 400;
+    color: var(--secondary-text-color-alt);
+}
+
+.simulator[store=application] #rating {
+    position: relative;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+}
+
+.simulator[store=application] #rating+span {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.simulator[store=application] #rating+span span {
+    font-size: inherit;
+    vertical-align: middle;
+    margin-bottom: 2px;
+}
+
+.simulator[store=application] #rating svg {
+    z-index: -1;
+    position: absolute;
+    width: 60px;
+    height: 60px;
+}
+
+.simulator[store=application] #rating svg * {
+    fill: var(--primary-color);
+}
+
+.simulator[store=application] #rating .stars {
+    color: var(--primary-text-color);
+    display: flex;
+    transform: scale(calc(2 / 3));
+}
+
+.simulator[store=application] #rating .stars span {
+    font-size: 12px;
+}
+
+.simulator[store=application] #rating>span:last-of-type {
+    font-weight: 700;
+    color: var(--primary-text-color);
+    line-height: 20px;
+}
+
+.simulator[store=application] .classification {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.simulator[store=application] .classification span {
+    font-size: 32px;
+    color: var(--primary-text-color);
+}
+
+.simulator[store=application] .application>p {
+    padding: 0 var(--keyline);
+    margin-top: 24px;
+    text-align: center;
+}
+
+.simulator[store=application] .application>button {
+    color: var(--primary-color)
 }

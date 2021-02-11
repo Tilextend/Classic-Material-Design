@@ -124,7 +124,7 @@
     animation-fill-mode: forwards;
 }
 
-#fabs-in-transitions>.playing .dial-list>ul .status-bar-background {
+#fabs-in-transitions>.playing .dial-list>ul .top-bar {
     animation-name: fabsInTransitions14, fabsInTransitions52;
     animation-duration: 225ms, 1s;
     animation-delay: 1s, 10s;

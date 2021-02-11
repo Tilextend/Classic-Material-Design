@@ -31,8 +31,13 @@ button {
     color: var(--secondary-color);
 }
 
+.text-button[class~=filled] {
+    background-color: var(--secondary-color, var(--primary-color));
+    color: var(--primary-text-color);
+}
+
 .text-button[class~=contained] {
-    background-color: var(--secondary-color);
+    background-color: var(--secondary-color, var(--primary-color));
     color: inherit;
     box-shadow: var(--shadow-z2);
 }

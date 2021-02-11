@@ -2,6 +2,10 @@
   正文
 \*------------------------------------*/
 
+#principles>section:last-of-type {
+  grid-column-start: span var(--max-block);
+}
+
 .diagram img {
   width: 100%;
 }
@@ -36,7 +40,40 @@
 }
 
 #smooth-gradient .diagram {
-  height: 480px;
+  height: 360px;
+  background-color: var(--high-emphasis-surface-color);
+}
+
+#smooth-gradient .diagram svg:first-of-type {
+  display: none;
+}
+
+#smooth-gradient .diagram span {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  color: #ffffff;
+  background-color: #2196F3;
+  text-align: center;
+}
+
+#smooth-gradient .diagram span:nth-of-type(1) {
+  left: 50px;
+  bottom: 80px;
+  transform: translate(-50%, 50%);
+}
+
+#smooth-gradient .diagram span:nth-of-type(2) {
+  left: 270px;
+  bottom: 80px;
+  transform: translate(-50%, 50%);
+}
+
+#smooth-gradient .diagram span:nth-of-type(3) {
+  right: 50px;
+  bottom: 80px;
+  transform: translate(50%, 50%);
 }
 
 #over-scrim .scrim {
@@ -44,8 +81,40 @@
   opacity: 0.5;
 }
 
-#over-scrim .status-bar-background {
+#over-scrim .top-bar {
   background-color: rgba(0, 0, 0, 0.6);
+}
+
+@media screen and (max-width:920px) {
+  #principles>section:last-of-type {
+    display: none;
+  }
+  #smooth-gradient .diagram {
+    height: 480px;
+  }
+  #smooth-gradient .diagram svg:first-of-type {
+    display: initial;
+  }
+  #smooth-gradient .diagram svg:last-of-type {
+    display: none;
+  }
+  #smooth-gradient .diagram span:nth-of-type(1) {
+    left: calc((100% - 240px) / 2 + 20px);
+    top: calc((100% - 390px) / 2);
+    transform: translate(-50%, -50%);
+  }
+  
+  #smooth-gradient .diagram span:nth-of-type(2) {
+    left: calc((100% - 240px) / 2 + 20px);
+    top: calc((100% - 390px) / 2 + 390px / 3);
+    transform: translate(-50%, -50%);
+  }
+  
+  #smooth-gradient .diagram span:nth-of-type(3) {
+    left: calc((100% - 240px) / 2 + 20px);
+    bottom: calc((100% - 390px) / 2);
+    transform: translate(-50%, 50%);
+  }
 }
 
 /*------------------------------------*\
@@ -56,8 +125,17 @@
   --primary-color: #00897b;
 }
 
+@media (prefers-color-scheme: light) {
+  #smooth-gradient stop {
+    stop-color: #000000;
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   body>aside>nav, .content-body {
     --primary-color: #26A69A;
+  }
+  #smooth-gradient stop {
+    stop-color: #ffffff;
   }
 }
