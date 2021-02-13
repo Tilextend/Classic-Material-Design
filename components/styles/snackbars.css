@@ -173,6 +173,11 @@
     }
 }
 
+#block-fab .group {
+    background-color: initial;
+    box-shadow: initial;
+}
+
 #block-fab .surfaces .start {
     flex-grow: 0;
     height: 120px;

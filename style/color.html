@@ -60,11 +60,6 @@
                                     </div>
                                 </div>
                                 <ul class="group">
-                                    <div class="surfaces">
-                                        <div class="start"></div>
-                                        <div class="center"></div>
-                                        <div class="end"></div>
-                                    </div>
                                     <li class="subheader">
                                         <span class="body2">今天</span>
                                     </li>
@@ -455,12 +450,113 @@
                         </div>
                         <p class="body1">颜色差异辅助表示开关状态差异。</p>
                     </div>
+                    <div id="text-field-color-status" class="diagram-wrapper" screen="mobile">
+                        <div class="simulator" contacts="add">
+                            <div class="application">
+                                <div class="portrait-wrapper">
+                                    <div class="content-block">
+                                        <span class="material-icons">person</span>
+                                    </div>
+                                </div>
+                                <ul>
+                                    <li class="list" one>
+                                        <span class="material-icons">person</span>
+                                        <div class="text-field single">
+                                            <input class="subheading" type="text" spellcheck="false" placeholder="姓名"
+                                                tabindex="-1">
+                                        </div>
+                                    </li>
+                                    <li class="list" one>
+                                        <span class="material-icons">domain</span>
+                                        <div class="text-field single">
+                                            <input class="subheading" type="text" spellcheck="false" placeholder="公司"
+                                                tabindex="-1">
+                                        </div>
+                                    </li>
+                                    <li class="list" one columns="3">
+                                        <span class="material-icons">phone</span>
+                                        <div class="text-field single">
+                                            <input class="subheading" type="text" spellcheck="false" placeholder="电话号码"
+                                                tabindex="-1">
+                                        </div>
+                                        <div class="text-field single selectable">
+                                            <input class="subheading" type="text" spellcheck="false" placeholder="手机"
+                                                tabindex="-1">
+                                            <span class="material-icons icon">arrow_drop_down</span>
+                                        </div>
+                                    </li>
+                                    <li id="email" class="list" one columns="3">
+                                        <span class="material-icons">mail</span>
+                                        <div class="text-field single focused invalid">
+                                            <input class="subheading" type="email" spellcheck="false"
+                                                placeholder="电子邮箱地址" tabindex="-1" value="example.com">
+                                            <span class="helper-text caption">错误的地址格式</span>
+                                        </div>
+                                        <div class="text-field single selectable">
+                                            <input class="subheading" type="text" spellcheck="false" placeholder="个人"
+                                                tabindex="-1">
+                                            <span class="material-icons icon">arrow_drop_down</span>
+                                        </div>
+                                    </li>
+                                    <li class="list" one columns="3">
+                                        <span class="material-icons">place</span>
+                                        <div class="text-field single">
+                                            <input class="subheading" type="text" spellcheck="false" placeholder="地址"
+                                                tabindex="-1">
+                                        </div>
+                                        <div class="text-field single selectable">
+                                            <input class="subheading" type="text" spellcheck="false" placeholder="住宅"
+                                                tabindex="-1">
+                                            <span class="material-icons icon">arrow_drop_down</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="app-bar">
+                                    <div class="start">
+                                        <button class="icon-button unbounded" tabindex="-1">
+                                            <span class="material-icons">close</span>
+                                        </button>
+                                        <span class="title">创建联系人</span>
+                                    </div>
+                                    <div class="end">
+                                        <button class="icon-button unbounded" tabindex="-1">
+                                            <span class="material-icons">check</span>
+                                        </button>
+                                        <button class="icon-button unbounded" tabindex="-1">
+                                            <span class="material-icons">add_a_photo</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="system-layer">
+                                    <div class="top-bar"></div>
+                                    <div class="bottom-bar"></div>
+                                </div>
+                            </div>
+                            <div class="system-bars">
+                                <div class="status-bar" theme="dark-light">
+                                    <div class="system">
+                                        <span id="wifi" class="material-icons">signal_wifi_4_bar</span>
+                                        <span id="signal" class="material-icons">signal_cellular_4_bar</span>
+                                        <span id="battery" class="extra-material-icons">system_battery</span>
+                                        <span id="time" class="body2">12:30</span>
+                                    </div>
+                                </div>
+                                <div class="navigation-bar">
+                                    <span id="back" class="extra-material-icons">system_back</span>
+                                    <span id="home" class="extra-material-icons">system_home</span>
+                                    <span id="recent" class="extra-material-icons">system_recent</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="body1">通过颜色传达文本框状态信息。</p>
+                    </div>
                 </section>
                 <section>
                     <article class="body1">
                         <h6>展现品牌</h6>
                         <p>在特定的情境、内容中使用品牌色，能使品牌形象与这些信息或操作相关联。</p>
                     </article>
+
                 </section>
             </article>
             <hr class="divider horizontal">
@@ -867,6 +963,184 @@
                         <h6>情境主题</h6>
                         <p>在不同的情境中可以对不同的界面施用多种配色方案，但需能与现有的色彩主题紧密结合在一起，共同维持应用各界面的一致性。</p>
                     </article>
+                    <div id="section-themes" class="diagram-wrapper" screen="mobile tablet">
+                        <div class="simulator animated" inbox="main">
+                            <div class="application" lang="en-US">
+                                <div class="app-bar light">
+                                    <div class="start">
+                                        <button class="icon-button unbounded" tabindex="-1">
+                                            <span class="material-icons">menu</span>
+                                        </button>
+                                        <span class="title">Inbox</span>
+                                    </div>
+                                    <div class="end">
+                                        <button class="icon-button unbounded" tabindex="-1">
+                                            <span class="material-icons">search</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <ul class="group">
+                                    <li class="subheader">
+                                        <span class="body2">今天</span>
+                                    </li>
+                                    <li class="list" two>
+                                        <span class="avatar" character="ali-connors"
+                                            style="background-image: url(../resources/faces/ali_connors.png);"></span>
+                                        <span class="primary-text subheading">Brunch this weekend?
+                                            <p class="secondary-text body1">Ali Connors
+                                                <span> — I’ll be in your neighborhood doing errands this weekend if you
+                                                    want to meet up for brunch. Let me know.</span>
+                                            </p>
+                                        </span>
+                                    </li>
+                                    <li class="divider horizontal"></li>
+                                    <li class="list" two>
+                                        <span class="avatar"
+                                            style="background-image: url(../resources/faces/jonathan_lee.jpg);"></span>
+                                        <span class="primary-text subheading">Summer BBQ
+                                            <p class="secondary-text body1">至 Alex, Scott, Jennifer
+                                                <span> — Wish I could come, but I’m out of town this weekend.</span>
+                                            </p>
+                                        </span>
+                                    </li>
+                                    <li class="divider horizontal"></li>
+                                    <li class="list" two>
+                                        <span class="avatar"
+                                            style="background-image: url(../resources/faces/sandra_adams.jpg);"></span>
+                                        <span class="primary-text subheading">Oui oui
+                                            <p class="secondary-text body1">Sandra Adams
+                                                <span> — Do you have Paris recommendations? Have you ever been? (I’m
+                                                    sure I’ve asked you this…</span>
+                                            </p>
+                                        </span>
+                                    </li>
+                                    <li class="divider horizontal"></li>
+                                    <li class="list" two>
+                                        <span class="avatar"
+                                            style="background-image: url(../resources/faces/trevor_hansen.jpg);"></span>
+                                        <span class="primary-text subheading">Birthday gift
+                                            <p class="secondary-text body1">Trevor Hansen
+                                                <span> — Have any ideas about what to get Heidi for her birthday?</span>
+                                            </p>
+                                        </span>
+                                    </li>
+                                    <li class="divider horizontal"></li>
+                                    <li class="list" two>
+                                        <span class="avatar"
+                                            style="background-image: url(../resources/faces/britta_holt.jpg);"></span>
+                                        <span class="primary-text subheading">Recipe to try
+                                            <p class="secondary-text body1">Britta Holt
+                                                <span> — We should eat this: Grated Squash, Corn and Tomatillo
+                                                    tacos.</span>
+                                            </p>
+                                        </span>
+                                    </li>
+                                    <li class="divider horizontal"></li>
+                                    <li class="list" two>
+                                        <span class="avatar"
+                                            style="background-image: url(../resources/faces/david_park.jpg);"></span>
+                                        <span class="primary-text subheading">Giants game
+                                            <p class="secondary-text body1">David Park
+                                                <span> — Any interest in seeing the Giants play next month?</span>
+                                            </p>
+                                        </span>
+                                    </li>
+                                    <li class="divider horizontal"></li>
+                                    <li class="list" two>
+                                        <span class="avatar"
+                                            style="background-image: url(../resources/faces/scott_masterson.png);"></span>
+                                        <span class="primary-text subheading">Montauk weekend
+                                            <p class="secondary-text body1">Scott Masterson
+                                                <span> — Here are the shots I mentioned from this weekend’s trip.</span>
+                                            </p>
+                                        </span>
+                                    </li>
+                                </ul>
+                                <button class="fab light" tabindex="-1">
+                                    <span class="material-icons">add</span>
+                                </button>
+                                <div class="top-bar"></div>
+                                <aside class="drawer-container on entered" lang="zh-Hans">
+                                    <div class="scrim" fill></div>
+                                    <nav class="drawer">
+                                        <div class="header dark">
+                                            <img src="../resources/wallpapers/default_wallpaper_alt.jpg">
+                                            <div class="scrim dark" gradient="reverse"></div>
+                                            <div class="list" two>
+                                                <span class="primary-text body2">Jonathan Lee
+                                                    <span
+                                                        class="secondary-text body1">heyfromjonathan@example.com</span>
+                                                </span>
+                                                <button class="icon-button unbounded meta" tabindex="-1">
+                                                    <span class="material-icons">arrow_drop_down</span>
+                                                </button>
+                                            </div>
+                                            <span class="avatar"
+                                                style="background-image: url(../resources/faces/jonathan_lee.jpg);"></span>
+                                        </div>
+                                        <li class="primary">
+                                            <a class="list activated" one="small" states>
+                                                <span class="material-icons">inbox</span>
+                                                <span class="primary-text body2">收件箱</span>
+                                            </a>
+                                            <a class="list" one="small">
+                                                <span class="material-icons">schedule</span>
+                                                <span class="primary-text body2">已延后</span>
+                                            </a>
+                                            <a class="list" one="small">
+                                                <span class="material-icons">check</span>
+                                                <span class="primary-text body2">处理完毕</span>
+                                            </a>
+                                        </li>
+                                        <div class="divider horizontal"></div>
+                                        <li class="primary">
+                                            <a class="list" one="small">
+                                                <span class="material-icons">drafts</span>
+                                                <span class="primary-text body2">草稿</span>
+                                            </a>
+                                            <a class="list" one="small">
+                                                <span class="material-icons">send</span>
+                                                <span class="primary-text body2">已发邮件</span>
+                                            </a>
+                                            <a class="list" one="small">
+                                                <span class="extra-material-icons">reminder</span>
+                                                <span class="primary-text body2">提醒</span>
+                                            </a>
+                                            <a class="list" one="small">
+                                                <span class="material-icons">delete</span>
+                                                <span class="primary-text body2">回收站</span>
+                                            </a>
+                                            <a class="list" one="small">
+                                                <span class="material-icons">report</span>
+                                                <span class="primary-text body2">垃圾邮件</span>
+                                            </a>
+                                        </li>
+                                        <div class="divider horizontal"></div>
+                                        <div class="top-bar"></div>
+                                    </nav>
+                                </aside>
+                                <div class="system-layer">
+                                    <div class="bottom-bar"></div>
+                                </div>
+                            </div>
+                            <div class="system-bars">
+                                <div class="status-bar">
+                                    <div class="system">
+                                        <span id="wifi" class="material-icons">signal_wifi_4_bar</span>
+                                        <span id="signal" class="material-icons">signal_cellular_4_bar</span>
+                                        <span id="battery" class="extra-material-icons">system_battery</span>
+                                        <span id="time" class="body2">12:30</span>
+                                    </div>
+                                </div>
+                                <div class="navigation-bar">
+                                    <span id="back" class="extra-material-icons">system_back</span>
+                                    <span id="home" class="extra-material-icons">system_home</span>
+                                    <span id="recent" class="extra-material-icons">system_recent</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="body1">为不同界面定制色彩主题帮助用户定位特定界面。</p>
+                    </div>
                 </section>
                 <section>
                     <article class="body1">
@@ -1194,6 +1468,60 @@
                         </div>
                         <p class="body1">主题色同样能点缀界面，附属色被施用在独特的按钮上。</p>
                     </div>
+                    <div id="certain-text-accented" class="diagram-wrapper" screen="mobile">
+                        <div class="simulator" translator>
+                            <div class="application">
+                                <div class="system-layer">
+                                    <div class="top-bar"></div>
+                                    <div class="bottom-bar"></div>
+                                </div>
+                            </div>
+                            <div class="system-bars">
+                                <div class="status-bar">
+                                    <div class="system">
+                                        <span id="wifi" class="material-icons">signal_wifi_4_bar</span>
+                                        <span id="signal" class="material-icons">signal_cellular_4_bar</span>
+                                        <span id="battery" class="extra-material-icons">system_battery</span>
+                                        <span id="time" class="body2">12:30</span>
+                                    </div>
+                                </div>
+                                <div class="navigation-bar">
+                                    <span id="back" class="extra-material-icons">system_back</span>
+                                    <span id="home" class="extra-material-icons">system_home</span>
+                                    <span id="recent" class="extra-material-icons">system_recent</span>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="recommends do body2">正确</span>
+                        <p class="body1">利用附属色强调特定文本。</p>
+                    </div>
+                    <div id="all-text-accented" class="diagram-wrapper" screen="mobile">
+                        <div class="simulator" translator>
+                            <div class="application">
+                                <div class="system-layer">
+                                    <div class="top-bar"></div>
+                                    <div class="bottom-bar"></div>
+                                </div>
+                            </div>
+                            <div class="system-bars">
+                                <div class="status-bar">
+                                    <div class="system">
+                                        <span id="wifi" class="material-icons">signal_wifi_4_bar</span>
+                                        <span id="signal" class="material-icons">signal_cellular_4_bar</span>
+                                        <span id="battery" class="extra-material-icons">system_battery</span>
+                                        <span id="time" class="body2">12:30</span>
+                                    </div>
+                                </div>
+                                <div class="navigation-bar">
+                                    <span id="back" class="extra-material-icons">system_back</span>
+                                    <span id="home" class="extra-material-icons">system_home</span>
+                                    <span id="recent" class="extra-material-icons">system_recent</span>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="recommends dont body2">错误</span>
+                        <p class="body1">附属色失去了原本的功能。</p>
+                    </div>
                 </section>
             </article>
             <hr class="divider horizontal">
@@ -1202,7 +1530,7 @@
                 <section>
                     <article class="body1 intro">
                         <p>质感设计由设定基础的主题色开始，根据光谱由明到暗将此预设色表补充完整并加以调谐。此色表既可直接取用，亦可作为参考调配出新的品牌色。通常主题色的色号为
-                            500，而其它色号的颜色则为附属色或强调色。</p>
+                            500，而其它色号的颜色则为附属色。</p>
                     </article>
                 </section>
                 <section class="body2">

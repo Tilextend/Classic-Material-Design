@@ -248,6 +248,10 @@
         --secondary-color: #80cbc4;
         --high-emphasis-surface-color: #37474F;
         --medium-emphasis-surface-color: #242F35;
+        --low-emphasis-surface-color: #21272b;
+    }
+    .simulator:not([settings=main]) .application {
+        background-color: var(--low-emphasis-surface-color);
     }
     .simulator[settings] .dialog-wrapper[picker] .calendar-view .activated {
         color: rgba(0, 0, 0, 0.87);
@@ -261,6 +265,7 @@
     --secondary-color: #80cbc4;
     --high-emphasis-surface-color: #37474F;
     --medium-emphasis-surface-color: #242F35;
+    --low-emphasis-surface-color: #21272b;
 }
 
 /*------------------------------------*\
@@ -524,6 +529,7 @@
 }
 
 .simulator[inbox=main] ul .list[two] {
+    height: calc(var(--increment) + 16px);
     padding: 0 var(--keyline);
     grid-template-columns: 56px auto;
 }
@@ -533,7 +539,7 @@
     grid-template-columns: 56px auto;
 }
 
-.simulator[inbox="main"] .list[two] p {
+.simulator[inbox=main] .list[two] p {
     color: var(--primary-text-color);
 }
 
@@ -544,6 +550,8 @@
 .simulator[inbox] .group {
     position: relative;
     margin-bottom: var(--keyline);
+    background-color: var(--medium-emphasis-surface-color);
+    box-shadow: var(--shadow-z2);
 }
 
 .simulator[inbox] .application>ul>.divider {
@@ -1118,6 +1126,7 @@
 .simulator[contacts] {
     --primary-color: #3f51b5;
     --secondary-color: #ff4081;
+    --error-color: #f44336;
 }
 
 .simulator[contacts] .top-bar {
@@ -1186,7 +1195,7 @@
     box-shadow: var(--shadow-z2);
 }
 
-.simulator[contacts=detailed] .app-bar, .contact-card .app-bar {
+:is(.simulator[contacts=detailed], .simulator[contacts=add], .contact-card) .app-bar {
     position: absolute;
     background-color: transparent;
 }
@@ -1222,7 +1231,7 @@
     width: 390px;
 }
 
-.portrait-wrapper span {
+:is(.simulator[contacts=main], .simulator[contacts=detailed]) .portrait-wrapper span {
     position: absolute;
     display: inline-flex;
     align-self: flex-end;
@@ -1265,6 +1274,49 @@
     color: var(--primary-text-color);
 }
 
+.simulator[contacts=add] .application {
+    background-color: var(--medium-emphasis-surface-color);
+}
+
+.simulator[contacts=add] .system-layer .top-bar {
+    background-color: var(--top-bar-color);
+}
+
+.simulator[contacts=add] .portrait-wrapper {
+    background: radial-gradient(circle at top left, rgba(0, 0, 0, 0) calc(1 / 3 * 100%), rgba(0, 0, 0, 0.01) calc(7 / 9 * 100%), rgba(0, 0, 0, 0.02) 100%);
+    background-color: #eeeeee;
+}
+
+.simulator[contacts=add] .portrait-wrapper .content-block {
+    justify-content: center;
+}
+
+.simulator[contacts=add] .content-block span {
+    font-size: 240px;
+    color: var(--states-base-color);
+    opacity: 0.08;
+    height: calc(2 / 3 * 100%);
+    align-self: flex-end;
+}
+
+.simulator[contacts=add] ul {
+    padding: var(--keyline) 0;
+}
+
+.simulator[contacts=add] .list {
+    grid-template-columns: 40px auto;
+    padding: 0 var(--keyline);
+    column-gap: var(--keyline);
+}
+
+.simulator[contacts=add] .list[columns="3"] {
+    grid-template-columns: 40px auto 88px;
+}
+
+.simulator[contacts=add] .list .text-field {
+    justify-self: stretch;
+}
+
 @media screen and (min-width:921px) {
     .diagram-wrapper[screen~=tablet] .simulator[contacts] .contact-card {
         width: calc(6 * var(--increment));
@@ -1287,6 +1339,13 @@
     }
     .simulator[contacts] .contacts-list .top-bar {
         background-color: #3F51B5;
+    }
+    .simulator[contacts=add] .application {
+        background-color: var(--high-emphasis-surface-color);
+    }
+    .simulator[contacts=add] .portrait-wrapper {
+        background: radial-gradient(circle at top left, rgba(0, 0, 0, 0) calc(1 / 3 * 100%), rgba(0, 0, 0, 0.04) calc(7 / 9 * 100%), rgba(0, 0, 0, 0.08) 100%);
+        background-color: var(--low-emphasis-surface-color);
     }
 }
 

@@ -95,6 +95,14 @@ ul, li {
     list-style: none;
 }
 
+ol li {
+    list-style-position: inside;
+}
+
+ol li {
+    list-style-type: decimal;
+}
+
 thead {
     color: var(--secondary-text-color);
 }
@@ -333,6 +341,7 @@ main>.app-bar[class~=prominent]>span {
     0% {
         transform: translateY(var(--increment));
         height: calc(3 * var(--increment));
+        padding: var(--title-start-padding);
         font-size: 3.5rem;
         font-weight: 400;
         letter-spacing: -0.005em;
@@ -340,6 +349,7 @@ main>.app-bar[class~=prominent]>span {
     100% {
         transform: translateY(0px);
         height: var(--increment);
+        padding: var(--title-end-padding);
         font-size: 1.25rem;
         font-weight: 500;
         letter-spacing: 0.005em;
@@ -351,7 +361,7 @@ main>.app-bar[class~=prominent]>span {
 }
 
 .chapter-diagram {
-    aspect-ratio: 16/9;
+    aspect-ratio: 2/1;
 }
 
 .content-body {
@@ -436,13 +446,19 @@ article[class~=intro] {
     margin-bottom: 23px;
 }
 
-article>ul {
+article>ul, article>ol {
     margin-bottom: 20px;
+}
+
+article>ul {
     padding-left: 2em;
 }
 
-article>ul li {
+:is(article>ul, article>ol) li {
     margin: 7px 0;
+}
+
+article>ul li {
     list-style-type: disc;
 }
 
@@ -533,14 +549,6 @@ article>ul li {
 
 :is(.diagram, .simulator)+p, :is(.diagram, .simulator)+ol {
     color: var(--secondary-text-color-alt);
-}
-
-.diagram-wrapper>ol {
-    list-style-position: inside;
-}
-
-.diagram-wrapper>ol li {
-    list-style: unset;
 }
 
 section>table {
@@ -1103,8 +1111,8 @@ footer .title {
     }
 }
 
-@media screen and (max-width:520px) {
-    main>.app-bar .title {
+@media screen and (max-width:532px) {
+    main>.app-bar:not([class~=prominent]) .title {
         width: 100%;
         margin-left: 20px;
     }
@@ -1115,9 +1123,11 @@ footer .title {
         --increment: 56px;
         --keyline: 16px;
     }
-    main>.app-bar .title {
-        width: 100%;
-        margin-left: 20px;
+    main>.app-bar[class~=prominent] .title {
+        --title-start-padding: 0 calc((100% - 360px) / 2);
+        --title-end-padding: 0 calc(var(--increment) + var(--keyline));
+        position: absolute;
+        width: max-content;
     }
 }
 
@@ -1129,9 +1139,15 @@ footer .title {
         margin-right: var(--keyline);
         margin-left: var(--keyline);
     }
+    .chapter-diagram {
+        aspect-ratio: 16/9;
+    }
     .chapter-catalogue {
         margin-left: var(--keyline);
         margin-right: var(--keyline);
+    }
+    main>.app-bar[class~=prominent] .title {
+        --title-start-padding: 0 16px;
     }
 }
 

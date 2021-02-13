@@ -2,6 +2,205 @@
   正文
 \*------------------------------------*/
 
+#product-icons .diagram {
+  height: 360px;
+  background: initial;
+  background-color: var(--high-emphasis-surface-color);
+}
+
+#product-icons img {
+  width: 100%;
+}
+
+#material, #vertical-rectangle, #docs {
+  grid-column-start: max(1, calc(var(--max-block) - 1));
+}
+
+#grid .grid-wrapper {
+  position: relative;
+  width: 192px;
+  height: 192px;
+  background-image: repeating-linear-gradient( 0deg, transparent, transparent 3.5px, rgba(0, 0, 0, 0.04) 3.5px, rgba(0, 0, 0, 0.04) 4px), repeating-linear-gradient( -90deg, transparent, transparent 3.5px, rgba(0, 0, 0, 0.04) 3.5px, rgba(0, 0, 0, 0.04) 4px);
+}
+
+#grid .grid-wrapper::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  border: 0.5px solid rgba(0, 0, 0, 0.2);
+}
+
+#grid .grid-wrapper span {
+  position: absolute;
+  display: flex;
+  color: #2196F3;
+}
+
+#grid .grid-wrapper span::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.2;
+}
+
+#grid .grid-wrapper span:nth-child(1) {
+  width: 192px;
+  height: 40px;
+  padding-left: 8px;
+  transform: translateY(calc(-100% - 4px));
+}
+
+#grid .grid-wrapper span:nth-child(1)::before {
+  left: -0.25px;
+  width: 3px;
+  height: 100%;
+  border-left: 1px solid currentColor;
+  border-right: 1px solid currentColor;
+}
+
+#grid .grid-wrapper span:nth-child(2) {
+  bottom: 0px;
+  width: 100%;
+  height: 40px;
+  justify-content: center;
+  align-items: flex-end;
+  transform: translateY(calc(100% + 4px));
+}
+
+#grid .grid-wrapper span:nth-child(2)::before {
+  left: -1px;
+  border-left: 1px solid currentColor;
+  border-right: 1px solid currentColor;
+}
+
+#grid .grid-wrapper span:nth-child(3) {
+  right: 0px;
+  width: 40px;
+  height: 100%;
+  align-items: center;
+  justify-content: flex-end;
+  transform: translateX(calc(100% + 4px));
+}
+
+#grid .grid-wrapper span:nth-child(3)::before {
+  top: -1px;
+  border-top: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+}
+
+.keylines-wrapper {
+  position: relative;
+  width: 192px;
+  height: 192px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#keylines .keylines-wrapper::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  border: 0.5px solid rgba(0, 0, 0, 0.2);
+}
+
+.keylines-wrapper div {
+  position: absolute;
+  box-sizing: border-box;
+  border: 0.5px solid rgba(0, 0, 0, 0.2);
+}
+
+#keylines svg * {
+  fill: none;
+  stroke-width: 0.5px;
+  stroke: #000000;
+  opacity: 0.2;
+}
+
+.square {
+  width: 152px;
+  aspect-ratio: 1/1;
+  border-radius: 12px;
+}
+
+.circle {
+  width: 176px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+
+.vertical-rectangle {
+  width: 128px;
+  height: 176px;
+  border-radius: 12px;
+}
+
+.horizontal-rectangle {
+  width: 176px;
+  height: 128px;
+  border-radius: 12px;
+}
+
+#square .square, #circle .circle, #vertical-rectangle .vertical-rectangle, #horizontal-rectangle .horizontal-rectangle {
+  border: 2px solid rgba(0, 0, 0, 0.4);
+  background-color: rgb(33, 150, 243, 0.2);
+}
+
+#components .diagram .icon {
+  width: 192px;
+  height: 192px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: scale(1.5);
+}
+
+#components .icon div {
+  position: absolute;
+}
+
+#components .background {
+  width: 152px;
+  height: 152px;
+  background-color: #eeeeee;
+  border-radius: 12px;
+}
+
+#components :is(.background, .foreground)::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-width: 1px 0;
+  border-style: solid;
+  border-top-color: var(--surface-hint-color);
+  border-bottom-color: var(--surface-shade-color);
+  border-radius: inherit;
+  box-sizing: border-box;
+}
+
+#components .foreground {
+  width: 96px;
+  height: 96px;
+  background-color: #fafafa;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.1));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#components .color {
+  width: 56px;
+  height: 56px;
+  background-color: #b4b4b4;
+  border-radius: 50%;
+}
+
 /*------------------------------------*\
   主题
 \*------------------------------------*/

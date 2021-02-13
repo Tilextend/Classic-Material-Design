@@ -2,7 +2,7 @@
   输入框
 \*------------------------------------*/
 
-input[type=text] {
+input[type=text], input[type=email] {
     width: 100%;
     color: var(--primary-text-color);
     font-family: inherit;
@@ -12,7 +12,7 @@ input[type=text]::placeholder {
     color: var(--hint-text-color);
 }
 
-.text-field input::placeholder {
+.text-field[class~=labeled] input::placeholder {
     color: var(--text-field-placeholder-color);
     opacity: 0;
     transition-property: opacity;
@@ -20,7 +20,7 @@ input[type=text]::placeholder {
     transition-timing-function: var(--standard-curve);
 }
 
-.text-field input:focus::placeholder {
+.text-field[class~=labeled] input:focus::placeholder {
     opacity: 1;
     transition-duration: 225ms;
     transition-delay: 50ms;
@@ -82,6 +82,10 @@ input[type=text]::placeholder {
     transition-timing-function: var(--standard-curve);
 }
 
+.text-field[class~=invalid]::after {
+    border-bottom-color: var(--error-color);
+}
+
 .text-field[class~=focused]::after {
     border-bottom-width: 2px;
     opacity: 1;
@@ -110,8 +114,11 @@ input[type=text]::placeholder {
     }
 }
 
-.text-field[class~=single] input {
+.text-field input {
     padding: 4px 0;
+}
+
+.text-field[class~=labeled] input {
     margin-top: 10px;
 }
 
@@ -141,8 +148,14 @@ input[type=text]::placeholder {
     transition-duration: 225ms;
 }
 
-.text-field-wrapper .helper-text {
+.helper-text {
+    bottom: calc(-50% - 9px);
+    position: absolute;
     color: var(--secondary-text-color);
+}
+
+.text-field input:invalid+.helper-text {
+    color: var(--error-color);
 }
 
 .text-field[class~=selectable] input:focus {

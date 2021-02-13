@@ -46,6 +46,18 @@
   grid-template-columns: auto 68px;
 }
 
+#text-field-color-status #email {
+  margin-bottom: 24px;
+}
+
+#text-field-color-status #email>span {
+  color: var(--primary-color);
+}
+
+#certain-text-accented {
+  grid-column-start: max(1, calc(var(--max-block) - 1));
+}
+
 @media screen and (max-width:920px) {
   #secondary-color-showcase .advanced {
     transform: translateX(var(--increment));
