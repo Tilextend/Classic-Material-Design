@@ -376,6 +376,12 @@
 
 :root {
   --primary-color: #00bcd4;
+  --secondary-color: #eeff41;
+}
+
+::selection {
+  color: rgba(0, 0, 0, 0.87);
+  background-color: var(--secondary-color);
 }
 
 .CMD-content>.app-bar>button, footer {

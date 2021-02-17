@@ -2,6 +2,100 @@
   正文
 \*------------------------------------*/
 
+table {
+  grid-column-end: span min(var(--max-block), 2);
+}
+
+table thead th:nth-of-type(2), table thead th:nth-of-type(3) {
+  width: 25%;
+}
+
+#product-icons thead {
+  color: var(--secondary-text-color-alt);
+  background-color: var(--high-emphasis-surface-color);
+}
+
+thead tr:first-of-type {
+  color: var(--secondary-text-color-alt);
+}
+
+thead tr:last-of-type {
+  color: var(--secondary-text-color);
+}
+
+#product-icons thead th, #product-icons thead td {
+  padding: 14px var(--keyline);
+}
+
+#product-icons tbody th, #product-icons tbody td {
+  padding: 10px var(--keyline);
+}
+
+thead tr:last-of-type th, #product-icons tbody th {
+  border-top: none;
+  border-bottom: none;
+  border-right: none;
+}
+
+#product-icons tbody tr:not(:last-of-type) th {
+  border-bottom: none;
+}
+
+thead tr:last-of-type td:first-of-type, #product-icons tbody tr td:first-of-type {
+  border: none;
+}
+
+thead tr:last-of-type td:last-of-type, #product-icons tbody tr td:last-of-type {
+  border-top: none;
+  border-bottom: none;
+  border-left: none;
+}
+
+tbody td::before {
+  content: "";
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+tbody td:first-of-type::before {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+#neutral tbody tr:nth-child(-n+4) td:first-of-type::before {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+#cool tbody td:last-of-type::before {
+  background-color: rgba(26, 35, 126, 0.2);
+}
+
+#fresh tbody td:last-of-type::before {
+  background-color: rgba(38, 50, 56, 0.2);
+}
+
+#warm tbody td:last-of-type::before {
+  background-color: rgba(191, 54, 12, 0.2);
+}
+
+#hot tbody td:last-of-type::before {
+  background-color: rgba(62, 39, 35, 0.2);
+}
+
+#neutral tbody td:last-of-type::before {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+#neutral tbody tr:nth-child(-n+4) td:last-of-type::before {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+tbody td span {
+  position: relative;
+}
+
 #product-icons .diagram {
   height: 360px;
   background: initial;
@@ -12,7 +106,7 @@
   width: 100%;
 }
 
-#material, #vertical-rectangle, #docs {
+#material, #vertical-rectangle, #docs, #fresh, #warm, #hot, #neutral {
   grid-column-start: max(1, calc(var(--max-block) - 1));
 }
 
@@ -20,7 +114,15 @@
   position: relative;
   width: 192px;
   height: 192px;
-  background-image: repeating-linear-gradient( 0deg, transparent, transparent 3.5px, rgba(0, 0, 0, 0.04) 3.5px, rgba(0, 0, 0, 0.04) 4px), repeating-linear-gradient( -90deg, transparent, transparent 3.5px, rgba(0, 0, 0, 0.04) 3.5px, rgba(0, 0, 0, 0.04) 4px);
+}
+
+#grid .grid-wrapper::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: repeating-linear-gradient( 0deg, transparent, transparent 3.5px, var(--content-base-color) 3.5px, var(--content-base-color) 4px), repeating-linear-gradient( -90deg, transparent, transparent 3.5px, var(--content-base-color) 3.5px, var(--content-base-color) 4px);
+  opacity: 0.04;
 }
 
 #grid .grid-wrapper::after {
@@ -29,13 +131,13 @@
   width: 100%;
   height: 100%;
   box-sizing: border-box;
-  border: 0.5px solid rgba(0, 0, 0, 0.2);
+  border: 0.5px solid var(--content-base-color);
+  opacity: 0.2;
 }
 
 #grid .grid-wrapper span {
   position: absolute;
   display: flex;
-  color: #2196F3;
 }
 
 #grid .grid-wrapper span::before {
@@ -106,19 +208,21 @@
   width: 100%;
   height: 100%;
   box-sizing: border-box;
-  border: 0.5px solid rgba(0, 0, 0, 0.2);
+  border: 0.5px solid var(--content-base-color);
+  opacity: 0.2;
 }
 
 .keylines-wrapper div {
   position: absolute;
   box-sizing: border-box;
-  border: 0.5px solid rgba(0, 0, 0, 0.2);
+  border: 0.5px solid var(--content-base-color);
+  opacity: 0.2;
 }
 
 #keylines svg * {
   fill: none;
   stroke-width: 0.5px;
-  stroke: #000000;
+  stroke: var(--content-base-color);
   opacity: 0.2;
 }
 
@@ -148,10 +252,10 @@
 
 #square .square, #circle .circle, #vertical-rectangle .vertical-rectangle, #horizontal-rectangle .horizontal-rectangle {
   border: 2px solid rgba(0, 0, 0, 0.4);
-  background-color: rgb(33, 150, 243, 0.2);
+  background-color: rgba(3, 169, 244, 0.2);
 }
 
-#components .diagram .icon {
+.diagram .icon {
   width: 192px;
   height: 192px;
   display: flex;
@@ -160,18 +264,18 @@
   transform: scale(1.5);
 }
 
-#components .icon div {
+.diagram .icon .background {
   position: absolute;
-}
-
-#components .background {
   width: 152px;
   height: 152px;
-  background-color: #eeeeee;
   border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
-#components :is(.background, .foreground)::after {
+.diagram .icon :is(.background, .foreground)::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -184,21 +288,300 @@
   box-sizing: border-box;
 }
 
-#components .foreground {
+.icon .background svg {
+  position: absolute;
+  width: 192px;
+  height: 192px;
+}
+
+.icon .background svg stop {
+  stop-color: #000000;
+}
+
+.icon .background svg stop:nth-of-type(1) {
+  stop-opacity: 0.1;
+}
+
+.icon .background svg stop:nth-of-type(2) {
+  stop-opacity: 0.05;
+}
+
+.diagram .icon .foreground {
+  position: absolute;
   width: 96px;
   height: 96px;
-  background-color: #fafafa;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.1));
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-#components .color {
+.diagram .icon .color {
   width: 56px;
   height: 56px;
   background-color: #b4b4b4;
   border-radius: 50%;
+}
+
+.diagram .icon .finish {
+  position: absolute;
+  width: 152px;
+  height: 152px;
+  border-radius: 12px;
+  background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05) calc(1 / 3 * 100%), rgba(255, 255, 255, 0));
+}
+
+#color-applied img {
+  width: calc(192px * 1.25);
+  flex-grow: initial;
+}
+
+:is(#top-light, #angled-light) .lighting {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  align-self: flex-start;
+}
+
+#top-light .lighting {
+  background: linear-gradient( rgba(3, 169, 244, 0.6), rgba(3, 169, 244, 0.3) calc(1 / 3 * 75%), rgba(3, 169, 244, 0) 75%);
+}
+
+#angled-light :is(.background, .foreground)::after {
+  display: none;
+}
+
+#angled-light .foreground {
+  filter: none;
+}
+
+#angled-light .lighting {
+  background: radial-gradient(circle at top left, rgba(3, 169, 244, 0.7), rgba(3, 169, 244, 0.35) 120px, rgba(3, 169, 244, 0) 360px);
+}
+
+.product-icon {
+  width: 192px;
+  height: 192px;
+  transform: scale(1.25);
+}
+
+.product-icon .edge[position=top] {
+  fill: rgba(255, 255, 255, 0.4)
+}
+
+.product-icon .edge[position=bottom] {
+  fill: rgba(0, 0, 0, 0.1)
+}
+
+.product-icon linearGradient:first-of-type stop {
+  stop-color: #000000;
+}
+
+.product-icon linearGradient:first-of-type stop:nth-of-type(1) {
+  stop-opacity: 0.1;
+}
+
+.product-icon linearGradient:first-of-type stop:nth-of-type(2) {
+  stop-opacity: 0.05;
+}
+
+#keyboard svg>rect {
+  fill: #eeeeee;
+}
+
+#keyboard g rect {
+  fill: #29B6F6;
+}
+
+#keyboard svg>path:nth-of-type(2) {
+  fill: #f5f5f5;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.1));
+}
+
+#keyboard svg>path:nth-of-type(3) {
+  fill: #f5f5f5;
+}
+
+#keyboard svg>path:nth-of-type(4) {
+  fill: #29B6F6;
+}
+
+#android-wear svg>circle {
+  fill: #eeeeee;
+  border: 10px solid #000000;
+}
+
+#android-wear path:first-of-type {
+  fill: #e0e0e0;
+}
+
+#android-wear g {
+  fill: #f5f5f5;
+}
+
+#android-wear g:nth-of-type(2) {
+  filter: drop-shadow(0px 4px 4px rgba(3, 169, 244, 0.6));
+}
+
+#android-tv svg>rect {
+  fill: #eeeeee;
+}
+
+#android-tv svg>path:nth-of-type(1) {
+  fill: #e0e0e0;
+}
+
+#android-tv svg>path:nth-of-type(3) {
+  fill: #f5f5f5;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.1));
+}
+
+#android-tv svg>path:nth-of-type(4) {
+  fill: #f5f5f5;
+}
+
+#android-tv polygon {
+  fill: #bdbdbd;
+}
+
+#android-tv-cast-shadow stop {
+  stop-color: #03A9F4;
+}
+
+#android-tv-cast-shadow stop:nth-of-type(1) {
+  stop-opacity: 0.6;
+}
+
+#android-tv-cast-shadow stop:nth-of-type(2) {
+  stop-opacity: 0.3;
+}
+
+#messages svg>path:nth-of-type(1) {
+  fill: #e0e0e0;
+}
+
+#messages svg>path:nth-of-type(3) {
+  fill: #f5f5f5;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.1));
+}
+
+#messages svg>path:nth-of-type(4) {
+  fill: #f5f5f5;
+}
+
+#messages rect {
+  fill: #bdbdbd;
+}
+
+#messages .edge {
+  fill: #03A9F4;
+}
+
+#sites svg>rect:nth-of-type(1), #sites g>rect {
+  fill: #bdbdbd;
+}
+
+#sites svg>path:nth-of-type(1) {
+  fill: #eeeeee;
+}
+
+#sites svg>path:nth-of-type(2), #sites circle {
+  fill: #e0e0e0;
+}
+
+#sites svg>path:nth-of-type(5) {
+  fill: #f5f5f5;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.1));
+}
+
+#sites svg>path:nth-of-type(6) {
+  fill: #f5f5f5;
+}
+
+#sites radialGradient stop:nth-of-type(1) {
+  stop-color: rgba(3, 169, 244, 0.7);
+}
+
+#sites radialGradient stop:nth-of-type(2) {
+  stop-color: rgba(3, 169, 244, 0.35);
+}
+
+#sites radialGradient stop:nth-of-type(3) {
+  stop-color: rgba(3, 169, 244, 0);
+}
+
+#keep svg>path:nth-of-type(1) {
+  fill: #ffc107;
+}
+
+#keep svg>path:nth-of-type(3) {
+  fill: #eeeeee;
+  filter: drop-shadow(0px 4px 4px rgba(191, 54, 12, 0.2));
+}
+
+#keep svg>path:nth-of-type(4) {
+  fill: #ffe082;
+  filter: drop-shadow(0px 4px 4px rgba(191, 54, 12, 0.2));
+}
+
+#keep linearGradient:first-of-type stop {
+  stop-color: #BF360C;
+}
+
+#keep linearGradient:first-of-type stop:nth-of-type(1) {
+  stop-opacity: 0.2;
+}
+
+#keep linearGradient:first-of-type stop:nth-of-type(2) {
+  stop-opacity: 0.1;
+}
+
+#keep g:first-of-type .edge[position=top], #keep g:last-of-type .edge[position=top] {
+  fill: rgba(255, 255, 255, 0.2);
+}
+
+#keep g:first-of-type .edge[position=bottom], #keep g:last-of-type .edge[position=bottom] {
+  fill: rgba(191, 54, 12, 0.2);
+}
+
+#calculator svg>path:nth-of-type(1), #calculator svg>circle:first-of-type, #calculator svg>rect:not(:first-of-type), #calculator svg>polygon {
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.2));
+}
+
+#calculator .edge[position=top] {
+  fill: rgba(255, 255, 255, 0.2);
+}
+
+:is(#calculator g:nth-of-type(1), #calculator g:nth-of-type(2), #calculator g:nth-of-type(4)) .edge[position=top] {
+  fill: rgba(255, 255, 255, 0.4);
+}
+
+:is(#calculator g:nth-of-type(1), #calculator g:nth-of-type(2), #calculator g:nth-of-type(4)).edge[position=bottom] {
+  fill: rgba(0, 0, 0, 0.1);
+}
+
+#calculator g:nth-of-type(3) .edge[position=bottom] {
+  fill: rgba(0, 0, 0, 0.2);
+}
+
+#calculator g:last-of-type .edge[position=bottom] {
+  fill: rgba(38, 50, 56, 0.2);
+}
+
+#equation-cast-shadow stop {
+  stop-color: #263238;
+}
+
+:is(#addition-cast-shadow, #subtraction-cast-shadow, #multiplication-cast-shadow) stop {
+  stop-color: #000000;
+}
+
+#calculator linearGradient:nth-of-type(-n+5) stop:nth-of-type(1) {
+  stop-opacity: 0.2;
+}
+
+#calculator linearGradient:nth-of-type(-n+5) stop:nth-of-type(2) {
+  stop-opacity: 0.1;
 }
 
 /*------------------------------------*\
@@ -209,8 +592,29 @@
   --primary-color: #00897b;
 }
 
+@media (prefers-color-scheme: light) {
+  #grid .grid-wrapper span {
+    color: var(--light-blue-500);
+  }
+  .diagram .icon .background {
+    background-color: var(--grey-200);
+  }
+  .diagram .icon .foreground {
+    background-color: var(--grey-50);
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   body>aside>nav, .content-body {
     --primary-color: #26A69A;
+  }
+  #grid .grid-wrapper span {
+    color: var(--light-blue-400);
+  }
+  .diagram .icon .background {
+    background-color: var(--grey-700);
+  }
+  .diagram .icon .foreground {
+    background-color: var(--grey-600);
   }
 }

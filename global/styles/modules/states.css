@@ -144,24 +144,20 @@ button:not(.unbounded) .ripples .foreground {
 
 @media (prefers-color-scheme: light) {
     :root {
-        --theme-base-color: #ffffff;
         --states-base-color: #000000;
     }
 }
 
 .light {
-    --theme-base-color: #ffffff;
     --states-base-color: #000000;
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --theme-base-color: #000000;
         --states-base-color: #ffffff;
     }
 }
 
 .dark {
-    --theme-base-color: #000000;
     --states-base-color: #ffffff;
 }

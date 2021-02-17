@@ -46,16 +46,6 @@ button {
     padding: 12px;
 }
 
-.icon {
-    display: flex;
-    width: 24px;
-    height: 24px;
-}
-
-.icon path {
-    fill: currentColor;
-}
-
 .icon-button[class~=narrow] span {
     width: 12px;
 }

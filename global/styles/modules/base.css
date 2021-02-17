@@ -1,3 +1,7 @@
+/*------------------------------------*\
+  层面
+\*------------------------------------*/
+
 :root {
     --shadow-z0: 0px 0px 0px 0px rgba(0, 0, 0, 0.2), 0px 0px 0px 0px rgba(0, 0, 0, 0.14), 0px 0px 0px 0px rgba(0, 0, 0, 0.12);
     --shadow-z1: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
@@ -24,12 +28,11 @@
     --shadow-z22: 0px 10px 14px -6px rgba(0, 0, 0, 0.2), 0px 22px 35px 3px rgba(0, 0, 0, 0.14), 0px 8px 42px 7px rgba(0, 0, 0, 0.12);
     --shadow-z23: 0px 11px 14px -7px rgba(0, 0, 0, 0.2), 0px 23px 36px 3px rgba(0, 0, 0, 0.14), 0px 9px 44px 8px rgba(0, 0, 0, 0.12);
     --shadow-z24: 0px 11px 15px -7px rgba(0, 0, 0, 0.2), 0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0, 0, 0, 0.12);
+}
+
+:root {
     --drop-shadow-z2: drop-shadow(0px 1px 0.5px rgba(0, 0, 0, 0.2)) drop-shadow(0px 2px 1px rgba(0, 0, 0, 0.14)) drop-shadow(0px 1px 2.5px rgba(0, 0, 0, 0.12));
     --drop-shadow-z8: drop-shadow(0px 2px 2.5px rgba(0, 0, 0, 0.2)) drop-shadow(0px 9px 5px rgba(0, 0, 0, 0.14)) drop-shadow(0px 5px 7px rgba(0, 0, 0, 0.12));
-    --standard-curve: cubic-bezier(0.4, 0.0, 0.2, 1);
-    --deceleration-curve: cubic-bezier(0.0, 0.0, 0.2, 1);
-    --acceleration-curve: cubic-bezier(0.4, 0.0, 1, 1);
-    --sharp-curve: cubic-bezier(0.4, 0.0, 0.6, 1);
 }
 
 .edged::after, .dialog::after, .search-bar::after, .fab::after, .text-button[class~=contained]::after, .snackbar::after {
@@ -47,6 +50,10 @@
     box-sizing: border-box;
     pointer-events: none;
 }
+
+/*------------------------------------*\
+  遮罩
+\*------------------------------------*/
 
 .scrim {
     position: absolute;
@@ -70,49 +77,129 @@
 }
 
 /*------------------------------------*\
+  动画
+\*------------------------------------*/
+
+:root {
+    --standard-curve: cubic-bezier(0.4, 0.0, 0.2, 1);
+    --deceleration-curve: cubic-bezier(0.0, 0.0, 0.2, 1);
+    --acceleration-curve: cubic-bezier(0.4, 0.0, 1, 1);
+    --sharp-curve: cubic-bezier(0.4, 0.0, 0.6, 1);
+}
+
+/*------------------------------------*\
+  颜色
+\*------------------------------------*/
+
+:root {
+    --red-50: #FFEBEE;
+    --red-100: #FFCDD2;
+    --red-200: #EF9A9A;
+    --red-300: #E57373;
+    --red-400: #EF5350;
+    --red-500: #F44336;
+    --red-600: #E53935;
+    --red-700: #D32F2F;
+    --red-800: #C62828;
+    --red-900: #B71C1C;
+    --red-a100: #FF8A80;
+    --red-a200: #FF5252;
+    --red-a400: #FF1744;
+    --red-a700: #D50000;
+    --blue-50: #E3F2FD;
+    --blue-100: #BBDEFB;
+    --blue-200: #90CAF9;
+    --blue-300: #64B5F6;
+    --blue-400: #42A5F5;
+    --blue-500: #2196F3;
+    --blue-600: #1E88E5;
+    --blue-700: #1976D2;
+    --blue-800: #1565C0;
+    --blue-900: #0D47A1;
+    --blue-a100: #82B1FF;
+    --blue-a200: #448AFF;
+    --blue-a400: #2979FF;
+    --blue-a700: #2962FF;
+    --light-blue-50: #E1F5FE;
+    --light-blue-100: #B3E5FC;
+    --light-blue-200: #81D4FA;
+    --light-blue-300: #4FC3F7;
+    --light-blue-400: #29B6F6;
+    --light-blue-500: #03A9F4;
+    --light-blue-600: #039BE5;
+    --light-blue-700: #0288D1;
+    --light-blue-800: #0277BD;
+    --light-blue-900: #01579B;
+    --light-blue-a100: #80D8FF;
+    --light-blue-a200: #40C4FF;
+    --light-blue-a400: #00B0FF;
+    --light-blue-a700: #0091EA;
+    --grey-50: #FAFAFA;
+    --grey-100: #F5F5F5;
+    --grey-200: #EEEEEE;
+    --grey-300: #E0E0E0;
+    --grey-400: #BDBDBD;
+    --grey-500: #9E9E9E;
+    --grey-600: #757575;
+    --grey-700: #616161;
+    --grey-800: #424242;
+    --grey-850: #303030;
+    --grey-900: #212121;
+    --grey-950: #121212;
+}
+
+/*------------------------------------*\
   主题
 \*------------------------------------*/
 
 @media (prefers-color-scheme: light) {
     :root {
-        --high-emphasis-surface-color: #ffffff;
-        --medium-emphasis-surface-color: #fafafa;
-        --low-emphasis-surface-color: #f5f5f5;
-        --top-bar-color: #e0e0e0;
+        --high-emphasis-surface-color: white;
+        --medium-emphasis-surface-color: var(--grey-50);
+        --low-emphasis-surface-color: var(--grey-100);
+        --top-bar-color: var(--grey-300);
         --divider-color: rgba(0, 0, 0, 0.12);
         --surface-hint-color: rgba(255, 255, 255, 0.4);
         --surface-shade-color: rgba(0, 0, 0, 0.1);
+        --theme-base-color: white;
+        --content-base-color: black;
     }
 }
 
 .light {
-    --high-emphasis-surface-color: #ffffff;
-    --medium-emphasis-surface-color: #fafafa;
-    --low-emphasis-surface-color: #f5f5f5;
-    --top-bar-color: #e0e0e0;
+    --high-emphasis-surface-color: white;
+    --medium-emphasis-surface-color: var(--grey-50);
+    --low-emphasis-surface-color: var(--grey-100);
+    --top-bar-color: var(--grey-300);
     --divider-color: rgba(0, 0, 0, 0.12);
     --surface-hint-color: rgba(255, 255, 255, 0.4);
     --surface-shade-color: rgba(0, 0, 0, 0.1);
+    --theme-base-color: white;
+    --content-base-color: black;
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --high-emphasis-surface-color: #424242;
-        --medium-emphasis-surface-color: #303030;
-        --low-emphasis-surface-color: #212121;
-        --top-bar-color: #000000;
+        --high-emphasis-surface-color: var(--grey-800);
+        --medium-emphasis-surface-color: var(--grey-850);
+        --low-emphasis-surface-color: var(--grey-900);
+        --top-bar-color: black;
         --divider-color: rgba(255, 255, 255, 0.12);
         --surface-hint-color: rgba(255, 255, 255, 0.2);
         --surface-shade-color: rgba(0, 0, 0, 0.2);
+        --theme-base-color: black;
+        --content-base-color: white;
     }
 }
 
 .dark {
-    --high-emphasis-surface-color: #424242;
-    --medium-emphasis-surface-color: #303030;
-    --low-emphasis-surface-color: #212121;
-    --top-bar-color: #000000;
+    --high-emphasis-surface-color: var(--grey-800);
+    --medium-emphasis-surface-color: var(--grey-850);
+    --low-emphasis-surface-color: var(--grey-900);
+    --top-bar-color: black;
     --divider-color: rgba(255, 255, 255, 0.12);
     --surface-hint-color: rgba(255, 255, 255, 0.2);
     --surface-shade-color: rgba(0, 0, 0, 0.2);
+    --theme-base-color: black;
+    --content-base-color: white;
 }

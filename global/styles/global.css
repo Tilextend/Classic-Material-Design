@@ -107,6 +107,10 @@ thead {
     color: var(--secondary-text-color);
 }
 
+th, td {
+    position: relative;
+}
+
 ::-webkit-scrollbar {
     width: 12px;
 }
@@ -410,6 +414,10 @@ main>.app-bar[class~=prominent]>span {
     scroll-margin-block-start: calc(2 * var(--increment));
 }
 
+section>article {
+    grid-column-start: 1;
+}
+
 article[class~=vertical] {
     display: grid;
     grid-template-columns: repeat(var(--max-block), 1fr);
@@ -438,8 +446,12 @@ article[class~=intro] {
     grid-column-end: span min(2, var(--max-block));
 }
 
-:is(section, .diagram-wrapper)>p, :is(section, .diagram-wrapper)>ol, section article {
+:is(section, .diagram-wrapper)>p, :is(section, .diagram-wrapper)>ol, :is(section, .diagram-wrapper)>ul, section article {
     user-select: text;
+}
+
+.diagram-wrapper>p+ul, .diagram-wrapper>p+oll {
+    margin-top: 3px;
 }
 
 :is(section, article) p:not(:last-of-type), .diagram-wrapper ol:not(:last-of-type) {
@@ -547,7 +559,7 @@ article>ul li {
     color: #f57f17;
 }
 
-:is(.diagram, .simulator)+p, :is(.diagram, .simulator)+ol {
+:is(.diagram, .simulator)+p, .diagram-wrapper>ol, .diagram-wrapper>ul {
     color: var(--secondary-text-color-alt);
 }
 
