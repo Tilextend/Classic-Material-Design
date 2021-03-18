@@ -13,7 +13,7 @@ const CMDnavigationDrawerContainer = document.querySelector('body>.drawer-contai
 const formerUnfoldedElements = [];
 const formerFoldedElements = [];
 
-CMDnavigationDrawerContainer.querySelectorAll('.drawer li').forEach((element) => {
+CMDnavigationDrawerContainer.querySelectorAll('.drawer span+ul').forEach((element) => {
     if (element.classList.contains('on')) {
         formerUnfoldedElements.push(element);
     } else {
@@ -25,7 +25,7 @@ document.querySelector('#drawer-trigger').addEventListener('click', () => {
     CMDnavigationDrawerContainer.classList.add('on', 'entered');
 });
 
-CMDnavigationDrawerContainer.querySelectorAll('.drawer li span').forEach((element) => {
+CMDnavigationDrawerContainer.querySelectorAll('span').forEach((element) => {
     element.addEventListener('click', () => {
         navigationDrawerItemAction(element);
     });
@@ -38,45 +38,44 @@ CMDnavigationDrawerContainer.querySelectorAll('.drawer li span').forEach((elemen
 });
 
 function navigationDrawerItemAction(element) {
-    let parentElement = element.parentNode;
-    let stateOn = parentElement.classList.contains('on') ? true : false;
-    let stateUnfolded = parentElement.classList.contains('unfolded') ? true : false;
-    let isFormerUnfoldedElements = formerUnfoldedElements.includes(parentElement);
-    let isFormerFoldedElements = formerFoldedElements.includes(parentElement);
+    let targetElement = element.parentNode.querySelector('ul');
+    let stateOn = targetElement.classList.contains('on') ? true : false;
+    let stateUnfolded = targetElement.classList.contains('unfolded') ? true : false;
+    let isFormerUnfoldedElements = formerUnfoldedElements.includes(targetElement);
+    let isFormerFoldedElements = formerFoldedElements.includes(targetElement);
 
-    parentElement.getAnimations().forEach((animation) => {
+    targetElement.getAnimations().forEach((animation) => {
         animation.onfinish = null;
     });
 
-    let primaryLevelHeight = element.getBoundingClientRect().height;
-    let secondaryLevelHeight = parentElement.querySelector('a').getBoundingClientRect().height;
-    let unfoldHeight = primaryLevelHeight + parentElement.querySelectorAll('a').length * secondaryLevelHeight;
+    let secondaryLevelHeight = targetElement.querySelector('li').getBoundingClientRect().height;
+    let unfoldHeight =  targetElement.querySelectorAll('li').length * secondaryLevelHeight;
 
     let animationEffect;
     if (isFormerUnfoldedElements || isFormerFoldedElements) {
         animationEffect = [
-            { height: isFormerUnfoldedElements ? CSS.px(unfoldHeight) : isFormerFoldedElements ? CSS.px(primaryLevelHeight) : null },
-            { height: stateUnfolded ? CSS.px(primaryLevelHeight) : CSS.px(unfoldHeight) }
+            { height: isFormerUnfoldedElements ? CSS.px(unfoldHeight) : isFormerFoldedElements ? CSS.px(0) : null },
+            { height: stateUnfolded ? CSS.px(0) : CSS.px(unfoldHeight) }
         ];
     } else {
-        animationEffect = { height: stateUnfolded ? CSS.px(primaryLevelHeight) : CSS.px(unfoldHeight) };
+        animationEffect = { height: stateUnfolded ? CSS.px(0) : CSS.px(unfoldHeight) };
     }
 
-    parentElement.animate(animationEffect, {
+    targetElement.animate(animationEffect, {
         duration: stateUnfolded ? 250 : 300,
         easing: base.STANDARD_CURVE,
         fill: 'both'
     }).onfinish = () => {
-        stateUnfolded ? null : parentElement.classList.remove('on');
+        stateUnfolded ? null : targetElement.classList.remove('on');
     };
 
-    stateOn ? null : parentElement.classList.add('on');
-    stateUnfolded ? parentElement.classList.remove('unfolded') : parentElement.classList.add('unfolded');
+    stateOn ? null : targetElement.classList.add('on');
+    stateUnfolded ? targetElement.classList.remove('unfolded') : targetElement.classList.add('unfolded');
     stateOn = !stateOn;
     stateUnfolded = !stateUnfolded;
 
-    let formerUnfoldedElementIndex = formerUnfoldedElements.indexOf(parentElement);
-    let formerFoldedElementIndex = formerFoldedElements.indexOf(parentElement);
+    let formerUnfoldedElementIndex = formerUnfoldedElements.indexOf(targetElement);
+    let formerFoldedElementIndex = formerFoldedElements.indexOf(targetElement);
     if (formerUnfoldedElementIndex !== -1) {
         formerUnfoldedElements.splice(formerUnfoldedElementIndex, 1);
     } else if (formerFoldedElementIndex !== -1) {

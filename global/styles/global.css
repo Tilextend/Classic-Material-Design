@@ -1,6 +1,7 @@
-@import url("./modules/app-bars.css");
-@import url("./modules/applications.css");
 @import url("./modules/base.css");
+@import url("./modules/states.css");
+@import url("./modules/typography.css");
+@import url("./modules/app-bars.css");
 @import url("./modules/buttons.css");
 @import url("./modules/data-tables.css");
 @import url("./modules/dialogs.css");
@@ -10,10 +11,10 @@
 @import url("./modules/selection-controls.css");
 @import url("./modules/sheets.css");
 @import url("./modules/snackbars.css");
-@import url("./modules/states.css");
 @import url("./modules/tabs.css");
 @import url("./modules/text-fields.css");
-@import url("./modules/typography.css");
+@import url("./modules/applications.css");
+
 /*------------------------------------*\
   全局设定
 \*------------------------------------*/
@@ -43,7 +44,7 @@ body {
     vertical-align: baseline;
     word-wrap: break-word;
     background-color: var(--medium-emphasis-surface-color);
-    font-family: 'Roboto', 'Noto Sans SC', sans-serif;
+    font-family: "Roboto", "Noto Sans SC", sans-serif;
     text-rendering: optimizeLegibility;
     image-rendering: -webkit-optimize-contrast;
     -webkit-font-smoothing: antialiased;
@@ -60,7 +61,12 @@ a {
     cursor: pointer;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     user-select: text;
 }
 
@@ -90,7 +96,8 @@ strong {
     font-weight: 700;
 }
 
-ul, li {
+ul,
+li {
     position: relative;
     list-style: none;
 }
@@ -107,8 +114,13 @@ thead {
     color: var(--secondary-text-color);
 }
 
-th, td {
+th,
+td {
     position: relative;
+}
+
+video {
+    width: 100%;
 }
 
 ::-webkit-scrollbar {
@@ -128,13 +140,14 @@ th, td {
 }
 
 @font-face {
-    font-family: 'Extra Material Icons';
+    font-family: "Extra Material Icons";
     font-style: normal;
     font-weight: 400;
-    src: url(../../resources/fonts/Extra-Material-Icons.woff) format('woff');
+    src: url(../resources/fonts/Extra-Material-Icons.woff) format("woff");
 }
 
-.material-icons, .extra-material-icons {
+.material-icons,
+.extra-material-icons {
     font-weight: normal;
     font-style: normal;
     font-size: 24px;
@@ -147,18 +160,18 @@ th, td {
     white-space: nowrap;
     word-wrap: normal;
     direction: ltr;
-    font-feature-settings: 'liga';
+    font-feature-settings: "liga";
 }
 
 .extra-material-icons {
-    font-family: 'Extra Material Icons';
+    font-family: "Extra Material Icons";
 }
 
 /*------------------------------------*\
   导航抽屉
 \*------------------------------------*/
 
-body>.drawer-container {
+body > .drawer-container {
     order: -1;
     z-index: 16;
     top: 0;
@@ -167,22 +180,22 @@ body>.drawer-container {
     height: 100vh;
 }
 
-body>.drawer-container>.divider {
+body > .drawer-container > .divider {
     position: absolute;
     right: 0;
 }
 
-body>.drawer-container .drawer {
+body > .drawer-container .drawer {
     width: 256px;
     padding-bottom: 8px;
     transition-property: none;
 }
 
-body>.drawer-container .drawer::-webkit-scrollbar {
+body > .drawer-container .drawer::-webkit-scrollbar {
     display: none;
 }
 
-body>.drawer-container .drawer figure {
+body > .drawer-container .drawer figure {
     display: flex;
     height: var(--increment);
     padding: 0 var(--keyline);
@@ -190,40 +203,26 @@ body>.drawer-container .drawer figure {
     flex-shrink: 0;
 }
 
-body>.drawer-container .drawer figure circle {
-    fill: #212121;
-}
-
-body>.drawer-container .drawer figure svg {
+body > .drawer-container .drawer figure svg {
     width: 24px;
 }
 
-body>.drawer-container .drawer figcaption {
+body > .drawer-container .drawer figcaption {
     margin-left: 24px;
     font-weight: 500;
-    font-family: 'Roboto Mono', monospace;
+    font-family: "Roboto Mono", monospace;
     color: var(--primary-text-color);
 }
 
-body>.drawer-container .drawer li {
-    position: relative;
-    flex-shrink: 0;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    color: var(--primary-text-color);
+body > .drawer-container span + ul {
     overflow: hidden;
 }
 
-body>.drawer-container .drawer li:not(.unfolded) {
-    height: 48px;
+body > .drawer-container span + ul:not(.unfolded) {
+    height: 0px;
 }
 
-body>.drawer-container .drawer li:first-of-type {
-    margin-top: 8px;
-}
-
-body>.drawer-container .drawer span {
+body > .drawer-container span {
     position: relative;
     height: 48px;
     padding-left: var(--keyline);
@@ -232,45 +231,30 @@ body>.drawer-container .drawer span {
     cursor: pointer;
 }
 
-body>.drawer-container .drawer li a {
-    position: relative;
+body > .drawer-container :is(li a, .activated) {
     height: 36px;
     display: flex;
     align-items: center;
     font-size: 0.8125rem;
     padding-left: calc(2 * var(--keyline));
+    cursor: pointer;
 }
 
-body>.drawer-container .drawer li:not(.on) a {
+body > .drawer-container span + ul:not(.on) a {
     visibility: hidden;
 }
 
-body>.drawer-container .drawer li .activated {
+body > .drawer-container .drawer li .activated {
     --states-base-color: var(--primary-color);
     font-weight: 500;
     color: var(--primary-color);
-}
-
-body>.drawer-container .drawer li:last-of-type {
-    margin-bottom: 96px;
-}
-
-body>.drawer-container .drawer>a {
-    line-height: 48px;
-    display: flex;
-    align-items: center;
-    align-self: flex-start;
-    margin: auto 0 0 0;
-    padding: 0 var(--keyline);
-    color: var(--primary-text-color);
 }
 
 /*------------------------------------*\
   内容
 \*------------------------------------*/
 
-.CMD-content {
-    --scroll-Y: 0;
+main {
     z-index: 1;
     display: flex;
     flex-direction: column;
@@ -280,12 +264,12 @@ body>.drawer-container .drawer>a {
     color: var(--primary-text-color);
 }
 
-main>.app-bar {
+main > .app-bar {
     --states-parameter: 2;
     z-index: 4;
 }
 
-main>.app-bar[class~=prominent] {
+main > .app-bar[class~="prominent"] {
     height: calc(4 * var(--increment));
     flex-wrap: nowrap;
     background-color: transparent;
@@ -293,7 +277,7 @@ main>.app-bar[class~=prominent] {
     pointer-events: none;
 }
 
-main>.app-bar[class~=prominent]>div {
+main > .app-bar[class~="prominent"] > div {
     pointer-events: auto;
 }
 
@@ -306,7 +290,7 @@ main .app-bar .surface {
     background-color: var(--primary-color);
 }
 
-main>.app-bar>span {
+main > .app-bar > span {
     width: var(--content-body-width);
     height: var(--increment);
     display: flex;
@@ -333,7 +317,7 @@ main .app-bar .surface {
     }
 }
 
-main>.app-bar[class~=prominent]>span {
+main > .app-bar[class~="prominent"] > span {
     animation-name: appBarTextScale;
     animation-timing-function: linear;
     animation-duration: 200ms;
@@ -364,28 +348,30 @@ main>.app-bar[class~=prominent]>span {
     visibility: hidden;
 }
 
-.chapter-diagram {
-    aspect-ratio: 2/1;
+main > picture {
+    align-self: stretch;
+    display: flex;
+    aspect-ratio: 16/9;
 }
 
-.content-body {
+.content {
     width: var(--content-body-width);
     display: flex;
     flex-direction: column;
     margin-bottom: var(--increment);
 }
 
-.content-body>header {
+.content > header {
     margin-top: var(--increment);
 }
 
-.content-body>header p {
+.content > header p {
     font-weight: 400;
     margin-bottom: var(--keyline);
     user-select: text;
 }
 
-.chapter-catalogue {
+.content > nav {
     margin: var(--increment) 0;
     border-left: 4px solid;
     padding-left: 24px;
@@ -394,109 +380,108 @@ main>.app-bar[class~=prominent]>span {
     flex-direction: column;
 }
 
-.chapter-catalogue span {
+.content > nav span {
     padding-bottom: 16px;
     color: var(--secondary-text-color);
 }
 
-.chapter-catalogue li {
+.content > nav li {
     height: 40px;
     display: flex;
     align-items: center;
 }
 
-.chapter-catalogue a {
+.content > nav a {
     font-weight: 400;
 }
 
-.content-body>article {
+.content > article {
     margin: var(--keyline) 0;
     scroll-margin-block-start: calc(2 * var(--increment));
 }
 
-section>article {
+section > article {
     grid-column-start: 1;
 }
 
-article[class~=vertical] {
+article[class~="vertical"] {
     display: grid;
     grid-template-columns: repeat(var(--max-block), 1fr);
     column-gap: 40px;
 }
 
-article[class~=vertical] section {
+article[class~="vertical"] section {
     display: flex;
     flex-direction: column;
-    grid-column-start: span 1;
     margin-bottom: var(--increment);
 }
 
-article[class~=vertical] picture {
-    margin-bottom: 34px;
-}
-
-article[class~=horizontal] section {
+article[class~="horizontal"] section {
     display: grid;
-    grid-template-columns: repeat(var(--max-block), 1fr);
+    grid-template-columns: repeat(var(--max-block), 360px);
     gap: 40px;
     margin-bottom: 40px;
 }
 
-article[class~=intro] {
+article[class~="intro"] {
     grid-column-end: span min(2, var(--max-block));
 }
 
-:is(section, .diagram-wrapper)>p, :is(section, .diagram-wrapper)>ol, :is(section, .diagram-wrapper)>ul, section article {
+figcaption {
+    display: flex;
+    flex-direction: column;
+    color: var(--secondary-text-color-alt);
+}
+
+main figcaption :is(p, ul, ol),
+section article {
     user-select: text;
 }
 
-.diagram-wrapper>p+ul, .diagram-wrapper>p+oll {
+figcaption :is(ul, ol) {
     margin-top: 3px;
 }
 
-:is(section, article) p:not(:last-of-type), .diagram-wrapper ol:not(:last-of-type) {
-    margin-bottom: 23px;
-}
-
-article>ul, article>ol {
-    margin-bottom: 20px;
-}
-
-article>ul {
-    padding-left: 2em;
-}
-
-:is(article>ul, article>ol) li {
-    margin: 7px 0;
-}
-
-article>ul li {
-    list-style-type: disc;
-}
-
-.article p:last-of-type {
-    margin-bottom: 0px;
-}
-
-.content-body>.divider {
-    margin: var(--increment) 0;
-}
-
-.illustration, .diagram-wrapper {
-    position: relative;
-    display: flex;
-    margin-bottom: var(--keyline);
-}
-
-.diagram-wrapper {
-    flex-direction: column;
-}
-
-.diagram-wrapper>p, .diagram-wrapper>ol {
+figcaption :is(p, ul, ol) {
     margin-top: 10px;
     margin-bottom: 8px;
 }
 
+:is(section, article) p:not(:last-of-type) {
+    margin-bottom: 23px;
+}
+
+article :is(ul, ol) {
+    margin-bottom: 20px;
+}
+
+article > ul {
+    padding-left: 2em;
+}
+
+:is(article > ul, article > ol) li {
+    margin: 7px 0;
+}
+
+article > ul li {
+    list-style-type: disc;
+}
+
+.content > .divider {
+    margin: var(--increment) 0;
+}
+
+.content figure {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: var(--keyline);
+}
+
+article[class~="vertical"] figure {
+    margin-bottom: 34px;
+}
+
+.illustration,
 .diagram {
     position: relative;
     display: flex;
@@ -505,12 +490,22 @@ article>ul li {
     align-items: center;
 }
 
-.diagram[size=regular] {
+picture:is(.illustration, .diagram) {
+    align-items: stretch;
+}
+
+.diagram {
+    background-color: var(--diagram-background-color);
+}
+
+.diagram[size="regular"] {
     --increment: 56px;
     --keyline: 16px;
 }
 
-.illustration::after, .diagram::after, .simulator::after {
+.illustration::after,
+.diagram::after,
+.simulator::after {
     content: "";
     top: 0;
     left: 0;
@@ -521,9 +516,10 @@ article>ul li {
     box-sizing: border-box;
 }
 
-.diagram::after, .simulator::after {
+.diagram::after,
+.simulator::after {
     display: flex;
-    font-family: 'Material Icons';
+    font-family: "Material Icons";
     font-size: 72px;
     color: #ffffff;
     align-items: center;
@@ -539,57 +535,55 @@ article>ul li {
     padding-top: 15px;
 }
 
-.recommends+p {
+.recommends + p {
     margin-top: 7px;
     color: var(--primary-text-color);
 }
 
-.recommends[class~=do] {
+.recommends[class~="do"] {
     border-color: #4caf50;
     color: #2e7b32;
 }
 
-.recommends[class~=dont] {
+.recommends[class~="dont"] {
     border-color: #d32f2f;
     color: #d32f2f;
 }
 
-.recommends[class~=caution] {
+.recommends[class~="caution"] {
     border-color: #f9a825;
     color: #f57f17;
 }
 
-:is(.diagram, .simulator)+p, .diagram-wrapper>ol, .diagram-wrapper>ul {
-    color: var(--secondary-text-color-alt);
-}
-
-section>table {
+section > table {
     user-select: text;
     margin-bottom: var(--keyline);
     border-collapse: collapse;
 }
 
-section>table thead {
+section > table thead {
     background-color: var(--medium-emphasis-surface-color);
 }
 
-section>table tbody {
+section > table tbody {
     background-color: var(--high-emphasis-surface-color);
     color: var(--primary-text-color);
 }
 
-section>table th, section>table td {
+section > table th,
+section > table td {
     border-width: 1px;
     border-style: solid;
     border-color: var(--sheet-border-color);
     padding: calc(var(--keyline) / 2 + 4px) var(--keyline);
 }
 
-section>table[density=dense] tbody th, section>table[density=dense] tbody td {
+section > table[density="dense"] tbody th,
+section > table[density="dense"] tbody td {
     padding: calc(var(--keyline) / 2) var(--keyline);
 }
 
-section>table span {
+section > table span {
     display: block;
 }
 
@@ -643,19 +637,19 @@ section>table span {
 .keyline {
     display: flex;
     border-width: 1px;
-    border-color: #FF4081;
+    border-color: #ff4081;
     align-items: center;
 }
 
-.keyline[class~=left] {
+.keyline[class~="left"] {
     justify-content: flex-end;
 }
 
-.keyline[class~=center] {
+.keyline[class~="center"] {
     justify-content: center;
 }
 
-.keyline[class~=right] {
+.keyline[class~="right"] {
     justify-content: flex-start;
 }
 
@@ -663,7 +657,7 @@ section>table span {
     content: "";
     width: 1px;
     align-self: stretch;
-    background-color: #FF4081;
+    background-color: #ff4081;
 }
 
 .keyline::after {
@@ -672,18 +666,18 @@ section>table span {
     width: 8px;
     height: 8px;
     clip-path: polygon(0% 0%, 0% 100%, 100% 100%);
-    background-color: #FF4081;
+    background-color: #ff4081;
 }
 
-.keyline[class~=left]::after {
+.keyline[class~="left"]::after {
     transform: rotate(225deg) translate(-2.5px, 2.5px);
 }
 
-.keyline[class~=center]::after {
+.keyline[class~="center"]::after {
     transform: rotate(315deg) translate(1.5px, -1.5px);
 }
 
-.keyline[class~=right]::after {
+.keyline[class~="right"]::after {
     transform: rotate(45deg) translate(-2.5px, 2.5px);
 }
 
@@ -719,7 +713,7 @@ section>table span {
     height: var(--increment);
 }
 
-.increments .unit[class~=half] {
+.increments .unit[class~="half"] {
     width: calc(var(--increment) / 2);
 }
 
@@ -798,7 +792,7 @@ section>table span {
     flex-direction: column;
 }
 
-.touch-areas>div {
+.touch-areas > div {
     display: flex;
 }
 
@@ -820,7 +814,7 @@ section>table span {
     background-color: var(--medium-emphasis-surface-color);
 }
 
-.diagram-wrapper[screen~="mobile"] .simulator {
+figure[screen~="mobile"] .simulator {
     --increment: 56px;
     --keyline: 16px;
     --navigation-bar-key-width: 80px;
@@ -829,28 +823,33 @@ section>table span {
     height: 640px;
 }
 
-.diagram[class~=playing], .simulator[class~=playing] {
+.diagram[class~="playing"],
+.simulator[class~="playing"] {
     animation-name: timetrick;
     animation-fill-mode: both;
     animation-timing-function: linear;
 }
 
 @keyframes timetrick {
-    0% {}
-    100% {}
+    0% {
+    }
+    100% {
+    }
 }
 
 .simulator ::-webkit-scrollbar {
     display: none;
 }
 
-.diagram[class~=animated]::after, .simulator[class~=animated]::after {
-    content: 'play_circle_filled';
+.diagram[class~="animated"]::after,
+.simulator[class~="animated"]::after {
+    content: "play_circle_filled";
     background-color: rgba(0, 0, 0, 0.4);
     cursor: pointer;
 }
 
-.diagram[class~=on]::after, .simulator[class~=on]::after {
+.diagram[class~="on"]::after,
+.simulator[class~="on"]::after {
     color: transparent;
     background-color: transparent;
     cursor: pointer;
@@ -919,7 +918,9 @@ section>table span {
     display: flex;
     justify-content: center;
     align-items: center;
-    filter: drop-shadow(0 1.5px 0.5px rgba(0, 0, 0, 0.2)) drop-shadow(0 1px 1px rgba(0, 0, 0, 0.14)) drop-shadow(0 1px 2.5px rgba(0, 0, 0, 0.12));
+    filter: drop-shadow(0 1.5px 0.5px rgba(0, 0, 0, 0.2))
+        drop-shadow(0 1px 1px rgba(0, 0, 0, 0.14))
+        drop-shadow(0 1px 2.5px rgba(0, 0, 0, 0.12));
 }
 
 .window-bar {
@@ -1047,7 +1048,9 @@ footer .material-icons {
 }
 
 footer .left {
-    grid-template-columns: auto calc(var(--content-body-width) / 2 - var(--keyline));
+    grid-template-columns: auto calc(
+            var(--content-body-width) / 2 - var(--keyline)
+        );
 }
 
 footer .left .material-icons {
@@ -1062,7 +1065,8 @@ footer .right .material-icons {
     margin-left: 32px;
 }
 
-footer .left .material-icons, .right .subheading {
+footer .left .material-icons,
+.right .subheading {
     justify-self: end;
     align-items: flex-end;
 }
@@ -1081,33 +1085,33 @@ footer .title {
   跨屏幕
 \*------------------------------------*/
 
-@media screen and (max-width:1576px) {
+@media screen and (max-width: 1576px) {
     :root {
         --content-body-width: 760px;
         --max-block: 2;
     }
-    body>.drawer-container {
+    body > .drawer-container {
         position: fixed;
         width: 100%;
         pointer-events: none;
     }
-    body>.drawer-container .drawer {
+    body > .drawer-container .drawer {
         visibility: hidden;
         transform: translateX(-100%);
     }
-    body>.drawer-container>.divider {
+    body > .drawer-container > .divider {
         visibility: hidden;
     }
     #drawer-trigger {
         visibility: visible;
     }
-    section>article {
+    section > article {
         grid-column-start: 1;
         grid-column-end: -1;
     }
 }
 
-@media screen and (max-width:920px) {
+@media screen and (max-width: 920px) {
     :root {
         --content-body-width: 360px;
         --max-block: 1;
@@ -1123,19 +1127,19 @@ footer .title {
     }
 }
 
-@media screen and (max-width:532px) {
-    main>.app-bar:not([class~=prominent]) .title {
+@media screen and (max-width: 532px) {
+    main > .app-bar:not([class~="prominent"]) .title {
         width: 100%;
         margin-left: 20px;
     }
 }
 
-@media screen and (max-width:504px) {
+@media screen and (max-width: 504px) {
     :root {
         --increment: 56px;
         --keyline: 16px;
     }
-    main>.app-bar[class~=prominent] .title {
+    main > .app-bar[class~="prominent"] .title {
         --title-start-padding: 0 calc((100% - 360px) / 2);
         --title-end-padding: 0 calc(var(--increment) + var(--keyline));
         position: absolute;
@@ -1143,31 +1147,32 @@ footer .title {
     }
 }
 
-@media screen and (max-width:392px) {
+@media screen and (max-width: 392px) {
     :root {
         --content-body-width: 100%;
     }
-    h4, h5, header p, section>*, table {
+    h4,
+    h5,
+    header p,
+    section > *,
+    table {
         margin-right: var(--keyline);
         margin-left: var(--keyline);
     }
-    .chapter-diagram {
-        aspect-ratio: 16/9;
-    }
-    .chapter-catalogue {
+    .content > nav {
         margin-left: var(--keyline);
         margin-right: var(--keyline);
     }
-    main>.app-bar[class~=prominent] .title {
+    main > .app-bar[class~="prominent"] .title {
         --title-start-padding: 0 16px;
     }
 }
 
-@media screen and (min-width:921px) {
-    .diagram-wrapper[screen~=tablet] {
+@media screen and (min-width: 921px) {
+    figure[screen~="tablet"] {
         grid-column-end: span 2;
     }
-    .diagram-wrapper[screen~=tablet] .simulator {
+    figure[screen~="tablet"] .simulator {
         --increment: 64px;
         --keyline: 24px;
         --navigation-bar-key-width: 162px;
@@ -1177,20 +1182,23 @@ footer .title {
     }
 }
 
-@media screen and (min-width:1577px) {
-    .diagram-wrapper[screen~=desktop] {
+@media screen and (min-width: 1577px) {
+    figure[screen~="desktop"] {
         grid-column-end: span 3;
     }
-    .diagram-wrapper[screen~=desktop] .simulator {
+    figure[screen~="desktop"] .simulator {
         --increment: 64px;
         --keyline: 24px;
         --top-system-bar-height: 32px;
         height: 768px;
     }
-    .diagram-wrapper[screen~=desktop] .window-bar, .diagram-wrapper[screen~=desktop] .shelf {
+    figure[screen~="desktop"] .window-bar,
+    figure[screen~="desktop"] .shelf {
         display: flex;
     }
-    .diagram-wrapper[screen~=desktop] .status-bar, .diagram-wrapper[screen~=desktop] .navigation-bar, .diagram-wrapper[screen~=desktop] .bottom-bar {
+    figure[screen~="desktop"] .status-bar,
+    figure[screen~="desktop"] .navigation-bar,
+    figure[screen~="desktop"] .bottom-bar {
         display: none;
     }
 }
@@ -1201,45 +1209,59 @@ footer .title {
 
 @media (prefers-color-scheme: light) {
     :root {
-        --sheet-border-color: #eeeeee;
+        --sheet-border-color: var(--grey-200);
+        --diagram-background-color: var(--grey-200);
     }
     .diagram {
-        background: radial-gradient(circle at top left, rgba(0, 0, 0, 0) calc(1 / 3 * 100%), rgba(0, 0, 0, 0.01) calc(7 / 9 * 100%), rgba(0, 0, 0, 0.02) 100%);
-        background-color: #eeeeee;
+        background-image: radial-gradient(
+            circle at top left,
+            rgba(0, 0, 0, 0) calc(1 / 3 * 100%),
+            rgba(0, 0, 0, 0.01) calc(7 / 9 * 100%),
+            rgba(0, 0, 0, 0.02) 100%
+        );
     }
-    [theme=dark-light] {
+    [theme="dark-light"] {
         --status-bar-color: rgba(0, 0, 0, 0.6);
+    }
+    body > .drawer-container .drawer figure circle {
+        fill: #212121;
     }
 }
 
 .light {
-    --sheet-border-color: #eeeeee;
+    --sheet-border-color: var(--grey-200);
     --status-bar-color: rgba(0, 0, 0, 0.6);
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --sheet-border-color: #616161;
+        --sheet-border-color: var(--grey-700);
+        --diagram-background-color: var(--grey-900);
     }
-    .drawer figure circle {
+    body > .drawer-container .drawer figure circle {
         fill: #747474;
     }
     .diagram {
-        background: radial-gradient(circle at top left, rgba(0, 0, 0, 0) calc(1 / 3 * 100%), rgba(0, 0, 0, 0.04) calc(7 / 9 * 100%), rgba(0, 0, 0, 0.08) 100%);
-        background-color: #212121;
+        background-image: radial-gradient(
+            circle at top left,
+            rgba(0, 0, 0, 0) calc(1 / 3 * 100%),
+            rgba(0, 0, 0, 0.04) calc(7 / 9 * 100%),
+            rgba(0, 0, 0, 0.08) 100%
+        );
     }
-    .diagram::after, .simulator::after {
+    .diagram::after,
+    .simulator::after {
         border-color: #424242;
     }
-    .recommends[class~=do] {
-        color: #66BB6A;
+    .recommends[class~="do"] {
+        color: #66bb6a;
     }
-    [theme=dark-light] {
+    [theme="dark-light"] {
         --status-bar-color: rgba(255, 255, 255, 0.9);
     }
 }
 
 .dark {
-    --sheet-border-color: #616161;
+    --sheet-border-color: var(--grey-700);
     --status-bar-color: rgba(255, 255, 255, 0.9);
 }
