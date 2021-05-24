@@ -5,9 +5,11 @@
 ### α. 用词说明
 Material Design 简称为 **MD**。
 
-随 2018 Google I/O 发布的新 Material Design 记为 **MD2**。
+随 2018 Google I/O 发布的 Material Theme 记为 **MDT**。
 
-在 MD2 公布前的 Material Design （即经典 Material Design）简称为 **[CMD](https://material.io/archive/guidelines)**。
+随 2021 Google I/O 发布的 Material You 记为 **MDY**。
+
+在 MDT 公布前的 Material Design （即经典 Material Design）简称为 **[CMD](https://material.io/archive/guidelines)**。
 
 &nbsp;&nbsp;
 
@@ -26,7 +28,7 @@ Material Design 简称为 **MD**。
 
 * 继承 —— 遵循 CMD 的目标与原则，保持 CMD 的谦卑与包容。
 * 修正 —— 将原文档中不合规范、缺乏一致性的错误或漏洞进行更正。
-* 发展 —— 学习 MD2 中符合 CMD 目标与原则的内容；改进文档中信息提供的方式与形式；在符合 CMD 目标与原则的基础上，增添或删改内容使 CMD 顺应时代需要。
+* 发展 —— 学习 MDT 与 MDY 中符合 CMD 目标与原则的内容；改进文档中信息提供的方式与形式；在符合 CMD 目标与原则的基础上，增添或删改内容使 CMD 顺应时代需要。
 * 发扬 —— 宣传 CMD；为设计师、开发者提供支持。
 
 ##### 2. 原则
