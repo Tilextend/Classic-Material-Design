@@ -6,7 +6,17 @@ table {
   grid-column-end: span min(var(--max-block), 2);
 }
 
-table thead th:nth-of-type(2), table thead th:nth-of-type(3) {
+#material,
+#vertical-rectangle,
+#docs,
+#fresh,
+#warm,
+#hot,
+#neutral {
+  grid-column-start: max(1, calc(var(--max-block) - 1));
+}
+
+table thead th:not(:first-of-type) {
   width: 25%;
 }
 
@@ -23,15 +33,15 @@ thead tr:last-of-type {
   color: var(--secondary-text-color);
 }
 
-#product-icons thead th, #product-icons thead td {
+#product-icons thead :is(th, td) {
   padding: 14px var(--keyline);
 }
 
-#product-icons tbody th, #product-icons tbody td {
+#product-icons tbody :is(th, td) {
   padding: 10px var(--keyline);
 }
 
-thead tr:last-of-type th, #product-icons tbody th {
+:is(thead tr:last-of-type, #product-icons tbody) th {
   border-top: none;
   border-bottom: none;
   border-right: none;
@@ -41,11 +51,11 @@ thead tr:last-of-type th, #product-icons tbody th {
   border-bottom: none;
 }
 
-thead tr:last-of-type td:first-of-type, #product-icons tbody tr td:first-of-type {
+:is(thead tr:last-of-type, #product-icons tbody tr) td:first-of-type {
   border: none;
 }
 
-thead tr:last-of-type td:last-of-type, #product-icons tbody tr td:last-of-type {
+:is(thead tr:last-of-type, #product-icons tbody tr) td:last-of-type {
   border-top: none;
   border-bottom: none;
   border-left: none;
@@ -64,7 +74,7 @@ tbody td:first-of-type::before {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
-#neutral tbody tr:nth-child(-n+4) td:first-of-type::before {
+#neutral tbody tr:nth-child(-n + 4) td:first-of-type::before {
   background-color: rgba(255, 255, 255, 0.4);
 }
 
@@ -88,7 +98,7 @@ tbody td:first-of-type::before {
   background-color: rgba(0, 0, 0, 0.2);
 }
 
-#neutral tbody tr:nth-child(-n+4) td:last-of-type::before {
+#neutral tbody tr:nth-child(-n + 4) td:last-of-type::before {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
@@ -106,10 +116,6 @@ tbody td span {
   width: 100%;
 }
 
-#material, #vertical-rectangle, #docs, #fresh, #warm, #hot, #neutral {
-  grid-column-start: max(1, calc(var(--max-block) - 1));
-}
-
 #grid .grid-wrapper {
   position: relative;
   width: 192px;
@@ -121,7 +127,20 @@ tbody td span {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-image: repeating-linear-gradient( 0deg, transparent, transparent 3.5px, var(--content-base-color) 3.5px, var(--content-base-color) 4px), repeating-linear-gradient( -90deg, transparent, transparent 3.5px, var(--content-base-color) 3.5px, var(--content-base-color) 4px);
+  background-image: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 3.5px,
+      var(--content-base-color) 3.5px,
+      var(--content-base-color) 4px
+    ),
+    repeating-linear-gradient(
+      -90deg,
+      transparent,
+      transparent 3.5px,
+      var(--content-base-color) 3.5px,
+      var(--content-base-color) 4px
+    );
   opacity: 0.04;
 }
 
@@ -250,9 +269,13 @@ tbody td span {
   border-radius: 12px;
 }
 
-#square .square, #circle .circle, #vertical-rectangle .vertical-rectangle, #horizontal-rectangle .horizontal-rectangle {
+#square .square,
+#circle .circle,
+#vertical-rectangle .vertical-rectangle,
+#horizontal-rectangle .horizontal-rectangle {
   border: 2px solid rgba(0, 0, 0, 0.4);
   background-color: rgba(3, 169, 244, 0.2);
+  opacity: unset;
 }
 
 .diagram .icon {
@@ -328,7 +351,12 @@ tbody td span {
   width: 152px;
   height: 152px;
   border-radius: 12px;
-  background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05) calc(1 / 3 * 100%), rgba(255, 255, 255, 0));
+  background: radial-gradient(
+    circle at top left,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.05) calc(1 / 3 * 100%),
+    rgba(255, 255, 255, 0)
+  );
 }
 
 #color-applied img {
@@ -344,7 +372,11 @@ tbody td span {
 }
 
 #top-light .lighting {
-  background: linear-gradient( rgba(3, 169, 244, 0.6), rgba(3, 169, 244, 0.3) calc(1 / 3 * 75%), rgba(3, 169, 244, 0) 75%);
+  background: linear-gradient(
+    rgba(3, 169, 244, 0.6),
+    rgba(3, 169, 244, 0.3) calc(1 / 3 * 75%),
+    rgba(3, 169, 244, 0) 75%
+  );
 }
 
 #angled-light :is(.background, .foreground)::after {
@@ -356,7 +388,12 @@ tbody td span {
 }
 
 #angled-light .lighting {
-  background: radial-gradient(circle at top left, rgba(3, 169, 244, 0.7), rgba(3, 169, 244, 0.35) 120px, rgba(3, 169, 244, 0) 360px);
+  background: radial-gradient(
+    circle at top left,
+    rgba(3, 169, 244, 0.7),
+    rgba(3, 169, 244, 0.35) 120px,
+    rgba(3, 169, 244, 0) 360px
+  );
 }
 
 .product-icon {
@@ -365,12 +402,12 @@ tbody td span {
   transform: scale(1.25);
 }
 
-.product-icon .edge[position=top] {
-  fill: rgba(255, 255, 255, 0.4)
+.product-icon .edge[position="top"] {
+  fill: rgba(255, 255, 255, 0.4);
 }
 
-.product-icon .edge[position=bottom] {
-  fill: rgba(0, 0, 0, 0.1)
+.product-icon .edge[position="bottom"] {
+  fill: rgba(0, 0, 0, 0.1);
 }
 
 .product-icon linearGradient:first-of-type stop {
@@ -385,28 +422,28 @@ tbody td span {
   stop-opacity: 0.05;
 }
 
-#keyboard svg>rect {
+#keyboard svg > rect {
   fill: #eeeeee;
 }
 
 #keyboard g rect {
-  fill: #29B6F6;
+  fill: #29b6f6;
 }
 
-#keyboard svg>path:nth-of-type(2) {
+#keyboard svg > path:nth-of-type(2) {
   fill: #f5f5f5;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.1));
 }
 
-#keyboard svg>path:nth-of-type(3) {
+#keyboard svg > path:nth-of-type(3) {
   fill: #f5f5f5;
 }
 
-#keyboard svg>path:nth-of-type(4) {
-  fill: #29B6F6;
+#keyboard svg > path:nth-of-type(4) {
+  fill: #29b6f6;
 }
 
-#android-wear svg>circle {
+#android-wear svg > circle {
   fill: #eeeeee;
   border: 10px solid #000000;
 }
@@ -423,20 +460,20 @@ tbody td span {
   filter: drop-shadow(0px 4px 4px rgba(3, 169, 244, 0.6));
 }
 
-#android-tv svg>rect {
+#android-tv svg > rect {
   fill: #eeeeee;
 }
 
-#android-tv svg>path:nth-of-type(1) {
+#android-tv svg > path:nth-of-type(1) {
   fill: #e0e0e0;
 }
 
-#android-tv svg>path:nth-of-type(3) {
+#android-tv svg > path:nth-of-type(3) {
   fill: #f5f5f5;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.1));
 }
 
-#android-tv svg>path:nth-of-type(4) {
+#android-tv svg > path:nth-of-type(4) {
   fill: #f5f5f5;
 }
 
@@ -445,7 +482,7 @@ tbody td span {
 }
 
 #android-tv-cast-shadow stop {
-  stop-color: #03A9F4;
+  stop-color: #03a9f4;
 }
 
 #android-tv-cast-shadow stop:nth-of-type(1) {
@@ -456,16 +493,16 @@ tbody td span {
   stop-opacity: 0.3;
 }
 
-#messages svg>path:nth-of-type(1) {
+#messages svg > path:nth-of-type(1) {
   fill: #e0e0e0;
 }
 
-#messages svg>path:nth-of-type(3) {
+#messages svg > path:nth-of-type(3) {
   fill: #f5f5f5;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.1));
 }
 
-#messages svg>path:nth-of-type(4) {
+#messages svg > path:nth-of-type(4) {
   fill: #f5f5f5;
 }
 
@@ -474,27 +511,27 @@ tbody td span {
 }
 
 #messages .edge {
-  fill: #03A9F4;
+  fill: #03a9f4;
 }
 
-#sites svg>rect:nth-of-type(1), #sites g>rect {
+#sites :is(svg > rect:nth-of-type(1), g > rect) {
   fill: #bdbdbd;
 }
 
-#sites svg>path:nth-of-type(1) {
+#sites svg > path:nth-of-type(1) {
   fill: #eeeeee;
 }
 
-#sites svg>path:nth-of-type(2), #sites circle {
+#sites :is(svg > path:nth-of-type(2), circle) {
   fill: #e0e0e0;
 }
 
-#sites svg>path:nth-of-type(5) {
+#sites svg > path:nth-of-type(5) {
   fill: #f5f5f5;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.1));
 }
 
-#sites svg>path:nth-of-type(6) {
+#sites svg > path:nth-of-type(6) {
   fill: #f5f5f5;
 }
 
@@ -510,22 +547,22 @@ tbody td span {
   stop-color: rgba(3, 169, 244, 0);
 }
 
-#keep svg>path:nth-of-type(1) {
+#keep svg > path:nth-of-type(1) {
   fill: #ffc107;
 }
 
-#keep svg>path:nth-of-type(3) {
+#keep svg > path:nth-of-type(3) {
   fill: #eeeeee;
   filter: drop-shadow(0px 4px 4px rgba(191, 54, 12, 0.2));
 }
 
-#keep svg>path:nth-of-type(4) {
+#keep svg > path:nth-of-type(4) {
   fill: #ffe082;
   filter: drop-shadow(0px 4px 4px rgba(191, 54, 12, 0.2));
 }
 
 #keep linearGradient:first-of-type stop {
-  stop-color: #BF360C;
+  stop-color: #bf360c;
 }
 
 #keep linearGradient:first-of-type stop:nth-of-type(1) {
@@ -536,35 +573,41 @@ tbody td span {
   stop-opacity: 0.1;
 }
 
-#keep g:first-of-type .edge[position=top], #keep g:last-of-type .edge[position=top] {
+#keep :is(g:first-of-type, g:last-of-type) .edge[position="top"] {
   fill: rgba(255, 255, 255, 0.2);
 }
 
-#keep g:first-of-type .edge[position=bottom], #keep g:last-of-type .edge[position=bottom] {
+#keep :is(g:first-of-type, g:last-of-type) .edge[position="bottom"] {
   fill: rgba(191, 54, 12, 0.2);
 }
 
-#calculator svg>path:nth-of-type(1), #calculator svg>circle:first-of-type, #calculator svg>rect:not(:first-of-type), #calculator svg>polygon {
+#calculator
+  svg
+  > :is(path:nth-of-type(1), circle:first-of-type, rect:not(:first-of-type), polygon) {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.2));
 }
 
-#calculator .edge[position=top] {
+#calculator .edge[position="top"] {
   fill: rgba(255, 255, 255, 0.2);
 }
 
-:is(#calculator g:nth-of-type(1), #calculator g:nth-of-type(2), #calculator g:nth-of-type(4)) .edge[position=top] {
+:is(#calculator g:nth-of-type(1), #calculator g:nth-of-type(2), #calculator
+    g:nth-of-type(4))
+  .edge[position="top"] {
   fill: rgba(255, 255, 255, 0.4);
 }
 
-:is(#calculator g:nth-of-type(1), #calculator g:nth-of-type(2), #calculator g:nth-of-type(4)).edge[position=bottom] {
+:is(#calculator g:nth-of-type(1), #calculator g:nth-of-type(2), #calculator
+    g:nth-of-type(4))
+  .edge[position="bottom"] {
   fill: rgba(0, 0, 0, 0.1);
 }
 
-#calculator g:nth-of-type(3) .edge[position=bottom] {
+#calculator g:nth-of-type(3) .edge[position="bottom"] {
   fill: rgba(0, 0, 0, 0.2);
 }
 
-#calculator g:last-of-type .edge[position=bottom] {
+#calculator g:last-of-type .edge[position="bottom"] {
   fill: rgba(38, 50, 56, 0.2);
 }
 
@@ -572,15 +615,16 @@ tbody td span {
   stop-color: #263238;
 }
 
-:is(#addition-cast-shadow, #subtraction-cast-shadow, #multiplication-cast-shadow) stop {
+:is(#addition-cast-shadow, #subtraction-cast-shadow, #multiplication-cast-shadow)
+  stop {
   stop-color: #000000;
 }
 
-#calculator linearGradient:nth-of-type(-n+5) stop:nth-of-type(1) {
+#calculator linearGradient:nth-of-type(-n + 5) stop:nth-of-type(1) {
   stop-opacity: 0.2;
 }
 
-#calculator linearGradient:nth-of-type(-n+5) stop:nth-of-type(2) {
+#calculator linearGradient:nth-of-type(-n + 5) stop:nth-of-type(2) {
   stop-opacity: 0.1;
 }
 
@@ -605,8 +649,9 @@ tbody td span {
 }
 
 @media (prefers-color-scheme: dark) {
-  body>aside>nav, .content-body {
-    --primary-color: #26A69A;
+  body > aside > nav,
+  .content-body {
+    --primary-color: #26a69a;
   }
   #grid .grid-wrapper span {
     color: var(--light-blue-400);

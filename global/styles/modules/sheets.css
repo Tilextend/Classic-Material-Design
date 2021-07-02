@@ -91,8 +91,9 @@
     opacity: 0.2;
 }
 
-.drawer li {
-    padding: 8px 0;
+.drawer>ul {
+    margin: 8px 0;
+    color: var(--primary-text-color);
 }
 
 .drawer li a {

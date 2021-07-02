@@ -70,22 +70,6 @@ h6 {
     user-select: text;
 }
 
-h4 {
-    color: var(--primary-color);
-    margin-bottom: 35px;
-}
-
-h5 {
-    margin-bottom: 38px;
-    color: var(--primary-color);
-    grid-column-start: 1;
-    grid-column-end: -1;
-}
-
-h6 {
-    margin-bottom: 22px;
-}
-
 img {
     flex-grow: 1;
     object-fit: cover;
@@ -290,7 +274,7 @@ main .app-bar .surface {
     background-color: var(--primary-color);
 }
 
-main > .app-bar > span {
+h1 {
     width: var(--content-body-width);
     height: var(--increment);
     display: flex;
@@ -299,14 +283,20 @@ main > .app-bar > span {
 }
 
 main .app-bar .surface {
-    animation-name: appBarShrink;
+    animation-name: appBarSurfaceFlex;
+    animation-timeline: appBarFlex;
     animation-timing-function: linear;
-    animation-duration: 200ms;
-    animation-fill-mode: both;
-    animation-play-state: paused;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
 }
 
-@keyframes appBarShrink {
+@scroll-timeline appBarFlex {
+    start: 0;
+    end: 192px;
+    time-range: 1s;
+}
+
+@keyframes appBarSurfaceFlex {
     0% {
         transform: translateY(0px);
         box-shadow: var(--shadow-z0);
@@ -317,12 +307,12 @@ main .app-bar .surface {
     }
 }
 
-main > .app-bar[class~="prominent"] > span {
+main > .app-bar[class~="prominent"] h1 {
     animation-name: appBarTextScale;
+    animation-timeline: appBarFlex;
     animation-timing-function: linear;
-    animation-duration: 200ms;
-    animation-fill-mode: both;
-    animation-play-state: paused;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
 }
 
 @keyframes appBarTextScale {
@@ -365,6 +355,11 @@ main > picture {
     margin-top: var(--increment);
 }
 
+h2 {
+    color: var(--primary-color);
+    margin-bottom: 35px;
+}
+
 .content > header p {
     font-weight: 400;
     margin-bottom: var(--keyline);
@@ -380,9 +375,10 @@ main > picture {
     flex-direction: column;
 }
 
-.content > nav span {
+nav > h3 {
     padding-bottom: 16px;
     color: var(--secondary-text-color);
+    user-select: none;
 }
 
 .content > nav li {
@@ -427,6 +423,18 @@ article[class~="intro"] {
     grid-column-end: span min(2, var(--max-block));
 }
 
+article > h3 {
+    margin-bottom: 38px;
+    color: var(--primary-color);
+    grid-column-start: 1;
+    grid-column-end: -1;
+}
+
+section > .title {
+    font-weight: 400;
+    margin-bottom: 22px;
+}
+
 figcaption {
     display: flex;
     flex-direction: column;
@@ -434,7 +442,7 @@ figcaption {
 }
 
 main figcaption :is(p, ul, ol),
-section article {
+section p {
     user-select: text;
 }
 
@@ -1128,7 +1136,7 @@ footer .title {
 }
 
 @media screen and (max-width: 532px) {
-    main > .app-bar:not([class~="prominent"]) .title {
+    main > .app-bar:not([class~="prominent"]) h1 {
         width: 100%;
         margin-left: 20px;
     }
@@ -1139,11 +1147,16 @@ footer .title {
         --increment: 56px;
         --keyline: 16px;
     }
-    main > .app-bar[class~="prominent"] .title {
+    main > .app-bar[class~="prominent"] h1 {
         --title-start-padding: 0 calc((100% - 360px) / 2);
         --title-end-padding: 0 calc(var(--increment) + var(--keyline));
         position: absolute;
         width: max-content;
+    }
+    @scroll-timeline appBarFlex {
+        start: 0;
+        end: 168px;
+        time-range: 1s;
     }
 }
 
@@ -1163,7 +1176,7 @@ footer .title {
         margin-left: var(--keyline);
         margin-right: var(--keyline);
     }
-    main > .app-bar[class~="prominent"] .title {
+    main > .app-bar[class~="prominent"] h1 {
         --title-start-padding: 0 16px;
     }
 }

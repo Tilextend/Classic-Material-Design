@@ -6,7 +6,7 @@
   font-family: 'Noto Sans Arabic';
   font-style: normal;
   font-weight: 400;
-  src: url(../../resources/fonts/NotoSansArabic-Regular.ttf) format('truetype');
+  src: url(/global/resources/fonts/NotoSansArabic-Regular.ttf) format('truetype');
 }
 
 section>ul {

@@ -1,97 +1,104 @@
 footer .right {
-    padding-left: 50%;
+  padding-left: 50%;
 }
 
 /*------------------------------------*\
   正文
 \*------------------------------------*/
 
-.chapter-diagram {
-    background-color: #ffeb3b;
+main>picture {
+  background-color: #ffeb3b;
 }
 
-#goal-language {
-    grid-column-end: span min(var(--max-block), 2);
-    height: 360px;
-    background-color: #1f4388;
+#goals figure {
+  grid-column-end: span min(var(--max-block), 2);
 }
 
-#goal-system {
-    grid-column-end: span min(var(--max-block), 2);
-    background-color: #4dd0e1;
-    height: 360px;
-    align-items: stretch;
-    justify-content: center;
-    padding: 60px 0;
-    gap: 16px;
+#language picture {
+  height: 360px;
+  background-color: #1f4388;
+  align-items: stretch;
 }
 
-#goal-system .surface {
-    position: relative;
-    background-color: var(--medium-emphasis-surface-color);
-    border-radius: 2px;
-    box-shadow: var(--shadow-z2);
+#system .diagram {
+  background-color: #4dd0e1;
+  height: 360px;
+  align-items: stretch;
+  justify-content: center;
+  padding: 60px 0;
+  gap: 16px;
 }
 
-#goal-system .surface:nth-child(1) {
-    inline-size: 24px;
+#system .surface {
+  position: relative;
+  background-color: var(--medium-emphasis-surface-color);
+  border-radius: 2px;
+  box-shadow: var(--shadow-z2);
 }
 
-#goal-system .surface:nth-child(2) {
-    inline-size: 48px;
+#system .surface:nth-child(1) {
+  width: 24px;
 }
 
-#goal-system .surface:nth-child(3) {
-    inline-size: 80px;
+#system .surface:nth-child(2) {
+  width: 48px;
 }
 
-#goal-system .surface:nth-child(4) {
-    inline-size: 136px;
+#system .surface:nth-child(3) {
+  width: 80px;
 }
 
-#goal-system .surface:nth-child(5) {
-    inline-size: 288px;
+#system .surface:nth-child(4) {
+  width: 136px;
 }
 
-#principles-metaphor {
-    aspect-ratio: 1/1;
-    background-color: #b4e0e1;
+#system .surface:nth-child(5) {
+  width: 288px;
 }
 
-#principles-bold-graphic-intentional {
-    aspect-ratio: 1/1;
-    background-color: #ea1b75;
+#principles figure {
+  aspect-ratio: 1/1;
 }
 
-#principles-motion {
-    aspect-ratio: 1/1;
-    background-color: #8F4099;
+#metaphor {
+  background-color: #b4e0e1;
 }
 
-@media screen and (max-width:920px) {
-    #goal-language {
-        height: 480px;
-    }
-    #goal-system {
-        height: 480px;
-        writing-mode: vertical-rl;
-        padding: 0 36px;
-    }
-    #goal-system .surface:nth-child(1) {
-        height: 12px;
-    }
-    #goal-system .surface:nth-child(2) {
-        height: 24px;
-    }
-    #goal-system .surface:nth-child(3) {
-        height: 40px;
-    }
-    #goal-system .surface:nth-child(4) {
-        height: 80px;
-    }
-    #goal-system .surface:nth-child(5) {
-        height: 168px;
-    }
+#bold-graphic-intentional {
+  background-color: #ea1b75;
+}
+
+#motion {
+  background-color: #8f4099;
+}
+
+@media screen and (max-width: 920px) {
+  #language .illustration {
+    height: 480px;
+  }
+  #system .diagram {
+    height: 480px;
+    padding: 0 36px;
+    flex-direction: column;
+  }
+  #system .diagram .surface {
+    width: auto;
+  }
+  #system .surface:nth-child(1) {
+    height: 12px;
+  }
+  #system .surface:nth-child(2) {
+    height: 24px;
+  }
+  #system .surface:nth-child(3) {
+    height: 40px;
+  }
+  #system .surface:nth-child(4) {
+    height: 80px;
+  }
+  #system .surface:nth-child(5) {
+    height: 168px;
+  }
 }
 
 /*------------------------------------*\
@@ -99,15 +106,16 @@ footer .right {
 \*------------------------------------*/
 
 :root {
-    --primary-color: #00bcd4;
-    --secondary-color: #eeff41;
+  --primary-color: #00bcd4;
+  --secondary-color: #eeff41;
 }
 
 ::selection {
-    color: rgba(0, 0, 0, 0.87);
-    background-color: var(--secondary-color);
+  color: rgba(0, 0, 0, 0.87);
+  background-color: var(--secondary-color);
 }
 
-button, footer {
-    --states-parameter: 2;
+button,
+footer {
+  --states-parameter: 2;
 }

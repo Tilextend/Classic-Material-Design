@@ -6,25 +6,25 @@
     <meta name="theme-color" content="#212121">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>质感设计 - 层级与阴影</title>
+    <base href="../">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Roboto+Mono:wght@500&family=Roboto:wght@300;400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Material+Icons&Noto+Sans+SC:wght@400;500&family=Roboto+Mono:wght@500&family=Roboto:wght@300;400;500&display=swap"
         rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
-    <link rel="shortcut icon" href="../global/logo.svg">
-    <link rel="stylesheet" href="./styles/elevation-shadows.css">
-    <link rel="stylesheet" href="../global/styles/global.css">
-    <script defer type="module" src="../global/scripts/global.js"></script>
+    <link rel="icon" href="global/resources/favicon.svg">
+    <link rel="stylesheet" href="material-design/styles/elevation-shadows.css">
+    <link rel="stylesheet" href="global/styles/global.css">
+    <script type="module" src="global/scripts/global.js"></script>
 </head>
 
 <body>
-    <main class="CMD-content">
-        <div class="content-body">
+    <main>
+        <div class="content">
             <header>
                 <h4>层级与阴影</h4>
                 <p class="title">质感设计着重将现实世界的层次关系重新映射至虚拟世界中。</p>
             </header>
-            <nav class="chapter-catalogue">
+            <nav>
                 <span class="body1">索引</span>
                 <ul class="title">
                     <li><a href="#elevation">海拔高度</a></li>
@@ -44,28 +44,28 @@
                         <h6>度量</h6>
                         <p>由于 Material 层面具有厚度，因此它们之间的海拔差是上表面之间的海拔差。海拔高度的单位与长、宽单位一致，均为 dp（密度无关像素）。</p>
                     </article>
-                    <div id="absolute-elevation" class="diagram-wrapper">
-                        <div class="diagram">
+                    <figure id="absolute-elevation">
+                        <div class="illustration">
                             <div class="wrapper">
                                 <div class="surface edged"></div>
                                 <div class="surface edged"></div>
                             </div>
-                            <img src="../resources/material-design/absolute-elevation.svg">
+                            <img src="material-design/resources/absolute-elevation.svg">
                         </div>
-                    </div>
+                    </figure>
                     <article class="body1">
                         <p>海拔高度是相对的，元素的海拔高度可以继承。</p>
                     </article>
-                    <div id="relative-elevation" class="diagram-wrapper">
-                        <div class="diagram">
+                    <figure id="relative-elevation">
+                        <div class="illustration">
                             <div class="wrapper">
                                 <div class="surface edged">
                                     <div class="surface edged"></div>
                                 </div>
                             </div>
-                            <img src="../resources/material-design/relative-elevation.svg">
+                            <img src="material-design/resources/relative-elevation.svg">
                         </div>
-                    </div>
+                    </figure>
                 </section>
                 <section>
                     <article class="body1">
@@ -167,60 +167,66 @@
                         <p>虚拟光源发射的光线受到固体 Material 层面的阻挡投下阴影，为界面层次结构和元素运动方向提供了重要的视觉线索，即使对于不具有覆盖关系的层面也能表达出它们的层级关系。Material
                             层面海拔高度的差异导致阴影的差异。此外，层面之间的明暗对比程度也有助于区分层面层次。</p>
                     </article>
-                </section>
-                <section>
-                    <div id="without-shadow" class="diagram-wrapper">
+                    <figure id="without-shadow">
                         <div class="diagram">
                             <div class="surface"></div>
                             <div class="surface"></div>
                         </div>
-                        <span class="recommends dont body2">错误</span>
-                        <p class="body1">由于缺少阴影的指示，无法断定层面之间是否相互分离。</p>
-                    </div>
-                    <div id="similar-shadow" class="diagram-wrapper">
+                        <figcaption class="body1">
+                            <span class="recommends dont body2">错误</span>
+                            <p>由于缺少阴影的指示，无法断定层面之间是否相互分离。</p>
+                        </figcaption>
+                    </figure>
+                    <figure id="similar-shadow">
                         <div class="diagram">
                             <div class="surface edged"></div>
                             <div class="surface edged"></div>
                         </div>
-                        <span class="recommends dont body2">错误</span>
-                        <p class="body1">元素层叠却具有相同的阴影。</p>
-                    </div>
-                    <div id="distinguishable-shadow" class="diagram-wrapper">
+                        <figcaption class="body1">
+                            <span class="recommends dont body2">错误</span>
+                            <p>元素层叠却具有相同的阴影。</p>
+                        </figcaption>
+                    </figure>
+                    <figure id="distinguishable-shadow">
                         <div class="diagram">
                             <div class="surface edged"></div>
                             <div class="surface edged"></div>
                         </div>
-                        <span class="recommends do body2">正确</span>
-                        <p class="body1">根据具体层面层级，施加符合对应层级的阴影。</p>
-                    </div>
-                </section>
-                <section>
+                        <figcaption class="body1">
+                            <span class="recommends do body2">正确</span>
+                            <p>根据具体层面层级，施加符合对应层级的阴影。</p>
+                        </figcaption>
+                    </figure>
                     <article class="body1 intro">
                         <p>在运动中，阴影也为理解元素尺寸及海拔变化提供了正确指导。</p>
                     </article>
-                </section>
-                <section>
-                    <div id="motion-without-shadow" class="diagram-wrapper">
+                    <figure id="motion-without-shadow">
                         <div class="diagram animated">
                             <div class="surface"></div>
                         </div>
-                        <span class="recommends dont body2">错误</span>
-                        <p class="body1">由于缺少阴影的指示，无法看出层面是在改变层级还只是在改变面积。</p>
-                    </div>
-                    <div id="motion-different-shadow" class="diagram-wrapper">
+                        <figcaption class="body1">
+                            <span class="recommends dont body2">错误</span>
+                            <p>由于缺少阴影的指示，无法看出层面是在改变层级还只是在改变面积。</p>
+                        </figcaption>
+                    </figure>
+                    <figure id="motion-different-shadow">
                         <div class="diagram animated">
                             <div class="surface edged"></div>
                         </div>
-                        <span class="recommends do body2">正确</span>
-                        <p class="body1">阴影的变化指示了层级的变化。</p>
-                    </div>
-                    <div id="motion-same-shadow" class="diagram-wrapper">
+                        <figcaption class="body1">
+                            <span class="recommends do body2">正确</span>
+                            <p>阴影的变化指示了层级的变化。</p>
+                        </figcaption>
+                    </figure>
+                    <figure id="motion-same-shadow">
                         <div class="diagram animated">
                             <div class="surface edged"></div>
                         </div>
-                        <span class="recommends do body2">正确</span>
-                        <p class="body1">相同的阴影指示了不变的相对高度和变化的面积。</p>
-                    </div>
+                        <figcaption class="body1">
+                            <span class="recommends do body2">正确</span>
+                            <p>相同的阴影指示了不变的相对高度和变化的面积。</p>
+                        </figcaption>
+                    </figure>
                 </section>
                 <section>
                     <article class="body1">
@@ -228,7 +234,7 @@
                         <p>在平面中，元素交织在一起时，它们各自的显示完整程度能体现想象的覆盖关系。但这种利用可见性的遮盖假象通常不能指示元素间的海拔高度差。</p>
                         <p>Material 的性质决定平面中元素的边缘仅能通过颜色的对比来显示。因此在平面中，交织元素的边缘需有足够的色彩对比度来帮助用户进行区分。</p>
                     </article>
-                    <div id="color-overlap" class="diagram-wrapper" screen="mobile">
+                    <figure id="color-overlap" screen="mobile">
                         <div class="simulator" calculator>
                             <div class="application" lang="en-US">
                                 <div class="panel">
@@ -377,13 +383,15 @@
                                 </div>
                             </div>
                         </div>
-                        <p class="body1">清除效果在平面中“遮盖”了运算指令与结果。</p>
-                    </div>
-                    <div id="text-overlap" class="diagram-wrapper" screen="mobile">
+                        <figcaption class="body1">
+                            <p>清除效果在平面中“遮盖”了运算指令与结果。</p>
+                        </figcaption>
+                    </figure>
+                    <figure id="text-overlap" screen="mobile">
                         <div class="simulator" contacts="detailed">
                             <div class="application">
                                 <div class="portrait-wrapper">
-                                    <img character="ali-connors" src="../resources/faces/ali_connors.png">
+                                    <img character="ali-connors" src="resources/faces/ali_connors.png">
                                     <div class="content-block">
                                         <div class="scrim" gradient></div>
                                         <span class="display1">Ali Connors</span>
@@ -457,14 +465,14 @@
                                 </div>
                             </div>
                         </div>
-                        <p class="body1">同一平面中的文字与图标“遮盖”了图像。</p>
-                    </div>
-                </section>
-                <section>
+                        <figcaption class="body1">
+                            <p>同一平面中的文字与图标“遮盖”了图像。</p>
+                        </figcaption>
+                    </figure>
                     <article class="body1">
                         <p>内容的运动方式也为符合预期地理解层次关系提供指导。</p>
                     </article>
-                    <div class="diagram-wrapper" screen="mobile tablet">
+                    <figure screen="mobile tablet">
                         <div class="simulator">
                             <div class="application">
                                 <div class="system-layer">
@@ -488,8 +496,10 @@
                                 </div>
                             </div>
                         </div>
-                        <p class="body1">界面元素运动产生的视差提供纵深感。</p>
-                    </div>
+                        <figcaption class="body1">
+                            <p>界面元素运动产生的视差提供纵深感。</p>
+                        </figcaption>
+                    </figure>
                 </section>
             </article>
             <hr class="divider horizontal">
@@ -501,11 +511,13 @@
                         <p>部分与整体的关系同时也是一种上下级关系，所有的元素都可以视为界面中的一个部分，而多个元素组成的整体又能是上一级整体的部分，一个整体的直接下属部分具有同级关系。</p>
                         <p>部分可以继承整体的可变属性，如位置、旋转角度、大小或空间层级。</p>
                     </article>
-                    <div id="assembled" class="diagram-wrapper">
+                    <figure id="assembled">
                         <div class="diagram animated"></div>
-                        <p class="body1">多张卡片组合成整体移动。</p>
-                    </div>
-                    <div id="separated" class="diagram-wrapper">
+                        <figcaption class="body1">
+                            <p>多张卡片组合成整体移动。</p>
+                        </figcaption>
+                    </figure>
+                    <figure id="separated">
                         <div class="diagram animated">
                             <div class="surface">
                                 <hr class="divider horizontal">
@@ -524,22 +536,22 @@
                             <div class="surface edged"></div>
                             <div class="surface edged"></div>
                         </div>
-                        <p class="body1">界面中的不同部分相对静止。</p>
-                    </div>
+                        <figcaption class="body1">
+                            <p>界面中的不同部分相对静止。</p>
+                        </figcaption>
+                    </figure>
                 </section>
             </article>
         </div>
 
-
-
         <footer>
-            <a states class="left light" href="../material-design/material-properties.html">
+            <a states class="left light" href="material-design/material-properties.html">
                 <span class="material-icons">arrow_back</span>
                 <span class="subheading">上一节
                     <span class="title">Material 属性</span>
                 </span>
             </a>
-            <a states class="right dark" href="../layout/principles.html">
+            <a states class="right dark" href="layout/principles.html">
                 <span class="subheading">下一节
                     <span class="title">架构方法</span>
                 </span>
@@ -566,105 +578,123 @@
         <div class="scrim" fill></div>
         <nav class="drawer body1">
             <figure>
-                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <circle cx="12" cy="12" r="12" />
-                    <path fill="#BDBDBD" d="M3.6,3.6h16.8v16.8H3.6V3.6z" />
-                    <path fill="#ffffff" d="M20.4,3.6L12,20.4L3.6,3.6H20.4z" />
+                    <rect fill="#BDBDBD" x="3.5150809" y="3.5150809" width="16.9698048" height="16.9698048" />
+                    <polygon fill="#FFFFFF" points="11.9999838,20.4848862 3.5150809,3.5150809 20.4848862,3.5150809 " />
                 </svg>
                 <figcaption class="subheading">MATERIAL DESIGN</figcaption>
             </figure>
             <hr class="divider horizontal">
-            <li class="on unfolded">
-                <span states class="body2" tabindex="0">基本原理</span>
-                <a states href="../index.html">概述</a>
-                <a states href="../material-design/environment.html">环境</a>
-                <a states href="../material-design/material-properties.html">Material 属性</a>
-                <a states class="activated">层级与阴影</a>
-            </li>
-            <li>
-                <span states class="body2" tabindex="0">布局</span>
-                <a states href="../layout/principles.html">架构方法</a>
-                <a states href="../layout/units-measurements.html">单位与度量方法</a>
-                <a states href="../layout/spacing-methods.html">元素排布</a>
-                <a states href="../layout/structure.html">界面结构</a>
-                <a states href="../layout/responsive-ui.html">响应式界面</a>
-                <a states href="../layout/density.html">元素密度</a>
-            </li>
-            <li>
-                <span states class="body2" tabindex="0">风格样式</span>
-                <a states href="../style/color.html">颜色</a>
-                <a states href="../style/icons.html">图标</a>
-                <a states href="../style/imagery.html">图像</a>
-                <a states href="../style/typography.html">字体排印</a>
-                <a states href="../style/writing.html">书面用语</a>
-                <a states href="../style/sound.html">声音</a>
-            </li>
-            <li>
-                <span states class="body2" tabindex="0">动画效果</span>
-                <a states href="../motion/material-motion.html">运动机理</a>
-                <a states href="../motion/movement.html">移动</a>
-                <a states href="../motion/transforming-material.html">转换</a>
-                <a states href="../motion/choreography.html">编排</a>
-                <a states href="../motion/responsive-interaction.html">作用反馈</a>
-                <a states href="../motion/creative-customization.html">创意定制</a>
-            </li>
-            <li>
-                <span states class="body2" tabindex="0">组件</span>
-                <a states href="../components/bottom-navigation.html">底部导航</a>
-                <a states href="../components/buttons.html">按钮</a>
-                <a states href="../components/buttons-floating-action-button.html">按钮：浮动操作按钮</a>
-                <a states href="../components/cards.html">卡片</a>
-                <a states href="../components/chips.html">多用标签</a>
-                <a states href="../components/data-tables.html">数据表格</a>
-                <a states href="../components/dividers.html">分隔线</a>
-                <a states href="../components/dialogs.html">对话框</a>
-                <a states href="../components/dialogs-pickers.html">对话框：选择器</a>
-                <a states href="../components/lists.html">列表</a>
-                <a states href="../components/menus.html">菜单</a>
-                <a states href="../components/progress-indicators.html">进程指示器</a>
-                <a states href="../components/selection-controls.html">选择控件</a>
-                <a states href="../components/sheets-bottom.html">底部单页</a>
-                <a states href="../components/sheets-side.html">侧边单页</a>
-                <a states href="../components/sheets-navigation-drawer.html">侧边单页：导航抽屉</a>
-                <a states href="../components/sliders.html">滑块</a>
-                <a states href="../components/snackbars.html">条形通知</a>
-                <a states href="../components/tabs.html">标签栏</a>
-                <a states href="../components/text-fields.html">文本框</a>
-                <a states href="../components/toolbars.html">工具栏</a>
-                <a states href="../components/widgets.html">桌面小部件</a>
-            </li>
-            <li>
-                <span states class="body2" tabindex="0">交互模式</span>
-                <a states href="../patterns/confirmation-acknowledgement.html">确认与获知</a>
-                <a states href="../patterns/data-display.html">数据展示</a>
-                <a states href="../patterns/empty-states.html">空状态</a>
-                <a states href="../patterns/errors.html">错误提示</a>
-                <a states href="../patterns/fingerprint.html">指纹识别</a>
-                <a states href="../patterns/gestures.html">手势</a>
-                <a states href="../patterns/help-feedback.html">帮助与反馈</a>
-                <a states href="../patterns/launch-screens.html">启动画面</a>
-                <a states href="../patterns/navigation.html">导航</a>
-                <a states href="../patterns/notifications.html">通知</a>
-                <a states href="../patterns/offline-states.html">离线状态</a>
-                <a states href="../patterns/permissions.html">权限</a>
-                <a states href="../patterns/search.html">搜索</a>
-                <a states href="../patterns/selection.html">选择</a>
-                <a states href="../patterns/settings.html">设置</a>
-                <a states href="../patterns/states.html">交互状态</a>
-                <a states href="../patterns/swipe-to-refresh.html">下滑刷新</a>
-            </li>
-            <li>
-                <span states class="body2" tabindex="0">可用性</span>
-                <a states href="../usability/accessibility.html">无障碍</a>
-                <a states href="../usability/bidirectionality.html">阅读方向</a>
-            </li>
-            <li>
-                <span states class="body2" tabindex="0">发展与用户教育</span>
-            </li>
-            <li>
-                <span states class="body2" tabindex="0">资源</span>
-            </li>
-            <a href="../about.html">关于</a>
+            <ul>
+                <li>
+                    <span states class="body2" tabindex="0">基本原理</span>
+                    <ul class="on unfolded">
+                        <li states><a href="index.html">质感设计</a></li>
+                        <li states><a href="material-design/environment.html">环境</a></li>
+                        <li states><a href="material-design/material-properties.html">Material 属性</a></li>
+                        <li states class="activated">层级与阴影</li>
+                    </ul>
+                </li>
+                <li>
+                    <span states class="body2" tabindex="0">布局</span>
+                    <ul>
+                        <li states><a href="layout/principles.html">架构方法</a></li>
+                        <li states><a href="layout/units-measurements.html">单位与度量方法</a></li>
+                        <li states><a href="layout/spacing-methods.html">元素排布</a></li>
+                        <li states><a href="layout/structure.html">界面结构</a></li>
+                        <li states><a href="layout/responsive-ui.html">响应式界面</a></li>
+                        <li states><a href="layout/density.html">元素密度</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <span states class="body2" tabindex="0">风格样式</span>
+                    <ul>
+                        <li states><a href="style/color.html">颜色</a></li>
+                        <li states><a href="style/icons.html">图标</a></li>
+                        <li states><a href="style/imagery.html">图像</a></li>
+                        <li states><a href="style/typography.html">字体排印</a></li>
+                        <li states><a href="style/writing.html">书面用语</a></li>
+                        <li states><a href="style/sound.html">声音</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <span states class="body2" tabindex="0">动画效果</span>
+                    <ul>
+                        <li states><a href="motion/material-motion.html">运动机理</a></li>
+                        <li states><a href="motion/movement.html">移动</a></li>
+                        <li states><a href="motion/transforming-material.html">转换</a></li>
+                        <li states><a href="motion/choreography.html">编排</a></li>
+                        <li states><a href="motion/responsive-interaction.html">作用反馈</a></li>
+                        <li states><a href="motion/creative-customization.html">创意定制</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <span states class="body2" tabindex="0">组件</span>
+                    <ul>
+                        <li states><a href="components/bottom-navigation.html">底部导航</a></li>
+                        <li states><a href="components/buttons.html">按钮</a></li>
+                        <li states><a href="components/buttons-floating-action-button.html">按钮：浮动操作按钮</a></li>
+                        <li states><a href="components/cards.html">卡片</a></li>
+                        <li states><a href="components/chips.html">多用标签</a></li>
+                        <li states><a href="components/data-tables.html">数据表格</a></li>
+                        <li states><a href="components/dividers.html">分隔线</a></li>
+                        <li states><a href="components/dialogs.html">对话框</a></li>
+                        <li states><a href="components/dialogs-pickers.html">对话框：选择器</a></li>
+                        <li states><a href="components/lists.html">列表</a></li>
+                        <li states><a href="components/menus.html">菜单</a></li>
+                        <li states><a href="components/progress-indicators.html">进程指示器</a></li>
+                        <li states><a href="components/selection-controls.html">选择控件</a></li>
+                        <li states><a href="components/sheets-bottom.html">底部单页</a></li>
+                        <li states><a href="components/sheets-side.html">侧边单页</a></li>
+                        <li states><a href="components/sheets-navigation-drawer.html">侧边单页：导航抽屉</a></li>
+                        <li states><a href="components/sliders.html">滑块</a></li>
+                        <li states><a href="components/snackbars.html">条形通知</a></li>
+                        <li states><a href="components/tabs.html">标签栏</a></li>
+                        <li states><a href="components/text-fields.html">文本框</a></li>
+                        <li states><a href="components/toolbars.html">工具栏</a></li>
+                        <li states><a href="components/widgets.html">桌面小部件</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <span states class="body2" tabindex="0">交互模式</span>
+                    <ul>
+                        <li states><a href="patterns/confirmation-acknowledgement.html">确认与获知</a></li>
+                        <li states><a href="patterns/data-display.html">数据展示</a></li>
+                        <li states><a href="patterns/empty-states.html">空状态</a></li>
+                        <li states><a href="patterns/errors.html">错误提示</a></li>
+                        <li states><a href="patterns/fingerprint.html">指纹识别</a></li>
+                        <li states><a href="patterns/gestures.html">手势</a></li>
+                        <li states><a href="patterns/help-feedback.html">帮助与反馈</a></li>
+                        <li states><a href="patterns/launch-screens.html">启动画面</a></li>
+                        <li states><a href="patterns/navigation.html">导航</a></li>
+                        <li states><a href="patterns/notifications.html">通知</a></li>
+                        <li states><a href="patterns/offline-states.html">离线状态</a></li>
+                        <li states><a href="patterns/permissions.html">权限</a></li>
+                        <li states><a href="patterns/search.html">搜索</a></li>
+                        <li states><a href="patterns/selection.html">选择</a></li>
+                        <li states><a href="patterns/settings.html">设置</a></li>
+                        <li states><a href="patterns/states.html">交互状态</a></li>
+                        <li states><a href="patterns/swipe-to-refresh.html">下滑刷新</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <span states class="body2" tabindex="0">可用性</span>
+                    <ul>
+                        <li states><a href="usability/accessibility.html">无障碍</a></li>
+                        <li states><a href="usability/bidirectionality.html">阅读方向</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <span states class="body2" tabindex="0">发展与用户教育</span>
+                </li>
+                <li>
+                    <span states class="body2" tabindex="0">资源</span>
+                </li>
+                <li>
+                    <span states class="body2" tabindex="0">附录</span>
+                </li>
+            </ul>
         </nav>
         <div class="divider vertical"></div>
     </aside>

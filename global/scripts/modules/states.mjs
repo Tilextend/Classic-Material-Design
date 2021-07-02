@@ -5,7 +5,7 @@ let rippleKeyboardCalled = false;
 
 document.querySelectorAll('*[states], button').forEach((element) => {
     let div = document.createElement('div');
-    div.className = 'ripples';
+    div.className = 'states-overlay';
     element.appendChild(div);
 
     element.addEventListener('touchstart', (event) => {
@@ -43,8 +43,8 @@ function rippleForeground(element, event) {
     let containerRadius = Math.hypot(containerWidth, containerHeight) / 2;
 
     const rippleForegroundObject = document.createElement('div');
-    rippleForegroundObject.className = 'foreground';
-    let nodes = element.querySelectorAll('.ripples');
+    rippleForegroundObject.className = 'ripple';
+    let nodes = element.querySelectorAll('.states-overlay');
     nodes[nodes.length - 1].appendChild(rippleForegroundObject);
     let lastRippleForeground = nodes[nodes.length - 1].querySelector('div:last-child');
     
