@@ -10,8 +10,8 @@
     grid-column-start: 1;
 }
 
-#dimensions picture {
-    height: 480px;
+#dimensions img {
+    width: 100%;
 }
 
 figure:not(#dimensions) .diagram {

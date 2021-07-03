@@ -1,388 +1,377 @@
 <!DOCTYPE html>
 <html lang="zh-Hans">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="theme-color" content="#212121" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>质感设计 - Material 属性</title>
+        <base href="../" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500&family=Roboto+Mono:wght@500&family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+        <link rel="icon" href="global/resources/favicon.svg" />
+        <link rel="stylesheet" href="material-design/styles/material-properties.css" />
+        <link rel="stylesheet" href="global/styles/global.css" />
+        <script type="module" src="global/scripts/global.js"></script>
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="theme-color" content="#212121">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>质感设计 - Material 属性</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500&family=Roboto+Mono:wght@500&family=Roboto:wght@400;500&display=swap"
-        rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
-    <link rel="icon" href="/global/resources/favicon.svg">
-    <link rel="stylesheet" href="./styles/material-properties.css">
-    <link rel="stylesheet" href="/global/styles/global.css">
-    <script type="module" src="/global/scripts/global.js"></script>
-</head>
+    <body>
+        <main>
+            <div class="content">
+                <header>
+                    <h2 class="display1">Material 属性</h2>
+                    <p class="title">Material 作为质感设计虚拟世界中的基本粒子具有固定的属性和运动规律，相较于现实世界的基本粒子又有其独特的性质和行为，进而在宏观上决定了由 Material 组成的层面的表现。</p>
+                </header>
+                <nav>
+                    <h3 class="body1">索引</h3>
+                    <ul class="title">
+                        <li><a href="material-design/material-properties.html#physical-properties">形态与运动</a></li>
+                        <li><a href="material-design/material-properties.html#appearance">外表</a></li>
+                    </ul>
+                </nav>
+                <article id="physical-properties" class="horizontal">
+                    <h3 class="headline">形态与运动</h3>
+                    <section>
+                        <article class="body1">
+                            <p>Material 是虚拟世界中的物质实体，因此多个 Material 不能同时占据相同的位置，由 Material 组成的层面也不能互相重叠或穿透。</p>
+                        </article>
+                        <figure id="physical-presence">
+                            <div class="diagram">
+                                <div class="surface edged"></div>
+                                <div class="surface edged"></div>
+                            </div>
+                            <figcaption class="body1">
+                                <span class="recommends do body2">正确</span>
+                                <p>使用阴影区分实体层面。</p>
+                            </figcaption>
+                        </figure>
+                        <figure id="virtual-presence">
+                            <div class="diagram">
+                                <div class="wrapper">
+                                    <div class="surface"></div>
+                                    <div class="surface"></div>
+                                </div>
+                            </div>
+                            <figcaption class="body1">
+                                <span class="recommends dont body2">错误</span>
+                                <p>Material 不能重叠。</p>
+                            </figcaption>
+                        </figure>
+                        <figure id="motion-virtual-presence">
+                            <div class="diagram animated">
+                                <video loop>
+                                    <source src="material-design/resources/whatismaterial-properties-physical-07-xhdpi-009.mp4" type="video/mp4" />
+                                </video>
+                            </div>
+                            <figcaption class="body1">
+                                <span class="recommends dont body2">错误</span>
+                                <p>Material 不能互相穿透。</p>
+                            </figcaption>
+                        </figure>
+                        <article class="body1">
+                            <p>由 Material 组成的层面类似于纸张，是一种平整、轻盈的固体，厚度均固定为 1dp。</p>
+                        </article>
+                        <figure id="consistent-surfaces-thickness">
+                            <picture class="diagram">
+                                <img src="material-design/resources/whatismaterial-materialproperties-physicalproperties-thickness-01-yes.png" />
+                            </picture>
+                            <figcaption class="body1">
+                                <span class="recommends do body2">正确</span>
+                                <p>Material 层面具有统一的厚度。</p>
+                            </figcaption>
+                        </figure>
+                        <figure id="inconsistent-surfaces-thickness">
+                            <picture class="diagram">
+                                <img src="material-design/resources/whatismaterial-materialproperties-physicalproperties-thickness-02-no.png" />
+                            </picture>
+                            <figcaption class="body1">
+                                <span class="recommends dont body2">错误</span>
+                                <p>多种厚度的 Material 层面钳制界面元素的活动。</p>
+                            </figcaption>
+                        </figure>
+                        <article class="body1">
+                            <p>外力作用不能透过 Material，因此用户的操作不能穿过高层面作用于低层面。</p>
+                        </article>
+                        <figure id="obstructed-input">
+                            <div class="diagram">
+                                <div id="app-bar" class="surface edged"></div>
+                                <div id="menu" class="surface edged">
+                                    <div class="hint"></div>
+                                </div>
+                                <div class="touch-input">
+                                    <div class="background"></div>
+                                    <div class="foreground"></div>
+                                    <div class="core"></div>
+                                </div>
+                            </div>
+                            <figcaption class="body1">
+                                <span class="recommends do body2">正确</span>
+                                <p>用户操作仅作用于选中的或在作用范围最前端的层面。</p>
+                            </figcaption>
+                        </figure>
+                        <figure id="input-pass-through">
+                            <div class="diagram">
+                                <div id="app-bar" class="surface edged"></div>
+                                <div class="hint"></div>
+                                <div id="menu" class="surface edged">
+                                    <div class="hint"></div>
+                                </div>
+                                <div class="touch-input">
+                                    <div class="background"></div>
+                                    <div class="foreground"></div>
+                                    <div class="core"></div>
+                                </div>
+                            </div>
+                            <figcaption class="body1">
+                                <span class="recommends dont body2">错误</span>
+                                <p>用户操作不能穿透 Material 层面。</p>
+                            </figcaption>
+                        </figure>
+                        <article class="body1">
+                            <p>Material 可以凭空产生和消失。因此 Material 层面可以在平面上自由变换形状与长、宽。</p>
+                        </article>
+                        <figure id="magical-material">
+                            <div class="diagram animated">
+                                <div class="surface edged"></div>
+                            </div>
+                            <figcaption class="body1">
+                                <p>Material 层面的形状与尺寸由 Material 的有无决定。</p>
+                            </figcaption>
+                        </figure>
+                        <article class="body1">
+                            <p>Material 层面可以自由地拆分与无缝组合。</p>
+                        </article>
+                        <figure id="ideal-material">
+                            <div class="diagram animated">
+                                <div class="wrapper">
+                                    <div class="surface"></div>
+                                    <div class="surface"></div>
+                                </div>
+                            </div>
+                            <figcaption class="body1">
+                                <p>Material 之间的分割与连结干净利落。</p>
+                            </figcaption>
+                        </figure>
+                        <article class="body1">
+                            <p>Material 可以在三维空间内自由移动。但由于虚拟空间海拔高度有限，为了保证界面稳定性，Material 层面不能扭曲、折叠、翻转。</p>
+                        </article>
+                        <figure id="free-movement">
+                            <div class="diagram animated">
+                                <div class="wrapper">
+                                    <div class="surface"></div>
+                                </div>
+                            </div>
+                            <figcaption class="body1">
+                                <span class="recommends do body2">正确</span>
+                                <p>同一 Material 层面中的 Material 只能处于同一海拔。</p>
+                            </figcaption>
+                        </figure>
+                        <figure id="screen-piercing">
+                            <div class="diagram animated">
+                                <video loop>
+                                    <source src="material-design/resources/whatismaterial-materialprop-transformingmaterial-paperbendfold-xhdpi-006.mp4" type="video/mp4" />
+                                </video>
+                            </div>
+                            <figcaption class="body1">
+                                <span class="recommends dont body2">错误</span>
+                                <p>Material 不能穿透大小有限的虚拟空间。</p>
+                            </figcaption>
+                        </figure>
+                    </section>
+                </article>
+                <hr class="divider horizontal" />
+                <article id="appearance" class="horizontal">
+                    <h3 class="headline">外表</h3>
+                    <section>
+                        <article class="body1">
+                            <p>Material 可以自由改变颜色，内容的显示和运动实质上是承载物——Material 的颜色变化，因此由 Material 组成的层面可以显示任意内容。</p>
+                        </article>
+                        <figure id="material-display">
+                            <div class="diagram animated">
+                                <video loop>
+                                    <source src="material-design/resources/whatismaterial-materialprop-physicalprop-inkdisplay-xhdpi-006.mp4" type="video/mp4" />
+                                </video>
+                            </div>
+                            <figcaption class="body1">
+                                <p>Material 可以表现任意颜色。</p>
+                            </figcaption>
+                        </figure>
+                        <article class="body1">
+                            <p>内容的运动也可以在视觉上独立于 Material，但内容的显示始终依赖于 Material 的存在。</p>
+                        </article>
+                        <figure id="independent-content">
+                            <div class="diagram animated">
+                                <video loop>
+                                    <source src="material-design/resources/whatismaterial-materialprop-physicalprop-inkbehavior-xhdpi-006.mp4" type="video/mp4" />
+                                </video>
+                            </div>
+                            <figcaption class="body1">
+                                <p>Material 层面显示的内容并不被 Material 属性所影响。</p>
+                            </figcaption>
+                        </figure>
+                        <article class="body1">
+                            <p>Material 层面可以表现一定程度的透明。但除过渡状态以外，包含内容的 Material 承载层存在时必须保持完全不透明。</p>
+                        </article>
+                    </section>
+                </article>
+            </div>
 
-<body>
-    <main>
-        <div class="content">
-            <header>
-                <h4>Material 属性</h4>
-                <p class="title">Material 作为质感设计虚拟世界中的基本粒子具有固定的属性和运动规律，相较于现实世界的基本粒子又有其独特的性质和行为，进而在宏观上决定了由 Material
-                    组成的层面的表现。</p>
-            </header>
-            <nav>
-                <span class="body1">索引</span>
-                <ul class="title">
-                    <li><a href="#physical-properties">形态与运动</a></li>
-                    <li><a href="#appearance">外表</a></li>
+            <footer class="light">
+                <a states class="left" href="material-design/environment.html">
+                    <span class="material-icons">arrow_back</span>
+                    <span class="subheading"
+                        >上一节
+                        <span class="title">环境</span>
+                    </span>
+                </a>
+                <a states class="right" href="material-design/elevation-shadows.html">
+                    <span class="subheading"
+                        >下一节
+                        <span class="title">层级与阴影</span>
+                    </span>
+                    <span class="material-icons">arrow_forward</span>
+                </a>
+            </footer>
+
+            <div class="app-bar light">
+                <div class="start">
+                    <button id="drawer-trigger" class="icon-button unbounded" tabindex="1">
+                        <span class="material-icons">menu</span>
+                    </button>
+                </div>
+                <h1 class="title">基本原理 - Material 属性</h1>
+                <div class="end">
+                    <button id="search-trigger" class="icon-button unbounded" disabled="true">
+                        <span class="material-icons">search</span>
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <aside class="drawer-container">
+            <div class="scrim" fill></div>
+            <nav class="drawer body1">
+                <figure>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="12" />
+                        <rect fill="#BDBDBD" x="3.5150809" y="3.5150809" width="16.9698048" height="16.9698048" />
+                        <polygon fill="#FFFFFF" points="11.9999838,20.4848862 3.5150809,3.5150809 20.4848862,3.5150809 " />
+                    </svg>
+                    <figcaption class="subheading">MATERIAL DESIGN</figcaption>
+                </figure>
+                <hr class="divider horizontal" />
+                <ul>
+                    <li>
+                        <span states class="body2" tabindex="0">基本原理</span>
+                        <ul class="on unfolded">
+                            <li states><a href="index.html">概述</a></li>
+                            <li states><a href="material-design/environment.html">环境</a></li>
+                            <li states class="activated">Material 属性</li>
+                            <li states><a href="material-design/elevation-shadows.html">层级与阴影</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span states class="body2" tabindex="0">布局</span>
+                        <ul>
+                            <li states><a href="layout/principles.html">架构方法</a></li>
+                            <li states><a href="layout/units-measurements.html">单位与度量方法</a></li>
+                            <li states><a href="layout/spacing-methods.html">元素排布</a></li>
+                            <li states><a href="layout/structure.html">界面结构</a></li>
+                            <li states><a href="layout/responsive-ui.html">响应式界面</a></li>
+                            <li states><a href="layout/density.html">元素密度</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span states class="body2" tabindex="0">风格样式</span>
+                        <ul>
+                            <li states><a href="style/color.html">颜色</a></li>
+                            <li states><a href="style/icons.html">图标</a></li>
+                            <li states><a href="style/imagery.html">图像</a></li>
+                            <li states><a href="style/typography.html">字体排印</a></li>
+                            <li states><a href="style/writing.html">书面用语</a></li>
+                            <li states><a href="style/sound.html">声音</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span states class="body2" tabindex="0">动画效果</span>
+                        <ul>
+                            <li states><a href="motion/material-motion.html">运动机理</a></li>
+                            <li states><a href="motion/movement.html">移动</a></li>
+                            <li states><a href="motion/transforming-material.html">转换</a></li>
+                            <li states><a href="motion/choreography.html">编排</a></li>
+                            <li states><a href="motion/responsive-interaction.html">作用反馈</a></li>
+                            <li states><a href="motion/creative-customization.html">创意定制</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span states class="body2" tabindex="0">组件</span>
+                        <ul>
+                            <li states><a href="components/bottom-navigation.html">底部导航</a></li>
+                            <li states><a href="components/buttons.html">按钮</a></li>
+                            <li states><a href="components/buttons-floating-action-button.html">按钮：浮动操作按钮</a></li>
+                            <li states><a href="components/cards.html">卡片</a></li>
+                            <li states><a href="components/chips.html">多用标签</a></li>
+                            <li states><a href="components/data-tables.html">数据表格</a></li>
+                            <li states><a href="components/dividers.html">分隔线</a></li>
+                            <li states><a href="components/dialogs.html">对话框</a></li>
+                            <li states><a href="components/dialogs-pickers.html">对话框：选择器</a></li>
+                            <li states><a href="components/lists.html">列表</a></li>
+                            <li states><a href="components/menus.html">菜单</a></li>
+                            <li states><a href="components/progress-indicators.html">进程指示器</a></li>
+                            <li states><a href="components/selection-controls.html">选择控件</a></li>
+                            <li states><a href="components/sheets-bottom.html">底部单页</a></li>
+                            <li states><a href="components/sheets-side.html">侧边单页</a></li>
+                            <li states><a href="components/sheets-navigation-drawer.html">侧边单页：导航抽屉</a></li>
+                            <li states><a href="components/sliders.html">滑块</a></li>
+                            <li states><a href="components/snackbars.html">条形通知</a></li>
+                            <li states><a href="components/tabs.html">标签栏</a></li>
+                            <li states><a href="components/text-fields.html">文本框</a></li>
+                            <li states><a href="components/toolbars.html">工具栏</a></li>
+                            <li states><a href="components/widgets.html">桌面小部件</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span states class="body2" tabindex="0">交互模式</span>
+                        <ul>
+                            <li states><a href="patterns/confirmation-acknowledgement.html">确认与获知</a></li>
+                            <li states><a href="patterns/data-display.html">数据展示</a></li>
+                            <li states><a href="patterns/empty-states.html">空状态</a></li>
+                            <li states><a href="patterns/errors.html">错误提示</a></li>
+                            <li states><a href="patterns/fingerprint.html">指纹识别</a></li>
+                            <li states><a href="patterns/gestures.html">手势</a></li>
+                            <li states><a href="patterns/help-feedback.html">帮助与反馈</a></li>
+                            <li states><a href="patterns/launch-screens.html">启动画面</a></li>
+                            <li states><a href="patterns/navigation.html">导航</a></li>
+                            <li states><a href="patterns/notifications.html">通知</a></li>
+                            <li states><a href="patterns/offline-states.html">离线状态</a></li>
+                            <li states><a href="patterns/permissions.html">权限</a></li>
+                            <li states><a href="patterns/search.html">搜索</a></li>
+                            <li states><a href="patterns/selection.html">选择</a></li>
+                            <li states><a href="patterns/settings.html">设置</a></li>
+                            <li states><a href="patterns/states.html">交互状态</a></li>
+                            <li states><a href="patterns/swipe-to-refresh.html">下滑刷新</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span states class="body2" tabindex="0">可用性</span>
+                        <ul>
+                            <li states><a href="usability/accessibility.html">无障碍</a></li>
+                            <li states><a href="usability/bidirectionality.html">阅读方向</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span states class="body2" tabindex="0">发展与用户教育</span>
+                    </li>
+                    <li>
+                        <span states class="body2" tabindex="0">资源</span>
+                    </li>
+                    <li>
+                        <span states class="body2" tabindex="0">附录</span>
+                    </li>
                 </ul>
             </nav>
-            <article id="physical-properties" class="horizontal">
-                <h5>形态与运动</h5>
-                <section>
-                    <article class="body1">
-                        <p>Material 是虚拟世界中的物质实体，因此多个 Material 不能同时占据相同的位置，由 Material 组成的层面也不能互相重叠或穿透。</p>
-                    </article>
-                    <figure id="physical-presence">
-                        <div class="diagram">
-                            <div class="surface edged"></div>
-                            <div class="surface edged"></div>
-                        </div>
-                        <figcaption class="body1">
-                            <span class="recommends do body2">正确</span>
-                            <p>使用阴影区分实体层面。</p>
-                        </figcaption>
-                    </figure>
-                    <figure id="virtual-presence">
-                        <div class="diagram">
-                            <div class="wrapper">
-                                <div class="surface"></div>
-                                <div class="surface"></div>
-                            </div>
-                        </div>
-                        <figcaption class="body1">
-                            <span class="recommends dont body2">错误</span>
-                            <p>Material 不能重叠。</p>
-                        </figcaption>
-                    </figure>
-                    <figure id="motion-virtual-presence">
-                        <div class="diagram animated">
-                            <video loop>
-                                <source src="./resources/whatismaterial-properties-physical-07-xhdpi-009.mp4"
-                                    type="video/mp4">
-                            </video>
-                        </div>
-                        <figcaption class="body1">
-                            <span class="recommends dont body2">错误</span>
-                            <p>Material 不能互相穿透。</p>
-                        </figcaption>
-                    </figure>
-                    <article class="body1">
-                        <p>由 Material 组成的层面类似于纸张，是一种平整、轻盈的固体，厚度均固定为 1dp。</p>
-                    </article>
-                    <figure id="consistent-surfaces-thickness">
-                        <picture class="diagram">
-                            <img
-                                src="./resources/whatismaterial-materialproperties-physicalproperties-thickness-01-yes.png">
-                        </picture>
-                        <figcaption class="body1">
-                            <span class="recommends do body2">正确</span>
-                            <p>Material 层面具有统一的厚度。</p>
-                        </figcaption>
-                    </figure>
-                    <figure id="inconsistent-surfaces-thickness">
-                        <picture class="diagram">
-                            <img
-                                src="./resources/whatismaterial-materialproperties-physicalproperties-thickness-02-no.png">
-                        </picture>
-                        <figcaption class="body1">
-                            <span class="recommends dont body2">错误</span>
-                            <p>多种厚度的 Material 层面钳制界面元素的活动。</p>
-                        </figcaption>
-                    </figure>
-                    <article class="body1">
-                        <p>外力作用不能透过 Material，因此用户的操作不能穿过高层面作用于低层面。</p>
-                    </article>
-                    <figure id="obstructed-input">
-                        <div class="diagram">
-                            <div id="app-bar" class="surface edged"></div>
-                            <div id="menu" class="surface edged">
-                                <div class="hint"></div>
-                            </div>
-                            <div class="touch-input">
-                                <div class="background"></div>
-                                <div class="foreground"></div>
-                                <div class="core"></div>
-                            </div>
-                        </div>
-                        <figcaption class="body1">
-                            <span class="recommends do body2">正确</span>
-                            <p>用户操作仅作用于选中的或在作用范围最前端的层面。</p>
-                        </figcaption>
-                    </figure>
-                    <figure id="input-pass-through">
-                        <div class="diagram">
-                            <div id="app-bar" class="surface edged"></div>
-                            <div class="hint"></div>
-                            <div id="menu" class="surface edged">
-                                <div class="hint"></div>
-                            </div>
-                            <div class="touch-input">
-                                <div class="background"></div>
-                                <div class="foreground"></div>
-                                <div class="core"></div>
-                            </div>
-                        </div>
-                        <figcaption class="body1">
-                            <span class="recommends dont body2">错误</span>
-                            <p>用户操作不能穿透 Material 层面。</p>
-                        </figcaption>
-                    </figure>
-                    <article class="body1">
-                        <p>Material 可以凭空产生和消失。因此 Material 层面可以在平面上自由变换形状与长、宽。</p>
-                    </article>
-                    <figure id="magical-material">
-                        <div class="diagram animated">
-                            <div class="surface edged"></div>
-                        </div>
-                        <figcaption class="body1">
-                            <p>Material 层面的形状与尺寸由 Material 的有无决定。</p>
-                        </figcaption>
-                    </figure>
-                    <article class="body1">
-                        <p>Material 层面可以自由地拆分与无缝组合。</p>
-                    </article>
-                    <figure id="ideal-material">
-                        <div class="diagram animated">
-                            <div class="wrapper">
-                                <div class="surface"></div>
-                                <div class="surface"></div>
-                            </div>
-                        </div>
-                        <figcaption class="body1">
-                            <p>Material 之间的分割与连结干净利落。</p>
-                        </figcaption>
-                    </figure>
-                    <article class="body1">
-                        <p>Material 可以在三维空间内自由移动。但由于虚拟空间海拔高度有限，为了保证界面稳定性，Material 层面不能扭曲、折叠、翻转。</p>
-                    </article>
-                    <figure id="free-movement">
-                        <div class="diagram animated">
-                            <div class="wrapper">
-                                <div class="surface"></div>
-                            </div>
-                        </div>
-                        <figcaption class="body1">
-                            <span class="recommends do body2">正确</span>
-                            <p>同一 Material 层面中的 Material 只能处于同一海拔。</p>
-                        </figcaption>
-                    </figure>
-                    <figure id="screen-piercing">
-                        <div class="diagram animated">
-                            <video loop>
-                                <source
-                                    src="./resources/whatismaterial-materialprop-transformingmaterial-paperbendfold-xhdpi-006.mp4"
-                                    type="video/mp4">
-                            </video>
-                        </div>
-                        <figcaption class="body1">
-                            <span class="recommends dont body2">错误</span>
-                            <p>Material 不能穿透大小有限的虚拟空间。</p>
-                        </figcaption>
-                    </figure>
-                </section>
-            </article>
-            <hr class="divider horizontal">
-            <article id="appearance" class="horizontal">
-                <h5>外表</h5>
-                <section>
-                    <article class="body1">
-                        <p>Material 可以自由改变颜色，内容的显示和运动实质上是承载物——Material 的颜色变化，因此由 Material 组成的层面可以显示任意内容。</p>
-                    </article>
-                    <figure id="material-display">
-                        <div class="diagram animated">
-                            <video loop>
-                                <source
-                                    src="./resources/whatismaterial-materialprop-physicalprop-inkdisplay-xhdpi-006.mp4"
-                                    type="video/mp4">
-                            </video>
-                        </div>
-                        <figcaption class="body1">
-                            <p>Material 可以表现任意颜色。</p>
-                        </figcaption>
-                    </figure>
-                    <article class="body1">
-                        <p>内容的运动也可以在视觉上独立于 Material，但内容的显示始终依赖于 Material 的存在。</p>
-                    </article>
-                    <figure id="independent-content">
-                        <div class="diagram animated">
-                            <video loop>
-                                <source
-                                    src="./resources/whatismaterial-materialprop-physicalprop-inkbehavior-xhdpi-006.mp4"
-                                    type="video/mp4">
-                            </video>
-                        </div>
-                        <figcaption class="body1">
-                            <p>Material 层面显示的内容并不被 Material 属性所影响。</p>
-                        </figcaption>
-                    </figure>
-                    <article class="body1">
-                        <p>Material 层面可以表现一定程度的透明。但除过渡状态以外，包含内容的 Material 承载层存在时必须保持完全不透明。</p>
-                    </article>
-                </section>
-            </article>
-            </article>
-        </div>
-
-        <footer class="light">
-            <a states class="left" href="/material-design/environment.html">
-                <span class="material-icons">arrow_back</span>
-                <span class="subheading">上一节
-                    <span class="title">环境</span>
-                </span>
-            </a>
-            <a states class="right" href="/material-design/elevation-shadows.html">
-                <span class="subheading">下一节
-                    <span class="title">层级与阴影</span>
-                </span>
-                <span class="material-icons">arrow_forward</span>
-            </a>
-        </footer>
-
-        <div class="app-bar light">
-            <div class="start">
-                <button id="drawer-trigger" class="icon-button unbounded" tabindex="1">
-                    <span class="material-icons">menu</span>
-                </button>
-            </div>
-            <span class="title">基本原理 - Material 属性</span>
-            <div class="end">
-                <button id="search-trigger" class="icon-button unbounded" disabled="true">
-                    <span class="material-icons">search</span>
-                </button>
-            </div>
-        </div>
-    </main>
-
-    <aside class="drawer-container">
-        <div class="scrim" fill></div>
-        <nav class="drawer body1">
-            <figure>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <circle cx="12" cy="12" r="12" />
-                    <rect fill="#BDBDBD" x="3.5150809" y="3.5150809" width="16.9698048" height="16.9698048" />
-                    <polygon fill="#FFFFFF" points="11.9999838,20.4848862 3.5150809,3.5150809 20.4848862,3.5150809 " />
-                </svg>
-                <figcaption class="subheading">MATERIAL DESIGN</figcaption>
-            </figure>
-            <hr class="divider horizontal">
-            <ul>
-                <li>
-                    <span states class="body2" tabindex="0">基本原理</span>
-                    <ul class="on unfolded">
-                        <li states><a href="/index.html">质感设计</a></li>
-                        <li states><a href="/material-design/environment.html">环境</a></li>
-                        <li states class="activated">Material 属性</li>
-                        <li states><a href="/material-design/elevation-shadows.html">层级与阴影</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <span states class="body2" tabindex="0">布局</span>
-                    <ul>
-                        <li states><a href="/layout/principles.html">架构方法</a></li>
-                        <li states><a href="/layout/units-measurements.html">单位与度量方法</a></li>
-                        <li states><a href="/layout/spacing-methods.html">元素排布</a></li>
-                        <li states><a href="/layout/structure.html">界面结构</a></li>
-                        <li states><a href="/layout/responsive-ui.html">响应式界面</a></li>
-                        <li states><a href="/layout/density.html">元素密度</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <span states class="body2" tabindex="0">风格样式</span>
-                    <ul>
-                        <li states><a href="/style/color.html">颜色</a></li>
-                        <li states><a href="/style/icons.html">图标</a></li>
-                        <li states><a href="/style/imagery.html">图像</a></li>
-                        <li states><a href="/style/typography.html">字体排印</a></li>
-                        <li states><a href="/style/writing.html">书面用语</a></li>
-                        <li states><a href="/style/sound.html">声音</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <span states class="body2" tabindex="0">动画效果</span>
-                    <ul>
-                        <li states><a href="/motion/material-motion.html">运动机理</a></li>
-                        <li states><a href="/motion/movement.html">移动</a></li>
-                        <li states><a href="/motion/transforming-material.html">转换</a></li>
-                        <li states><a href="/motion/choreography.html">编排</a></li>
-                        <li states><a href="/motion/responsive-interaction.html">作用反馈</a></li>
-                        <li states><a href="/motion/creative-customization.html">创意定制</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <span states class="body2" tabindex="0">组件</span>
-                    <ul>
-                        <li states><a href="/components/bottom-navigation.html">底部导航</a></li>
-                        <li states><a href="/components/buttons.html">按钮</a></li>
-                        <li states><a href="/components/buttons-floating-action-button.html">按钮：浮动操作按钮</a></li>
-                        <li states><a href="/components/cards.html">卡片</a></li>
-                        <li states><a href="/components/chips.html">多用标签</a></li>
-                        <li states><a href="/components/data-tables.html">数据表格</a></li>
-                        <li states><a href="/components/dividers.html">分隔线</a></li>
-                        <li states><a href="/components/dialogs.html">对话框</a></li>
-                        <li states><a href="/components/dialogs-pickers.html">对话框：选择器</a></li>
-                        <li states><a href="/components/lists.html">列表</a></li>
-                        <li states><a href="/components/menus.html">菜单</a></li>
-                        <li states><a href="/components/progress-indicators.html">进程指示器</a></li>
-                        <li states><a href="/components/selection-controls.html">选择控件</a></li>
-                        <li states><a href="/components/sheets-bottom.html">底部单页</a></li>
-                        <li states><a href="/components/sheets-side.html">侧边单页</a></li>
-                        <li states><a href="/components/sheets-navigation-drawer.html">侧边单页：导航抽屉</a></li>
-                        <li states><a href="/components/sliders.html">滑块</a></li>
-                        <li states><a href="/components/snackbars.html">条形通知</a></li>
-                        <li states><a href="/components/tabs.html">标签栏</a></li>
-                        <li states><a href="/components/text-fields.html">文本框</a></li>
-                        <li states><a href="/components/toolbars.html">工具栏</a></li>
-                        <li states><a href="/components/widgets.html">桌面小部件</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <span states class="body2" tabindex="0">交互模式</span>
-                    <ul>
-                        <li states><a href="/patterns/confirmation-acknowledgement.html">确认与获知</a></li>
-                        <li states><a href="/patterns/data-display.html">数据展示</a></li>
-                        <li states><a href="/patterns/empty-states.html">空状态</a></li>
-                        <li states><a href="/patterns/errors.html">错误提示</a></li>
-                        <li states><a href="/patterns/fingerprint.html">指纹识别</a></li>
-                        <li states><a href="/patterns/gestures.html">手势</a></li>
-                        <li states><a href="/patterns/help-feedback.html">帮助与反馈</a></li>
-                        <li states><a href="/patterns/launch-screens.html">启动画面</a></li>
-                        <li states><a href="/patterns/navigation.html">导航</a></li>
-                        <li states><a href="/patterns/notifications.html">通知</a></li>
-                        <li states><a href="/patterns/offline-states.html">离线状态</a></li>
-                        <li states><a href="/patterns/permissions.html">权限</a></li>
-                        <li states><a href="/patterns/search.html">搜索</a></li>
-                        <li states><a href="/patterns/selection.html">选择</a></li>
-                        <li states><a href="/patterns/settings.html">设置</a></li>
-                        <li states><a href="/patterns/states.html">交互状态</a></li>
-                        <li states><a href="/patterns/swipe-to-refresh.html">下滑刷新</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <span states class="body2" tabindex="0">可用性</span>
-                    <ul>
-                        <li states><a href="/usability/accessibility.html">无障碍</a></li>
-                        <li states><a href="/usability/bidirectionality.html">阅读方向</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <span states class="body2" tabindex="0">发展与用户教育</span>
-                </li>
-                <li>
-                    <span states class="body2" tabindex="0">资源</span>
-                </li>
-                <li>
-                    <span states class="body2" tabindex="0">附录</span>
-                </li>
-            </ul>
-        </nav>
-        <div class="divider vertical"></div>
-    </aside>
-</body>
-
+            <div class="divider vertical"></div>
+        </aside>
+    </body>
 </html>

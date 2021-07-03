@@ -1,249 +1,245 @@
 <!DOCTYPE html>
 <html lang="zh-Hans">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="theme-color" content="#212121" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>质感设计 - 环境</title>
+        <base href="../" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500&family=Roboto+Mono:wght@500&family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+        <link rel="icon" href="global/resources/favicon.svg" />
+        <link rel="stylesheet" href="material-design/styles/environment.css" />
+        <link rel="stylesheet" href="global/styles/global.css" />
+        <script type="module" src="global/scripts/global.js"></script>
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="theme-color" content="#212121">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>质感设计 - 环境</title>
-    <base href="../">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500&family=Roboto+Mono:wght@500&family=Roboto:wght@400;500&display=swap"
-        rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
-    <link rel="icon" href="global/resources/favicon.svg">
-    <link rel="stylesheet" href="material-design/styles/environment.css">
-    <link rel="stylesheet" href="global/styles/global.css">
-    <script type="module" src="global/scripts/global.js"></script>
-</head>
+    <body>
+        <main>
+            <div class="content">
+                <header>
+                    <h2 class="display1">环境</h2>
+                    <p class="title">质感设计参照现实世界，将屏幕喻为一个明亮的虚拟世界，由 Material 这一基本粒子构成的应用程序界面存在其中，并受到虚拟世界运行规律的约束。</p>
+                </header>
+                <nav>
+                    <h3 class="body1">索引</h3>
+                    <ul class="title">
+                        <li><a href="material-design/environment.html#space">空间</a></li>
+                        <li><a href="material-design/environment.html#matter">物质</a></li>
+                    </ul>
+                </nav>
+                <article id="space" class="horizontal">
+                    <h3 class="headline">空间</h3>
+                    <section>
+                        <article class="body1">
+                            <p>质感设计的虚拟世界是一个三维空间，这意味着其中每个物体都有 X、Y、Z 三个三维坐标属性，表示海拔高度的 Z 轴垂直于显示屏，以屏幕正面朝向方向为正方向，由 Material 所组成的层面都在空间中占据一定的位置。</p>
+                        </article>
+                        <figure id="dimensions">
+                            <picture class="illustration">
+                                <img src="material-design/resources/whatismaterial-environment-3d.png" />
+                            </picture>
+                            <figcaption class="body1">
+                                <p>具备长、宽、高的三维空间。</p>
+                            </figcaption>
+                        </figure>
+                        <article class="body1 intro">
+                            <p>为了使内容可见，虚拟世界需要光的介入。虚拟光源发出的光线被 Material 组成的层面所阻挡，投下阴影，而层面的空间关系也进一步地表现了出来。</p>
+                            <p>从虚拟光影发出的直射光投射出定向的阴影，从空间边界平面反射的环境光投射出广泛、柔和的阴影。界面中的阴影由这两种阴影合成。</p>
+                        </article>
+                        <figure id="key-light-shadow">
+                            <div class="diagram">
+                                <div class="surface edged"></div>
+                            </div>
+                            <figcaption class="body1">
+                                <p>直射光投射出的阴影。</p>
+                            </figcaption>
+                        </figure>
+                        <figure id="ambient-light-shadow">
+                            <div class="diagram">
+                                <div class="surface"></div>
+                            </div>
+                            <figcaption class="body1">
+                                <p>环境光投射出的阴影。</p>
+                            </figcaption>
+                        </figure>
+                        <figure id="combined-light-shadow">
+                            <div class="diagram">
+                                <div class="surface edged"></div>
+                            </div>
+                            <figcaption class="body1">
+                                <p>直射光与环境光共同投射出的阴影。</p>
+                            </figcaption>
+                        </figure>
+                    </section>
+                </article>
+                <hr class="divider horizontal" />
+                <article id="matter" class="horizontal">
+                    <h3 class="headline">物质</h3>
+                    <section>
+                        <article class="body1 intro">
+                            <p>在 Material 空间中，由 Material 构成的层面组成应用程序。但为了保证系统栏的可操作性与减少视觉冗余，系统栏以像素的概念被置入了在 Material 空间之上的二维空间。</p>
+                        </article>
+                    </section>
+                </article>
+            </div>
 
-<body>
-    <main>
-        <div class="content">
-            <header>
-                <h4>环境</h4>
-                <p class="title">质感设计参照现实世界，将屏幕喻为一个明亮的虚拟世界，由 Material 这一基本粒子构成的应用程序界面存在其中，并受到虚拟世界运行规律的约束。</p>
-            </header>
-            <nav>
-                <span class="body1">索引</span>
-                <ul class="title">
-                    <li><a href="#space">空间</a></li>
-                    <li><a href="#matter">物质</a></li>
+            <footer class="light">
+                <a states class="left" href="index.html">
+                    <span class="material-icons">arrow_back</span>
+                    <span class="subheading"
+                        >上一节
+                        <span class="title">概述</span>
+                    </span>
+                </a>
+                <a states class="right" href="material-design/material-properties.html">
+                    <span class="subheading"
+                        >下一节
+                        <span class="title">Material 属性</span>
+                    </span>
+                    <span class="material-icons">arrow_forward</span>
+                </a>
+            </footer>
+
+            <div class="app-bar light">
+                <div class="start">
+                    <button id="drawer-trigger" class="icon-button unbounded" tabindex="1">
+                        <span class="material-icons">menu</span>
+                    </button>
+                </div>
+                <h1 class="title">基本原理 - 环境</h1>
+                <div class="end">
+                    <button id="search-trigger" class="icon-button unbounded" disabled="true">
+                        <span class="material-icons">search</span>
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <aside class="drawer-container">
+            <div class="scrim" fill></div>
+            <nav class="drawer body1">
+                <figure>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="12" />
+                        <rect fill="#BDBDBD" x="3.5150809" y="3.5150809" width="16.9698048" height="16.9698048" />
+                        <polygon fill="#FFFFFF" points="11.9999838,20.4848862 3.5150809,3.5150809 20.4848862,3.5150809 " />
+                    </svg>
+                    <figcaption class="subheading">MATERIAL DESIGN</figcaption>
+                </figure>
+                <hr class="divider horizontal" />
+                <ul>
+                    <li>
+                        <span states class="body2" tabindex="0">基本原理</span>
+                        <ul class="on unfolded">
+                            <li states><a href="index.html">概述</a></li>
+                            <li states class="activated">环境</li>
+                            <li states><a href="material-design/material-properties.html">Material 属性</a></li>
+                            <li states><a href="material-design/elevation-shadows.html">层级与阴影</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span states class="body2" tabindex="0">布局</span>
+                        <ul>
+                            <li states><a href="layout/principles.html">架构方法</a></li>
+                            <li states><a href="layout/units-measurements.html">单位与度量方法</a></li>
+                            <li states><a href="layout/spacing-methods.html">元素排布</a></li>
+                            <li states><a href="layout/structure.html">界面结构</a></li>
+                            <li states><a href="layout/responsive-ui.html">响应式界面</a></li>
+                            <li states><a href="layout/density.html">元素密度</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span states class="body2" tabindex="0">风格样式</span>
+                        <ul>
+                            <li states><a href="style/color.html">颜色</a></li>
+                            <li states><a href="style/icons.html">图标</a></li>
+                            <li states><a href="style/imagery.html">图像</a></li>
+                            <li states><a href="style/typography.html">字体排印</a></li>
+                            <li states><a href="style/writing.html">书面用语</a></li>
+                            <li states><a href="style/sound.html">声音</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span states class="body2" tabindex="0">动画效果</span>
+                        <ul>
+                            <li states><a href="motion/material-motion.html">运动机理</a></li>
+                            <li states><a href="motion/movement.html">移动</a></li>
+                            <li states><a href="motion/transforming-material.html">转换</a></li>
+                            <li states><a href="motion/choreography.html">编排</a></li>
+                            <li states><a href="motion/responsive-interaction.html">作用反馈</a></li>
+                            <li states><a href="motion/creative-customization.html">创意定制</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span states class="body2" tabindex="0">组件</span>
+                        <ul>
+                            <li states><a href="components/bottom-navigation.html">底部导航</a></li>
+                            <li states><a href="components/buttons.html">按钮</a></li>
+                            <li states><a href="components/buttons-floating-action-button.html">按钮：浮动操作按钮</a></li>
+                            <li states><a href="components/cards.html">卡片</a></li>
+                            <li states><a href="components/chips.html">多用标签</a></li>
+                            <li states><a href="components/data-tables.html">数据表格</a></li>
+                            <li states><a href="components/dividers.html">分隔线</a></li>
+                            <li states><a href="components/dialogs.html">对话框</a></li>
+                            <li states><a href="components/dialogs-pickers.html">对话框：选择器</a></li>
+                            <li states><a href="components/lists.html">列表</a></li>
+                            <li states><a href="components/menus.html">菜单</a></li>
+                            <li states><a href="components/progress-indicators.html">进程指示器</a></li>
+                            <li states><a href="components/selection-controls.html">选择控件</a></li>
+                            <li states><a href="components/sheets-bottom.html">底部单页</a></li>
+                            <li states><a href="components/sheets-side.html">侧边单页</a></li>
+                            <li states><a href="components/sheets-navigation-drawer.html">侧边单页：导航抽屉</a></li>
+                            <li states><a href="components/sliders.html">滑块</a></li>
+                            <li states><a href="components/snackbars.html">条形通知</a></li>
+                            <li states><a href="components/tabs.html">标签栏</a></li>
+                            <li states><a href="components/text-fields.html">文本框</a></li>
+                            <li states><a href="components/toolbars.html">工具栏</a></li>
+                            <li states><a href="components/widgets.html">桌面小部件</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span states class="body2" tabindex="0">交互模式</span>
+                        <ul>
+                            <li states><a href="patterns/confirmation-acknowledgement.html">确认与获知</a></li>
+                            <li states><a href="patterns/data-display.html">数据展示</a></li>
+                            <li states><a href="patterns/empty-states.html">空状态</a></li>
+                            <li states><a href="patterns/errors.html">错误提示</a></li>
+                            <li states><a href="patterns/fingerprint.html">指纹识别</a></li>
+                            <li states><a href="patterns/gestures.html">手势</a></li>
+                            <li states><a href="patterns/help-feedback.html">帮助与反馈</a></li>
+                            <li states><a href="patterns/launch-screens.html">启动画面</a></li>
+                            <li states><a href="patterns/navigation.html">导航</a></li>
+                            <li states><a href="patterns/notifications.html">通知</a></li>
+                            <li states><a href="patterns/offline-states.html">离线状态</a></li>
+                            <li states><a href="patterns/permissions.html">权限</a></li>
+                            <li states><a href="patterns/search.html">搜索</a></li>
+                            <li states><a href="patterns/selection.html">选择</a></li>
+                            <li states><a href="patterns/settings.html">设置</a></li>
+                            <li states><a href="patterns/states.html">交互状态</a></li>
+                            <li states><a href="patterns/swipe-to-refresh.html">下滑刷新</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span states class="body2" tabindex="0">可用性</span>
+                        <ul>
+                            <li states><a href="usability/accessibility.html">无障碍</a></li>
+                            <li states><a href="usability/bidirectionality.html">阅读方向</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span states class="body2" tabindex="0">发展与用户教育</span>
+                    </li>
+                    <li>
+                        <span states class="body2" tabindex="0">资源</span>
+                    </li>
+                    <li>
+                        <span states class="body2" tabindex="0">附录</span>
+                    </li>
                 </ul>
             </nav>
-            <article id="space" class="horizontal">
-                <h5>空间</h5>
-                <section>
-                    <article class="body1">
-                        <p>质感设计的虚拟世界是一个三维空间，这意味着其中每个物体都有 X、Y、Z 三个三维坐标属性，表示海拔高度的 Z 轴垂直于显示屏，以屏幕正面朝向方向为正方向，由 Material
-                            所组成的层面都在空间中占据一定的位置。</p>
-                    </article>
-                    <figure id="dimensions">
-                        <picture class="illustration">
-                            <source media="(max-width:920px)" srcset="material-design/resources/language-vertical.svg">
-                                <img src="material-design/resources/whatismaterial-environment-3d.png">
-                        </picture>
-                        <figcaption class="body1">
-                            <p>具备长、宽、高的三维空间。</p>
-                        </figcaption>
-                    </figure>
-                    <article class="body1 intro">
-                        <p>为了使内容可见，虚拟世界需要光的介入。虚拟光源发出的光线被 Material 组成的层面所阻挡，投下阴影，而层面的空间关系也进一步地表现了出来。</p>
-                        <p>从虚拟光影发出的直射光投射出定向的阴影，从空间边界平面反射的环境光投射出广泛、柔和的阴影。界面中的阴影由这两种阴影合成。</p>
-                    </article>
-                    <figure id="key-light-shadow">
-                        <div class="diagram">
-                            <div class="surface edged"></div>
-                        </div>
-                        <figcaption class="body1">
-                            <p>直射光投射出的阴影。</p>
-                        </figcaption>
-                    </figure>
-                    <figure id="ambient-light-shadow">
-                        <div class="diagram">
-                            <div class="surface"></div>
-                        </div>
-                        <figcaption class="body1">
-                            <p>环境光投射出的阴影。</p>
-                        </figcaption>
-                    </figure>
-                    <figure id="combined-light-shadow">
-                        <div class="diagram">
-                            <div class="surface edged"></div>
-                        </div>
-                        <figcaption class="body1">
-                            <p>直射光与环境光共同投射出的阴影。</p>
-                        </figcaption>
-                    </figure>
-                </section>
-            </article>
-            <hr class="divider horizontal">
-            <article id="matter" class="horizontal">
-                <h5>物质</h5>
-                <section>
-                    <article class="body1 intro">
-                        <p>在 Material 空间中，由 Material 构成的层面组成应用程序。但为了保证系统栏的可操作性与减少视觉冗余，系统栏以像素的概念被置入了在 Material 空间之上的二维空间。
-                        </p>
-                    </article>
-                </section>
-            </article>
-        </div>
-
-        <footer class="light">
-            <a states class="left" href="index.html">
-                <span class="material-icons">arrow_back</span>
-                <span class="subheading">上一节
-                    <span class="title">概述</span>
-                </span>
-            </a>
-            <a states class="right" href="material-design/material-properties.html">
-                <span class="subheading">下一节
-                    <span class="title">Material 属性</span>
-                </span>
-                <span class="material-icons">arrow_forward</span>
-            </a>
-        </footer>
-
-        <div class="app-bar light">
-            <div class="start">
-                <button id="drawer-trigger" class="icon-button unbounded" tabindex="1">
-                    <span class="material-icons">menu</span>
-                </button>
-            </div>
-            <span class="title">基本原理 - 环境</span>
-            <div class="end">
-                <button id="search-trigger" class="icon-button unbounded" disabled="true">
-                    <span class="material-icons">search</span>
-                </button>
-            </div>
-        </div>
-    </main>
-
-    <aside class="drawer-container">
-        <div class="scrim" fill></div>
-        <nav class="drawer body1">
-            <figure>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <circle cx="12" cy="12" r="12" />
-                    <rect fill="#BDBDBD" x="3.5150809" y="3.5150809" width="16.9698048" height="16.9698048" />
-                    <polygon fill="#FFFFFF" points="11.9999838,20.4848862 3.5150809,3.5150809 20.4848862,3.5150809 " />
-                </svg>
-                <figcaption class="subheading">MATERIAL DESIGN</figcaption>
-            </figure>
-            <hr class="divider horizontal">
-            <ul>
-                <li>
-                    <span states class="body2" tabindex="0">基本原理</span>
-                    <ul class="on unfolded">
-                        <li states><a href="index.html">质感设计</a></li>
-                        <li states class="activated">环境</li>
-                        <li states><a href="material-design/material-properties.html">Material 属性</a></li>
-                        <li states><a href="material-design/elevation-shadows.html">层级与阴影</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <span states class="body2" tabindex="0">布局</span>
-                    <ul>
-                        <li states><a href="layout/principles.html">架构方法</a></li>
-                        <li states><a href="layout/units-measurements.html">单位与度量方法</a></li>
-                        <li states><a href="layout/spacing-methods.html">元素排布</a></li>
-                        <li states><a href="layout/structure.html">界面结构</a></li>
-                        <li states><a href="layout/responsive-ui.html">响应式界面</a></li>
-                        <li states><a href="layout/density.html">元素密度</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <span states class="body2" tabindex="0">风格样式</span>
-                    <ul>
-                        <li states><a href="style/color.html">颜色</a></li>
-                        <li states><a href="style/icons.html">图标</a></li>
-                        <li states><a href="style/imagery.html">图像</a></li>
-                        <li states><a href="style/typography.html">字体排印</a></li>
-                        <li states><a href="style/writing.html">书面用语</a></li>
-                        <li states><a href="style/sound.html">声音</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <span states class="body2" tabindex="0">动画效果</span>
-                    <ul>
-                        <li states><a href="motion/material-motion.html">运动机理</a></li>
-                        <li states><a href="motion/movement.html">移动</a></li>
-                        <li states><a href="motion/transforming-material.html">转换</a></li>
-                        <li states><a href="motion/choreography.html">编排</a></li>
-                        <li states><a href="motion/responsive-interaction.html">作用反馈</a></li>
-                        <li states><a href="motion/creative-customization.html">创意定制</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <span states class="body2" tabindex="0">组件</span>
-                    <ul>
-                        <li states><a href="components/bottom-navigation.html">底部导航</a></li>
-                        <li states><a href="components/buttons.html">按钮</a></li>
-                        <li states><a href="components/buttons-floating-action-button.html">按钮：浮动操作按钮</a></li>
-                        <li states><a href="components/cards.html">卡片</a></li>
-                        <li states><a href="components/chips.html">多用标签</a></li>
-                        <li states><a href="components/data-tables.html">数据表格</a></li>
-                        <li states><a href="components/dividers.html">分隔线</a></li>
-                        <li states><a href="components/dialogs.html">对话框</a></li>
-                        <li states><a href="components/dialogs-pickers.html">对话框：选择器</a></li>
-                        <li states><a href="components/lists.html">列表</a></li>
-                        <li states><a href="components/menus.html">菜单</a></li>
-                        <li states><a href="components/progress-indicators.html">进程指示器</a></li>
-                        <li states><a href="components/selection-controls.html">选择控件</a></li>
-                        <li states><a href="components/sheets-bottom.html">底部单页</a></li>
-                        <li states><a href="components/sheets-side.html">侧边单页</a></li>
-                        <li states><a href="components/sheets-navigation-drawer.html">侧边单页：导航抽屉</a></li>
-                        <li states><a href="components/sliders.html">滑块</a></li>
-                        <li states><a href="components/snackbars.html">条形通知</a></li>
-                        <li states><a href="components/tabs.html">标签栏</a></li>
-                        <li states><a href="components/text-fields.html">文本框</a></li>
-                        <li states><a href="components/toolbars.html">工具栏</a></li>
-                        <li states><a href="components/widgets.html">桌面小部件</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <span states class="body2" tabindex="0">交互模式</span>
-                    <ul>
-                        <li states><a href="patterns/confirmation-acknowledgement.html">确认与获知</a></li>
-                        <li states><a href="patterns/data-display.html">数据展示</a></li>
-                        <li states><a href="patterns/empty-states.html">空状态</a></li>
-                        <li states><a href="patterns/errors.html">错误提示</a></li>
-                        <li states><a href="patterns/fingerprint.html">指纹识别</a></li>
-                        <li states><a href="patterns/gestures.html">手势</a></li>
-                        <li states><a href="patterns/help-feedback.html">帮助与反馈</a></li>
-                        <li states><a href="patterns/launch-screens.html">启动画面</a></li>
-                        <li states><a href="patterns/navigation.html">导航</a></li>
-                        <li states><a href="patterns/notifications.html">通知</a></li>
-                        <li states><a href="patterns/offline-states.html">离线状态</a></li>
-                        <li states><a href="patterns/permissions.html">权限</a></li>
-                        <li states><a href="patterns/search.html">搜索</a></li>
-                        <li states><a href="patterns/selection.html">选择</a></li>
-                        <li states><a href="patterns/settings.html">设置</a></li>
-                        <li states><a href="patterns/states.html">交互状态</a></li>
-                        <li states><a href="patterns/swipe-to-refresh.html">下滑刷新</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <span states class="body2" tabindex="0">可用性</span>
-                    <ul>
-                        <li states><a href="usability/accessibility.html">无障碍</a></li>
-                        <li states><a href="usability/bidirectionality.html">阅读方向</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <span states class="body2" tabindex="0">发展与用户教育</span>
-                </li>
-                <li>
-                    <span states class="body2" tabindex="0">资源</span>
-                </li>
-                <li>
-                    <span states class="body2" tabindex="0">附录</span>
-                </li>
-            </ul>
-        </nav>
-        <div class="divider vertical"></div>
-    </aside>
-</body>
-
+            <div class="divider vertical"></div>
+        </aside>
+    </body>
 </html>
