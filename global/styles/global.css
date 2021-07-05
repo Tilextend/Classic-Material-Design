@@ -467,6 +467,7 @@ figcaption :is(p, ul, ol) {
 
 article :is(ul, ol) {
     margin-bottom: 20px;
+    user-select: text;
 }
 
 article > ul {

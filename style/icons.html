@@ -1,1296 +1,1254 @@
 <!DOCTYPE html>
 <html lang="zh-Hans">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="theme-color" content="#212121" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>质感设计 - 图标</title>
+        <base href="../" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500&family=Roboto+Mono:wght@500&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+        <link rel="icon" href="global/resources/favicon.svg" />
+        <link rel="stylesheet" href="style/styles/icons.css" />
+        <link rel="stylesheet" href="global/styles/global.css" />
+        <script type="module" src="global/scripts/global.js"></script>
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="theme-color" content="#212121">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>质感设计 - 图标</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Roboto+Mono:wght@500&family=Roboto:wght@300;400;500;700&display=swap"
-        rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
-    <link rel="icon" href="/global/resources/favicon.svg">
-    <link rel="icon" href="/global/resources/favicon-dark.svg" media="(prefers-color-scheme: dark)" />
-    <link rel="stylesheet" href="./styles/icons.css">
-    <link rel="stylesheet" href="../global/styles/global.css">
-    <script defer type="module" src="../global/scripts/global.js"></script>
-</head>
+    <body>
+        <main>
+            <div class="content">
+                <header>
+                    <h2 class="display1">图标</h2>
+                    <p class="title">质感设计以几何形状为基础设计图标，在视觉上突出表达图标的功用、主旨与格调。</p>
+                </header>
+                <nav>
+                    <h3 class="body1">索引</h3>
+                    <ul class="title">
+                        <li><a href="style/icons.html#product-icons">产品图标</a></li>
+                        <li><a href="style/icons.html#system-icons">界面图标</a></li>
+                    </ul>
+                </nav>
+                <article id="product-icons" class="horizontal">
+                    <h3 class="headline">产品图标</h3>
+                    <section>
+                        <article class="body1 intro">
+                            <p>产品图标以视觉形式传递产品与品牌形象，以简单明了、平易近人的方式声张产品的核心理念与意图。尽管每个产品图标在视觉呈现方面有所不同，但仍可以通过要素的重复与概念的再现，达成同个品牌下所有图标内外在的统一。</p>
+                        </article>
+                    </section>
+                    <section>
+                        <article class="body1">
+                            <h4 class="title">设计方式</h4>
+                            <p>为了赋予图标更强的表现力，在创作中产品图标被当作特殊的 Material 实体进行设计。但在界面中产品图标仍是一种借 Material 显示的图像。因此，产品图标在视觉上虽由简单的图形构成，但可以像纸一样被裁剪、折叠，并且质地结实、边缘清晰，具有细微的高光与连贯的阴影。</p>
+                        </article>
+                        <figure id="physical">
+                            <div class="diagram">
+                                <img src="style/resources/style-logos-product-intro-material-physical.png" />
+                            </div>
+                            <figcaption class="body1">
+                                <p>实物原型</p>
+                            </figcaption>
+                        </figure>
+                        <figure id="lighting">
+                            <div class="diagram">
+                                <img src="style/resources/style-logos-product-intro-material-lighting.png" />
+                            </div>
+                            <figcaption class="body1">
+                                <p>光影观察</p>
+                            </figcaption>
+                        </figure>
+                        <figure id="material">
+                            <div class="diagram">
+                                <img src="style/resources/style-logos-product-intro-material-material.png" />
+                            </div>
+                            <figcaption class="body1">
+                                <p>虚拟再现</p>
+                            </figcaption>
+                        </figure>
+                        <figure id="color">
+                            <div class="diagram">
+                                <img src="style/resources/style-logos-product-intro-material-color.png" />
+                            </div>
+                            <figcaption class="body1">
+                                <p>加工成型</p>
+                            </figcaption>
+                        </figure>
+                    </section>
+                    <section>
+                        <article class="body1">
+                            <h4 class="title">基准网格</h4>
+                            <p>质感设计以网格工具为基础建立标准化的图标设计系统，既维持统一，又不失灵活。</p>
+                            <p>基准网格由以 4dp × 4dp 单元格构建的 192dp × 192dp 网格，与在其上的基准图形和参考线组成。</p>
+                        </article>
+                        <figure id="grid">
+                            <div class="diagram" lang="en-US">
+                                <div class="grid-wrapper">
+                                    <span class="body1">4</span>
+                                    <span class="body1">192</span>
+                                    <span class="body1">192</span>
+                                </div>
+                            </div>
+                            <figcaption class="body1">
+                                <p>网格</p>
+                            </figcaption>
+                        </figure>
+                        <figure id="keylines">
+                            <div class="diagram">
+                                <div class="keylines-wrapper">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192">
+                                        <line y1="96" x2="192" y2="96" />
+                                        <line x1="96" y1="192" x2="96" />
+                                        <line x1="68" y1="192" x2="68" />
+                                        <line x1="124" y1="192" x2="124" />
+                                        <line y1="68" x2="192" y2="68" />
+                                        <line y1="124" x2="192" y2="124" />
+                                        <line x1="-2.99492" y1="194.99498" x2="194.99492" y2="-2.99498" />
+                                        <line x1="194.99538" y1="194.99452" x2="-2.99538" y2="-2.99452" />
+                                        <circle cx="96" cy="96" r="40" />
+                                    </svg>
+                                    <div class="square"></div>
+                                    <div class="circle"></div>
+                                    <div class="vertical-rectangle"></div>
+                                    <div class="horizontal-rectangle"></div>
+                                </div>
+                            </div>
+                            <figcaption class="body1">
+                                <p>基准图形与参考线</p>
+                            </figcaption>
+                        </figure>
+                        <article class="body1">
+                            <p>基准图形是用以确定单个图标与画布比例与多个图标间保持一定视觉比例的参考图形。</p>
+                        </article>
+                        <figure id="square">
+                            <div class="diagram">
+                                <div class="keylines-wrapper">
+                                    <div class="square"></div>
+                                    <div class="circle"></div>
+                                    <div class="vertical-rectangle"></div>
+                                    <div class="horizontal-rectangle"></div>
+                                </div>
+                            </div>
+                            <figcaption class="body1">
+                                <p>正方形</p>
+                                <ul>
+                                    <li>边长：152dp</li>
+                                </ul>
+                            </figcaption>
+                        </figure>
+                        <figure id="circle">
+                            <div class="diagram">
+                                <div class="keylines-wrapper">
+                                    <div class="square"></div>
+                                    <div class="circle"></div>
+                                    <div class="vertical-rectangle"></div>
+                                    <div class="horizontal-rectangle"></div>
+                                </div>
+                            </div>
+                            <figcaption class="body1">
+                                <p>圆形</p>
+                                <ul>
+                                    <li>直径：176dp</li>
+                                </ul>
+                            </figcaption>
+                        </figure>
+                        <figure id="vertical-rectangle">
+                            <div class="diagram">
+                                <div class="keylines-wrapper">
+                                    <div class="square"></div>
+                                    <div class="circle"></div>
+                                    <div class="vertical-rectangle"></div>
+                                    <div class="horizontal-rectangle"></div>
+                                </div>
+                            </div>
+                            <figcaption class="body1">
+                                <p>纵向矩形</p>
+                                <ul>
+                                    <li>宽：128dp</li>
+                                    <li>高：176dp</li>
+                                </ul>
+                            </figcaption>
+                        </figure>
+                        <figure id="horizontal-rectangle">
+                            <div class="diagram">
+                                <div class="keylines-wrapper">
+                                    <div class="square"></div>
+                                    <div class="circle"></div>
+                                    <div class="vertical-rectangle"></div>
+                                    <div class="horizontal-rectangle"></div>
+                                </div>
+                            </div>
+                            <figcaption class="body1">
+                                <p>横向矩形</p>
+                                <ul>
+                                    <li>宽：176dp</li>
+                                    <li>高：128dp</li>
+                                </ul>
+                            </figcaption>
+                        </figure>
+                        <article class="body1">
+                            <p>对正交线及对角线加以利用，实现精确的几何构图。</p>
+                        </article>
+                        <figure id="finance">
+                            <div class="diagram">
+                                <img src="style/resources/style-logos-product-grid-geometry1.png" />
+                            </div>
+                        </figure>
+                        <figure id="chrome">
+                            <div class="diagram">
+                                <img src="style/resources/style-logos-product-grid-geometry2.png" />
+                            </div>
+                        </figure>
+                        <figure id="docs">
+                            <div class="diagram">
+                                <img src="style/resources/style-logos-product-grid-geometry3.png" />
+                            </div>
+                        </figure>
+                        <figure id="gmail">
+                            <div class="diagram">
+                                <img src="style/resources/style-logos-product-grid-geometry4.png" />
+                            </div>
+                        </figure>
+                    </section>
+                    <section>
+                        <article class="body1">
+                            <h4 class="title">图标结构</h4>
+                            <p>构建同一品牌下图标的共有结构是维持视觉一致性的主要手段。在质感设计中，产品图标由底层到顶层进行设计，并分为如下要件：</p>
+                            <ol>
+                                <li>光泽层</li>
+                                <li>背景层</li>
+                                <li>前景层</li>
+                                <li>颜色</li>
+                                <li>阴影</li>
+                            </ol>
+                        </article>
+                        <figure id="components">
+                            <div class="diagram">
+                                <div class="icon">
+                                    <div class="background">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192">
+                                            <defs>
+                                                <linearGradient id="cast-shadow" x1="96" y1="96" x2="192" y2="192" gradientUnits="userSpaceOnUse">
+                                                    <stop offset="0" />
+                                                    <stop offset="0.33333" />
+                                                    <stop offset="1" stop-opacity="0" />
+                                                </linearGradient>
+                                            </defs>
+                                            <path fill="url(#cast-shadow)" d="M144,48l96,96-96,96L48,144V48Z" />
+                                        </svg>
+                                    </div>
+                                    <div class="foreground">
+                                        <div class="color"></div>
+                                    </div>
+                                    <div class="finish"></div>
+                                </div>
+                            </div>
+                            <figcaption class="body1">
+                                <p>产品图标组成成分</p>
+                            </figcaption>
+                        </figure>
+                        <figure id="components-perspective">
+                            <div class="diagram">
+                                <img src="style/resources/style-logos-product-anatomy-components-perspective.png" />
+                            </div>
+                            <figcaption class="body1">
+                                <p>产品图标组成成分的层次关系</p>
+                            </figcaption>
+                        </figure>
+                        <article class="body1">
+                            <p>产品图标的类纸张实体层面可以显示任何颜色，即承载任意内容。</p>
+                        </article>
+                        <figure id="color-applied">
+                            <div class="diagram">
+                                <div id="keyboard" class="product-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192">
+                                        <defs>
+                                            <clipPath id="keyboard-background-outline">
+                                                <rect x="8" y="72" width="176" height="112" rx="12" />
+                                            </clipPath>
+                                            <linearGradient id="keyboard-cast-shadow" x1="51.5727" y1="7.45674" x2="214.05798" y2="169.94202" gradientUnits="userSpaceOnUse">
+                                                <stop offset="0" />
+                                                <stop offset="0.33333" />
+                                                <stop offset="1" stop-opacity="0" />
+                                            </linearGradient>
+                                            <radialGradient id="finish-gradient" fx="0%" fy="0%" r="100%">
+                                                <stop offset="0" stop-color="rgba(255, 255, 255, 0.1)" />
+                                                <stop offset="0.33333" stop-color="rgba(255, 255, 255, 0.05)" />
+                                                <stop offset="1" stop-color="rgba(255, 255, 255, 0)" />
+                                            </radialGradient>
+                                        </defs>
+                                        <rect x="8" y="72" width="176" height="112" rx="12" />
+                                        <g>
+                                            <rect x="32" y="96" width="16" height="16" rx="2" />
+                                            <rect x="32" y="124" width="16" height="16" rx="2" />
+                                            <rect x="60" y="96" width="16" height="16" rx="2" />
+                                            <rect x="60" y="124" width="16" height="16" rx="2" />
+                                            <rect x="88" y="96" width="16" height="16" rx="2" />
+                                            <rect x="88" y="124" width="16" height="16" rx="2" />
+                                            <rect x="116" y="96" width="16" height="16" rx="2" />
+                                            <rect x="116" y="124" width="16" height="16" rx="2" />
+                                            <rect x="144" y="96" width="16" height="16" rx="2" />
+                                            <rect x="144" y="124" width="16" height="16" rx="2" />
+                                            <rect x="48" y="152" width="96" height="16" rx="2" />
+                                        </g>
+                                        <g>
+                                            <path class="edge" position="top" d="M172,72H20A12.03527,12.03527,0,0,0,8,84v1A12.03527,12.03527,0,0,1,20,73H172a12.03527,12.03527,0,0,1,12,12V84A12.03527,12.03527,0,0,0,172,72Z" />
+                                            <path class="edge" position="bottom" d="M172,183H20A12.0353,12.0353,0,0,1,8,171v1a12.0353,12.0353,0,0,0,12,12H172a12.0353,12.0353,0,0,0,12-12v-1A12.0353,12.0353,0,0,1,172,183Z" />
+                                        </g>
+                                        <path fill="url(#keyboard-cast-shadow)" clip-path="url(#keyboard-background-outline)" d="M169.63171,214.36829S47.79525,92.53387,47.51468,92.25334A12.00035,12.00035,0,0,1,44,83.768V20A12,12,0,0,1,56,8h80a11.96245,11.96245,0,0,1,8.48528,3.51471l114,114Z" />
+                                        <path clip-path="url(#keyboard-background-outline)" d="M96,132,48.40115,93.05549A12,12,0,0,1,44,83.768V20A12,12,0,0,1,56,8h80a12,12,0,0,1,12,12V83.768a12,12,0,0,1-4.40115,9.28749Z" />
+                                        <path d="M96,132,48.40115,93.05549A12,12,0,0,1,44,83.768V20A12,12,0,0,1,56,8h80a12,12,0,0,1,12,12V83.768a12,12,0,0,1-4.40115,9.28749Z" />
+                                        <path d="M101.28882,24H90.71118L64.67389,88H75l6.22223-16h29.55554L117,88h10.32611ZM84,64,96,34l12,30Z" />
+                                        <g>
+                                            <path class="edge" position="top" d="M136,8H56A12,12,0,0,0,44,20v1A12,12,0,0,1,56,9h80a12,12,0,0,1,12,12V20A12,12,0,0,0,136,8Z" />
+                                            <path class="edge" position="bottom" d="M143.59888,92.05548,96,131,48.40112,92.05548A12.00014,12.00014,0,0,1,44,82.768v1a12.00014,12.00014,0,0,0,4.40112,9.28747L96,132l47.59888-38.94452A12.00014,12.00014,0,0,0,148,83.768v-1A12.00014,12.00014,0,0,1,143.59888,92.05548Z" />
+                                        </g>
+                                        <path fill="url(#finish-gradient)" d="M172,72H148V20A12,12,0,0,0,136,8H56A12,12,0,0,0,44,20V72H20A12.03527,12.03527,0,0,0,8,84v88a12.0353,12.0353,0,0,0,12,12H172a12.0353,12.0353,0,0,0,12-12V84A12.03527,12.03527,0,0,0,172,72Z" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <figcaption class="body1">
+                                <p>颜色既可以铺张在整个层面，也可以只填充层面的部分。</p>
+                            </figcaption>
+                        </figure>
+                    </section>
+                    <section>
+                        <article class="body1">
+                            <h4 class="title">光影效果</h4>
+                            <p>光照的引入为图标带来了高光与阴影，突出了边缘。在质感设计中，不同角度的双光源显著增强了产品图标的质感。</p>
+                        </article>
+                        <figure id="top-light">
+                            <div class="diagram">
+                                <div class="icon">
+                                    <div class="background"></div>
+                                    <div class="foreground"></div>
+                                    <div class="finish"></div>
+                                </div>
+                                <div class="lighting"></div>
+                            </div>
+                            <figcaption class="body1">
+                                <p>垂直方向的光照</p>
+                            </figcaption>
+                        </figure>
+                        <figure id="angled-light">
+                            <div class="diagram">
+                                <div class="icon">
+                                    <div class="background">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192">
+                                            <defs>
+                                                <linearGradient id="cast-shadow" x1="96" y1="96" x2="192" y2="192" gradientUnits="userSpaceOnUse">
+                                                    <stop offset="0" />
+                                                    <stop offset="0.33333" />
+                                                    <stop offset="1" stop-opacity="0" />
+                                                </linearGradient>
+                                            </defs>
+                                            <path fill="url(#cast-shadow)" d="M144,48l96,96-96,96L48,144V48Z" />
+                                        </svg>
+                                    </div>
+                                    <div class="foreground"></div>
+                                    <div class="finish"></div>
+                                </div>
+                                <div class="lighting"></div>
+                            </div>
+                            <figcaption class="body1">
+                                <p>45° 角的光照</p>
+                            </figcaption>
+                        </figure>
+                        <article class="body1">
+                            <p>前景层具有因顶部光照形成的柔和投影，也有因侧角光照形成的锐利投影。前景层投影于背景层上，因此前景层阴影的显示区域被限定于背景层中。</p>
+                        </article>
+                        <figure id="contact-shadow">
+                            <div class="diagram">
+                                <div id="android-wear" class="product-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192">
+                                        <defs>
+                                            <clipPath id="android-wear-background-outline">
+                                                <circle cx="96" cy="96" r="84" />
+                                            </clipPath>
+                                            <linearGradient id="android-wear-cast-shadow" x1="31.17329" y1="31.17671" x2="191.99829" y2="192.00171" gradientUnits="userSpaceOnUse">
+                                                <stop offset="0" />
+                                                <stop offset="0.33333" />
+                                                <stop offset="1" stop-opacity="0" />
+                                            </linearGradient>
+                                            <radialGradient id="finish-gradient" fx="0%" fy="0%" r="100%">
+                                                <stop offset="0" stop-color="rgba(255, 255, 255, 0.1)" />
+                                                <stop offset="0.33333" stop-color="rgba(255, 255, 255, 0.05)" />
+                                                <stop offset="1" stop-color="rgba(255, 255, 255, 0)" />
+                                            </radialGradient>
+                                        </defs>
+                                        <circle cx="96" cy="96" r="84" />
+                                        <path d="M12,96a84,84,0,0,1,168,0Z" />
+                                        <g clip-path="url(#android-wear-background-outline)">
+                                            <rect class="edge" position="bottom" x="12" y="95" width="168" height="1" />
+                                            <rect class="edge" position="top" x="12" y="96" width="168" height="1" />
+                                        </g>
+                                        <path class="edge" position="top" d="M96,13a83.99281,83.99281,0,0,1,83.98737,83.5c.001-.16748.01263-.33234.01263-.5A84,84,0,0,0,12,96c0,.16766.01166.33252.01263.5A83.99281,83.99281,0,0,1,96,13Z" />
+                                        <path class="edge" position="bottom" d="M96,179A83.99281,83.99281,0,0,1,12.01263,95.5c-.001.16748-.01263.33234-.01263.5a84,84,0,0,0,168,0c0-.16766-.01166-.33252-.01263-.5A83.99281,83.99281,0,0,1,96,179Z" />
+                                        <path fill="url(#cast-shadow)" clip-path="url(#android-wear-background-outline)" d="M127.17157,256.82843S53.9,183.55,53.175,182.825A3.98772,3.98772,0,0,1,52,180V156a4.01176,4.01176,0,0,1,4-4H66.35L53.175,138.825A3.98772,3.98772,0,0,1,52,136V56a4.01176,4.01176,0,0,1,4-4H66.35L53.175,38.825A3.98769,3.98769,0,0,1,52,36V12a4.01176,4.01176,0,0,1,4-4h80a3.98771,3.98771,0,0,1,2.825,1.175l118,118Z" />
+                                        <g clip-path="url(#android-wear-background-outline)">
+                                            <rect x="52" y="8" width="88" height="32" rx="4" />
+                                            <rect x="52" y="52" width="88" height="88" rx="4" />
+                                            <rect x="52" y="152" width="88" height="32" rx="4" />
+                                        </g>
+                                        <g>
+                                            <rect x="52" y="8" width="88" height="32" rx="4" />
+                                            <rect x="52" y="52" width="88" height="88" rx="4" />
+                                            <rect x="52" y="152" width="88" height="32" rx="4" />
+                                        </g>
+                                        <path class="edge" position="top" d="M136,8H56a4.01175,4.01175,0,0,0-4,4v1a4.01175,4.01175,0,0,1,4-4h80a4.01175,4.01175,0,0,1,4,4V12A4.01175,4.01175,0,0,0,136,8Z" />
+                                        <path class="edge" position="bottom" d="M136,39H56a4.01175,4.01175,0,0,1-4-4v1a4.01175,4.01175,0,0,0,4,4h80a4.01175,4.01175,0,0,0,4-4V35A4.01175,4.01175,0,0,1,136,39Z" />
+                                        <path class="edge" position="top" d="M136,52H56a4.01175,4.01175,0,0,0-4,4v1a4.01175,4.01175,0,0,1,4-4h80a4.01175,4.01175,0,0,1,4,4V56A4.01175,4.01175,0,0,0,136,52Z" />
+                                        <path class="edge" position="bottom" d="M136,139H56a4.01175,4.01175,0,0,1-4-4v1a4.01175,4.01175,0,0,0,4,4h80a4.01175,4.01175,0,0,0,4-4v-1A4.01175,4.01175,0,0,1,136,139Z" />
+                                        <path class="edge" position="top" d="M136,152H56a4.01175,4.01175,0,0,0-4,4v1a4.01175,4.01175,0,0,1,4-4h80a4.01175,4.01175,0,0,1,4,4v-1A4.01175,4.01175,0,0,0,136,152Z" />
+                                        <path class="edge" position="bottom" d="M136,183H56a4.01175,4.01175,0,0,1-4-4v1a4.01175,4.01175,0,0,0,4,4h80a4.01175,4.01175,0,0,0,4-4v-1A4.01175,4.01175,0,0,1,136,183Z" />
+                                        <path fill="url(#finish-gradient)" d="M180,96a83.9381,83.9381,0,0,0-40-71.55511V12a4.01175,4.01175,0,0,0-4-4H56a4.01175,4.01175,0,0,0-4,4V24.44489a84.00167,84.00167,0,0,0,0,143.11022V180a4.01175,4.01175,0,0,0,4,4h80a4.01175,4.01175,0,0,0,4-4V167.55511A83.9381,83.9381,0,0,0,180,96Z" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <figcaption class="body1">
+                                <p>顶部光源投射出柔和的阴影。</p>
+                                <ul>
+                                    <li>不透明度：20%</li>
+                                    <li>X 位移：0dp</li>
+                                    <li>Y 位移：4dp</li>
+                                    <li>模糊：4dp</li>
+                                    <li>颜色：参见下文表格</li>
+                                </ul>
+                            </figcaption>
+                        </figure>
+                        <figure id="cast-shadow">
+                            <div class="diagram">
+                                <div id="android-tv" class="product-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192">
+                                        <defs>
+                                            <clipPath id="android-tv-background-outline">
+                                                <rect x="8" y="20" width="176" height="128" rx="12" />
+                                            </clipPath>
+                                            <linearGradient id="android-tv-cast-shadow" x1="50.74517" y1="74.74517" x2="180" y2="204" gradientUnits="userSpaceOnUse">
+                                                <stop offset="0" />
+                                                <stop offset="0.33333" />
+                                                <stop offset="1" stop-opacity="0" />
+                                            </linearGradient>
+                                            <radialGradient id="finish-gradient" fx="0%" fy="0%" r="100%">
+                                                <stop offset="0" stop-color="rgba(255, 255, 255, 0.1)" />
+                                                <stop offset="0.33333" stop-color="rgba(255, 255, 255, 0.05)" />
+                                                <stop offset="1" stop-color="rgba(255, 255, 255, 0)" />
+                                            </radialGradient>
+                                        </defs>
+                                        <rect x="8" y="20" width="176" height="128" rx="12" />
+                                        <path d="M20,20H172a12,12,0,0,1,12,12V84a0,0,0,0,1,0,0H8a0,0,0,0,1,0,0V32A12,12,0,0,1,20,20Z" />
+                                        <g>
+                                            <rect class="edge" position="bottom" x="8" y="83" width="176" height="1" />
+                                            <rect class="edge" position="top" x="8" y="84" width="176" height="1" />
+                                            <path class="edge" position="top" d="M172,20H20A12.03527,12.03527,0,0,0,8,32v1A12.03527,12.03527,0,0,1,20,21H172a12.03527,12.03527,0,0,1,12,12V32A12.03527,12.03527,0,0,0,172,20Z" />
+                                            <path class="edge" position="bottom" d="M172,147H20A12.0353,12.0353,0,0,1,8,135v1a12.0353,12.0353,0,0,0,12,12H172a12.0353,12.0353,0,0,0,12-12v-1A12.0353,12.0353,0,0,1,172,147Z" />
+                                        </g>
+                                        <path clip-path="url(#android-tv-background-outline)" fill="url(#android-tv-cast-shadow)" d="M225.25444,158.74556l-90.50872,90.50872S62.3269,176.83656,50.74518,165.25485a64,64,0,0,1,90.50964-90.5097C152.83655,86.32687,225.25444,158.74556,225.25444,158.74556Z" />
+                                        <path clip-path="url(#android-tv-background-outline)" d="M96,56a64,64,0,1,0,64,64A64,64,0,0,0,96,56Zm0,92a28,28,0,1,1,28-28A28,28,0,0,1,96,148Z" />
+                                        <path d="M96,56a64,64,0,1,0,64,64A64,64,0,0,0,96,56Zm0,92a28,28,0,1,1,28-28A28,28,0,0,1,96,148Z" />
+                                        <polygon points="96 68 84 80 108 80 96 68" />
+                                        <polygon points="148 119.986 136 107.986 136 131.986 148 119.986" />
+                                        <polygon points="96 172 84 160 108 160 96 172" />
+                                        <polygon points="44 120 56 132 56 108 44 120" />
+                                        <g>
+                                            <path class="edge" position="top" d="M96,57a63.993,63.993,0,0,1,63.98737,63.5c.00128-.16736.01263-.33234.01263-.5a64,64,0,0,0-128,0c0,.16766.01135.33264.01263.5A63.993,63.993,0,0,1,96,57Z" />
+                                            <path class="edge" position="bottom" d="M96,92a27.99477,27.99477,0,0,1,27.98737,27.5c.00293-.167.01263-.33228.01263-.5a28,28,0,0,0-56,0c0,.16772.0097.333.01263.5A27.99477,27.99477,0,0,1,96,92Z" />
+                                            <path class="edge" position="top" d="M96,148a27.99481,27.99481,0,0,1-27.98737-27.5c-.00293.167-.01263.33228-.01263.5a28,28,0,0,0,56,0c0-.16772-.0097-.333-.01263-.5A27.99481,27.99481,0,0,1,96,148Z" />
+                                            <path class="edge" position="bottom" d="M96,183a63.993,63.993,0,0,1-63.98737-63.5c-.00128.16736-.01263.33234-.01263.5a64,64,0,0,0,128,0c0-.16766-.01135-.33264-.01263-.5A63.993,63.993,0,0,1,96,183Z" />
+                                        </g>
+                                        <path fill="url(#finish-gradient)" d="M172,20H20A12.03527,12.03527,0,0,0,8,32V136a12.0353,12.0353,0,0,0,12,12H38.44086a64.01465,64.01465,0,0,0,115.11828,0H172a12.0353,12.0353,0,0,0,12-12V32A12.03527,12.03527,0,0,0,172,20Z" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <figcaption class="body1">
+                                <p>侧角光源投射出锐利的阴影。</p>
+                                <ul>
+                                    <li>渐变类型：线性</li>
+                                    <li>渐变角度：-45°</li>
+                                    <li>渐变颜色：参见下文表格</li>
+                                    <li>渐变起始不透明度：参见下文表格</li>
+                                    <li>渐变中点：距离起始点 1/3</li>
+                                    <li>渐变结束不透明度：0%</li>
+                                </ul>
+                            </figcaption>
+                        </figure>
+                        <article class="body1">
+                            <p>产品图标的 Material 实体层面具有 1dp 厚度，图标的前景层与背景层都具有内边沿。受光照角度的影响，仅层面顶部与底部的高光或阴影边沿是可见的。</p>
+                        </article>
+                        <figure id="tinted-shaded-edges">
+                            <div class="diagram">
+                                <div id="messages" class="product-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192">
+                                        <defs>
+                                            <clipPath id="messages-background-outline">
+                                                <path class="cls-1" d="M156,136H60a12.03528,12.03528,0,0,1-12-12V24A12.03528,12.03528,0,0,1,60,12H188L168,48v76A12.03528,12.03528,0,0,1,156,136Z" />
+                                            </clipPath>
+                                            <linearGradient id="messages-cast-shadow" x1="13" y1="51" x2="173" y2="211" gradientUnits="userSpaceOnUse">
+                                                <stop offset="0" />
+                                                <stop offset="0.33333" />
+                                                <stop offset="1" stop-opacity="0" />
+                                            </linearGradient>
+                                            <radialGradient id="finish-gradient" fx="0%" fy="0%" r="100%">
+                                                <stop offset="0" stop-color="rgba(255, 255, 255, 0.1)" />
+                                                <stop offset="0.33333" stop-color="rgba(255, 255, 255, 0.05)" />
+                                                <stop offset="1" stop-color="rgba(255, 255, 255, 0)" />
+                                            </radialGradient>
+                                        </defs>
+                                        <path d="M156,136H60a12.03528,12.03528,0,0,1-12-12V24A12.03528,12.03528,0,0,1,60,12H188L168,48v76A12.03528,12.03528,0,0,1,156,136Z" />
+                                        <rect x="72" y="36" width="72" height="12" />
+                                        <g>
+                                            <path class="edge" position="bottom" d="M156,135H60a12.0353,12.0353,0,0,1-12-12v1a12.0353,12.0353,0,0,0,12,12h96a12.0353,12.0353,0,0,0,12-12v-1A12.0353,12.0353,0,0,1,156,135Z" />
+                                            <polygon class="edge" position="bottom" points="168 47 168 48 188 12 187.444 12 168 47" />
+                                            <path class="edge" position="top" d="M60,13H187.44446L188,12H60A12.03527,12.03527,0,0,0,48,24v1A12.03527,12.03527,0,0,1,60,13Z" />
+                                        </g>
+                                        <path clip-path="url(#messages-background-outline)" fill="url(#messages-cast-shadow)" d="M115.525,268.475l114.95-114.95-90-90A11.96314,11.96314,0,0,0,132,60H4L24,96v76a11.96314,11.96314,0,0,0,3.525,8.475C29.7,182.65,115.525,268.475,115.525,268.475Z" />
+                                        <path clip-path="url(#messages-background-outline)" d="M36,184h96a12.03528,12.03528,0,0,0,12-12V72a12.03528,12.03528,0,0,0-12-12H4L24,96v76A12.03528,12.03528,0,0,0,36,184Z" />
+                                        <path d="M36,184h96a12.03528,12.03528,0,0,0,12-12V72a12.03528,12.03528,0,0,0-12-12H4L24,96v76A12.03528,12.03528,0,0,0,36,184Z" />
+                                        <rect x="48" y="88" width="72" height="12" />
+                                        <rect x="48" y="112" width="72" height="12" />
+                                        <rect x="48" y="136" width="48" height="12" />
+                                        <g>
+                                            <polygon class="edge" position="bottom" points="4.556 60 4 60 24 96 24 95 4.556 60" />
+                                            <path class="edge" position="bottom" d="M132,183H36a12.0353,12.0353,0,0,1-12-12v1a12.0353,12.0353,0,0,0,12,12h96a12.0353,12.0353,0,0,0,12-12v-1A12.0353,12.0353,0,0,1,132,183Z" />
+                                            <path class="edge" position="top" d="M132,60H4l.55554,1H132a12.03527,12.03527,0,0,1,12,12V72A12.03527,12.03527,0,0,0,132,60Z" />
+                                        </g>
+                                        <path fill="url(#finish-gradient)" d="M60,12A12.03527,12.03527,0,0,0,48,24V60H4L24,96v76a12.0353,12.0353,0,0,0,12,12h96a12.0353,12.0353,0,0,0,12-12V136h12a12.0353,12.0353,0,0,0,12-12V48l20-36Z" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <figcaption class="body1">
+                                <p>高光与阴影边沿</p>
+                                <ul>
+                                    <li>边沿最大厚度：1dp</li>
+                                    <li>边沿不透明度：参见下文表格</li>
+                                    <li>边沿颜色：参见下文表格</li>
+                                </ul>
+                            </figcaption>
+                        </figure>
+                        <article class="body1">
+                            <p>光泽层的显示依赖于前景层与背景层。</p>
+                        </article>
+                        <figure id="tinted-shaded-edges">
+                            <div class="diagram">
+                                <div id="sites" class="product-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192">
+                                        <defs>
+                                            <clipPath id="sites-background-outline">
+                                                <rect x="8" y="20" width="176" height="152" rx="12" />
+                                            </clipPath>
+                                            <linearGradient id="sites-cast-shadow" x1="47.76746" y1="-12.71747" x2="222.24247" y2="161.75753" gradientUnits="userSpaceOnUse">
+                                                <stop offset="0" />
+                                                <stop offset="0.33333" />
+                                                <stop offset="1" stop-opacity="0" />
+                                            </linearGradient>
+                                            <radialGradient id="sites-finish-gradient" fx="0%" fy="0%" r="100%">
+                                                <stop offset="0" stop-color="rgba(255, 255, 255, 0.1)" />
+                                                <stop offset="0.33333" stop-color="rgba(255, 255, 255, 0.05)" />
+                                                <stop offset="1" stop-color="rgba(255, 255, 255, 0)" />
+                                            </radialGradient>
+                                        </defs>
+                                        <rect x="8" y="44" width="176" height="64" />
+                                        <path d="M8,108H96a0,0,0,0,1,0,0v64a0,0,0,0,1,0,0H20A12,12,0,0,1,8,160V108A0,0,0,0,1,8,108Z" />
+                                        <path d="M96,108h88a0,0,0,0,1,0,0v52a12,12,0,0,1-12,12H96a0,0,0,0,1,0,0V108A0,0,0,0,1,96,108Z" />
+                                        <g>
+                                            <rect x="20" y="120" width="64" height="8" />
+                                            <rect x="20" y="136" width="64" height="8" />
+                                            <rect x="20" y="152" width="40" height="8" />
+                                        </g>
+                                        <path class="edge" position="bottom" d="M172,171H20A12.0353,12.0353,0,0,1,8,159v1a12.0353,12.0353,0,0,0,12,12H172a12.0353,12.0353,0,0,0,12-12v-1A12.0353,12.0353,0,0,1,172,171Z" />
+                                        <path clip-path="url(#sites-background-outline)" fill="url(#sites-cast-shadow)" d="M174,210,8,44V32A12.03526,12.03526,0,0,1,20,20H172a11.96314,11.96314,0,0,1,8.475,3.525c2.175,2.175,90.01,89.9901,90.01,89.9901Z" />
+                                        <path clip-path="url(#sites-background-outline)" d="M20,20H172a12,12,0,0,1,12,12V44a0,0,0,0,1,0,0H8a0,0,0,0,1,0,0V32A12,12,0,0,1,20,20Z" />
+                                        <path d="M20,20H172a12,12,0,0,1,12,12V44a0,0,0,0,1,0,0H8a0,0,0,0,1,0,0V32A12,12,0,0,1,20,20Z" />
+                                        <circle cx="24" cy="32" r="4" />
+                                        <circle cx="40" cy="32" r="4" />
+                                        <path class="edge" position="top" d="M172,20H20A12.03527,12.03527,0,0,0,8,32v1A12.03527,12.03527,0,0,1,20,21H172a12.03527,12.03527,0,0,1,12,12V32A12.03527,12.03527,0,0,0,172,20Z" />
+                                        <rect class="edge" position="bottom" x="8" y="43" width="176" height="1" />
+                                        <rect fill="url(#sites-finish-gradient)" x="8" y="20" width="176" height="152" rx="12" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <figcaption class="body1">
+                                <p>光泽覆盖整个图标</p>
+                                <ul>
+                                    <li>渐变类型：径向</li>
+                                    <li>渐变角度：-45°</li>
+                                    <li>渐变颜色：#FFFFFF</li>
+                                    <li>渐变起始不透明度：10%</li>
+                                    <li>渐变中点：距离起始点 1/3</li>
+                                    <li>渐变结束不透明度：0%</li>
+                                </ul>
+                            </figcaption>
+                        </figure>
+                        <article class="body1">
+                            <p>产品图标边沿与阴影的颜色与不透明度应根据前景层或背景层的颜色进行调整，实现颜色的自然过渡。</p>
+                        </article>
+                        <table id="cool" class="body2" lang="en-US">
+                            <thead>
+                                <tr>
+                                    <th scope="col"></th>
+                                    <th scope="col">高光</th>
+                                    <th scope="col">阴影</th>
+                                </tr>
+                                <tr>
+                                    <th>底色</th>
+                                    <td style="background-color: #ffffff; color: rgba(0, 0, 0, 0.54)">白</td>
+                                    <td style="background-color: #1a237e; color: rgba(255, 255, 255, 0.87)">靛蓝 900</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="background-color: #2196f3">
+                                    <th style="color: rgba(0, 0, 0, 0.87)">蓝</th>
+                                    <td style="color: rgba(0, 0, 0, 0.87)"><span>20%</span></td>
+                                    <td style="color: rgba(255, 255, 255, 0.87)"><span>20%</span></td>
+                                </tr>
+                                <tr style="background-color: #3f51b5; color: rgba(255, 255, 255, 0.87)">
+                                    <th>靛蓝</th>
+                                    <td><span>20%</span></td>
+                                    <td><span>20%</span></td>
+                                </tr>
+                                <tr style="background-color: #673ab7; color: rgba(255, 255, 255, 0.87)">
+                                    <th>深紫</th>
+                                    <td><span>20%</span></td>
+                                    <td><span>20%</span></td>
+                                </tr>
+                                <tr style="background-color: #9c27b0; color: rgba(255, 255, 255, 0.87)">
+                                    <th>紫</th>
+                                    <td><span>20%</span></td>
+                                    <td><span>20%</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table id="fresh" class="body2" lang="en-US">
+                            <thead>
+                                <tr>
+                                    <th scope="col"></th>
+                                    <th scope="col">高光</th>
+                                    <th scope="col">阴影</th>
+                                </tr>
+                                <tr>
+                                    <th>底色</th>
+                                    <td style="background-color: #ffffff; color: rgba(0, 0, 0, 0.54)">白</td>
+                                    <td style="background-color: #263238; color: rgba(255, 255, 255, 0.87)">蓝灰 900</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="background-color: #607d8b">
+                                    <th style="color: rgba(255, 255, 255, 0.87)">蓝灰</th>
+                                    <td style="color: rgba(0, 0, 0, 0.87)"><span>20%</span></td>
+                                    <td style="color: rgba(255, 255, 255, 0.87)"><span>20%</span></td>
+                                </tr>
+                                <tr style="background-color: #03a9f4">
+                                    <th style="color: rgba(0, 0, 0, 0.87)">亮蓝</th>
+                                    <td style="color: rgba(0, 0, 0, 0.87)"><span>20%</span></td>
+                                    <td style="color: rgba(255, 255, 255, 0.87)"><span>20%</span></td>
+                                </tr>
+                                <tr style="background-color: #00bcd4">
+                                    <th style="color: rgba(0, 0, 0, 0.87)">青</th>
+                                    <td style="color: rgba(0, 0, 0, 0.87)"><span>20%</span></td>
+                                    <td style="color: rgba(255, 255, 255, 0.87)"><span>20%</span></td>
+                                </tr>
+                                <tr style="background-color: #009688">
+                                    <th style="color: rgba(255, 255, 255, 0.87)">青绿</th>
+                                    <td style="color: rgba(0, 0, 0, 0.87)"><span>20%</span></td>
+                                    <td style="color: rgba(255, 255, 255, 0.87)"><span>20%</span></td>
+                                </tr>
+                                <tr style="background-color: #4caf50">
+                                    <th style="color: rgba(0, 0, 0, 0.87)">绿</th>
+                                    <td style="color: rgba(0, 0, 0, 0.87)"><span>20%</span></td>
+                                    <td style="color: rgba(255, 255, 255, 0.87)"><span>20%</span></td>
+                                </tr>
+                                <tr style="background-color: #8bc34a">
+                                    <th style="color: rgba(0, 0, 0, 0.87)">亮绿</th>
+                                    <td style="color: rgba(0, 0, 0, 0.87)"><span>20%</span></td>
+                                    <td style="color: rgba(255, 255, 255, 0.87)"><span>20%</span></td>
+                                </tr>
+                                <tr style="background-color: #cddc39">
+                                    <th style="color: rgba(0, 0, 0, 0.87)">黄绿</th>
+                                    <td style="color: rgba(0, 0, 0, 0.87)"><span>20%</span></td>
+                                    <td style="color: rgba(255, 255, 255, 0.87)"><span>20%</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table id="warm" class="body2" lang="en-US">
+                            <thead>
+                                <tr>
+                                    <th scope="col"></th>
+                                    <th scope="col">高光</th>
+                                    <th scope="col">阴影</th>
+                                </tr>
+                                <tr>
+                                    <th>底色</th>
+                                    <td style="background-color: #ffffff; color: rgba(0, 0, 0, 0.54)">白</td>
+                                    <td style="background-color: #bf360c; color: rgba(255, 255, 255, 0.87)">深橙 900</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="background-color: #ffeb3b; color: rgba(0, 0, 0, 0.87)">
+                                    <th>黄</th>
+                                    <td><span>20%</span></td>
+                                    <td><span>20%</span></td>
+                                </tr>
+                                <tr style="background-color: #ffc107; color: rgba(0, 0, 0, 0.87)">
+                                    <th>橙黄</th>
+                                    <td><span>20%</span></td>
+                                    <td><span>20%</span></td>
+                                </tr>
+                                <tr style="background-color: #ff9800; color: rgba(0, 0, 0, 0.87)">
+                                    <th>橙</th>
+                                    <td><span>20%</span></td>
+                                    <td><span>20%</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table id="hot" class="body2" lang="en-US">
+                            <thead>
+                                <tr>
+                                    <th scope="col"></th>
+                                    <th scope="col">高光</th>
+                                    <th scope="col">阴影</th>
+                                </tr>
+                                <tr>
+                                    <th>底色</th>
+                                    <td style="background-color: #ffffff; color: rgba(0, 0, 0, 0.54)">白</td>
+                                    <td style="background-color: #3e2723; color: rgba(255, 255, 255, 0.87)">棕 900</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="background-color: #ff5722">
+                                    <th style="color: rgba(0, 0, 0, 0.87)">深橙</th>
+                                    <td style="color: rgba(0, 0, 0, 0.87)"><span>20%</span></td>
+                                    <td style="color: rgba(255, 255, 255, 0.87)"><span>20%</span></td>
+                                </tr>
+                                <tr style="background-color: #f44336">
+                                    <th style="color: rgba(255, 255, 255, 0.87)">红</th>
+                                    <td style="color: rgba(0, 0, 0, 0.87)"><span>20%</span></td>
+                                    <td style="color: rgba(255, 255, 255, 0.87)"><span>20%</span></td>
+                                </tr>
+                                <tr style="background-color: #e91e63; color: rgba(255, 255, 255, 0.87)">
+                                    <th>粉</th>
+                                    <td><span>20%</span></td>
+                                    <td><span>20%</span></td>
+                                </tr>
+                                <tr style="background-color: #795548; color: rgba(255, 255, 255, 0.87)">
+                                    <th>棕</th>
+                                    <td><span>20%</span></td>
+                                    <td><span>20%</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table id="neutral" class="body2" lang="en-US">
+                            <thead>
+                                <tr>
+                                    <th scope="col"></th>
+                                    <th scope="col">高光</th>
+                                    <th scope="col">阴影</th>
+                                </tr>
+                                <tr>
+                                    <th>底色</th>
+                                    <td style="background-color: #ffffff; color: rgba(0, 0, 0, 0.54)">白</td>
+                                    <td style="background-color: #000000; color: rgba(255, 255, 255, 0.87)">黑</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="background-color: #fafafa; color: rgba(0, 0, 0, 0.87)">
+                                    <th>灰 50</th>
+                                    <td><span>40%</span></td>
+                                    <td><span>10%</span></td>
+                                </tr>
+                                <tr style="background-color: #f5f5f5; color: rgba(0, 0, 0, 0.87)">
+                                    <th>灰 100</th>
+                                    <td><span>40%</span></td>
+                                    <td><span>10%</span></td>
+                                </tr>
+                                <tr style="background-color: #eeeeee; color: rgba(0, 0, 0, 0.87)">
+                                    <th>灰 200</th>
+                                    <td><span>40%</span></td>
+                                    <td><span>10%</span></td>
+                                </tr>
+                                <tr style="background-color: #e0e0e0; color: rgba(0, 0, 0, 0.87)">
+                                    <th>灰 300</th>
+                                    <td><span>40%</span></td>
+                                    <td><span>10%</span></td>
+                                </tr>
+                                <tr style="background-color: #bdbdbd; color: rgba(0, 0, 0, 0.87)">
+                                    <th>灰 400</th>
+                                    <td><span>20%</span></td>
+                                    <td><span>20%</span></td>
+                                </tr>
+                                <tr style="background-color: #9e9e9e">
+                                    <th style="color: rgba(0, 0, 0, 0.87)">灰 500</th>
+                                    <td style="color: rgba(0, 0, 0, 0.87)"><span>20%</span></td>
+                                    <td style="color: rgba(255, 255, 255, 0.87)"><span>20%</span></td>
+                                </tr>
+                                <tr style="background-color: #757575">
+                                    <th style="color: rgba(255, 255, 255, 0.87)">灰 600</th>
+                                    <td style="color: rgba(0, 0, 0, 0.87)"><span>20%</span></td>
+                                    <td style="color: rgba(255, 255, 255, 0.87)"><span>20%</span></td>
+                                </tr>
+                                <tr style="background-color: #616161; color: rgba(255, 255, 255, 0.87)">
+                                    <th>灰 700</th>
+                                    <td><span>20%</span></td>
+                                    <td><span>20%</span></td>
+                                </tr>
+                                <tr style="background-color: #424242; color: rgba(255, 255, 255, 0.87)">
+                                    <th>灰 800</th>
+                                    <td><span>20%</span></td>
+                                    <td><span>20%</span></td>
+                                </tr>
+                                <tr style="background-color: #212121; color: rgba(255, 255, 255, 0.87)">
+                                    <th>灰 900</th>
+                                    <td><span>20%</span></td>
+                                    <td><span>20%</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                    <section>
+                        <article class="body1 intro">
+                            <h4 class="title">层面处理</h4>
+                            <p>Material 层面的特性给予图标设计极大的创作空间，但仍有一定的约束。</p>
+                        </article>
+                        <article class="body1">
+                            <p>图标内的文字、图形等内容依靠 Material 变换颜色来显示，Material 层面可以塑造为内容的形状，但内容本身并不是实体。</p>
+                        </article>
+                        <figure id="plain-color">
+                            <div class="diagram">
+                                <div id="keep" class="product-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192">
+                                        <defs>
+                                            <clipPath id="keep-background-outline">
+                                                <path d="M128,172H32a12,12,0,0,1-12-12V32A12,12,0,0,1,32,20H160a12,12,0,0,1,12,12v96Z" />
+                                            </clipPath>
+                                            <linearGradient id="keep-cast-shadow" x1="63.52208" y1="61.56623" x2="192.97792" y2="191.02208" gradientUnits="userSpaceOnUse">
+                                                <stop offset="0" />
+                                                <stop offset="0.33333" />
+                                                <stop offset="1" stop-opacity="0" />
+                                            </linearGradient>
+                                            <radialGradient id="finish-gradient" fx="0%" fy="0%" r="100%">
+                                                <stop offset="0" stop-color="rgba(255, 255, 255, 0.1)" />
+                                                <stop offset="0.33333" stop-color="rgba(255, 255, 255, 0.05)" />
+                                                <stop offset="1" stop-color="rgba(255, 255, 255, 0)" />
+                                            </radialGradient>
+                                        </defs>
+                                        <path d="M128,172H32a12,12,0,0,1-12-12V32A12,12,0,0,1,32,20H160a12,12,0,0,1,12,12v96Z" />
+                                        <g>
+                                            <path class="edge" position="top" d="M160,20H32A12.03527,12.03527,0,0,0,20,32v1A12.03527,12.03527,0,0,1,32,21H160a12.03527,12.03527,0,0,1,12,12V32A12.03527,12.03527,0,0,0,160,20Z" />
+                                            <path class="edge" position="bottom" d="M129,171H32a12.0353,12.0353,0,0,1-12-12v1a12.0353,12.0353,0,0,0,12,12h96Z" />
+                                        </g>
+                                        <path clip-path="url(#keep-background-outline)" fill="url(#keep-cast-shadow)" d="M96,44a35.99811,35.99811,0,0,0-19,66.57483V140l83.5,83.5,64.95585-64.95585s-97.48528-97.48526-104-104A35.88733,35.88733,0,0,0,96,44Z" />
+                                        <path d="M96,44a35.99811,35.99811,0,0,0-19,66.57483V140h8v8h22v-8h8V110.57483A35.99811,35.99811,0,0,0,96,44ZM85,132v-8h22v8Zm22-26.24609V116H85V105.75391a28,28,0,1,1,22,0Z" />
+                                        <g>
+                                            <path class="edge" position="top" d="M96,45a35.99362,35.99362,0,0,1,35.98572,35.435c.00171-.14575.01428-.28882.01428-.435a36,36,0,0,0-72,0c0,.14618.01257.28925.01428.435A35.99362,35.99362,0,0,1,96,45Z" />
+                                            <path class="edge" position="top" d="M124,81c0-.20093-.01093-.39911-.01514-.599A27.99971,27.99971,0,0,1,107,105.75391v1A28.00545,28.00545,0,0,0,124,81Z" />
+                                            <rect class="edge" position="top" x="85" y="116" width="22" height="1" />
+                                            <rect class="edge" position="top" x="85" y="132" width="22" height="1" />
+                                            <path class="edge" position="top" d="M68.01514,80.401C68.01093,80.60089,68,80.79907,68,81a28.00545,28.00545,0,0,0,17,25.75391v-1A27.99971,27.99971,0,0,1,68.01514,80.401Z" />
+                                            <rect class="edge" position="bottom" x="85" y="147" width="22" height="1" />
+                                            <path class="edge" position="bottom" d="M60.01428,79.435C60.01135,79.62378,60,79.81049,60,80a35.96971,35.96971,0,0,0,17,30.57483v-1A35.96529,35.96529,0,0,1,60.01428,79.435Z" />
+                                            <rect class="edge" position="bottom" x="77" y="139" width="8" height="1" />
+                                            <rect class="edge" position="bottom" x="107" y="139" width="8" height="1" />
+                                            <rect class="edge" position="bottom" x="85" y="123" width="22" height="1" />
+                                            <path class="edge" position="bottom" d="M115,109.57483v1A35.96971,35.96971,0,0,0,132,80c0-.18951-.01135-.37622-.01428-.565A35.96529,35.96529,0,0,1,115,109.57483Z" />
+                                            <path class="edge" position="bottom" d="M96,52a27.99439,27.99439,0,0,1,27.98486,27.401c.0019-.13446.01514-.26611.01514-.401a28,28,0,0,0-56,0c0,.13489.01324.26654.01514.401A27.99439,27.99439,0,0,1,96,52Z" />
+                                        </g>
+                                        <path clip-path="url(#keep-background-outline)" d="M128,172V140a12.03528,12.03528,0,0,1,12-12h32Z" />
+                                        <g>
+                                            <polygon class="edge" position="bottom" points="128 171 128 172 172 128 171 128 128 171" />
+                                            <path class="edge" position="top" d="M140,129h31l1-1H140a12.03527,12.03527,0,0,0-12,12v1A12.03527,12.03527,0,0,1,140,129Z" />
+                                        </g>
+                                        <path fill="url(#finish-gradient)" d="M128,172H32a12,12,0,0,1-12-12V32A12,12,0,0,1,32,20H160a12,12,0,0,1,12,12v96Z" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <figcaption class="body1">
+                                <span class="recommends do body2">正确</span>
+                                <p class="body1">合理提升内容为层面。</p>
+                            </figcaption>
+                        </figure>
+                        <figure id="elevated-color">
+                            <div class="diagram">
+                                <div id="calculator" class="product-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192">
+                                        <defs>
+                                            <clipPath id="calculator-background-outline">
+                                                <rect x="20" y="20" width="152" height="152" rx="12" />
+                                            </clipPath>
+                                            <clipPath id="calculator-background-outline-alt">
+                                                <path d="M96,20h64a12,12,0,0,1,12,12V160a12,12,0,0,1-12,12H96a0,0,0,0,1,0,0V20A0,0,0,0,1,96,20Z" />
+                                            </clipPath>
+                                            <clipPath id="calculator-foreground-outline">
+                                                <circle cx="136" cy="136" r="48" />
+                                            </clipPath>
+                                            <linearGradient id="calculator-cast-shadow" x1="6.2875" y1="40.7625" x2="174.7625" y2="209.2375" gradientUnits="userSpaceOnUse">
+                                                <stop offset="0" />
+                                                <stop offset="0.33333" />
+                                                <stop offset="1" stop-opacity="0" />
+                                            </linearGradient>
+                                            <linearGradient id="addition-cast-shadow" x1="48" y1="124" x2="154" y2="230" gradientUnits="userSpaceOnUse">
+                                                <stop offset="0" />
+                                                <stop offset="0.33333" />
+                                                <stop offset="1" stop-opacity="0" />
+                                            </linearGradient>
+                                            <linearGradient id="subtraction-cast-shadow" x1="48" y1="48" x2="192" y2="192" gradientUnits="userSpaceOnUse">
+                                                <stop offset="0" />
+                                                <stop offset="0.33333" />
+                                                <stop offset="1" stop-opacity="0" />
+                                            </linearGradient>
+                                            <linearGradient id="multiplication-cast-shadow" x1="124.68652" y1="44.68652" x2="232" y2="152" gradientUnits="userSpaceOnUse">
+                                                <stop offset="0" />
+                                                <stop offset="0.33333" />
+                                                <stop offset="1" stop-opacity="0" />
+                                            </linearGradient>
+                                            <linearGradient id="equation-cast-shadow" x1="123" y1="123" x2="192" y2="192" gradientUnits="userSpaceOnUse">
+                                                <stop offset="0" />
+                                                <stop offset="0.33333" />
+                                                <stop offset="1" stop-opacity="0" />
+                                            </linearGradient>
+                                            <radialGradient id="finish-gradient" fx="0%" fy="0%" r="100%">
+                                                <stop offset="0" stop-color="rgba(255, 255, 255, 0.1)" />
+                                                <stop offset="0.33333" stop-color="rgba(255, 255, 255, 0.05)" />
+                                                <stop offset="1" stop-color="rgba(255, 255, 255, 0)" />
+                                            </radialGradient>
+                                        </defs>
+                                        <rect fill="#424242" x="20" y="20" width="152" height="152" rx="12" />
+                                        <path clip-path="url(#calculator-background-outline)" fill="url(#calculator-cast-shadow)" d="M230,154,119.525,264.475l-96-96A11.96314,11.96314,0,0,1,20,160V32A12.03528,12.03528,0,0,1,32,20H96Z" />
+                                        <polygon clip-path="url(#calculator-background-outline)" fill="url(#multiplication-cast-shadow)" points="243.313 140.687 145.192 42.565 136 51.758 126.808 42.565 122.565 46.808 131.758 56 122.565 65.192 220.687 163.313 243.313 140.687" />
+                                        <polygon fill="#eeeeee" points="149.435 46.808 145.192 42.565 136 51.758 126.808 42.565 122.565 46.808 131.758 56 122.565 65.192 126.808 69.435 136 60.242 145.192 69.435 149.435 65.192 140.242 56 149.435 46.808" />
+                                        <g>
+                                            <polygon class="edge" position="top" points="148.435 65.192 149.435 65.192 140.242 56 140.242 57 148.435 65.192" />
+                                            <polygon class="edge" position="top" points="136 52.758 145.192 43.565 148.435 46.808 149.435 46.808 145.192 42.565 136 51.758 126.808 42.565 122.565 46.808 123.565 46.808 126.808 43.565 136 52.758" />
+                                            <polygon class="edge" position="top" points="131.758 56 122.565 65.192 123.565 65.192 131.755 57.002 131.758 56" />
+                                            <polygon class="edge" position="bottom" points="136 59.242 126.808 68.435 123.565 65.192 122.565 65.192 126.808 69.435 136 60.242 145.192 69.435 149.435 65.192 148.435 65.192 145.192 68.435 136 59.242" />
+                                            <polygon class="edge" position="bottom" points="123.565 46.808 122.565 46.808 131.758 56 131.758 55 123.565 46.808" />
+                                            <polygon class="edge" position="bottom" points="148.435 46.808 140.244 54.999 140.242 56 149.435 46.808 148.435 46.808" />
+                                        </g>
+                                        <path clip-path="url(#calculator-background-outline)" fill="#616161" d="M32,20H96a0,0,0,0,1,0,0V172a0,0,0,0,1,0,0H32a12,12,0,0,1-12-12V32A12,12,0,0,1,32,20Z" />
+                                        <path fill="#757575" d="M32,20H96a0,0,0,0,1,0,0V96a0,0,0,0,1,0,0H20a0,0,0,0,1,0,0V32A12,12,0,0,1,32,20Z" />
+                                        <polygon clip-path="url(#calculator-background-outline)" fill="url(#subtraction-cast-shadow)" points="183 201 42 60 42 54 72 54 201 183 183 201" />
+                                        <polygon clip-path="url(#calculator-background-outline)" fill="url(#addition-cast-shadow)" points="72 130 60 130 60 118 54 118 54 130 42 130 42 136 145 239 163 221 72 130" />
+                                        <rect fill="#f5f5f5" x="42" y="54" width="30" height="6" />
+                                        <polygon fill="#f5f5f5" points="72 130 60 130 60 118 54 118 54 130 42 130 42 136 54 136 54 148 60 148 60 136 72 136 72 130" />
+                                        <g>
+                                            <rect class="edge" position="top" x="42" y="54" width="30" height="1" />
+                                            <rect class="edge" position="top" x="42" y="130" width="12" height="1" />
+                                            <rect class="edge" position="top" x="54" y="118" width="6" height="1" />
+                                            <rect class="edge" position="top" x="60" y="130" width="12" height="1" />
+                                            <rect class="edge" position="bottom" x="42" y="59" width="30" height="1" />
+                                            <rect class="edge" position="bottom" x="54" y="147" width="6" height="1" />
+                                            <rect class="edge" position="bottom" x="60" y="135" width="12" height="1" />
+                                            <rect class="edge" position="bottom" x="42" y="135" width="12" height="1" />
+                                        </g>
+                                        <g>
+                                            <path class="edge" position="top" d="M160,20H32A12.03527,12.03527,0,0,0,20,32v1A12.03527,12.03527,0,0,1,32,21H160a12.03527,12.03527,0,0,1,12,12V32A12.03527,12.03527,0,0,0,160,20Z" />
+                                            <path class="edge" position="bottom" d="M160,171H32a12.0353,12.0353,0,0,1-12-12v1a12.0353,12.0353,0,0,0,12,12H160a12.0353,12.0353,0,0,0,12-12v-1A12.0353,12.0353,0,0,1,160,171Z" />
+                                        </g>
+                                        <circle clip-path="url(#calculator-background-outline-alt)" fill="#1de9b6" cx="136" cy="136" r="48" />
+                                        <circle fill="#1de9b6" cx="136" cy="136" r="48" />
+                                        <polygon clip-path="url(#calculator-foreground-outline)" fill="url(#equation-cast-shadow)" points="120 140 128 140 120 132 120 126 152 126 205 179 179 205 120 146 120 140" />
+                                        <rect fill="#f5f5f5" x="120" y="126" width="32" height="6" />
+                                        <rect fill="#f5f5f5" x="120" y="140" width="32" height="6" />
+                                        <g>
+                                            <rect class="edge" position="top" x="120" y="126" width="32" height="1" />
+                                            <rect class="edge" position="top" x="120" y="140" width="32" height="1" />
+                                            <rect class="edge" position="bottom" x="120" y="131" width="32" height="1" />
+                                            <rect class="edge" position="bottom" x="120" y="145" width="32" height="1" />
+                                        </g>
+                                        <g>
+                                            <path class="edge" position="top" d="M136,89a47.9935,47.9935,0,0,1,47.98737,47.5c.0017-.1673.01263-.33234.01263-.5a48,48,0,0,0-96,0c0,.16766.01093.3327.01263.5A47.9935,47.9935,0,0,1,136,89Z" />
+                                            <path class="edge" position="bottom" d="M136,183a47.99354,47.99354,0,0,1-47.98737-47.5c-.0017.1673-.01263.33234-.01263.5a48,48,0,0,0,96,0c0-.16766-.01093-.3327-.01263-.5A47.99354,47.99354,0,0,1,136,183Z" />
+                                        </g>
+                                        <path fill="url(#finish-gradient)" d="M172,104.26794V32a12.03527,12.03527,0,0,0-12-12H32A12.03527,12.03527,0,0,0,20,32V160a12.0353,12.0353,0,0,0,12,12h72.26794A47.9877,47.9877,0,0,0,172,104.26794Z" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <figcaption class="body1">
+                                <span class="recommends dont body2">错误</span>
+                                <p>多个内容化为实体层面使图标观感太过繁杂。</p>
+                            </figcaption>
+                        </figure>
+                        <article class="body1">
+                            <p>剪裁前景层的根据是剪裁后是否契合图标整体的预定形状，且不能因剪裁而失去了前景层本身的形状意义。</p>
+                        </article>
+                        <figure id="intact-foreground">
+                            <div class="diagram">
+                                <div id="beam" class="product-icon"></div>
+                            </div>
+                            <figcaption class="body1">
+                                <span class="recommends do body2">正确</span>
+                                <p>为满足特定图标外形而剪裁实体层面。</p>
+                            </figcaption>
+                        </figure>
+                        <figure id="cropped-foreground">
+                            <div class="diagram">
+                                <div id="email" class="product-icon"></div>
+                            </div>
+                            <figcaption class="body1">
+                                <span class="recommends dont body2">错误</span>
+                                <p>本应完整露出的实体层面被剪裁。</p>
+                            </figcaption>
+                        </figure>
+                        <article class="body1">
+                            <p>层面间的重叠可以使图标呈现出独特的形状，但过多的层叠会使图标过于厚重并模糊了视觉焦点。</p>
+                        </article>
+                        <figure id="intact-foreground">
+                            <div class="diagram">
+                                <div id="snapseed" class="product-icon"></div>
+                            </div>
+                            <figcaption class="body1">
+                                <span class="recommends do body2">正确</span>
+                                <p>简要利用形状层叠勾勒图标。</p>
+                            </figcaption>
+                        </figure>
+                        <figure id="cropped-foreground">
+                            <div class="diagram">
+                                <div id="groups" class="product-icon"></div>
+                            </div>
+                            <figcaption class="body1">
+                                <span class="recommends caution body2">谨慎</span>
+                                <p>实体层面的增加会使图标更加厚重。</p>
+                            </figcaption>
+                        </figure>
+                        <article class="body1">
+                            <p>为实体层面施加折痕并用颜色深浅区别被折痕分割的各部分，可以使层面呈现更强的空间感，而不破坏原本的几何造型。</p>
+                            <p>只有形状对称的层面可以添加折痕构造。折痕唯一且位置居中。</p>
+                        </article>
+                        <figure id="intact-foreground">
+                            <div class="diagram">
+                                <div id="android-auto" class="product-icon"></div>
+                            </div>
+                            <figcaption class="body1">
+                                <span class="recommends do body2">正确</span>
+                                <p>折痕成为图标的有机部分。</p>
+                            </figcaption>
+                        </figure>
+                        <figure id="cropped-foreground">
+                            <div class="diagram">
+                                <div id="movies" class="product-icon"></div>
+                            </div>
+                            <figcaption class="body1">
+                                <span class="recommends dont body2">错误</span>
+                                <p>凌乱的折痕破坏了图标的空间秩序。</p>
+                            </figcaption>
+                        </figure>
+                        <article class="body1">
+                            <p>翻折的层面具有更加强烈的空间感，但在运用时需特别注意是否会破坏层面内容的展示。</p>
+                        </article>
+                        <figure id="intact-foreground">
+                            <div class="diagram">
+                                <div id="browser" class="product-icon"></div>
+                            </div>
+                            <figcaption class="body1">
+                                <span class="recommends do body2">正确</span>
+                                <p>层面的翻折丰富了图标的空间结构。</p>
+                            </figcaption>
+                        </figure>
+                        <figure id="cropped-foreground">
+                            <div class="diagram">
+                                <div id="calendar" class="product-icon"></div>
+                            </div>
+                            <figcaption class="body1">
+                                <span class="recommends caution body2">谨慎</span>
+                                <p>层面的内容不能因翻折而失去可读性或原本的形状意义。</p>
+                            </figcaption>
+                        </figure>
+                        <article class="body1">
+                            <p>层折可以令一个 Material 层面同时具有多个纵深层级。</p>
+                            <p>产品图标内仅能有一处且一次层折，过多的层折同样会破坏图标的空间平衡。</p>
+                        </article>
+                        <figure id="intact-foreground">
+                            <div class="diagram">
+                                <div id="browser" class="product-icon"></div>
+                            </div>
+                            <figcaption class="body1">
+                                <span class="recommends do body2">正确</span>
+                                <p>恰当的层折增强了图标元素间的联系。</p>
+                            </figcaption>
+                        </figure>
+                        <figure id="cropped-foreground">
+                            <div class="diagram">
+                                <div id="calendar" class="product-icon"></div>
+                            </div>
+                            <figcaption class="body1">
+                                <span class="recommends dont body2">错误</span>
+                                <p>多重层折使图标不再轻盈。</p>
+                            </figcaption>
+                        </figure>
+                        <article class="body1">
+                            <p>为了保证图标各元素的几何造型，产品图标的实体层面不能被扭曲、卷曲、弯曲、翘曲、歪斜、变形以及非平面的旋转。</p>
+                        </article>
+                        <figure id="intact-foreground">
+                            <div class="diagram">
+                                <img src="style/resources/style-logos-product-patterns-distort-do.png" />
+                            </div><figcaption class="body1">
+                            <span class="recommends dont body2">错误</span></figcaption>
+                        </figure>
+                        <figure id="cropped-foreground">
+                            <div class="diagram">
+                                <img src="style/resources/style-logos-product-patterns-distort-dont.png" />
+                            </div><figcaption class="body1">
+                            <span class="recommends dont body2">错误</span></figcaption>
+                        </figure>
+                    </section>
+                </article>
+                <hr class="divider horizontal" />
+                <article id="system-icons" class="horizontal">
+                    <h3 class="headline">界面图标</h3>
+                </article>
+            </div>
+            <footer class="dark">
+                <a states class="left" href="style/color.html">
+                    <span class="material-icons">arrow_back</span>
+                    <span class="subheading"
+                        >上一节
+                        <span class="title">颜色</span>
+                    </span>
+                </a>
+                <a states class="right" href="style/imagery.html">
+                    <span class="subheading"
+                        >下一节
+                        <span class="title">图像</span>
+                    </span>
+                    <span class="material-icons">arrow_forward</span>
+                </a>
+            </footer>
+            <div class="app-bar dark">
+                <div class="start">
+                    <button id="drawer-trigger" class="icon-button unbounded" tabindex="1">
+                        <span class="material-icons">menu</span>
+                    </button>
+                </div>
+                <h1 class="title">风格样式 - 图标</h1>
+                <div class="end">
+                    <button id="search-trigger" class="icon-button unbounded" disabled="true">
+                        <span class="material-icons">search</span>
+                    </button>
+                </div>
+            </div>
+        </main>
 
-<body>
-    <main class="CMD-content">
-        <div class="content-body">
-            <header>
-                <h4>图标</h4>
-                <p class="title">质感设计以几何形状为基础设计图标，在视觉上突出表达图标的功用、主旨与格调。</p>
-            </header>
-            <nav>
-                <span class="body1">索引</span>
-                <ul class="title">
-                    <li><a href="#product-icons">产品图标</a></li>
-                    <li><a href="#system-icons">界面图标</a></li>
+        <aside class="drawer-container">
+            <div class="scrim" fill></div>
+            <nav class="drawer body1">
+                <figure>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="12" />
+                        <rect fill="#BDBDBD" x="3.5150809" y="3.5150809" width="16.9698048" height="16.9698048" />
+                        <polygon fill="#FFFFFF" points="11.9999838,20.4848862 3.5150809,3.5150809 20.4848862,3.5150809 " />
+                    </svg>
+                    <figcaption class="subheading">MATERIAL DESIGN</figcaption>
+                </figure>
+                <hr class="divider horizontal" />
+                <ul>
+                    <li>
+                        <span states class="body2" tabindex="0">基本原理</span>
+                        <ul>
+                            <li states><a href="index.html">概述</a></li>
+                            <li states><a href="material-design/environment.html">环境</a></li>
+                            <li states><a href="material-design/material-properties.html">Material 属性</a></li>
+                            <li states><a href="material-design/elevation-shadows.html">层级与阴影</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span states class="body2" tabindex="0">布局</span>
+                        <ul>
+                            <li states><a href="layout/principles.html">架构方法</a></li>
+                            <li states><a href="layout/units-measurements.html">单位与度量方法</a></li>
+                            <li states><a href="layout/spacing-methods.html">元素排布</a></li>
+                            <li states><a href="layout/structure.html">界面结构</a></li>
+                            <li states><a href="layout/responsive-ui.html">响应式界面</a></li>
+                            <li states><a href="layout/density.html">元素密度</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span states class="body2" tabindex="0">风格样式</span>
+                        <ul class="on unfolded">
+                            <li states><a href="style/color.html">颜色</a></li>
+                            <li states class="activated">图标</li>
+                            <li states><a href="style/imagery.html">图像</a></li>
+                            <li states><a href="style/typography.html">字体排印</a></li>
+                            <li states><a href="style/writing.html">书面用语</a></li>
+                            <li states><a href="style/sound.html">声音</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span states class="body2" tabindex="0">动画效果</span>
+                        <ul>
+                            <li states><a href="motion/material-motion.html">运动机理</a></li>
+                            <li states><a href="motion/movement.html">移动</a></li>
+                            <li states><a href="motion/transforming-material.html">转换</a></li>
+                            <li states><a href="motion/choreography.html">编排</a></li>
+                            <li states><a href="motion/responsive-interaction.html">作用反馈</a></li>
+                            <li states><a href="motion/creative-customization.html">创意定制</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span states class="body2" tabindex="0">组件</span>
+                        <ul>
+                            <li states><a href="components/bottom-navigation.html">底部导航</a></li>
+                            <li states><a href="components/buttons.html">按钮</a></li>
+                            <li states><a href="components/buttons-floating-action-button.html">按钮：浮动操作按钮</a></li>
+                            <li states><a href="components/cards.html">卡片</a></li>
+                            <li states><a href="components/chips.html">多用标签</a></li>
+                            <li states><a href="components/data-tables.html">数据表格</a></li>
+                            <li states><a href="components/dividers.html">分隔线</a></li>
+                            <li states><a href="components/dialogs.html">对话框</a></li>
+                            <li states><a href="components/dialogs-pickers.html">对话框：选择器</a></li>
+                            <li states><a href="components/lists.html">列表</a></li>
+                            <li states><a href="components/menus.html">菜单</a></li>
+                            <li states><a href="components/progress-indicators.html">进程指示器</a></li>
+                            <li states><a href="components/selection-controls.html">选择控件</a></li>
+                            <li states><a href="components/sheets-bottom.html">底部单页</a></li>
+                            <li states><a href="components/sheets-side.html">侧边单页</a></li>
+                            <li states><a href="components/sheets-navigation-drawer.html">侧边单页：导航抽屉</a></li>
+                            <li states><a href="components/sliders.html">滑块</a></li>
+                            <li states><a href="components/snackbars.html">条形通知</a></li>
+                            <li states><a href="components/tabs.html">标签栏</a></li>
+                            <li states><a href="components/text-fields.html">文本框</a></li>
+                            <li states><a href="components/toolbars.html">工具栏</a></li>
+                            <li states><a href="components/widgets.html">桌面小部件</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span states class="body2" tabindex="0">交互模式</span>
+                        <ul>
+                            <li states><a href="patterns/confirmation-acknowledgement.html">确认与获知</a></li>
+                            <li states><a href="patterns/data-display.html">数据展示</a></li>
+                            <li states><a href="patterns/empty-states.html">空状态</a></li>
+                            <li states><a href="patterns/errors.html">错误提示</a></li>
+                            <li states><a href="patterns/fingerprint.html">指纹识别</a></li>
+                            <li states><a href="patterns/gestures.html">手势</a></li>
+                            <li states><a href="patterns/help-feedback.html">帮助与反馈</a></li>
+                            <li states><a href="patterns/launch-screens.html">启动画面</a></li>
+                            <li states><a href="patterns/navigation.html">导航</a></li>
+                            <li states><a href="patterns/notifications.html">通知</a></li>
+                            <li states><a href="patterns/offline-states.html">离线状态</a></li>
+                            <li states><a href="patterns/permissions.html">权限</a></li>
+                            <li states><a href="patterns/search.html">搜索</a></li>
+                            <li states><a href="patterns/selection.html">选择</a></li>
+                            <li states><a href="patterns/settings.html">设置</a></li>
+                            <li states><a href="patterns/states.html">交互状态</a></li>
+                            <li states><a href="patterns/swipe-to-refresh.html">下滑刷新</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span states class="body2" tabindex="0">可用性</span>
+                        <ul>
+                            <li states><a href="usability/accessibility.html">无障碍</a></li>
+                            <li states><a href="usability/bidirectionality.html">阅读方向</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span states class="body2" tabindex="0">发展与用户教育</span>
+                    </li>
+                    <li>
+                        <span states class="body2" tabindex="0">资源</span>
+                    </li>
+                    <li>
+                        <span states class="body2" tabindex="0">附录</span>
+                    </li>
                 </ul>
             </nav>
-            <article id="product-icons" class="horizontal">
-                <h5>产品图标</h5>
-                <section>
-                    <article class="body1 intro">
-                        <p>产品图标以视觉形式传递产品与品牌形象，以简单明了、平易近人的方式声张产品的核心理念与意图。尽管每个产品图标在视觉呈现方面有所不同，但仍可以通过要素的重复与概念的再现，达成同个品牌下所有图标内外在的统一。
-                        </p>
-                    </article>
-                </section>
-                <section>
-                    <article class="body1">
-                        <h6>设计方式</h6>
-                        <p>为了赋予图标更强的表现力，在创作中产品图标被当作特殊的 Material 实体进行设计。但在界面中产品图标仍是一种借 Material
-                            显示的图像。因此，产品图标在视觉上虽由简单的图形构成，但可以像纸一样被裁剪、折叠，并且质地结实、边缘清晰，具有细微的高光与连贯的阴影。</p>
-                    </article>
-                    <div id="physical" class="diagram-wrapper">
-                        <div class="diagram">
-                            <img src="../resources/style/style-logos-product-intro-material-physical.png">
-                        </div>
-                        <p class="body1">实物原型</p>
-                    </div>
-                    <div id="lighting" class="diagram-wrapper">
-                        <div class="diagram">
-                            <img src="../resources/style/style-logos-product-intro-material-lighting.png">
-                        </div>
-                        <p class="body1">光影观察</p>
-                    </div>
-                    <div id="material" class="diagram-wrapper">
-                        <div class="diagram">
-                            <img src="../resources/style/style-logos-product-intro-material-material.png">
-                        </div>
-                        <p class="body1">虚拟再现</p>
-                    </div>
-                    <div id="color" class="diagram-wrapper">
-                        <div class="diagram">
-                            <img src="../resources/style/style-logos-product-intro-material-color.png">
-                        </div>
-                        <p class="body1">加工成型</p>
-                    </div>
-                </section>
-                <section>
-                    <article class="body1">
-                        <h6>基准网格</h6>
-                        <p>质感设计以网格工具为基础建立标准化的图标设计系统，既维持统一，又不失灵活。</p>
-                        <p>基准网格由以 4dp × 4dp 单元格构建的 192dp × 192dp 网格，与在其上的基准图形和参考线组成。</p>
-                    </article>
-                    <div id="grid" class="diagram-wrapper">
-                        <div class="diagram" lang="en-US">
-                            <div class="grid-wrapper">
-                                <span class="body1">4</span>
-                                <span class="body1">192</span>
-                                <span class="body1">192</span>
-                            </div>
-                        </div>
-                        <p class="body1">网格</p>
-                    </div>
-                    <div id="keylines" class="diagram-wrapper">
-                        <div class="diagram">
-                            <div class="keylines-wrapper">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192">
-                                    <line y1="96" x2="192" y2="96" />
-                                    <line x1="96" y1="192" x2="96" />
-                                    <line x1="68" y1="192" x2="68" />
-                                    <line x1="124" y1="192" x2="124" />
-                                    <line y1="68" x2="192" y2="68" />
-                                    <line y1="124" x2="192" y2="124" />
-                                    <line x1="-2.99492" y1="194.99498" x2="194.99492" y2="-2.99498" />
-                                    <line x1="194.99538" y1="194.99452" x2="-2.99538" y2="-2.99452" />
-                                    <circle cx="96" cy="96" r="40" />
-                                </svg>
-                                <div class="square"></div>
-                                <div class="circle"></div>
-                                <div class="vertical-rectangle"></div>
-                                <div class="horizontal-rectangle"></div>
-                            </div>
-                        </div>
-                        <p class="body1">基准图形与参考线</p>
-                    </div>
-                    <article class="body1">
-                        <p>基准图形是用以确定单个图标与画布比例与多个图标间保持一定视觉比例的参考图形。</p>
-                    </article>
-                    <div id="square" class="diagram-wrapper">
-                        <div class="diagram">
-                            <div class="keylines-wrapper">
-                                <div class="square"></div>
-                                <div class="circle"></div>
-                                <div class="vertical-rectangle"></div>
-                                <div class="horizontal-rectangle"></div>
-                            </div>
-                        </div>
-                        <p class="body1">正方形</p>
-                        <ul class="body1">
-                            <li>边长：152dp</li>
-                        </ul>
-                    </div>
-                    <div id="circle" class="diagram-wrapper">
-                        <div class="diagram">
-                            <div class="keylines-wrapper">
-                                <div class="square"></div>
-                                <div class="circle"></div>
-                                <div class="vertical-rectangle"></div>
-                                <div class="horizontal-rectangle"></div>
-                            </div>
-                        </div>
-                        <p class="body1">圆形</p>
-                        <ul class="body1">
-                            <li>直径：176dp</li>
-                        </ul>
-                    </div>
-                    <div id="vertical-rectangle" class="diagram-wrapper">
-                        <div class="diagram">
-                            <div class="keylines-wrapper">
-                                <div class="square"></div>
-                                <div class="circle"></div>
-                                <div class="vertical-rectangle"></div>
-                                <div class="horizontal-rectangle"></div>
-                            </div>
-                        </div>
-                        <p class="body1">纵向矩形</p>
-                        <ul class="body1">
-                            <li>宽：128dp</li>
-                            <li>高：176dp</li>
-                        </ul>
-                    </div>
-                    <div id="horizontal-rectangle" class="diagram-wrapper">
-                        <div class="diagram">
-                            <div class="keylines-wrapper">
-                                <div class="square"></div>
-                                <div class="circle"></div>
-                                <div class="vertical-rectangle"></div>
-                                <div class="horizontal-rectangle"></div>
-                            </div>
-                        </div>
-                        <p class="body1">横向矩形</p>
-                        <ul class="body1">
-                            <li>宽：176dp</li>
-                            <li>高：128dp</li>
-                        </ul>
-                    </div>
-                    <article class="body1">
-                        <p>对正交线及对角线加以利用，实现精确的几何构图。</p>
-                    </article>
-                    <div id="finance" class="diagram-wrapper">
-                        <div class="diagram">
-                            <img src="../resources/style/style-logos-product-grid-geometry1.png">
-                        </div>
-                    </div>
-                    <div id="chrome" class="diagram-wrapper">
-                        <div class="diagram">
-                            <img src="../resources/style/style-logos-product-grid-geometry2.png">
-                        </div>
-                    </div>
-                    <div id="docs" class="diagram-wrapper">
-                        <div class="diagram">
-                            <img src="../resources/style/style-logos-product-grid-geometry3.png">
-                        </div>
-                    </div>
-                    <div id="gmail" class="diagram-wrapper">
-                        <div class="diagram">
-                            <img src="../resources/style/style-logos-product-grid-geometry4.png">
-                        </div>
-                    </div>
-                </section>
-                <section>
-                    <article class="body1">
-                        <h6>图标结构</h6>
-                        <p>构建同一品牌下图标的共有结构是维持视觉一致性的主要手段。在质感设计中，产品图标由底层到顶层进行设计，并分为如下要件：</p>
-                        <ol>
-                            <li>光泽层</li>
-                            <li>背景层</li>
-                            <li>前景层</li>
-                            <li>颜色</li>
-                            <li>阴影</li>
-                        </ol>
-                    </article>
-                    <div id="components" class="diagram-wrapper">
-                        <div class="diagram">
-                            <div class="icon">
-                                <div class="background">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192">
-                                        <defs>
-                                            <linearGradient id="cast-shadow" x1="96" y1="96" x2="192" y2="192"
-                                                gradientUnits="userSpaceOnUse">
-                                                <stop offset="0" />
-                                                <stop offset="0.33333" />
-                                                <stop offset="1" stop-opacity="0" />
-                                            </linearGradient>
-                                        </defs>
-                                        <path fill="url(#cast-shadow)" d="M144,48l96,96-96,96L48,144V48Z" />
-                                    </svg>
-                                </div>
-                                <div class="foreground">
-                                    <div class="color"></div>
-                                </div>
-                                <div class="finish"></div>
-                            </div>
-                        </div>
-                        <p class="body1">产品图标组成成分</p>
-                    </div>
-                    <div id="components-perspective" class="diagram-wrapper">
-                        <div class="diagram">
-                            <img src="../resources/style/style-logos-product-anatomy-components-perspective.png">
-                        </div>
-                        <p class="body1">产品图标组成成分的层次关系</p>
-                    </div>
-                    <article class="body1">
-                        <p>产品图标的类纸张实体层面可以显示任何颜色，即承载任意内容。</p>
-                    </article>
-                    <div id="color-applied" class="diagram-wrapper">
-                        <div class="diagram">
-                            <div id="keyboard" class="product-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192">
-                                    <defs>
-                                        <clipPath id="keyboard-background-outline">
-                                            <rect x="8" y="72" width="176" height="112" rx="12" />
-                                        </clipPath>
-                                        <linearGradient id="keyboard-cast-shadow" x1="51.5727" y1="7.45674"
-                                            x2="214.05798" y2="169.94202" gradientUnits="userSpaceOnUse">
-                                            <stop offset="0" />
-                                            <stop offset="0.33333" />
-                                            <stop offset="1" stop-opacity="0" />
-                                        </linearGradient>
-                                        <radialGradient id="finish-gradient" fx="0%" fy="0%" r="100%">
-                                            <stop offset="0" stop-color="rgba(255, 255, 255, 0.1)" />
-                                            <stop offset="0.33333" stop-color="rgba(255, 255, 255, 0.05)" />
-                                            <stop offset="1" stop-color="rgba(255, 255, 255, 0)" />
-                                        </radialGradient>
-                                    </defs>
-                                    <rect x="8" y="72" width="176" height="112" rx="12" />
-                                    <g>
-                                        <rect x="32" y="96" width="16" height="16" rx="2" />
-                                        <rect x="32" y="124" width="16" height="16" rx="2" />
-                                        <rect x="60" y="96" width="16" height="16" rx="2" />
-                                        <rect x="60" y="124" width="16" height="16" rx="2" />
-                                        <rect x="88" y="96" width="16" height="16" rx="2" />
-                                        <rect x="88" y="124" width="16" height="16" rx="2" />
-                                        <rect x="116" y="96" width="16" height="16" rx="2" />
-                                        <rect x="116" y="124" width="16" height="16" rx="2" />
-                                        <rect x="144" y="96" width="16" height="16" rx="2" />
-                                        <rect x="144" y="124" width="16" height="16" rx="2" />
-                                        <rect x="48" y="152" width="96" height="16" rx="2" />
-                                    </g>
-                                    <g>
-                                        <path class="edge" position="top"
-                                            d="M172,72H20A12.03527,12.03527,0,0,0,8,84v1A12.03527,12.03527,0,0,1,20,73H172a12.03527,12.03527,0,0,1,12,12V84A12.03527,12.03527,0,0,0,172,72Z" />
-                                        <path class="edge" position="bottom"
-                                            d="M172,183H20A12.0353,12.0353,0,0,1,8,171v1a12.0353,12.0353,0,0,0,12,12H172a12.0353,12.0353,0,0,0,12-12v-1A12.0353,12.0353,0,0,1,172,183Z" />
-                                    </g>
-                                    <path fill="url(#keyboard-cast-shadow)"
-                                        clip-path="url(#keyboard-background-outline)"
-                                        d="M169.63171,214.36829S47.79525,92.53387,47.51468,92.25334A12.00035,12.00035,0,0,1,44,83.768V20A12,12,0,0,1,56,8h80a11.96245,11.96245,0,0,1,8.48528,3.51471l114,114Z" />
-                                    <path clip-path="url(#keyboard-background-outline)"
-                                        d="M96,132,48.40115,93.05549A12,12,0,0,1,44,83.768V20A12,12,0,0,1,56,8h80a12,12,0,0,1,12,12V83.768a12,12,0,0,1-4.40115,9.28749Z" />
-                                    <path
-                                        d="M96,132,48.40115,93.05549A12,12,0,0,1,44,83.768V20A12,12,0,0,1,56,8h80a12,12,0,0,1,12,12V83.768a12,12,0,0,1-4.40115,9.28749Z" />
-                                    <path
-                                        d="M101.28882,24H90.71118L64.67389,88H75l6.22223-16h29.55554L117,88h10.32611ZM84,64,96,34l12,30Z" />
-                                    <g>
-                                        <path class="edge" position="top"
-                                            d="M136,8H56A12,12,0,0,0,44,20v1A12,12,0,0,1,56,9h80a12,12,0,0,1,12,12V20A12,12,0,0,0,136,8Z" />
-                                        <path class="edge" position="bottom"
-                                            d="M143.59888,92.05548,96,131,48.40112,92.05548A12.00014,12.00014,0,0,1,44,82.768v1a12.00014,12.00014,0,0,0,4.40112,9.28747L96,132l47.59888-38.94452A12.00014,12.00014,0,0,0,148,83.768v-1A12.00014,12.00014,0,0,1,143.59888,92.05548Z" />
-                                    </g>
-                                    <path fill="url(#finish-gradient)"
-                                        d="M172,72H148V20A12,12,0,0,0,136,8H56A12,12,0,0,0,44,20V72H20A12.03527,12.03527,0,0,0,8,84v88a12.0353,12.0353,0,0,0,12,12H172a12.0353,12.0353,0,0,0,12-12V84A12.03527,12.03527,0,0,0,172,72Z" />
-                                </svg>
-                            </div>
-                        </div>
-                        <p class="body1">颜色既可以铺张在整个层面，也可以只填充层面的部分。</p>
-                    </div>
-                </section>
-                <section>
-                    <article class="body1">
-                        <h6>光影效果</h6>
-                        <p>光照的引入为图标带来了高光与阴影，突出了边缘。在质感设计中，不同角度的双光源显著增强了产品图标的质感。</p>
-                    </article>
-                    <div id="top-light" class="diagram-wrapper">
-                        <div class="diagram">
-                            <div class="icon">
-                                <div class="background"></div>
-                                <div class="foreground"></div>
-                                <div class="finish"></div>
-                            </div>
-                            <div class="lighting"></div>
-                        </div>
-                        <p class="body1">垂直方向的光照</p>
-                    </div>
-                    <div id="angled-light" class="diagram-wrapper">
-                        <div class="diagram">
-                            <div class="icon">
-                                <div class="background">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192">
-                                        <defs>
-                                            <linearGradient id="cast-shadow" x1="96" y1="96" x2="192" y2="192"
-                                                gradientUnits="userSpaceOnUse">
-                                                <stop offset="0" />
-                                                <stop offset="0.33333" />
-                                                <stop offset="1" stop-opacity="0" />
-                                            </linearGradient>
-                                        </defs>
-                                        <path fill="url(#cast-shadow)" d="M144,48l96,96-96,96L48,144V48Z" />
-                                    </svg>
-                                </div>
-                                <div class="foreground"></div>
-                                <div class="finish"></div>
-                            </div>
-                            <div class="lighting"></div>
-                        </div>
-                        <p class="body1">45° 角的光照</p>
-                    </div>
-                    <article class="body1">
-                        <p>前景层具有因顶部光照形成的柔和投影，也有因侧角光照形成的锐利投影。前景层投影于背景层上，因此前景层阴影的显示区域被限定于背景层中。</p>
-                    </article>
-                    <div id="contact-shadow" class="diagram-wrapper">
-                        <div class="diagram">
-                            <div id="android-wear" class="product-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192">
-                                    <defs>
-                                        <clipPath id="android-wear-background-outline">
-                                            <circle cx="96" cy="96" r="84" />
-                                        </clipPath>
-                                        <linearGradient id="android-wear-cast-shadow" x1="31.17329" y1="31.17671"
-                                            x2="191.99829" y2="192.00171" gradientUnits="userSpaceOnUse">
-                                            <stop offset="0" />
-                                            <stop offset="0.33333" />
-                                            <stop offset="1" stop-opacity="0" />
-                                        </linearGradient>
-                                        <radialGradient id="finish-gradient" fx="0%" fy="0%" r="100%">
-                                            <stop offset="0" stop-color="rgba(255, 255, 255, 0.1)" />
-                                            <stop offset="0.33333" stop-color="rgba(255, 255, 255, 0.05)" />
-                                            <stop offset="1" stop-color="rgba(255, 255, 255, 0)" />
-                                        </radialGradient>
-                                    </defs>
-                                    <circle cx="96" cy="96" r="84" />
-                                    <path d="M12,96a84,84,0,0,1,168,0Z" />
-                                    <g clip-path="url(#android-wear-background-outline)">
-                                        <rect class="edge" position="bottom" x="12" y="95" width="168" height="1" />
-                                        <rect class="edge" position="top" x="12" y="96" width="168" height="1" />
-                                    </g>
-                                    <path class="edge" position="top"
-                                        d="M96,13a83.99281,83.99281,0,0,1,83.98737,83.5c.001-.16748.01263-.33234.01263-.5A84,84,0,0,0,12,96c0,.16766.01166.33252.01263.5A83.99281,83.99281,0,0,1,96,13Z" />
-                                    <path class="edge" position="bottom"
-                                        d="M96,179A83.99281,83.99281,0,0,1,12.01263,95.5c-.001.16748-.01263.33234-.01263.5a84,84,0,0,0,168,0c0-.16766-.01166-.33252-.01263-.5A83.99281,83.99281,0,0,1,96,179Z" />
-                                    <path fill="url(#cast-shadow)" clip-path="url(#android-wear-background-outline)"
-                                        d="M127.17157,256.82843S53.9,183.55,53.175,182.825A3.98772,3.98772,0,0,1,52,180V156a4.01176,4.01176,0,0,1,4-4H66.35L53.175,138.825A3.98772,3.98772,0,0,1,52,136V56a4.01176,4.01176,0,0,1,4-4H66.35L53.175,38.825A3.98769,3.98769,0,0,1,52,36V12a4.01176,4.01176,0,0,1,4-4h80a3.98771,3.98771,0,0,1,2.825,1.175l118,118Z" />
-                                    <g clip-path="url(#android-wear-background-outline)">
-                                        <rect x="52" y="8" width="88" height="32" rx="4" />
-                                        <rect x="52" y="52" width="88" height="88" rx="4" />
-                                        <rect x="52" y="152" width="88" height="32" rx="4" />
-                                    </g>
-                                    <g>
-                                        <rect x="52" y="8" width="88" height="32" rx="4" />
-                                        <rect x="52" y="52" width="88" height="88" rx="4" />
-                                        <rect x="52" y="152" width="88" height="32" rx="4" />
-                                    </g>
-                                    <path class="edge" position="top"
-                                        d="M136,8H56a4.01175,4.01175,0,0,0-4,4v1a4.01175,4.01175,0,0,1,4-4h80a4.01175,4.01175,0,0,1,4,4V12A4.01175,4.01175,0,0,0,136,8Z" />
-                                    <path class="edge" position="bottom"
-                                        d="M136,39H56a4.01175,4.01175,0,0,1-4-4v1a4.01175,4.01175,0,0,0,4,4h80a4.01175,4.01175,0,0,0,4-4V35A4.01175,4.01175,0,0,1,136,39Z" />
-                                    <path class="edge" position="top"
-                                        d="M136,52H56a4.01175,4.01175,0,0,0-4,4v1a4.01175,4.01175,0,0,1,4-4h80a4.01175,4.01175,0,0,1,4,4V56A4.01175,4.01175,0,0,0,136,52Z" />
-                                    <path class="edge" position="bottom"
-                                        d="M136,139H56a4.01175,4.01175,0,0,1-4-4v1a4.01175,4.01175,0,0,0,4,4h80a4.01175,4.01175,0,0,0,4-4v-1A4.01175,4.01175,0,0,1,136,139Z" />
-                                    <path class="edge" position="top"
-                                        d="M136,152H56a4.01175,4.01175,0,0,0-4,4v1a4.01175,4.01175,0,0,1,4-4h80a4.01175,4.01175,0,0,1,4,4v-1A4.01175,4.01175,0,0,0,136,152Z" />
-                                    <path class="edge" position="bottom"
-                                        d="M136,183H56a4.01175,4.01175,0,0,1-4-4v1a4.01175,4.01175,0,0,0,4,4h80a4.01175,4.01175,0,0,0,4-4v-1A4.01175,4.01175,0,0,1,136,183Z" />
-                                    <path fill="url(#finish-gradient)"
-                                        d="M180,96a83.9381,83.9381,0,0,0-40-71.55511V12a4.01175,4.01175,0,0,0-4-4H56a4.01175,4.01175,0,0,0-4,4V24.44489a84.00167,84.00167,0,0,0,0,143.11022V180a4.01175,4.01175,0,0,0,4,4h80a4.01175,4.01175,0,0,0,4-4V167.55511A83.9381,83.9381,0,0,0,180,96Z" />
-                                </svg>
-                            </div>
-                        </div>
-                        <p class="body1">顶部光源投射出柔和的阴影。</p>
-                        <ul class="body1">
-                            <li>不透明度：20%</li>
-                            <li>X 位移：0dp</li>
-                            <li>Y 位移：4dp</li>
-                            <li>模糊：4dp</li>
-                            <li>颜色：参见下文表格</li>
-                        </ul>
-                    </div>
-                    <div id="cast-shadow" class="diagram-wrapper">
-                        <div class="diagram">
-                            <div id="android-tv" class="product-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192">
-                                    <defs>
-                                        <clipPath id="android-tv-background-outline">
-                                            <rect x="8" y="20" width="176" height="128" rx="12" />
-                                        </clipPath>
-                                        <linearGradient id="android-tv-cast-shadow" x1="50.74517" y1="74.74517" x2="180"
-                                            y2="204" gradientUnits="userSpaceOnUse">
-                                            <stop offset="0" />
-                                            <stop offset="0.33333" />
-                                            <stop offset="1" stop-opacity="0" />
-                                        </linearGradient>
-                                        <radialGradient id="finish-gradient" fx="0%" fy="0%" r="100%">
-                                            <stop offset="0" stop-color="rgba(255, 255, 255, 0.1)" />
-                                            <stop offset="0.33333" stop-color="rgba(255, 255, 255, 0.05)" />
-                                            <stop offset="1" stop-color="rgba(255, 255, 255, 0)" />
-                                        </radialGradient>
-                                    </defs>
-                                    <rect x="8" y="20" width="176" height="128" rx="12" />
-                                    <path
-                                        d="M20,20H172a12,12,0,0,1,12,12V84a0,0,0,0,1,0,0H8a0,0,0,0,1,0,0V32A12,12,0,0,1,20,20Z" />
-                                    <g>
-                                        <rect class="edge" position="bottom" x="8" y="83" width="176" height="1" />
-                                        <rect class="edge" position="top" x="8" y="84" width="176" height="1" />
-                                        <path class="edge" position="top"
-                                            d="M172,20H20A12.03527,12.03527,0,0,0,8,32v1A12.03527,12.03527,0,0,1,20,21H172a12.03527,12.03527,0,0,1,12,12V32A12.03527,12.03527,0,0,0,172,20Z" />
-                                        <path class="edge" position="bottom"
-                                            d="M172,147H20A12.0353,12.0353,0,0,1,8,135v1a12.0353,12.0353,0,0,0,12,12H172a12.0353,12.0353,0,0,0,12-12v-1A12.0353,12.0353,0,0,1,172,147Z" />
-                                    </g>
-                                    <path clip-path="url(#android-tv-background-outline)"
-                                        fill="url(#android-tv-cast-shadow)"
-                                        d="M225.25444,158.74556l-90.50872,90.50872S62.3269,176.83656,50.74518,165.25485a64,64,0,0,1,90.50964-90.5097C152.83655,86.32687,225.25444,158.74556,225.25444,158.74556Z" />
-                                    <path clip-path="url(#android-tv-background-outline)"
-                                        d="M96,56a64,64,0,1,0,64,64A64,64,0,0,0,96,56Zm0,92a28,28,0,1,1,28-28A28,28,0,0,1,96,148Z" />
-                                    <path
-                                        d="M96,56a64,64,0,1,0,64,64A64,64,0,0,0,96,56Zm0,92a28,28,0,1,1,28-28A28,28,0,0,1,96,148Z" />
-                                    <polygon points="96 68 84 80 108 80 96 68" />
-                                    <polygon points="148 119.986 136 107.986 136 131.986 148 119.986" />
-                                    <polygon points="96 172 84 160 108 160 96 172" />
-                                    <polygon points="44 120 56 132 56 108 44 120" />
-                                    <g>
-                                        <path class="edge" position="top"
-                                            d="M96,57a63.993,63.993,0,0,1,63.98737,63.5c.00128-.16736.01263-.33234.01263-.5a64,64,0,0,0-128,0c0,.16766.01135.33264.01263.5A63.993,63.993,0,0,1,96,57Z" />
-                                        <path class="edge" position="bottom"
-                                            d="M96,92a27.99477,27.99477,0,0,1,27.98737,27.5c.00293-.167.01263-.33228.01263-.5a28,28,0,0,0-56,0c0,.16772.0097.333.01263.5A27.99477,27.99477,0,0,1,96,92Z" />
-                                        <path class="edge" position="top"
-                                            d="M96,148a27.99481,27.99481,0,0,1-27.98737-27.5c-.00293.167-.01263.33228-.01263.5a28,28,0,0,0,56,0c0-.16772-.0097-.333-.01263-.5A27.99481,27.99481,0,0,1,96,148Z" />
-                                        <path class="edge" position="bottom"
-                                            d="M96,183a63.993,63.993,0,0,1-63.98737-63.5c-.00128.16736-.01263.33234-.01263.5a64,64,0,0,0,128,0c0-.16766-.01135-.33264-.01263-.5A63.993,63.993,0,0,1,96,183Z" />
-                                    </g>
-                                    <path fill="url(#finish-gradient)"
-                                        d="M172,20H20A12.03527,12.03527,0,0,0,8,32V136a12.0353,12.0353,0,0,0,12,12H38.44086a64.01465,64.01465,0,0,0,115.11828,0H172a12.0353,12.0353,0,0,0,12-12V32A12.03527,12.03527,0,0,0,172,20Z" />
-                                </svg>
-                            </div>
-                        </div>
-                        <p class="body1">侧角光源投射出锐利的阴影。</p>
-                        <ul class="body1">
-                            <li>渐变类型：线性</li>
-                            <li>渐变角度：-45°</li>
-                            <li>渐变颜色：参见下文表格</li>
-                            <li>渐变起始不透明度：参见下文表格</li>
-                            <li>渐变中点：距离起始点 1/3</li>
-                            <li>渐变结束不透明度：0%</li>
-                        </ul>
-                    </div>
-                    <article class="body1">
-                        <p>产品图标的 Material 实体层面具有 1dp 厚度，图标的前景层与背景层都具有内边沿。受光照角度的影响，仅层面顶部与底部的高光或阴影边沿是可见的。</p>
-                    </article>
-                    <div id="tinted-shaded-edges" class="diagram-wrapper">
-                        <div class="diagram">
-                            <div id="messages" class="product-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192">
-                                    <defs>
-                                        <clipPath id="messages-background-outline">
-                                            <path class="cls-1"
-                                                d="M156,136H60a12.03528,12.03528,0,0,1-12-12V24A12.03528,12.03528,0,0,1,60,12H188L168,48v76A12.03528,12.03528,0,0,1,156,136Z" />
-                                        </clipPath>
-                                        <linearGradient id="messages-cast-shadow" x1="13" y1="51" x2="173" y2="211"
-                                            gradientUnits="userSpaceOnUse">
-                                            <stop offset="0" />
-                                            <stop offset="0.33333" />
-                                            <stop offset="1" stop-opacity="0" />
-                                        </linearGradient>
-                                        <radialGradient id="finish-gradient" fx="0%" fy="0%" r="100%">
-                                            <stop offset="0" stop-color="rgba(255, 255, 255, 0.1)" />
-                                            <stop offset="0.33333" stop-color="rgba(255, 255, 255, 0.05)" />
-                                            <stop offset="1" stop-color="rgba(255, 255, 255, 0)" />
-                                        </radialGradient>
-                                    </defs>
-                                    <path
-                                        d="M156,136H60a12.03528,12.03528,0,0,1-12-12V24A12.03528,12.03528,0,0,1,60,12H188L168,48v76A12.03528,12.03528,0,0,1,156,136Z" />
-                                    <rect x="72" y="36" width="72" height="12" />
-                                    <g>
-                                        <path class="edge" position="bottom"
-                                            d="M156,135H60a12.0353,12.0353,0,0,1-12-12v1a12.0353,12.0353,0,0,0,12,12h96a12.0353,12.0353,0,0,0,12-12v-1A12.0353,12.0353,0,0,1,156,135Z" />
-                                        <polygon class="edge" position="bottom"
-                                            points="168 47 168 48 188 12 187.444 12 168 47" />
-                                        <path class="edge" position="top"
-                                            d="M60,13H187.44446L188,12H60A12.03527,12.03527,0,0,0,48,24v1A12.03527,12.03527,0,0,1,60,13Z" />
-                                    </g>
-                                    <path clip-path="url(#messages-background-outline)"
-                                        fill="url(#messages-cast-shadow)"
-                                        d="M115.525,268.475l114.95-114.95-90-90A11.96314,11.96314,0,0,0,132,60H4L24,96v76a11.96314,11.96314,0,0,0,3.525,8.475C29.7,182.65,115.525,268.475,115.525,268.475Z" />
-                                    <path clip-path="url(#messages-background-outline)"
-                                        d="M36,184h96a12.03528,12.03528,0,0,0,12-12V72a12.03528,12.03528,0,0,0-12-12H4L24,96v76A12.03528,12.03528,0,0,0,36,184Z" />
-                                    <path
-                                        d="M36,184h96a12.03528,12.03528,0,0,0,12-12V72a12.03528,12.03528,0,0,0-12-12H4L24,96v76A12.03528,12.03528,0,0,0,36,184Z" />
-                                    <rect x="48" y="88" width="72" height="12" />
-                                    <rect x="48" y="112" width="72" height="12" />
-                                    <rect x="48" y="136" width="48" height="12" />
-                                    <g>
-                                        <polygon class="edge" position="bottom"
-                                            points="4.556 60 4 60 24 96 24 95 4.556 60" />
-                                        <path class="edge" position="bottom"
-                                            d="M132,183H36a12.0353,12.0353,0,0,1-12-12v1a12.0353,12.0353,0,0,0,12,12h96a12.0353,12.0353,0,0,0,12-12v-1A12.0353,12.0353,0,0,1,132,183Z" />
-                                        <path class="edge" position="top"
-                                            d="M132,60H4l.55554,1H132a12.03527,12.03527,0,0,1,12,12V72A12.03527,12.03527,0,0,0,132,60Z" />
-                                    </g>
-                                    <path fill="url(#finish-gradient)"
-                                        d="M60,12A12.03527,12.03527,0,0,0,48,24V60H4L24,96v76a12.0353,12.0353,0,0,0,12,12h96a12.0353,12.0353,0,0,0,12-12V136h12a12.0353,12.0353,0,0,0,12-12V48l20-36Z" />
-                                </svg>
-                            </div>
-                        </div>
-                        <p class="body1">高光与阴影边沿</p>
-                        <ul class="body1">
-                            <li>边沿最大厚度：1dp</li>
-                            <li>边沿不透明度：参见下文表格</li>
-                            <li>边沿颜色：参见下文表格</li>
-                        </ul>
-                    </div>
-                    <article class="body1">
-                        <p>光泽层的显示依赖于前景层与背景层。</p>
-                    </article>
-                    <div id="tinted-shaded-edges" class="diagram-wrapper">
-                        <div class="diagram">
-                            <div id="sites" class="product-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192">
-                                    <defs>
-                                        <clipPath id="sites-background-outline">
-                                            <rect x="8" y="20" width="176" height="152" rx="12" />
-                                        </clipPath>
-                                        <linearGradient id="sites-cast-shadow" x1="47.76746" y1="-12.71747"
-                                            x2="222.24247" y2="161.75753" gradientUnits="userSpaceOnUse">
-                                            <stop offset="0" />
-                                            <stop offset="0.33333" />
-                                            <stop offset="1" stop-opacity="0" />
-                                        </linearGradient>
-                                        <radialGradient id="sites-finish-gradient" fx="0%" fy="0%" r="100%">
-                                            <stop offset="0" stop-color="rgba(255, 255, 255, 0.1)" />
-                                            <stop offset="0.33333" stop-color="rgba(255, 255, 255, 0.05)" />
-                                            <stop offset="1" stop-color="rgba(255, 255, 255, 0)" />
-                                        </radialGradient>
-                                    </defs>
-                                    <rect x="8" y="44" width="176" height="64" />
-                                    <path
-                                        d="M8,108H96a0,0,0,0,1,0,0v64a0,0,0,0,1,0,0H20A12,12,0,0,1,8,160V108A0,0,0,0,1,8,108Z" />
-                                    <path
-                                        d="M96,108h88a0,0,0,0,1,0,0v52a12,12,0,0,1-12,12H96a0,0,0,0,1,0,0V108A0,0,0,0,1,96,108Z" />
-                                    <g>
-                                        <rect x="20" y="120" width="64" height="8" />
-                                        <rect x="20" y="136" width="64" height="8" />
-                                        <rect x="20" y="152" width="40" height="8" />
-                                    </g>
-                                    <path class="edge" position="bottom"
-                                        d="M172,171H20A12.0353,12.0353,0,0,1,8,159v1a12.0353,12.0353,0,0,0,12,12H172a12.0353,12.0353,0,0,0,12-12v-1A12.0353,12.0353,0,0,1,172,171Z" />
-                                    <path clip-path="url(#sites-background-outline)" fill="url(#sites-cast-shadow)"
-                                        d="M174,210,8,44V32A12.03526,12.03526,0,0,1,20,20H172a11.96314,11.96314,0,0,1,8.475,3.525c2.175,2.175,90.01,89.9901,90.01,89.9901Z" />
-                                    <path clip-path="url(#sites-background-outline)"
-                                        d="M20,20H172a12,12,0,0,1,12,12V44a0,0,0,0,1,0,0H8a0,0,0,0,1,0,0V32A12,12,0,0,1,20,20Z" />
-                                    <path
-                                        d="M20,20H172a12,12,0,0,1,12,12V44a0,0,0,0,1,0,0H8a0,0,0,0,1,0,0V32A12,12,0,0,1,20,20Z" />
-                                    <circle cx="24" cy="32" r="4" />
-                                    <circle cx="40" cy="32" r="4" />
-                                    <path class="edge" position="top"
-                                        d="M172,20H20A12.03527,12.03527,0,0,0,8,32v1A12.03527,12.03527,0,0,1,20,21H172a12.03527,12.03527,0,0,1,12,12V32A12.03527,12.03527,0,0,0,172,20Z" />
-                                    <rect class="edge" position="bottom" x="8" y="43" width="176" height="1" />
-                                    <rect fill="url(#sites-finish-gradient)" x="8" y="20" width="176" height="152"
-                                        rx="12" />
-                                </svg>
-                            </div>
-                        </div>
-                        <p class="body1">光泽覆盖整个图标</p>
-                        <ul class="body1">
-                            <li>渐变类型：径向</li>
-                            <li>渐变角度：-45°</li>
-                            <li>渐变颜色：#FFFFFF</li>
-                            <li>渐变起始不透明度：10%</li>
-                            <li>渐变中点：距离起始点 1/3</li>
-                            <li>渐变结束不透明度：0%</li>
-                        </ul>
-                    </div>
-                    <article class="body1">
-                        <p>产品图标边沿与阴影的颜色与不透明度应根据前景层或背景层的颜色进行调整，实现颜色的自然过渡。</p>
-                    </article>
-                    <table id="cool" class="body2" lang="en-US">
-                        <thead>
-                            <tr>
-                                <th scope="col"></th>
-                                <th scope="col">高光</th>
-                                <th scope="col">阴影</th>
-                            </tr>
-                            <tr>
-                                <th>底色</th>
-                                <td style="background-color:#ffffff;color:rgba(0,0,0,0.54);">白</td>
-                                <td style="background-color:#1A237E;color:rgba(255,255,255,0.87);">靛蓝 900</td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr style="background-color:#2196F3;">
-                                <th style="color:rgba(0,0,0,0.87);">蓝</th>
-                                <td style="color:rgba(0,0,0,0.87);"><span>20%</span></td>
-                                <td style="color:rgba(255,255,255,0.87);"><span>20%</span></td>
-                            </tr>
-                            <tr style="background-color:#3F51B5;color:rgba(255,255,255,0.87);">
-                                <th>靛蓝</th>
-                                <td><span>20%</span></td>
-                                <td><span>20%</span></td>
-                            </tr>
-                            <tr style="background-color:#673AB7;color:rgba(255,255,255,0.87);">
-                                <th>深紫</th>
-                                <td><span>20%</span></td>
-                                <td><span>20%</span></td>
-                            </tr>
-                            <tr style="background-color:#9C27B0;color:rgba(255,255,255,0.87);">
-                                <th>紫</th>
-                                <td><span>20%</span></td>
-                                <td><span>20%</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table id="fresh" class="body2" lang="en-US">
-                        <thead>
-                            <tr>
-                                <th scope="col"></th>
-                                <th scope="col">高光</th>
-                                <th scope="col">阴影</th>
-                            </tr>
-                            <tr>
-                                <th>底色</th>
-                                <td style="background-color:#ffffff;color:rgba(0,0,0,0.54);">白</td>
-                                <td style="background-color:#263238;color:rgba(255,255,255,0.87);">蓝灰 900</td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr style="background-color:#607D8B;">
-                                <th style="color:rgba(255,255,255,0.87);">蓝灰</th>
-                                <td style="color:rgba(0,0,0,0.87);"><span>20%</span></td>
-                                <td style="color:rgba(255,255,255,0.87);"><span>20%</span></td>
-                            </tr>
-                            <tr style="background-color:#03A9F4;">
-                                <th style="color:rgba(0,0,0,0.87);">亮蓝</th>
-                                <td style="color:rgba(0,0,0,0.87);"><span>20%</span></td>
-                                <td style="color:rgba(255,255,255,0.87);"><span>20%</span></td>
-                            </tr>
-                            <tr style="background-color:#00BCD4;">
-                                <th style="color:rgba(0,0,0,0.87);">青</th>
-                                <td style="color:rgba(0,0,0,0.87);"><span>20%</span></td>
-                                <td style="color:rgba(255,255,255,0.87);"><span>20%</span></td>
-                            </tr>
-                            <tr style="background-color:#009688;">
-                                <th style="color:rgba(255,255,255,0.87);">青绿</th>
-                                <td style="color:rgba(0,0,0,0.87);"><span>20%</span></td>
-                                <td style="color:rgba(255,255,255,0.87);"><span>20%</span></td>
-                            </tr>
-                            <tr style="background-color:#4CAF50;">
-                                <th style="color:rgba(0,0,0,0.87);">绿</th>
-                                <td style="color:rgba(0,0,0,0.87);"><span>20%</span></td>
-                                <td style="color:rgba(255,255,255,0.87);"><span>20%</span></td>
-                            </tr>
-                            <tr style="background-color:#8BC34A;">
-                                <th style="color:rgba(0,0,0,0.87);">亮绿</th>
-                                <td style="color:rgba(0,0,0,0.87);"><span>20%</span></td>
-                                <td style="color:rgba(255,255,255,0.87);"><span>20%</span></td>
-                            </tr>
-                            <tr style="background-color:#CDDC39;">
-                                <th style="color:rgba(0,0,0,0.87);">黄绿</th>
-                                <td style="color:rgba(0,0,0,0.87);"><span>20%</span></td>
-                                <td style="color:rgba(255,255,255,0.87);"><span>20%</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table id="warm" class="body2" lang="en-US">
-                        <thead>
-                            <tr>
-                                <th scope="col"></th>
-                                <th scope="col">高光</th>
-                                <th scope="col">阴影</th>
-                            </tr>
-                            <tr>
-                                <th>底色</th>
-                                <td style="background-color:#ffffff;color:rgba(0,0,0,0.54);">白</td>
-                                <td style="background-color:#BF360C;color:rgba(255,255,255,0.87);">深橙 900</td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr style="background-color:#FFEB3B;color:rgba(0,0,0,0.87);">
-                                <th>黄</th>
-                                <td><span>20%</span></td>
-                                <td><span>20%</span></td>
-                            </tr>
-                            <tr style="background-color:#FFC107;color:rgba(0,0,0,0.87);">
-                                <th>橙黄</th>
-                                <td><span>20%</span></td>
-                                <td><span>20%</span></td>
-                            </tr>
-                            <tr style="background-color:#FF9800;color:rgba(0,0,0,0.87);">
-                                <th>橙</th>
-                                <td><span>20%</span></td>
-                                <td><span>20%</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table id="hot" class="body2" lang="en-US">
-                        <thead>
-                            <tr>
-                                <th scope="col"></th>
-                                <th scope="col">高光</th>
-                                <th scope="col">阴影</th>
-                            </tr>
-                            <tr>
-                                <th>底色</th>
-                                <td style="background-color:#ffffff;color:rgba(0,0,0,0.54);">白</td>
-                                <td style="background-color:#3E2723;color:rgba(255,255,255,0.87);">棕 900</td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr style="background-color:#FF5722;">
-                                <th style="color:rgba(0,0,0,0.87);">深橙</th>
-                                <td style="color:rgba(0,0,0,0.87);"><span>20%</span></td>
-                                <td style="color:rgba(255,255,255,0.87);"><span>20%</span></td>
-                            </tr>
-                            <tr style="background-color:#F44336;">
-                                <th style="color:rgba(255,255,255,0.87);">红</th>
-                                <td style="color:rgba(0,0,0,0.87);"><span>20%</span></td>
-                                <td style="color:rgba(255,255,255,0.87);"><span>20%</span></td>
-                            </tr>
-                            <tr style="background-color:#E91E63;color:rgba(255,255,255,0.87);">
-                                <th>粉</th>
-                                <td><span>20%</span></td>
-                                <td><span>20%</span></td>
-                            </tr>
-                            <tr style="background-color:#795548;color:rgba(255,255,255,0.87);">
-                                <th>棕</th>
-                                <td><span>20%</span></td>
-                                <td><span>20%</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table id="neutral" class="body2" lang="en-US">
-                        <thead>
-                            <tr>
-                                <th scope="col"></th>
-                                <th scope="col">高光</th>
-                                <th scope="col">阴影</th>
-                            </tr>
-                            <tr>
-                                <th>底色</th>
-                                <td style="background-color:#ffffff;color:rgba(0,0,0,0.54);">白</td>
-                                <td style="background-color:#000000;color:rgba(255,255,255,0.87);">黑</td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr style="background-color:#FAFAFA;color:rgba(0,0,0,0.87);">
-                                <th>灰 50</th>
-                                <td><span>40%</span></td>
-                                <td><span>10%</span></td>
-                            </tr>
-                            <tr style="background-color:#F5F5F5;color:rgba(0,0,0,0.87);">
-                                <th>灰 100</th>
-                                <td><span>40%</span></td>
-                                <td><span>10%</span></td>
-                            </tr>
-                            <tr style="background-color:#EEEEEE;color:rgba(0,0,0,0.87);">
-                                <th>灰 200</th>
-                                <td><span>40%</span></td>
-                                <td><span>10%</span></td>
-                            </tr>
-                            <tr style="background-color:#E0E0E0;color:rgba(0,0,0,0.87);">
-                                <th>灰 300</th>
-                                <td><span>40%</span></td>
-                                <td><span>10%</span></td>
-                            </tr>
-                            <tr style="background-color:#BDBDBD;color:rgba(0,0,0,0.87);">
-                                <th>灰 400</th>
-                                <td><span>20%</span></td>
-                                <td><span>20%</span></td>
-                            </tr>
-                            <tr style="background-color:#9E9E9E;">
-                                <th style="color:rgba(0,0,0,0.87);">灰 500</th>
-                                <td style="color:rgba(0,0,0,0.87);"><span>20%</span></td>
-                                <td style="color:rgba(255,255,255,0.87);"><span>20%</span></td>
-                            </tr>
-                            <tr style="background-color:#757575;">
-                                <th style="color:rgba(255,255,255,0.87);">灰 600</th>
-                                <td style="color:rgba(0,0,0,0.87);"><span>20%</span></td>
-                                <td style="color:rgba(255,255,255,0.87);"><span>20%</span></td>
-                            </tr>
-                            <tr style="background-color:#616161;color:rgba(255,255,255,0.87);">
-                                <th>灰 700</th>
-                                <td><span>20%</span></td>
-                                <td><span>20%</span></td>
-                            </tr>
-                            <tr style="background-color:#424242;color:rgba(255,255,255,0.87);">
-                                <th>灰 800</th>
-                                <td><span>20%</span></td>
-                                <td><span>20%</span></td>
-                            </tr>
-                            <tr style="background-color:#212121;color:rgba(255,255,255,0.87);">
-                                <th>灰 900</th>
-                                <td><span>20%</span></td>
-                                <td><span>20%</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </section>
-                <section>
-                    <article class="body1 intro">
-                        <h6>层面处理</h6>
-                        <p>Material 层面的特性给予图标设计极大的创作空间，但仍有一定的约束。</p>
-                    </article>
-                    <article class="body1">
-                        <p>图标内的文字、图形等内容依靠 Material 变换颜色来显示，Material 层面可以塑造为内容的形状，但内容本身并不是实体。</p>
-                    </article>
-                    <div id="plain-color" class="diagram-wrapper">
-                        <div class="diagram">
-                            <div id="keep" class="product-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192">
-                                    <defs>
-                                        <clipPath id="keep-background-outline">
-                                            <path
-                                                d="M128,172H32a12,12,0,0,1-12-12V32A12,12,0,0,1,32,20H160a12,12,0,0,1,12,12v96Z" />
-                                        </clipPath>
-                                        <linearGradient id="keep-cast-shadow" x1="63.52208" y1="61.56623" x2="192.97792"
-                                            y2="191.02208" gradientUnits="userSpaceOnUse">
-                                            <stop offset="0" />
-                                            <stop offset="0.33333" />
-                                            <stop offset="1" stop-opacity="0" />
-                                        </linearGradient>
-                                        <radialGradient id="finish-gradient" fx="0%" fy="0%" r="100%">
-                                            <stop offset="0" stop-color="rgba(255, 255, 255, 0.1)" />
-                                            <stop offset="0.33333" stop-color="rgba(255, 255, 255, 0.05)" />
-                                            <stop offset="1" stop-color="rgba(255, 255, 255, 0)" />
-                                        </radialGradient>
-                                    </defs>
-                                    <path
-                                        d="M128,172H32a12,12,0,0,1-12-12V32A12,12,0,0,1,32,20H160a12,12,0,0,1,12,12v96Z" />
-                                    <g>
-                                        <path class="edge" position="top"
-                                            d="M160,20H32A12.03527,12.03527,0,0,0,20,32v1A12.03527,12.03527,0,0,1,32,21H160a12.03527,12.03527,0,0,1,12,12V32A12.03527,12.03527,0,0,0,160,20Z" />
-                                        <path class="edge" position="bottom"
-                                            d="M129,171H32a12.0353,12.0353,0,0,1-12-12v1a12.0353,12.0353,0,0,0,12,12h96Z" />
-                                    </g>
-                                    <path clip-path="url(#keep-background-outline)" fill="url(#keep-cast-shadow)"
-                                        d="M96,44a35.99811,35.99811,0,0,0-19,66.57483V140l83.5,83.5,64.95585-64.95585s-97.48528-97.48526-104-104A35.88733,35.88733,0,0,0,96,44Z" />
-                                    <path
-                                        d="M96,44a35.99811,35.99811,0,0,0-19,66.57483V140h8v8h22v-8h8V110.57483A35.99811,35.99811,0,0,0,96,44ZM85,132v-8h22v8Zm22-26.24609V116H85V105.75391a28,28,0,1,1,22,0Z" />
-                                    <g>
-                                        <path class="edge" position="top"
-                                            d="M96,45a35.99362,35.99362,0,0,1,35.98572,35.435c.00171-.14575.01428-.28882.01428-.435a36,36,0,0,0-72,0c0,.14618.01257.28925.01428.435A35.99362,35.99362,0,0,1,96,45Z" />
-                                        <path class="edge" position="top"
-                                            d="M124,81c0-.20093-.01093-.39911-.01514-.599A27.99971,27.99971,0,0,1,107,105.75391v1A28.00545,28.00545,0,0,0,124,81Z" />
-                                        <rect class="edge" position="top" x="85" y="116" width="22" height="1" />
-                                        <rect class="edge" position="top" x="85" y="132" width="22" height="1" />
-                                        <path class="edge" position="top"
-                                            d="M68.01514,80.401C68.01093,80.60089,68,80.79907,68,81a28.00545,28.00545,0,0,0,17,25.75391v-1A27.99971,27.99971,0,0,1,68.01514,80.401Z" />
-                                        <rect class="edge" position="bottom" x="85" y="147" width="22" height="1" />
-                                        <path class="edge" position="bottom"
-                                            d="M60.01428,79.435C60.01135,79.62378,60,79.81049,60,80a35.96971,35.96971,0,0,0,17,30.57483v-1A35.96529,35.96529,0,0,1,60.01428,79.435Z" />
-                                        <rect class="edge" position="bottom" x="77" y="139" width="8" height="1" />
-                                        <rect class="edge" position="bottom" x="107" y="139" width="8" height="1" />
-                                        <rect class="edge" position="bottom" x="85" y="123" width="22" height="1" />
-                                        <path class="edge" position="bottom"
-                                            d="M115,109.57483v1A35.96971,35.96971,0,0,0,132,80c0-.18951-.01135-.37622-.01428-.565A35.96529,35.96529,0,0,1,115,109.57483Z" />
-                                        <path class="edge" position="bottom"
-                                            d="M96,52a27.99439,27.99439,0,0,1,27.98486,27.401c.0019-.13446.01514-.26611.01514-.401a28,28,0,0,0-56,0c0,.13489.01324.26654.01514.401A27.99439,27.99439,0,0,1,96,52Z" />
-                                    </g>
-                                    <path clip-path="url(#keep-background-outline)"
-                                        d="M128,172V140a12.03528,12.03528,0,0,1,12-12h32Z" />
-                                    <g>
-                                        <polygon class="edge" position="bottom"
-                                            points="128 171 128 172 172 128 171 128 128 171" />
-                                        <path class="edge" position="top"
-                                            d="M140,129h31l1-1H140a12.03527,12.03527,0,0,0-12,12v1A12.03527,12.03527,0,0,1,140,129Z" />
-                                    </g>
-                                    <path fill="url(#finish-gradient)"
-                                        d="M128,172H32a12,12,0,0,1-12-12V32A12,12,0,0,1,32,20H160a12,12,0,0,1,12,12v96Z" />
-                                </svg>
-                            </div>
-                        </div>
-                        <span class="recommends do body2">正确</span>
-                        <p class="body1">合理提升内容为层面。</p>
-                    </div>
-                    <div id="elevated-color" class="diagram-wrapper">
-                        <div class="diagram">
-                            <div id="calculator" class="product-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192">
-                                    <defs>
-                                        <clipPath id="calculator-background-outline">
-                                            <rect x="20" y="20" width="152" height="152" rx="12" />
-                                        </clipPath>
-                                        <clipPath id="calculator-background-outline-alt">
-                                            <path
-                                                d="M96,20h64a12,12,0,0,1,12,12V160a12,12,0,0,1-12,12H96a0,0,0,0,1,0,0V20A0,0,0,0,1,96,20Z" />
-                                        </clipPath>
-                                        <clipPath id="calculator-foreground-outline">
-                                            <circle cx="136" cy="136" r="48" />
-                                        </clipPath>
-                                        <linearGradient id="calculator-cast-shadow" x1="6.2875" y1="40.7625"
-                                            x2="174.7625" y2="209.2375" gradientUnits="userSpaceOnUse">
-                                            <stop offset="0" />
-                                            <stop offset="0.33333" />
-                                            <stop offset="1" stop-opacity="0" />
-                                        </linearGradient>
-                                        <linearGradient id="addition-cast-shadow" x1="48" y1="124" x2="154" y2="230"
-                                            gradientUnits="userSpaceOnUse">
-                                            <stop offset="0" />
-                                            <stop offset="0.33333" />
-                                            <stop offset="1" stop-opacity="0" />
-                                        </linearGradient>
-                                        <linearGradient id="subtraction-cast-shadow" x1="48" y1="48" x2="192" y2="192"
-                                            gradientUnits="userSpaceOnUse">
-                                            <stop offset="0" />
-                                            <stop offset="0.33333" />
-                                            <stop offset="1" stop-opacity="0" />
-                                        </linearGradient>
-                                        <linearGradient id="multiplication-cast-shadow" x1="124.68652" y1="44.68652"
-                                            x2="232" y2="152" gradientUnits="userSpaceOnUse">
-                                            <stop offset="0" />
-                                            <stop offset="0.33333" />
-                                            <stop offset="1" stop-opacity="0" />
-                                        </linearGradient>
-                                        <linearGradient id="equation-cast-shadow" x1="123" y1="123" x2="192" y2="192"
-                                            gradientUnits="userSpaceOnUse">
-                                            <stop offset="0" />
-                                            <stop offset="0.33333" />
-                                            <stop offset="1" stop-opacity="0" />
-                                        </linearGradient>
-                                        <radialGradient id="finish-gradient" fx="0%" fy="0%" r="100%">
-                                            <stop offset="0" stop-color="rgba(255, 255, 255, 0.1)" />
-                                            <stop offset="0.33333" stop-color="rgba(255, 255, 255, 0.05)" />
-                                            <stop offset="1" stop-color="rgba(255, 255, 255, 0)" />
-                                        </radialGradient>
-                                    </defs>
-                                    <rect fill="#424242" x="20" y="20" width="152" height="152" rx="12" />
-                                    <path clip-path="url(#calculator-background-outline)"
-                                        fill="url(#calculator-cast-shadow)"
-                                        d="M230,154,119.525,264.475l-96-96A11.96314,11.96314,0,0,1,20,160V32A12.03528,12.03528,0,0,1,32,20H96Z" />
-                                    <polygon clip-path="url(#calculator-background-outline)"
-                                        fill="url(#multiplication-cast-shadow)"
-                                        points="243.313 140.687 145.192 42.565 136 51.758 126.808 42.565 122.565 46.808 131.758 56 122.565 65.192 220.687 163.313 243.313 140.687" />
-                                    <polygon fill="#eeeeee"
-                                        points="149.435 46.808 145.192 42.565 136 51.758 126.808 42.565 122.565 46.808 131.758 56 122.565 65.192 126.808 69.435 136 60.242 145.192 69.435 149.435 65.192 140.242 56 149.435 46.808" />
-                                    <g>
-                                        <polygon class="edge" position="top"
-                                            points="148.435 65.192 149.435 65.192 140.242 56 140.242 57 148.435 65.192" />
-                                        <polygon class="edge" position="top"
-                                            points="136 52.758 145.192 43.565 148.435 46.808 149.435 46.808 145.192 42.565 136 51.758 126.808 42.565 122.565 46.808 123.565 46.808 126.808 43.565 136 52.758" />
-                                        <polygon class="edge" position="top"
-                                            points="131.758 56 122.565 65.192 123.565 65.192 131.755 57.002 131.758 56" />
-                                        <polygon class="edge" position="bottom"
-                                            points="136 59.242 126.808 68.435 123.565 65.192 122.565 65.192 126.808 69.435 136 60.242 145.192 69.435 149.435 65.192 148.435 65.192 145.192 68.435 136 59.242" />
-                                        <polygon class="edge" position="bottom"
-                                            points="123.565 46.808 122.565 46.808 131.758 56 131.758 55 123.565 46.808" />
-                                        <polygon class="edge" position="bottom"
-                                            points="148.435 46.808 140.244 54.999 140.242 56 149.435 46.808 148.435 46.808" />
-                                    </g>
-                                    <path clip-path="url(#calculator-background-outline)" fill="#616161"
-                                        d="M32,20H96a0,0,0,0,1,0,0V172a0,0,0,0,1,0,0H32a12,12,0,0,1-12-12V32A12,12,0,0,1,32,20Z" />
-                                    <path fill="#757575"
-                                        d="M32,20H96a0,0,0,0,1,0,0V96a0,0,0,0,1,0,0H20a0,0,0,0,1,0,0V32A12,12,0,0,1,32,20Z" />
-                                    <polygon clip-path="url(#calculator-background-outline)"
-                                        fill="url(#subtraction-cast-shadow)"
-                                        points="183 201 42 60 42 54 72 54 201 183 183 201" />
-                                    <polygon clip-path="url(#calculator-background-outline)"
-                                        fill="url(#addition-cast-shadow)"
-                                        points="72 130 60 130 60 118 54 118 54 130 42 130 42 136 145 239 163 221 72 130" />
-                                    <rect fill="#f5f5f5" x="42" y="54" width="30" height="6" />
-                                    <polygon fill="#f5f5f5"
-                                        points="72 130 60 130 60 118 54 118 54 130 42 130 42 136 54 136 54 148 60 148 60 136 72 136 72 130" />
-                                    <g>
-                                        <rect class="edge" position="top" x="42" y="54" width="30" height="1" />
-                                        <rect class="edge" position="top" x="42" y="130" width="12" height="1" />
-                                        <rect class="edge" position="top" x="54" y="118" width="6" height="1" />
-                                        <rect class="edge" position="top" x="60" y="130" width="12" height="1" />
-                                        <rect class="edge" position="bottom" x="42" y="59" width="30" height="1" />
-                                        <rect class="edge" position="bottom" x="54" y="147" width="6" height="1" />
-                                        <rect class="edge" position="bottom" x="60" y="135" width="12" height="1" />
-                                        <rect class="edge" position="bottom" x="42" y="135" width="12" height="1" />
-                                    </g>
-                                    <g>
-                                        <path class="edge" position="top"
-                                            d="M160,20H32A12.03527,12.03527,0,0,0,20,32v1A12.03527,12.03527,0,0,1,32,21H160a12.03527,12.03527,0,0,1,12,12V32A12.03527,12.03527,0,0,0,160,20Z" />
-                                        <path class="edge" position="bottom"
-                                            d="M160,171H32a12.0353,12.0353,0,0,1-12-12v1a12.0353,12.0353,0,0,0,12,12H160a12.0353,12.0353,0,0,0,12-12v-1A12.0353,12.0353,0,0,1,160,171Z" />
-                                    </g>
-                                    <circle clip-path="url(#calculator-background-outline-alt)" fill="#1de9b6" cx="136"
-                                        cy="136" r="48" />
-                                    <circle fill="#1de9b6" cx="136" cy="136" r="48" />
-                                    <polygon clip-path="url(#calculator-foreground-outline)"
-                                        fill="url(#equation-cast-shadow)"
-                                        points="120 140 128 140 120 132 120 126 152 126 205 179 179 205 120 146 120 140" />
-                                    <rect fill="#f5f5f5" x="120" y="126" width="32" height="6" />
-                                    <rect fill="#f5f5f5" x="120" y="140" width="32" height="6" />
-                                    <g>
-                                        <rect class="edge" position="top" x="120" y="126" width="32" height="1" />
-                                        <rect class="edge" position="top" x="120" y="140" width="32" height="1" />
-                                        <rect class="edge" position="bottom" x="120" y="131" width="32" height="1" />
-                                        <rect class="edge" position="bottom" x="120" y="145" width="32" height="1" />
-                                    </g>
-                                    <g>
-                                        <path class="edge" position="top"
-                                            d="M136,89a47.9935,47.9935,0,0,1,47.98737,47.5c.0017-.1673.01263-.33234.01263-.5a48,48,0,0,0-96,0c0,.16766.01093.3327.01263.5A47.9935,47.9935,0,0,1,136,89Z" />
-                                        <path class="edge" position="bottom"
-                                            d="M136,183a47.99354,47.99354,0,0,1-47.98737-47.5c-.0017.1673-.01263.33234-.01263.5a48,48,0,0,0,96,0c0-.16766-.01093-.3327-.01263-.5A47.99354,47.99354,0,0,1,136,183Z" />
-                                    </g>
-                                    <path fill="url(#finish-gradient)"
-                                        d="M172,104.26794V32a12.03527,12.03527,0,0,0-12-12H32A12.03527,12.03527,0,0,0,20,32V160a12.0353,12.0353,0,0,0,12,12h72.26794A47.9877,47.9877,0,0,0,172,104.26794Z" />
-                                </svg>
-                            </div>
-                        </div>
-                        <span class="recommends dont body2">错误</span>
-                        <p class="body1">多个内容化为实体层面使图标观感太过繁杂。</p>
-                    </div>
-                    <article class="body1">
-                        <p>剪裁前景层的根据是剪裁后是否契合图标整体的预定形状，且不能因剪裁而失去了前景层本身的形状意义。</p>
-                    </article>
-                    <div id="intact-foreground" class="diagram-wrapper">
-                        <div class="diagram">
-                            <div id="beam" class="product-icon">
-                            </div>
-                        </div>
-                        <span class="recommends do body2">正确</span>
-                        <p class="body1">为满足特定图标外形而剪裁实体层面。</p>
-                    </div>
-                    <div id="cropped-foreground" class="diagram-wrapper">
-                        <div class="diagram">
-                            <div id="email" class="product-icon">
-                            </div>
-                        </div>
-                        <span class="recommends dont body2">错误</span>
-                        <p class="body1">本应完整露出的实体层面被剪裁。</p>
-                    </div>
-                    <article class="body1">
-                        <p>层面间的重叠可以使图标呈现出独特的形状，但过多的层叠会使图标过于厚重并模糊了视觉焦点。</p>
-                    </article>
-                    <div id="intact-foreground" class="diagram-wrapper">
-                        <div class="diagram">
-                            <div id="snapseed" class="product-icon">
-                            </div>
-                        </div>
-                        <span class="recommends do body2">正确</span>
-                        <p class="body1">简要利用形状层叠勾勒图标。</p>
-                    </div>
-                    <div id="cropped-foreground" class="diagram-wrapper">
-                        <div class="diagram">
-                            <div id="groups" class="product-icon">
-                            </div>
-                        </div>
-                        <span class="recommends caution body2">谨慎</span>
-                        <p class="body1">实体层面的增加会使图标更加厚重。</p>
-                    </div>
-                    <article class="body1">
-                        <p>为实体层面施加折痕并用颜色深浅区别被折痕分割的各部分，可以使层面呈现更强的空间感，而不破坏原本的几何造型。</p>
-                        <p>只有形状对称的层面可以添加折痕构造。折痕唯一且位置居中。</p>
-                    </article>
-                    <div id="intact-foreground" class="diagram-wrapper">
-                        <div class="diagram">
-                            <div id="android-auto" class="product-icon">
-                            </div>
-                        </div>
-                        <span class="recommends do body2">正确</span>
-                        <p class="body1">折痕成为图标的有机部分。</p>
-                    </div>
-                    <div id="cropped-foreground" class="diagram-wrapper">
-                        <div class="diagram">
-                            <div id="movies" class="product-icon">
-                            </div>
-                        </div>
-                        <span class="recommends dont body2">错误</span>
-                        <p class="body1">凌乱的折痕破坏了图标的空间秩序。</p>
-                    </div>
-                    <article class="body1">
-                        <p>翻折的层面具有更加强烈的空间感，但在运用时需特别注意是否会破坏层面内容的展示。</p>
-                    </article>
-                    <div id="intact-foreground" class="diagram-wrapper">
-                        <div class="diagram">
-                            <div id="browser" class="product-icon">
-                            </div>
-                        </div>
-                        <span class="recommends do body2">正确</span>
-                        <p class="body1">层面的翻折丰富了图标的空间结构。</p>
-                    </div>
-                    <div id="cropped-foreground" class="diagram-wrapper">
-                        <div class="diagram">
-                            <div id="calendar" class="product-icon">
-                            </div>
-                        </div>
-                        <span class="recommends caution body2">谨慎</span>
-                        <p class="body1">层面的内容不能因翻折而失去可读性或原本的形状意义。</p>
-                    </div>
-                    <article class="body1">
-                        <p>层折可以令一个 Material 层面同时具有多个纵深层级。</p>
-                        <p>产品图标内仅能有一处且一次层折，过多的层折同样会破坏图标的空间平衡。</p>
-                    </article>
-                    <div id="intact-foreground" class="diagram-wrapper">
-                        <div class="diagram">
-                            <div id="browser" class="product-icon">
-                            </div>
-                        </div>
-                        <span class="recommends do body2">正确</span>
-                        <p class="body1">恰当的层折增强了图标元素间的联系。</p>
-                    </div>
-                    <div id="cropped-foreground" class="diagram-wrapper">
-                        <div class="diagram">
-                            <div id="calendar" class="product-icon">
-                            </div>
-                        </div>
-                        <span class="recommends dont body2">错误</span>
-                        <p class="body1">多重层折使图标不再轻盈。</p>
-                    </div>
-                    <article class="body1">
-                        <p>为了保证图标各元素的几何造型，产品图标的实体层面不能被扭曲、卷曲、弯曲、翘曲、歪斜、变形以及非平面的旋转。</p>
-                    </article>
-                    <div id="intact-foreground" class="diagram-wrapper">
-                        <div class="diagram">
-                            <img src="./resources/style-logos-product-patterns-distort-do.png">
-                        </div>
-                        <span class="recommends dont body2">错误</span>
-                    </div>
-                    <div id="cropped-foreground" class="diagram-wrapper">
-                        <div class="diagram">
-                            <img src="./resources/style-logos-product-patterns-distort-dont.png">
-                        </div>
-                        <span class="recommends dont body2">错误</span>
-                    </div>
-                </section>
-            </article>
-            <hr class="divider horizontal">
-            <article id="system-icons" class="horizontal">
-                <h5>界面图标</h5>
-            </article>
-        </div>
-        <footer class="dark">
-            <a states class="left" href="./color.html">
-                <span class="material-icons">arrow_back</span>
-                <span class="subheading">上一节
-                    <span class="title">颜色</span>
-                </span>
-            </a>
-            <a states class="right" href="./imagery.html">
-                <span class="subheading">下一节
-                    <span class="title">图像</span>
-                </span>
-                <span class="material-icons">arrow_forward</span>
-            </a>
-        </footer>
-        <div class="app-bar dark">
-            <div class="start">
-                <button id="drawer-trigger" class="icon-button unbounded" tabindex="1">
-                    <span class="material-icons">menu</span>
-                </button>
-            </div>
-            <span class="title">风格样式 - 图标</span>
-            <div class="end">
-                <button id="search-trigger" class="icon-button unbounded" disabled="true">
-                    <span class="material-icons">search</span>
-                </button>
-            </div>
-        </div>
-    </main>
-
-    <aside class="drawer-container">
-        <div class="scrim" fill></div>
-        <nav class="drawer body1">
-            <figure>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <circle cx="12" cy="12" r="12" />
-                    <path fill="#BDBDBD" d="M3.6,3.6h16.8v16.8H3.6V3.6z" />
-                    <path fill="#ffffff" d="M20.4,3.6L12,20.4L3.6,3.6H20.4z" />
-                </svg>
-                <figcaption class="subheading">MATERIAL DESIGN</figcaption>
-            </figure>
-            <hr class="divider horizontal">
-            <li>
-                <span states class="body2" tabindex="0">基本原理</span>
-                <a states href="../index.html">概述</a>
-                <a states href="../material-design/environment.html">环境</a>
-                <a states href="../material-design/material-properties.html">Material 属性</a>
-                <a states href="../material-design/elevation-shadows.html">层级与阴影</a>
-            </li>
-            <li>
-                <span states class="body2" tabindex="0">布局</span>
-                <a states href="../layout/principles.html">架构方法</a>
-                <a states href="../layout/units-measurements.html">单位与度量方法</a>
-                <a states href="../layout/spacing-methods.html">元素排布</a>
-                <a states href="../layout/structure.html">界面结构</a>
-                <a states href="../layout/responsive-ui.html">响应式界面</a>
-                <a states href="../layout/density.html">元素密度</a>
-            </li>
-            <li class="on unfolded">
-                <span states class="body2" tabindex="0">风格样式</span>
-                <a states href="../style/color.html">颜色</a>
-                <a states class="activated">图标</a>
-                <a states href="../style/imagery.html">图像</a>
-                <a states href="../style/typography.html">字体排印</a>
-                <a states href="../style/writing.html">书面用语</a>
-                <a states href="../style/sound.html">声音</a>
-            </li>
-            <li>
-                <span states class="body2" tabindex="0">动画效果</span>
-                <a states href="../motion/material-motion.html">运动机理</a>
-                <a states href="../motion/movement.html">移动</a>
-                <a states href="../motion/transforming-material.html">转换</a>
-                <a states href="../motion/choreography.html">编排</a>
-                <a states href="../motion/responsive-interaction.html">作用反馈</a>
-                <a states href="../motion/creative-customization.html">创意定制</a>
-            </li>
-            <li>
-                <span states class="body2" tabindex="0">组件</span>
-                <a states href="../components/bottom-navigation.html">底部导航</a>
-                <a states href="../components/buttons.html">按钮</a>
-                <a states href="../components/buttons-floating-action-button.html">按钮：浮动操作按钮</a>
-                <a states href="../components/cards.html">卡片</a>
-                <a states href="../components/chips.html">多用标签</a>
-                <a states href="../components/data-tables.html">数据表格</a>
-                <a states href="../components/dividers.html">分隔线</a>
-                <a states href="../components/dialogs.html">对话框</a>
-                <a states href="../components/dialogs-pickers.html">对话框：选择器</a>
-                <a states href="../components/lists.html">列表</a>
-                <a states href="../components/menus.html">菜单</a>
-                <a states href="../components/progress-indicators.html">进程指示器</a>
-                <a states href="../components/selection-controls.html">选择控件</a>
-                <a states href="../components/sheets-bottom.html">底部单页</a>
-                <a states href="../components/sheets-side.html">侧边单页</a>
-                <a states href="../components/sheets-navigation-drawer.html">侧边单页：导航抽屉</a>
-                <a states href="../components/sliders.html">滑块</a>
-                <a states href="../components/snackbars.html">条形通知</a>
-                <a states href="../components/tabs.html">标签栏</a>
-                <a states href="../components/text-fields.html">文本框</a>
-                <a states href="../components/toolbars.html">工具栏</a>
-                <a states href="../components/widgets.html">桌面小部件</a>
-            </li>
-            <li>
-                <span states class="body2" tabindex="0">交互模式</span>
-                <a states href="../patterns/confirmation-acknowledgement.html">确认与获知</a>
-                <a states href="../patterns/data-display.html">数据展示</a>
-                <a states href="../patterns/empty-states.html">空状态</a>
-                <a states href="../patterns/errors.html">错误提示</a>
-                <a states href="../patterns/fingerprint.html">指纹识别</a>
-                <a states href="../patterns/gestures.html">手势</a>
-                <a states href="../patterns/help-feedback.html">帮助与反馈</a>
-                <a states href="../patterns/launch-screens.html">启动画面</a>
-                <a states href="../patterns/navigation.html">导航</a>
-                <a states href="../patterns/notifications.html">通知</a>
-                <a states href="../patterns/offline-states.html">离线状态</a>
-                <a states href="../patterns/permissions.html">权限</a>
-                <a states href="../patterns/search.html">搜索</a>
-                <a states href="../patterns/selection.html">选择</a>
-                <a states href="../patterns/settings.html">设置</a>
-                <a states href="../patterns/states.html">交互状态</a>
-                <a states href="../patterns/swipe-to-refresh.html">下滑刷新</a>
-            </li>
-            <li>
-                <span states class="body2" tabindex="0">可用性</span>
-                <a states href="../usability/accessibility.html">无障碍</a>
-                <a states href="../usability/bidirectionality.html">阅读方向</a>
-            </li>
-            <li>
-                <span states class="body2" tabindex="0">发展与用户教育</span>
-            </li>
-            <li>
-                <span states class="body2" tabindex="0">资源</span>
-            </li>
-            <a href="../about.html">关于</a>
-        </nav>
-        <div class="divider vertical"></div>
-    </aside>
-</body>
-
+            <div class="divider vertical"></div>
+        </aside>
+    </body>
 </html>
