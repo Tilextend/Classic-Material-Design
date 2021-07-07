@@ -94,6 +94,10 @@ ol li {
     list-style-type: decimal;
 }
 
+table {
+    height: fit-content;
+}
+
 thead {
     color: var(--secondary-text-color);
 }

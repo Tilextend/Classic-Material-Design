@@ -3,7 +3,7 @@
 \*------------------------------------*/
 
 table {
-  grid-column-end: span min(var(--max-block), 2);
+    grid-column-end: span min(var(--max-block), 2);
 }
 
 #material,
@@ -13,618 +13,753 @@ table {
 #warm,
 #hot,
 #neutral {
-  grid-column-start: max(1, calc(var(--max-block) - 1));
+    grid-column-start: max(1, calc(var(--max-block) - 1));
 }
 
 table thead th:not(:first-of-type) {
-  width: 25%;
+    width: 25%;
 }
 
 #product-icons thead {
-  color: var(--secondary-text-color-alt);
-  background-color: var(--high-emphasis-surface-color);
+    color: var(--secondary-text-color-alt);
+    background-color: var(--high-emphasis-surface-color);
 }
 
 thead tr:first-of-type {
-  color: var(--secondary-text-color-alt);
+    color: var(--secondary-text-color-alt);
 }
 
 thead tr:last-of-type {
-  color: var(--secondary-text-color);
+    color: var(--secondary-text-color);
 }
 
 #product-icons thead :is(th, td) {
-  padding: 14px var(--keyline);
+    padding: 14px var(--keyline);
 }
 
 #product-icons tbody :is(th, td) {
-  padding: 10px var(--keyline);
+    padding: 10px var(--keyline);
 }
 
 :is(thead tr:last-of-type, #product-icons tbody) th {
-  border-top: none;
-  border-bottom: none;
-  border-right: none;
+    border-top: none;
+    border-bottom: none;
+    border-right: none;
 }
 
 #product-icons tbody tr:not(:last-of-type) th {
-  border-bottom: none;
+    border-bottom: none;
 }
 
 :is(thead tr:last-of-type, #product-icons tbody tr) td:first-of-type {
-  border: none;
+    border: none;
 }
 
 :is(thead tr:last-of-type, #product-icons tbody tr) td:last-of-type {
-  border-top: none;
-  border-bottom: none;
-  border-left: none;
+    border-top: none;
+    border-bottom: none;
+    border-left: none;
 }
 
 tbody td::before {
-  content: "";
-  top: 0;
-  left: 0;
-  position: absolute;
-  width: 100%;
-  height: 100%;
+    content: "";
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
 }
 
 tbody td:first-of-type::before {
-  background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 #neutral tbody tr:nth-child(-n + 4) td:first-of-type::before {
-  background-color: rgba(255, 255, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.4);
 }
 
 #cool tbody td:last-of-type::before {
-  background-color: rgba(26, 35, 126, 0.2);
+    background-color: rgba(26, 35, 126, 0.2);
 }
 
 #fresh tbody td:last-of-type::before {
-  background-color: rgba(38, 50, 56, 0.2);
+    background-color: rgba(38, 50, 56, 0.2);
 }
 
 #warm tbody td:last-of-type::before {
-  background-color: rgba(191, 54, 12, 0.2);
+    background-color: rgba(191, 54, 12, 0.2);
 }
 
 #hot tbody td:last-of-type::before {
-  background-color: rgba(62, 39, 35, 0.2);
+    background-color: rgba(62, 39, 35, 0.2);
 }
 
 #neutral tbody td:last-of-type::before {
-  background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
 #neutral tbody tr:nth-child(-n + 4) td:last-of-type::before {
-  background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 tbody td span {
-  position: relative;
+    position: relative;
 }
 
 #product-icons .diagram {
-  height: 360px;
-  background: initial;
-  background-color: var(--high-emphasis-surface-color);
+    height: 360px;
+    background: initial;
+    background-color: var(--high-emphasis-surface-color);
 }
 
 #product-icons img {
-  width: 100%;
+    width: 100%;
 }
 
 #grid .grid-wrapper {
-  position: relative;
-  width: 192px;
-  height: 192px;
+    position: relative;
+    width: 192px;
+    height: 192px;
 }
 
 #grid .grid-wrapper::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-image: repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 3.5px,
-      var(--content-base-color) 3.5px,
-      var(--content-base-color) 4px
-    ),
-    repeating-linear-gradient(
-      -90deg,
-      transparent,
-      transparent 3.5px,
-      var(--content-base-color) 3.5px,
-      var(--content-base-color) 4px
-    );
-  opacity: 0.04;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: repeating-linear-gradient(0deg, transparent, transparent 3.5px, var(--content-base-color) 3.5px, var(--content-base-color) 4px), repeating-linear-gradient(-90deg, transparent, transparent 3.5px, var(--content-base-color) 3.5px, var(--content-base-color) 4px);
+    opacity: 0.04;
 }
 
 #grid .grid-wrapper::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  box-sizing: border-box;
-  border: 0.5px solid var(--content-base-color);
-  opacity: 0.2;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border: 0.5px solid var(--content-base-color);
+    opacity: 0.2;
 }
 
 #grid .grid-wrapper span {
-  position: absolute;
-  display: flex;
+    position: absolute;
+    display: flex;
 }
 
 #grid .grid-wrapper span::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  opacity: 0.2;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.2;
 }
 
 #grid .grid-wrapper span:nth-child(1) {
-  width: 192px;
-  height: 40px;
-  padding-left: 8px;
-  transform: translateY(calc(-100% - 4px));
+    width: 192px;
+    height: 40px;
+    padding-left: 8px;
+    transform: translateY(calc(-100% - 4px));
 }
 
 #grid .grid-wrapper span:nth-child(1)::before {
-  left: -0.25px;
-  width: 3px;
-  height: 100%;
-  border-left: 1px solid currentColor;
-  border-right: 1px solid currentColor;
+    left: -0.25px;
+    width: 3px;
+    height: 100%;
+    border-left: 1px solid currentColor;
+    border-right: 1px solid currentColor;
 }
 
 #grid .grid-wrapper span:nth-child(2) {
-  bottom: 0px;
-  width: 100%;
-  height: 40px;
-  justify-content: center;
-  align-items: flex-end;
-  transform: translateY(calc(100% + 4px));
+    bottom: 0px;
+    width: 100%;
+    height: 40px;
+    justify-content: center;
+    align-items: flex-end;
+    transform: translateY(calc(100% + 4px));
 }
 
 #grid .grid-wrapper span:nth-child(2)::before {
-  left: -1px;
-  border-left: 1px solid currentColor;
-  border-right: 1px solid currentColor;
+    left: -1px;
+    border-left: 1px solid currentColor;
+    border-right: 1px solid currentColor;
 }
 
 #grid .grid-wrapper span:nth-child(3) {
-  right: 0px;
-  width: 40px;
-  height: 100%;
-  align-items: center;
-  justify-content: flex-end;
-  transform: translateX(calc(100% + 4px));
+    right: 0px;
+    width: 40px;
+    height: 100%;
+    align-items: center;
+    justify-content: flex-end;
+    transform: translateX(calc(100% + 4px));
 }
 
 #grid .grid-wrapper span:nth-child(3)::before {
-  top: -1px;
-  border-top: 1px solid currentColor;
-  border-bottom: 1px solid currentColor;
+    top: -1px;
+    border-top: 1px solid currentColor;
+    border-bottom: 1px solid currentColor;
 }
 
 .keylines-wrapper {
-  position: relative;
-  width: 192px;
-  height: 192px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    position: relative;
+    width: 192px;
+    height: 192px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #keylines .keylines-wrapper::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  box-sizing: border-box;
-  border: 0.5px solid var(--content-base-color);
-  opacity: 0.2;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border: 0.5px solid var(--content-base-color);
+    opacity: 0.2;
 }
 
 .keylines-wrapper div {
-  position: absolute;
-  box-sizing: border-box;
-  border: 0.5px solid var(--content-base-color);
-  opacity: 0.2;
+    position: absolute;
+    box-sizing: border-box;
+    border: 0.5px solid var(--content-base-color);
+    opacity: 0.2;
 }
 
 #keylines svg * {
-  fill: none;
-  stroke-width: 0.5px;
-  stroke: var(--content-base-color);
-  opacity: 0.2;
+    fill: none;
+    stroke-width: 0.5px;
+    stroke: var(--content-base-color);
+    opacity: 0.2;
 }
 
 .square {
-  width: 152px;
-  aspect-ratio: 1/1;
-  border-radius: 12px;
+    width: 152px;
+    aspect-ratio: 1/1;
+    border-radius: 12px;
 }
 
 .circle {
-  width: 176px;
-  aspect-ratio: 1/1;
-  border-radius: 50%;
+    width: 176px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
 }
 
 .vertical-rectangle {
-  width: 128px;
-  height: 176px;
-  border-radius: 12px;
+    width: 128px;
+    height: 176px;
+    border-radius: 12px;
 }
 
 .horizontal-rectangle {
-  width: 176px;
-  height: 128px;
-  border-radius: 12px;
+    width: 176px;
+    height: 128px;
+    border-radius: 12px;
 }
 
 #square .square,
 #circle .circle,
 #vertical-rectangle .vertical-rectangle,
 #horizontal-rectangle .horizontal-rectangle {
-  border: 2px solid rgba(0, 0, 0, 0.4);
-  background-color: rgba(3, 169, 244, 0.2);
-  opacity: unset;
+    border: 2px solid rgba(0, 0, 0, 0.4);
+    background-color: rgba(3, 169, 244, 0.2);
+    opacity: unset;
 }
 
 .diagram .icon {
-  width: 192px;
-  height: 192px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transform: scale(1.5);
+    width: 192px;
+    height: 192px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(1.5);
 }
 
 .diagram .icon .background {
-  position: absolute;
-  width: 152px;
-  height: 152px;
-  border-radius: 12px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
+    position: absolute;
+    width: 152px;
+    height: 152px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
 
 .diagram .icon :is(.background, .foreground)::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-width: 1px 0;
-  border-style: solid;
-  border-top-color: var(--surface-hint-color);
-  border-bottom-color: var(--surface-shade-color);
-  border-radius: inherit;
-  box-sizing: border-box;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-width: 1px 0;
+    border-style: solid;
+    border-top-color: var(--surface-hint-color);
+    border-bottom-color: var(--surface-shade-color);
+    border-radius: inherit;
+    box-sizing: border-box;
 }
 
 .icon .background svg {
-  position: absolute;
-  width: 192px;
-  height: 192px;
+    position: absolute;
+    width: 192px;
+    height: 192px;
 }
 
 .icon .background svg stop {
-  stop-color: #000000;
+    stop-color: #000000;
 }
 
 .icon .background svg stop:nth-of-type(1) {
-  stop-opacity: 0.1;
+    stop-opacity: 0.1;
 }
 
 .icon .background svg stop:nth-of-type(2) {
-  stop-opacity: 0.05;
+    stop-opacity: 0.05;
 }
 
 .diagram .icon .foreground {
-  position: absolute;
-  width: 96px;
-  height: 96px;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.1));
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    position: absolute;
+    width: 96px;
+    height: 96px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.1));
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .diagram .icon .color {
-  width: 56px;
-  height: 56px;
-  background-color: #b4b4b4;
-  border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    background-color: #b4b4b4;
+    border-radius: 50%;
 }
 
 .diagram .icon .finish {
-  position: absolute;
-  width: 152px;
-  height: 152px;
-  border-radius: 12px;
-  background: radial-gradient(
-    circle at top left,
-    rgba(255, 255, 255, 0.1),
-    rgba(255, 255, 255, 0.05) calc(1 / 3 * 100%),
-    rgba(255, 255, 255, 0)
-  );
+    position: absolute;
+    width: 152px;
+    height: 152px;
+    border-radius: 12px;
+    background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05) calc(1 / 3 * 100%), rgba(255, 255, 255, 0));
 }
 
 #color-applied img {
-  width: calc(192px * 1.25);
-  flex-grow: initial;
+    width: calc(192px * 1.25);
+    flex-grow: initial;
 }
 
 :is(#top-light, #angled-light) .lighting {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  align-self: flex-start;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    align-self: flex-start;
 }
 
 #top-light .lighting {
-  background: linear-gradient(
-    rgba(3, 169, 244, 0.6),
-    rgba(3, 169, 244, 0.3) calc(1 / 3 * 75%),
-    rgba(3, 169, 244, 0) 75%
-  );
+    background: linear-gradient(rgba(3, 169, 244, 0.6), rgba(3, 169, 244, 0.3) calc(1 / 3 * 75%), rgba(3, 169, 244, 0) 75%);
 }
 
 #angled-light :is(.background, .foreground)::after {
-  display: none;
+    display: none;
 }
 
 #angled-light .foreground {
-  filter: none;
+    filter: none;
 }
 
 #angled-light .lighting {
-  background: radial-gradient(
-    circle at top left,
-    rgba(3, 169, 244, 0.7),
-    rgba(3, 169, 244, 0.35) 120px,
-    rgba(3, 169, 244, 0) 360px
-  );
+    background: radial-gradient(circle at top left, rgba(3, 169, 244, 0.7), rgba(3, 169, 244, 0.35) 120px, rgba(3, 169, 244, 0) 360px);
 }
 
 .product-icon {
-  width: 192px;
-  height: 192px;
-  transform: scale(1.25);
+    width: 192px;
+    height: 192px;
+    transform: scale(1.25);
 }
 
 .product-icon .edge[position="top"] {
-  fill: rgba(255, 255, 255, 0.4);
+    fill: rgba(255, 255, 255, 0.4);
 }
 
 .product-icon .edge[position="bottom"] {
-  fill: rgba(0, 0, 0, 0.1);
+    fill: rgba(0, 0, 0, 0.1);
 }
 
 .product-icon linearGradient:first-of-type stop {
-  stop-color: #000000;
+    stop-color: #000000;
 }
 
 .product-icon linearGradient:first-of-type stop:nth-of-type(1) {
-  stop-opacity: 0.1;
+    stop-opacity: 0.1;
 }
 
 .product-icon linearGradient:first-of-type stop:nth-of-type(2) {
-  stop-opacity: 0.05;
+    stop-opacity: 0.05;
 }
 
 #keyboard svg > rect {
-  fill: #eeeeee;
+    fill: #eeeeee;
 }
 
 #keyboard g rect {
-  fill: #29b6f6;
+    fill: #29b6f6;
 }
 
 #keyboard svg > path:nth-of-type(2) {
-  fill: #f5f5f5;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.1));
+    fill: #f5f5f5;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.1));
 }
 
 #keyboard svg > path:nth-of-type(3) {
-  fill: #f5f5f5;
+    fill: #f5f5f5;
 }
 
 #keyboard svg > path:nth-of-type(4) {
-  fill: #29b6f6;
+    fill: #29b6f6;
 }
 
 #android-wear svg > circle {
-  fill: #eeeeee;
-  border: 10px solid #000000;
+    fill: #eeeeee;
+    border: 10px solid #000000;
 }
 
 #android-wear path:first-of-type {
-  fill: #e0e0e0;
+    fill: #e0e0e0;
 }
 
 #android-wear g {
-  fill: #f5f5f5;
+    fill: #f5f5f5;
 }
 
 #android-wear g:nth-of-type(2) {
-  filter: drop-shadow(0px 4px 4px rgba(3, 169, 244, 0.6));
+    filter: drop-shadow(0px 4px 4px rgba(3, 169, 244, 0.6));
 }
 
 #android-tv svg > rect {
-  fill: #eeeeee;
+    fill: #eeeeee;
 }
 
 #android-tv svg > path:nth-of-type(1) {
-  fill: #e0e0e0;
+    fill: #e0e0e0;
 }
 
 #android-tv svg > path:nth-of-type(3) {
-  fill: #f5f5f5;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.1));
+    fill: #f5f5f5;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.1));
 }
 
 #android-tv svg > path:nth-of-type(4) {
-  fill: #f5f5f5;
+    fill: #f5f5f5;
 }
 
 #android-tv polygon {
-  fill: #bdbdbd;
+    fill: #bdbdbd;
 }
 
 #android-tv-cast-shadow stop {
-  stop-color: #03a9f4;
+    stop-color: #03a9f4;
 }
 
 #android-tv-cast-shadow stop:nth-of-type(1) {
-  stop-opacity: 0.6;
+    stop-opacity: 0.6;
 }
 
 #android-tv-cast-shadow stop:nth-of-type(2) {
-  stop-opacity: 0.3;
+    stop-opacity: 0.3;
 }
 
 #messages svg > path:nth-of-type(1) {
-  fill: #e0e0e0;
+    fill: #e0e0e0;
 }
 
 #messages svg > path:nth-of-type(3) {
-  fill: #f5f5f5;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.1));
+    fill: #f5f5f5;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.1));
 }
 
 #messages svg > path:nth-of-type(4) {
-  fill: #f5f5f5;
+    fill: #f5f5f5;
 }
 
 #messages rect {
-  fill: #bdbdbd;
+    fill: #bdbdbd;
 }
 
 #messages .edge {
-  fill: #03a9f4;
+    fill: #03a9f4;
 }
 
 #sites :is(svg > rect:nth-of-type(1), g > rect) {
-  fill: #bdbdbd;
+    fill: #bdbdbd;
 }
 
 #sites svg > path:nth-of-type(1) {
-  fill: #eeeeee;
+    fill: #eeeeee;
 }
 
 #sites :is(svg > path:nth-of-type(2), circle) {
-  fill: #e0e0e0;
+    fill: #e0e0e0;
 }
 
 #sites svg > path:nth-of-type(5) {
-  fill: #f5f5f5;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.1));
+    fill: #f5f5f5;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.1));
 }
 
 #sites svg > path:nth-of-type(6) {
-  fill: #f5f5f5;
+    fill: #f5f5f5;
 }
 
 #sites radialGradient stop:nth-of-type(1) {
-  stop-color: rgba(3, 169, 244, 0.7);
+    stop-color: rgba(3, 169, 244, 0.7);
 }
 
 #sites radialGradient stop:nth-of-type(2) {
-  stop-color: rgba(3, 169, 244, 0.35);
+    stop-color: rgba(3, 169, 244, 0.35);
 }
 
 #sites radialGradient stop:nth-of-type(3) {
-  stop-color: rgba(3, 169, 244, 0);
+    stop-color: rgba(3, 169, 244, 0);
 }
 
 #keep svg > path:nth-of-type(1) {
-  fill: #ffc107;
+    fill: #ffc107;
 }
 
 #keep svg > path:nth-of-type(3) {
-  fill: #eeeeee;
-  filter: drop-shadow(0px 4px 4px rgba(191, 54, 12, 0.2));
+    fill: #eeeeee;
+    filter: drop-shadow(0px 4px 4px rgba(191, 54, 12, 0.2));
 }
 
 #keep svg > path:nth-of-type(4) {
-  fill: #ffe082;
-  filter: drop-shadow(0px 4px 4px rgba(191, 54, 12, 0.2));
+    fill: #ffe082;
+    filter: drop-shadow(0px 4px 4px rgba(191, 54, 12, 0.2));
 }
 
 #keep linearGradient:first-of-type stop {
-  stop-color: #bf360c;
+    stop-color: #bf360c;
 }
 
 #keep linearGradient:first-of-type stop:nth-of-type(1) {
-  stop-opacity: 0.2;
+    stop-opacity: 0.2;
 }
 
 #keep linearGradient:first-of-type stop:nth-of-type(2) {
-  stop-opacity: 0.1;
+    stop-opacity: 0.1;
 }
 
 #keep :is(g:first-of-type, g:last-of-type) .edge[position="top"] {
-  fill: rgba(255, 255, 255, 0.2);
+    fill: rgba(255, 255, 255, 0.2);
 }
 
 #keep :is(g:first-of-type, g:last-of-type) .edge[position="bottom"] {
-  fill: rgba(191, 54, 12, 0.2);
+    fill: rgba(191, 54, 12, 0.2);
 }
 
-#calculator
-  svg
-  > :is(path:nth-of-type(1), circle:first-of-type, rect:not(:first-of-type), polygon) {
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.2));
+#calculator svg > :is(path:nth-of-type(1), circle:first-of-type, rect:not(:first-of-type)) {
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.2));
+}
+
+#calculator svg > polygon {
+    filter: drop-shadow(0px 4px 4px rgba(38, 50, 56, 0.2));
 }
 
 #calculator .edge[position="top"] {
-  fill: rgba(255, 255, 255, 0.2);
+    fill: rgba(255, 255, 255, 0.2);
 }
 
-:is(#calculator g:nth-of-type(1), #calculator g:nth-of-type(2), #calculator
-    g:nth-of-type(4))
-  .edge[position="top"] {
-  fill: rgba(255, 255, 255, 0.4);
+:is(#calculator g:nth-of-type(1), #calculator g:nth-of-type(2), #calculator g:nth-of-type(4)) .edge[position="top"] {
+    fill: rgba(255, 255, 255, 0.4);
 }
 
-:is(#calculator g:nth-of-type(1), #calculator g:nth-of-type(2), #calculator
-    g:nth-of-type(4))
-  .edge[position="bottom"] {
-  fill: rgba(0, 0, 0, 0.1);
+:is(#calculator g:nth-of-type(1), #calculator g:nth-of-type(2), #calculator g:nth-of-type(4)) .edge[position="bottom"] {
+    fill: rgba(0, 0, 0, 0.1);
 }
 
 #calculator g:nth-of-type(3) .edge[position="bottom"] {
-  fill: rgba(0, 0, 0, 0.2);
+    fill: rgba(0, 0, 0, 0.2);
 }
 
 #calculator g:last-of-type .edge[position="bottom"] {
-  fill: rgba(38, 50, 56, 0.2);
+    fill: rgba(38, 50, 56, 0.2);
 }
 
 #equation-cast-shadow stop {
-  stop-color: #263238;
+    stop-color: #263238;
 }
 
-:is(#addition-cast-shadow, #subtraction-cast-shadow, #multiplication-cast-shadow)
-  stop {
-  stop-color: #000000;
+:is(#addition-cast-shadow, #subtraction-cast-shadow, #multiplication-cast-shadow) stop {
+    stop-color: #000000;
 }
 
 #calculator linearGradient:nth-of-type(-n + 5) stop:nth-of-type(1) {
-  stop-opacity: 0.2;
+    stop-opacity: 0.2;
 }
 
 #calculator linearGradient:nth-of-type(-n + 5) stop:nth-of-type(2) {
+    stop-opacity: 0.1;
+}
+
+#beam svg > path:nth-of-type(1) {
+    fill: #8bc34a;
+}
+
+#beam g:nth-of-type(1) path:nth-of-type(1) {
+    fill: #8bc34a;
+    filter: drop-shadow(0px 4px 4px rgba(38, 50, 56, 0.2));
+}
+
+#beam g:nth-of-type(1) circle {
+    fill: #f5f5f5;
+}
+
+#beam g:nth-of-type(1) .edge[position="top"] {
+    fill: rgba(255, 255, 255, 0.2);
+}
+
+#beam :is(svg > .edge[position="bottom"], g:nth-of-type(1) .edge[position="bottom"]) {
+    fill: rgba(38, 50, 56, 0.2);
+}
+
+#beam g:nth-of-type(2) circle:nth-of-type(1) {
+    fill: #eeeeee;
+    filter: drop-shadow(0px 4px 4px rgba(38, 50, 56, 0.2));
+}
+
+#beam g:nth-of-type(2) circle:nth-of-type(2) {
+    fill: #e0e0e0;
+}
+
+#beam g:nth-of-type(2) circle:nth-of-type(3) {
+    fill: #bdbdbd;
+}
+
+#beam linearGradient stop {
+    stop-color: #263238;
+}
+
+#beam linearGradient stop:nth-of-type(1) {
+    stop-opacity: 0.2;
+}
+
+#beam linearGradient stop:nth-of-type(2) {
+    stop-opacity: 0.1;
+}
+
+#play-movies g:nth-of-type(1) path:nth-of-type(1) {
+    fill: #730743;
+}
+
+#play-movies g:nth-of-type(2) rect:not(.edge) {
+    fill: #ffffff;
+}
+
+#play-movies g:nth-of-type(2) rect:nth-of-type(1) {
+    fill: #cf0045;
+    filter: drop-shadow(0px 4px 4px rgba(121, 85, 72, 0.2));
+}
+
+#play-movies g:nth-of-type(2) rect:nth-of-type(2) {
+    fill: #cf0045;
+}
+
+#play-movies g:nth-of-type(2) rect:nth-of-type(3) {
+    fill: #f70031;
+}
+
+#play-movies .edge[position="top"] {
+    fill: rgba(255, 255, 255, 0.2);
+}
+
+#play-movies .edge[position="bottom"] {
+    fill: rgba(121, 85, 72, 0.2);
+}
+
+#play-movies linearGradient stop {
+    stop-color: #3e2723;
+}
+
+#play-movies linearGradient stop:nth-of-type(1) {
+    stop-opacity: 0.2;
+}
+
+#play-movies linearGradient stop:nth-of-type(2) {
+    stop-opacity: 0.1;
+}
+
+#weather g:nth-of-type(1) rect:nth-of-type(1) {
+    fill: #ffca28;
+}
+
+#weather g:nth-of-type(1) rect:nth-of-type(2) {
+    fill: #ffb300;
+}
+
+#weather g:nth-of-type(1) rect:nth-of-type(3) {
+    fill: #ffab00;
+}
+
+#weather g:nth-of-type(1) rect:nth-of-type(4) {
+    fill: #f57c00;
+}
+
+#weather g:nth-of-type(2) rect:is(:nth-of-type(1), :nth-of-type(4)) {
+    fill: #fbc02d;
+}
+
+#weather g:nth-of-type(2) rect:nth-of-type(2) {
+    fill: #ff9800;
+}
+
+#weather g:nth-of-type(2) rect:nth-of-type(3) {
+    fill: #ff8f00;
+}
+
+#weather circle {
+    fill: #ffca28;
+}
+
+#weather .edge[position="top"] {
+    fill: rgba(255, 255, 255, 0.2);
+}
+
+#weather .edge[position="bottom"] {
+    fill: rgba(191, 54, 12, 0.2);
+}
+
+#groups g:nth-of-type(1) path:nth-of-type(1) {
+    fill: #e0e0e0;
+}
+
+#groups g:nth-of-type(2) path:nth-of-type(2) {
+    fill: #448aff;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.1));
+}
+
+#groups g:nth-of-type(2) :is(circle, path:last-of-type) {
+    fill: rgba(255, 255, 255, 0.5);
+}
+
+#groups g:nth-of-type(2) .edge[position="top"] {
+  fill: rgba(255, 255, 255, 0.2);
+}
+
+#groups g:nth-of-type(2) .edge[position="bottom"] {
+  fill: rgba(26, 35, 126, 0.2);
+}
+
+#groups g:nth-of-type(3) :is(circle, path:nth-of-type(2)) {
+  fill: #eeeeee;
+  filter: drop-shadow(0px 4px 4px rgba(26, 35, 126, 0.2));
+}
+
+#groups linearGradient:nth-of-type(2) stop {
+  stop-color: #1a237e;
+}
+
+#groups linearGradient:nth-of-type(2) stop:nth-of-type(1) {
+  stop-opacity: 0.2;
+}
+
+#groups linearGradient:nth-of-type(2) stop:nth-of-type(2) {
   stop-opacity: 0.1;
 }
 
@@ -633,33 +768,33 @@ tbody td span {
 \*------------------------------------*/
 
 :root {
-  --primary-color: #00897b;
+    --primary-color: #00897b;
 }
 
 @media (prefers-color-scheme: light) {
-  #grid .grid-wrapper span {
-    color: var(--light-blue-500);
-  }
-  .diagram .icon .background {
-    background-color: var(--grey-200);
-  }
-  .diagram .icon .foreground {
-    background-color: var(--grey-50);
-  }
+    #grid .grid-wrapper span {
+        color: var(--light-blue-500);
+    }
+    .diagram .icon .background {
+        background-color: var(--grey-200);
+    }
+    .diagram .icon .foreground {
+        background-color: var(--grey-50);
+    }
 }
 
 @media (prefers-color-scheme: dark) {
-  body > aside > nav,
-  .content-body {
-    --primary-color: #26a69a;
-  }
-  #grid .grid-wrapper span {
-    color: var(--light-blue-400);
-  }
-  .diagram .icon .background {
-    background-color: var(--grey-700);
-  }
-  .diagram .icon .foreground {
-    background-color: var(--grey-600);
-  }
+    body > aside > nav,
+    .content-body {
+        --primary-color: #26a69a;
+    }
+    #grid .grid-wrapper span {
+        color: var(--light-blue-400);
+    }
+    .diagram .icon .background {
+        background-color: var(--grey-700);
+    }
+    .diagram .icon .foreground {
+        background-color: var(--grey-600);
+    }
 }
