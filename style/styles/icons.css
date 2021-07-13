@@ -383,15 +383,15 @@ tbody td span {
     fill: rgba(0, 0, 0, 0.1);
 }
 
-.product-icon linearGradient:first-of-type stop {
+.product-icon linearGradient stop {
     stop-color: #000000;
 }
 
-.product-icon linearGradient:first-of-type stop:nth-of-type(1) {
+.product-icon linearGradient stop:nth-of-type(1) {
     stop-opacity: 0.1;
 }
 
-.product-icon linearGradient:first-of-type stop:nth-of-type(2) {
+.product-icon linearGradient stop:nth-of-type(2) {
     stop-opacity: 0.05;
 }
 
@@ -521,7 +521,7 @@ tbody td span {
 }
 
 #keep svg > path:nth-of-type(1) {
-    fill: #ffc107;
+    fill: #ffbc00;
 }
 
 #keep svg > path:nth-of-type(3) {
@@ -530,7 +530,7 @@ tbody td span {
 }
 
 #keep svg > path:nth-of-type(4) {
-    fill: #ffe082;
+    fill: #ffde80;
     filter: drop-shadow(0px 4px 4px rgba(191, 54, 12, 0.2));
 }
 
@@ -726,7 +726,7 @@ tbody td span {
 }
 
 #groups g:nth-of-type(2) path:nth-of-type(2) {
-    fill: #448aff;
+    fill: #4285f4;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.1));
 }
 
@@ -826,6 +826,181 @@ tbody td span {
 
 #play-movies .edge[position="top"] {
     fill: rgba(255, 255, 255, 0.2);
+}
+
+#browser g:nth-of-type(1) polygon:first-of-type {
+    fill: #607d8b;
+}
+
+#browser g:nth-of-type(2) path:first-of-type {
+    fill: #b0bec5;
+}
+
+#browser g:nth-of-type(3) circle {
+    fill: #ffffff;
+    filter: drop-shadow(0px 4px 4px rgba(38, 50, 56, 0.2));
+}
+
+#browser g:nth-of-type(4) circle {
+    fill: #0277bd;
+}
+
+#browser g:nth-of-type(5) circle {
+    fill: #80d8ff;
+}
+
+#browser g:nth-of-type(6) path:nth-of-type(1) {
+    fill: #00b0ff;
+    filter: drop-shadow(0px 4px 4px rgba(38, 50, 56, 0.2));
+}
+
+#browser g:nth-of-type(6) path:nth-of-type(2) {
+    fill: #0091ea;
+}
+
+#browser .edge[position="bottom"] {
+    fill: rgba(38, 50, 56, 0.2);
+}
+
+#browser .edge[position="top"] {
+    fill: rgba(255, 255, 255, 0.2);
+}
+
+#browser linearGradient stop {
+    stop-color: #263238;
+}
+
+#browser linearGradient stop:nth-of-type(1) {
+    stop-opacity: 0.2;
+}
+
+#browser linearGradient stop:nth-of-type(2) {
+    stop-opacity: 0.1;
+}
+
+#calendar svg>g:nth-of-type(1) rect {
+    fill: #bdbdbd;
+}
+
+#calendar svg>g:nth-of-type(1) circle {
+    fill: #eeeeee;
+}
+
+#calendar svg>g:nth-of-type(2)>rect:nth-of-type(1) {
+    fill: #1a73e8;
+}
+
+#calendar svg>g:nth-of-type(2)>rect:nth-of-type(2) {
+    fill: #4285f4;
+}
+
+#calendar g>g rect:nth-of-type(1) {
+    fill: #e0e0e0;
+}
+
+#calendar g>g rect:nth-of-type(2) {
+    fill: #f5f5f5;
+}
+
+#calendar linearGradient:last-of-type stop {
+    stop-color: #1a237e;
+}
+
+#calendar linearGradient:last-of-type stop:nth-of-type(1) {
+    stop-opacity: 0.2;
+}
+
+#calendar linearGradient:last-of-type stop:nth-of-type(2) {
+    stop-opacity: 0.1;
+}
+
+#calendar g:nth-of-type(2) rect[position="bottom"] {
+    fill: rgba(26, 35, 126, 0.1);
+}
+
+#calendar g:nth-of-type(2) rect[position="top"] {
+    fill: rgba(255, 255, 255, 0.1);
+}
+
+#calendar g:nth-of-type(2) path[position="bottom"] {
+    fill: rgba(26, 35, 126, 0.2);
+}
+
+#calendar g:nth-of-type(2) path[position="top"] {
+    fill: rgba(255, 255, 255, 0.2);
+}
+
+#translator g:nth-of-type(1) rect {
+    fill: #e0e0e0;
+}
+
+#translator g:nth-of-type(1) path:nth-of-type(1) {
+    fill: #607d8b;
+}
+
+#translator g:nth-of-type(1) polygon {
+    fill: #e0e0e0;
+    filter: drop-shadow(0px 4px 4px rgba(26, 35, 126, 0.2));
+}
+
+#translator g:nth-of-type(2) rect:first-of-type {
+    fill: #3f51b5;
+}
+
+#translator g:nth-of-type(2) rect:last-of-type {
+    fill: #4285f4;
+    filter: drop-shadow(0px 4px 4px rgba(26, 35, 126, 0.2));
+}
+
+#translator g:nth-of-type(3) rect {
+    fill: #4285f4;
+}
+
+#translator g:nth-of-type(3) path:nth-of-type(1) {
+    fill: #eeeeee;
+}
+
+#translator g:nth-of-type(3) path[position="bottom"] {
+    fill: rgba(26, 35, 126, 0.2);
+}
+
+#translator g:nth-of-type(3) path[position="top"] {
+    fill: rgba(255, 255, 255, 0.2);
+}
+
+#text-to-speech g:nth-of-type(1) path:nth-of-type(1) {
+    fill: #e0e0e0;
+}
+
+#text-to-speech g:nth-of-type(1) rect {
+    fill: #bdbdbd;
+}
+
+#text-to-speech g:nth-of-type(1) polygon {
+    fill: #bdbdbd;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.1));
+}
+
+#text-to-speech g:nth-of-type(2) rect {
+    fill: #1a73e8;
+}
+
+#text-to-speech g:nth-of-type(2) polygon:first-of-type {
+    fill: #3f51b5;
+    filter: drop-shadow(0px 4px 4px rgba(26, 35, 126, 0.2));
+}
+
+#text-to-speech g:nth-of-type(3) path:nth-of-type(2) {
+    fill: #4285f4;
+    filter: drop-shadow(0px 4px 4px rgba(26, 35, 126, 0.2));
+}
+
+#text-to-speech g:nth-of-type(3) path:is(:nth-of-type(3),:nth-of-type(4)) {
+    fill: #eeeeee;
+}
+
+#text-to-speech g:nth-of-type(2) .edge[position="bottom"] {
+    fill: rgba(26, 35, 126, 0.2);
 }
 
 /*------------------------------------*\

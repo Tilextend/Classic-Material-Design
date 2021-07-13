@@ -367,6 +367,7 @@ h2 {
 .content > header p {
     font-weight: 400;
     margin-bottom: var(--keyline);
+    text-align: justify;
     user-select: text;
 }
 
@@ -453,6 +454,7 @@ figcaption {
 
 main figcaption :is(p, ul, ol),
 section p {
+    text-align: justify;
     user-select: text;
 }
 
